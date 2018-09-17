@@ -32,9 +32,3 @@ classes/
 .settings/
 out/
 
-# vagrant
-.vagrant
-local-conf.rb
-cloud-conf
-Vagrantfile
-**/devops/env/local/shared/persistent/*

@@ -1,0 +1,40 @@
+# general
+.#*
+._*
+.DS_Store
+.buildinfo
+*.bak
+*~
+*.setting
+*.pyc
+*.odem
+*.ws
+*.dtd
+*.log
+*.pid
+*.port
+.gradle/
+build/
+target/
+pom.xml
+pom.xml.asc
+
+# intellij idea
+*.iml
+*.ipr
+*.iws
+.idea/
+classes/
+
+# eclipse
+.project
+.classpath
+.settings/
+out/
+
+# vagrant
+.vagrant
+local-conf.rb
+cloud-conf
+Vagrantfile
+**/devops/env/local/shared/persistent/*

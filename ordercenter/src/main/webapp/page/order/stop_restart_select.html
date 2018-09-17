@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link type="text/css" href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="../../css/common.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/dataTables.bootstrap.min.css"
+          rel="stylesheet">
+
+    <style type="text/css">
+        /* 订单查询 */
+        .order-select {
+            padding-top: 20px;
+        }
+
+        .order-select .text-label {
+            height: 27px;
+            line-height: 27px;
+        }
+
+        .order-select .text-label .search-type {
+            font-weight: normal;
+        }
+
+        .order-select .text-input {
+            width: 175px;
+            height: 27px;
+            line-height: 27px;
+        }
+
+        .order-select .row {
+            padding-bottom: 10px;
+        }
+
+        .order-select > a {
+            cursor: pointer;
+        }
+
+        .detail-together .export {
+            margin-left: 30px;
+            font-weight: bolder;
+            color: #842E5C;
+        }
+
+        #keyType {
+            text-align: center;
+        }
+    </style>
+    <script type="text/javascript" src="../../js/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../plugins/jqPaginator-1.2.0/jqPaginator.min.js"></script>
+    <script type="text/javascript" src="../../My97DatePicker/WdatePicker.js"></script>
+</head>
+<body>
+<div class="container-fluid order-select">
+    <div class="row">
+        <div class="col-sm-1">
+        </div>
+        <div class="col-sm-2 text-label text-right">
+            <label>按城市查找：</label>
+        </div>
+        <div class="col-sm-1 text-label text-right">
+            <label class='search-type'>城市：</label>
+        </div>
+        <div class="col-sm-2 text-left">
+            <select id="quoteAreaSel" class="text-input">
+                <option value=""></option>
+                <option value="0">全部</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-1">
+        </div>
+        <div class="col-sm-2 text-label text-right">
+            <label>按渠道查找：</label>
+        </div>
+        <div class="col-sm-1 text-label text-right">
+            <label class='search-type'>渠道：</label>
+        </div>
+        <div class="col-sm-2 text-left">
+            <select id="allChannelSel" class="text-input">
+                <option value=""></option>
+                <option value="1">CPS</option>
+                <option value="2">大客户</option>
+            </select>
+        </div>
+        <div id="cpsChannelDiv" class="none channel">
+            <div class="col-sm-1 text-label text-right">
+                <label class='search-type'>CPS渠道：</label>
+            </div>
+            <div class="col-sm-2 text-left">
+                <select id="cpsChannelSel" class="text-input">
+                    <option value=""></option>
+                    <option value="0">全部</option>
+                </select>
+            </div>
+        </div>
+        <div id="vipChannelDiv" class="none channel">
+            <div class="col-sm-1 text-label text-right">
+                <label class='search-type'>大客户：</label>
+            </div>
+            <div class="col-sm-2 text-left">
+                <select id="vipCompanySel" class="text-input">
+                    <option value=""></option>
+                    <option value="0">全部</option>
+                </select>
+            </div>
+        </div>
+        <div id="perfectDriverDiv" class="none channel">
+            <div class="col-sm-1 text-label text-right">
+                <label class='search-type'>好车主：</label>
+            </div>
+            <div class="col-sm-2 text-left">
+                <select id="perfectDriverSel" class="text-input">
+                    <option value=""></option>
+                    <option value="0">全部</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-1">
+        </div>
+        <div class="col-sm-2 text-label text-right">
+            <label>精准查找：</label>
+        </div>
+        <div class="col-sm-1 text-label text-right">
+            <label class='search-type'>订单号：</label>
+        </div>
+        <div class="col-sm-2 text-left">
+            <input type="text" id="orderNo" name="orderNo" class="text-input">
+        </div>
+        <div class="col-sm-1 text-label text-right">
+            <label class='search-type'>手机号码：</label>
+        </div>
+        <div class="col-sm-2 text-left">
+            <input type="text" id="mobile" name="mobile" class="text-input">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-1">
+        </div>
+        <div class="col-sm-2 text-label text-right">
+            <label>姓名查找：</label>
+        </div>
+        <div class="col-sm-1 text-label text-right">
+            <select id="keyType">
+                <option value="3">车主姓名</option>
+                <option value="1">收 件 人</option>
+                <option value="2">投 保 人</option>
+                <option value="4">被保险人</option>
+            </select>
+        </div>
+        <div class="col-sm-2 text-left">
+            <input type="text" id="keyWord" class="text-input">
+        </div>
+        <div class="col-sm-1 text-label text-right">
+            <label class='search-type'>车牌号：</label>
+        </div>
+        <div class="col-sm-2 text-left">
+            <input type="text" id="licenseNo" name="licenseNo" class="text-input">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-1">
+        </div>
+        <div class="col-sm-2 text-label text-right">
+            <label>按订单日期查找：</label>
+        </div>
+        <div class="col-sm-1 text-label text-right">
+            <label class='search-type'>下单日期：</label>
+        </div>
+        <div class="col-sm-4 text-left">
+            <input type="text" id="orderStartDate" name="orderStartDate" class="Wdate"
+                   onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true});" style="width: 175px;height: 27px;">
+            <span style="margin: 0 10px;">至</span>
+            <input type="text" id="orderEndDate" name="orderEndDate" class="Wdate"
+                   onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true});" style="width: 175px;height: 27px;">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-1">
+        </div>
+        <div class="col-sm-2 text-label text-right">
+        </div>
+        <div class="col-sm-1 text-label text-right">
+            <label class='search-type'>操作日期：</label>
+        </div>
+        <div class="col-sm-4 text-left">
+            <input type="text" id="operateStartDate" name="operateStartDate" class="Wdate"
+                   onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true});" style="width: 175px;height: 27px;">
+            <span style="margin: 0 10px;">至</span>
+            <input type="text" id="operateEndDate" name="operateEndDate" class="Wdate"
+                   onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true});" style="width: 175px;height: 27px;">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-1">
+        </div>
+        <div class="col-sm-2 text-label text-right">
+            <label>按停复驶日期查询：</label>
+        </div>
+        <div class="col-sm-1 text-label text-right">
+            <label class='search-type'>停驶日期区间：</label>
+        </div>
+        <div class="col-sm-4 text-left">
+            <input type="text" id="stopBeginDate" name="orderStartDate" class="Wdate"
+                   onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true});" style="width: 175px;height: 27px;">
+            <span style="margin: 0 10px;">至</span>
+            <input type="text" id="stopEndDate" name="orderEndDate" class="Wdate"
+                   onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true});" style="width: 175px;height: 27px;">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-1">
+        </div>
+        <div class="col-sm-2 text-label text-right">
+        </div>
+        <div class="col-sm-1 text-label text-right">
+            <label class='search-type'>复驶日期区间：</label>
+        </div>
+        <div class="col-sm-4 text-left">
+            <input type="text" id="restartBeginDate" name="operateStartDate" class="Wdate"
+                   onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true});" style="width: 175px;height: 27px;">
+            <span style="margin: 0 10px;">至</span>
+            <input type="text" id="restartEndDate" name="operateEndDate" class="Wdate"
+                   onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true});" style="width: 175px;height: 27px;">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-5"></div>
+        <div class="col-sm-5">
+            <button id="selectBtn" type="button" class="btn btn-danger">查询</button>
+        </div>
+    </div>
+</div>
+<div class="radio">
+    <div class="btn-group">
+    </div>
+    <div id="dataTable" class="col-sm-12">
+        <table class="table table-bordered table-hover" id="result_tab">
+        </table>
+    </div>
+</div>
+
+</body>
+<link rel="stylesheet" href="../../css/popup.css">
+<script type="text/javascript" src="../../js/jquery/jquery.cookie.js"></script>
+<script type="text/javascript" src="../../js/common/common.js"></script>
+<script type="text/javascript" src="../../js/common/cookie.js"></script>
+<script type="text/javascript" src="../../js/common/popup.js"></script>
+<script type="text/javascript" src="../../plugins/DataTables-1.10.12/media/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../../js/common/datatable_util.js"></script>
+<script type="text/javascript" src="../../js/order/stop_restart_select.js"></script>
+<script type="text/javascript" src="../../js/nationwideOrder/order_comment.js"></script>
+</html>

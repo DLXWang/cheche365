@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="Robots" content="none">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" media="screen">
+    <link href="../css/layout.css" rel="stylesheet" media="screen">
+    <script type="text/javascript" src="../js/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/navbar.js"></script>
+    <script type="text/javascript" src="../js/layout.js"></script>
+    <script type="text/javascript" src="../js/menu_init.js"></script>
+    <script type="text/javascript" src="../js/common/common.js"></script>
+    <script type="text/javascript" src="../js/socket.io.js"></script>
+    <link rel="stylesheet" href="../plugins/assets/css/ace.min.css" />
+    <link rel="stylesheet" href="../plugins/assets/css/ace-rtl.min.css" />
+    <link rel="stylesheet" href="../plugins/assets/css/ace-skins.min.css" />
+    <link rel="stylesheet" href="../plugins/assets/css/font-awesome.min.css" />
+    <link type="text/css" href="../../plugins/select2/select2.css" rel="stylesheet">
+    <script src="../plugins/assets/js/ace-extra.min.js"></script>
+    <script src="../plugins/assets/js/ace-elements.min.js"></script>
+    <script src="../plugins/assets/js/ace.min.js"></script>
+    <script type="text/javascript" src="../../plugins/select2/select2.full.js"></script>
+    <title>车车出单中心</title>
+</head>
+<body>
+<div class="layout_div">
+    <div id="head-nav" class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <!--<button id="menu" class="navbar-toggle collapsed pull-left" type="button" style="display: block">-->
+                <!--<span class="sr-only">Toggle navigation</span>-->
+                <!--<span class="icon-bar"></span>-->
+                <!--<span class="icon-bar"></span>-->
+                <!--<span class="icon-bar"></span>-->
+            <!--</button>-->
+            <a class="navbar-brand hidden-sm" href="http://www.cheche365.com" target="_blank"><img
+                src="../images/logo.png"/></a>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown user-dropdown">
+                    <a id="user_dropdown" href="#" class="dropdown-toggle" data-toggle="dropdown"><i
+                        class="glyphicon glyphicon-user"></i>&nbsp; <span id="login_user_name"></span>&nbsp; <b
+                        class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="javascript:;" id="modify_password"><i class="glyphicon glyphicon-star"></i>
+                            修改密码</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="/orderCenter/logout"><i class="glyphicon glyphicon-off"></i> 退出系统</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="left_div "  class="main-container" id="main-container">
+        <div class="main-container-inner  ">
+        <a class="menu-toggler" id="menu-toggler" href="#">
+            <span class="menu-text"></span>
+        </a>
+            <div class="sidebar" id="sidebar">
+                <script type="text/javascript">
+                    try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+                </script>
+                <ul class="nav nav-list" id="accordion" data-toggle="buttons">
+                    <li id="vehicle_order_menu" style="display:none;" class="active panel">
+                        <a href="#vehicleOrderMenu" class="dropdown-toggle" data-toggle="collapse" data-parent="#accordion"><i
+                            class="glyphicon glyphicon-star"></i> &nbsp;<span class="menu-text">车险订单管理</span><b class="caret"></b></a>
+                        <ul id="vehicleOrderMenu" class="collapse submenu sednav">
+                            <li id="bj_order_list" style="display:none;"> <a href="order/order_list.html" target="some"><i
+                                class="glyphicon glyphicon-list-alt"></i>&nbsp;<span >订单列表</span></a></li>
+                            <li id="bj_order_list_temp" style="display:none;"><a href="order/order_list_temp.html" target="some"><i
+                                class="glyphicon glyphicon-list-alt"></i>&nbsp;<span >订单列表</span></a></li>
+                            <li id="order_search" style="display:none;"><a href="order/order_select.html" target="some"><i
+                                class="glyphicon glyphicon-search"></i>&nbsp;<span>订单查询</span></a></li>
+                            <!--<li id="stop_restart_search" style="display:none;"><a href="order/stop_restart_select.html" target="some"><i
+                                class="glyphicon glyphicon-search"></i>&nbsp;<span>停复驶查询</span></a></li>-->
+                            <li id="order_redistribution_li" style="display:none;"><a href="order/order_redistribution.html"
+                                                                                      target="some"><i
+                                class="glyphicon glyphicon-share"></i>&nbsp;<span>分配订单</span></a></li>
+                            <li id="browser_insurance_input_li" style="display:none;"><a href="order/browser_insurance_input.html"
+                                                                                         target="some"><i
+                                class="glyphicon glyphicon-log-in"></i>&nbsp;<span>保单录入</span></a></li>
+                            <li id="answern_insurance_newly_input_li" style="display:none;"><a href="order/answern_insurance_newly_input.html"
+                                                                                         target="some"><i
+                                class="glyphicon glyphicon-log-in"></i>&nbsp;<span>安心保单回录</span></a></li>
+                            <!-- <li id="datatable" style="display:none;"><a href="demo/datatable.html" target="some"><i
+                                class="glyphicon glyphicon-list-alt"></i>&nbsp;<span>datatable</span></a></li>
+                            <li id="test1" style="display:none;"><a href="demo/test1.html" target="some"><i
+                                class="glyphicon glyphicon-list-alt"></i>&nbsp;<span>test1</span></a></li>
+                            <li id="test2" style="display:none;"><a href="demo/test2.html" target="some"><i
+                                class="glyphicon glyphicon-list-alt"></i>&nbsp;<span>test2</span></a></li>
+                            <li id="datatable2" style="display:none;"><a href="order/order_list.html" target="some"><i
+                                class="glyphicon glyphicon-list-alt"></i>&nbsp;<span>datatable2</span></a></li>
+                            <li id="datatable3" style="display:none;"><a href="demo/daily_insurance2.html" target="some"><i
+                                class="glyphicon glyphicon-list-alt"></i>&nbsp;<span>datatable3</span></a></li>
+                            <li id="order_select2" style="display:none;"><a href="demo/order_select.html" target="some"><i
+                                class="glyphicon glyphicon-list-alt"></i>&nbsp;<span>order_select2</span></a></li>
+                            <li id="browser_insurance_input_li2" style="display:none;"><a href="order/browser_insurance_input.html"
+                                                                                         target="some"><i
+                                class="glyphicon glyphicon-log-in"></i>&nbsp;<span>保单录入2</span></a></li> -->
+                        </ul>
+                    </li>
+                    <li id="health_order_menu" class="panel" style="display:none;">
+                        <a href="#healthOrderMenu" class="dropdown-toggle" data-toggle="collapse" data-parent="#accordion"><i
+                            class="glyphicon glyphicon-star-empty"></i> &nbsp;<span class="menu-text">非车险订单管理</span><b class="caret"></b></a>
+                        <ul id="healthOrderMenu" class="collapse  submenu sednav">
+                            <li id="health_order_list" style="display:none;"><a href="healthOrder/health_order_list.html" target="some"><i
+                                class="glyphicon glyphicon-list-alt"></i>&nbsp;<span>订单列表</span></a></li>
+                            <li id="health_order_excel"  style="display:none;"><a href="healthOrder/health_order_excel.html" target="some"><i
+                                class="glyphicon glyphicon-list-alt"></i>&nbsp;<span>保单上传下载</span></a></li>
+                        </ul>
+                    </li>
+                    <li id="nationwide_order_menu" class="panel" style="display:none;">
+                        <a href="#nationwideOrderMenu" class="dropdown-toggle" data-toggle="collapse"
+                           data-parent="#accordion"><i class="glyphicon glyphicon-globe"></i>
+                            &nbsp;<span class="menu-text">全国出单中心</span><b class="caret"></b></a>
+                        <ul id="nationwideOrderMenu" class="collapse submenu sednav">
+                            <li id="area_contact_info_manager_menu" style="display:none;">
+                                <a href="#areaContactInfoManagerMenu" class="dropdown-toggle" data-toggle="collapse"
+                                   data-parent="#channel">
+                                    <i class="glyphicon glyphicon-hand-up"></i>&nbsp;<span>分站信息管理</span><b
+                                    class="caret third-caret"></b>
+                                </a>
+                                <ul id="areaContactInfoManagerMenu" class="collapse submenu thirdnav">
+                                    <li id="area_contact_info_li" style="display:none;"><a
+                                        href="nationwideOrder/area_contact_info.html" target="some"><i
+                                        class="glyphicon glyphicon-hand-up"></i>&nbsp;<span>分站信息管理</span></a></li>
+                                </ul>
+                            </li>
+                            <li id="institution_manager_menu" style="display:none;">
+                                <a href="#institutionManagerMenu" class="dropdown-toggle" data-toggle="collapse"
+                                   data-parent="#channel">
+                                    <i class="glyphicon glyphicon-open"></i>&nbsp;<span>出单机构管理</span><b
+                                    class="caret third-caret"></b>
+                                </a>
+                                <ul id="institutionManagerMenu" class="collapse submenu thirdnav">
+                                    <li id="institution_li" style="display:none;"><a href="nationwideOrder/institution.html"
+                                                                                     target="some"><i
+                                        class="glyphicon glyphicon-open"></i>&nbsp;<span>出单机构管理</span></a></li>
+                                    <li id="institution_li_temp" style="display:none;">
+                                        <a href="nationwideOrder/institution_temp.html" target="some">
+                                            <i class="glyphicon glyphicon-open"></i>&nbsp;<span>出单机构管理</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li id="order_manager_menu" style="display:none;">
+                                <a href="#orderManagerMenu" class="dropdown-toggle" data-toggle="collapse"
+                                   data-parent="#channel">
+                                    <i class="glyphicon glyphicon-cog"></i>&nbsp;<span>订单管理</span><b
+                                    class="caret third-caret"></b>
+                                </a>
+                                <ul id="orderManagerMenu" class="collapse submenu thirdnav">
+                                    <li id="order_console_li" style="display:none;"><a href="nationwideOrder/order_console.html"
+                                                                                       target="some"><i
+                                        class="glyphicon glyphicon-tasks"></i>&nbsp;<span>订单总控台</span></a></li>
+                                    <li id="order_total_li" style="display:none;"><a href="nationwideOrder/order_total.html"
+                                                                                     target="some"><i
+                                        class="glyphicon glyphicon-share-alt"></i>&nbsp;<span>全部订单</span></a></li>
+                                    <li id="order_add_li" style="display:none;"><a href="nationwideOrder/order_add.html"
+                                                                                   target="some"><i
+                                        class="glyphicon glyphicon-plus"></i>&nbsp;<span>订单新建</span></a></li>
+                                    <li id="order_abnormity_li" style="display:none;"><a href="nationwideOrder/order_abnormity.html"
+                                                                                         target="some"><i
+                                        class="glyphicon glyphicon-alert"></i>&nbsp;<span>订单异常</span></a></li>
+                                    <li id="order_refund_li" style="display:none;"><a href="nationwideOrder/order_refund.html"
+                                                                                      target="some"><i
+                                        class="glyphicon glyphicon-sort"></i>&nbsp;<span>订单退款</span></a></li>
+                                    <li id="order_check_pending_li" style="display:none;"><a
+                                        href="nationwideOrder/order_quote_no_audit.html" target="some"><i
+                                        class="glyphicon glyphicon-check"></i>&nbsp;<span>已报价待审核</span></a></li>
+                                    <li id="order_pay_pending_li" style="display:none;"><a
+                                        href="nationwideOrder/order_audit_no_payment.html" target="some"><i
+                                        class="glyphicon glyphicon-briefcase"></i>&nbsp;<span>通过审核待结款</span></a>
+                                    </li>
+                                    <li id="order_pending_li" style="display:none;"><a
+                                        href="nationwideOrder/order_payment_no_insurance.html" target="some"><i
+                                        class="glyphicon glyphicon-plane"></i>&nbsp;<span>结款完成待出单</span></a></li>
+                                    <li id="order_done_li" style="display:none;"><a href="nationwideOrder/order_done.html"
+                                                                                    target="some"><i
+                                        class="glyphicon glyphicon-grain"></i>&nbsp;<span>已出单</span></a></li>
+                                    <li id="order_finished_li" style="display:none;"><a href="nationwideOrder/order_finished.html"
+                                                                                        target="some"><i
+                                        class="glyphicon glyphicon-gift"></i>&nbsp;<span>订单完成</span></a></li>
+                                    <li id="order_cooperation_select_li" style="display:none;"><a
+                                        href="nationwideOrder/order_cooperation_select.html" target="some"><i
+                                        class="glyphicon glyphicon-search"></i>&nbsp;<span>订单查询</span></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li id="new_year_pack_menu" style="display:none;" class="panel">
+                        <a href="#newYearPack" class="dropdown-toggle" data-toggle="collapse"
+                           data-parent="#accordion"><i class="glyphicon glyphicon-gift"></i> &nbsp;<span class="menu-text">数据导入</span><b
+                            class="caret"></b></a>
+                        <ul id="newYearPack" class="submenu sednav">
+                            <li id="new_year_import_code_li" style="display:none;"><a href="newyearpack/import_code.html"
+                                                                                      target="some"><i
+                                class="glyphicon glyphicon-cloud-upload"></i>&nbsp;<span>兑换码导入</span></a></li>
+                            <li id="daily_insurance_share_activity_li" style="display:none;"><a href="newyearpack/daily_insurance_share_activity_import.html"
+                                                                                                target="some"><i
+                                class="glyphicon glyphicon-cloud-upload"></i>&nbsp;<span>按天买车险活动</span></a></li>
+                            <li id="insurance_import_li" style="display:none;">
+	                            <a href="insurance/insurance_import.html" target="some">
+		                            <i class="glyphicon glyphicon-cloud-upload"></i>&nbsp;<span>保单导入</span>
+	                            </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li id="importdata_menu" style="display:none;" class="panel">
+                        <a href="#newYearPack" class="dropdown-toggle" data-toggle="collapse"
+                           data-parent="#accordion"><i class="glyphicon glyphicon-gift"></i> &nbsp;<span class="menu-text">小财神对账系统</span><b
+                            class="caret"></b></a>
+                        <ul id="import_data" class="submenu sednav">
+                            <li id="import_data_li" style="display:none;">
+                                <a href="insurance/import_data_list.html" target="some">
+                                    <i class="glyphicon glyphicon-cloud-upload"></i>&nbsp;<span>导入数据查询</span>
+                                </a>
+                            </li>
+                            <li id="offlineinsurance_list_li" style="display:none;">
+                                <a href="insurance/offline_insurance_list.html" target="some">
+                                    <i class="glyphicon glyphicon-cloud-upload"></i>&nbsp;<span>财务数据查询</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li id="customer_menu" style="display:none;" class="panel">
+                        <a href="#customerMenu" class="dropdown-toggle" data-toggle="collapse" data-parent="#accordion"><i
+                            class="glyphicon glyphicon-heart"></i> &nbsp;<span class="menu-text">客户管理</span><b class="caret"></b></a>
+                        <ul id="customerMenu" class="collapse submenu sednav">
+                            <li id="customer_appointment" style="display:none;"><a href="customer/customer_appointment.html"
+                                                                                   target="some"><i
+                                class="glyphicon glyphicon-dashboard"></i>&nbsp;<span>客户预约</span></a></li>
+                        </ul>
+                    </li>
+                    <li id="agent_menu" style="display:none;" class="panel">
+                        <a href="#agentMenu" class="dropdown-toggle" data-toggle="collapse" data-parent="#accordion"><i
+                            class="glyphicon glyphicon-cloud"></i>&nbsp;<span class="menu-text">代理人管理</span><b class="caret"></b></a>
+                        <ul id="agentMenu" class="collapse submenu sednav">
+                            <li id="list_agent_li" style="display:none;"><a href="agent/agent_list.html" target="some"><i
+                                class="glyphicon glyphicon-list-alt"></i>&nbsp;<span>代理人列表</span></a></li>
+                            <li id="list_agent_tmp_li" style="display:none;"><a href="agent/agent_tmp_list.html" target="some"><i
+                                class="glyphicon glyphicon-list-alt"></i>&nbsp;<span>代理人列表</span></a></li>
+                        </ul>
+                    </li>
+                    <li id="internal_user_menu" style="display:none;" class="panel">
+                        <a href="#internalUserMenu" class="dropdown-toggle" data-toggle="collapse"
+                           data-parent="#accordion"><i class="glyphicon glyphicon-user"></i> &nbsp;<span class="menu-text">用户管理</span><b
+                            class="caret"></b></a>
+                        <ul id="internalUserMenu" class="collapse submenu sednav">
+                            <li id="add_internalUser_li" style="display:none;"><a href="user/user_add.html" target="some"><i
+                                class="glyphicon glyphicon-edit"></i>&nbsp;<span>新增用户</span></a></li>
+                            <li id="list_internalUser_li" style="display:none;"><a href="user/user_list.html" target="some"><i
+                                class="glyphicon glyphicon-list-alt"></i>&nbsp;<span>内部用户列表</span></a></li>
+                            <li id="outer_list_user_li" style="display:none;"><a href="user/outer_user_list.html" target="some"><i
+                                class="glyphicon glyphicon-list-alt"></i>&nbsp;<span>外部用户列表</span></a></li>
+                        </ul>
+                    </li>
+                    <li id="quote_menu" style="display:none;" class="panel">
+                        <a href="#quote" class="dropdown-toggle" data-toggle="collapse" data-parent="#accordion"><i
+                            class="glyphicon glyphicon-yen"></i> &nbsp;<span class="menu-text"> 车辆报价</span><b class="caret"></b></a>
+                        <ul id="quote" class="collapse submenu sednav">
+                            <li id="photo_quote_li" style="display:none;"><a href="quote/quote_photo.html" target="some"><i
+                                class="glyphicon glyphicon-camera"></i>&nbsp;<span>拍照信息</span></a></li>
+                            <li id="phone_quote_li" style="display:none;"><a href="quote/quote_phone.html" target="some"><i
+                                class="glyphicon glyphicon-earphone"></i>&nbsp;<span>电话信息</span></a></li>
+                        </ul>
+                    </li>
+                    <li id="purpose_menu" style="display:none;" class="panel">
+                        <a href="#purpose" class="dropdown-toggle" data-toggle="collapse" data-parent="#accordion"><i
+                            class="glyphicon glyphicon-phone-alt"></i> &nbsp;<span class="menu-text">电话管理</span><b class="caret"></b></a>
+                        <ul id="purpose" class="collapse submenu sednav">
+                            <li id="purpose_customer_li" style="display:none;"><a href="telMarketingCenter/purpose_customer_new.html"
+                                                                                  target="some"><i
+                                class="glyphicon glyphicon-list-alt"></i>&nbsp;<span>意向客户</span></a></li>
+                            <!--<li id="purpose_customer_li_old" style="">
+                                <a href="telMarketingCenter/purpose_customer.html" target="some">
+                                    <i class="glyphicon glyphicon-list-alt"></i>&nbsp;<span>意向客户(旧)</span>
+                                </a>
+                            </li>-->
+                            <li id="work_details_li" style="display:none;"><a href="telMarketingCenter/work_details.html"
+                                                                              target="some"><i
+                                class="glyphicon glyphicon-list-alt"></i>&nbsp;<span>工作查看</span></a></li>
+                            <li id="customer_redistribution_li" style="display:none;"><a
+                                href="telMarketingCenter/customer_redistribution.html" target="some"><i
+                                class="glyphicon glyphicon-user"></i>&nbsp;<span>修改指定跟进人</span><span id="numtest" class="badge badge-danger" style="margin-left:15px;"></span></a></li>
+                            <li id="new_customer_li" style="display:none;"><a href="telMarketingCenter/new_tel_customer.html" target="some">
+                                <i class="glyphicon glyphicon-plus"></i>&nbsp;<span>新建客户</span></a></li>
+                            <li id="tel_marketer_li" style="display:none;"><a href="telMarketingCenter/tel_marketer.html" target="some">
+                                <i class="glyphicon glyphicon-plus"></i>&nbsp;<span>电话客服管理</span></a></li>
+                        </ul>
+                    </li>
+                    <li id="wallet_menu" style="display:none;" class="panel">
+                        <a href="#wallet" class="dropdown-toggle" data-toggle="collapse" data-parent="#accordion"><i
+                            class="glyphicon glyphicon-credit-card"></i> &nbsp;<span class="menu-text">钱包管理</span><b class="caret"></b></a>
+                        <ul id="wallet" class="collapse submenu sednav">
+                            <li id="wallet_li" style="display:none;"><a href="wallet/wallet_list.html"
+                                                                        target="some"><i
+                                class="glyphicon glyphicon-list-alt"></i>&nbsp;<span>钱包列表</span></a></li>
+                        </ul>
+                    </li>
+                    <li id="freight_insurance_menu" style="display: none;" class="panel">
+                        <a href="#wallet" class="dropdown-toggle" data-toggle="collapse" data-parent="#accordion">
+	                        <i class="glyphicon glyphicon-leaf"></i> &nbsp;
+	                        <span class="menu-text">运费险查询</span><b class="caret"></b>
+                        </a>
+                        <ul id="freight_insurance_purchase_order_ul" class="collapse submenu sednav">
+                            <li id="freight_insurance_purchase_order_li" style="display: none;">
+	                            <a href="freightInsurance/freight_order_list.html" target="some">
+		                            <i class="glyphicon glyphicon-list-alt"></i>&nbsp;<span>退货运费险订单查询</span>
+	                            </a>
+                            </li>
+                        </ul>
+                        <ul id="freight_insurance_claim_ul" class="collapse submenu sednav">
+                            <li id="freight_insurance_claim_li" style="display: none;">
+	                            <a href="freightInsurance/freight_claim_list.html" target="some">
+		                            <i class="glyphicon glyphicon-list-alt"></i>&nbsp;<span>退货运费险理赔查询</span>
+	                            </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="sidebar-collapse" id="sidebar-collapse">
+                    <i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
+                </div>
+                <script type="text/javascript">
+                    try{ace.settings.check('sidebar' , 'collapsed');}catch(e){}
+                </script>
+            </div>
+        </div>
+    </div>
+    <div class="span10 right_div" id="right_div main-content" style="display: none;">
+        <!--<div class="position-div">-->
+            <!--<div class="breadcrumbs" >-->
+                        <!--<ul class="breadcrumb">-->
+                        <!--<li id="firText">订单管理</li>-->
+                        <!--<li id="secText">线上订单</li>-->
+                        <!--<li id="thirdText"></li>-->
+                        <!--</ul>-->
+            <!--</div>-->
+        <!--</div>-->
+        <div class="position-div breadcrumbs none" id="breadcrumbs">
+            <script type="text/javascript">
+                try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+            </script>
+        <ul class="breadcrumb">
+            <li>
+                <i class="icon-home home-icon"></i>
+            </li>
+            <li id="firText">订单管理</li>
+            <li id="secText">线上订单</li>
+            <li id="thirdText"></li>
+        </ul><!-- .breadcrumb -->
+        </div>
+        <iframe id="someId" name="some" style="margin: 0px auto;"></iframe>
+    </div>
+</div>
+<!-- 带时间弹出层 -->
+<div id="theme_popover_date" class="theme_popover" style="display: none; width: 550px;">
+    <div class="theme_poptit">
+        <h3>温馨提示</h3>
+    </div>
+    <div id="chooseDate">
+        <div style="padding-top: 70px; padding-bottom: 50px; text-align: center; font-size: 16px;">
+            <label class="tipsContent"></label>
+            <input type="text" class="Wdate" id="reConfirmDate"
+                   onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true});" style="width: 34%;height: 29px;"
+                   readonly>
+        </div>
+        <div style="text-align: center; padding-top: 50px;">
+            <div class="btn-group" style="width: 220px;margin-left: 100px;">
+                <button style="font-size: 16px;" type="button" class="btn btn-primary confirm">确定</button>
+            </div>
+            <div class="btn-group" style="width: 150px;">
+                <button style="font-size: 16px;" type="button" class="btn btn-default cancel">取消</button>
+            </div>
+        </div>
+    </div>
+    <div id="showDate" style="display: none;">
+        <div style="padding-top: 70px; padding-bottom: 50px; text-align: center; font-size: 16px;">
+            <label>再次确认时间为：</label>
+            <span id="dateText"></span>
+        </div>
+        <div style="text-align: center; padding-top: 50px;">
+            <div class="btn-group" style="width: 220px;margin-left: 100px;">
+                <button style="font-size: 16px;" type="button" class="btn btn-primary confirm">确定</button>
+            </div>
+            <div class="btn-group" style="width: 150px;">
+                <button style="font-size: 16px;" type="button" class="btn btn-default back">返回修改</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 公用的弹层确认 -->
+<div id="theme_popover_publicConfirm" class="theme_popover" style="display: none; width: 400px; height: 250px;">
+    <div class="theme_poptit">
+        <h3>温馨提示</h3>
+    </div>
+    <div style="padding-top: 40px; padding-bottom: 30px; text-align: center; font-size: 16px;">
+        <label class="tipsContent"></label>
+    </div>
+    <div style="text-align: center;">
+        <div class="btn-group" style="width: 80px;margin-left: 50px;">
+            <button style="font-size: 16px;" type="button" class="btn btn-danger confirm">确定</button>
+        </div>
+        <div class="btn-group" style="width: 100px;">
+            <button style="font-size: 16px;" type="button" class="btn btn-danger cancel">取消</button>
+        </div>
+    </div>
+</div>
+
+<!-- 返回上一步 -->
+<div id="theme_popover_return" class="theme_popover" style="display: none;width: 550px;">
+    <div class="theme_poptit">
+        <h3>温馨提示</h3>
+    </div>
+    <div style="padding-top: 40px; padding-bottom: 30px; text-align: center; font-size: 16px;">
+        <label class="tipsContent"></label>
+        <label>
+            <select id="reasonSel" class="form-control" style="width: 100%;">
+                <option value="之前误操作">之前误操作</option>
+                <option value="用户反悔">用户反悔</option>
+                <option value="other">其他原因</option>
+            </select>
+        </label>
+    </div>
+    <div style="display: none; text-align: center;" id="reasonDiv">
+        <textarea rows="2" cols="40" id="reason" placeholder="请输入原因"></textarea>
+    </div>
+    <div style="text-align: center; padding-top: 50px; position: absolute;">
+        <div class="btn-group" style="width: 220px;margin-left: 123px;">
+            <button style="font-size: 16px;" type="button" class="btn btn-primary confirm">确定</button>
+        </div>
+        <div class="btn-group" style="width: 150px;">
+            <button style="font-size: 16px;" type="button" class="btn btn-default cancel">取消</button>
+        </div>
+    </div>
+</div>
+
+<!-- 公用的弹层提示 注意多个弹出层时不能用 遮罩层重复 -->
+<div id="theme_popover_tips" class="theme_popover" style="display: none; width: 400px; height: 250px;">
+    <div class="theme_poptit">
+        <h3>温馨提示</h3>
+    </div>
+    <div style="padding-top: 40px; padding-bottom: 30px; text-align: center; font-size: 16px;">
+        <label class="tipsContent">确定？</label>
+    </div>
+    <div style="text-align: center;">
+        <div class="btn-group">
+            <button style="font-size: 16px;" type="button" class="btn btn-danger confirm">确定</button>
+        </div>
+    </div>
+</div>
+
+<!-- 带输入域弹出层 -->
+<div id="theme_popover_input" class="theme_popover" style="display: none; width: 550px;">
+    <div class="theme_poptit">
+        <h3>温馨提示</h3>
+    </div>
+    <div id="showInput">
+        <div style="padding-top: 70px; padding-bottom: 50px; text-align: center; font-size: 16px;">
+            <label class="tipsContent"></label>
+            <input type="text" id="textInput" name="textInput">
+        </div>
+        <div style="text-align: center; padding-top: 50px;">
+            <div class="btn-group" style="width: 220px;margin-left: 100px;">
+                <button style="font-size: 16px;" type="button" class="btn btn-primary confirm">确定</button>
+            </div>
+            <div class="btn-group" style="width: 150px;">
+                <button style="font-size: 16px;" type="button" class="btn btn-default cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 公用的等待弹层 -->
+<div id="theme_popover_wait" class="theme_popover" style="display: none; width: 400px; height: 250px;">
+    <div class="theme_poptit">
+        <h3>温馨提示</h3>
+    </div>
+    <div style="padding-top: 40px; padding-bottom: 30px; text-align: center; font-size: 16px;">
+        <label class="tipsContent">确定？</label>&nbsp;<img src="../images/loading.GIF">
+    </div>
+</div>
+
+<!-- 自定义弹出框 内容、长度、宽度自定义 -->
+<div id="theme_popover_userDefined" class="theme_popover" style="display: none;">
+</div>
+
+<!-- 二级弹层提示框 -->
+<div id="theme_popover_second" class="theme_popover_second" style="display: none;width: 400px; height: 250px;">
+    <div class="theme_poptit">
+        <h3>温馨提示</h3>
+    </div>
+    <div style="padding-top: 40px; padding-bottom: 30px; text-align: center; font-size: 16px;">
+        <label class="tipsContent">确定？</label>
+    </div>
+    <div style="text-align: center;">
+        <div class="btn-group">
+            <button style="font-size: 16px;" type="button" class="btn btn-primary confirm">确定</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- 分割线   定义出单中心规范弹出层，以后按此规范，之前的不再使用  在popup.js中定义 -->
+<div id="popupHtml"></div>
+
+<input type="hidden" id="internalUserId" name="internalUserId" value="">
+</body>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="../css/popup.css">
+<link rel="stylesheet" href="../uploadify/css/uploadify.css">
+<script type="text/javascript" src="../js/common/popup.js"></script>
+<script type="text/javascript" src="../My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="../uploadify/js/jquery.uploadify-3.2.1.js"></script>
+<script type="text/javascript" src="../plugins/jquery-validation-1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="../js/common/cookie.js"></script>
+</html>
+<style>
+    .container-fluid {
+        padding: 0;
+    }
+
+    #left_navbar {
+        top: 50px;
+        left: 0;
+        /*transition: 0.5s;*/
+    }
+    #right_div {
+        left: 190px;
+        /*transition: 0.5s;*/
+    }
+</style>
+<script>
+    $('#someId').width($('#right_div').width())
+    var flag = true;
+    $(window).resize(function () {
+        $('#someId').width($('#right_div').width())
+        console.log($('#right_div').width())
+    })
+    $('#menu').click(function () {
+        if (flag) {
+            $('#left_navbar').css({left: -200})
+            $('#right_div').css({'padding-left': 0})
+            $('#someId').width($('#right_div').width())
+        } else {
+            $('#right_div').css({'padding-left': 190})
+            $('#someId').width($('#right_div').width())
+            $('#left_navbar').css({left: 0})
+        }
+        flag = !flag
+    })
+</script>

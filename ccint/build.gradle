@@ -1,0 +1,27 @@
+/**
+ +----------------+
+ | Build Settings |
+ +----------------+
+ */
+configurations {
+    springBoot {
+        extendsFrom runtime
+    }
+}
+
+dependencies {
+
+    // Other Projects
+    compile     project(':core')
+
+    //cheche365
+    compile "com.cheche365.flow-business:cheche365-flow-business:$cheche365_flow_business_version"
+    testCompile "com.cheche365.test:cheche365-test-core:$cheche365_test_version"
+
+    compile 'org.apache.httpcomponents:httpmime:4.5.3'
+
+    testCompile "org.springframework.boot:spring-boot-starter-test:$spring_boot_starter_version"
+    testRuntime("org.spockframework:spock-spring:$spockframework_version") {
+        exclude group: 'org.codehaus.groovy', module: 'groovy-all'
+    }
+}

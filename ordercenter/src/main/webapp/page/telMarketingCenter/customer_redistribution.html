@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>重新分配客户</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap-multiselect.css">
+    <style type="text/css">
+        .selected {
+            background-color: #4d7fb8;
+            cursor: default;
+        }
+
+        .selected span {
+            color: #FFF;
+            font-weight: bold;
+        }
+
+        .btn-group a {
+            width: 200px;
+            height: 36px;
+        }
+
+        form {
+            padding-left: 39px;
+        }
+
+        .form-control {
+            height: 35px;
+            font-size: 16px;
+            width: 250px;
+        }
+
+        .text-font {
+            font-size: 16px;
+        }
+
+        .container .paddingtop {
+            padding-top: 140px;
+        }
+
+        .checkbox-width {
+            width: 10px;
+        }
+
+        .div-left {
+            float: left;
+            margin-left: 30px;
+            margin-top: 10px;
+        }
+    </style>
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/dataTables.bootstrap.min.css"
+          rel="stylesheet">
+    <link type="text/css" href="../../css/style.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/select2/select2.min.css" rel="stylesheet">
+    <script type="text/javascript" src="../../js/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap-multiselect.js"></script>
+    <script type="text/javascript" src="../../My97DatePicker/WdatePicker.js"></script>
+    <script type="text/javascript" src="../../plugins/select2/select2.min.js"></script>
+</head>
+<body>
+<div class="container" style="padding-top: 50px;">
+    <div class="row tabs">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-8">
+            <div class="btn-group" role="group">
+                <a type="button" href="#mobile" class="btn selected"><span class="text-font">按手机号重新分配</span></a>
+                <a type="button" href="#nominator" class="btn btn-default"><span class="text-font">按跟进人重新分配</span></a>
+                <a type="button" href="#div_user_assign" class="btn btn-default" id="a_user_assign"
+                   style="display: none">
+                    <span class="text-font">无跟进人的数据分配</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="mobile" style="padding-top: 177px;">
+        <div id="mobile_one_first" class="row first">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-9">
+                <form class="form-inline" role="form" id="form_one">
+                    <div class="form-group">
+                        <input id="phoneNo" type="text" class="form-control" placeholder="请输入手机号">
+                    </div>
+                    <button id="mobile_one_next" type="button" class="btn btn-warning">下一步</button>
+                </form>
+            </div>
+        </div>
+        <div id="mobile_one_form" class="second none">
+            <form class="form-horizontal" role="form" id="form_two">
+                <div class="form-group">
+                    <span class="col-sm-3" style="margin-right: -65px;"></span>
+                    <span class="col-sm-2 text-font" style="text-align: right;">手机号：</span>
+                    <span class="text-font phoneNoText"></span>
+                    <a style="padding-left: 10px;" class="text-font modify" href="javascript:;">修改</a>
+                </div>
+                <div class="form-group">
+                    <span class="col-sm-3" style="margin-right: -65px;"></span>
+                    <span class="col-sm-2 text-font" style="text-align: right;">当前跟进人：</span>
+                    <span class="text-font operatorText"></span>
+                </div>
+                <div class="form-group">
+                    <span class="col-sm-3" style="margin-right: -65px;"></span>
+                    <span class="col-sm-2 text-font"
+                          style="text-align: right;height: 35px;line-height: 35px;">新跟进人：</span>
+                    <select class="form-control operatorList">
+                        <option value="">请选择</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <span class="col-sm-5" style="margin-right: -65px;"></span>
+
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-warning submit" style="width: 100px;">确定</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="nominator" style="display: none;">
+        <div id="nominator_more_first" class="row first paddingtop">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-9">
+                <form class="form-inline" role="form" id="form_three">
+                    <p class="help-block text-font">请选择当前跟进人</p>
+
+                    <div class="form-group">
+                        <select class="form-control oldOperatorList" style="width: 221px;">
+                            <option value="">请选择</option>
+                        </select>
+                    </div>
+                    <button id="nominator_more_next" type="button" class="btn btn-warning">下一步</button>
+                </form>
+            </div>
+        </div>
+        <div id="nominator_more_form" class="second none">
+            <form class="form-horizontal" role="form" id="form_four">
+                <div class="form-group">
+                    <span class="left" style="margin-right: -65px;"></span>
+                    <span class="left text-font" style="text-align: right;">处理结果：</span>
+
+                    <select id="statusSel" name="status" class="form-control text_input" style="width: 195px;display:inline-block">
+                        <option value="">all</option>
+                    </select>
+
+                </div>
+                <div class="form-group">
+                    <span class="left" style="margin-right: -65px;"></span>
+                    <span class="left text-font" style="text-align: right;">当前跟进人：</span>
+                    <span class="text-font operatorText"></span>
+                    <input type="hidden" id="oldOperatorId" name="oldOperatorId">
+                    <a style="padding-left: 10px;" class="text-font modify" href="javascript:;">修改</a>
+                </div>
+                <div class="form-group">
+                    <span class="left" style="margin-right: -65px;"></span>
+                    <span class="left text-font" style="text-align: right;">待分配数量：</span>
+                    <span class="text-font countText"></span>
+                </div>
+                <div class="form-group">
+                    <span class="left" style="margin-right: -65px;"></span>
+                    <span class="left text-font">分配方式：</span>
+
+                    <div class="radio">
+                        <label>
+                            <input class="inputradio" type="radio" name="distributionMethod" id="optionsRadios0"
+                                   value="0">选择指定数据分配
+                        </label>
+
+                        <div id="dataTable" style="margin-left: 20px">
+                            <span>&nbsp;</span>
+                            <table class="table table-bordered table-hover" id="redistribttion_data_table">
+                            </table>
+                            <div class="customer-pagination">
+                                <ul class="pagination"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input class="inputradio" type="radio" name="distributionMethod" id="optionsRadios1"
+                                   value="1">全部分配给新跟进人
+                        </label>
+                    </div>
+                    <!--<div class="radio">-->
+                    <!--<label>-->
+                    <!--<input type="radio" name="distributionMethod" id="optionsRadios2" value="2">全部随机分配(包含之前跟进人)-->
+                    <!--</label>-->
+                    <!--</div>-->
+                    <div class="radio">
+                        <label>
+                            <input class="inputradio" type="radio" name="distributionMethod" id="optionsRadios3"
+                                   value="3">全部随机分配(不包含之前跟进人)
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group newOperatorRow">
+                    <span class="col-sm-3" style="margin-right: -65px;"></span>
+                    <span class="col-sm-2 text-font"
+                          style="text-align: right;height: 35px;line-height: 35px;">新跟进人：</span>
+                    <select class="form-control operatorList">
+                        <option value="">请选择</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <span class="col-sm-5" style="margin-right: -65px;"></span>
+
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-warning submit" style="width: 100px;">确定</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="div_user_assign" style="display: none">
+        <div id="userInfoDiv">
+            <div class="">
+                <h3>当前跟进人：<span id="currentUserName"></span>
+                    <button style="font-size: 15px;width: 180px;height: 30px;margin-left: 20px"
+                            onclick="redistribution.operation.toDetailHistory();">查看数据分配历史
+                    </button>
+                </h3>
+            </div>
+            <div class="">
+                <h3>全部数据：<span id="assignNum"></span></h3>
+            </div>
+        </div>
+        <div style="border-bottom: 2px solid #ccc;"></div><!--虚线-->
+        <div id="paramSearchDiv" style="margin-top: 50px">
+            <div class="row">
+                <div class="filter div-left">
+                    <select id="channelSel" name="channelIds" class="form-control text-input-150" multiple="multiple">
+                        <option value="0">站内</option>
+                    </select>
+                </div>
+                <div class="filter div-left" style="float: left;">
+                    <select id="searchType" class="form-control" style="width: 180px;font-size: 14px">
+                        <option value="1">按数据详细类型筛选</option>
+                        <option value="2">按数据高低级别筛选</option>
+                    </select>
+                </div>
+                <div class="filter div-left" style="float: left;">
+                    <select id="renewalDate" class="form-control" style="width: 180px;font-size: 14px">
+                        <option value="0">请选择年份</option>
+                    </select>
+                </div>
+                <div class="filter div-left" id="type-sel" style="display: inline">
+                    <select id="typeSel" name="typeIds" class="form-control text-input-150" multiple="multiple">
+                    </select>
+                </div>
+                <div class="filter div-left" id="level-sel" style="display: none">
+                    <select id="levelSel" name="typeIds" class="form-control text-input-150" style="font-size: 14px">
+                        <option value="">-请选择-</option>
+                        <option value="A">A类数据</option>
+                        <option value="B">B类数据</option>
+                        <option value="C">C类数据</option>
+                        <option value="D">D类数据</option>
+                    </select>
+                </div>
+                <div class="filter div-left">
+                    <select id="areaSel" class="form-control text-input-150 none" multiple="multiple">
+                    </select>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 30px">
+                <div class="div-left">
+                    按数据来源创建时间 :
+                    <input type="text" id="createStartDate" name="orderStartDate" class="Wdate"
+                           onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true});"
+                           style="width: 180px;height: 32px;">
+                    <span style="margin: 0 10px;">至</span>
+                    <input type="text" id="createEndDate" name="orderEndDate" class="Wdate"
+                           onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true});"
+                           style="width: 180px;height: 32px;">
+                </div>
+            </div>
+            <div class="row" style="margin-top: 30px;text-align: center">
+                <button class="btn btn-warning" style="width: 100px;" onclick="redistribution.operation.paramSearch();">
+                    筛选
+                </button>
+            </div>
+        </div>
+        <div id="load_div" style="text-align: center;margin-top: 30px;font-size: 24px;display: none;">
+            <img src='../../images/xuanzhuan.gif' style='height: 24px; width: 24px;'>
+            加载中, 请稍等...
+        </div>
+        <div id="resultDiv" style="display: none;">
+            <div style="margin-top:30px;border-bottom: 2px solid #ccc;"></div><!--虚线-->
+            <div>
+                <h3>
+                    即将被分配的数据：<span id="resultNum"></span>条<span style="font-size: 14px;color: red;margin-left: 30px">(注:超过500条只显示500条)</span>
+                </h3>
+            </div>
+            <div class="row averageAssign" style="font-size: 18px">
+                <div class="div-left">
+                    <input name="assign" id="assignType1" type="checkbox" value="1" class="assign-form-checkbox"
+                           onclick="redistribution.operation.chooseThis(2);">
+                    <span>平均分配给</span>
+                </div>
+                <div class="div-left">
+                    <select id="users"
+                            class="form-control text-input-150 userAssigners assign-form-value assign-form-select"
+                            multiple="multiple">
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="div-left">
+                    <input name="assign" id="assignType2" type="checkbox" value="2" class="assign-form-checkbox"
+                           onclick="redistribution.operation.chooseThis(1);">
+                    <span style="font-size: 18px">填写具体数值分配指定人</span>
+                </div>
+            </div>
+            <div id="assignDiv">
+                <div class="row assign_div" style="width: 55%; float: left;">
+                    <div class="div-left" style="font-size: 14px">
+                        <div class="div-left">
+                            <input class="assign_num_input assign-form-value" style="width: 200px;height: 35px"
+                                   type="text" placeholder="请输入分配的数值">
+                            <span>&nbsp;分配给</span>
+                        </div>
+                        <div class="div-left">
+                            <select class="form-control text-input-150 assigner_input assign-form-value">
+                                <option value="">请选择</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row assign_div" style="width: 55%;float: left">
+                    <div class="div-left" style="font-size: 14px">
+                        <div class="div-left">
+                            <input class="assign_num_input assign-form-value" style="width: 200px;height: 35px"
+                                   type="text" placeholder="请输入分配的数值">
+                            <span>&nbsp;分配给</span>
+                        </div>
+                        <div class="div-left">
+                            <select class="form-control text-input-150 assigner_input assign-form-value">
+                                <option value="">请选择</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="div-left" style="margin-top: 20px; margin-left: -50px">
+                <a onclick="redistribution.operation.addAssignDiv();">
+                    <img src="../../images/add.jpg" style="height: 35px;width: 35px;">
+                </a>
+            </div>
+            <div style="clear: both;margin-top: 30px">
+                <div class="row" style="text-align: center">
+                    <button id="submitBtn" class="btn btn-warning" style="width: 100px;margin-top: 60px"
+                            onclick="redistribution.operation.assign();">
+                        确定分配
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+<script type="text/javascript" src="../../js/common/common.js"></script>
+<script type="text/javascript" src="../../js/jquery/jquery.cookie.js"></script>
+<script type="text/javascript" src="../../js/common/cookie.js"></script>
+<script type="text/javascript" src="../../js/common/popup.js"></script>
+<script type="text/javascript" src="../../plugins/DataTables-1.10.12/media/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../../js/common/datatable_util.js"></script>
+<script type="text/javascript" src="../../plugins/jqPaginator-1.2.0/jqPaginator.min.js"></script>
+<script type="text/javascript" src="../../js/telMarketingCenter/customer_redistribution.js"></script>
+</html>

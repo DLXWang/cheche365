@@ -1,0 +1,35 @@
+package com.cheche365.cheche.aibao
+//this is
+
+
+testData = [
+    [
+        313440,
+        '',
+        '沪AZQQFN',
+        'VNNE5P7DWKYRT3C00',
+        'ENGF6XAA20MAN9Z7Y',
+        '卿小杰',
+        '412723198108057322',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'DC7126TSAB',
+                        supplementInfo : [
+                            autoModel : '4028b2b64c0d9715014c302e471c23e7',
+                            commercialStartDate : '2018-07-20',
+                            compulsoryStartDate : '2018-07-20',
+                            verificationMobile : '18652095075'
+                        ]
+                    ],
+                    enrollDate:'2017-12-23'
+                ]
+            ]
+        ],
+    ],
+
+
+]

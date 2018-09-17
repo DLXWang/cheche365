@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:redis="http://www.springframework.org/schema/redis"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/redis
+        http://www.springframework.org/schema/redis/spring-redis.xsd">
+
+    <redis:listener-container connection-factory="jedisConnectionFactory" task-executor="redisPubSubTaskScheduler">
+        <redis:listener ref="botpyAsyncMessageHandlerDelegate" topic="botpy-out" />
+    </redis:listener-container>
+
+</beans>

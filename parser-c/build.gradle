@@ -1,0 +1,25 @@
+/**
+ +----------------+
+ | Build Settings |
+ +----------------+
+ */
+configurations {
+    springBoot {
+        extendsFrom runtime
+    }
+}
+
+dependencies {
+
+    // Other Projects
+    compile project(':parser-shared')
+
+    // Other Components
+    compile "com.cheche365.parser:cheche365-parser-core:$cheche365_parser_version"
+
+    // Spring Boot
+    compile "org.springframework.boot:spring-boot-starter-web:$spring_boot_starter_version",
+            "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:$spring_cloud_version",
+            "org.springframework.cloud:spring-cloud-starter-openfeign:$spring_cloud_version"
+
+}

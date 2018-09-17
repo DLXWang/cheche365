@@ -1,0 +1,1 @@
+INSERT INTO `message_variable` (`code`, `name`, `type`, `placeholder`, `length`, `parameter`, `model_class`, `model_method`) VALUES ('${MOrderDetail}', '订单详情链接', 'varchar', '请输入订单详情链接', '100', 'mod', NULL, NULL);

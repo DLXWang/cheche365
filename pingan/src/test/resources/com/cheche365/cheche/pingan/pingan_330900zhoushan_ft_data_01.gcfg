@@ -1,0 +1,13 @@
+package com.cheche365.cheche.pingan
+//this is 舟山
+
+testDataParams = [
+
+    // {value=4028808829641cb50129912b43ef20e4, text=奔驰BENZ ML350 BLUETEC越野车 2007款 柴油版 双离合变速器 5座 810000元}
+    10000 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028808829641cb50129912b43ef20e4']]]]]],
+
+    //
+    10010 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028808824b25e060124b2bd970300a1']]]]]],
+
+
+]

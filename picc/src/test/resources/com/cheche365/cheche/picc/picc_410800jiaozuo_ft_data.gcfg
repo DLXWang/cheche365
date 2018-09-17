@@ -1,0 +1,11 @@
+package com.cheche365.cheche.picc
+
+/**
+ * 河南焦作
+ */
+
+testDataParams = [
+
+    0 : [additionalParams : [quoteRecord : [auto : [autoType : [supplementInfo : [autoModel : '']]]]]]
+
+]

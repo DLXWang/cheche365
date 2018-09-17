@@ -1,0 +1,17 @@
+<table>
+	<tr>
+		<td> 线下数据导入结果: $data.result</td>
+	</tr>
+	<tr>
+		<td> 上传文件名称: $data.fileName</td>
+	</tr>
+	<tr>
+		<td> 导入成功的数据文件路径: <a href="$data.successInfo"> $data.successInfo</a></td>
+	</tr>
+	<tr>
+		<td> 导入失败的数据文件路径: <a href="$data.failedInfo"> $data.failedInfo</a></td>
+	</tr>
+	<tr>
+		<td>$data.errorMessage</td>
+	</tr>
+</table>

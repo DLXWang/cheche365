@@ -1,0 +1,250 @@
+package com.cheche365.cheche.huanong
+//this is 四川
+
+testData = [
+    [
+        510110,
+        '',
+        '川JDDM44',
+        '5345345SDFDSFSF43',
+        'SDFSD435345',
+        '孟建刚',
+        '511121197211201858',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'斯柯达SVW71613RS轿车',
+                        supplementInfo : [
+                            autoModel: 'SKAAID0040',
+                            //verificationMobile:'13581538623',
+                            commercialStartDate : '2018-08-30',
+                            compulsoryStartDate : '2018-08-30',
+                        ]
+                    ],
+                    enrollDate:'2012-06-29'
+                ]
+            ]
+        ]
+    ],
+    [
+        51011011,
+        '',
+        '川A0XV80',
+        'LSVAR4NG8GN031109',
+        '790214',
+        '孟建刚',
+        '511121197211201858',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        //code:'斯柯达SVW71613RS轿车',
+                        code:'大众',
+                        supplementInfo : [
+                            //autoModel: 'RAD1044SHD',
+                            //verificationMobile:'13581538623',
+                            autoModel: 'DZAAKD0133',
+                            commercialStartDate : '2018-07-22',
+                            compulsoryStartDate : '2018-07-22',
+                        ]
+                    ],
+                    enrollDate:'2012-06-29'
+                ]
+            ]
+        ]
+    ],
+    [
+        510101,
+        '',
+        '粤A3539H',
+        'LJ16AK231C4405593',
+        'DLC067769',
+        '李建昌',
+        '452421197704130614',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'江淮HFC6460M轻型客车',
+                        supplementInfo : [
+                            autoModel: 'JHAFQD0001',
+                            verificationMobile:'13581538623',
+                            commercialStartDate : '2018-07-31',
+                            compulsoryStartDate : '2018-07-31',
+                        ]
+                    ],
+                    enrollDate:'2012-03-28'
+                ]
+            ]
+        ]
+    ],
+
+    [
+        510102,
+        '',
+        '川A882XM',
+        'LS5A2ABE0CA520093',
+        'CCCJ011234',
+        '李浪',
+        '110105197702254115',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'长安SC7151DY轿车',
+                        supplementInfo : [
+                            autoModel: 'YXD1053CQC',
+                            //verificationMobile:'13581538623',
+                            commercialStartDate : '2018-05-24',
+                            compulsoryStartDate : '2018-05-24',
+                        ]
+                    ],
+                    enrollDate:'2012-06-29'
+                ]
+            ]
+        ]
+    ],
+
+    [
+        510103,
+        '',
+        '皖AXP613',
+        'LSVCN6A46DN079148',
+        '448743',
+        '杜少新',
+        '210522197902100518',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'大众汽车SVW71410JR轿',
+                        supplementInfo : [
+                            autoModel: 'PSD1095SHD',
+                            commercialStartDate : '2018-05-24',
+                            compulsoryStartDate : '2018-05-24',
+                        ]
+                    ],
+                    enrollDate:'2013-06-03'
+                ]
+            ]
+        ],
+    ],
+
+//    [
+//        510110,
+//        '',
+//        '川AU9725',
+//        '',
+//        'A5EZ089230',
+//        '顾小琼',
+//        '510623197012067528',
+//        null,
+//        null,
+//        [
+//            quoteRecord:[
+//                auto   :  [
+//                    autoType:[
+//                        code:'长安SC6399B3S客车',
+//                        supplementInfo : [
+//                            autoModel: '',
+//                            commercialStartDate : '2018-06-22',
+//                            compulsoryStartDate : '2018-06-22',
+//                        ]
+//                    ],
+//                    enrollDate:'2010-04-18'
+//                ]
+//            ]
+//        ]
+//    ],
+    [
+        510111,
+        '',
+        '川AZV929',
+        'LSGGA54E9AH056816',
+        '091955026',
+        '廖绍伟',
+        '510121197710080615',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'别克SGM7162TMTB轿车',
+                        supplementInfo : [
+                            autoModel: '',
+                            commercialStartDate : '2018-06-22',
+                            compulsoryStartDate : '2018-06-22',
+                        ]
+                    ],
+                    enrollDate:'2009-12-30'
+                ]
+            ]
+        ]
+    ],
+    [
+        6,
+        '',
+        '川AY4S98',
+        'LVVDB11B2BD213387',
+        'WABC64726',
+        '马爱民',
+        '512924197509088492',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'奇瑞SQR7150J150',
+                        supplementInfo : [
+                            autoModel: 'QRAADD0029',
+                            verificationMobile:'13581538623',
+                            commercialStartDate : '2018-05-24',
+                            compulsoryStartDate : '2018-05-24',
+                        ]
+                    ],
+                    enrollDate:'2015-04-26'
+                ]
+            ]
+        ]
+    ],
+    [
+        7,
+        '',
+        '川A6W57A',
+        'VF1VYRTY0BC357845',
+        '2TRA703P068315',
+        '李康菱',
+        '511521198608270030',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'科雷傲KOLEOS',
+                        supplementInfo : [
+                            autoModel: 'LNAAMI0009',
+                            verificationMobile:'13581538623',
+                            commercialStartDate : '2018-06-02',
+                            compulsoryStartDate : '2018-06-02',
+                        ]
+                    ],
+                    enrollDate:'2011-04-11'
+                ]
+            ]
+        ]
+    ],
+]

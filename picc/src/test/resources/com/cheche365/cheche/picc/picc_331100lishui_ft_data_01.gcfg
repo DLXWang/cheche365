@@ -1,0 +1,9 @@
+package com.cheche365.cheche.picc
+//this is 丽水
+
+testDataParams = [
+
+    // {value=901659a3c057ffc800000000fc751b2d, text=思迪/锋范2009款 精英版 5座 103800元}
+    10010 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '901659a3c057ffc800000000fc751b2d']]]]]],
+
+]

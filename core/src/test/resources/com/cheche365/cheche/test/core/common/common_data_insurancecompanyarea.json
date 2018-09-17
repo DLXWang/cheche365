@@ -1,0 +1,860 @@
+[
+    {
+        "id": 8889621,
+        "insuranceCompany": {
+            "id": 65000,
+            "name": "安心保险",
+            "code": "ANSWERN",
+            "logo": "answern.png",
+            "logoUrl": "http://localhost:7310null/insurancecompany/logo/answern.png",
+            "slogan": "理赔从此简单",
+            "websiteUrl": "https://www.answern.com/",
+            "mobile": "4008-845-678",
+            "rank": 10,
+            "wapUrl": null,
+            "recommend": true,
+            "recommendReason": "按天买车险",
+            "nonAutoInsurance": true,
+            "inforArrayList": [
+                "让大众真正享受保险带来的美好人生，让每一个消费者买保险就是买安心"
+            ],
+            "renewSupport": false
+        },
+        "area": {
+            "id": 110000,
+            "name": "北京市",
+            "type": {
+                "id": 2,
+                "name": "直辖市",
+                "description": "直辖市"
+            },
+            "shortCode": "京",
+            "active": true,
+            "postalCode": "100000",
+            "children": null,
+            "reform": false
+        },
+        "weight": 1,
+        "quoteSource": null,
+        "innerPay": false
+    },
+    {
+        "id": 8889634,
+        "insuranceCompany": {
+            "id": 65000,
+            "name": "安心保险",
+            "code": "ANSWERN",
+            "logo": "answern.png",
+            "logoUrl": "http://localhost:7310null/insurancecompany/logo/answern.png",
+            "slogan": "理赔从此简单",
+            "websiteUrl": "https://www.answern.com/",
+            "mobile": "4008-845-678",
+            "rank": 10,
+            "wapUrl": null,
+            "recommend": true,
+            "recommendReason": "按天买车险",
+            "nonAutoInsurance": true,
+            "inforArrayList": [
+                "让大众真正享受保险带来的美好人生，让每一个消费者买保险就是买安心"
+            ],
+            "renewSupport": false
+        },
+        "area": {
+            "id": 441400,
+            "name": "梅州市",
+            "type": {
+                "id": 3,
+                "name": "市",
+                "description": "市"
+            },
+            "shortCode": "粤M",
+            "active": true,
+            "postalCode": null,
+            "children": null,
+            "reform": false
+        },
+        "weight": 1,
+        "quoteSource": null,
+        "innerPay": false
+    },
+    {
+        "id": 8889635,
+        "insuranceCompany": {
+            "id": 65000,
+            "name": "安心保险",
+            "code": "ANSWERN",
+            "logo": "answern.png",
+            "logoUrl": "http://localhost:7310null/insurancecompany/logo/answern.png",
+            "slogan": "理赔从此简单",
+            "websiteUrl": "https://www.answern.com/",
+            "mobile": "4008-845-678",
+            "rank": 10,
+            "wapUrl": null,
+            "recommend": true,
+            "recommendReason": "按天买车险",
+            "nonAutoInsurance": true,
+            "inforArrayList": [
+                "让大众真正享受保险带来的美好人生，让每一个消费者买保险就是买安心"
+            ],
+            "renewSupport": false
+        },
+        "area": {
+            "id": 441500,
+            "name": "汕尾市",
+            "type": {
+                "id": 3,
+                "name": "市",
+                "description": "市"
+            },
+            "shortCode": "粤N",
+            "active": true,
+            "postalCode": null,
+            "children": null,
+            "reform": false
+        },
+        "weight": 1,
+        "quoteSource": null,
+        "innerPay": false
+    },
+    {
+        "id": 8889636,
+        "insuranceCompany": {
+            "id": 65000,
+            "name": "安心保险",
+            "code": "ANSWERN",
+            "logo": "answern.png",
+            "logoUrl": "http://localhost:7310null/insurancecompany/logo/answern.png",
+            "slogan": "理赔从此简单",
+            "websiteUrl": "https://www.answern.com/",
+            "mobile": "4008-845-678",
+            "rank": 10,
+            "wapUrl": null,
+            "recommend": true,
+            "recommendReason": "按天买车险",
+            "nonAutoInsurance": true,
+            "inforArrayList": [
+                "让大众真正享受保险带来的美好人生，让每一个消费者买保险就是买安心"
+            ],
+            "renewSupport": false
+        },
+        "area": {
+            "id": 441600,
+            "name": "河源市",
+            "type": {
+                "id": 3,
+                "name": "市",
+                "description": "市"
+            },
+            "shortCode": "粤P",
+            "active": true,
+            "postalCode": null,
+            "children": null,
+            "reform": false
+        },
+        "weight": 1,
+        "quoteSource": null,
+        "innerPay": false
+    },
+    {
+        "id": 8889637,
+        "insuranceCompany": {
+            "id": 65000,
+            "name": "安心保险",
+            "code": "ANSWERN",
+            "logo": "answern.png",
+            "logoUrl": "http://localhost:7310null/insurancecompany/logo/answern.png",
+            "slogan": "理赔从此简单",
+            "websiteUrl": "https://www.answern.com/",
+            "mobile": "4008-845-678",
+            "rank": 10,
+            "wapUrl": null,
+            "recommend": true,
+            "recommendReason": "按天买车险",
+            "nonAutoInsurance": true,
+            "inforArrayList": [
+                "让大众真正享受保险带来的美好人生，让每一个消费者买保险就是买安心"
+            ],
+            "renewSupport": false
+        },
+        "area": {
+            "id": 441700,
+            "name": "阳江市",
+            "type": {
+                "id": 3,
+                "name": "市",
+                "description": "市"
+            },
+            "shortCode": "粤Q",
+            "active": true,
+            "postalCode": null,
+            "children": null,
+            "reform": false
+        },
+        "weight": 1,
+        "quoteSource": null,
+        "innerPay": false
+    },
+    {
+        "id": 8889638,
+        "insuranceCompany": {
+            "id": 65000,
+            "name": "安心保险",
+            "code": "ANSWERN",
+            "logo": "answern.png",
+            "logoUrl": "http://localhost:7310null/insurancecompany/logo/answern.png",
+            "slogan": "理赔从此简单",
+            "websiteUrl": "https://www.answern.com/",
+            "mobile": "4008-845-678",
+            "rank": 10,
+            "wapUrl": null,
+            "recommend": true,
+            "recommendReason": "按天买车险",
+            "nonAutoInsurance": true,
+            "inforArrayList": [
+                "让大众真正享受保险带来的美好人生，让每一个消费者买保险就是买安心"
+            ],
+            "renewSupport": false
+        },
+        "area": {
+            "id": 441800,
+            "name": "清远市",
+            "type": {
+                "id": 3,
+                "name": "市",
+                "description": "市"
+            },
+            "shortCode": "粤R",
+            "active": true,
+            "postalCode": null,
+            "children": null,
+            "reform": false
+        },
+        "weight": 1,
+        "quoteSource": null,
+        "innerPay": false
+    },
+    {
+        "id": 8889639,
+        "insuranceCompany": {
+            "id": 65000,
+            "name": "安心保险",
+            "code": "ANSWERN",
+            "logo": "answern.png",
+            "logoUrl": "http://localhost:7310null/insurancecompany/logo/answern.png",
+            "slogan": "理赔从此简单",
+            "websiteUrl": "https://www.answern.com/",
+            "mobile": "4008-845-678",
+            "rank": 10,
+            "wapUrl": null,
+            "recommend": true,
+            "recommendReason": "按天买车险",
+            "nonAutoInsurance": true,
+            "inforArrayList": [
+                "让大众真正享受保险带来的美好人生，让每一个消费者买保险就是买安心"
+            ],
+            "renewSupport": false
+        },
+        "area": {
+            "id": 441900,
+            "name": "东莞市",
+            "type": {
+                "id": 3,
+                "name": "市",
+                "description": "市"
+            },
+            "shortCode": "粤S",
+            "active": true,
+            "postalCode": null,
+            "children": null,
+            "reform": false
+        },
+        "weight": 1,
+        "quoteSource": null,
+        "innerPay": false
+    },
+    {
+        "id": 8889640,
+        "insuranceCompany": {
+            "id": 65000,
+            "name": "安心保险",
+            "code": "ANSWERN",
+            "logo": "answern.png",
+            "logoUrl": "http://localhost:7310null/insurancecompany/logo/answern.png",
+            "slogan": "理赔从此简单",
+            "websiteUrl": "https://www.answern.com/",
+            "mobile": "4008-845-678",
+            "rank": 10,
+            "wapUrl": null,
+            "recommend": true,
+            "recommendReason": "按天买车险",
+            "nonAutoInsurance": true,
+            "inforArrayList": [
+                "让大众真正享受保险带来的美好人生，让每一个消费者买保险就是买安心"
+            ],
+            "renewSupport": false
+        },
+        "area": {
+            "id": 442000,
+            "name": "中山市",
+            "type": {
+                "id": 3,
+                "name": "市",
+                "description": "市"
+            },
+            "shortCode": "粤T",
+            "active": true,
+            "postalCode": null,
+            "children": null,
+            "reform": false
+        },
+        "weight": 1,
+        "quoteSource": null,
+        "innerPay": false
+    },
+    {
+        "id": 8889641,
+        "insuranceCompany": {
+            "id": 65000,
+            "name": "安心保险",
+            "code": "ANSWERN",
+            "logo": "answern.png",
+            "logoUrl": "http://localhost:7310null/insurancecompany/logo/answern.png",
+            "slogan": "理赔从此简单",
+            "websiteUrl": "https://www.answern.com/",
+            "mobile": "4008-845-678",
+            "rank": 10,
+            "wapUrl": null,
+            "recommend": true,
+            "recommendReason": "按天买车险",
+            "nonAutoInsurance": true,
+            "inforArrayList": [
+                "让大众真正享受保险带来的美好人生，让每一个消费者买保险就是买安心"
+            ],
+            "renewSupport": false
+        },
+        "area": {
+            "id": 445100,
+            "name": "潮州市",
+            "type": {
+                "id": 3,
+                "name": "市",
+                "description": "市"
+            },
+            "shortCode": "粤U",
+            "active": true,
+            "postalCode": null,
+            "children": null,
+            "reform": false
+        },
+        "weight": 1,
+        "quoteSource": null,
+        "innerPay": false
+    },
+    {
+        "id": 8889642,
+        "insuranceCompany": {
+            "id": 65000,
+            "name": "安心保险",
+            "code": "ANSWERN",
+            "logo": "answern.png",
+            "logoUrl": "http://localhost:7310null/insurancecompany/logo/answern.png",
+            "slogan": "理赔从此简单",
+            "websiteUrl": "https://www.answern.com/",
+            "mobile": "4008-845-678",
+            "rank": 10,
+            "wapUrl": null,
+            "recommend": true,
+            "recommendReason": "按天买车险",
+            "nonAutoInsurance": true,
+            "inforArrayList": [
+                "让大众真正享受保险带来的美好人生，让每一个消费者买保险就是买安心"
+            ],
+            "renewSupport": false
+        },
+        "area": {
+            "id": 445200,
+            "name": "揭阳市",
+            "type": {
+                "id": 3,
+                "name": "市",
+                "description": "市"
+            },
+            "shortCode": "粤V",
+            "active": true,
+            "postalCode": null,
+            "children": null,
+            "reform": false
+        },
+        "weight": 1,
+        "quoteSource": null,
+        "innerPay": false
+    },
+    {
+        "id": 8889633,
+        "insuranceCompany": {
+            "id": 65000,
+            "name": "安心保险",
+            "code": "ANSWERN",
+            "logo": "answern.png",
+            "logoUrl": "http://localhost:7310null/insurancecompany/logo/answern.png",
+            "slogan": "理赔从此简单",
+            "websiteUrl": "https://www.answern.com/",
+            "mobile": "4008-845-678",
+            "rank": 10,
+            "wapUrl": null,
+            "recommend": true,
+            "recommendReason": "按天买车险",
+            "nonAutoInsurance": true,
+            "inforArrayList": [
+                "让大众真正享受保险带来的美好人生，让每一个消费者买保险就是买安心"
+            ],
+            "renewSupport": false
+        },
+        "area": {
+            "id": 441300,
+            "name": "惠州市",
+            "type": {
+                "id": 3,
+                "name": "市",
+                "description": "市"
+            },
+            "shortCode": "粤L",
+            "active": true,
+            "postalCode": null,
+            "children": null,
+            "reform": false
+        },
+        "weight": 1,
+        "quoteSource": null,
+        "innerPay": false
+    },
+    {
+        "id": 8889632,
+        "insuranceCompany": {
+            "id": 65000,
+            "name": "安心保险",
+            "code": "ANSWERN",
+            "logo": "answern.png",
+            "logoUrl": "http://localhost:7310null/insurancecompany/logo/answern.png",
+            "slogan": "理赔从此简单",
+            "websiteUrl": "https://www.answern.com/",
+            "mobile": "4008-845-678",
+            "rank": 10,
+            "wapUrl": null,
+            "recommend": true,
+            "recommendReason": "按天买车险",
+            "nonAutoInsurance": true,
+            "inforArrayList": [
+                "让大众真正享受保险带来的美好人生，让每一个消费者买保险就是买安心"
+            ],
+            "renewSupport": false
+        },
+        "area": {
+            "id": 441200,
+            "name": "肇庆市",
+            "type": {
+                "id": 3,
+                "name": "市",
+                "description": "市"
+            },
+            "shortCode": "粤H",
+            "active": true,
+            "postalCode": null,
+            "children": null,
+            "reform": false
+        },
+        "weight": 1,
+        "quoteSource": null,
+        "innerPay": false
+    },
+    {
+        "id": 8889622,
+        "insuranceCompany": {
+            "id": 65000,
+            "name": "安心保险",
+            "code": "ANSWERN",
+            "logo": "answern.png",
+            "logoUrl": "http://localhost:7310null/insurancecompany/logo/answern.png",
+            "slogan": "理赔从此简单",
+            "websiteUrl": "https://www.answern.com/",
+            "mobile": "4008-845-678",
+            "rank": 10,
+            "wapUrl": null,
+            "recommend": true,
+            "recommendReason": "按天买车险",
+            "nonAutoInsurance": true,
+            "inforArrayList": [
+                "让大众真正享受保险带来的美好人生，让每一个消费者买保险就是买安心"
+            ],
+            "renewSupport": false
+        },
+        "area": {
+            "id": 440100,
+            "name": "广州市",
+            "type": {
+                "id": 3,
+                "name": "市",
+                "description": "市"
+            },
+            "shortCode": "粤A",
+            "active": true,
+            "postalCode": "510000",
+            "children": null,
+            "reform": true
+        },
+        "weight": 1,
+        "quoteSource": null,
+        "innerPay": false
+    },
+    {
+        "id": 8889625,
+        "insuranceCompany": {
+            "id": 65000,
+            "name": "安心保险",
+            "code": "ANSWERN",
+            "logo": "answern.png",
+            "logoUrl": "http://localhost:7310null/insurancecompany/logo/answern.png",
+            "slogan": "理赔从此简单",
+            "websiteUrl": "https://www.answern.com/",
+            "mobile": "4008-845-678",
+            "rank": 10,
+            "wapUrl": null,
+            "recommend": true,
+            "recommendReason": "按天买车险",
+            "nonAutoInsurance": true,
+            "inforArrayList": [
+                "让大众真正享受保险带来的美好人生，让每一个消费者买保险就是买安心"
+            ],
+            "renewSupport": false
+        },
+        "area": {
+            "id": 440200,
+            "name": "韶关市",
+            "type": {
+                "id": 3,
+                "name": "市",
+                "description": "市"
+            },
+            "shortCode": "粤F",
+            "active": true,
+            "postalCode": null,
+            "children": null,
+            "reform": false
+        },
+        "weight": 1,
+        "quoteSource": null,
+        "innerPay": false
+    },
+    {
+        "id": 8889623,
+        "insuranceCompany": {
+            "id": 65000,
+            "name": "安心保险",
+            "code": "ANSWERN",
+            "logo": "answern.png",
+            "logoUrl": "http://localhost:7310null/insurancecompany/logo/answern.png",
+            "slogan": "理赔从此简单",
+            "websiteUrl": "https://www.answern.com/",
+            "mobile": "4008-845-678",
+            "rank": 10,
+            "wapUrl": null,
+            "recommend": true,
+            "recommendReason": "按天买车险",
+            "nonAutoInsurance": true,
+            "inforArrayList": [
+                "让大众真正享受保险带来的美好人生，让每一个消费者买保险就是买安心"
+            ],
+            "renewSupport": false
+        },
+        "area": {
+            "id": 440300,
+            "name": "深圳市",
+            "type": {
+                "id": 3,
+                "name": "市",
+                "description": "市"
+            },
+            "shortCode": "粤B",
+            "active": true,
+            "postalCode": "518000",
+            "children": null,
+            "reform": false
+        },
+        "weight": 1,
+        "quoteSource": null,
+        "innerPay": false
+    },
+    {
+        "id": 8889626,
+        "insuranceCompany": {
+            "id": 65000,
+            "name": "安心保险",
+            "code": "ANSWERN",
+            "logo": "answern.png",
+            "logoUrl": "http://localhost:7310null/insurancecompany/logo/answern.png",
+            "slogan": "理赔从此简单",
+            "websiteUrl": "https://www.answern.com/",
+            "mobile": "4008-845-678",
+            "rank": 10,
+            "wapUrl": null,
+            "recommend": true,
+            "recommendReason": "按天买车险",
+            "nonAutoInsurance": true,
+            "inforArrayList": [
+                "让大众真正享受保险带来的美好人生，让每一个消费者买保险就是买安心"
+            ],
+            "renewSupport": false
+        },
+        "area": {
+            "id": 440400,
+            "name": "珠海市",
+            "type": {
+                "id": 3,
+                "name": "市",
+                "description": "市"
+            },
+            "shortCode": "粤C",
+            "active": true,
+            "postalCode": null,
+            "children": null,
+            "reform": false
+        },
+        "weight": 1,
+        "quoteSource": null,
+        "innerPay": false
+    },
+    {
+        "id": 8889627,
+        "insuranceCompany": {
+            "id": 65000,
+            "name": "安心保险",
+            "code": "ANSWERN",
+            "logo": "answern.png",
+            "logoUrl": "http://localhost:7310null/insurancecompany/logo/answern.png",
+            "slogan": "理赔从此简单",
+            "websiteUrl": "https://www.answern.com/",
+            "mobile": "4008-845-678",
+            "rank": 10,
+            "wapUrl": null,
+            "recommend": true,
+            "recommendReason": "按天买车险",
+            "nonAutoInsurance": true,
+            "inforArrayList": [
+                "让大众真正享受保险带来的美好人生，让每一个消费者买保险就是买安心"
+            ],
+            "renewSupport": false
+        },
+        "area": {
+            "id": 440500,
+            "name": "汕头市",
+            "type": {
+                "id": 3,
+                "name": "市",
+                "description": "市"
+            },
+            "shortCode": "粤D",
+            "active": true,
+            "postalCode": null,
+            "children": null,
+            "reform": false
+        },
+        "weight": 1,
+        "quoteSource": null,
+        "innerPay": false
+    },
+    {
+        "id": 8889628,
+        "insuranceCompany": {
+            "id": 65000,
+            "name": "安心保险",
+            "code": "ANSWERN",
+            "logo": "answern.png",
+            "logoUrl": "http://localhost:7310null/insurancecompany/logo/answern.png",
+            "slogan": "理赔从此简单",
+            "websiteUrl": "https://www.answern.com/",
+            "mobile": "4008-845-678",
+            "rank": 10,
+            "wapUrl": null,
+            "recommend": true,
+            "recommendReason": "按天买车险",
+            "nonAutoInsurance": true,
+            "inforArrayList": [
+                "让大众真正享受保险带来的美好人生，让每一个消费者买保险就是买安心"
+            ],
+            "renewSupport": false
+        },
+        "area": {
+            "id": 440600,
+            "name": "佛山市",
+            "type": {
+                "id": 3,
+                "name": "市",
+                "description": "市"
+            },
+            "shortCode": "粤E",
+            "active": true,
+            "postalCode": null,
+            "children": null,
+            "reform": false
+        },
+        "weight": 1,
+        "quoteSource": null,
+        "innerPay": false
+    },
+    {
+        "id": 8889629,
+        "insuranceCompany": {
+            "id": 65000,
+            "name": "安心保险",
+            "code": "ANSWERN",
+            "logo": "answern.png",
+            "logoUrl": "http://localhost:7310null/insurancecompany/logo/answern.png",
+            "slogan": "理赔从此简单",
+            "websiteUrl": "https://www.answern.com/",
+            "mobile": "4008-845-678",
+            "rank": 10,
+            "wapUrl": null,
+            "recommend": true,
+            "recommendReason": "按天买车险",
+            "nonAutoInsurance": true,
+            "inforArrayList": [
+                "让大众真正享受保险带来的美好人生，让每一个消费者买保险就是买安心"
+            ],
+            "renewSupport": false
+        },
+        "area": {
+            "id": 440700,
+            "name": "江门市",
+            "type": {
+                "id": 3,
+                "name": "市",
+                "description": "市"
+            },
+            "shortCode": "粤J",
+            "active": true,
+            "postalCode": null,
+            "children": null,
+            "reform": false
+        },
+        "weight": 1,
+        "quoteSource": null,
+        "innerPay": false
+    },
+    {
+        "id": 8889630,
+        "insuranceCompany": {
+            "id": 65000,
+            "name": "安心保险",
+            "code": "ANSWERN",
+            "logo": "answern.png",
+            "logoUrl": "http://localhost:7310null/insurancecompany/logo/answern.png",
+            "slogan": "理赔从此简单",
+            "websiteUrl": "https://www.answern.com/",
+            "mobile": "4008-845-678",
+            "rank": 10,
+            "wapUrl": null,
+            "recommend": true,
+            "recommendReason": "按天买车险",
+            "nonAutoInsurance": true,
+            "inforArrayList": [
+                "让大众真正享受保险带来的美好人生，让每一个消费者买保险就是买安心"
+            ],
+            "renewSupport": false
+        },
+        "area": {
+            "id": 440800,
+            "name": "湛江市",
+            "type": {
+                "id": 3,
+                "name": "市",
+                "description": "市"
+            },
+            "shortCode": "粤G",
+            "active": true,
+            "postalCode": null,
+            "children": null,
+            "reform": false
+        },
+        "weight": 1,
+        "quoteSource": null,
+        "innerPay": false
+    },
+    {
+        "id": 8889631,
+        "insuranceCompany": {
+            "id": 65000,
+            "name": "安心保险",
+            "code": "ANSWERN",
+            "logo": "answern.png",
+            "logoUrl": "http://localhost:7310null/insurancecompany/logo/answern.png",
+            "slogan": "理赔从此简单",
+            "websiteUrl": "https://www.answern.com/",
+            "mobile": "4008-845-678",
+            "rank": 10,
+            "wapUrl": null,
+            "recommend": true,
+            "recommendReason": "按天买车险",
+            "nonAutoInsurance": true,
+            "inforArrayList": [
+                "让大众真正享受保险带来的美好人生，让每一个消费者买保险就是买安心"
+            ],
+            "renewSupport": false
+        },
+        "area": {
+            "id": 440900,
+            "name": "茂名市",
+            "type": {
+                "id": 3,
+                "name": "市",
+                "description": "市"
+            },
+            "shortCode": "粤K",
+            "active": true,
+            "postalCode": null,
+            "children": null,
+            "reform": false
+        },
+        "weight": 1,
+        "quoteSource": null,
+        "innerPay": false
+    },
+    {
+        "id": 8889643,
+        "insuranceCompany": {
+            "id": 65000,
+            "name": "安心保险",
+            "code": "ANSWERN",
+            "logo": "answern.png",
+            "logoUrl": "http://localhost:7310null/insurancecompany/logo/answern.png",
+            "slogan": "理赔从此简单",
+            "websiteUrl": "https://www.answern.com/",
+            "mobile": "4008-845-678",
+            "rank": 10,
+            "wapUrl": null,
+            "recommend": true,
+            "recommendReason": "按天买车险",
+            "nonAutoInsurance": true,
+            "inforArrayList": [
+                "让大众真正享受保险带来的美好人生，让每一个消费者买保险就是买安心"
+            ],
+            "renewSupport": false
+        },
+        "area": {
+            "id": 445300,
+            "name": "云浮市",
+            "type": {
+                "id": 3,
+                "name": "市",
+                "description": "市"
+            },
+            "shortCode": "粤W",
+            "active": true,
+            "postalCode": null,
+            "children": null,
+            "reform": false
+        },
+        "weight": 1,
+        "quoteSource": null,
+        "innerPay": false
+    }
+]

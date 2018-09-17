@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>ToA第三方渠道修改</title>
+    <link rel="stylesheet" href="../../libs/bootstrap-3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link type="text/css" href="../../libs/bootstrap-3.3.4/css/bootstrap-switch.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../libs/layer/theme/default/layer.css">
+    <link href="../../css/common.css" type="text/css" rel="stylesheet">
+    <link href="../../css/index.css" type="text/css" rel="stylesheet">
+    <style type="text/css">
+        .btn_line {
+            border-bottom: 2px solid #ccc;
+            margin-bottom: 10px;
+        }
+
+        .btn_blue_line {
+            border-bottom: 20px solid #F0F2F5;
+        }
+
+        .btn_blue_below {
+            border-bottom: 50px solid #F0F2F5;
+        }
+
+        .bgcolor_blue {
+            background-color: #F0F2F5;
+        }
+
+        .row {
+            padding-bottom: 10px;
+        }
+
+        .sub_title {
+            padding-top: 5px;
+            padding-bottom: 15px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .content_middle {
+            width: 1170px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="btn_blue_line">
+    <div class="title btn_line container">
+        <h2 class="text-center">ToA第三方渠道修改</h2>
+    </div>
+    <div class="container">
+        <div class="row tips">
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <span class="sub_title">第三方渠道名称：这是一个假想的ToA合作名称</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">合作商：<span id="partner"></span></div>
+                    <div class="col-sm-6">第三方渠道英文简称：<span id="channelCode"></span></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">创建时间：<span id="createdTime"></span></div>
+                    <div class="col-sm-6">对接车车：<span id="buttJoint"></span></div>
+                </div>
+                <!--
+                <div class="row">
+                    <div class="col-sm-6">备注：<span id="remark"></span></div>
+                </div> -->
+            </div>
+
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-12 pull-right">
+                        <div class="pull-right">
+                            <a class="btn btn-default" onclick="channelDetail.downloadUrl()" >下载配置参数</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 pull-right">
+                        <div class="pull-right">
+                            <div class="switch">
+                                <input type="checkbox" id="disabledChannel" name="disabledChannel">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="nav-tabs-row">
+            <ul class="nav nav-tabs" id="myTab">
+                <li class="active"><a href="#config_info">合作配置内容</a></li>
+                <!-- <li><a href="#operate_log">配置变更操作日志</a></li> -->
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="btn_blue_below bgcolor_blue " style="background-color: #F0F2F5;">
+    <!-- 合作配置内容start -->
+    <div id="config_info" class="content_middle">
+        <form id="showForm" class="form-horizontal">
+
+            <div class="panel">
+                <div class="panel-heading btn_line">
+                    <h4><strong>通用功能配置</strong></h4>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">拍照报价功能：</label>
+                                <div class="col-sm-6">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="supportPhoto" value="true"> 支持
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="supportPhoto" value="false"> 不支持
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">在线客服功能：</label>
+                                <div class="col-sm-6">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="showCustomService" value="true"> 支持
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="showCustomService" value="false"> 不支持
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">客服电话：</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="serviceTel" name="serviceTel">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-heading btn_line">
+                    <h4><strong>落地页&报价方式配置</strong></h4>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">落地页：</label>
+                                <div class="col-sm-6">
+                                    <p class="form-control-static" id="home"></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">报价方式：</label>
+                                <div class="col-sm-6">
+                                    <p class="form-control-static" id="singleCompany"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-heading btn_line">
+                    <h4><strong>功能配置</strong></h4>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">是否支持三级管理：</label>
+                                <div class="col-sm-6">
+                                    <p class="form-control-static" id="levelAgent"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-heading btn_line">
+                    <h4><strong>个人中心配置</strong></h4>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">我的钱包：</label>
+                                <div class="col-sm-6">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="hasWallet" value="true"> 显示
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="hasWallet" value="false"> 不显示
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">电子协议：</label>
+                                <div class="col-sm-6">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="showAgentLicense" value="true"> 显示
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="showAgentLicense" value="false"> 不显示
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">奖励显示：</label>
+                                <div class="col-sm-6">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="showAgentReward" value="true"> 显示
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="showAgentReward" value="false"> 不显示
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-heading btn_line">
+                    <h4><strong>参数配置</strong></h4>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Google统计位：</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="googleTrackId" name="googleTrackId">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">页面底色色值：</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="themeColor" name="themeColor">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-heading btn_line">
+                    <h4><strong>后台配置</strong></h4>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">出单中心是否可下单：</label>
+                                <div class="col-sm-6">
+                                    <p class="form-control-static" id="hasOrderCenter"></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">数据是否进电销：</label>
+                                <div class="col-sm-6">
+                                    <p class="form-control-static" id="isTelemarketing"></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">上传该渠道用于出单中心使用的logo：</label>
+                                <div class="img-box full" style="margin-left: 400px">
+                                    <section class=" img-section">
+                                        <div class="z_photo upimg-div clear">
+                                            <section class="z_file fl">
+                                                <img src="/images/a11.png" class="add-img" id="logoImage">
+                                                <input type="file" name="uploadImageFile" id="file" class="file" value=""
+                                                       accept="/images/jpg" multiple/>
+                                            </section>
+                                        </div>
+                                    </section>
+                                </div>
+                                <aside class="mask works-mask">
+                                    <div class="mask-content">
+                                        <p class="del-p ">您确定要删除logo图片吗？</p>
+                                        <p class="check-p"><span class="del-com wsdel-ok">确定</span><span
+                                            class="wsdel-no">取消</span></p>
+                                    </div>
+                                </aside>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-heading btn_line">
+                    <h4><strong>订单相关配置</strong></h4>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">是否支持订单同步：</label>
+                                <div class="col-sm-6">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="needSyncOrder" value="true"> 是
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="needSyncOrder" value="false"> 否
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">第三方提供的同步订单的地址：</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="syncOrderUrl" name="syncOrderUrl">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-heading btn_line">
+                    <h4><strong>订单相关配置</strong></h4>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">签名方法：</label>
+                                <div class="col-sm-6">
+                                    <p class="form-control-static" id="signature"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- 配置变更操作日志start -->
+    <div class="content_middle none" id="operate_log">
+        <div class="container container_add btn_blue_line">
+            <div class="row tips btn_line">
+                <div class="col-sm-12">
+                    <span class="sub_title">操作日志</span>
+                </div>
+            </div>
+            <div class="row">
+                <table class="table table-bordered table-hover" id="log_list"></table>
+            </div>
+        </div>
+    </div>
+    <!-- 配置变更操作日志end -->
+    <div class="content_middle" id="submit_buttons">
+        <div class="col-sm-12 text-center" style="padding-top:10px;padding-bottom:30px;">
+            <input id="btnCancel" class="btn btn-default text-input-100" value="取消" type="button">
+            <input id="btnReset" class="btn btn-danger text-input-100" value="重置" type="button">
+            <input id="btnSubmit" class="btn btn-primary text-input-100" value="提交修改" type="button">
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../../libs/jquery-1.11.2/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../libs/jquery-form/jquery.form.js"></script>
+<script type="text/javascript" src="../../libs/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../libs/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="../../libs/uploadify-3.2.1/js/jquery.uploadify-3.2.1.js"></script>
+<script type="text/javascript" src="../../libs/jquery-validation-1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="../../libs/bootstrap-3.3.4/js/bootstrap-multiselect.js"></script>
+<script type="text/javascript" src="../../libs/jquery-cookie-1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="../../plugins/DataTables-1.10.12/media/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../../js/common/common.js"></script>
+<script type="text/javascript" src="../../js/common/popup.js"></script>
+<script type="text/javascript" src="../../js/common/datatable_util.js"></script>
+<script type="text/javascript" src="../../js/thirdParty/toA_edit.js"></script>
+<script type="text/javascript" src="../../libs/bootstrap-3.3.4/js/bootstrap-switch.min.js"></script>
+<script type="text/javascript" src="../../libs/layer/layer.js"></script>
+<script type="text/javascript" src="../../js/thirdParty/manager_add_image.js"></script>
+<script>
+    (function ($, undefined) {
+        var id = common.getUrlParam("id")
+        var pageData
+        var initOption = {
+            disabledChannel: function (v) {
+                $(this).bootstrapSwitch('state', !v, true)
+            },
+            home: (v) => v ? '首页' : '基本信息页',
+            singleCompany: (v) => v ? '直投' : '比价',
+            buttJoint: (v) => v ? '是' : '否',
+            levelAgent: (v) => v ? '是' : '否',
+            hasOrderCenter: (v) => v ? '是' : '否',
+            isTelemarketing: (v) => v ? '是' : '否',
+        }
+        $.getJSON('/operationcenter/thirdParty/toaCooperate/findDetailsInfo', {id: id}, function (result) {
+            pageData = result
+            initPage(result, initOption)
+        })
+
+        var form = document.getElementById('showForm')
+
+        function initPage(pageData, option) {
+            $('[id],[name]').each(function () {
+                var key = this.id || this.name
+                if (key in pageData) {
+                    let value
+                    if (typeof option[key] === 'function') {
+                        value = option[key].call(this, pageData[key])
+                        if (value === undefined) {
+                            return
+                        }
+                    } else if (this.type === 'radio' || this.type === 'checkbox') {
+                        value = !!pageData[key]
+                    } else {
+                        value = pageData[key]
+                    }
+                    if (form[key]) {
+                        form[key].value = value
+                    } else {
+                        this.innerHTML = value
+                    }
+                    if (key == 'logoImage') {
+                        if (value.length == 0) {
+                            $("#logoImage").attr('src',"/images/a11.png");
+                        } else{
+                            var src=value+'?random='+Math.random();
+                            $("#logoImage").attr("src",src);
+                        }
+
+                    }
+                }
+            })
+        }
+
+        $('#disabledChannel').bootstrapSwitch({
+            onText: '已生效',
+            offText: '已失效',
+            size: 'small',
+            onSwitchChange: function (even, status) {
+                var that = this
+                var mess = '确认禁用此第三方渠道合作内容吗？'
+                if (status) mess = '确认启用此第三方渠道合作内容吗？'
+                layer.confirm(mess,{closeBtn: 0}, function (index) {
+                    // TODO 更改失效状态
+                    $.get('/operationcenter/thirdParty/tocCooperate/chgAble', {
+                        id: id,
+                        status: status ? true : false
+                    })
+                    layer.close(index)
+                }, function () {
+                    $(that).bootstrapSwitch('state', !status, true)
+                })
+            }
+        })
+
+        $('#btnReset').click(function () {
+            layer.confirm('确认重置合作页面配置内容吗?',{closeBtn: 0}, function (index) {
+                initPage(pageData, initOption)
+                layer.close(index)
+            })
+        })
+
+        $('#btnSubmit').click(function () {
+            var data = {}
+            for (var i = 0, len = form.elements.length; i < len; i++) {
+                var node = form.elements[i]
+                data[node.name] = form[node.name].value
+            }
+            // TODO 保存修改
+            // data.customer = data.showCustomService
+            data.elecAgreement = data.showAgentLicense
+            data.wallet = data.hasWallet
+            data.award  = data.showAgentReward
+            data.synchro = data.needSyncOrder
+            data.address = data.syncOrderUrl
+            data.id = id
+            $.post('/operationcenter/thirdParty/toaCooperate/updateDetails', data, function (result) {
+                if (result.pass){
+                    window.open("toA_details.html?id=" + result.message+"&random="+Math.random(),'_self');
+                }else{
+                    alert(result.message);
+                    popup.mould.popTipsMould( "渠道修改异常！！", popup.mould.first, popup.mould.error, "", "53%", null);
+                }
+            })
+        })
+    }(window.jQuery))
+</script>
+</body>
+</html>

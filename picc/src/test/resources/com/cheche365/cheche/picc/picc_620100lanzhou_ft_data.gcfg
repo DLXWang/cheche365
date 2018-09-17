@@ -1,0 +1,15 @@
+package com.cheche365.cheche.picc
+//this is 兰州
+
+testDataParams = [
+
+    //{value=40288088266ee9f401267300688901c5, text=帝豪EC2009款 舒适版 5座 76800元}
+    10 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '40288088266ee9f401267300688901c5']]]]]],
+
+    //{value=4028b28838471a7801387a3cfdb43aee, text=奇瑞E52012款 优悦型/节能补贴 5座 53800元}
+    20 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028b28838471a7801387a3cfdb43aee']]]]]],
+
+    //{value=4028b28843bcb89401443ebd9f086534, text=宝来2014款 舒适型 5座 103300元}
+    30 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028b28843bcb89401443ebd9f086534']]]]]],
+
+]

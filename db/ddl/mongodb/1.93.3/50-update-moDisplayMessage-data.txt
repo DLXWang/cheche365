@@ -1,0 +1,13 @@
+db.moDisplayMessage.update( {"messageType._id":34}, { $pop: { message: -1 } } );
+db.getCollection('moDisplayMessage').update({"messageType._id":34},{$push:
+    {
+      "message":{
+          "iconUrl" : "banner/top-banner26.png",
+          "url" : "/a/index.html#brand/about",
+          "title" : "车车科技",
+          "content" : null,
+          "weight" : "98",
+          "channel":"67"
+      }
+    }
+ });

@@ -1,0 +1,5 @@
+db.moDisplayMessage.update({"messageType._id":34},{$set:
+{
+ "message.0.channel":"",
+ "message.1.channel":"67"
+}});

@@ -1,0 +1,5 @@
+#需跟进订单定时任务-未查到订单
+title: "${startTime}至${endTime}需跟进订单"
+tos: [wangfei@cheche365.com,liuyw@cheche365.com,zhangtc@cheche365.com]
+production_tos: [majing@cheche365.com,aodm@cheche365.com]
+template: /velocity/followUpNoOrdersEmail.vm

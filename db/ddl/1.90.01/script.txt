@@ -1,0 +1,2 @@
+10-alter-internal_user-add-column.sql
+20-alter-internal_user-add-column.sql

@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>订单详情</title>
+    <link type="text/css" href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--<link href="../../css/order/order_detail.css" rel="stylesheet">-->
+    <link type="text/css" href="../../css/style.css" rel="stylesheet">
+    <link type="text/css" href="../../css/common.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/select2/select2.min.css" rel="stylesheet">
+    <style type="text/css">
+        /* 订单详情 */
+        .order-detail .title{
+            text-align: center;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        .order-detail .tips{
+            padding-top: 5px;
+            padding-bottom: 15px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .order-detail .row{
+            padding-bottom: 10px;
+        }
+        .order-detail .tab-top-1{
+            border-bottom: 2px solid #ccc;
+            margin-bottom: 10px;
+        }
+        .order-detail .checkText{
+            padding-left: 40px;
+        }
+        .order-detail .bottom{
+            padding-bottom: 25px;;
+        }
+        .order-detail .premium{
+            padding-left: 4px;
+        }
+        .rebate-input {
+            width: 38px;
+            height: 20px;
+            padding-bottom: 0;
+        }
+        .amend{
+            padding-left: 30px;
+            line-height: 30px;
+        }
+        .onlyHeight {
+            line-height: 30px;
+        }
+        #note{text-align: center;width:110px; height:350px; position:absolute; right:0; top:0; z-index:100;margin-right: 20px;}
+        #note img{width:80px;height:80px;}
+    </style>
+    <script type="text/javascript" src="../../js/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/common/cookie.js"></script>
+    <script type="text/javascript" src="../../js/common/common.js" ></script>
+    <script type="text/javascript" src="../../js/order/order_detail.js" ></script>
+    <script type="application/javascript" src="../../js/jquery/jquery.form.js"></script>
+    <script type="text/javascript" src="../../plugins/select2/select2.min.js"></script>
+    <link rel="stylesheet" href="../../css/popup.css">
+</head>
+<body>
+<div class="container order-detail">
+    <div class="tab-top-1 title">
+        <h3>订单详情</h3>
+    </div>
+    <div class="tab-top-1">
+        <div class="row tips">
+            <div class="col-sm-12">用户信息</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">手机号：<span id="userMobile" name="userMobile"></span><button id="orderCallBtn" class="btn btn-danger" style="margin-left: 20px;" type="button">拨打</button></div>
+
+            <div class="col-sm-4">微信昵称：<span id="nickName" name="nickName"></span></div>
+            <div class="col-sm-4">车主手机号：<span id="ownerMobile" name="ownerMobile"></span></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">平台：<span id="platform" name="platform"></span></div>
+            <div class="col-sm-4">来源：<span id="source" name="source"></span></div>
+            <div class="col-sm-4">邀请人：<span id="inviter" name="inviter" style="margin-right: 20px;"></span></div>
+
+            <div class="col-sm-4" id="institution-div" style="color: red;display: none;">出单机构：<span id="institution" name="institution"></span></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">间接邀请人：<span id="indirectInviter" name="indirectInviter"></span></div>
+        </div>
+        <div class="row none agent">
+            <div class="col-sm-4">代理人：<span id="agentName" ></span></div>
+            <!--<div class="col-sm-4">交强险费率：<span id="compulsoryRebate" ></span></div>-->
+            <!--<div class="col-sm-4">商业险费率：<span id="commercialRebate" ></span></div>-->
+        </div>
+    </div>
+    <div class="tab-top-1">
+        <div class="row tips">
+            <div class="col-sm-12">车辆信息</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">车牌号：<span id="licenseNo"></span></div>
+            <div class="col-sm-4">车架号：<span id="vinNo"></span></div>
+            <div class="col-sm-4">发动机号：<span id="engineNo"></span></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">车辆初登日期：<span id="enrollDate"></span></div>
+            <div class="col-sm-4">车座数：<span id="seats"></span></div>
+            <div class="col-sm-4">品牌型号：<span id="code"></span></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">车型：<span id="modelName"></span></div>
+            <div class="col-sm-4">报价方式：<span id="realQuote"></span></div>
+        </div>
+    </div>
+    <div class="tab-top-1" id="autoSupplementInfo">
+        <div class="row tips">
+            <div class="col-sm-12">车辆补充信息</div>
+        </div>
+    </div>
+    <div class="tab-top-1">
+        <div class="row tips">
+            <div class="col-sm-12">礼品信息</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12"><span id="giftDetails" name="giftDetails"></span></div>
+        </div>
+    </div>
+    <div class="tab-top-1" id="rebateInfo">
+        <div class="row tips">
+            <div class="col-sm-12">费率信息</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12" id="rebateTabDiv">
+                <table class="table table-bordered" id="rebateTab">
+                    <thead>
+                    <tr>
+                        <th class="text-center">类别</th>
+                        <th class="text-center">名称</th>
+                        <th class="text-center">交强险费率</th>
+                        <th class="text-center">商业险费率</th>
+                        <th class="text-center">交强险佣金</th>
+                        <th class="text-center">商业险佣金</th>
+                        <th class="text-center">佣金合计</th>
+                        <th id="rebateOperation" class="text-center none">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="tab-top-1">
+        <div class="row tips" style="float: left;">
+            <div class="col-sm-12">车险信息</div>
+        </div>
+        <div class="row tips" style="margin-left: 100px;">
+            <button type="button" id="seeQuoteRecord" class="btn btn-primary none">查看报价记录</button>
+            &nbsp;&nbsp;<button type="button" class="btn btn-danger none" id="order_amend">修改订单</button>
+            &nbsp;&nbsp;<button type="button" class="btn btn-primary none" id="daily_insurance" >车辆停复驶信息</button>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">保险公司：<span id="insuranceCompany" name="insuranceCompany"></span></div>
+            <div class="col-sm-4">订单号：<span id="orderNo" name="orderNo"></span></div>
+            <div class="col-sm-4">订单状态：
+                <span id="orderStatus" name="orderStatus"></span>
+                <a style="color:-webkit-link;text-decoration:underline;" id="orderStatusLink" onclick="detail.showDetailMessage()"></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">商业险生效日期：<span id="commercialPolicyEffectiveDate"
+                                                name="commercialPolicyEffectiveDate"></span></div>
+            <div class="col-sm-4">商业险失效日期：<span id="commercialPolicyExpireDate"
+                                                name="commercialPolicyExpireDate"></span></div>
+            <div class="col-sm-4">商业险保单号：<span id="commercialPolicyNo" name="commercialPolicyNo"></span></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">交强险生效日期：<span id="compulsoryPolicyEffectiveDate"
+                                                name="compulsoryPolicyEffectiveDate"></span></div>
+            <div class="col-sm-4">交强险失效日期：<span id="compulsoryPolicyExpireDate"
+                                                name="compulsoryPolicyExpireDate"></span></div>
+            <div class="col-sm-4">交强险保单号：<span id="compulsoryPolicyNo" name="compulsoryPolicyNo"></span></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">应付金额：<span id="payableAmount" name="payableAmount"></span><span
+                class="premium">元</span></div>
+            <div class="col-sm-4">实付金额：<span id="paidAmount" name="paidAmount"></span><span class="premium">元</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">险种详情：</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12"><input type="checkbox" id="compulsoryChk" disabled="true">&nbsp;交强险：<span id="compulsoryPremium" name="compulsoryPremium"></span><span class="premium">元</span></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12"><input type="checkbox" id="autoTaxChk" disabled="true">&nbsp;车船税：<span id="autoTax" name="autoTax"></span><span class="premium">元</span></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12"><input type="checkbox" id="commercialChk" disabled="true">&nbsp;商业险：<span id="commercialPremium" name="commercialPremium"></span><span class="premium">元</span></div>
+        </div>
+        <div class="row checkText">
+            <div class="col-sm-4"><input type="checkbox" id="damageChk" disabled="true">&nbsp;机动车辆损失险</div>
+            <div class="col-sm-4">保费：<span id="damagePremium" name="damagePremium"></span><span class="premium">元</span></div>
+            <div class="col-sm-4">保额：<span id="damageAmount" name="damageAmount"></span><span class="premium">元</span></div>
+        </div>
+        <div class="row checkText">
+            <div class="col-sm-4"><input type="checkbox" id="thirdPartyChk" disabled="true">&nbsp;第三者责任险</div>
+            <div class="col-sm-4">保费：<span id="thirdPartyPremium" name="thirdPartyPremium"></span><span class="premium">元</span></div>
+            <div class="col-sm-4">保额：<span id="thirdPartyAmount" name="thirdPartyAmount"></span><span class="premium">元</span></div>
+        </div>
+        <div class="row checkText">
+            <div class="col-sm-4"><input type="checkbox" id="driverChk" disabled="true">&nbsp;车上人员责任险(司机)</div>
+            <div class="col-sm-4">保费：<span id="driverPremium" name="driverPremium"></span><span class="premium">元</span></div>
+            <div class="col-sm-4">保额：<span id="driverAmount" name="driverAmount"></span><span class="premium">元</span></div>
+        </div>
+        <div class="row checkText">
+            <div class="col-sm-4"><input type="checkbox" id="passengerChk" disabled="true">&nbsp;车上人员责任险(乘客)</div>
+            <div class="col-sm-4">保费：<span id="passengerPremium" name="passengerPremium"></span><span class="premium">元</span></div>
+            <div class="col-sm-4">保额：<span id="passengerAmount" name="passengerAmount"></span><span class="premium">元</span></div>
+        </div>
+        <div class="row checkText">
+            <div class="col-sm-4"><input type="checkbox" id="theftChk" disabled="true">&nbsp;盗抢险</div>
+            <div class="col-sm-4">保费：<span id="theftPremium" name="theftPremium"></span><span class="premium">元</span></div>
+            <div class="col-sm-4">保额：<span id="theftAmount" name="theftAmount"></span><span class="premium">元</span></div>
+        </div>
+        <div class="row checkText">
+            <div class="col-sm-4"><input type="checkbox" id="scratchChk" disabled="true">&nbsp;车身划痕损失险</div>
+            <div class="col-sm-4">保费：<span id="scratchPremium" name="scratchPremium"></span><span class="premium">元</span></div>
+            <div class="col-sm-4">保额：<span id="scratchAmount" name="scratchAmount"></span><span class="premium">元</span></div>
+        </div>
+        <div class="row checkText">
+            <div class="col-sm-4"><input type="checkbox" id="spontaneousLossChk" disabled="true">&nbsp;自燃损失险</div>
+            <div class="col-sm-4">保费：<span id="spontaneousLossPremium" name="spontaneousLossPremium"></span><span class="premium">元</span></div>
+            <div class="col-sm-4">保额：<span id="spontaneousLossAmount" name="spontaneousLossAmount"></span><span class="premium">元</span></div>
+        </div>
+        <div class="row checkText">
+            <div class="col-sm-4"><input type="checkbox" id="engineChk" disabled="true">&nbsp;发动机特别损失险</div>
+            <div class="col-sm-4">保费：<span id="enginePremium" name="enginePremium"></span><span class="premium">元</span></div>
+        </div>
+        <div class="row checkText">
+            <div class="col-sm-4"><input type="checkbox" id="glassChk" disabled="true">&nbsp;玻璃单独破碎险</div>
+            <div class="col-sm-4">保费：<span id="glassPremium" name="glassPremium"></span><span class="premium">元</span></div>
+            <div class="col-sm-4">玻璃类型：<span id="glassType" name="glassType"></span></div>
+        </div>
+        <div class="row amend checkText">
+            <div class="col-sm-4"><input type="checkbox" id="unableFindThirdPartyChk" disabled="true">&nbsp;无法找到第三方特约险</div>
+            <div class="col-sm-4">保费：<span id="unableFindThirdPartyPremium" name="unableFindThirdPartyPremium"></span><span class="premium">元</span></div>
+        </div>
+        <div class="row checkText">
+            <div class="col-sm-4"><input type="checkbox" id="iopChk" disabled="true">&nbsp;不计免赔率特约条款</div>
+            <div class="col-sm-4">保费：<span id="iop" name="iop"></span><span class="premium">元</span></div>
+        </div>
+        <div class="row checkText">
+            <div class="col-sm-4"><input type="checkbox" id="designatedRepairShopChk" disabled="true">&nbsp;指定专修厂险</div>
+            <div class="col-sm-4">保费：<span id="designatedRepairShopPremium" name="designatedRepairShopPremium"></span><span class="premium">元</span></div>
+        </div>
+    </div>
+    <div class="tab-top-1" >
+        <div class="row tips">
+            <div class="col-sm-12">奖励</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">直接邀请人：<span id="inviterTwo" name="inviter"></span></div>
+            <div class="col-sm-4">奖励金额（元）：<span id="awardInviter" name="award"></span></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">间接邀请人：<span id="indirectionInviterTwo" name="idirectionInvitern"></span></div>
+            <div class="col-sm-4">奖励金额（元）：<span id="awardIdirectionInvitern" name="award"></span></div>
+        </div>
+    </div>
+    <div class="tab-top-1">
+        <div class="row tips">
+            <div class="col-sm-12">车主信息</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">姓名：<span id="ownerName" name="ownerName"></span></div>
+            <div class="col-sm-4">证件类型：<span id="ownerIdentityType" name="ownerIdentityType"></span></div>
+            <div class="col-sm-4">身份证：<span id="ownerIdentity" name="ownerIdentity"></span></div>
+        </div>
+    </div>
+    <div class="tab-top-1 applicant">
+        <div class="row tips">
+            <div class="col-sm-12">投保人信息</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">姓名：<span id="applicantName" name="applicantName"></span></div>
+            <div class="col-sm-4">证件类型：<span id="applicantIdentityType" name="applicantIdentityType"></span></div>
+            <div class="col-sm-4">身份证：<span id="applicantIdNo" name="applicantIdNo"></span></div>
+        </div>
+    </div>
+    <div class="tab-top-1">
+        <div class="row tips">
+            <div class="col-sm-12">被保险人信息</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">姓名：<span id="insuredName" name="insuredName"></span></div>
+            <div class="col-sm-4">证件类型：<span id="insuredIdentityType" name="insuredIdentityType"></span></div>
+            <div class="col-sm-4">身份证：<span id="insuredIdentity" name="insuredIdentity"></span></div>
+        </div>
+    </div>
+    <div class="tab-top-1" id="paymentInfo">
+        <div class="row tips">
+            <div class="col-sm-12">支付信息</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12" id="paymentTabDiv">
+                <table class="table table-bordered" id="paymentTab">
+                    <thead style="background-color: grey;">
+                    <tr>
+                        <th class="text-center">序号</th>
+                        <th class="text-center">类型</th>
+                        <th class="text-center">金额</th>
+                        <th class="text-center">状态</th>
+                        <th class="text-center">操作时间</th>
+                        <th class="text-center">交付通道</th>
+                        <th class="text-center">车车流水号</th>
+                        <th class="text-center">支付平台流水号</th>
+                        <th class="text-center">商户号</th>
+                        <th class="text-center">支付平台</th>
+                        <th id="paymentOperation" class="text-center">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="tab-top-1">
+        <div class="row tips">
+            <div class="col-sm-12">配送信息
+                <button type="button" id="addEdit" class="btn btn-primary" style="margin-left: 10px;">编辑</button>
+                <button type="button" class="btn btn-danger" id="addSave" style="margin-left: 10px;" disabled>保存</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">收件人：<span id="receiverName" name="receiverName"></span>
+                <input type="text" id="edit_receiverName" name="receiverName" class="none">
+            </div>
+            <div class="col-sm-4">身份证：<span id="receiverIdentity" name="receiverIdentity"></span></div>
+            <div class="col-sm-4">电话：<span id="receiverMobile" name="receiverMobile"></span>
+                <input type="text" id="edit_receiverMobile" name="receiverMobile" class="none">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4"><span id="sendDateLabel"></span><span id="sendDate" name="sendDate"></span></div>
+            <div class="col-sm-4"><span id="timePeriodLabel"></span><span id="timePeriod" name="timePeriod"></span></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">快递地址：<span id="address" name="address"></span>
+                <div class="form-group form-group-fix none" id="addressInfo">
+                    <div class="col-sm-2 text-left form-inline" style="padding-right: 0;">
+                        省：<select required class='form-control text-height-28 select-28 text-input-100' id='receiverProvince' style="width: 100px;">
+                        <option value=''>
+                            请选择
+                        </option>
+                    </select>
+                    </div>
+                    <div class="col-sm-2 text-left form-inline" style="padding-right: 0;">
+                        市：<select required class='form-control text-height-28 select-28 text-input-100' id='receiverCity' style="width: 100px;">
+                    </select>
+                    </div>
+                    <div class="col-sm-2 text-left form-inline" style="padding-right: 0;">
+                        区：<select required class='form-control text-height-28 select-28 text-input-100' id='receiverDistrict' style="width: 100px;">
+                    </select>
+                    </div>
+                    <div class="col-sm-4 text-left">
+                        <input type='text' required id='receiverStreet' placeholder="街道" class='text-height-28 order-value form-control text-input-280'>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="tab-top-1">
+        <div class="row tips">
+            <div class="col-sm-12">快递信息</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">快递公司：<span id="expressCompany" name="expressCompany"></span></div>
+            <div class="col-sm-4">快递单号：<span id="trackingNo" name="trackingNo"></span></div>
+        </div>
+    </div>
+    <div id="lastRowDiv" class="tab-top-1">
+        <div class="row tips">
+            <div class="col-sm-12">保单</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">商业险保单： <img id="insuranceImage" class="image"  alt="商业险保单" style="width:100px;height:100px;display: none;"></div>
+            <div class="col-sm-4">交强险保单： <img id="compulsoryInsuranceImage"  class="image" alt="交强险保单" style="width:100px;height:100px;display:none;"></div>
+            <div class="col-sm-4">交强险标识： <img id="compulsoryStamp"  class="image" alt="交强险标识" style="width:100px;height:100px;display:none;"></div>
+        </div>
+    </div>
+
+    <div id="imageParentDiv" class="tab-top-1">
+        <div class="row tips ">
+            <div class="col-sm-12">所需照片</div>
+        </div>
+        <div id="imageTypes">
+            <a id="addPicture" onclick='imageTypeAdd.pop(common.getUrlParam("id"), "first");' href="javascript:;">增加照片类型</a>
+            <a id="sendMessage" onclick="detail.sendMessage();"  href="javascript:;" >发送短信</a>
+            <br>
+            <br>
+            <div id="neededImageDiv" class="row" style="width: 100%;">
+            </div>
+        </div>
+    </div>
+    <div id="followInfoDiv" class="bottom">
+        <div class="row tips">
+            <a href="#followInfoList" class="dropdown-toggle" data-toggle="collapse" style="text-decoration:none;">
+                <span  id="followInfo" class="followInfo col-sm-12">跟进信息<b class="caret third-caret"></b></span>
+            </a>
+        </div>
+        <div id="followInfoList" class="row collapse">
+            <div class="col-sm-4">跟进人：<span id="followPerson" name="followPerson"></span></div>
+            <div class="col-sm-4">录单员：<span id="inputPerson" name="inputPerson"></span></div>
+            <div class="col-sm-4">电销跟进人：<span id="telFollowPerson" name="telFollowPerson"></span></div>
+        </div>
+    </div>
+
+</div>
+
+
+<div id="popupHtml"></div>
+<div id="note">
+    <a href="javascript:;" title="查看备注" onclick='orderComment.popCommentList(common.getUrlParam("id"), "first");' ><img src="../../images/note.jpg"></a><br><br>
+    <!--<a href="javascript:;" title="验车照片" onclick='validateCar.pop(common.getUrlParam("id"), "first");' ><img src="../../images/car.jpg"></a>-->
+</div>
+
+
+<div id="image_type_pop" >
+    <div class="theme_poptit">
+        <a id="auto_detail_close" href="javascript:;" title="关闭" class="close">
+            <i class="glyphicon glyphicon-remove"></i>
+        </a>
+        <h4 class="text-center" id="detail_title">新增照片类型</h4>
+    </div>
+    <div style="overflow:auto; height: 650px;" >
+        <div style="margin-left: 20px ; clear:both;" id="imageTypeKindDiv">
+
+        </div>
+        <div>
+            <div id="u68" style="margin-left: 30px; clear: both;">
+                <div id="u69" class="text">
+                    <p><span>其他</span><span>自定义</span></p>
+                </div>
+            </div>
+            <div style="margin-left: 30px; clear: both;">
+                <form>
+                    <div id="customTypeInputDiv">
+                        <div  style="float: left; margin-left: 50px ; margin-top: 20px">
+                            <input name="customType" value="（限10个汉字)" type="text" style="width: 300px;" onfocus="if (value =='（限10个汉字)'){value =''}" onblur="if (value ==''){value='（限10个汉字)'}">
+                        </div>
+                    </div>
+                </form>
+                <div id="u74" style="float: left; margin-left: 15px ; margin-top: 20px">
+                    <p onclick="imageTypeAdd.appendImageTypeItem();"><img src="../../images/zoom_in.gif"></p>
+                </div>
+            </div>
+        </div>
+        <div style=" clear:both;margin-bottom: 30px ">
+            <div style=" text-align: center;">
+                <input type="button" value="提交" style="width: 80px;height: 30px;margin-top: 30px;margin-left: 30px" onclick="imageTypeAdd.saveImageTypeItem();">
+                <input id="myClose" type="button" value="取消" style="width: 80px;height: 30px;margin-top: 30px;margin-left: 30px">
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div id="orderAmendList" class="none">
+    <div class="theme_poptit">
+        <a href="javascript:;" title="关闭" class="close"><i class="glyphicon glyphicon-remove"></i></a>
+        <h4 class="text-center title">报价记录信息</h4>
+    </div>
+    <div id="orderAmendListContent" class="diy-height " style="margin-top:20px;height:80%;">
+        <div class="form-group form-group-fix  none-content">
+            <div class="col-sm-12" >
+                <table class="table table-bordered table-hover" id="quote_list_tab">
+                    <thead>
+                    <tr class="active">
+                        <th class="text-center">序号</th>
+                        <th class="text-center">交强险</th>
+                        <th class="text-center">车船税</th>
+                        <th class="text-center">商业险</th>
+                        <th class="text-center">总计</th>
+                        <th class="text-center">报价时间</th>
+                        <th class="text-center">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="amendQuoteRecord" class="none">
+    <div class="theme_poptit">
+        <a href="javascript:;" title="关闭" class="close"><i class="glyphicon glyphicon-remove"></i></a>
+        <h4 class="text-center title">报价记录详情</h4>
+    </div>
+    <div class="amend">
+        <div class="row onlyHeight">
+            <div class="col-sm-6">保险公司：<span id="amend_insuranceCompany" name="insuranceCompany"></span></div>
+            <div class="col-sm-6">订单号：<span id="amend_orderNo" name="orderNo"></span></div>
+        </div>
+        <div class="row onlyHeight">
+            <div class="col-sm-6">应付金额：<span id="amend_payableAmount" name="payableAmount"></span><span class="premium">元</span></div>
+        </div>
+        <div class="row onlyHeight">
+            <div class="col-sm-12">礼品信息：<span id="amend_discount_info" name="giftDetails"></span><span class="premium"></span></div>
+        </div>
+        <div class="row onlyHeight">
+            <div class="col-sm-12">险种详情：</div>
+        </div>
+        <div class="row onlyHeight">
+            <div class="col-sm-12"><input type="checkbox" id="amend_compulsoryChk" disabled="true">&nbsp;交强险：<span id="amend_compulsoryPremium" name="compulsoryPremium"></span><span class="premium">元</span></div>
+        </div>
+        <div class="row onlyHeight">
+            <div class="col-sm-12"><input type="checkbox" id="amend_autoTaxChk" disabled="true">&nbsp;车船税：<span id="amend_autoTax" name="autoTax"></span><span class="premium">元</span></div>
+        </div>
+        <div class="row onlyHeight">
+            <div class="col-sm-12"><input type="checkbox" id="amend_commercialChk" disabled="true">&nbsp;商业险：<span id="amend_commercialPremium" name="commercialPremium"></span><span class="premium">元</span></div>
+        </div>
+        <div class="row amend checkText">
+            <div class="col-sm-4"><input type="checkbox" id="amend_damageChk" disabled="true">&nbsp;机动车辆损失险</div>
+            <div class="col-sm-4">保费：<span id="amend_damagePremium" name="damagePremium"></span><span class="premium">元</span></div>
+            <div class="col-sm-4">保额：<span id="amend_damageAmount" name="damageAmount"></span><span class="premium">元</span></div>
+        </div>
+        <div class="row amend checkText">
+            <div class="col-sm-4"><input type="checkbox" id="amend_thirdPartyChk" disabled="true">&nbsp;第三者责任险</div>
+            <div class="col-sm-4">保费：<span id="amend_thirdPartyPremium" name="thirdPartyPremium"></span><span class="premium">元</span></div>
+            <div class="col-sm-4">保额：<span id="amend_thirdPartyAmount" name="thirdPartyAmount"></span><span class="premium">元</span></div>
+        </div>
+        <div class="row amend checkText">
+            <div class="col-sm-4"><input type="checkbox" id="amend_driverChk" disabled="true">&nbsp;车上人员责任险(司机)</div>
+            <div class="col-sm-4">保费：<span id="amend_driverPremium" name="driverPremium"></span><span class="premium">元</span></div>
+            <div class="col-sm-4">保额：<span id="amend_driverAmount" name="driverAmount"></span><span class="premium">元</span></div>
+        </div>
+        <div class="row amend checkText">
+            <div class="col-sm-4"><input type="checkbox" id="amend_passengerChk" disabled="true">&nbsp;车上人员责任险(乘客)</div>
+            <div class="col-sm-4">保费：<span id="amend_passengerPremium" name="passengerPremium"></span><span class="premium">元</span></div>
+            <div class="col-sm-4">保额：<span id="amend_passengerAmount" name="passengerAmount"></span><span class="premium">元</span></div>
+        </div>
+        <div class="row amend checkText">
+            <div class="col-sm-4"><input type="checkbox" id="amend_theftChk" disabled="true">&nbsp;盗抢险</div>
+            <div class="col-sm-4">保费：<span id="amend_theftPremium" name="theftPremium"></span><span class="premium">元</span></div>
+            <div class="col-sm-4">保额：<span id="amend_theftAmount" name="theftAmount"></span><span class="premium">元</span></div>
+        </div>
+        <div class="row amend checkText">
+            <div class="col-sm-4"><input type="checkbox" id="amend_scratchChk" disabled="true">&nbsp;车身划痕损失险</div>
+            <div class="col-sm-4">保费：<span id="amend_scratchPremium" name="scratchPremium"></span><span class="premium">元</span></div>
+            <div class="col-sm-4">保额：<span id="amend_scratchAmount" name="scratchAmount"></span><span class="premium">元</span></div>
+        </div>
+        <div class="row amend checkText">
+            <div class="col-sm-4"><input type="checkbox" id="amend_spontaneousLossChk" disabled="true">&nbsp;自燃损失险</div>
+            <div class="col-sm-4">保费：<span id="amend_spontaneousLossPremium" name="spontaneousLossPremium"></span><span class="premium">元</span></div>
+            <div class="col-sm-4">保额：<span id="amend_spontaneousLossAmount" name="spontaneousLossAmount"></span><span class="premium">元</span></div>
+        </div>
+        <div class="row amend checkText">
+            <div class="col-sm-4"><input type="checkbox" id="amend_engineChk" disabled="true">&nbsp;发动机特别损失险</div>
+            <div class="col-sm-4">保费：<span id="amend_enginePremium" name="enginePremium"></span><span class="premium">元</span></div>
+        </div>
+        <div class="row amend checkText">
+            <div class="col-sm-4"><input type="checkbox" id="amend_glassChk" disabled="true">&nbsp;玻璃单独破碎险</div>
+            <div class="col-sm-4">保费：<span id="amend_glassPremium" name="glassPremium"></span><span class="premium">元</span></div>
+            <div class="col-sm-4">玻璃类型：<span id="amend_glassType" name="glassType"></span></div>
+        </div>
+        <div class="row amend checkText">
+            <div class="col-sm-4"><input type="checkbox" id="amend_unableFindThirdPartyChk" disabled="true">&nbsp;无法找到第三方特约险</div>
+            <div class="col-sm-4">保费：<span id="amend_unableFindThirdPartyPremium" name="unableFindThirdPartyPremium"></span><span class="premium">元</span></div>
+        </div>
+        <div class="row amend checkText">
+            <div class="col-sm-4"><input type="checkbox" id="amend_iopChk" disabled="true">&nbsp;不计免赔率特约条款</div>
+            <div class="col-sm-4">保费：<span id="amend_iop" name="iop"></span><span class="premium">元</span></div>
+        </div>
+        <div class="row amend checkText">
+            <div class="col-sm-4"><input type="checkbox" id="amend_designatedRepairShopPremiumChk" disabled="true">&nbsp;指定专修厂险</div>
+            <div class="col-sm-4">保费：<span id="amend_designatedRepairShopPremium" name="designatedRepairShopPremium"></span><span class="premium">元</span></div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="../../js/order/insurance_image.js"></script>
+<script type="text/javascript" src="../../js/nationwideOrder/order_comment.js"></script>
+<script type="text/javascript" src="../../js/common/popup.js"></script>
+<script type="text/javascript" src="../../js/common/order_pic_audit_pop.js"></script>
+<script type="text/javascript" src="../../js/order/order_pic_type_add_pop.js"></script>
+<script type="text/javascript" src="../../My97DatePicker/WdatePicker.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<link rel="stylesheet" href="../../plugins/DataTables-1.10.12/media/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="../../plugins/DataTables-1.10.12/media/css/dataTables.bootstrap.min.css">
+<link rel="stylesheet" href="../../libs/select2/select2.min.css">
+<link rel="stylesheet" href="../../libs/select2/select2-bootstrap.min.css">
+<style>
+    .nav-custom > li.active > a {
+        border-right: solid 2px #337ab7;
+        background-color: #e4f2ff;
+    }
+    .yuan:after {
+        position: absolute;
+        top: 7px;
+        content: '元';
+        right: -2px;
+    }
+</style>
+<div class="col-md-2">
+    <div class="pull-right">
+        <a id="draftEdit" class="btn btn-link">编辑</a>
+    </div>
+    <div><h4 id="draftCount"></h4></div>
+    <ul id="draftNav" class="nav nav-custom">
+    </ul>
+</div>
+<div class="col-md-10">
+    <form class="hide">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">基本信息</h3>
+            </div>
+            <div class="panel-body">
+                <div class="form-horizontal">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <input type="hidden" id="draftId">
+                            <input type="hidden" id="draftName">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">合约名称：</label>
+                                <div class="col-md-8">
+                                    <select name="contractId" id="contractId" class="form-control required"
+                                            style="width: 100%;"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">支持投保城市：</label>
+                                <div class="col-md-8">
+                                    <select name="supportAreaId" id="supportAreaId" class="form-control required"
+                                            style="width: 100%;">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-tool pull-right">
+                <a class="btn btn-primary" id="addBtn">
+                    <span class="glyphicon glyphicon-plus"></span> 新建
+                </a>
+            </div>
+            <div class="panel-heading">
+                <h3 class="panel-title">点位信息</h3>
+            </div>
+            <div class="panel-body">
+                <table id="tide_rebate_list_table" class="table">
+                </table>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 pull-right">
+                <div class="pull-right">
+                    <a id="saveBtn" class="btn btn-default">保存草稿</a>
+                    <a id="submitBtn" class="btn btn-primary">发布</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript" src="../../libs/bootstrap-3.3.4/js/bootstrap-multiselect.js"></script>
+<script type="text/javascript" src="../../plugins/DataTables-1.10.12/media/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../../libs/select2/select2.min.js"></script>
+<script type="text/javascript" src="../../libs/select2/zh-CN.js"></script>
+<script type="text/javascript" src="../../libs/jquery-validation-1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="../../libs/jquery-validation-1.14.0/messages_zh.js"></script>
+<script type="text/javascript" src="../../js/common/common.js"></script>
+<script type="text/javascript" src="../../js/common/datatable_util.js"></script>
+<script type="text/javascript" src="../../js/tide/tide_rebate_add_common.js"></script>
+<script type="text/javascript" src="../../js/tide/tide_rebate_draft.js"></script>

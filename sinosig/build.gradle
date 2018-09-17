@@ -1,0 +1,30 @@
+/**
+ +----------------+
+ | Build Settings |
+ +----------------+
+ */
+configurations {
+    springBoot {
+        extendsFrom runtime
+    }
+}
+
+dependencies {
+
+    compile project(':entity-core')
+
+    // Spring Framework
+    compile     "org.springframework:spring-webmvc:$spring_version"
+
+    // Apache
+    compile     "commons-codec:commons-codec:$commons_codec_version"
+
+    // Jasypt
+    compile     "org.jasypt:jasypt:$jasypt_version"
+
+    // cheche365
+    compile "com.cheche365.parser:cheche365-parser-core:$cheche365_parser_version"
+
+    testCompile "com.cheche365.parser:cheche365-parser-test:$cheche365_parser_version"
+
+}

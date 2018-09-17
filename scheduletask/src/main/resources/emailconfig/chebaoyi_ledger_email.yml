@@ -1,0 +1,58 @@
+#车保易台账报表
+title: 车保易台账
+tos: [liulu@cheche365.com,zhangtc@cheche365.com,liuzz@cheche365.com]
+production_tos: [liyq@cheche365.com,weiou@cheche365.com,yanyl@cheche365.com,huyj@cheche365.com,jiaxu@cheche365.com,renjing@cheche365.com,songmin@cheche365.com,xujy@cheche365.com,zhangyq@cheche365.com]
+template: /velocity/chebaoyiLedger.vm
+excelAttachmentConfig:
+        fileName: "TOA渠道每日出单台帐.xlsx"
+        sheets:
+        - sheetName: TOA渠道每日出单台帐
+          columns:
+              - columnType: chebaoyiLedgerData
+                column:
+                    出单时间: issueTime
+                    出单机构: institution
+                    付款单位: paymentName
+                    保险公司: company
+                    平台: platform
+                    车主: owner
+                    车牌号: plateNum
+                    订单号: orderNo
+                    保费总额: premiumSum
+                    交强险: compulsoryPremium
+                    车船税: autoTax
+                    商业险: commecialPremium
+                    交强点位: compulsoryPointLocation
+                    商业点位: commecialPointLocation
+                    点位优惠金额: PointLocationSum
+                    活动优惠: activityFavour
+                    加油卡金额: fuelCard
+                    京东卡金额: jdCard
+                    付款方式: paymentChannel
+                    实物礼品: giftDetail
+                    备注: comment
+                    销售总监姓名: salesDirector
+                    销售总监交强点位: directorCompulsoryPointLocation
+                    销售总监商业点位: directorCommecialPointLocation
+                    销售总监钱包入账金额: salesDirectorBillingSum
+                    销售经理姓名: salesManager
+                    销售经理交强点位: managerCompulsoryPointLocation
+                    销售经理商业点位: managerCommecialPointLocation
+                    销售经理钱包入账金额: salesManagerBillingSum
+                    业务员姓名: salesman
+                    业务员交强点位: salesmanCompulsoryPointLocation
+                    业务员商业点位: salesmanCommecialPointLocation
+                    业务员钱包入账金额: salesmanBillingSum
+                    出单城市: area
+                    出单账号: orderAccount
+                    代理人登录账号: agentAccount
+                    交强险保单号: jiaoshangNo
+                    商业险保单号: insuranceNo
+                    收件人: getMailed
+                    收货地址: getAddress
+                    收件人电话: customerPhone
+                    电子邮箱: mailAddress
+
+
+
+

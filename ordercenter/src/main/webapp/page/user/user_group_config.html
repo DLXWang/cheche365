@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>配置用户组</title>
+    <link type="text/css" href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="../../css/formInput.css" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet">
+    <script type="text/javascript" src="../../js/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/common/common.js"></script>
+    <script type="text/javascript" src="../../js/common/popup.js"></script>
+    <script type="text/javascript" src="../../js/common/properties.js"></script>
+    <script type="text/javascript" src="../../js/common/operation.js"></script>
+    <script type="text/javascript" src="../../js/user/user.js"></script>
+    <script type="text/javascript" src="../../js/user/user_group_config.js"></script>
+</head>
+<body>
+    <div class="container tab_body">
+        <form class="form-horizontal" id="relationForm">
+            <div class="form-group" style="padding-top: 40px;">
+                <label class="col-sm-4 control-label">客服</label>
+                <div class="col-sm-5">
+                    <select id="customerSel" class="form-control text_input"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">内勤</label>
+                <div class="col-sm-5">
+                    <select id="internalSel" class="form-control text_input"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">外勤</label>
+                <div class="col-sm-5">
+                    <select id="externalSel" class="form-control text_input"></select>
+                </div>
+            </div>
+            <div class="form-group" style="padding-top: 20px;">
+                <label class="col-sm-4 control-label"></label>
+                <div class="col-sm-5">
+                    <div class="btn-group">
+                        <button id="save_button" type="button" class="btn btn-primary" style="width: 200px;">提交配置</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+#2018年1月专享活动中奖报表
+title: "2018年1月专享活动中奖数据-${currentDateTime}"
+tos: [zhangtc@cheche365.com,liuyw@cheche365.com,liheng@cheche365.com,huyp@cheche365.com]
+production_tos: [xietian@cheche365.com,huyp@cheche365.com]
+template: /velocity/insuranceOrderReport.vm
+excelAttachmentConfig:
+        fileName: "${currentDateTime}2018年1月专享活动中奖数据.xlsx"
+        sheets:
+            - sheetName: sheet1
+              columns:
+                  - columnType: marketingReport
+                    column:
+                        车牌号: licensePlateNo
+                        手机号: mobile
+                        中将奖品: good
+                        中奖时间: effectDate

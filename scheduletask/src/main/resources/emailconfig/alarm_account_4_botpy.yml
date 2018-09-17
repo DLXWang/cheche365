@@ -1,0 +1,4 @@
+title:  账号报警
+template: /velocity/errorNotifyEmail.vm
+tos: [songpeng@cheche365.com,zhangpc@cheche365.com,huyp@cheche365.com,durc@cheche365.com,wangjl@cheche365.com]
+production_tos: [yanyl@cheche365.com,wangshuo@cheche365.com,liuyue@cheche365.com,liuxw@cheche365.com,durc@cheche365.com,liuyw@cheche365.com]

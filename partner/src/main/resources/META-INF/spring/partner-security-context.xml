@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:mvc="http://www.springframework.org/schema/mvc"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans.xsd
+                        http://www.springframework.org/schema/security
+                        http://www.springframework.org/schema/security/spring-security.xsd
+                        http://www.springframework.org/schema/mvc
+                        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/partner/**"/>
+
+            <beans:bean class="com.cheche365.cheche.partner.web.interceptor.SignVerifyInterceptor">
+                <beans:property name="extendUrls">
+                    <beans:set>
+                        <beans:value>/partner/v1.3/quote/.*</beans:value>
+                        <beans:value>/partner/v1.3/quote</beans:value>
+                        <beans:value>/partner/v1.3/auto/model</beans:value>
+                        <beans:value>/partner/order/.*/.*</beans:value>
+                        <beans:value>/partner/.*/callback/order/.*</beans:value>
+                        <beans:value>/partner/.*/callback/order/payment/.*</beans:value>
+                        <beans:value>/partner/mock/*</beans:value>
+                        <beans:value>/partner/.*/users/token</beans:value>
+                        <beans:value>/partner/third/.*/callback/order/payment/.*</beans:value>
+                        <beans:value>/partner/rryp/quote/photo</beans:value>
+                        <beans:value>/partner/youdianke/orders</beans:value>
+                        <beans:value>/partner/eqiao/orders</beans:value>
+                        <beans:value>/partner/tuhu/orders</beans:value>
+                        <beans:value>/partner/nci/orders</beans:value>
+                        <beans:value>/partner/autohome/callback</beans:value>
+                        <beans:value>/partner/autohome/marketing/m/activity/index</beans:value>
+                        <beans:value>/partner/bdmap/activity/.*</beans:value>
+                        <beans:value>/partner/kuaiqian/encrypt</beans:value>
+                        <beans:value>/partner/chinaubi/orders</beans:value>
+                        <beans:value>/partner/czwy/orders</beans:value>
+                        <beans:value>/partner/touna/orders</beans:value>
+                        <beans:value>/partner/cx580/orders</beans:value>
+                        <beans:value>/partner/.*/orders</beans:value>
+
+                        <!--以下为旧的订单列表跳转链接，新的改为/order-->
+                        <beans:value>/partner/rryp/photoQuote</beans:value>
+                        <beans:value>/partner/youdianke/orderlist</beans:value>
+                        <beans:value>/partner/eqiao/orderlist</beans:value>
+                        <beans:value>/partner/tuhu/orderlist</beans:value>
+                        <beans:value>/partner/nci/orderlist</beans:value>
+                        <beans:value>/partner/chinaubi/orderlist</beans:value>
+                        <beans:value>/partner/czwy/orderlist</beans:value>
+                        <beans:value>/partner/touna/orderlist</beans:value>
+                        <beans:value>/partner/cx580/orderlist</beans:value>
+                    </beans:set>
+                </beans:property>
+            </beans:bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
+</beans:beans>

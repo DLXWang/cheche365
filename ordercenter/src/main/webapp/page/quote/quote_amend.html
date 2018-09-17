@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>修改订单</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link type="text/css" href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="../../css/style.css" rel="stylesheet">
+    <link type="text/css" href="../../css/common.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/popup.css">
+    <link rel="stylesheet" href="../../css/quote.css">
+    <link type="text/css" href="../../plugins/select2/select2.min.css" rel="stylesheet">
+    <script type="text/javascript" src="../../js/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../plugins/jquery-validation-1.14.0/jquery.validate.js"></script>
+    <script type="text/javascript" src="../../plugins/select2/select2.min.js"></script>
+</head>
+<body>
+<div class="container" style="padding-top: 10px;padding-right: 0;padding-left: 0;">
+    <div class="row">
+        <div class="form-group form-group-fix">
+            <div class="col-sm-12">
+                <span>
+                    <label class="text-height-28 font-18">手机号：</label>
+                    <span id="mobile_text" class="text-height-28 font-18"></span>
+                </span>
+                <span class="text-margin-left-30">
+                    <label class="text-height-28 font-18">车牌号：</label>
+                    <span id="license_plate_no_text" class="text-height-28 font-18"></span>
+                </span>
+                <span id="company_add_content" class="text-margin-left-30">
+                    <button type="button" id="addCompany" class="btn btn-danger text-input-200" style="margin-top: -3px;" ><i class="glyphicon glyphicon-plus"></i>&nbsp;更改保险公司</button>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="width: 1400px;" >
+        <div id="quote_content_prev" style="margin-left: -100px;float: left;">
+            <div style="overflow-x: auto;">
+                <table class="table table-bordered quote-tab">
+                    <tbody>
+                    <tr class="text-center top_title_tr">
+                    </tr>
+                    <tr class="text-center middle_item_tr">
+                    </tr>
+                    <tr class="text-center bottom_total_tr">
+                    </tr>
+                    <tr class="text-center bottom_btn_tr">
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- 险种选择 固定部分 -->
+        <div class="" style="float: left;">
+            <table id="kind_tab" class="table table-bordered main-table-width-amend">
+                <tbody>
+                <tr class="text-center">
+                    <td class="tab-title" colspan="2"></td>
+                </tr>
+                <tr>
+                    <td class="item-kind vertical-top" colspan="2">
+                        <div class="form-group form-group-fix">
+                            <div class="col-sm-12 text-left">
+                                <span class="text-center bold-font">国家强制险</span>
+                            </div>
+                        </div>
+                        <div class="form-group form-group-fix">
+                            <div class="col-sm-6 text-left">
+                                <div class="checkbox">
+                                    <label>
+                                        <input id="compulsoryChk" name="item_kind_check" type="checkbox" value="" > <span class="">机动车交通事故责任强制险</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 text-center">
+                                <span class="text-height-40 yes none">投保</span>
+                                <span class="text-height-40 no">未投保</span>
+                            </div>
+                            <div class="text-center item-kind-show" >
+                                <input type="text" id="compulsoryPremiumPd" class="bottom-input premiumPd text-width-70 text-center">元
+                            </div>
+                        </div>
+                        <div class="form-group form-group-fix">
+                            <div class="col-sm-6 text-left">
+                                <div class="checkbox">
+                                    <label>
+                                        <input id="autoTaxChk" name="item_kind_check" type="checkbox" value=""> <span class="">车船使用税</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 text-center">
+                                <span class="text-height-40 yes none">缴纳</span>
+                                <span class="text-height-40 no">未缴纳</span>
+                            </div>
+                            <div class="text-center item-kind-show">
+                                <input type="text" id="autoTaxPremiumPd" class="bottom-input premiumPd text-width-70 text-center">元
+                            </div>
+                        </div>
+                        <div class="form-group form-group-fix">
+                            <div class="col-sm-12 text-left">
+                                <span class="text-center bold-font">商业险</span>
+                            </div>
+                        </div>
+                        <div class="form-group form-group-fix">
+                            <div class="col-sm-6 text-left">
+                                <div class="checkbox">
+                                    <label>
+                                        <input id="thirdPartyChk" name="item_kind_check" type="checkbox" value=""> <span class="">机动车第三者责任保险</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 text-center">
+                                <span class="text-height-40 no">未投保</span>
+                                <select id="thirdPartyAmount" class="form-control yes none text-input-100 item-select">
+                                    <option value="50000">5万</option>
+                                    <option value="100000">10万</option>
+                                    <option value="200000">20万</option>
+                                    <option value="300000" selected>30万</option>
+                                    <option value="500000">50万</option>
+                                    <option value="1000000">100万</option>
+                                    <option value="1500000">150万</option>
+                                    <option value="2000000">200万</option>
+                                    <option value="2500000">250万</option>
+                                    <option value="3000000">300万</option>
+                                </select>
+                            </div>
+                            <div class="text-center item-kind-show">
+                                <input type="text" id="thirdPartyPremiumPd" class="bottom-input premiumPd text-width-70  text-center">元
+                            </div>
+                        </div>
+                        <div class="form-group form-group-fix">
+                            <div class="col-sm-6 text-left">
+                                <div class="checkbox">
+                                    <label>
+                                        <input id="damageChk" name="item_kind_check" type="checkbox" value=""> <span class="">机动车损失险</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 text-center">
+                                <span class="text-height-40 yes none">投保</span>
+                                <span class="text-height-40 no">未投保</span>
+                            </div>
+                            <div class="text-center item-kind-show">
+                                <input type="text" id="damagePremiumPd" class="bottom-input premiumPd text-width-70 text-center">元
+                            </div>
+                        </div>
+                        <div class="form-group form-group-fix">
+                            <div class="col-sm-6 text-left">
+                                <div class="checkbox">
+                                    <label>
+                                        <input id="driverChk" name="item_kind_check" type="checkbox" value=""> <span class="no">车上人员责任险（司机）</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 text-center">
+                                <span class="text-height-40 no">未投保</span>
+                                <select id="driverAmount" class="form-control text-input-100 item-select yes none">
+                                    <option value="10000">1万</option>
+                                    <option value="20000">2万</option>
+                                    <option value="50000">5万</option>
+                                    <option value="100000">10万</option>
+                                    <option value="200000">20万</option>
+                                </select>
+                            </div>
+                            <div class="text-center item-kind-show">
+                                <input type="text" id="driverPremiumPd" class="bottom-input premiumPd text-width-70 text-center">元
+                            </div>
+                        </div>
+                        <div class="form-group form-group-fix">
+                            <div class="col-sm-6 text-left">
+                                <div class="checkbox">
+                                    <label>
+                                        <input id="passengerChk" name="item_kind_check" type="checkbox" value=""> <span class="no">车上人员责任险（乘客）</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 text-center">
+                                <span class="text-height-40 no">未投保</span>
+                                <select id="passengerAmount" class="form-control text-input-100 item-select yes none">
+                                    <option value="10000">1万</option>
+                                    <option value="20000">2万</option>
+                                    <option value="50000">5万</option>
+                                    <option value="100000">10万</option>
+                                    <option value="200000">20万</option>
+                                </select>
+                            </div>
+                            <div class="text-center item-kind-show">
+                                <input type="text" id="passengerPremiumPd" class="bottom-input premiumPd text-width-70 text-center">元
+                            </div>
+                        </div>
+                        <div class="form-group form-group-fix">
+                            <div class="col-sm-6 text-left">
+                                <div class="checkbox">
+                                    <label>
+                                        <input id="engineChk" name="item_kind_check" type="checkbox" value=""> <span class="no">发动机特别损失险</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 text-center">
+                                <span class="text-height-40 yes none">投保</span>
+                                <span class="text-height-40 no">未投保</span>
+                            </div>
+                            <div class="text-center item-kind-show">
+                                <input type="text" id="enginePremiumPd" class="bottom-input premiumPd text-width-70 text-center">元
+                            </div>
+                        </div>
+                        <div class="form-group form-group-fix">
+                            <div class="col-sm-6 text-left">
+                                <div class="checkbox">
+                                    <label>
+                                        <input id="glassChk" name="item_kind_check" type="checkbox" value=""> <span class="no">玻璃单独破碎险</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 text-center">
+                                <span class="text-height-40 no">未投保</span>
+                                <select id="glassType" class="form-control text-input-100 item-select yes none">
+                                    <option value="1">国产</option>
+                                    <option value="2">进口</option>
+                                </select>
+                            </div>
+                            <div class="text-center item-kind-show">
+                                <input type="text" id="glassPremiumPd" class="bottom-input premiumPd text-width-70 text-center">元
+                            </div>
+                        </div>
+                        <div class="form-group form-group-fix">
+                            <div class="col-sm-6 text-left">
+                                <div class="checkbox">
+                                    <label>
+                                        <input id="scratchChk" name="item_kind_check" type="checkbox" value=""> <span class="no">车身划痕损失险</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 text-center">
+                                <span class="text-height-40 no">未投保</span>
+                                <select id="scratchAmount" class="form-control text-input-100 item-select yes none">
+                                    <option value="2000">2千</option>
+                                    <option value="5000">5千</option>
+                                    <option value="10000">1万</option>
+                                    <option value="20000">2万</option>
+                                </select>
+                            </div>
+                            <div class="text-center item-kind-show">
+                                <input type="text" id="scratchPremiumPd" class="bottom-input premiumPd text-width-70 text-center">元
+                            </div>
+                        </div>
+                        <div class="form-group form-group-fix">
+                            <div class="col-sm-6 text-left">
+                                <div class="checkbox">
+                                    <label>
+                                        <input id="theftChk" name="item_kind_check" type="checkbox" value=""> <span class="no">机动车盗抢险</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 text-center">
+                                <span class="text-height-40 no">未投保</span>
+                                <input id="theftAmount" type="text" class="bottom-input text-width-70 text-input-100  text-center yes none" style="margin-top:8px">
+                            </div>
+                            <div class="text-center item-kind-show">
+                                <input type="text" id="theftPremiumPd" class="bottom-input premiumPd text-width-70 text-center">元
+                            </div>
+                        </div>
+                        <div class="form-group form-group-fix">
+                            <div class="col-sm-6 text-left">
+                                <div class="checkbox">
+                                    <label>
+                                        <input id="spontaneousLossChk" name="item_kind_check" type="checkbox" value=""> <span class="no">自燃损失险</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 text-center">
+                                <span class="text-height-40 no">未投保</span>
+                                <input id="spontaneousLossAmount" type="text" class="bottom-input text-width-70 text-input-100 text-center yes none" style="margin-top:8px">
+                            </div>
+                            <div class="text-center item-kind-show">
+                                <input type="text" id="spontaneousLossPremiumPd" class="bottom-input premiumPd text-width-70 text-center">元
+                            </div>
+                        </div>
+                        <div class="form-group form-group-fix">
+                            <div class="col-sm-6 text-left">
+                                <div class="checkbox">
+                                    <label>
+                                        <input id="iopChk" name="item_kind_check" type="checkbox" value="" > <span class="">不计免赔险</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 text-center">
+                                <span class="text-height-40 yes none">投保</span>
+                                <span class="text-height-40 no">未投保</span>
+                            </div>
+                            <div class="text-center item-kind-show">
+                                <input type="text" id="iopPremiumPd" class="bottom-input premiumPd text-width-70 text-center">元
+                            </div>
+                        </div>
+                        <div class="form-group form-group-fix">
+                        <div class="col-sm-6 text-left">
+                            <div class="checkbox">
+                                <label>
+                                    <input id="unableFindThirdPartyChk" name="item_kind_check" type="checkbox" value="" > <span class="">无法找到第三方特约险</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 text-center">
+                            <span class="text-height-40 yes none">投保</span>
+                            <span class="text-height-40 no">未投保</span>
+                        </div>
+                        <div class="text-center item-kind-show">
+                            <input type="text" id="unableFindThirdPartyPremiumPd" class="bottom-input premiumPd text-width-70 text-center">元
+                        </div>
+                    </div>
+                    <div class="form-group form-group-fix">
+                        <div class="col-sm-6 text-left">
+                            <div class="checkbox">
+                                <label>
+                                    <input id="designatedRepairShopChk" name="item_kind_check" type="checkbox" value="" disabled="disabled" > <span class="">指定专修厂险</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 text-center">
+                            <span class="text-height-40 yes none">投保</span>
+                            <span class="text-height-40 no">未投保</span>
+                        </div>
+                        <div class="text-center item-kind-show">
+                            <input type="text" id="designatedRepairShopPremiumPd" class="bottom-input premiumPd text-width-70 text-center" disabled="disabled">元
+                        </div>
+                    </div>
+                    </td>
+                </tr>
+                <tr class="text-center">
+                    <td class="item-total">
+                        <span class="font-18">共选择 <span id="item_kind_count" class="red-font">5</span> 险种</span>
+                    </td>
+                    <td>
+                        <span class="text-left total"></span>
+                    </td>
+                </tr>
+                <tr class="text-center">
+                    <td class="item-btn" colspan="2" style="height: 177px;">
+                        <button type="button" class="btn btn-danger text-input-200 quote-submit">提交报价</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 补充订单信息 -->
+        <div id="order_add_content" class="col-sm-4 additional-order none" >
+            <form id='modifyForm'>
+                <div class="order-tpl">
+                    <div class="text-center tab-title order-title">
+                        <span class="red-font font-18">补充订单信息</span>
+                    </div>
+                    <div class="order-content" style="height: 747px;">
+                        <div class="form-group form-group-fix">
+                            <div class="col-sm-12 text-center">
+                                ——————<span class="text-center font-18"> 被保险人信息 </span>——————
+                            </div>
+                        </div>
+                        <div class="form-group form-group-fix">
+                            <div class="col-sm-3 text-left">
+                                <span class="text-height-28">被保险人：</span>
+                            </div>
+                            <div class="col-sm-9 text-left">
+                                <select id="insuredType" class="form-control text-height-28 text-input-100 select-28" readonly="true" disabled="disabled">
+                                    <option value='1'>车主</option>
+                                    <option value='0' selected>非车主</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group form-group-fix">
+                            <div class="col-sm-3 text-left">
+                                <span class="text-height-28">姓名：</span>
+                            </div>
+                            <div class="col-sm-9 text-left">
+                                <input type='text' required id="insuredName" placeholder="请输入姓名" class='order-value text-input-200 form-control text-height-28' disabled="disabled">
+                            </div>
+                        </div>
+                        <div class="form-group form-group-fix">
+                            <div class="col-sm-3 text-left">
+                                <span class="text-height-28">证件类型：</span>
+                            </div>
+                            <div class="col-sm-9 text-left">
+                                <select id="insuredIdentityType" class="form-control text-height-28 text-input-200 select-28" disabled="disabled">
+                                    <option value='0' selected>请选择</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group form-group-fix">
+                            <div class="col-sm-3 text-left">
+                                <span class="text-height-28"></span>
+                            </div>
+                            <div class="col-sm-9 text-left">
+                                <input type='text' required pattern="^\d{15}|\d{17}([0-9]|X|x)$" id="insuredIdentity" placeholder="请输入身份证" class='order-value text-input-200 form-control text-height-28' disabled="disabled"/>
+                            </div>
+                        </div>
+                        <div class="form-group form-group-fix">
+                            <div class="col-sm-12 text-center">
+                                ——————<span class="text-center font-18"> 投保人信息 </span>——————
+                            </div>
+                        </div>
+                        <div class="form-group form-group-fix">
+                            <div class="col-sm-3 text-left">
+                                <span class="text-height-28">姓名：</span>
+                            </div>
+                            <div class="col-sm-9 text-left">
+                                <input type='text' required disabled="disabled" id="insureName" placeholder="请输入姓名" class='order-value text-input-200 form-control text-height-28'>
+                            </div>
+                        </div>
+                        <div class="form-group form-group-fix">
+                            <div class="col-sm-3 text-left">
+                                <span class="text-height-28">证件类型：</span>
+                            </div>
+                            <div class="col-sm-9 text-left">
+                                <select id="insureIdentityType" class="form-control text-height-28 text-input-200 select-28" required disabled="disabled">
+                                    <option value='0' selected>请选择</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group form-group-fix">
+                            <div class="col-sm-3 text-left">
+                                <span class="text-height-28"></span>
+                            </div>
+                            <div class="col-sm-9 text-left">
+                                <input type='text' required disabled="disabled" pattern="^\d{15}|\d{17}([0-9]|X|x)$" id="insureIdentity" placeholder="请输入身份证" class='order-value text-input-200 form-control text-height-28'/>
+                            </div>
+                        </div>
+                        <div class="form-group form-group-fix">
+                            <div class="col-sm-12 text-center">
+                                ——————<span class="text-center font-18"> 保单接收信息 </span>——————
+                            </div>
+                        </div>
+                        <div class="form-group form-group-fix">
+                            <div class="col-sm-3 text-left">
+                                <span class="text-height-28">姓名：</span>
+                            </div>
+                            <div class="col-sm-9 text-left">
+                                <input type='text' required id='policyName' placeholder="请输入姓名" class='order-value text-input-200 form-control text-height-28' readonly="true">
+                            </div>
+                        </div>
+                        <div class="form-group form-group-fix">
+                            <div class="col-sm-3 text-left">
+                                <span class="text-height-28">电话：</span>
+                            </div>
+                            <div class="col-sm-9 text-left">
+                                <input type='text' required pattern="^\d{11}$" id='policyMobile' placeholder="请输入电话" class='order-value text-input-200 form-control text-height-28' readonly="true">
+                            </div>
+                        </div>
+                        <div class="form-group form-group-fix">
+                            <div class="col-sm-3 text-left">
+                                <span class="text-height-28">地址：</span>
+                            </div>
+                            <div class="col-sm-4 text-left form-inline" style="padding-right: 0;">
+                                省：<select required class='form-control text-height-28 select-28 text-input-100' id='policyProvince' style="width: 100px;" readonly="true">
+                                <option value=''>
+                                    请选择
+                                </option>
+                            </select>
+                            </div>
+                            <div class="col-sm-5 text-left form-inline" style="padding-right: 0;" id="policyCityDiv">
+                                市：<select required class='form-control text-height-28 select-28 text-input-100' id='policyCity' style="width: 100px;" readonly="true">
+                            </select>
+                            </div>
+                        </div>
+                        <div class="form-group form-group-fix" id="policyDistrictDiv">
+                            <div class="col-sm-3 text-left"></div>
+                            <div class="col-sm-4 text-left form-inline" style="padding-right: 0;">
+                                区：<select required class='form-control text-height-28 select-28 text-input-100' id='policyDistrict' style="width: 100px;" readonly="true">
+                            </select>
+                            </div>
+                        </div>
+                        <div class="form-group form-group-fix">
+                            <div class="col-sm-3 text-left"></div>
+                            <div class="col-sm-9 text-left">
+                                <input type='text' required id='policyStreet' placeholder="街道" class='text-height-28 order-value form-control text-input-280' readonly="true">
+                            </div>
+                        </div>
+                        <div class="form-group form-group-fix">
+                            <div class="col-sm-12 text-center">
+                                ———————<span class="text-center font-18"> 支付方式 </span>———————
+                            </div>
+                        </div>
+                        <div class="form-inline form-group-fix">
+                            <div class="col-sm-3 text-left">
+                                <span class="text-height-28">用户类型：</span>
+                            </div>
+                            <div class="col-sm-5 text-left">
+                                <span class="text-height-28" id="userType"></span>
+                                <span class="text-height-28" id="userName"></span>
+                            </div>
+                            <div id='orderAgent' class="none">
+                                <div class="col-sm-2 text-left">
+                                    <span class="text-height-28">返点：</span>
+                                </div>
+                                <div class="col-sm-2 text-left">
+                                    <span class="text-height-28" id="rebate"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group form-group-fix">
+                            <div class="col-sm-3 text-left">
+                                <span class="text-height-28">支付方式：</span>
+                            </div>
+                            <div class="col-sm-4 text-left" id='payType'>线上支付</div>
+                        </div>
+                        <div class="order-online">
+                            <div class="form-group form-group-fix" id="marketingDiv">
+                                <div class="col-sm-3 text-left" style="padding-right: 0;">
+                                    <span class="text-height-28">可参加活动：</span>
+                                </div>
+                                <div class="col-sm-2 text-left">
+                                    <button type="button" id="marketingDisplayBtn" class="btn btn-success btn-sm">查看</button>
+                                </div>
+                                <div class="col-sm-3 text-left" style="padding-right: 0;">
+                                    <span class="text-height-28">已有优惠券：</span>
+                                </div>
+                                <div class="col-sm-2 text-left">
+                                    <button id="giftDisplayBtn" type="button" class="btn btn-sm btn-success">查看</button>
+                                    <input type="hidden" name="giftId" id="giftId" value="">
+                                </div>
+                                <div class="clear-both"></div>
+                            </div>
+                            <div class="form-group form-group-fix" id="resendGiftDiv">
+                                <div class="col-sm-3 text-left" style="padding-right: 0;">
+                                    <span class="text-height-28" style="display:inline-block; width:150px;">额外赠送礼品：</span>
+                                </div>
+                                <div class="col-sm-9 text-left">
+                                    <button id="resendGiftDisplayBtn" type="button" class="btn btn-sm btn-success">查看</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group form-group-fix" style="margin-top: 9px;">
+                            <div class="col-sm-3 text-left">
+                                <span class="text-height-28">备注：</span>
+                            </div>
+                            <div class="col-sm-9 text-left">
+                                <input type='text' id='comment' placeholder="请输入备注" class='order-value text-input-200 form-control text-height-28'>
+                            </div>
+                        </div>
+                        <div class="form-group form-group-fix" style="height: 80px;overflow-y: auto;">
+                            <b id="giftAmountText" class='red-font gift-amount'></b><b id="resendGiftAmountText" class='red-font gift-amount'></b>
+                        </div>
+                    </div>
+                    <div class="order-footer item-total" style="height: 177px;">
+                        <div class="form-group form-group-fix" style="margin:1%">
+                            <div class="col-sm-9 text-left" style="padding-top: 16px;">
+                                需要支付:<br/>
+                                <span class="span-width-45">车船税</span>
+                                <span class="span-width-85"><span id="payableAutoTax" class="red-font">0</span>元</span><br/>
+
+                                <span class="span-width-45">交强险</span>
+                                <!-- 原值 -->
+                                <span class="span-width-85"><span id="payableCompulsory" class="red-font">0</span>元</span>
+                                <!-- 优惠度 -->
+                                <span id="payableCompulsoryPercentSpan" class="none"><input type="text" class="text-height-18 bottom-input text-input-36 text-center" id="payableCompulsoryPercent">%</span>
+                                <span id="payableCompulsoryPercentLimitSpan" class="none">-<input type="text" class="text-height-18 bottom-input text-input-36 text-center" id="payableCompulsoryPercentLimit">元</span>
+                                <!-- 优惠后值 -->
+                                <span id="paidCompulsorySpan" class="premium-margin-left-5 none"><span id="paidCompulsory" class="red-font"></span>元</span>
+                                <!-- 变化值 -->
+                                <span id="payableCompulsoryChangeSpan" class="premium-margin-left-5 none"><span id="payableCompulsoryChange" class="green-font"></span></span>
+                                <br/>
+
+                                <span class="span-width-45">商业险</span>
+                                <span class="span-width-85"><span id="payableCommercial" class="red-font">0</span>元</span>
+                                <span id="payableCommercialPercentSpan" class="none"><input type="text" class="text-height-18 bottom-input text-input-36 text-center" id="payableCommercialPercent">%</span>
+                                <span id="payableCommercialPercentLimitSpan" class="none">-<input type="text" class="text-height-18 bottom-input text-input-36 text-center" id="payableCommercialPercentLimit">元</span>
+                                <span id="paidCommercialSpan" class="premium-margin-left-5 none"><span id="paidCommercial" class="red-font"></span>元</span>
+                                <span id="payableCommercialChangeSpan" class="premium-margin-left-5 none"><span id="payableCommercialChange" class="green-font"></span></span>
+                                <br/>
+
+                                <span class="span-width-45">总计</span>
+                                <span class="span-width-85"><span id="payableSumPremium" class="red-font">0</span>元</span><span id="reduceReason" class="none green-font premium-margin-left-5"></span><span id="rebateReason" class="none green-font premium-margin-left-5"></span>
+                                <span id="payableSumPremiumPercentSpan" class="none"><span id="payableSumPremiumPercent" class="span-width-36 text-center"></span>%</span>
+                                <span id="paidSumPremiumSpan" class="premium-margin-left-5 none"><span id="paidSumPremium" class="red-font"></span>元</span>
+                                <span id="payableSumPremiumChangeSpan" class="premium-margin-left-5 none"><span id="payableSumPremiumChange" class="green-font"></span></span>
+
+                                <div id="cheChePayInfo" class="none">
+                                    <span class="span-width-75 red-font" id="cheChePayTitle">需支付金额</span>
+                                    <span class="span-width-85 red-font"><span id="cheChePaySumPremium" class="red-font">0</span>元
+                                    </span>
+                                    <span class="checkbox" style="display:inline-block;padding-left: 50px;">
+                                        <input type="checkbox" id="cheChePay" >车车承担
+                                    </span>
+                                </div>
+                            </div>
+                            <div id="orderBtnGroup" class="col-sm-3 text-center" style="padding-top: 16px;">
+                                <span class="submitImg none" style="line-height: 106px;"><img src="../../images/loading.GIF"></span>
+                                <span id="preferentialBtnGroup">
+                                    <button type="button" id="preferentialBtn" class="btn btn-primary btn-sm text-input-80">百分比优惠</button>
+                                    <button type="button" id="preferentialLimitBtn" class="btn btn-primary btn-sm text-input-80" style="margin-top: 5px;">绝对值优惠</button>
+                                    <button type="button" id="cancelPreferentialBtn" class="btn btn-primary btn-sm text-input-80 none">取消优惠</button>
+                                </span>
+                                <button type="submit" id="modifyOrder" class="btn btn-danger btn-sm text-input-80" style="margin-top: 7px;">修改订单</button>
+                                <button type="button" id="returnBackBtn" class="btn btn-success btn-sm text-input-80" style="margin-top: 7px;">返回上一步</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- 分割线   定义出单中心规范弹出层，以后按此规范，之前的不再使用  在popup.js中定义 -->
+<div id="popupHtml"></div>
+
+<div id="companies_content" class="none">
+    <div class="theme_poptit theme_poptit_color">
+        <a href="javascript:;" title="关闭" class="close"><i class="glyphicon glyphicon-remove"></i></a>
+        <h4 class="text-center title">更改保险公司</h4>
+    </div>
+    <div id="company_list" style="min-height:100px; max-height: 300px;">
+    </div>
+    <div class="form-group">
+        <div class="col-sm-12 text-center btn-margin-top-10 btn-margin-bottom-10">
+            <button type="button" class="btn btn-danger toAdd">确定</button>
+        </div>
+    </div>
+</div>
+
+<div id="renewal_companies_content" class="none">
+    <div class="theme_poptit theme_poptit_color">
+        <a href="javascript:;" title="关闭" class="close"><i class="glyphicon glyphicon-remove"></i></a>
+        <h4 class="text-center title">选择上一年保险公司</h4>
+    </div>
+    <div id="renewal_company_list" style="min-height:80px; max-height: 300px;">
+    </div>
+    <div class="form-group error-line none">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8 text-center">
+            <p class="alert alert-danger alert-user error-msg"><i class="glyphicon glyphicon-remove-sign"></i> <span class="errorText"></span></p>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-12 text-center btn-margin-top-10 btn-margin-bottom-10">
+            <span class="renewal-waiting-img none"><img height="33" src="../../images/loading.GIF">&nbsp;&nbsp;正在获取数据...</span>
+            <button type="button" class="btn btn-danger toRenewal">确定</button>
+        </div>
+    </div>
+</div>
+
+
+<div id="supplement_content" class="none">
+    <div class="theme_poptit theme_poptit_color">
+        <a href="javascript:;" title="关闭" class="close"><i class="glyphicon glyphicon-remove"></i></a>
+        <h4 class="text-center title">补充信息</h4>
+    </div>
+    <div class="form-input-top form-horizontal supplement-info" style="height:auto;max-height: 310px;overflow-y: auto;">
+    </div>
+    <div class="form-group error-line none">
+        <div class="col-sm-12 text-center">
+            <p class="alert alert-danger alert-user error-msg"><i class="glyphicon glyphicon-remove-sign"></i> <span class="errorText">车牌号格式错误</span></p>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-12 text-center" style="margin-bottom: 10px;margin-top: 10px;">
+            <button type="button" class="btn btn-danger text-input-100 toSupplement">确定</button>
+        </div>
+    </div>
+</div>
+<div id="error_content" class="none">
+    <div class="theme_poptit theme_poptit_color">
+        <a href="javascript:;" title="关闭" class="close"><i class="glyphicon glyphicon-remove"></i></a>
+        <h4 class="text-center title">错误信息</h4>
+    </div>
+    <div class="form-input-top form-horizontal error-info" style="height:auto;max-height: 300px;overflow-y: auto;">
+    </div>
+    <div class="form-group error-line none">
+        <div class="col-sm-12 text-center">
+            <p class="alert alert-danger alert-user error-msg"><i class="glyphicon glyphicon-remove-sign"></i> <span class="errorText">车牌号格式错误</span></p>
+        </div>
+    </div>
+    <div class="form-group form-group-fix">
+        <div class="col-sm-12 text-center" style="margin-bottom: 10px;margin-top: 10px;">
+            <button type="button" class="btn btn-danger text-input-100 toModify">确认修改</button>
+        </div>
+    </div>
+</div>
+<div id="giftContent" class="none">
+    <div class="theme_poptit theme_poptit_color">
+        <a href="javascript:;" title="关闭" class="close"><i class="glyphicon glyphicon-remove"></i></a>
+        <h4 class="text-center title">可使用优惠券</h4>
+    </div>
+    <div id="giftInfo" class="text-center" style="height:auto;margin-top: -1px;">
+        <table id="giftTab" class="table table-bordered table-hover none" style="margin-bottom: 0;">
+            <tbody>
+            </tbody>
+        </table>
+        <span id="noGiftText" class="font-18 none" style="color: red;line-height: 100px;">暂无可使用优惠券！</span>
+    </div>
+    <div class="customer-pagination text-center none">
+        <ul id="giftPagination" class="pagination" style="margin: 10px 0 0 0;"></ul>
+    </div>
+</div>
+<div id="marketingContent" class="none">
+    <div class="theme_poptit theme_poptit_color">
+        <a href="javascript:;" title="关闭" class="close"><i class="glyphicon glyphicon-remove"></i></a>
+        <h4 class="text-center title">可参加活动</h4>
+    </div>
+    <div id="marketingInfo" class="text-center" style="max-height:310px;margin-top: -1px;overflow-y: auto;">
+        <table id="marketingTab" class="table table-bordered table-hover none" style="margin-bottom: 0;">
+            <tbody>
+            </tbody>
+        </table>
+        <span id="noMarketingText" class="font-18 none" style="color: red;line-height: 100px;">暂无可参加活动！</span>
+    </div>
+    <div class="customer-pagination text-center none">
+        <ul id="marketingPagination" class="pagination" style="margin: 10px 0 0 0;"></ul>
+    </div>
+</div>
+<div id="item_kind_show" class="none">
+    <td class="item-kind vertical-top">
+        <form class="form-horizontal">
+            <div class="form-group form-group-fix">
+                <div class="col-sm-5 text-center item-kind-show">
+                    <span class="text-center bold-font itemAmount">保额</span>
+                </div>
+                <div class="col-sm-7 text-center item-kind-show">
+                    <span class="text-center bold-font itemPremium">保费</span>
+                </div>
+            </div>
+            <div class="form-group form-group-fix">
+                <div class="col-sm-5 text-center item-kind-show">
+                    <span class="text-height-40 compulsory">未缴纳</span>
+                </div>
+                <div class="col-sm-7 text-center item-kind-show">
+                    <span class="text-height-40 compulsoryPremium">--</span>
+                </div>
+            </div>
+            <div class="form-group form-group-fix">
+                <div class="col-sm-5 text-center item-kind-show">
+                    <span class="text-height-40 autoTax">未缴纳</span>
+                </div>
+                <div class="col-sm-7 text-center item-kind-show">
+                    <span class="text-height-40 autoTaxPremium">--</span>
+                </div>
+            </div>
+            <div class="form-group form-group-fix">
+                <div class="col-sm-12 text-left item-kind-show">
+                    <span class="text-center bold-font">&nbsp;</span>
+                </div>
+            </div>
+            <div class="form-group form-group-fix">
+                <div class="col-sm-5 text-center item-kind-show">
+                    <span class="text-height-40 thirdPartyAmount">未投保</span>
+                </div>
+                <div class="col-sm-7 text-center item-kind-show">
+                    <span class="text-height-40 thirdPartyPremium">--</span>
+                </div>
+            </div>
+            <div class="form-group form-group-fix">
+                <div class="col-sm-5 text-center item-kind-show">
+                    <span class="text-height-40 damageAmount">未投保</span>
+                </div>
+                <div class="col-sm-7 text-center item-kind-show">
+                    <span class="text-height-40 damagePremium">--</span>
+                </div>
+            </div>
+            <div class="form-group form-group-fix">
+                <div class="col-sm-5 text-center item-kind-show">
+                    <span class="text-height-40 driverAmount">未投保</span>
+                </div>
+                <div class="col-sm-7 text-center item-kind-show">
+                    <span class="text-height-40 driverPremium">--</span>
+                </div>
+            </div>
+            <div class="form-group form-group-fix">
+                <div class="col-sm-5 text-center item-kind-show">
+                    <span class="text-height-40 passengerAmount">未投保</span>
+                </div>
+                <div class="col-sm-7 text-center item-kind-show">
+                    <span class="text-height-40 passengerPremium">--</span>
+                </div>
+            </div>
+            <div class="form-group form-group-fix">
+                <div class="col-sm-5 text-center item-kind-show">
+                    <span class="text-height-40 engine">未投保</span>
+                </div>
+                <div class="col-sm-7 text-center item-kind-show">
+                    <span class="text-height-40 enginePremium">--</span>
+                </div>
+            </div>
+            <div class="form-group form-group-fix">
+                <div class="col-sm-5 text-center item-kind-show">
+                    <span class="text-height-40 glassType">未投保</span>
+                </div>
+                <div class="col-sm-7 text-center item-kind-show">
+                    <span class="text-height-40 glassPremium">--</span>
+                </div>
+            </div>
+            <div class="form-group form-group-fix">
+                <div class="col-sm-5 text-center item-kind-show">
+                    <span class="text-height-40 scratchAmount">未投保</span>
+                </div>
+                <div class="col-sm-7 text-center item-kind-show">
+                    <span class="text-height-40 scratchPremium">--</span>
+                </div>
+            </div>
+            <div class="form-group form-group-fix">
+                <div class="col-sm-5 text-center item-kind-show">
+                    <span class="text-height-40 theftAmount">未投保</span>
+                </div>
+                <div class="col-sm-7 text-center item-kind-show">
+                    <span class="text-height-40 theftPremium">--</span>
+                </div>
+            </div>
+            <div class="form-group form-group-fix">
+                <div class="col-sm-5 text-center item-kind-show">
+                    <span class="text-height-40 spontaneousLossAmount">未投保</span>
+                </div>
+                <div class="col-sm-7 text-center item-kind-show">
+                    <span class="text-height-40 spontaneousLossPremium">--</span>
+                </div>
+            </div>
+            <div class="form-group form-group-fix">
+                <div class="col-sm-5 text-center item-kind-show">
+                    <span class="text-height-40 iop">未投保</span>
+                </div>
+                <div class="col-sm-7 text-center item-kind-show">
+                    <span class="text-height-40 iopPremium">--</span>
+                </div>
+                <div class="text-center item-kind-show none">
+                    <!--<input type="text" id="iopPremiumPd" class="bottom-input premiumPd text-width-70 text-center">元-->
+                </div>
+            </div>
+            <div class="form-group form-group-fix">
+                <div class="col-sm-5 text-center item-kind-show">
+                    <span class="text-height-40 unableFindThirdParty">未投保</span>
+                </div>
+                <div class="col-sm-7 text-center item-kind-show">
+                    <span class="text-height-40 unableFindThirdPartyPremium">--</span>
+                </div>
+            </div>
+            <div class="form-group form-group-fix" style="height: 30px;">
+                <div class="col-sm-5 text-center item-kind-show">
+                    <span class="text-height-40 designatedRepairShop">未投保</span>
+                </div>
+                <div class="col-sm-7 text-center item-kind-show">
+                    <span class="text-height-40 designatedRepairShopPremium">--</span>
+                </div>
+            </div>
+        </form>
+    </td>
+</div>
+<div id="resendGiftContent" class="none">
+    <div>
+        <div class="theme_poptit theme_poptit_color">
+            <a href="javascript:;" title="关闭" class="close" id="regend_gift_close"><i class="glyphicon glyphicon-remove"></i></a>
+            <h4 class="text-center title">额外赠送礼品</h4>
+        </div>
+        <div id="resend_gift_list" style="min-height:150px;max-height: 150px;overflow-y: auto;padding: 10px;"></div>
+    </div>
+    <div class="text-center" style="padding: 10px;">
+        <button type="button" id="addOK" style="margin-left: 10px;" class="btn btn-success text-input-100">确定</button>
+        <button type="button" id="addCancel" style="margin-left: 10px;" class="btn btn-danger text-input-100">取消</button>
+    </div>
+</div>
+<div class="none">
+    <select class="form-control text-height-28 select-28" style="width: 150px;" id="regend_gift_select" ></select>
+    <span id="regend_gift_span" style="float:left;padding-right: 10px;">
+        送<input type="text" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" style="width: 40px;" class="bottom-input text-width-70 text-center"/>
+        <select class="form-control text-height-28 select-28" style="width: 70px;" id="resend_gift_unit_select" ></select>
+    </span>
+    <img style="margin-left: 5px;" id="delResendGift" src="../../images/zoom_out.gif">
+    <img style="margin-left: 5px;" id="addResendGift" src="../../images/zoom_in.gif">
+</div>
+
+</body>
+<script type="text/javascript" src="../../plugins/jqPaginator-1.2.0/jqPaginator.min.js"></script>
+<script type="text/javascript" src="../../js/jquery/jquery.cookie.js"></script>
+<script type="text/javascript" src="../../js/common/cookie.js"></script>
+<script type="text/javascript" src="../../js/common/common.js"></script>
+<script type="text/javascript" src="../../js/common/popup.js"></script>
+<script type="text/javascript" src="../../My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="../../js/quote/quoteAmend/quote_amend.js"></script>
+<script type="text/javascript" src="../../js/quote/quote_resend_gift.js"></script>
+<script type="text/javascript" src="../../js/quote/quote_validation.js"></script>
+<script type="text/javascript" src="../../js/quote/quote-order.js"></script>
+<script type="text/javascript" src="../../js/quote/quote_modification.js"></script>
+<script type="text/javascript" src="../../js/quote/quote_order_premium.js"></script>
+<script type="text/javascript" src="../../plugins/countUp/1.6.0/countUp.min.js"></script>
+<script type="text/javascript" src="../../js/quote/quote_gift.js"></script>
+<script type="text/javascript" src="../../js/quote/quote_marketing.js"></script>
+<script type="text/javascript" src="../../js/quote/quote_rebate.js"></script>
+</html>

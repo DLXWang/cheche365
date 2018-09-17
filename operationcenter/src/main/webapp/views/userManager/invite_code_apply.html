@@ -1,0 +1,87 @@
+<link type="text/css" href="../../libs/bootstrap-3.3.4/css/bootstrap.min.css" rel="stylesheet">
+<link type="text/css" href="../../libs/bootstrap-3.3.4/css/bootstrap-multiselect.css" rel="stylesheet">
+<style>
+	/*.multiselect-container {*/
+	/*width: 100%*/
+	/*}*/
+</style>
+<div class="panel-body popDiv">
+	<div class="col-sm-12 text-left">
+		<form id="inviteCodeBatchAddForm" class="inviteCodeBatchAddForm form-horizontal">
+			<div class="row">
+				<div class="form-group">
+					<label for="applicantName" class="col-sm-4 control-label">邀请码申请人:</label>
+					<div class="col-sm-6">
+						<input type="text" id="applicantName" name="applicantName" class="form-control ">
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="form-group">
+					<label class="col-sm-4 control-label">渠道:</label>
+					<div class="col-sm-6 text-left">
+						<select id="channelAddSel" class="form-control">
+							<option value="">请选择渠道</option>
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="form-group">
+					<label class="col-sm-4 control-label">支持城市:</label>
+					<div class="col-sm-6 text-left">
+						<select id="supportAreaSel" class="form-control ">
+							<option value="">请选择城市</option>
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<!--<div class="row">-->
+				<!--<div class="form-group">-->
+					<!--<label class="col-sm-4 control-label">支持城市:</label>-->
+					<!--<div class="col-sm-6 text-left">-->
+						<!--<div class="4" style="width: 25%; float: left;">-->
+							<!--<select id="supportAreaProvince" class="form-control">-->
+								<!--<option value="">请选择省</option>-->
+							<!--</select>-->
+						<!--</div>-->
+						<!--<div class="" style="width: 3%; float: left;height: 1px"></div>-->
+						<!--<div class="" style="width: 72%; float: left;">-->
+							<!--<select id="supportArea" class="form-control  hidden" name="supportArea">-->
+								<!--<option value="">请选择市</option>-->
+							<!--</select>-->
+						<!--</div>-->
+					<!--</div>-->
+				<!--</div>-->
+			<!--</div>-->
+
+			<div class="row">
+				<div class="form-group">
+					<label for="inviteNum" class="col-sm-4 control-label">申请数量:</label>
+					<div class="col-sm-6">
+						<input type="text" id="inviteNum" name="inviteNum" class="form-control required number" value="1">
+					</div>
+				</div>
+			</div>
+			<div class="row text-center" style="margin-top: 5%">
+				<a class="btn btn-default generateInviteCode">导出至Excel</a>
+			</div>
+		</form>
+	</div>
+</div>
+<div class="dataTable hidden">
+	<table id="inviteCodeTable">
+	</table>
+</div>
+
+
+<script type="text/javascript" src="../../plugins/DataTables-1.10.12/media/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../../plugins/DataTables-1.10.12/media/js/dataTables.buttons.js" charset="utf-8"></script>
+<script type="text/javascript" src="../../plugins/DataTables-1.10.12/media/js/buttons.html5.min.js"></script>
+<script type="text/javascript" src="../../plugins/DataTables-1.10.12/media/js/jszip.min.js"></script>
+<script type="text/javascript" src="../../libs/jquery-validation-1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="../../libs/jquery-validation-1.14.0/messages_zh.js"></script>
+<script type="text/javascript" src="../../js/userManager/invite_code_apply.js"></script>

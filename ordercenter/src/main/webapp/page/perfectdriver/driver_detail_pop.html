@@ -1,0 +1,367 @@
+<div id="detail_content">
+    <div class="theme_poptit" style="border:0px;">
+        <a id="auto_detail_close" href="javascript:;" title="关闭" class="close"><i
+            class="glyphicon glyphicon-remove"></i></a>
+        <h4 class="text-center" id="detail_title">详细信息</h4>
+    </div>
+    <ul id="myTab" class="nav nav-tabs">
+        <li class="active detail"><a href="#detail" type="1" data-toggle="tab">基本信息</a></li>
+        <li class="record"><a href="#record" type="2" data-toggle="tab">报价信息</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="form-input-top tab-pane fade in active" id="detail">
+            <div class="row" style="margin-left: -30px;height: 450px;">
+                <div id="img_content" class="col-sm-7">
+                    <ul style="list-style:none;">
+                        <li id="item" class="" class="viewer"
+                            style="width:400px;height:400px;overflow:hidden;position:absolute;">
+                            <img src="" id="cropper" class="cropper" width="400" height="400"
+                                 style="border:5px solid #fff;position:absolute"/>
+                        </li>
+                    </ul>
+                    <div id="Layer1" style="position:absolute;top:10px;left:60px; display:block; float:left; ">
+                        <table cellspacing="2" cellpadding="0" border="0">
+                            <tbody>
+                            <tr>
+                                <td>&nbsp; </td>
+                                <td><a href="javascript:;"><img title="向上" style="cursor: hand" id="up" height="20"
+                                                                src="../../images/up.gif" width="20"></a></td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td><a href="javascript:;"><img title="向左" style="cursor: hand" id="left" height="20"
+                                                                src="../../images/left.gif" width="20"></a></td>
+                                <td><a href="javascript:;"><img title="还原" style="cursor: hand" id="reset" height="20"
+                                                                src="../../images/zoom.gif" width="20"></a></td>
+                                <td><a href="javascript:;"><img title="向右" style="cursor: hand" id="right" height="20"
+                                                                src="../../images/right.gif" width="20"></a></td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td><a href="javascript:;"><img title="向下" style="cursor: hand" id="down" height="20"
+                                                                src="../../images/down.gif" width="20"></a>
+                                </td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td><a href="javascript:;"><img title="放大" style="cursor: hand" id="big" height="20"
+                                                                src="../../images/zoom_in.gif" width="20"></a></td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td><a href="javascript:;"><img title="缩小" style="cursor: hand" id="lit" height="20"
+                                                                src="../../images/zoom_out.gif" width="20"></a></td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div id="rotateTool" style="position:absolute;top:360px;left:220px; float:left;">
+                        <a href="javascript:;" title="左旋转"><img src="../../images/leftRotate.gif" alt="左旋转"
+                                                                id="leftRotate"></a>
+                        <a href="javascript:;" title="右旋转"><img src="../../images/rightRotate.gif" alt="右旋转"
+                                                                id="rightRotate"></a>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div id="disable_content" class="text-center none" style="height: 450px;margin-right: 70px;">
+                        <p style="margin-bottom: 0px; font-size: 16px; margin-top: 30px; font-weight: bold;">当前状态:<span id="status" style="color:red;"></span></p>
+                        <button type="button" class="btn btn-success btn-lg user-lg-btn enable" style="margin-bottom: 60px;margin-top: 30px;">有效</button><br/>
+                        <button type="button" class="btn btn-danger btn-lg user-lg-btn disable">无效</button>
+                    </div>
+                    <div id="existent_auto_content" class="none">
+                        <form id="detail_form" class="form-horizontal form-input"
+                              style="padding: 0;margin-left: -106px;margin-right: 4px;">
+                            <input type="hidden" id="id" name="id" value="">
+                            <input type="hidden" id="userId" name="userId" value="">
+                            <input type="hidden" id="autoId" name="autoId" value="">
+                            <div class="diy-height" style="height: 430px;">
+                                <div class="form-group form-group-fix">
+                                    <div class="col-sm-12 text-center">
+                                        —————————<span class="text-center bold-font">车主信息</span>—————————
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-fix">
+                                    <div class="col-sm-4 text-height-28 text-right">车主姓名：</div>
+                                    <div class="col-sm-8 text-height-28">
+                                        <p class="text-left text-show none"><span id="detail_owner"></span></p>
+                                        <input id="input_owner" name="owner" type="text"
+                                               onblur="common.tools.doDomTrimOnBlur(this);"
+                                               class="form-control text-height-28 text-input-200 text-input none">
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-fix">
+                                    <div class="col-sm-4 text-height-28 text-right">车主身份证：</div>
+                                    <div class="col-sm-8 text-height-28">
+                                        <p class="text-left text-show none" id="detail_identity"></p>
+                                        <input id="input_identity" name="identity" type="text"
+                                               onblur="common.tools.doDomTrimOnBlur(this);"
+                                               class="form-control text-height-28 text-input-200 text-input none">
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-fix">
+                                    <div class="col-sm-12 text-center">
+                                        ————————<span class="text-center bold-font">被保险人信息</span>————————
+                                    </div>
+                                </div>
+                                <div id="insured_owner_radio" class="form-group form-group-fix">
+                                    <div class="col-sm-4 text-height-28 text-right">被保险人：</div>
+                                    <div class="col-sm-8 text-left">
+                                        <label class="radio-inline">
+                                            <input type="radio" id="insuredType_1" name="insuredType" value="1"> 车主
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" id="insuredType_2" name="insuredType" value="2" checked>
+                                            非车主
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-fix">
+                                    <div class="col-sm-4 text-height-28 text-right">姓名：</div>
+                                    <div class="col-sm-8 text-height-28">
+                                        <p class="text-left text-show none" id="detail_insuredName"></p>
+                                        <input id="input_insuredName" name="insuredName" type="text"
+                                               onblur="common.tools.doDomTrimOnBlur(this);"
+                                               class="form-control text-height-28 text-input-200 text-input none">
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-fix">
+                                    <div class="col-sm-4 text-height-28 text-right">身份证：</div>
+                                    <div class="col-sm-8 text-height-28">
+                                        <p class="text-left text-show none" id="detail_insuredIdNo"></p>
+                                        <input id="input_insuredIdNo" name="insuredIdNo" type="text"
+                                               onblur="common.tools.doDomTrimOnBlur(this);"
+                                               class="form-control text-height-28 text-input-200 text-input none">
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-fix">
+                                    <div class="col-sm-12 text-center">
+                                        —————————<span class="text-center bold-font">车辆信息</span>—————————
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-fix">
+                                    <div class="col-sm-4 text-height-28 text-right">车牌号：</div>
+                                    <div class="col-sm-8 text-height-28">
+                                        <p class="text-left text-show none"><span id="detail_licensePlateNo"></span></p>
+                                        <input type="text" id="input_licensePlateNo" name="licensePlateNo"
+                                               onblur="common.tools.doDomTrimOnBlur(this);"
+                                               class="form-control text-height-28 text-input-200 text-input none">
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-fix">
+                                    <div class="col-sm-4 text-height-28 text-right">车架号：</div>
+                                    <div class="col-sm-8 text-height-28">
+                                        <p class="text-left text-show none"><span id="detail_vinNo"></span></p>
+                                        <input id="input_vinNo" name="vinNo" type="text"
+                                               onblur="common.tools.doDomTrimOnBlur(this);"
+                                               class="form-control text-height-28 text-input-200 text-input none">
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-fix">
+                                    <div class="col-sm-4 text-height-28 text-right">发动机号：</div>
+                                    <div class="col-sm-8 text-height-28">
+                                        <p class="text-left text-show none"><span id="detail_engineNo"></span></p>
+                                        <input id="input_engineNo" name="engineNo" type="text"
+                                               onblur="common.tools.doDomTrimOnBlur(this);"
+                                               class="form-control text-height-28 text-input-200 text-input none">
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-fix">
+                                    <div class="col-sm-4 text-height-28 text-right">初登日期：</div>
+                                    <div class="col-sm-8 text-height-28">
+                                        <p class="text-left text-show none"><span id="detail_enrollDate"></span></p>
+                                        <input type="text"
+                                               class="form-control Wdate text-height-28 text-input-200 text-input none"
+                                               id="input_enrollDate" name="enrollDate"
+                                               onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true,maxDate: '%y-%M-%d'});"
+                                               readonly>
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-fix">
+                                    <div class="col-sm-4 text-height-28 text-right">保险到期日：</div>
+                                    <div class="col-sm-8 text-height-28">
+                                        <p class="text-left text-show none"><span id="detail_expireDate"></span></p>
+                                        <input type="text"
+                                               class="form-control Wdate text-height-28 text-input-200 text-input none"
+                                               id="input_expireDate" name="expireDate"
+                                               onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true});" readonly>
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-fix">
+                                    <div class="col-sm-4 text-height-28 text-right">品牌型号：</div>
+                                    <div class="col-sm-8 text-height-28">
+                                        <p class="text-left text-show none"><span id="detail_code"></span></p>
+                                        <input id="input_code" name="code" type="text"
+                                               onblur="common.tools.doDomTrimOnBlur(this);"
+                                               class="form-control text-height-28 text-input-200 text-input none">
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-fix">
+                                    <div class="col-sm-4 text-height-28 text-right">车型：</div>
+                                    <div class="col-sm-8 text-height-28">
+                                        <p class="text-left text-show none"><span id="detail_model"></span></p>
+                                        <input id="input_model" name="model" type="text"
+                                               onblur="common.tools.doDomTrimOnBlur(this);"
+                                               class="form-control text-height-28 text-input-200 text-input none">
+                                    </div>
+                                </div>
+                                <div id="insured_transfer_radio" class="form-group form-group-fix">
+                                    <div class="col-sm-4 text-height-28 text-right">是否过户车：</div>
+                                    <div class="col-sm-8 text-left">
+                                        <label class="radio-inline">
+                                            <input type="radio" id="transfer_1" name="transfer" value="1"> 是
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" id="transfer_2" name="transfer" value="0" checked> 否
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-fix" id="transfer_div">
+                                    <div class="col-sm-4 text-height-28 text-right">过户日期：</div>
+                                    <div class="col-sm-8 text-height-28">
+                                        <p class="text-left text-show none"><span id="detail_transferDate"></span></p>
+                                        <input type="text" class="form-control Wdate text-height-28 text-input-200 text-input none" id="input_transferDate" name="transferDate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true});" readonly>
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-fix">
+                                    <div class="col-sm-12 text-center">
+                                        —————————<span class="text-center bold-font">用户信息</span>—————————
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-fix">
+                                    <div class="col-sm-4 text-height-28 text-left">用户ID：
+                                        <span id="detail_userId"></span>
+                                        <input id="input_userId" name="userId" type="text"
+                                               class="form-control text-height-28 text-input-200 text-input none">
+                                    </div>
+
+                                    <div class="col-sm-8 text-height-28 text-left">电话：
+                                        <span id="detail_mobile" class="text-left text-show none"></span>
+                                        <!--<p class="text-left text-show none"><span id="detail_mobile"></span></p>-->
+                                        <input id="input_mobile" name="mobile" type="text"
+                                               class="form-control text-height-28 text-input-200 text-input none">
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="btn_group" class="form-group">
+                                <div class="col-sm-12 text-center">
+                                    <span class="alert alert-danger alert-dismissable"
+                                          style="float:left; position: absolute;bottom:20px; display:none;left:190px;"
+                                          id="error"></span>
+                                    <button type="button" class="btn btn-danger btn-show toQuote">报价</button>
+                                    <!--<button type="button" class="btn btn-danger btn-show toRenewal">续保</button>-->
+                                    <button type="button" class="btn btn-danger btn-show toEdit">编辑</button>
+                                    <button type="button" class="btn btn-danger btn-edit none toSave">保存</button>
+                                    <button type="button" class="btn btn-danger btn-edit none toCancel">取消</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-input-top tab-pane fade" id="record">
+            <div class="form-group form-group-fix">
+                <div class="col-sm-4 text-height-28 text-left" style="margin-left:10px;">保险公司：
+                    <select  id="insuranceCompany">
+                </select></div>
+            </div>
+            <div style="width:95%;margin:0px auto;height:400px;overflow:auto;">
+                <table class="table table-bordered table-hover" id="list_tab">
+                    <thead>
+                    <tr class="active">
+                        <th class="text-center">险种名称</th>
+                        <th class="text-center">保额</th>
+                        <th class="text-center">参考保费</th>
+                        <th class="text-center">真实保费</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>机动车交通事故责任强制险</td>
+                        <td id="buy_compulsory" class="text-center"></td>
+                        <td class="text-center"><span id="compulsoryPremium2" ></span>元</td>
+                        <td class="text-center"><span id="compulsoryPremium"></span>元</td>
+                    </tr>
+                    <tr>
+                        <td>车船使用税</td>
+                        <td id="buy_autoTax" class="text-center"></td>
+                        <td class="text-center"><span id="autoTax2"></span>元</td>
+                        <td class="text-center"><span id="autoTax"></span>元</td>
+                    </tr>
+                    <tr>
+                        <td>机动车第三者责任保险</td>
+                        <td id="thirdPartyAmount" class="text-center"></td>
+                        <td class="text-center"><span id="thirdPartyPremium2"></span>元</td>
+                        <td class="text-center"><span id="thirdPartyPremium"></span>元</td>
+                    </tr>
+                    <tr>
+                        <td>机动车损失险</td>
+                        <td id="damageAmount" class="text-center"></td>
+                        <td class="text-center"><span id="damagePremium2"></span>元</td>
+                        <td class="text-center"><span id="damagePremium"></span>元</td>
+                    </tr>
+                    <tr>
+                        <td>车上人员责任险（司机）</td>
+                        <td id="driverAmount" class="text-center"></td>
+                        <td class="text-center"><span id="driverPremium2"></span>元</td>
+                        <td class="text-center"><span id="driverPremium"></span>元</td>
+                    </tr>
+                    <tr>
+                        <td>车上人员责任险（乘客）</td>
+                        <td id="passengerAmount" class="text-center"></td>
+                        <td class="text-center"><span id="passengerPremium2"></span>元</td>
+                        <td class="text-center"><span id="passengerPremium"></span>元</td>
+                    </tr>
+                    <tr>
+                        <td>发动机特别损失险</td>
+                        <td id="engine" class="text-center"></td>
+                        <td class="text-center"><span id="enginePremium2"></span>元</td>
+                        <td class="text-center"><span id="enginePremium"></span>元</td>
+                    </tr>
+                    <tr>
+                        <td>玻璃单独破碎险</td>
+                        <td id="glassType" class="text-center"></td>
+                        <td class="text-center"><span id="glassPremium2"></span>元</td>
+                        <td class="text-center"><span id="glassPremium"></span>元</td>
+                    </tr>
+                    <tr>
+                        <td>车身划痕损失险</td>
+                        <td id="scratchAmount" class="text-center"></td>
+                        <td class="text-center"><span id="scratchPremium2"></span>元</td>
+                        <td class="text-center"><span id="scratchPremium"></span>元</td>
+                    </tr>
+                    <tr>
+                        <td>机动车盗抢险</td>
+                        <td id="theft" class="text-center"></td>
+                        <td class="text-center"><span id="theftPremium2"></span>元</td>
+                        <td class="text-center"><span id="theftPremium"></span>元</td>
+                    </tr>
+                    <tr>
+                        <td>自燃损失险</td>
+                        <td id="spontaneousLoss" class="text-center"></td>
+                        <td class="text-center"><span id="spontaneousLossPremium2"></span>元</td>
+                        <td class="text-center"><span id="spontaneousLossPremium"></span>元</td>
+                    </tr>
+                    <tr>
+                        <td>不计免赔险</td>
+                        <td id="iop" class="text-center"></td>
+                        <td class="text-center"><span id="iopReferenceSum"></span>元</td>
+                        <td class="text-center"><span id="iopRealSum"></span>元</td>
+                    </tr>
+                    <tr style="font-weight: bold;font-size: 16px;">
+                        <td style="color:red;">总计</td>
+                        <td></td>
+                        <td class="text-center"><span id="sumReference"></span>元</td>
+                        <td class="text-center"><span id="sumReal"></span>元</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

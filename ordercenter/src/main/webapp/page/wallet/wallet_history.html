@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>钱包历史记录</title>
+<!-- 引入css和js文件 -->
+    <link type="text/css" href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="../../css/common.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="../../js/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../My97DatePicker/WdatePicker.js"></script>
+    <script type="text/javascript" src="../../plugins/jqPaginator-1.2.0/jqPaginator.min.js"></script>
+    <script type="text/javascript" src="../../js/common/common.js"></script>
+    <script type="text/javascript" src="../../js/common/popup.js"></script>
+    <script type="text/javascript" src="../../plugins/DataTables-1.10.12/media/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../../js/common/datatable_util.js"></script>
+
+<style>
+    #warp {
+        width:80%;margin:auto;
+    }
+</style>
+</head>
+<div id="warp">
+    <div class="tab-top-1 title" align="center">
+        <h3>钱包打款历史记录</h3>
+    </div>
+    <div class="line" style="border-bottom: 2px solid #ccc;margin-top: 10px"></div><!--虚线-->
+
+    <div id="container" >
+        <table class="table table-bordered table-hover" id="history_tab">
+        </table>
+    </div>
+</div>
+<script type="text/javascript" src="../../js/wallet/wallet_history.js"></script>
+
+</html>

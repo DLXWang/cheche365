@@ -1,0 +1,16 @@
+[
+
+    {
+        "desc" : "全险测试用例",
+        "input" : {
+            "clazz" : "com.cheche365.cheche.core.model.InsuranceBills",
+            "file" :"bills_serializer_ft_input.json"
+        },
+
+        "output" : {
+            "file" : "bills_serializer_ft_output.json"
+        }
+
+    }
+
+]

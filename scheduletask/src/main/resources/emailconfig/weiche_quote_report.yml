@@ -1,0 +1,28 @@
+#微车渠道的报价日志记录报表
+title: "出单中心-微车报价日志报表-${currentDate}"
+tos: [liuyw@cheche365.com,zhangtc@cheche365.com]
+production_tos: [lism@cheche365.com,yanyl@cheche365.com]
+template: /velocity/weicheQuoteEmail.vm
+excelAttachmentConfig:
+        fileName: "${currentDate}微车报价日志报表.xlsx"
+        sheets:
+            - sheetName: sheet1
+              columns:
+                  - columnType: weicheQuoteReport
+                    column:
+                        编号: id
+                        报价时间: quoteTime
+                        车牌号: licenseNo
+                        手机号: mobile
+                        城市: cityName
+                        车主姓名: ownerName
+                        保险公司: insuranceCompany
+                        报价金额: payableAmount
+                        车险到期日期: expireDate
+                        CPA编号: cpa
+                        CPA入库时间: cpaTime
+                        发动机号: engineNo
+                        车架号: vinNo
+                        初登日期: enrollDate
+                        车主身份证号: identity
+                        渠道: channel

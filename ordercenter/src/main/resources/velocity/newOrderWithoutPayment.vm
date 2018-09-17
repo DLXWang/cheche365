@@ -1,0 +1,1 @@
+你好，有$data.orderStatus新订单进来，订单编号：$data.orderNo。

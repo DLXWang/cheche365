@@ -1,0 +1,19 @@
+maxFileSize: 2097152
+server:
+  port: 7310
+spring:
+  servo:
+    metrics:
+      enabled: false
+  http:
+    multipart:
+      max-file-size: 512000KB
+      max-request-size: 512000KB
+  freemarker:
+    enabled: false
+    check-template-location: false
+
+management:
+  context-path: /app-manage
+  security:
+    enabled: false

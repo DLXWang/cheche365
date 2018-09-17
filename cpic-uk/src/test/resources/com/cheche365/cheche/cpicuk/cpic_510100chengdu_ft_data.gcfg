@@ -1,0 +1,299 @@
+package com.cheche365.cheche.cpicuk
+//this is 成都
+
+basePackageOptions = [
+    thirdPartyAmount: 500000.0,
+    thirdPartyIop   : true,
+    damage          : true,
+    damageIop       : true,
+    theft           : false,
+    theftIop        : false,
+    engine          : true,
+    engineIop       : true,
+    glass           : false,
+    glassType       : null,    // 国产
+    driverAmount    : 0.0,
+    driverIop       : false,
+    passengerAmount : 0.0,
+    passengerIop    : false,
+    spontaneousLoss : false,
+    scratchAmount   : 0.0,
+    scratchIop      : false,
+    compulsory      : false,
+    autoTax         : false
+]
+
+testData = [
+
+
+    [
+        1,
+        '',
+        '川A607DA',
+        'LBV5S1105FSK57024',
+        '2167E600',
+        '余学忠',
+        '412822198603124835',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'东风标致DC7204LLCA',
+                        supplementInfo : [
+                            autoModel: 'BZAATD0019',
+                            verificationMobile:'17346551852',
+                            commercialStartDate : '2018-06-23',
+                            compulsoryStartDate : '2018-06-23',
+                        ]
+                    ],
+                    enrollDate:'2015-05-07'
+                ]
+            ]
+        ]
+    ],
+    [
+        2,
+        '',
+        '川AQ7K10',
+        'LSYYDACK5AC135212',
+        '136676',
+        '李娟',
+        '510105198810253266',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'中华SY7130W1SBAA',
+                        supplementInfo : [
+                            autoModel: 'ZHAAID0077',
+                            verificationMobile:'13581538623',
+                            commercialStartDate : '2018-06-25',
+                            compulsoryStartDate : '2018-05-25',
+                        ]
+                    ],
+                    enrollDate:'2015-05-20'
+                ]
+            ]
+        ]
+    ],
+
+    [
+        3,
+        '',
+        '川A54645',
+        'WAURGB4H9DN033180',
+        'CGW071118',
+        '王晓君',
+        '431122199104291451',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'',
+                        supplementInfo : [
+                            autoModel: 'ADAAGI0064',
+                            verificationMobile:'13581538623',
+                            commercialStartDate : '2018-05-11',
+                            compulsoryStartDate : '2018-05-11',
+                        ]
+                    ],
+                    enrollDate:'2015-05-11'
+                ]
+            ]
+        ]
+    ],
+
+    [
+        4,
+        '',
+        '川AMB586',
+        'YV1TS595X61428514',
+        'B5254T3743830',
+        '章瑛',
+        '510103196109272520',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'',
+                        supplementInfo : [
+                            autoModel: 'x6y5ezbjkjq0yzm8',
+                            verificationMobile:'13581538623',
+                            commercialStartDate : '2018-05-29',
+                            compulsoryStartDate : '2018-05-29',
+                        ]
+                    ],
+                    enrollDate:'2005-05-29'
+                ]
+            ]
+        ]
+    ],
+    [
+        5,
+        '',
+        '川A963H9',
+        'LFV2A115893022404',
+        '569556',
+        '黄付斌',
+        '511021197505213234',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'宝来FV7162XG轿车',
+                        supplementInfo : [
+                            autoModel: 'DZAAND0074',
+                            verificationMobile:'13581538623',
+                            commercialStartDate : '2018-05-04',
+                            compulsoryStartDate : '2018-05-04',
+                        ]
+                    ],
+                    enrollDate:'2009-04-30'
+                ]
+            ]
+        ]
+    ],
+    [
+        6,
+        '',
+        '川AY4S98',
+        'LVVDB11B2BD213387',
+        'WABC64726',
+        '马爱民',
+        '512924197509088492',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'奇瑞SQR7150J150',
+                        supplementInfo : [
+                            autoModel: 'QRAADD0029',
+                            verificationMobile:'13581538623',
+                            commercialStartDate : '2018-05-24',
+                            compulsoryStartDate : '2018-05-24',
+                        ]
+                    ],
+                    enrollDate:'2015-04-26'
+                ]
+            ]
+        ]
+    ],
+    [
+        7,
+        '',
+        '川A6W57A',
+        'VF1VYRTY0BC357845',
+        '2TRA703P068315',
+        '李康菱',
+        '511521198608270030',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'科雷傲KOLEOS',
+                        supplementInfo : [
+                            autoModel: 'LNAAMI0009',
+                            verificationMobile:'13581538623',
+                            commercialStartDate : '2018-06-02',
+                            compulsoryStartDate : '2018-06-02',
+                        ]
+                    ],
+                    enrollDate:'2011-04-11'
+                ]
+            ]
+        ]
+    ],
+    [
+        8,
+        '',
+        '川A97S6N',
+        'LZWACAGA1D7016279',
+        'UD10721435',
+        '张学良',
+        '230123198406010233',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'五菱LZW6450PF客车',
+                        supplementInfo : [
+                            autoModel: 'TYBAZD0008',
+                            commercialStartDate : '2018-06-20',
+                            //compulsoryStartDate : '2018-06-20',
+                        ]
+                    ],
+                    enrollDate:'2013-02-04'
+                ]
+            ]
+        ]
+    ],
+    [
+        9,
+        '',
+        '川A1R06Y',
+        'LFV2B25G0G5055297',
+        'N58403',
+        '任哲',
+        '650106199007220811',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'大众牌FV7144LBDBG',
+                        supplementInfo : [
+                            transferDate : '2018-2-15',
+                            autoModel: 'DZAAQD0106',
+                            commercialStartDate : '2018-06-20',
+//                            compulsoryStartDate : '2018-06-20',
+                        ]
+                    ],
+                    enrollDate:'2016-06-13'
+                ]
+            ]
+        ]
+    ],
+    [
+        101,
+        '',
+        '川A9V3K0',
+        'KNAPH8133F5032237',
+        'G4KJEA549826',
+        '何雪',
+        '510106199111165524',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'索兰托SORENTO 2.4GDI越野车/2015',
+                        supplementInfo : [
+                            autoModel: 'QYAAMI0078',
+                            commercialStartDate : '2018-06-29',
+//                            compulsoryStartDate : '2018-06-20',
+                        ]
+                    ],
+                    enrollDate:'2015-06-09'
+                ]
+            ]
+        ]
+    ]
+]

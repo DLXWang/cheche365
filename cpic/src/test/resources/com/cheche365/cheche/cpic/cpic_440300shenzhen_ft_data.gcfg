@@ -1,0 +1,42 @@
+package com.cheche365.cheche.cpic
+
+/**
+ * 深圳
+ */
+
+testDataParams = [
+
+    //{value=RCABSD0017, text=轩逸DFL7200AA 200708 5座 144800元}
+    0 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'RCABSD0017']]]]]],
+
+    //{value=DFCDGD0123, text=东风LZ6460AQFE 7座 61800元}
+    10 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DFCDGD0123']]]]]],
+
+    //{value=DZAAKD0099, text=大众汽车SVW71411BR 201012 5座 92900元}
+    20 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZAAKD0099']]]]]],
+
+    //{value=FTABMD0124, text=丰田GTM7200EEP 201304 5座 152100元}
+    30 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'FTABMD0124']]]]]],
+
+    //{value=DZABCD0035, text=朗逸SVW7167MSD 201108 5座 114800元}
+    40 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZABCD0035']]]]]],
+
+    //{value=BTAALD0025, text=雅阁HG7240AB(ACCORD2.4i-VTEC) 200612 5座 204800元}
+    50 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'BTAALD0025']]]]]],
+
+    //{value=DZAAKD0099, text=大众汽车SVW71411BR 201012 5座 92900元}
+    60 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZAAKD0099']]]]]],
+
+    //{value=DZAAKD0099, text=大众汽车SVW71411BR 201012 5座 92900元}
+    70 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZAAKD0099']]]]]],
+
+    //{value=DZAAKD0099, text=大众汽车SVW71411BR 201012 5座 92900元}
+    80 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZAAKD0099']]]]]],
+
+    //{value=DZAAKD0099, text=大众汽车SVW71411BR 201012 5座 92900元}
+    90 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZAAKD0099']]]]]],
+
+    //{value=DZAAKD0099, text=大众汽车SVW71411BR 201012 5座 92900元}
+    100 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZAAKD0099']]]]]],
+
+]

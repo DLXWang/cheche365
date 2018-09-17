@@ -1,0 +1,88 @@
+/**
+  * 2018-04-19   新增ToA合作页面process
+  */
+*{ margin: 0; padding: 0}
+.progressbar {
+    overflow: hidden;
+    counter-reset: step;
+    width:100%;
+    display:flex;
+}
+.progressbar li {
+    list-style-type: none;
+    flex:1;
+    color: #333;
+    font-size: 14px;
+    position: relative;
+    line-height:40px;
+}
+.progressbar li span {
+    position:relative;
+    display:inline-block;
+    padding-right:10px;
+    padding-left:40px;
+    margin-left:30%;
+    background:#FFF;
+    z-index:1;
+}
+.progressbar li span:after {
+    content: '√';
+    counter-increment: step;
+    position:absolute;
+    width: 20px;
+    line-height: 20px;
+    text-align:center;
+    display: block;
+    font-size: 10px;
+    background: #EEEEEE;
+    border-radius: 100%;
+    left:10px;
+    top:10px;
+    z-index:2;
+}
+.progressbar li.active span:after,.progressbar li.active + li span:after,.progressbar li.active + li + li span:after,.progressbar li.active + li + li + li span:after,.progressbar li.active + li + li + li span:after,.progressbar li.active + li + li + li + li span:after {
+    content: counter(step);
+    counter-increment: step;
+    position:absolute;
+    width: 20px;
+    line-height: 20px;
+    text-align:center;
+    display: block;
+    font-size: 10px;
+    color: #333;
+    background: #ccc;
+    border-radius: 100%;
+    left:10px;
+    top:10px;
+    z-index:2;
+}
+.progressbar li:after {
+    content: '';
+    height: 2px;
+    background:#73a8fa;
+    position: absolute;
+    left: 0;
+    right:70%;
+    top: 19px;
+    z-index: 0;
+}
+.progressbar li.active:before, .progressbar li.active span:after,.progressbar li.active + li:after {
+    background: #73a8fa;
+    color: white;
+}
+.progressbar li.active + li + li:after,.progressbar li.active + li:before,.progressbar li.active + li + li + li:after,.progressbar li.active + li + li:before,.progressbar li.active + li + li + li + li:after,.progressbar li.active + li + li + li:before {
+    background: #ccc;
+}
+.progressbar li:before {
+    content: '';
+    height: 2px;
+    background:#73a8fa;
+    position: absolute;
+    left:30%;
+    right:-45%;
+    top: 19px;
+    z-index: 0;
+}
+.progressbar li:first-child:after,.progressbar li:last-child:before {
+    display:none;
+}

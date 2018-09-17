@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>车辆停复驶信息</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link type="text/css" href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="../../css/common.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/dataTables.bootstrap.min.css"
+          rel="stylesheet">
+
+    <script type="text/javascript" src="../../js/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../plugins/jqPaginator-1.2.0/jqPaginator.min.js"></script>
+    <style type="text/css">
+        .order-detail .tips {
+            padding-top: 30px;
+            padding-bottom: 15px;
+            font-size: 20px;
+            font-weight: bold;
+
+        }
+        .order-detail .tab-top-1{
+            border-bottom: 2px solid #ccc;
+            margin-bottom: 10px;
+        }
+        .order-detail .font-size {
+            font-size: 15px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="dailyInsuranceDiv" class="container order-detail">
+    <div class="tips tab-top-1 text-center">
+        <div >车辆停复驶信息</div>
+    </div>
+    <div id="DailyInsuranceTotalContent" class="font-size">
+        <span>当前状态：</span><span id="currentState" style="font-weight:bold" name="currentState"></span>
+        &nbsp;&nbsp;<span>累计停驶时间：</span ><span id="totalStopDateNumber" style="font-weight:bold"
+                                              name="totalStopDate"></span><span
+        class="day">天</span>
+        &nbsp;&nbsp;<span>累计返还金额：</span><span id="totalRefundAmount" style="color:green;font-weight:bold"
+                                              name="totalRefundAmount"></span><span
+        class="amount">元</span>
+        &nbsp;&nbsp;<span>累计复驶时间：</span><span id="totalRestartDateNumber" style="font-weight:bold"
+                                              name="totalRestartDate"></span><span
+        class="day">天</span>
+        &nbsp;&nbsp;<span>累计复驶支付金额：</span><span id="totalRestartPaidAmount" style="color:red;font-weight:bold"
+                                                name="totalRestartPaidAmount"></span><span
+        class="amount">元</span>
+        &nbsp;&nbsp;<span>总保费支付金额：</span><span id="totalPremium" style="color:red;font-weight:bold" name="totalPremium"></span><span
+        class="premium">元</span>
+    </div>
+
+    <div id="DailyInsuranceContent" class="diy-height" style="margin-top:20px;height:80%;">
+        <div class="form-group form-group-fix  none-content">
+            <div>
+                <table class="table table-bordered table-hover" id="daily_insurance_list_tab">
+                </table>
+                <div class="customer-pagination ">
+                    <ul class="pagination"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<link rel="stylesheet" href="../../css/popup.css">
+<script type="text/javascript" src="../../plugins/DataTables-1.10.12/media/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../../js/jquery/jquery.cookie.js"></script>
+<script type="text/javascript" src="../../js/common/common.js"></script>
+<script type="text/javascript" src="../../js/common/datatable_util.js"></script>
+<script type="text/javascript" src="../../js/common/cookie.js"></script>
+<script type="text/javascript" src="../../js/common/popup.js"></script>
+<script type="text/javascript" src="../../js/order/daily_insurance.js"></script>
+<script type="text/javascript" src="../../js/order/order_status.js"></script>
+<script type="text/javascript" src="../../js/nationwideOrder/order_comment.js"></script>
+</html>

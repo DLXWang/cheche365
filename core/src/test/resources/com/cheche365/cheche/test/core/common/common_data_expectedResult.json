@@ -1,0 +1,288 @@
+[
+    {
+        "uid": "liuzz1107001",
+        "total": {
+            "compulsory": 742.69,
+            "autoTax": 350.0,
+            "base": 5777.57
+        },
+        "orderNo": "T2016110701085",
+        "expireTime": "2016-11-08 17:15:35",
+        "payments": [
+            {
+                "amount": 4677.17,
+                "id": 12220,
+                "status": {
+                    "id": 2,
+                    "status": "支付成功",
+                    "description": "支付成功"
+                },
+                "paymentType": {
+                    "id": 1,
+                    "name": "initial_payment",
+                    "description": "首次支付"
+                }
+            },
+            {
+                "amount": 2193.09,
+                "id": 12233,
+                "status": {
+                    "id": 1,
+                    "status": "未支付",
+                    "description": "未支付"
+                },
+                "paymentType": {
+                    "id": 2,
+                    "name": "additional_payment",
+                    "description": "增补"
+                }
+            }
+        ],
+        "mobile": "18500000066",
+        "payUrl": null,
+        "fields": [
+            {
+                "amount": {
+                    "text": "",
+                    "value": 0
+                },
+                "name": "compulsoryPremium",
+                "displayName": "机动车交通事故责任强制险",
+                "shortName": "交强",
+                "group": "compulsory",
+                "premium": 742.69,
+                "iop": 0.0
+            },
+            {
+                "amount": {
+                    "text": "",
+                    "value": 0
+                },
+                "name": "autoTax",
+                "displayName": "车船使用税",
+                "shortName": "车船税",
+                "group": "autoTax",
+                "premium": 350.0,
+                "iop": 0.0
+            },
+            {
+                "amount": {
+                    "text": "200万",
+                    "value": 2000000.0
+                },
+                "name": "thirdParty",
+                "displayName": "机动车第三者责任保险",
+                "shortName": "三者",
+                "group": "base",
+                "premium": 1501.48,
+                "iop": 0.0
+            },
+            {
+                "amount": {
+                    "text": "7.74万",
+                    "value": 77400.4
+                },
+                "name": "damage",
+                "displayName": "机动车损失险",
+                "shortName": "车损",
+                "group": "base",
+                "premium": 1002.5,
+                "iop": 0.0
+            },
+            {
+                "amount": {
+                    "text": "国产",
+                    "value": 1
+                },
+                "name": "glass",
+                "displayName": "玻璃单独破碎险",
+                "shortName": "玻璃",
+                "group": "base",
+                "premium": 125.79,
+                "iop": 0.0
+            },
+            {
+                "amount": {
+                    "text": "20万",
+                    "value": 200000.0
+                },
+                "name": "driver",
+                "displayName": "车上人员责任险(司机)",
+                "shortName": "司机",
+                "group": "base",
+                "premium": 2696.67,
+                "iop": 0.0
+            },
+            {
+                "amount": {
+                    "text": "",
+                    "value": 0
+                },
+                "name": "iopTotal",
+                "displayName": "不计免赔险",
+                "shortName": "不计免赔",
+                "group": "base",
+                "premium": 451.13,
+                "iop": 0.0
+            }
+        ],
+        "paidAmount": 6870.26,
+        "payableAmount": 6870.26,
+        "paymentType": {
+            "id": 2,
+            "name": "additional_payment",
+            "description": "增补"
+        }
+    },
+
+    {
+        "uid": "liuzz1107001",
+        "total": {
+            "compulsory": 742.69,
+            "autoTax": 350.0,
+            "base": 5777.57
+        },
+        "orderNo": "T2016110701085",
+        "expireTime": "2016-11-08 17:15:35",
+        "payments": [
+            {
+                "amount": 4677.17,
+                "id": 12220,
+                "status": {
+                    "id": 2,
+                    "status": "支付成功",
+                    "description": "支付成功"
+                },
+                "paymentType": {
+                    "id": 1,
+                    "name": "initial_payment",
+                    "description": "首次支付"
+                }
+            },
+            {
+                "amount": 2193.09,
+                "id": 12233,
+                "status": {
+                    "id": 1,
+                    "status": "未支付",
+                    "description": "未支付"
+                },
+                "paymentType": {
+                    "id": 2,
+                    "name": "additional_payment",
+                    "description": "增补"
+                }
+            },
+            {
+                "amount": 118.48,
+                "id": 12241,
+                "status": {
+                    "id": 2,
+                    "status": "支付成功",
+                    "description": "支付成功"
+                },
+                "paymentType": {
+                    "id": 3,
+                    "name": "partial_refund",
+                    "description": "部分退款"
+                }
+            }
+        ],
+        "mobile": "18500000066",
+        "payUrl": null,
+        "fields": [
+            {
+                "amount": {
+                    "text": "",
+                    "value": 0
+                },
+                "name": "compulsoryPremium",
+                "displayName": "机动车交通事故责任强制险",
+                "shortName": "交强",
+                "group": "compulsory",
+                "premium": 742.69,
+                "iop": 0.0
+            },
+            {
+                "amount": {
+                    "text": "",
+                    "value": 0
+                },
+                "name": "autoTax",
+                "displayName": "车船使用税",
+                "shortName": "车船税",
+                "group": "autoTax",
+                "premium": 350.0,
+                "iop": 0.0
+            },
+            {
+                "amount": {
+                    "text": "200万",
+                    "value": 2000000.0
+                },
+                "name": "thirdParty",
+                "displayName": "机动车第三者责任保险",
+                "shortName": "三者",
+                "group": "base",
+                "premium": 1501.48,
+                "iop": 0.0
+            },
+            {
+                "amount": {
+                    "text": "7.74万",
+                    "value": 77400.4
+                },
+                "name": "damage",
+                "displayName": "机动车损失险",
+                "shortName": "车损",
+                "group": "base",
+                "premium": 1002.5,
+                "iop": 0.0
+            },
+            {
+                "amount": {
+                    "text": "国产",
+                    "value": 1
+                },
+                "name": "glass",
+                "displayName": "玻璃单独破碎险",
+                "shortName": "玻璃",
+                "group": "base",
+                "premium": 125.79,
+                "iop": 0.0
+            },
+            {
+                "amount": {
+                    "text": "20万",
+                    "value": 200000.0
+                },
+                "name": "driver",
+                "displayName": "车上人员责任险(司机)",
+                "shortName": "司机",
+                "group": "base",
+                "premium": 2696.67,
+                "iop": 0.0
+            },
+            {
+                "amount": {
+                    "text": "",
+                    "value": 0
+                },
+                "name": "iopTotal",
+                "displayName": "不计免赔险",
+                "shortName": "不计免赔",
+                "group": "base",
+                "premium": 451.13,
+                "iop": 0.0
+            }
+        ],
+        "paidAmount": 6751.78,
+        "payableAmount": 6870.26,
+        "paymentType": {
+            "id": 2,
+            "name": "additional_payment",
+            "description": "增补"
+        }
+    }
+
+]

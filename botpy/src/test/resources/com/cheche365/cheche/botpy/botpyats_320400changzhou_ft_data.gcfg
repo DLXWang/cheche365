@@ -1,0 +1,250 @@
+package com.cheche365.cheche.botpy
+//this is 常州
+
+testData = [
+
+
+    [
+        1,
+        '',
+        '苏DY239X',
+        'LSVWL2183G2040859',
+        'AC8218',
+        '芮斌',
+        '32048119880821621X',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'大众汽车SVW71617BM轿车',
+                        supplementInfo : [
+                            autoModel: 'DZABCD0112',
+                            verificationMobile:'13581538623',
+                            commercialStartDate : '2018-06-04',
+                            compulsoryStartDate : '2018-06-04',
+                        ]
+                    ],
+                    enrollDate:'2016-05-06'
+                ]
+            ]
+        ]
+    ],
+    [
+        2,
+        '',
+        '苏D758RB',
+        'LJ16AA239C7044607',
+        'C3050835',
+        '吴钧',
+        '32042119700622441X',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'江淮牌HFC6470A3F',
+                        supplementInfo : [
+                            autoModel: 'JHAAID0128',
+                            verificationMobile:'13581538623',
+                            commercialStartDate : '2018-06-04',
+                            compulsoryStartDate : '2018-06-04',
+                        ]
+                    ],
+                    enrollDate:'2013-01-10'
+                ]
+            ]
+        ]
+    ],
+    [
+        3,
+        '',
+        '苏D271NG',
+        'LZWACAGAXD1212434',
+        'D12181609',
+        '王从飞',
+        '512927197401304818',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'五菱',
+                        supplementInfo : [
+                            autoModel: 'TYBATD0024',
+                            verificationMobile:'13581538623',
+                            commercialStartDate : '2018-06-04',
+                            compulsoryStartDate : '2018-06-04',
+                        ]
+                    ],
+                    enrollDate:'2014-02-25'
+                ]
+            ]
+        ]
+    ],
+    [
+        4,
+        '',
+        '苏D375TP',
+        'LNBMDLAA9GR655569',
+        '161005660-FUV',
+        '汪丽',
+        '413024198104083848',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'北京BJ6442L4SMB多用途乘用车',
+                        supplementInfo : [
+                            autoModel: 'BJADCD0023',
+                            verificationMobile:'13581538623',
+                            commercialStartDate : '2018-06-04',
+                            compulsoryStartDate : '2018-06-04',
+                        ]
+                    ],
+                    enrollDate:'2016-05-23'
+                ]
+            ]
+        ]
+    ],
+    [
+        5,
+        '',
+        '苏DG101U',
+        'LZWACAGA4D6037164',
+        '8D32910403',
+        '徐保友',
+        '341223196812265111',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'五菱',
+                        supplementInfo : [
+                            autoModel: 'TYBAUD0062',
+                            verificationMobile:'13581538623',
+                            commercialStartDate : '2018-06-04',
+                            compulsoryStartDate : '2018-06-04',
+                        ]
+                    ],
+                    enrollDate:'2014-03-31'
+                ]
+            ]
+        ]
+    ],
+    [
+        6,
+        '',
+        '苏D66R30',
+        'LDC703L26A0153900',
+        '5123799',
+        '刘金虎',
+        '320422197410114614',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'东风雪铁龙',
+                        supplementInfo : [
+                            autoModel: 'XTAAFD0060',
+                            verificationMobile:'13581538623',
+                            commercialStartDate : '2018-06-04',
+                            compulsoryStartDate : '2018-06-04',
+                        ]
+                    ],
+                    enrollDate:'2010-01-28'
+                ]
+            ]
+        ]
+    ],
+    [
+        7,
+        '',
+        '苏D005NA',
+        'LSGPB54U4BS062273',
+        '103560812',
+        '胡永英',
+        '32102219570610612X',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'',
+                        supplementInfo : [
+                            autoModel: '',
+                            verificationMobile:'13581538623',
+                            commercialStartDate : '2018-06-04',
+                            compulsoryStartDate : '2018-06-04',
+                        ]
+                    ],
+                    enrollDate:'2011-01-27'
+                ]
+            ]
+        ]
+    ],
+    [
+        8,
+        '',
+        '苏D00R88',
+        'LZWACAGA8A6122472',
+        'A09906577F',
+        '丁丽',
+        '320481199001210022',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'五菱',
+                        supplementInfo : [
+                            autoModel: 'TYBAUD0062',
+                            verificationMobile:'13581538623',
+                            commercialStartDate : '2018-06-04',
+                            compulsoryStartDate : '2018-06-04',
+                        ]
+                    ],
+                    enrollDate:'2011-01-17'
+                ]
+            ]
+        ]
+    ],
+    [
+        9,
+        '',
+        '苏D8T112',
+        'LXEHLU464EEWXMD1W',
+        'UCDRFMY',
+        '姚年合',
+        '432828198504024384',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'五菱',
+                        supplementInfo : [
+                            autoModel: 'TYBBED0028',
+                            verificationMobile:'13581538623',
+                            commercialStartDate : '2018-06-04',
+                            compulsoryStartDate : '2018-06-04',
+                        ]
+                    ],
+                    enrollDate:'2011-08-13'
+                ]
+            ]
+        ]
+    ],
+]

@@ -1,0 +1,19 @@
+package com.cheche365.cheche.chinalife
+
+basePackageOptions = [
+    thirdPartyAmount: 100_000.0,
+    passengerAmount : 10_000.0
+]
+
+baseAdditionalParams = [
+    quoteRecord: [
+        auto: [
+            autoType  : [
+                code:'揽胜RANGE ROVER 3.0T越野车',
+                supplementInfo : [
+                    autoModel : 'LHBAEI0012'
+                ]
+            ]
+        ]
+    ]
+]

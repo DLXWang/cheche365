@@ -1,0 +1,36 @@
+package com.cheche365.cheche.pingan
+
+testDataParams = [
+
+    0 : [
+            additionalParams:
+                [
+                    quoteRecord:
+                        [auto:
+                             [autoType:
+                                  [supplementInfo:
+                                       [autoModel: ''
+                                       ]
+                                  ]
+                             ]
+                        ],
+                    //太平洋的测试数据
+                    selectedVehicleOption: [
+                        meta: [
+                            vehicleOptionInfo: [
+                                brand         : '东风雪铁龙',
+                                family        : '世嘉',
+                                gearbox       : '手自一体',
+                                exhaustScale  : '1.6L',
+                                model         : 'DC7165DTAA',
+                                productionDate: '201203',
+                                seats         : '5',
+                                newPrice      : '102800',
+                            ]
+                        ]
+                    ],
+                ],
+
+    ]
+]
+

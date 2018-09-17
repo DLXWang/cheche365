@@ -1,0 +1,102 @@
+/**
+ +-----------+
+ |   Tasks   |
+ +-----------+
+ **/
+
+import org.apache.tools.ant.DirectoryScanner
+import java.text.SimpleDateFormat
+
+/**
+ * 返回当前build number
+ * @return
+ */
+private getCurrentBuildNumber() {
+    new File(projectDir, 'BUILD#').readLines().first()
+}
+
+/**
+ * 返回新的build number
+ * @return build#，格式为“${SVN_REV}_${yyyyMMddHHmmss}” */
+private getNewBuildNumber() {
+    def buildNoPrefix = 'svn info'.execute([], rootProject.projectDir).text.readLines().findResult { line ->
+        def (propName, value) = line.tokenize(':')
+        'Last Changed Rev' == propName ? value.trim() : null
+    }.with {
+        // 如果万一无法获得新的buildVersion，就简单递增“BUILD#”文件中的SVN_REV
+        it ?: (currentBuildNumber.tokenize('_').first() as long) + 1
+    }
+
+    // 以当前的秒数为后缀
+    "${buildNoPrefix}_${new SimpleDateFormat('yyyyMMddHHmmss').format(new Date())}"
+}
+
+
+task bumpUpBuildNumber {
+    doLast {
+        def newBuildNo = newBuildNumber
+        new File(projectDir, 'BUILD#').withWriter { writer ->
+            writer << newBuildNo
+        }
+    }
+}
+
+
+task buildProductPostProcess {
+
+    if (!System.getProperty('spring.profiles.active')) {
+        System.setProperty 'spring.profiles.active', "$spring_profiles_active"
+    }
+    def basicContext = [
+        env     : System.properties,
+        project : project,
+        tag     : currentBuildNumber,
+        logger  : logger
+    ]
+
+
+    doLast {
+        new File(projectDir, "$substitutions_conf").toURI().toURL().with { url ->
+            new ConfigSlurper().parse(url)
+        }.with { conf ->
+            conf.rules.each { getBaseDir, filePatterns, getLines, contentPatternConverterMappings, writeToFile ->
+                new DirectoryScanner(
+                    includes: filePatterns as String[],
+                    basedir: getBaseDir(basicContext) as File
+                ).with {
+                    scan()
+
+                    def contentPatterns = contentPatternConverterMappings.keySet()
+
+                    includedFiles.collect { file ->
+                        new File(basedir, file)
+                    }.findAll { file ->
+                        getLines(basicContext + [file: file]).any { line ->
+                            contentPatterns.any { contentPattern ->
+                                (line =~ contentPattern).matches()
+                            }
+                        }
+                    }
+                }.each { file ->
+                    getLines(basicContext + [file: file]).collect { line ->
+                        contentPatternConverterMappings.findResult { contentPattern, convert ->
+                            (line =~ contentPattern).with { matcher ->
+                                if (matches()) {
+                                    def context = basicContext + [
+                                        matcher: matcher,
+                                        params : conf.params
+                                    ]
+                                    convert context
+                                }
+                            }
+                        } ?: line
+                    }.with { lines ->
+                        writeToFile(basicContext + [lines: lines, file: file])
+                    }
+                }
+            }
+        }
+    }
+
+}
+

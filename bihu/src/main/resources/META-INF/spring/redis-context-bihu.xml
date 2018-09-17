@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!-- Common -->
+
+    <bean
+        id="aBihuJedisConnectionFactory"
+        abstract="true"
+        parent="aJedisConnectionFactory"
+        p:database="1" />
+
+    <!-- Profile-Based -->
+
+    <beans profile="dev">
+
+        <bean id="bihuJedisConnectionFactory" parent="aBihuJedisConnectionFactory" />
+
+    </beans>
+
+    <beans profile="k8s">
+
+        <bean id="bihuJedisConnectionFactory" parent="aBihuJedisConnectionFactory"
+              p:hostName="${k8s.redis_host}"
+              p:port="${k8s.redis_port}"
+              p:password="${k8s.redis_password}"/>
+
+    </beans>
+
+    <beans profile="itg">
+
+        <bean id="bihuJedisConnectionFactory" parent="aBihuJedisConnectionFactory"
+              p:hostName="${itg.redis_host}"
+              p:password="${itg.redis_password}"/>
+
+    </beans>
+
+    <beans profile="itg_hw">
+
+        <bean id="bihuJedisConnectionFactory" parent="aBihuJedisConnectionFactory"
+              p:hostName="${itg_hw.redis_host}"
+              p:password="${itg_hw.redis_password}"/>
+
+    </beans>
+
+    <beans profile="st">
+
+        <bean id="bihuJedisConnectionFactory" parent="aBihuJedisConnectionFactory"
+              p:hostName="${st.redis_host}" />
+
+    </beans>
+
+    <beans profile="qa">
+
+        <bean id="bihuJedisConnectionFactory" parent="aBihuJedisConnectionFactory"
+              p:hostName="${qa.redis_host}"
+              p:password="${qa.redis_password}" />
+
+    </beans>
+
+    <beans profile="br1">
+
+        <bean id="bihuJedisConnectionFactory" parent="aBihuJedisConnectionFactory"
+              p:hostName="${br1.redis_host}"
+              p:port="${br1.redis_port}"
+              p:password="${br1.redis_password}" />
+
+    </beans>
+
+    <beans profile="production">
+
+        <bean id="bihuJedisConnectionFactory" parent="aBihuJedisConnectionFactory"
+              p:hostName="${production.redis_host}"
+              p:port="${production.redis_port}"
+              p:password="${production.redis_password}" />
+
+    </beans>
+
+</beans>

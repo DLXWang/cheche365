@@ -1,0 +1,21 @@
+package com.cheche365.cheche.sinosig
+
+/**
+ * 深圳
+ */
+
+testDataParams = [
+
+    //{value=CAABBD0072, text=长安SC6395FV客车  2011款 5座 33500元}
+    10000: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'CAABBD0072']]]]]],
+
+    //{value=MZAALD0023, text=马自达CA7231AT3轿车  2007款 豪华型 5座 184800元}
+    10010: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'MZAALD0023']]]]]],
+
+    //{value=BTAALD0063, text=雅阁HG7241AB轿车  2011款 LX 5座 189800元}
+    10030: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'BTAALD0063']]]]]],
+
+    //{value=BTAALD0063, text=雅阁HG7241AB轿车  2011款 LX 5座 189800元}
+    10040: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'BTAALD0063']]]]]],
+
+]

@@ -1,0 +1,12 @@
+package com.cheche365.cheche.picc
+
+/**
+ * 河南信阳
+ */
+
+testDataParams = [
+
+    //{value=4028b28839ecb523013a064ef2da1d39, text=雅阁2013款 PE 5座 173800元}
+    10000  : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028b28839ecb523013a064ef2da1d39']]]]]],
+
+]

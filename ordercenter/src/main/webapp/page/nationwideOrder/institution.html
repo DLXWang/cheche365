@@ -1,0 +1,108 @@
+<link rel="stylesheet" type="text/css" href="../../country-order/css/lib/font-awesome.min.css"
+      xmlns:margin-top="http://www.w3.org/1999/xhtml">
+   <link rel="stylesheet" type="text/css" href="../../country-order/css/styles.min.css">
+
+   <div class="country-order-center" id="countryOrder"></div>
+   <script src="../../country-order/buildx/app.js"></script>
+   <link type="text/css" href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <link type="text/css" href="../../css/common.css" rel="stylesheet">
+   <script type="text/javascript" src="../../js/jquery/jquery-1.11.2.min.js"></script>
+   <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+   <script type="text/javascript" src="../../js/jquery/jquery.cookie.js"></script>
+   <script type="text/javascript" src="../../plugins/jqPaginator-1.2.0/jqPaginator.min.js"></script>
+   <script type="text/javascript" src="../../plugins/jquery-validation-1.14.0/jquery.validate.js"></script>
+   <script type="text/javascript" src="../../js/common/common.js"></script>
+   <script type="text/javascript" src="../../js/common/popup.js"></script>
+   <script type="text/javascript" src="../../My97DatePicker/WdatePicker.js"></script>
+
+   <div id="re_input_rebate" class="none">
+       <div class="theme_poptit" style="background-color: #CE5F48;">
+           <a id="assign_pop_close" href="javascript:;" title="关闭" class="close" style="color: white "><i class="glyphicon glyphicon-remove"></i></a>
+           <h4 class="text-center title" style="color: white;">回录历史费率</h4>
+       </div>
+       <div class="text-center table-responsive">
+           <div class="col-sm-12">
+               <form id="history_rebate_form" class="form-input">
+                   <fieldset>
+                       <table class="table table-bordered">
+                           <tbody>
+                           <tr>
+                               <td  class="tab_td"><label class="control-label">城市：</label></td>
+                               <td>
+                                   <div class="controls">
+                                       <select id="area" name="area" class="text-input-180" style="width:180px;"></select>
+                                   </div>
+                               </td>
+                               <td  class="tab_td"><label class="control-label">保险公司：</label></td>
+                               <td>
+                                   <div class="controls">
+                                       <select id="insuranceCompany" name="insuranceCompany" class="text-input-180" style="width:180px;"></select>
+                                   </div>
+                               </td>
+                           </tr>
+                           <tr>
+                               <td  class="tab_td"><label class="control-label">交强险费率：</label></td>
+                               <td>
+                                   <div class="controls">
+                                       <div class="controls">
+                                           <input type="text" class="text-input-180" required id="compulsoryRebate" name="compulsoryRebate" style="width:180px;">%
+                                       </div>
+                                   </div>
+                               </td>
+                               <td  class="tab_td"><label class="control-label">商业险费率：</label></td>
+                               <td>
+                                   <div class="controls">
+                                       <input type="text" class="text-input-180" required id="commercialRebate" name="commercialRebate" style="width:180px;">%
+                                   </div>
+                               </td>
+                           </tr>
+                           <tr>
+                               <td  class="tab_td"><label class="control-label">开始时间：</label></td>
+                               <td colspan="3">
+                                   <div class="controls">
+                                       <div class="controls">
+                                           <input id="startTime" name="startTime" type="text"  style="width:180px;" class="text-height-28 commercialExpireDate form-control text-input-180 Wdate applicantDate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'});" style="height: 28px;" readonly>
+                                       </div>
+                                   </div>
+                               </td>
+                           </tr>
+                           </tbody>
+                       </table>
+                   </fieldset>
+                   <div>
+                       <span class="col-sm-4"><p>&nbsp;</p></span>
+                       <div class="col-sm-8 text-left">
+                           <p class="alert alert-danger text-input-280 alert-user error-msg none"><i
+                               class="glyphicon glyphicon-remove-sign"></i> <span id="errorText"></span></p>
+                           <p class="alert alert-success text-input-280 alert-user success-msg none"><i
+                               class="glyphicon glyphicon-ok"></i> <span id="successText"></span></p>
+                       </div>
+                   </div>
+                   <div>
+                       <div class="col-sm-12 text-center" id="toSaveRebate">
+                           <button type="button" class="btn btn-danger btn-default submit">保存</button>
+                           <button type="button" class="btn btn-danger btn-default cancel">取消</button>
+                       </div>
+                   </div>
+
+                   <input type="hidden" name="institution" id="institution">
+               </form>
+           </div>
+       </div>
+       <div style="height:220px;margin-top: 20px;overflow:auto;margin-left:15px;margin-right:15px;" >
+           <table id="tabHistory"  class="table">
+               <thead>
+               <tr class="active">
+                   <th class="text-center">城市</th>
+                   <th class="text-center">保险公司</th>
+                   <th class="text-center">商业险费率</th>
+                   <th class="text-center">交强险费率</th>
+                   <th class="text-center">开始时间</th>
+                   <th class="text-center">结束时间</th>
+               </tr>
+               </thead>
+               <tbody>
+               </tbody>
+           </table>
+       </div>
+   </div>

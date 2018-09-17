@@ -1,0 +1,68 @@
+#百度数据同步邮件
+title: 百度数据同步
+template: /velocity/completedOrder.vm
+tos: [zhangtc@cheche365.com,liuyw@cheche365.com,baihua@cheche365.com]
+production_tos: [xiaoling@baidu.com,zhaoyuetong@baidu.com,shiyuepeng@baidu.com,xunlihui@baidu.com,longtong@baidu.com,zhangtc@cheche365.com]
+excelAttachmentConfig:
+        fileName: "${timePeriod}百度数据同步.xlsx"
+        sheets:
+        - sheetName: 登录用户数据
+          columns:
+              - columnType: userLoginInfo
+                column:
+                    保险公司: insuranceCompany
+                    客户姓名: insuredName
+                    百度账号: account
+                    车牌: licenseNo
+                    电话: linkPhone
+                    交强保费: compulsoryPremium
+                    商业保费: commecialPremium
+                    创建时间: submitTime
+                    线下计算返现金额: offlineCashBackSum
+                    线下返现基数: offlineCashBackBase
+                    是否返现: isCashBack
+                    车型: autoType
+                    车架号: vinNo
+                    发动机号: engineNo
+                    初登日期: enrollDate
+                    车险到期日: expireTime
+        - sheetName: 报价用户数据
+          columns:
+              - columnType: applicationLogInfo
+                column:
+                    保险公司: insuranceCompany
+                    客户姓名: insuredName
+                    百度账号: account
+                    车牌: licenseNo
+                    电话: linkPhone
+                    交强保费: compulsoryPremium
+                    商业保费: commecialPremium
+                    创建时间: submitTime
+                    线下计算返现金额: offlineCashBackSum
+                    线下返现基数: offlineCashBackBase
+                    是否返现: isCashBack
+                    车型: autoType
+                    车架号: vinNo
+                    发动机号: engineNo
+                    初登日期: enrollDate
+                    车险到期日: expireTime
+        - sheetName: 下单用户数据
+          columns:
+              - columnType: purchaseOrderInfo
+                column:
+                    保险公司: insuranceCompany
+                    客户姓名: insuredName
+                    百度账号: account
+                    车牌: licenseNo
+                    电话: linkPhone
+                    交强保费: compulsoryPremium
+                    商业保费: commecialPremium
+                    创建时间: submitTime
+                    线下计算返现金额: offlineCashBackSum
+                    线下返现基数: offlineCashBackBase
+                    是否返现: isCashBack
+                    车型: autoType
+                    车架号: vinNo
+                    发动机号: engineNo
+                    初登日期: enrollDate
+                    车险到期日: expireTime

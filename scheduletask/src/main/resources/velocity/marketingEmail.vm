@@ -1,0 +1,19 @@
+统计时间：$data.startDate 至 $data.endDate<br>
+统计对象：昨天和今天的营销活动参加情况
+<table width='950px;' border='1' cellspacing='0' cellpadding='1'>
+    <tr>
+        <td width='90px;'>活动名称</td>
+        <td width='90px;'>渠道来源</td>
+        <td width='160px;'>日期</td>
+        <td width='85px;'>数量</td>
+    </tr>
+    #foreach( $info in $data.infoList )
+        <tr>
+        <td style='font-weight:bold;'>$info.marketingName</td>
+        <td style='font-weight:bold;'>$info.sourceChannel</td>
+        <td style='font-weight:bold;'>$info.pDate</td>
+        <td style='font-weight:bold;'>$info.pCount</td>
+        </tr>
+    #end
+</table>
+<br>

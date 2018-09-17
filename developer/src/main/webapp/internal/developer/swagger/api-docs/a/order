@@ -1,0 +1,81 @@
+{
+  "swaggerVersion": "1.2",
+  "basePath": "/internal/developer/order",
+  "produces": [
+    "application/json"
+  ],
+  "apis": [
+    {
+      "path": "/sync/history/{orderNo}",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "获取同步历史",
+          "notes": "根据订单号获取同步历史",
+          "nickname": "orderSyncHistory",
+          "parameters": [
+            {
+              "name": "orderNo",
+              "description": "订单号",
+              "required": true,
+              "type": "String",
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/{orderNo}/info",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "获取订单信息",
+          "notes": "根据订单号获取订单信息",
+          "nickname": "orderInfo",
+          "parameters": [
+            {
+              "name": "orderNo",
+              "description": "订单号",
+              "required": true,
+              "type": "String",
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/{orderNo}/{status}",
+      "operations": [
+        {
+          "method": "POST",
+          "summary": "同步订单指定状态",
+          "notes": "输入需要同步的订单号,和需要同步的订单状态（3代表出单中，5代表订单完成）",
+          "nickname": "orderInfo",
+          "parameters": [
+            {
+              "name": "orderNo",
+              "description": "订单号",
+              "required": true,
+              "type": "String",
+              "paramType": "path"
+            },
+            {
+              "name": "status",
+              "description": "订单状态(3代表出单中,5代表订单完成)",
+              "required": true,
+              "type": "int",
+              "paramType": "path",
+              "enum": [
+                3,
+                5
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "models": {}
+}

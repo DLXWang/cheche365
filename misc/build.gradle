@@ -1,0 +1,22 @@
+apply from: "${rootProject.projectDir}/gradle/springboot_common_settings.gradle"
+
+/**
+ +----------------+
+ | Build Settings |
+ +----------------+
+ */
+dependencies {
+
+    // Other Projects
+    compile     project(':core')
+    compile     "org.codehaus.gpars:gpars:$groovy_gpars_version"
+    // Apache
+    runtime     "commons-cli:commons-cli:$commons_cli_version"
+
+}
+
+bootRun {
+    if (project.hasProperty('args')) {
+        args project.args.split('\\s+')
+    }
+}

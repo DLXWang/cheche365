@@ -1,0 +1,26 @@
+package com.cheche365.cheche.chinalife
+
+/**
+ * 深圳
+ */
+
+testDataParams = [
+
+    //{value=CAABBD0070, text=长安SC6395F 32900元}
+    10000: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'CAABBD0070']]]]]],
+
+    //{value=MZAALD0023, text=马自达CA7231AT3 豪华型 200509年款 184800元}
+    10010: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'MZAALD0023']]]]]],
+
+    //{value=WXAAMI0003, text=英菲尼迪INFINITI G25 运动版 201204年款 298000元}
+    10020: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'WXAAMI0003']]]]]],
+
+    //{value=BTAALD0030, text=雅阁HG7241AB EX 200801年款 202800元}
+    10030: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'BTAALD0030']]]]]],
+
+    //{value=BTAALD0030, text=雅阁HG7241AB EX 200801年款 202800元}
+    10040: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'BTAALD0030']]]]]],
+
+]
+
+

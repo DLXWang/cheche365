@@ -1,0 +1,9 @@
+package com.cheche365.cheche.pingan
+//this is 南京
+
+testDataParams = [
+
+    // {value=2fca0bd2c057ffc10000000071e44e31, text=北京现代BH7164AX轿车 2008款 舒适型 自动档 5座 98800元}
+    1040 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '2fca0bd2c057ffc10000000071e44e31']]]]]],
+
+]

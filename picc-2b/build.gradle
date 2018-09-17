@@ -1,0 +1,24 @@
+/**
+ +----------------+
+ | Build Settings |
+ +----------------+
+ */
+configurations {
+    springBoot {
+        extendsFrom runtime
+    }
+}
+
+dependencies {
+
+    //cheche365
+    compile "com.cheche365.parser:cheche365-parser-core:$cheche365_parser_version"
+
+    // Selenium
+    compile 'org.seleniumhq.selenium:selenium-ie-driver:3.8.1',
+            'org.seleniumhq.selenium:selenium-support:3.8.1',
+            'org.gebish:geb-junit4:2.0'
+
+    testCompile "com.cheche365.parser:cheche365-parser-test:$cheche365_parser_version"
+
+}

@@ -1,0 +1,28 @@
+/**
+ +----------------+
+ | Build Settings |
+ +----------------+
+ */
+configurations {
+    springBoot {
+        extendsFrom runtime
+    }
+}
+
+dependencies {
+
+    compile project(':core')
+
+    //cheche365
+    compile "com.cheche365.flow:cheche365-flow-core:$cheche365_flow_version",
+        "com.cheche365.insurance:cheche365-insurance-core:$cheche365_insurance_version"
+
+    // drools decision-table
+    compile "org.drools:drools-decisiontables:$drools_version"
+
+    testCompile "org.springframework.boot:spring-boot-starter-test:$spring_boot_starter_version"
+
+    //cheche365
+    testCompile "com.cheche365.test:cheche365-test-core:$cheche365_test_version"
+
+}

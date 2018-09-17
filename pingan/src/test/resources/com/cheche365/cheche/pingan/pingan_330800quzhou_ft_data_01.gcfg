@@ -1,0 +1,9 @@
+package com.cheche365.cheche.pingan
+//this is 衢州
+
+testDataParams = [
+
+    //{value=4028b288405d749f0140c7a715216d25, text=长安SC7169G4轿车 2013款 尚酷型 手动档 5座 66400元}
+    10000 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028b288405d749f0140c7a715216d25']]]]]],
+
+]

@@ -1,0 +1,190 @@
+body{
+    min-height: 100%;
+    background-color: #fff;
+    font-family: arial,"Hiragino Sans GB","Microsoft Yahei",sans-serif;
+    font-size: 14px;
+}
+a {
+    cursor:pointer;
+}
+table td, table thead tr th {
+    vertical-align: middle !important;
+}
+.diy-height {
+    height: 400px;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+.form-group-fix {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-bottom: 9px;
+}
+.top-search {
+    width: 99%;
+}
+.none {display: none;}
+.detail-all {
+    width: 70px;
+    border: none;
+    outline: none;
+    padding-right: 5px;
+}
+.detail-top {
+    width: 98%;
+    height: 50px;
+    margin: 0 auto;
+    line-height: 50px;
+    border-bottom: 1px solid #ccc;
+}
+.detail-top table tr {
+    border-bottom: none !important;
+}
+/*.col-sm-2 {
+    text-align: center;
+}*/
+.detail-together {
+    height: 40px;
+    width: 97%;
+    margin-left: 0px;
+    line-height: 40px;
+    padding-left: 24px;;
+}
+.alert-user {
+    margin: 0;
+    padding: 5px;
+}
+.prov-next .page-class {
+    float: left;
+    padding-right: 20px;
+}
+.prov-next .page-class .page-class-left {
+    padding-right: 30px;
+}
+
+/* form */
+.bold-font {
+    font-weight: bold;
+    font-size: 17px;
+    padding: 0 20px;
+}
+.form-input-top {
+    padding-top: 15px;
+}
+.form-input .legend {
+    padding: 10px;
+    font-size: 25px;
+}
+.text-height-28 {
+    height: 28px;
+    line-height: 28px;
+}
+.span-text {
+    padding: 5px;
+}
+.text-input-400 {
+    width: 400px;
+}
+.text-input-300 {
+    width: 300px;
+}
+.text-input-280 {
+    width: 280px;
+}
+.text-input-200 {
+    width: 200px;
+}
+.text-input-100 {
+    width: 100px;
+}
+.text-input-150 {
+    width: 150px;
+}
+.text-input-70 {
+    /*margin-left: 10px;*/
+    width: 70px;
+}
+.form-input .label-sm-2 {
+    text-align: left;
+    width: 10%;
+}
+.form-input .label-sm-4 {
+    text-align: left;
+    width: 22%;
+}
+.form-input .text-sm-2 {
+    text-align: left;
+    width: 23%;
+}
+.form-input .text-sm-4 {
+    text-align: left;
+    width: 25%;
+}
+.form-input .row {
+     padding: 5px 0;
+}
+.select-28 {
+    padding-top: 2px;
+}
+
+.img-bottom .active {
+    border: 2px solid #fff;
+}
+.img-bottom .active-gray {
+    border: 2px solid #cccccc;
+}
+.user-lg-btn {
+    width: 160px;
+    height: 100px;
+}
+
+.bottom-input {
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 1px solid #000000;
+    outline:none;
+}
+
+/* 分页相关 */
+.customer-pagination .pagination >li >a {
+    margin-right: 5px;
+    border-radius: 2px;
+    background: #fff;
+    color: #333;
+    border-color: #ccc;
+    padding: 6px 15px;
+}
+.customer-pagination .pagination>li>a:hover,.customer-pagination .pagination>li>a:focus {
+    color:#fff;
+    background:#fb9400;
+    border-color:#fb9400
+}
+.customer-pagination .pagination>.active>a,.customer-pagination .pagination>.active>a:hover,.customer-pagination .pagination>.active>a:focus {
+    color:#fff;
+    background:#fb9400;
+    border-color:#fb9400
+}
+.customer-pagination .pagination .glyphicon-menu-left {
+    margin-right: 3px;
+    margin-top: 1px;
+}
+.customer-pagination .pagination a:hover .glyphicon-menu-left {
+    border-right-color:#fff
+}
+.customer-pagination .pagination .glyphicon-menu-right {
+    margin-left: 3px;
+    margin-top: 1px;
+}
+.customer-pagination .pagination a:hover .glyphicon-menu-right {
+    border-left-color:#fff
+}
+/*保单录入图片展示*/
+#preview{
+    position:absolute;
+    border:1px solid #ccc;
+    background:#333;
+    padding:5px;
+    display:none;
+    color:#fff;
+}

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>已报价待审核</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link type="text/css" href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="../../css/style.css" rel="stylesheet">
+    <style type="text/css">
+        .top-search {
+            width: 98%;
+            padding-left: 16px;
+            padding-top: 15px;
+        }
+    </style>
+    <script type="text/javascript" src="../../js/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../plugins/jqPaginator-1.2.0/jqPaginator.min.js"></script>
+    <script type="text/javascript" src="../../plugins/jquery-validation-1.14.0/jquery.validate.js"></script>
+</head>
+<body>
+<div id="top_div" class="top-search">
+    <div class="row">
+        <div class="col-sm-8 form-inline">
+            <select  id="keyType" class="form-control text-input-150">
+                <option value="1">定单号</option>
+                <option value="2">车主</option>
+                <option value="3">车牌</option>
+            </select>
+            <div class="input-group text-input-300">
+                <input type="text" class="form-control" id="keyword" placeholder=""/>
+                <span class="input-group-btn">
+                    <button id="searchBtn" class="btn btn-danger" type="button">搜索</button>
+                </span>
+            </div>
+            <select  id="all_area" class="form-control text-input-150">
+                <option value="">全部地区</option>
+                <option value="0">北京</option>
+                <option value="1">上海</option>
+                <option value="2">广州</option>
+                <option value="3">深圳</option>
+                <option value="4">重庆</option>
+                <option value="5">成都</option>
+                <option value="6">武汉</option>
+                <option value="7">天津</option>
+                <option value="8">杭州</option>
+                <option value="9">长沙</option>
+            </select>
+        </div>
+
+
+    </div>
+
+</div>
+    <div id="count_div" class="detail-together">
+        <label>总共：</label>
+        <span id="totalCount" class="detail-all"></span>个
+    </div>
+    <div id="show_div" class="table-responsive">
+        <div class="col-sm-12">
+            <table class="table table-bordered table-hover" id="list_tab">
+                <thead>
+                <tr class="active">
+                    <th class="text-center">序号</th>
+                    <th class="text-center">用户ID</th>
+                    <th class="text-center">用户手机号</th>
+                    <th class="text-center">车牌号</th>
+                    <th class="text-center">上传图片数</th>
+                    <th class="text-center">提交时间</th>
+                    <th class="text-center">有效状态</th>
+                    <th class="text-center">回访状态</th>
+                    <th class="text-center">备注</th>
+                    <th class="text-center">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <div class="customer-pagination">
+                <ul class="pagination"></ul>
+            </div>
+        </div>
+    </div>
+    <div id="detail_content" class="none">
+        <div class="theme_poptit">
+            <a id="auto_detail_close" href="javascript:;" title="关闭" class="close"><i class="glyphicon glyphicon-remove"></i></a>
+            <h4 class="text-center" id="detail_title">拍照信息详情</h4>
+        </div>
+        <div class="form-input-top">
+            <div class="row" style="margin-left: -30px;height: 450px;">
+                <div id="img_content" class="col-sm-7">
+                    <ul style="list-style:none;">
+                        <li id="item0" class="">
+                            <img src="../../images/img1.jpg" class="cropper" width="400" height="400" style="border:5px solid #fff;"/>
+                        </li>
+                        <li id="item1" class="none">
+                            <img src="../../images/img2_thumb.jpg" class="cropper" width="400" height="400" style="border:5px solid #fff;"/>
+                        </li>
+                    </ul>
+                    <div id="img_bottom" class="img-bottom" style="background-color: #A19DA7;width: 240px; height: 70px; border:4px solid #DEDCDC; margin-top: 10px;margin-left: 107px;">
+                        <ul style="list-style:none;">
+                            <li style="float: left;margin-left: 15px;margin-top: 4px;" class="active"><a href="#item0" class="img-control"><img src="../../images/img1.jpg" width="50" height="50" ></a></li>
+                            <li style="float: left;margin-left: 20px;margin-top: 4px;"><a href="#item1" class="img-control"><img src="../../images/img2_thumb.jpg" width="50" height="50"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div id="disable_content" class="text-center none" style="height: 450px;margin-right: 70px;">
+                        <button type="button" class="btn btn-success btn-lg user-lg-btn enable" style="margin-bottom: 60px;margin-top: 80px;">有效</button><br/>
+                        <button type="button" class="btn btn-danger btn-lg user-lg-btn disable">无效</button>
+                    </div>
+                    <div id="license_plate_no_content" class="none">
+                        <div class="form-inline" style="margin-top: 70px;margin-bottom: 100px;">
+                            <label>车牌号：</label>
+                            <div id="old_license_plate_no_group" style="width: 150px;height: 200px;margin-left: 80px;margin-top:-25px;overflow-y: auto;">
+                                <table class="table table-bordered table-hover">
+                                    <tbody>
+                                        <tr class="text-center">
+                                            <td><a>京SADFA</a></td>
+                                        </tr>
+                                        <tr class="text-center">
+                                            <td><a>京SADFA</a></td>
+                                        </tr>
+                                        <tr class="text-center">
+                                            <td><a>京SADFA</a></td>
+                                        </tr>
+                                        <tr class="text-center">
+                                            <td><a>京SADFA</a></td>
+                                        </tr>
+                                        <tr class="text-center">
+                                            <td><a>京SADFA</a></td>
+                                        </tr>
+                                        <tr class="text-center">
+                                            <td><a>京SADFA</a></td>
+                                        </tr>
+                                        <tr class="text-center">
+                                            <td><a>京SADFA</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="form-inline">
+                            <label>车牌号：</label>
+                            <input type="text" class="form-control text-height-28" id="new_license_plate_no" name="newLicensePlateNo" placeholder="请输入车牌号" style="width: 200px;"/>
+                        </div>
+                        <div class="form-group text-center" style="margin-top: 20px;margin-right: 75px;">
+                            <button type="button" class="btn btn-danger text-input-100">新建</button>
+                        </div>
+                    </div>
+                    <div id="existent_auto_content" class="none">
+                        <form id="phone_auto_form" class="form-horizontal form-input" style="padding: 0;margin-left: -106px;margin-right: 4px;">
+                            <div class="diy-height" style="height: 450px;">
+                                <div class="form-group form-group-fix">
+                                    <div class="col-sm-12 text-center">
+                                        —————————<span class="text-center bold-font">车主信息</span>—————————
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-fix">
+                                    <div class="col-sm-4 text-height-28 text-right">车主姓名：</div>
+                                    <div class="col-sm-8 text-height-28">
+                                        <p class="text-left text-show none"><span id="detail_owner"></span></p>
+                                        <input id="input_owner" name="owner" type="text" class="form-control text-height-28 text-input-200 text-input none">
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-fix">
+                                    <div class="col-sm-4 text-height-28 text-right">证件类型：</div>
+                                    <div class="col-sm-8 text-height-28">
+                                        <p class="text-left text-show none"><span id="detail_identityType"  data-toggle="tooltip"  data-placement="left" title=""></span></p>
+                                        <select id="input_identityType" name="identityType" class="form-control text-input-200 none">
+                                            <option value="">请选择...</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-fix">
+                                    <div class="col-sm-4 text-height-28 text-right">车主身份证：</div>
+                                    <div class="col-sm-8 text-height-28">
+                                        <p class="text-left text-show none" id="detail_identity"></p>
+                                        <input id="input_identity" name="identity" type="text" class="form-control text-height-28 text-input-200 text-input none">
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-fix">
+                                    <div class="col-sm-12 text-center">
+                                        ————————<span class="text-center bold-font">被保险人信息</span>————————
+                                    </div>
+                                </div>
+                                <div id="insured_owner_radio" class="form-group form-group-fix">
+                                    <div class="col-sm-4 text-height-28 text-right">被保险人：</div>
+                                    <div class="col-sm-8 text-left">
+                                        <label class="radio-inline">
+                                            <input type="radio" id="insuredType_1" name="insuredType" value="1"> 车主
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" id="insuredType_2" name="insuredType" value="2" checked> 非车主
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-fix">
+                                    <div class="col-sm-4 text-height-28 text-right">姓名：</div>
+                                    <div class="col-sm-8 text-height-28">
+                                        <p class="text-left text-show none" id="detail_insuredName"></p>
+                                        <input id="input_insuredName" name="insuredName" type="text" class="form-control text-height-28 text-input-200 text-input none">
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-fix">
+                                    <div class="col-sm-4 text-height-28 text-right">证件类型：</div>
+                                    <div class="col-sm-8 text-height-28">
+                                        <p class="text-left text-show none" id="detail_insuredIdType"  data-toggle="tooltip"  data-placement="left" title=""></p>
+                                        <select id="input_insuredIdType" name="insuredIdType" class="form-control text-input-200 none">
+                                            <option value="">请选择...</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-fix">
+                                    <div class="col-sm-4 text-height-28 text-right">身份证：</div>
+                                    <div class="col-sm-8 text-height-28">
+                                        <p class="text-left text-show none" id="detail_insuredIdNo"></p>
+                                        <input id="input_insuredIdNo" name="insuredIdNo" type="text" class="form-control text-height-28 text-input-200 text-input none">
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-fix">
+                                    <div class="col-sm-12 text-center">
+                                        —————————<span class="text-center bold-font">车辆信息</span>—————————
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-fix">
+                                    <div class="col-sm-4 text-height-28 text-right">车牌号：</div>
+                                    <div class="col-sm-8 text-height-28">
+                                        <p class="text-left"><span id="detail_licensePlateNo"></span></p>
+                                        <input type="hidden" id="licensePlateNoHid" name="licensePlateNo">
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-fix">
+                                    <div class="col-sm-4 text-height-28 text-right">车架号：</div>
+                                    <div class="col-sm-8 text-height-28">
+                                        <p class="text-left text-show none"><span id="detail_vinNo"></span></p>
+                                        <input id="input_vinNo" name="vinNo" type="text" class="form-control text-height-28 text-input-200 text-input none">
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-fix">
+                                    <div class="col-sm-4 text-height-28 text-right">发动机号：</div>
+                                    <div class="col-sm-8 text-height-28">
+                                        <p class="text-left text-show none"><span id="detail_engineNo"></span></p>
+                                        <input id="input_engineNo" name="engineNo" type="text" class="form-control text-height-28 text-input-200 text-input none">
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-fix">
+                                    <div class="col-sm-4 text-height-28 text-right">初登日期：</div>
+                                    <div class="col-sm-8 text-height-28">
+                                        <p class="text-left text-show none"><span id="detail_enrollDate"></span></p>
+                                        <input type="text" class="form-control Wdate text-height-28 text-input-200 text-input none" id="input_enrollDate" name="enrollDate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true,maxDate: '%y-%M-%d'});" readonly>
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-fix">
+                                    <div class="col-sm-4 text-height-28 text-right">保险到期日：</div>
+                                    <div class="col-sm-8 text-height-28">
+                                        <p class="text-left text-show none"><span id="detail_expireDate"></span></p>
+                                        <input type="text" class="form-control Wdate text-height-28 text-input-200 text-input none" id="input_expireDate" name="expireDate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true});" readonly>
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-fix">
+                                    <div class="col-sm-4 text-height-28 text-right">品牌型号：</div>
+                                    <div class="col-sm-8 text-height-28">
+                                        <p class="text-left text-show none"><span id="detail_code"></span></p>
+                                        <input id="input_code" name="code" type="text" class="form-control text-height-28 text-input-200 text-input none">
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-fix">
+                                    <div class="col-sm-4 text-height-28 text-right">车型：</div>
+                                    <div class="col-sm-8 text-height-28">
+                                        <p class="text-left text-show none"><span id="detail_model"></span></p>
+                                        <input id="input_model" name="model" type="text" class="form-control text-height-28 text-input-200 text-input none">
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-fix">
+                                    <div class="col-sm-12 text-center">
+                                        —————————<span class="text-center bold-font">用户信息</span>—————————
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-fix">
+                                    <div class="col-sm-4 text-height-28 text-right">电话：</div>
+                                    <div id="mobile_content" class="col-sm-8 text-height-28">
+                                        <p class="text-left text-show none"><span id="detail_mobile"></span></p>
+                                        <input id="input_mobile" name="mobile" type="text" class="form-control text-height-28 text-input-200 text-input none">
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="btn_group" class="form-group">
+                                <div class="col-sm-12 text-center">
+                                    <button type="button" class="btn btn-danger btn-show toChangeAuto">换辆车</button>
+                                    <button type="button" class="btn btn-danger btn-show toQuote">报价</button>
+                                    <button type="button" class="btn btn-danger btn-show toEdit">编辑</button>
+                                    <button type="button" class="btn btn-danger btn-edit none toSave">保存</button>
+                                    <button type="button" class="btn btn-danger btn-edit none toCancel">取消</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="btn-group" style="margin-left: 95px;">
+                <button id="rotate_left" type="button" class="btn btn-default"><i class="fa fa-rotate-left"></i></button>
+                <button type="button" class="btn btn-default"><i class="fa fa-rotate-right"></i></button>
+                <button type="button" class="btn btn-default"><i class="glyphicon glyphicon-plus-sign"></i></button>
+                <button type="button" class="btn btn-default"><i class="glyphicon glyphicon-minus-sign"></i></button>
+            </div>-->
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../../js/common/common.js"></script>
+<script type="text/javascript" src="../../js/common/popup.js"></script>
+<script type="text/javascript" src="../../My97DatePicker/WdatePicker.js"></script>
+<!--<script type="text/javascript" src="../../js/quote/quote_help.js"></script>
+<script type="text/javascript" src="../../js/quote/quote_photo.js"></script>-->
+</html>

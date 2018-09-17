@@ -1,0 +1,120 @@
+{
+    "taskId": "1867317",
+    "prvId": "20074419",
+    "prvName": "平安财险",
+    "code": "0",
+    "channelId": "nqd_cheche2017",
+    "channelUserId": "nqd_cheche2017",
+    "taskState": "6",
+    "taskStateDescription": "核保成功",
+    "msgType": "00",
+    "carInfo": {
+        "vehicleName": "大众汽车SVW6451UFD多用途乘用车",
+        "carLicenseNo": "粤S4559U",
+        "carProperty": "1"
+    },
+    "carOwner": {
+        "name": "邓汉波"
+    },
+    "insureInfo": {
+        "efcInsureInfo": {
+            "startDate": "2017-04-16",
+            "endDate": "2018-04-15",
+            "amount": "0.00",
+            "premium": "1832.00",
+            "discountRate": "1.0000"
+        },
+        "taxInsureInfo": {
+            "lateFee": "0.00",
+            "taxFee": "0.00"
+        },
+        "bizInsureInfo": {
+            "startDate": "2017-04-16",
+            "endDate": "2018-04-15",
+            "premium": "0.01",
+            "discountRate": "1.0000",
+            "nfcPremium": "0.00",
+            "riskKinds": [
+                {
+                    "riskCode": "VehicleDemageIns",
+                    "riskName": "机动车损失保险",
+                    "amount": "289800.00",
+                    "notDeductible": "Y",
+                    "premium": "0.01",
+                    "ncfPremium": "0.0000"
+                },
+                {
+                    "riskCode": "ThirdPartyIns",
+                    "riskName": "机动车第三者责任保险",
+                    "amount": "500000.00",
+                    "notDeductible": "Y",
+                    "premium": "0.00",
+                    "ncfPremium": "0.0000"
+                },
+                {
+                    "riskCode": "DriverIns",
+                    "riskName": "司机责任险",
+                    "amount": "20000.00",
+                    "notDeductible": "Y",
+                    "premium": "0.00",
+                    "ncfPremium": "0.0000"
+                },
+                {
+                    "riskCode": "PassengerIns",
+                    "riskName": "乘客责任险",
+                    "amount": "10000.00",
+                    "notDeductible": "Y",
+                    "premium": "0.00",
+                    "ncfPremium": "0.0000"
+                },
+                {
+                    "riskCode": "TheftIns",
+                    "riskName": "机动车全车盗抢保险",
+                    "amount": "289800.00",
+                    "notDeductible": "Y",
+                    "premium": "0.00",
+                    "ncfPremium": "0.0000"
+                },
+                {
+                    "riskCode": "GlassIns",
+                    "riskName": "玻璃单独破碎险",
+                    "amount": "2.00",
+                    "notDeductible": "N",
+                    "premium": "0.00"
+                },
+                {
+                    "riskCode": "CombustionIns",
+                    "riskName": "自燃损失险",
+                    "amount": "289800.00",
+                    "notDeductible": "Y",
+                    "premium": "0.00",
+                    "ncfPremium": "0.0000"
+                },
+                {
+                    "riskCode": "ScratchIns",
+                    "riskName": "车身划痕损失险",
+                    "amount": "2000.00",
+                    "notDeductible": "Y",
+                    "premium": "0.00",
+                    "ncfPremium": "0.0000"
+                },
+                {
+                    "riskCode": "WadingIns",
+                    "riskName": "发动机涉水损失险",
+                    "amount": "0.00",
+                    "notDeductible": "Y",
+                    "premium": "0.00",
+                    "ncfPremium": "0.0000"
+                },
+                {
+                    "riskCode": "VehicleDemageMissedThirdPartyCla",
+                    "riskName": "机动车损失保险无法找到第三方特约险",
+                    "amount": "1.00",
+                    "notDeductible": "N",
+                    "premium": "0.00"
+                }
+            ]
+        },
+        "totalPremium": "0.01"
+    }
+}

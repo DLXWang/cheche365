@@ -1,0 +1,67 @@
+{
+  "message": {
+    "code": "success",
+    "message": "支付查询",
+    "status": ""
+  },
+  "meta": {
+    "pageNo": "1",
+    "pageSize": "1",
+    "totalPage": "1",
+    "transType": ""
+  },
+  "result": [
+    {
+    "beginDate": "2018-05-30 00:00:00",
+    "businessId": "1002018051200010339888101",
+    "endDate": "2019-05-30 00:00:00",
+    "insuredNo": "ABEJ020Y1418F094214W",
+    "isPartyPay": "否",
+    "isSaic": "0",
+    "partyName": "葛宇",
+    "payNo": "171879770692",
+    "payStatus": "3",
+    "paymentAmount": 1405.4,
+    "paymentApplyTime": "2018-05-29 10:54:08",
+    "paymentDate": "2018-05-30 00:00:00",
+    "paymentType": "2",
+    "plateNo": "京QX6A69",
+    "policyHolder": "葛宇",
+    "policyNo": "ABEJ020Y1418B064634C",
+    "policyType": "0",
+    "premiumAmount": "1405.40",
+    "quotationNo": "QBEJ020Y1418F112776T",
+    "status": "5",
+    "taxAmount": "",
+    "usageType": "11024400",
+    "validDate": "2018-05-29 10:46:54",
+    "verifyNo": "05585"
+  },
+    {
+      "beginDate": "2018-05-30 00:00:00",
+      "businessId": "1002018051200010339888101",
+      "endDate": "2019-05-30 00:00:00",
+      "insuredNo": "ABEJ020CTP18F082576B",
+      "isPartyPay": "否",
+      "isSaic": "0",
+      "partyName": "葛宇",
+      "payNo": "171879770692",
+      "payStatus": "3",
+      "paymentAmount": 2129.39,
+      "paymentApplyTime": "2018-05-29 10:54:08",
+      "paymentDate": "2018-05-30 00:00:00",
+      "paymentType": "2",
+      "plateNo": "京QX6A69",
+      "policyHolder": "葛宇",
+      "policyNo": "ABEJ020Y1418B064634C",
+      "policyType": "0",
+      "premiumAmount": "2129.39",
+      "quotationNo": "QBEJ020Y1418F112776T",
+      "status": "5",
+      "taxAmount": "",
+      "usageType": "11024400",
+      "validDate": "2018-05-29 10:46:54",
+      "verifyNo": "05585"
+    }
+  ]
+}

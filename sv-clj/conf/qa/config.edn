@@ -1,0 +1,8 @@
+{:pidfile-name  "supervision.pid"
+ ;; iop
+ :redis-host    "10.162.223.25"
+ :redis-port    6379
+ ;; scheduler/schedule
+ :interval-normal        60000
+ :interval-early-warning 30000
+ :interval-unavailable   120000}

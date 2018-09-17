@@ -1,0 +1,274 @@
+<html>
+<head lang="en">
+    <title>工作查看</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <link type="text/css" href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="../../css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap-multiselect.css">
+    <link type="text/css" href="../../plugins/select2/select2.min.css" rel="stylesheet">
+    <style type="text/css">
+        .top-search {
+            width: 98%;
+            padding-left: 16px;
+            padding-top: 15px;
+        }
+
+        .time-height {
+            height: 30px;
+        }
+
+        .like-button {
+            padding: 6px 12px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .like-form-control {
+            width: 75px;
+            height: 46px;
+            line-height: 1.42857143;
+            padding: 10px 5px 15px 10px;
+        }
+    </style>
+    <script type="text/javascript" src="../../js/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap-multiselect.js"></script>
+    <script type="text/javascript" src="../../plugins/jqPaginator-1.2.0/jqPaginator.min.js"></script>
+    <script type="text/javascript" src="../../plugins/jquery-validation-1.14.0/jquery.validate.js"></script>
+    <script type="text/javascript" src="../../plugins/select2/select2.min.js"></script>
+</head>
+<body>
+<!-- <jsp:include page="../quote/quote_photo_pop.html"></jsp:include> -->
+<div class="top-search">
+    <div class="row">
+        <div class="col-sm-8 form-inline">
+            <div class="input-group text-input-300">
+                <input type="text" class="form-control" id="mobilePhone" placeholder="手机号"/>
+                <span class="input-group-btn">
+                    <button id="searchBtn" class="btn btn-danger" type="button">搜索</button>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<hr width="90%" color="red"/>
+<div id="firstPage" class="col-sm-12">
+    <div id="entry_div">
+        <ul class="list-inline" style=" width:100% ;border-bottom:solid 1px gray; display:table; padding:10px">
+            <li class="btn btn-default" id="entry1" value="1" style="background:#f0ad4e; width:120px">呼出记录</li>
+            <li class="btn btn-default" id="entry4" value="4" style="width:100px">成单记录</li>
+            <li class="btn btn-default" id="entry6" value="6" style="width:100px">预约数据</li>
+            <li class="btn btn-default" id="entry7" value="7" style="width:100px">数据量</li>
+            <li class="btn btn-default" id="entry5" value="5" style="width:100px">整体情况</li>
+        </ul>
+    </div>
+    <div id="time_div" class="col-sm-12 form-input">
+        <div class="like-button col-sm-1 time-height" style="width:60px;background:#f0ad4e;" id="time1" label="1">今天
+        </div>
+        <div class="like-button col-sm-1" style="width:60px" id="time2" label="2">昨天</div>
+        <div class="like-button col-sm-1" style="width:80px" id="time3" label="3">最近7天</div>
+        <div class="like-button col-sm-1" style="width:90px" id="time4" label="4">最近1个月</div>
+        <div class="like-button col-sm-1" style="width:15px">从</div>
+        <div class="like-button col-sm-2" style="width:200px"><input type="text" id="beginTime" name="createTime"
+                                                                     class="Wdate"
+                                                                     onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',readOnly:true});work_details.configValidation.showButton()"
+                                                                     style="width: 175px;height: 27px;" readonly="">
+        </div>
+        <div class="like-button col-sm-1" style="width:10px">到</div>
+        <div class="like-button col-sm-2" style="width:200px"><input type="text" id="endTime" name="createTime"
+                                                                     class="Wdate"
+                                                                     onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',readOnly:true});work_details.configValidation.showButton()"
+                                                                     style="width: 175px;height: 27px;" readonly="">
+        </div>
+        <div class="col-sm-1"><input id="timeSlotButton" type="button" class="btn btn-primary" value="确定"
+                                     disabled="disabled"></div>
+    </div>
+    <div id="conditions_div" class="col-sm-12 form-input">
+        <div id="operator">
+            <div class="like-button col-sm-1 text-left like-form-control" style="width:80px">
+                <span>指定人：</span>
+            </div>
+            <div class="like-button col-sm-1">
+                <select id="operatorSel" name="userId" class="form-control text_input" style="width: 100px;">
+                    <option value="">请选择</option>
+                </select>
+            </div>
+        </div>
+        <div style="display: none;" id="query_Mode" >
+            <div class="like-button col-sm-1 text-left like-form-control" style="width:90px">
+                <span>查询方式：</span>
+            </div>
+            <div class="like-button col-sm-2">
+                <select id="handleModeSel" name="queryMode" class="form-control text_input text-input-150">
+                    <option value="">请选择查询方式</option>
+                    <option value="1">按用户查询</option>
+                    <option value="2">按行为查询</option>
+                </select>
+            </div>
+        </div>
+        <div id="handle_model">
+            <div class="like-button col-sm-1 text-left like-form-control" style="width: 90px" id="status_result1">
+                <span>处理结果：</span>
+            </div>
+            <div class="like-button col-sm-2" id="status_result2">
+                <select id="statusSel" name="status" class="form-control text_input">
+                    <option value="">请选择</option>
+                </select>
+            </div>
+        </div>
+        <div id="condition_channel">
+            <div class="like-button col-sm-1 text-left like-form-control" style="width:60px;">
+                <span>渠道：</span>
+            </div>
+            <div class="like-button col-sm-1">
+                <select id="channelSel" name="channelIds" class="form-control text-input-150" multiple="multiple">
+                    <option value="0">站内</option>
+                </select>
+            </div>
+        </div>
+        <div id="condition_type">
+            <div class="col-sm-1" style="width:100px;"></div>
+            <div class="like-button col-sm-1 text-left like-form-control" style="width:60px;">
+                <span>类型：</span>
+            </div>
+            <div class="like-button col-sm-2">
+                <select id="typeSel" name="telTypes" class="form-control text-input-150" multiple="multiple">
+                </select>
+            </div>
+        </div>
+        <div id="city" style="display: none;">
+            <div class="col-sm-1 text-left like-form-control" style="width:60px;">
+                <span>城市：</span>
+            </div>
+            <div class="like-button col-sm-2">
+                <select id="citySel" name="citys" class="form-control text-input-150" multiple="multiple">
+                </select>
+            </div>
+        </div>
+        <div id="handled_radio" style="display: none;">
+            <div class="col-sm-1" style="width: 10%; margin-top: 10px;">是否已处理：
+                <input type="checkbox" id="is_handled" name="handled" value="1">是
+                <input type="checkbox" id="not_handled" name="handled" value="0">否
+            </div>
+        </div>
+        <div id="condition_order_status" style="display: none;">
+            <div class="like-button col-sm-1 text-left like-form-control" style="width:90px;">
+                <span>订单状态：</span>
+            </div>
+            <div class="like-button col-sm-1">
+                <select id="orderStatusSel" name="orderStatus" class="form-control text-input-150" multiple="multiple">
+                </select>
+            </div>
+        </div>
+        <div style="display: none;" id="condition_source">
+            <div class="like-button col-sm-1 text-left like-form-control" style="width:90px;" id="condition_source1">
+                <span>数据来源：</span>
+            </div>
+            <div class="like-button col-sm-1" id="condition_source2">
+                <select id="sourceSel" class="form-control text_input" style="width: 150px;">
+                    <option value="">请选择</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+    <div class="col-sm-12 form-input" style="border-bottom:1px solid gray;"><p></p></div>
+    <hr style="height:1px;border:none;border-top:1px red;"/>
+    <div id="detail_div">
+        <div id="count_div" class="col-sm-12 form-input" style="padding:10px">
+            <label>总共：</label>
+            <span id="totalCount" class="detail-all"></span>个
+            <div id="exportData" class="btn-group" style="display: none;">
+                <a id="exportWorkDetail" class="btn btn-warning submit" onclick="work_details.workEntryList.exportData()">导出</a>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <table class="table table-bordered table-hover" id="detail_list_tab" style="font-size: 14px;">
+                <thead>
+                <tr class="active" id="common_tr">
+                    <th class="text-center">姓名</th>
+                    <th class="text-center">电话</th>
+                    <th class="text-center">时间</th>
+                    <th class="text-center" id="process_status">操作</th>
+                    <th class="text-center none" id="order_no">订单号</th>
+                    <th class="text-center none" id="order_statue">订单状态</th>
+                </tr>
+                <tr class="active" id="dataNum_tr" style="display: none;">
+                    <th class="text-center">电话</th>
+                    <th class="text-center">来源时间</th>
+                    <th class="text-center">渠道</th>
+                    <th class="text-center">类型</th>
+                    <th class="text-center">车险到期日</th>
+                    <th class="text-center">是否已处理</th>
+                    <th class="text-center">当前跟进人</th>
+                    <th class="text-center">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <div class="customer-pagination" id="work_detail_page_div">
+                <ul class="pagination" id="work_detail_page_ul"></ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="lastPage" class="none col-sm-12" style="display: none;">
+    <div class="col-sm-12"><p></p></div>
+    <div id="search_count_div" style="padding-left:10px" class="form-group">
+        总共找到<span id="mobileCount" class="detail-all"></span>条<span id="mobileNo" class="detail-all"></span>结果
+    </div>
+    <div class="col-sm-12">
+        <table class="table table-bordered table-hover" id="search_list_tab" style="font-size: 14px;">
+            <thead>
+            <tr class="active">
+                <th class="text-center">电话</th>
+                <th class="text-center">姓名</th>
+                <th class="text-center">车险到期日</th>
+                <th class="text-center">来源</th>
+                <th class="text-center">处理结果</th>
+                <th class="text-center">指定跟进人</th>
+                <th class="text-center">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <div id="customer_pagination_idv" class="customer-pagination">
+            <ul id="pagination_ul" class="pagination"></ul>
+        </div>
+    </div>
+</div>
+<div id="chart_div" class="col-sm-12">
+    <div class="col-sm-12">
+        <div id="callMsg1" style=""></div>
+        <div id="callMsg2" style=""></div>
+    </div>
+    <div class="col-sm-12">
+        <div id="callMsg3" style=""></div>
+        <div id="callMsg4" style=""></div>
+    </div>
+    <div class="col-sm-12">
+        <div id="callMsg5" style="min-width: 1500px; width:10%; height: 400px; auto; display:inline;float:left"></div>
+    </div>
+    <div class="col-sm-12">
+        <div id="callMsg6" style="min-width: 800px; width:10%; height: 400px; auto; display:inline;float:left"></div>
+    </div>
+</div>
+<div id="all_search_list_div"></div>
+
+</body>
+<script type="text/javascript" src="../../js/common/common.js"></script>
+<script type="text/javascript" src="../../js/common/popup.js"></script>
+<script type="text/javascript" src="../../My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="../../js/telMarketingCenter/search_list.js"></script>
+<script type="text/javascript" src="../../js/telMarketingCenter/work_details.js"></script>
+<script type="text/javascript" src="../../highCharts/highcharts.js"></script>
+<script type="text/javascript" src="../../highCharts/modules/exporting.js"></script>
+<script type="text/javascript" src="../../js/jquery/jquery.cookie.js"></script>
+<script type="text/javascript" src="../../js/common/cookie.js"></script>
+<script type="text/javascript" src="../../js/quote/quote_help.js"></script>
+<script type="text/javascript" src="../../js/common/application_log.js"></script>
+<script type="text/javascript" src="../../js/quote/quote_photo_pop.js"></script>
+</html>

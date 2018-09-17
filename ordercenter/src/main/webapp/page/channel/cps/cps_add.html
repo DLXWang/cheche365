@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>增加cps渠道</title>
+    <link type="text/css" href="../../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="../../../css/formInput.css" rel="stylesheet">
+    <script type="text/javascript" src="../../../js/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../../../bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../js/common/common.js"></script>
+    <script type="text/javascript" src="../../../js/common/operation.js"></script>
+    <script type="text/javascript" src="../../../js/channel/cps/CPSChannel.js"></script>
+    <script type="text/javascript" src="../../../js/channel/cps/cps_add.js"></script>
+    <script type="text/javascript" src="../../../My97DatePicker/WdatePicker.js"></script>
+</head>
+<body>
+<div class="container tab_body">
+    <form id="channelForm" name="channelForm">
+        <fieldset>
+            <legend>&nbsp;</legend>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="tab_td"><label class="control-label">渠道名：</label></td>
+                        <td>
+                            <div class="controls">
+                                <input type="text" validation class="text_input" id="name" name="name">
+                            </div>
+                        </td>
+                        <td class="tab_td"><label class="control-label">返点位：</label></td>
+                        <td>
+                            <div class="controls">
+                                <input type="text" validation class="text_input" id="rebate" name="rebate"><strong>%</strong>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tab_td"><label class="control-label">渠道编号：</label></td>
+                        <td class="tab_td">
+                            <div class="controls">
+                                <input type="text" validation class="text_input" id="channelNo" name="channelNo">
+                            </div>
+                        </td>
+                        <!--
+                        <td class="tab_td">
+                            <label class="control-label"><button type="button" class="btn btn-primary">wap URL一键生成</button></label>
+                        </td>
+                        <td class="tab_td">
+                            <div class="controls">
+                                <input type="text" class="text_input" validation id="wapUrl" name="wapUrl" readonly placeholder="点击左边按钮生成链接" value="www.baidu.com">
+                            </div>
+                        </td>
+                        -->
+                        <td class="tab_td"><label class="control-label">WAP地址：</label></td>
+                        <td class="tab_td">
+                            <div class="controls">
+                                <input type="text" class="text_input" validation id="wapUrl" name="wapUrl">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tab_td"><label class="control-label">合作开始日期：</label></td>
+                        <td>
+                            <div class="controls">
+                                <input type="text" style="height: 32px;" validation class="text_input Wdate" id="startDate" name="startDate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true});">
+                            </div>
+                        </td>
+                        <td class="tab_td"><label class="control-label">合作结束日期：</label></td>
+                        <td>
+                            <div class="controls">
+                                <input type="text" style="height: 32px;" validation class="text_input Wdate" id="endDate" name="endDate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true});">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tab_td"><label class="control-label">联系人：</label></td>
+                        <td>
+                            <div class="controls">
+                                <input type="text" class="text_input" validation id="linkMan" name="linkMan">
+                            </div>
+                        </td>
+                        <td class="tab_td"><label class="control-label">联系人手机：</label></td>
+                        <td>
+                            <div class="controls">
+                                <input type="text" class="text_input" validation id="mobile" name="mobile">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tab_td"><label class="control-label">联系人邮箱：</label></td>
+                        <td>
+                            <div class="controls">
+                                <input type="text" class="text_input" validation id="email" name="email" value="liude@cheche365.com">
+                            </div>
+                        </td>
+                        <td class="tab_td"><label class="control-label">是否使用优惠券：</label></td>
+                        <td class="tab_td">
+                            <div class="controls">
+                                <label class="radio-inline">
+                                    <input type="radio" name="enable" id="no" value="0" checked> 否
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="enable" id="yes" value="1"> 是
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tab_td"><label class="control-label">是否显示链接按钮：</label></td>
+                        <td class="tab_td">
+                            <div class="controls">
+                                <label class="radio-inline">
+                                    <input type="radio" name="display" id="display_no" value="0" checked> 否
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="display" id="display_yes" value="1"> 是
+                                </label>
+                            </div>
+                        </td>
+                        <td class="tab_td"><label class="control-label">邮件报表发送频率：</label></td>
+                        <td class="tab_td">
+                            <div class="controls">
+                                <label class="radio-inline">
+                                    <input type="radio" name="frequency" id="eachMonth" value="2" checked> 每月
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="frequency" id="eachWeek" value="1"> 每周
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="row">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4">
+                    <div class="btn-group">
+                        <button id="save_button" type="button" class="btn btn-primary">保存</button>
+                    </div>
+                    <div class="btn-group" style="padding-left: 15px;">
+                        <button id="clear_button" type="button" class="btn btn-default">清空</button>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+</body>
+</html>

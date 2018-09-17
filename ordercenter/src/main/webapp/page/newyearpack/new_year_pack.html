@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>礼包订单管理</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link type="text/css" href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="../../css/common.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/dataTables.bootstrap.min.css"
+          rel="stylesheet">
+
+    <script type="text/javascript" src="../../js/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../plugins/jqPaginator-1.2.0/jqPaginator.min.js"></script>
+</head>
+<body>
+<div id="top_div" class="top-search">
+    <div class="row">
+        <div class="col-sm-9 form-inline">
+            <div class="input-group text-input-300">
+                <input type="text" class="form-control" id="keyword" placeholder="手机号"/>
+                    <span class="input-group-btn">
+                        <button id="searchBtn" class="btn btn-danger" type="button">搜索</button>
+                    </span>
+            </div>
+            <select id="newYearPack_statusId" class="form-control text-input-150">
+                <option value="">全部状态</option>
+                <option value="1">新建</option>
+                <option value="2">已支付</option>
+                <option value="3">已使用</option>
+                <option value="4">已取消</option>
+            </select>
+            <select id="sourceChannelSel" class="form-control text-input-150">
+                <option value="0">全部平台</option>
+            </select>
+            <span class="btn-group">
+                <a id="alipayActivityRuleLink" href="/orderCenter/newyearpack/rule" target='_blank'
+                   class="btn btn-danger">99元支付宝活动规则</a>
+            </span>
+
+        </div>
+    </div>
+
+</div>
+<div id="cardCount" class="detail-together">
+    <strong>200元加油卡兑换码剩余<span id="fuelCardCount" style="color: red;"></span>张，99折加油优惠兑换码100元剩余<span id="oneHundred"
+                                                                                                    style="color: red;"></span>张，500元剩余<span
+        id="fiveHundred" style="color: red;"></span>张，1000元剩余<span id="oneThousand"
+                                                                   style="color: red;"></span>张</strong>
+</div>
+
+<div class="col-sm-12">
+    <table class="table table-bordered table-hover" id="gift_order_list_tab">
+    </table>
+</div>
+
+</body>
+<link rel="stylesheet" href="../../css/popup.css">
+<script type="text/javascript" src="../../plugins/DataTables-1.10.12/media/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../../js/common/datatable_util.js"></script>
+<script type="text/javascript" src="../../js/jquery/jquery.cookie.js"></script>
+<script type="text/javascript" src="../../js/common/cookie.js"></script>
+<script type="text/javascript" src="../../js/common/common.js"></script>
+<script type="text/javascript" src="../../js/common/popup.js"></script>
+<script type="text/javascript" src="../../js/newyearpack/new_year_pack.js"></script>
+<script type="text/javascript" src="../../js/nationwideOrder/order_comment.js"></script>
+</html>

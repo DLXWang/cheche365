@@ -1,0 +1,48 @@
+apply from: "${rootProject.projectDir}/gradle/springboot_common_settings.gradle"
+apply from: "${rootProject.projectDir}/gradle/springboot_classpath_jar_settings.gradle"
+
+dependencies {
+    // Other Projects
+    compile project(':unionpay'),
+            project(':wechat'),
+            project(':alipay'),
+            project(':baoxian'),
+            project(':manage-common'),
+            project(':soopay'),
+            project(':external-payment'),
+            project(':zhongan')
+
+    //cheche365
+    compile "com.cheche365.spring:cheche365-spring-resource:$cheche365_spring_version",
+            "com.cheche365.common:cheche365-common-email:$cheche365_common_email_version"
+
+    // Velocity
+    compile "org.apache.velocity:velocity:$velocity_version",
+            "org.springframework.boot:spring-boot-starter-data-jpa:$spring_boot_starter_version",
+            "org.springframework.boot:spring-boot-starter-data-redis:$spring_boot_starter_version"
+
+    // Quartz
+    compile("org.quartz-scheduler:quartz:$quartz_version") {
+        exclude group: 'c3p0', module: 'c3p0'
+    }
+
+
+
+    compile "org.springframework.boot:spring-boot-starter-web:$spring_boot_starter_version"
+
+
+
+    runtime "org.eclipse.jetty:apache-jsp:$jetty_version",
+            "org.springframework.boot:spring-boot-starter-jetty:$spring_boot_starter_version"
+
+
+    compile "com.monitorjbl:xlsx-streamer:$monitorjbl_xlsx_version"
+
+    testCompile "org.springframework.boot:spring-boot-starter-test:$spring_boot_starter_version"
+
+    compile "io.prometheus:simpleclient_hotspot:$prometheus_version",
+            "io.prometheus:simpleclient:$prometheus_version",
+            "io.prometheus:simpleclient_servlet:$prometheus_version"
+
+    compile "org.grails:grails-async:$grails_version"
+}

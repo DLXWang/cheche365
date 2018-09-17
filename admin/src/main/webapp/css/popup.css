@@ -1,0 +1,115 @@
+
+.theme_popover_mask {
+    z-index: 9990;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:#000;
+    opacity:0.4;
+    filter:alpha(opacity=40);
+    display:none
+}
+.theme_popover_mask_second {
+    z-index: 9992;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:#000;
+    opacity:0.4;
+    filter:alpha(opacity=40);
+    display:none
+}
+.theme_popover {
+    z-index:9991;
+    position:fixed;
+    top:50%;
+    left:54%;
+    width:660px;
+    height:360px;
+    margin:-180px 0 0 -330px;
+    border-radius:5px;
+    border:solid 2px #666;
+    background-color:#fff;
+    display:none;
+    box-shadow: 0 0 10px #666;
+}
+.theme_popover_second {
+    z-index:9993;
+    position:fixed;
+    top:54%;
+    left:58%;
+    width:660px;
+    height:360px;
+    margin:-180px 0 0 -330px;
+    border-radius:5px;
+    border:solid 2px #666;
+    background-color:#fff;
+    display:none;
+    box-shadow: 0 0 10px #666;
+}
+.popup-content .icon-confirm {
+    background: url("../images/icon02.png") no-repeat 0 -100px;
+    float: left;
+    width: 82px;
+    height: 92px;
+    margin-left: 0;
+}
+.popup-content .icon-success-tips {
+    background: url("../images/icon02.png") no-repeat 0 -500px;
+    float: left;
+    width: 82px;
+    height: 92px;
+    margin-left: 0;
+}
+.popup-content .icon-error-tips {
+    background: url("../images/icon02.png") no-repeat 0 -200px;
+    float: left;
+    width: 82px;
+    height: 92px;
+    margin-left: 0;
+}
+.popup-content .icon-warning-tips {
+    background: url("../images/icon02.png") no-repeat 0 -600px;
+    float: left;
+    width: 82px;
+    height: 92px;
+    margin-left: 0;
+}
+.popup-content .icon-default-tips {
+    background: url("../images/icon02.png") no-repeat 0 -300px;
+    float: left;
+    width: 82px;
+    height: 92px;
+    margin-left: 0;
+}
+.theme_poptit {
+    border-bottom:1px solid #ddd;
+    padding:12px;
+    position: relative;
+}
+.theme_poptit .close {
+    float:right;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow:0 1px 0 #1D1919;
+}
+.theme_poptit .close:hover {
+    color:#444;
+}
+
+.customer-btn-warn {
+    background: rgb(217, 109, 0);
+    color: #ddd;
+}
+.customer-btn-error {
+    background-color: #D90000;
+    color: #ddd;
+}
+.customer-btn-info {
+    background-color: #759721;
+    color: #ddd;
+}

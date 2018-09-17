@@ -1,0 +1,12 @@
+package com.cheche365.cheche.sinosig
+
+/**
+ * 河南新乡
+ */
+
+testDataParams = [
+
+    //{value=DZAAAD0075, text=大众FV7187TRATG轿车  2011款 豪华型 5座 258800元}
+    10000: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZAAAD0075']]]]]],
+
+]

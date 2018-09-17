@@ -1,0 +1,17 @@
+db.moDisplayMessage.update(
+    {"messageType._id":34},
+    {"$pull":{"message":{"version":"v1.8"}}},
+    { multi: true }
+);
+db.getCollection('moDisplayMessage').update({"messageType._id":34},{$push:
+    {
+      "message":{
+          "iconUrl" : "banner/top-banner25.png",
+          "url" : "/marketing/m/201809001/",
+          "title" : "车保易现金好礼送不停",
+          "content" : null,
+          "weight" : "99",
+          "channel":"67"
+      }
+    }
+ });

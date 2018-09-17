@@ -1,0 +1,35 @@
+package com.cheche365.cheche.picc
+
+testData = [
+
+
+    [
+        227,
+        '',
+        '京N1NY03',
+        'LDC633T30F3278862',
+        '3079990',
+        '罗良明',
+        '411522198805163333',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'',
+                        supplementInfo : [
+                            autoModel: '',
+                            verificationMobile:'13581538623',
+                            commercialStartDate : '2018-05-17',
+                            compulsoryStartDate : '2018-05-17',
+                        ]
+                    ],
+                    enrollDate:'2015-05-07'
+                ]
+            ]
+        ]
+    ],
+
+
+]

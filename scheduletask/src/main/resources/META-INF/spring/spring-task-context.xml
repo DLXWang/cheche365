@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/task
+        http://www.springframework.org/schema/task/spring-task-4.1.xsd">
+
+    <!-- 配置定时任务 -->
+    <task:scheduled-tasks scheduler="schedulerPool">
+        <!--电销数据， 每天凌晨3点执行一次，车险到期日 0 0 3 * * ?-->
+        <!--<task:scheduled ref="telMarketingCenterExpireTimeDataImportTask" method="process" cron="0 0 3 * * ?"/>-->
+        <!--电销数据， 每天凌晨3点执行一次，注册但无行为用户 0 0 3 * * ?-->
+        <task:scheduled ref="telMarketingCenterRegisterNoOperationDataImportTask" method="process" cron="0 0 3 * * ?"/>
+        <!--&lt;!&ndash;电销数据，9点到17点执行，拍照报价 0 0 9-17 * * ?&ndash;&gt;-->
+        <!--<task:scheduled ref="telMarketingCenterQuotePhotoDataImportTask" method="process" cron="0 0 9-17 * * ?"/>-->
+        <!--电销数据，9点到17点执行，主动预约 0 0 9-17 * * ?-->
+        <task:scheduled ref="telMarketingCenterAppointmentInsuranceDataImportTask" method="process"
+                        cron="0 0 9-17 * * ?"/>
+        <!--&lt;!&ndash;电销数据，9点到17点执行，活动 0 0 9-17 * * ?&ndash;&gt;-->
+        <!--<task:scheduled ref="telMarketingCenterMarketingDataImportTask" method="process" cron="0 0 9-17 * * ?"/>-->
+        <!--电销数据，每三十分钟执行一次，未支付订单用户 0 0/30 * * * ?-->
+        <task:scheduled ref="telMarketingCenterUnPayOrderDataImportTask" method="process" cron="0 0/30 * * * ?"/>
+        <!--微信二维码扫描关注数统计：每天一小时一次 0 0 0/1 * * ?-->
+        <task:scheduled ref="qrCodeScanAndSubscribeCountTask" method="process" cron="0 0 0/1 * * ?"/>
+        <!--每天0点定时任务扫描过期优惠券状态置为已过期 0 0 0 * * ?-->
+        <task:scheduled ref="giftExpireTask" method="process" cron="0 0 0 * * ?"/>
+        <!--重设过期订单状态任务 每30分钟扫描一次  0 0/30 * * * ?-->
+        <task:scheduled ref="resetExpiredOrderStatusTask" method="process" cron="0 0/30 * * * ?"/>
+        <!--删除二维码图片：每天23点 0 0 23 * * ?-->
+        <task:scheduled ref="deletePaymentWechatQrDirectoryTask" method="process" cron="0 0 23 * * ?"/>
+        <!--电销指定跟进人  0 0/30 8-18 * * ? -->
+        <task:scheduled ref="customerRedistributionTask" method="process" cron="0 0/30 8-18 * * ?"/>
+        <!--出单中心指定跟进人  0 0/30 8-18 * * ? -->
+        <task:scheduled ref="ordercenterRedistributionTask" method="process" cron="0 0/30 8-18 * * ?"/>
+        <!--同步用户登录ip的城市信息 每天00:00   * * ?-->
+        <task:scheduled ref="ipAreaSyncTask" method="process" cron="0 0 0 * * ?"/>
+        <!--有车险到期日的数据推送 每天01:00   * * ?-->
+        <!--<task:scheduled ref="telMarketingCenterPushDataTask" method="process" cron="0 0 1 * * ?"/>-->
+        <!--上年未成单订单， 每天凌晨3点执行一次 0 0 3 * * ?-->
+        <task:scheduled ref="telMarketingCenterLastYearUnpayOrderDataImportTask" method="process" cron="0 0 3 * * ?"/>
+        <!--后台活动刷新,每天0点执行-->
+        <task:scheduled ref="marketingRefreshTask" method="process" cron="0 0 0 * * ?"/>
+        <!--退款订单数据导入电销-->
+        <task:scheduled ref="telMarketingCenterRefundDataImportTask" method="process" cron="30 0/15 * * * ?"/>
+        <!--订单退款-->
+        <task:scheduled ref="orderRefundReportTask" method="process" cron="0 0 7 ? * MON-FRI"/>
+        <task:scheduled ref="telMarketingCenterRefundOvertimeDataTask" method="process" cron="0 0 18 ? * MON-FRI"/>
+        <!--&lt;!&ndash;报价日志数据导入电销 5.10 修改为每5分钟执行1次 原来为每天执行1次 ; 5.22 修改回每天执行一次,导入昨天的报价数据&ndash;&gt;-->
+        <!--<task:scheduled ref="telMarketingCenterQuoteDataImportTask" method="process" cron="0 0 1 * * ?"/>-->
+        <!--登录日志数据导入电销-->
+        <!--<task:scheduled ref="tmcUserLoginInfoImportTask" method="process" cron="0 0 2 * * ?"/>-->
+        <!--按天买车险停复驶状态更新-->
+        <task:scheduled ref="dailyInsuranceStatusRefreshTask" method="process" cron="0 0 1 * * ?"/>
+        <!--泛华72小时自动退款-->
+        <task:scheduled ref="fanhuaOverdueStatusChgTask" method="process" cron="0 0 0/1 * * ?"/>
+        <!--泛华quoteValidtime过期自动退款-->
+        <!--<task:scheduled ref="fanhuaOrderRefundChgTask" method="process" cron="0 0 0 * * ?"/>-->
+        <!--商务活动监控数据 每天1小时执行一次 0 0 0/1 * * ?-->
+        <task:scheduled ref="businessActivityMonitorDataTask" method="process" cron="0 0 0/1 * * ?"/>
+        <!--渠道费率配置生效日期更新-->
+        <task:scheduled ref="channelRebateDateRefreshTask" method="process" cron="0 0 0 * * ?"/>
+        <!--&lt;!&ndash;(toA渠道)报价日志数据导入电销 &ndash;&gt;-->
+        <!--<task:scheduled ref="telMarketingCenterToAQuoteDataImportTask" method="process" cron="0 0/5 * * * ?"/>-->
+        <!--刷新报价配置 -->
+        <task:scheduled ref="quoteFlowConfigDailyChgTask" method="process" cron="0 1 0 * * ?"/>
+        <!--线下数据导入结果监听-->
+        <!--<task:scheduled ref="insuranceImportResultCallbackTask" method="process" cron="0/30 * * * * ?"/>-->
+        <!--线下导入数据是否同步匹配-->
+        <!--<task:scheduled ref="offlineImportDataMatchTask" method="process" cron="15/30 * * * * ?"/>-->
+        <!--众安已支付承保失败订单状态查询-->
+        <task:scheduled ref="zhonganOrderStatusTask" method="process" cron="0 30 1 * * ?"/>
+        <!--合约以及合约对应点位生效状态变更-->
+        <task:scheduled ref="tideContractStatusCheckTask" method="process" cron="0 0 1 * * ?"/>
+        <!--合约的点位每天备份-->
+        <task:scheduled ref="tideContractRebateBackupTask" method="process" cron="0 0 23 * * ?"/>
+        <!--电销数据 每天2点执行 续保进电销 0 0 3 * * ?-->
+        <task:scheduled ref="telMarketingCenterRenewalDataImportTask" method="process" cron="0 0 2 * * ?"/>
+        <!--查询小鳄鱼订单支付状态定时任务，没10查询一次-->
+        <task:scheduled ref="agentParserStatusTask" method="process" cron="0 0/10 * * * ?"/>
+        <!--金斗云报价账号状态报警定时任务，每6小时查询一次-->
+        <task:scheduled ref="alarmAccount4BotpyTask" method="process" cron="0 0 0/6 * * ?"/>
+        <!--小鳄鱼报价账号状态报警定时任务，每6小时查询一次-->
+        <task:scheduled ref="alarmAccount4CpicUKTask" method="process" cron="0 0 0/6 * * ?"/>
+        <!--人保小鳄鱼报价账号状态报警定时任务，每6小时查询一次-->
+        <task:scheduled ref="alarmAccount4PiccUkTask" method="process" cron="0 0 0/6 * * ?"/>
+    </task:scheduled-tasks>
+</beans>

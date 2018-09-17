@@ -1,0 +1,1 @@
+INSERT INTO `api_partner_properties` (`partner`, `key`, `value`) VALUES ((SELECT id FROM `api_partner` WHERE `code` = 'zhongchi'), 'production.sync.agent.url', 'http://ins.autozi.com/insautozi/api/user/cheche/in');

@@ -1,0 +1,28 @@
+#泛华成单对账报表
+title: ${timePeriod}泛华成单对账报表
+template: /velocity/completedOrder.vm
+tos: [liuyw@cheche365.com,zhangtc@cheche365.com,huyp@cheche365.com]
+production_tos: [wangmn@cheche365.com]
+excelAttachmentConfig:
+        fileName: "${timePeriod}泛华成单对账报表.xlsx"
+        sheets:
+        - sheetName: 泛华成单对账报表
+          columns:
+              - columnType: billData
+                column:
+                    出单时间: issueTime
+                    平台: paymentPlatform
+                    车主: owner
+                    车牌号: licenseNo
+                    订单号: orderNo
+                    保费总额: premiumSum
+                    交强险: compulsoryPremium
+                    车船税: autoTax
+                    商业险: commecialPremium
+                    车损险: damagePremium
+                    减免金额: paymentDiscountAmount
+                    返现: offlineCashBackSum
+                    加油卡: fuelCard
+                    京东卡: jdCard
+                    付款方式: paymentChannel
+                    实物礼品: giftDetail

@@ -1,0 +1,34 @@
+/**
+ +----------------+
+ | Build Settings |
+ +----------------+
+ */
+configurations {
+    springBoot {
+        extendsFrom runtime
+    }
+}
+
+dependencies {
+
+    // Other Projects
+    compile project(':webcore'),
+            project(':partner'),
+            project(':baoxian'),
+            project(':walletcore'),
+            project(':zhongan'),
+            project(':sinosafe')
+
+    // Spring Frameworks
+    compile "org.springframework:spring-webmvc:$spring_version"
+
+    testCompile "org.springframework.boot:spring-boot-starter-test:$spring_boot_starter_version",
+        "cglib:cglib-nodep:$cglib_version",
+        "com.google.code.gson:gson:$gson_version"
+
+    //cheche365
+    compile "com.cheche365.answern:cheche365-answern:$cheche365_answern_version",
+            "Pingplusplus:pingpp-java:$ping_plusplus_version"
+    testCompile "com.cheche365.test:cheche365-test-core:$cheche365_test_version"
+
+}

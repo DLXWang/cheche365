@@ -1,0 +1,7 @@
+10-db-alter-tel-marketing-center-repeat-add-column.sql
+20-db-add-logtype-data.sql
+30-db-add-insurance-company-AIBAO.sql
+40-db-add-payment-channel.sql
+50-db-delete-insurance-company-AIBAO.sql
+60-db-create-ethnic.sql
+65-db-alter-user-add-column.sql

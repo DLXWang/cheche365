@@ -1,0 +1,11 @@
+alter table bank add COLUMN back_ground_img VARCHAR(20);
+UPDATE `bank` SET `back_ground_img`='icbc.png' WHERE id='1';
+UPDATE `bank` SET `back_ground_img`='abc.png' WHERE id='2';
+UPDATE `bank` SET `back_ground_img`='boc.png' WHERE id='3';
+UPDATE `bank` SET `back_ground_img`='ccb.png' WHERE id='4';
+UPDATE `bank` SET `back_ground_img`='comm.png' WHERE id='5';
+UPDATE `bank` SET `back_ground_img`='ceb.png' WHERE id='6';
+UPDATE `bank` SET `back_ground_img`='cmbc.png' WHERE id='7';
+UPDATE `bank` SET `back_ground_img`='cmb.png' WHERE id='8';
+UPDATE `bank` SET `back_ground_img`='psbc.png' WHERE id='9';
+UPDATE `bank` SET `back_ground_img`='bjb.png' WHERE id='10';

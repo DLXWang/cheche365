@@ -1,0 +1,8 @@
+package com.cheche365.cheche.picc
+
+testDataParams = [
+
+    // {value=4028b28841cafa3d0141fd70bee2221e, text=品牌:华晨宝马; 车系:华晨宝马3系; 档位:手自一体; 排量:2.0T; 型号:宝马BMW7200FF(BMW320i)轿车; 年款:2014款 320i进取型; 座位:5; 价格:268800, meta={vehicleOptionInfo={brand=华晨宝马, family=华晨宝马3系, gearbox=手自一体, exhaustScale=2.0T, model=宝马BMW7200FF(BMW320i)轿车, productionDate=2014款 320i进取型, seats=5, newPrice=268800}}}
+    10030 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028b28841cafa3d0141fd70bee2221e']]]]]],
+
+]

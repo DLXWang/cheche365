@@ -1,0 +1,42 @@
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<form id="refresh_form" method="post">
+    <div id="top_div" class="top-search">
+        <div class="row">
+            <div class="col-sm-12 form-inline">
+                <form>
+                    <select id="partnerSel" class="form-control" style="width: 200px;float:left;margin-left: 10px;">
+                        <option value="">请选择合作商</option>
+                    </select>
+                    <select id="channelSel" class="form-control" style="width: 200px;float:left;margin-left: 10px;">
+                        <option value="">第三方渠道名称</option>
+                    </select>
+                    <select id="channelEngSel" class="form-control" style="width: 200px;margin-left:10px;">
+                        <option value="">渠道英文名称</option>
+                    </select>
+                    <select id="statusSel" class="form-control" style="width: 200px;margin-left:10px;">
+                        <option value="">状态</option>
+                        <option value="1">启用</option>
+                        <option value="0">禁用</option>
+                    </select>
+                    <button id="search_btn" class="btn btn-danger" type="button" style="margin-left: 10px;"> 查询
+                    </button>
+                    <button id="reset_btn"  type="reset" class="btn btn-danger" type="button" style="margin-left: 5px;" onclick="partner_list.fresh()"> 重置
+                    </button>
+                </form>
+            </div>
+            <div class="col-sm-12 form-inline">
+                <button id="create_btn" class="btn btn-danger" type="button" style="margin-left: 5px;margin-top: 20px;"
+                        onclick="window.open('/views/thirdParty/toA_manager_add.html')"> + 新建</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12">
+        <table class="table table-bordered table-hover" id="partner_list"></table>
+    </div>
+</form>
+<script type="text/javascript" src="../../plugins/DataTables-1.10.12/media/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../../js/common/datatable_util.js"></script>
+<script type="text/javascript" src="../../js/thirdParty/toA_manager_list.js"></script>

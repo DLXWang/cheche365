@@ -1,0 +1,25 @@
+package com.cheche365.cheche.pingan
+//this is 北京
+
+baseAdditionalParams = [
+    quoteRecord: [
+        auto: [
+            autoType  : [
+                supplementInfo  : [
+                    autoModel: null
+                ]
+            ]
+        ]
+    ]
+]
+
+
+testDataParams = [
+
+    // {value=40288088249f730d0124a44bfd330237, text=东风日产DFL6460VECF多用途乘用车 2010款 XV四驱旗舰版 CVT 5座 230800元}
+    10 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '40288088249f730d0124a44bfd330237']]]]]],
+
+    // {value=40288088232da2e4012335c2f1cc04e8, text=品牌:一汽奥迪; 车系:奥迪A6; 档位:CVT; 排量:2.4L; 型号:FV7241FCVTG; 年款:2010款 豪华型; 座位:5; 价格:508600, meta={vehicleOptionInfo={brand=一汽奥迪, family=奥迪A6, gearbox=CVT, exhaustScale=2.4L, model=FV7241FCVTG, productionDate=2010款 豪华型, seats=5, newPrice=508600}}}
+    10590 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '']]]]]],
+
+]

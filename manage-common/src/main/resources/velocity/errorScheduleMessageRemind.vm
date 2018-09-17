@@ -1,0 +1,7 @@
+你好，触发条件“$data.condition”发送短信失败，详情见如下内容，请尽快处理。
+<br>
+手机号：$data.mobile
+<br>
+短信内容：$data.content
+<br>
+发送结果：$data.result

@@ -1,0 +1,58 @@
+package com.cheche365.cheche.sinosafe
+//this is  天津
+
+testData = [
+
+       [
+           10000,
+           '1831',
+           '津G87336',
+           'WVGAB97PXBD034525',
+           'CJT017604',
+           '王益信',
+           '320911197402130612',
+           null,
+           null,
+           [
+               quoteRecord:[
+                   auto   :  [
+                       autoType:[
+                           code:'车型途锐TOUAREG3.0TDI',
+                           supplementInfo : [
+                               autoModel : '',
+                           ]
+                       ],
+                       enrollDate:'2011-6-1'
+                   ]
+               ]
+           ],
+       ],
+
+       [
+               10010,
+               '1831',
+               '津NHE303',
+               'LFV3A28K3D3084839',
+               '405765',
+               '何佳桂',
+               '370602199204052620',
+               null,
+               null,
+               [
+                   quoteRecord:[
+                       auto   :  [
+                           autoType:[
+                               code:'车型途锐TOUAREG3.0TDI',
+                               supplementInfo : [
+                                   autoModel : '',
+                               ]
+                           ],
+                           enrollDate:'2011-6-1'
+                       ]
+                   ]
+               ],
+           ],
+
+
+
+]

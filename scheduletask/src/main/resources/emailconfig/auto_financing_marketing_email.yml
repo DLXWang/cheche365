@@ -1,0 +1,27 @@
+#汽车金融活动报表
+title: 用户在线申请提醒
+tos: [liuyw@cheche365.com,huyp@cheche365.com,baihua@cheche365.com,1027046467@qq.com,18201284049@163.com]
+production_tos: [yygl@cheche365.com,fxgl@cheche365.com,huyp@cheche365.com]
+template: /velocity/autoFinancingMarketing.vm
+excelAttachmentConfig:
+        fileName: "汽车金融申请表.xlsx"
+        sheets:
+        - sheetName: 汽车金融活动报表
+          columns:
+              - columnType: autoFinancingData
+                column:
+                    序号: id
+                    用户姓名: owner
+                    手机号: mobile
+                    身份证号: identity
+                    车辆品牌: brand
+                    车辆型号: model
+                    指导价: price
+                    所在城市: area
+                    渠道: channel
+                    提交时间: createTime
+
+
+
+
+

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>钱包列表</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link type="text/css" href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="../../css/common.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/select2/select2.min.css" rel="stylesheet">
+    <script type="text/javascript" src="../../js/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../My97DatePicker/WdatePicker.js"></script>
+    <script type="text/javascript" src="../../plugins/jqPaginator-1.2.0/jqPaginator.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../js/common/cookie.js"></script>
+    <script type="text/javascript" src="../../js/common/common.js"></script>
+    <script type="text/javascript" src="../../js/common/popup.js"></script>
+    <script type="text/javascript" src="../../plugins/DataTables-1.10.12/media/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../../js/common/datatable_util.js"></script>
+    <script type="text/javascript" src="../../plugins/select2/select2.min.js"></script>
+    <style>
+        .dropbtn {
+            background-color: #ffffff;
+            color: #0080ff;
+            width: 160px;
+            height:35px;
+            font-size: 16px;
+            border:1px solid #0080ff;
+            cursor: pointer;
+            border-radius:10px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index:10;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {background-color: #87cefa}
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+<div id="show_div" class="table-responsive" style="margin-top:10px;">
+
+    <div class="col-sm-12">
+        <div class="row" style="margin-bottom:10px;">
+            <div class="col-sm-12 form-inline">
+                <select id="keyType" class="form-control">
+                    <option value="1">手机号</option>
+                    <option value="2">流水号</option>
+                </select>
+
+                <div class="input-group">
+                    <input type="text" class="form-control" id="keyword" placeholder=""/>
+                <span class="input-group-btn">
+                    <button id="searchBtn" class="btn btn-danger" type="button">搜索</button>
+                </span>
+                </div>
+                <select id="channelSel" class="form-control" style="width:200px"></select>
+                <div class="form-group">
+                    日期：
+                        <input type="text" id="startTime" name="startTime" class="text-height-28 form-control text-input-200 Wdate" onfocus="WdatePicker({onpicked:function(dq){walletList.clickTimeFunc();},dateFmt:'yyyy-MM-dd'});" style="height: 28px;">
+                    至
+                        <input type="text" id="endTime" name="endTime" class="text-height-28 commercialExpireDate form-control text-input-200 Wdate" onfocus="WdatePicker({onpicked:function(dq){walletList.clickTimeFunc();},dateFmt:'yyyy-MM-dd'});" style="height: 28px;">
+                </div>
+                <div class="dropdown hidden" style="float:right" >
+                    <button class="dropbtn" id="drop" onclick="dropBut()">回传打款结果　v</button>
+                    <div class="dropdown-content" id="div1">
+                        <form class="form-horizontal" id="batchUpLoadForm" method="post" enctype="multipart/form-data">
+                            <a id="batchMoney" name="batchUpFake"
+                                onclick="document.getElementById('batchUpload').click();">批量导入打款结果</a>
+                            <input type="file" id="batchUpload" name="codeFile" accept=".xlsx"
+                               class="text-input-150 hidden form_input"
+                               onchange="uploadValue()"/>
+                        </form>
+                        <a id="url_template" href="" download="模板.xlsx">下载模板</a>
+                        <a id="history" href="wallet_history.html" target="_Blank">历史记录</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <table class="table table-bordered table-hover" id="list_tab">
+        </table>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../../js/wallet/wallet_list.js"></script>
+<script type="text/javascript" src="../../js/jquery/jquery.form.js"></script>
+</html>

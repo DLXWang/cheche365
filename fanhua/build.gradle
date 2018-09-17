@@ -1,0 +1,13 @@
+apply from: "${rootProject.projectDir}/gradle/springboot_web_settings.gradle"
+apply from: "${rootProject.projectDir}/gradle/springboot_classpath_jar_settings.gradle"
+
+dependencies {
+    // Other Projects
+    compile project(':core'),
+        project(':manage-common')
+    // Spring Framework
+    compile "org.springframework.boot:spring-boot-starter-web:$spring_boot_starter_version"
+    runtime "org.eclipse.jetty:apache-jsp:$jetty_version"
+
+    runtime "javax.servlet:jstl:$javax_jstl_version"
+}

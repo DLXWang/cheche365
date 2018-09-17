@@ -1,0 +1,33 @@
+/**
+ +----------------+
+ | Build Settings |
+ +----------------+
+ */
+configurations {
+    springBoot {
+        extendsFrom runtime
+    }
+}
+
+dependencies {
+
+    compile project(':entity-core'),
+            project(':parser-shared'),
+            project(':parser-c')
+    runtime project(':ms-sc-shared')
+
+    // Spring Boot
+    compile     "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:$spring_cloud_version",
+                "org.springframework.cloud:spring-cloud-starter-openfeign:$spring_cloud_version"
+
+    // Spring Frameworks
+    testCompile "org.springframework.boot:spring-boot-starter-test:$spring_boot_starter_version"
+
+    testCompile "com.cheche365.parser:cheche365-parser-test:$cheche365_parser_version"
+
+    // Spock Framework
+    testRuntime("org.spockframework:spock-spring:$spockframework_version") {
+        exclude group: 'org.codehaus.groovy', module: 'groovy-all'
+    }
+
+}

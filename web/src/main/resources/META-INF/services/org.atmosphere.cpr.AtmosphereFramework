@@ -1,0 +1,7 @@
+INSTALL
+com.cheche365.cheche.rest.serverpush.UUIDBroadcastFilter
+EXCLUDE
+org.atmosphere.interceptor.HeartbeatInterceptor
+org.atmosphere.interceptor.CorsInterceptor
+org.atmosphere.interceptor.PaddingAtmosphereInterceptor
+org.atmosphere.interceptor.SSEAtmosphereInterceptor

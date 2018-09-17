@@ -1,0 +1,22 @@
+{
+     "button":[
+     {
+          "type":"view",
+          "name":"车险报价",
+          "url":"http://www.mikecrm.com/f.php?t=rTebqP"
+      },
+      {
+           "name":"关于车车",
+           "sub_button":[
+           {
+               "type":"click",
+               "name":"车车简介",
+               "key":"V0001_CHECHE_BRIEF_INTRODUCTION"
+            },
+           {
+               "type":"view",
+               "name":"急聘牛人",
+               "url":"http://c.lagou.com/cs/march/show/41831.html"
+            }]
+       }]
+ }

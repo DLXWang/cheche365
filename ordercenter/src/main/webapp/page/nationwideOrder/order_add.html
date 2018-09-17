@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>订单新建(<span id="totalCount1" class="detail-all"></span>)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link type="text/css" href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="../../css/common.css" rel="stylesheet">
+    <script type="text/javascript" src="../../js/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../plugins/jqPaginator-1.2.0/jqPaginator.min.js"></script>
+    <script type="text/javascript" src="../../plugins/jquery-validation-1.14.0/jquery.validate.js"></script>
+
+</head>
+<body>
+<div id="top_div" class="top-search">
+    <div class="row">
+        <div class="col-lg-8 form-inline">
+            <select id="keyType" class="form-control">
+                <option value="1">订单号</option>
+                <option value="2">车主</option>
+                <option value="3">车牌号</option>
+            </select>
+            <div class="input-group text-input-300">
+                <input type="text" class="form-control" id="keyword" placeholder=""/>
+                <span class="input-group-btn">
+                    <button id="searchBtn" class="btn btn-danger" type="button">搜索</button>
+                </span>
+            </div>
+            <select id="select_area" class="form-control text-input-150">
+                <option value="0">全部地区</option>
+            </select>
+            <span class="btn-group">
+                  <button id="btn_quote_time" class="btn btn-danger" type="button">
+                      20分钟尚未报价
+                  </button>
+            </span>
+            <span class="btn-group">
+                <button id="alipayBtn" class="btn btn-danger" type="button">支付宝</button>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div id="count_div" class="detail-together">
+    <label>总共：</label>
+    <span id="totalCount" class="detail-all"></span>个
+</div>
+<div id="show_div" class="table-responsive">
+    <div class="col-sm-12">
+        <table class="table table-bordered table-hover" id="list_tab">
+            <thead>
+            <tr class="active">
+                <th class="text-center">订单号</th>
+                <th class="text-center">车主<br/>车牌</th>
+                <th class="text-center">地区</th>
+                <th class="text-center">保险公司</th>
+                <th class="text-center">应付金额</th>
+                <th class="text-center">实付金额</th>
+                <th class="text-center">出单机构</th>
+                <th class="text-center">最后操作</th>
+                <th class="text-center">备注</th>
+                <th class="text-center">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <div class="customer-pagination">
+            <ul class="pagination"></ul>
+        </div>
+    </div>
+</div>
+
+
+<!--出单机构-->
+<div id="assign_pop" class="none">
+    <div class="theme_poptit" style="background-color: #CE5F48;">
+        <a id="assign_pop_close" href="javascript:;" title="关闭" class="close" style="color: white "><i class="glyphicon glyphicon-remove"></i></a>
+        <h4 class="text-center title" style="color: white;">指派出单机构</h4>
+    </div>
+    <div class="text-center table-responsive">
+        <div class="col-sm-12">
+            <form id="new_form1" class="form-input">
+                <div style="height: 250px;" class="diy-height">
+                    <table class="table table-bordered table-hover" id="list_assign">
+                        <thead>
+                        <tr class="active">
+                            <th></th>
+                            <th class="text-center">出单机构</th>
+                            <th class="text-center">交强险返点</th>
+                            <th class="text-center">商业险返点</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="text-center">
+                    <button type="button" class="btn btn-danger btn-default assign_submit" disabled>确定</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+<link rel="stylesheet" href="../../css/popup.css">
+<script type="text/javascript" src="../../js/common/cookie.js"></script>
+<script type="text/javascript" src="../../js/common/common.js"></script>
+<script type="text/javascript" src="../../js/common/popup.js"></script>
+<script type="text/javascript" src="../../js/nationwideOrder/order_add.js"></script>
+<script type="text/javascript" src="../../My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="../../js/nationwideOrder/order_comment.js"></script>
+<script type="text/javascript" src="../../js/nationwideOrder/order_quote_pop.js"></script>
+<script type="text/javascript" src="../../js/nationwideOrder/order_abnormal_pop.js"></script>
+</html>

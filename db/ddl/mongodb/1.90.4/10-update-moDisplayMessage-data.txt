@@ -1,0 +1,18 @@
+db.moDisplayMessage.update({"messageType._id":19},{"$push":
+    {
+    "message":{
+            "iconUrl" : "banner/top-banner22.png",
+            "url" : "/marketing/m/201807001/index.html",
+            "title" : "偷偷告诉你，这些车险底价特卖30天！",
+            "content" : null,
+            "weight" : "102"
+        }
+    }
+});
+db.moDisplayMessage.update({"messageType._id":19},{"$pull":
+    {
+    "message":{
+             "url":"/marketing/m/201806001/index.html",
+        }
+    }
+});

@@ -1,0 +1,11 @@
+db.getCollection('moDisplayMessage').update({"messageType._id":26},{$set:
+    {
+      "version":"6"
+    }
+ });
+
+ db.getCollection('moDisplayMessage').update({"messageType._id":18},{$set:
+     {
+       "version":"6"
+     }
+  });

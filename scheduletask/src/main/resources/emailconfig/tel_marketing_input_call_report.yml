@@ -1,0 +1,36 @@
+﻿#按不同分类统计电销进库量和拨打量
+title: "${timePeriod}电销进库量和拨打量统计"
+tos: [zhangtc@cheche365.com,liuyw@cheche365.com]
+production_tos: [lism@cheche365.com,baihua@cheche365.com,zhangtc@cheche365.com,majing@cheche365.com,aodm@cheche365.com,liuhy@cheche365.com,yanyl@cheche365.com]
+template: /velocity/completedOrder.vm
+excelAttachmentConfig:
+        fileName: "${timePeriod}电销进库量和拨打量统计.xlsx"
+        sheets:
+            - sheetName: 按渠道统计
+              columns:
+                  - columnType: channelAmount
+                    column:
+                        渠道名称: fieldName
+                        进库量: inputAmount
+                        拨打量: callAmount
+            - sheetName: 按地区统计
+              columns:
+                  - columnType: areaAmount
+                    column:
+                        地区名称: fieldName
+                        进库量: inputAmount
+                        拨打量: callAmount
+            - sheetName: 按行为统计
+              columns:
+                  - columnType: behaviorAmount
+                    column:
+                        行为名称: fieldName
+                        进库量: inputAmount
+                        拨打量: callAmount
+            - sheetName: 按新用户行为统计
+              columns:
+                  - columnType: newUserBehaviorAmount
+                    column:
+                        行为名称: fieldName
+                        进库量: inputAmount
+                        拨打量: callAmount

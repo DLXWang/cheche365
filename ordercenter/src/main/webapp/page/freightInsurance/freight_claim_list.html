@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>钱包列表</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link type="text/css" href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link type="text/css" href="../../css/common.css" rel="stylesheet">
+	<link type="text/css" href="../../css/style.css" rel="stylesheet">
+	<link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/jquery.dataTables.min.css" rel="stylesheet">
+	<link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/dataTables.bootstrap.min.css"
+	      rel="stylesheet">
+
+	<script type="text/javascript" src="../../js/jquery/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../../My97DatePicker/WdatePicker.js"></script>
+	<script type="text/javascript" src="../../plugins/jqPaginator-1.2.0/jqPaginator.min.js"></script>
+	<script type="text/javascript" src="../../js/common/common.js"></script>
+	<script type="text/javascript" src="../../js/common/popup.js"></script>
+	<script type="text/javascript" src="../../plugins/DataTables-1.10.12/media/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="../../js/common/datatable_util.js"></script>
+
+	<style>
+		.useless {
+			pointer-events: none;
+			color: grey !important;
+			cursor: default
+		}
+	</style>
+</head>
+<body>
+<div id="show_div" class="table-responsive" style="margin-top:10px;">
+	<div class="col-sm-12">
+		<div class="row" style="margin-bottom:10px;">
+			<div class="col-sm-12 form-inline">
+				<div class="form-group">
+					<label>&nbsp;&nbsp;渠道名称：</label>
+					<select id="channelSel" class="form-control text-input-150 channel channelSel">
+					</select>
+				</div>
+				<div class="form-group channel_relate useless">
+					<input type="text" class="form-control thirdPartyOrderNo channel_relate_input" placeholder="渠道订单号"/>
+					<select class="form-control categoryCode channel_relate_input">
+						<option value="">请选择商品类别</option>
+					</select>
+					<input type="text" class="form-control productName channel_relate_input" placeholder="请输入商品名称"/>
+				</div>
+			</div>
+		</div>
+		<div class="row" style="margin-bottom:10px;">
+			<div class="col-sm-12 form-inline">
+				<div class="form-group">
+					<label>&nbsp;&nbsp;赔付金额：</label>
+					<input type="text" class="form-control text-input-50 compensationStart" placeholder="" style="width: 165px;">元
+					<span style="margin: 0 10px;">至</span>
+					<input type="text" class="form-control text-input-50 compensationEnd" placeholder="" style="width: 165px;">元
+				</div>
+
+				<div class="form-group">
+					<label>&nbsp;&nbsp;理赔时间：</label>
+					<input type="text" class="form-control text-input-50 claimTimeStart" placeholder="起始时间"
+					       style="width: 165px;background:#fff url(../../My97DatePicker/skin/datePicker.gif) no-repeat right;"
+					       onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',readOnly:true,startDate:'%y-%M-%d 00:00:00'});">
+					<span style="margin: 0 10px;">至</span>
+					<input type="text" class="form-control text-input-50 claimTimeEnd" placeholder="截止时间"
+					       style="width: 165px;background:#fff url(../../My97DatePicker/skin/datePicker.gif) no-repeat right;"
+					       onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',readOnly:true,startDate:'%y-%M-%d 00:00:00'});">
+				</div>
+				<div class="form-group">
+					<label>&nbsp;&nbsp;理赔单号：</label>
+					<input type="text" class="form-control text-input-50 claimNo" placeholder="" style="width: 165px;">元
+				</div>
+			</div>
+		</div>
+		<div class="row" style="margin-bottom:10px;margin-top: 40px">
+			<div class=" form-inline text-center">
+				<button class="btn btn-danger text-input-100 searchBtn" style="margin-right: 500px">查询</button>
+			</div>
+		</div>
+		<div style="margin-top:10px;border-bottom: 2px solid #ccc;"></div><!--虚线-->
+
+		<table class="table table-bordered table-hover" id="list_tab">
+		</table>
+	</div>
+</div>
+</body>
+<script type="text/javascript" src="../../js/freightInsurance/freight_claim_list.js"></script>
+</html>

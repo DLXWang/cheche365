@@ -1,0 +1,36 @@
+package com.cheche365.cheche.huanong
+
+basePackageOptions = [
+    thirdPartyAmount    : 500000.0,
+    thirdPartyIop       : true,
+    damage              : 10000,
+    damageIop           : true,
+    theft               : 10000,
+    theftIop            : true,
+    engine              : 10000,
+    engineIop           : false,
+    glass               : false,
+    glassType           : 2,    // 国产
+    driverAmount        : 10000,
+    driverIop           : false,
+    passengerAmount     : 10000,
+    passengerIop        : false,
+    spontaneousLoss     : false,
+    scratchAmount       : 10000,
+    scratchIop          : false,
+    compulsory          : false,
+    autoTax             : false,
+    iopTotal:true,
+]
+
+baseAdditionalParams = [
+    quoteRecord: [
+        auto: [
+            autoType  : [
+                supplementInfo  : [
+                    autoModel: ''
+                ]
+            ]
+        ]
+    ]
+]

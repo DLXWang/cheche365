@@ -1,0 +1,11 @@
+CREATE TABLE `attribute_type` (
+	`id` BIGINT NOT NULL AUTO_INCREMENT,
+	`name` VARCHAR(50) NOT NULL DEFAULT '0',
+	`description` VARCHAR(50) NOT NULL DEFAULT '0',
+	PRIMARY KEY (`id`)
+)
+COLLATE='utf8_bin'
+ENGINE=InnoDB;
+
+
+

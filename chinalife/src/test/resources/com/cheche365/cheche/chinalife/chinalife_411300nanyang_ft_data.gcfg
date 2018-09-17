@@ -1,0 +1,133 @@
+package com.cheche365.cheche.chinalife
+
+/**
+ * 河南南阳
+ */
+
+testDataParams = [
+
+    //{value=CAACTD0021, text=长安SC6443KV1  46000元}
+    /**
+     * 该车辆保额正确，但保费不正确，原因是座位数获取不正确；
+     * 官网是从/online/initBrnadIcon步骤中的context.vehicleInfoList.seat.get(0)获取，
+     * 实际是应该从/online/saleNewCar/carProposalfindCarModelInfo.do获取座位数，官网可以输入座位数，
+     * 但在座位数不相符的情况下仍然可以报价，
+     *
+     * 我们在/online/saleNewCar/carProposalfindCarModelInfo.do步骤中获取座位数，与车辆实际座位数相符；
+     */
+    0 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'CAACTD0021']]]]]],
+
+    //{value=BJADHD0001, text=北京BJ6441BJV1A 基本型 201403年款 56800元}
+    10 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'BJADHD0001']]]]]],
+
+    //{value=HQABDD0110, text=红旗CA7165MT4 时尚型 201110年款 79300元}
+    20: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'HQABDD0110']]]]]],
+
+    //{value=DZABCD0034, text=朗逸SVW7167NSD 品悠版 201108年款 116800元}
+    30: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZABCD0034']]]]]],
+
+    //{value=DZAAED0049, text=大众汽车SVW6440FGD 智雅版 201012年款 165800元}
+    40: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZAAED0049']]]]]],
+
+    //{value=BKAAQD0015, text=别克SGM7161MTB 舒适版 201203年款 115700元}
+    50: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'BKAAQD0015']]]]]],
+
+    //{value=DZAAND0163, text=大众FV7162FAAGG 时尚型 201507年款 99800元}
+    60: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZAAND0163']]]]]],
+
+    //{value=DZABCD0003, text=朗逸SVW7167BSD 品悠版 200806年款 116800元}
+    70: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZABCD0003']]]]]],
+
+    //{value=CCAAMD0174, text=长城CC6460RM0A 都市型 201211年款 99800元}
+    80: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'CCAAMD0174']]]]]],
+
+    //{value=ALCAAD0009, text=奥路卡ZQ6385A62F 基本  30000元}
+    90: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'ALCAAD0009']]]]]],
+
+    //{value=QRAATD0008, text=奇瑞SQR7153A210 优悦型 2012年款 53800元}
+    110: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'QRAATD0008']]]]]],
+
+    //{value=BTAARD0026, text=锋范HG7154CAA 精英版 200812年款 103800元}
+    130: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'BTAARD0026']]]]]],
+
+    //{value=TYBAYD0039, text=五菱LZW6431MF 实用型 201011年款 44000元}
+    150: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'TYBAYD0039']]]]]],
+
+    //{value=TYBAUD0053, text=五菱LZW6407BF 基本  40000元}
+    160: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'TYBAUD0053']]]]]],
+
+    //{value=BYAABD0113, text=比亚迪QCJ7150A11 舒适型 201209年款 39900元},
+    180: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'BYAABD0113']]]]]],
+
+    //{value=CCAAMD0152, text=长城CC7151AMA0B 都市版 201203年款 63500元}
+    190: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'CCAAMD0152']]]]]],
+
+    //{value=RCABWD0048, text=骊威DFL7163BC MT 标准型 201003年款 86800元}
+    200: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'RCABWD0048']]]]]],
+
+    //{value=DZAAAD0064, text=帕萨特SVW7183TJD 尊享型 200904年款 164800元}
+    210: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZAAAD0064']]]]]],
+
+    //{value=CAADMD0027, text=长安SC7169BH 尊贵型 201502年款 75900元}
+    220: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'CAADMD0027']]]]]],
+
+    //{value=BZAAWD0012, text=东风标致DC7237LSAA 智享版 201208年款 179700元}
+    250: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'BZAAWD0012']]]]]],
+
+    //{value=HFAAFD0014, text=哈飞HFJ7110E 简配型 200710年款 37480元}
+    260: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'HFAAFD0014']]]]]],
+
+    //{value=FTABED0055, text=丰田TV7181GLX-iMD GLX-i 2007年款 125800元}
+    270: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'FTABED0055']]]]]],
+
+    //{value=SBBADI0025, text=森林人FORESTER 2.0X 舒适版 201012年款 207800元}
+    280: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'SBBADI0025']]]]]],
+
+    //{value=BTAALD0069, text=雅阁HG7203AB SE 201202年款 166800元}
+    330: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'BTAALD0069']]]]]],
+
+    //{value=DZABCD0038, text=大众汽车SVW7147SRD 舒适版 201208年款 130900元}
+    340: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZABCD0038']]]]]],
+
+    //{value=BKAALD0076, text=别克SGM7165MTB 基本型 201008年款 75900元}
+    350: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'BKAALD0076']]]]]],
+
+    //{value=RCAABD0036, text=颐达DFL7160BB MT 时尚型 200903年款 93800元}
+    390: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'RCAABD0036']]]]]],
+
+    //{value=TYBAYD0039, text=五菱LZW6431MF 实用型 201011年款 44000元},
+    400: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'TYBAYD0039']]]]]],
+
+    //{value=DZABCD0034, text=朗逸SVW7167NSD 品悠版 201108年款 116800元}
+    430: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZABCD0034']]]]]],
+
+    //{value=BTAAID0037, text=飞度HG7154DBA 豪华版 201103年款 95500元}
+    440: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'BTAAID0037']]]]]],
+
+    //{value=BTAAKD0019, text=思威DHW6454(CR-V 2.4) 尊贵版 200704年款 252800元}
+    460: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'BTAAKD0019']]]]]],
+
+    //{value=FTABFD0049, text=丰田TV7251RoyalNAVI 真皮导航版 200912年款 338800元}
+    480: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'FTABFD0049']]]]]],
+
+    //{value=FTAASD0019, text=丰田TV6460GLX-iM 豪华版 201108年款 199800元}
+    490: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'FTAASD0019']]]]]],
+
+    //{value=CAABBD0076, text=长安SC6399DV4Y 基本  31000元}
+    500: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'CAABBD0076']]]]]],
+
+    //{value=KRCAFD0002, text=开瑞SQR6380K027 1.0L 基本型 201012年款 31800元}
+    520: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'KRCAFD0002']]]]]],
+
+    //{value=DZABFD0024, text=大众汽车SVW6451LED 都会版 2012年款 211800元}
+    530: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZABFD0024']]]]]],
+
+    //{value=BTAALD0069, text=雅阁HG7203AB SE 201202年款 166800元}
+    540: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'BTAALD0069']]]]]],
+
+    //{value=BTAARD0026, text=锋范HG7154CAA 精英版 200812年款 103800元}
+    570: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'BTAARD0026']]]]]],
+
+]
+
+

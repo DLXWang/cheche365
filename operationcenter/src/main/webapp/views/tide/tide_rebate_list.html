@@ -1,0 +1,128 @@
+<link rel="stylesheet" href="../../plugins/DataTables-1.10.12/media/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="../../plugins/DataTables-1.10.12/media/css/dataTables.bootstrap.min.css">
+<link rel="stylesheet" href="../../libs/bootstrap-3.3.4/css/bootstrap-switch.min.css">
+<link rel="stylesheet" href="../../libs/select2/select2.min.css">
+<link rel="stylesheet" href="../../libs/select2/select2-bootstrap.min.css">
+<div class="col-md-12">
+    <div class="panel panel-default">
+        <div class="panel-tool pull-right" style="padding-top: 15px;">
+            <a style="color: initial;" data-toggle="collapse" href="#search-collapse" aria-expanded="false"
+               class="collapsed">
+                <span class="glyphicon glyphicon-chevron-up"></span>
+            </a>
+        </div>
+        <div class="panel-heading">
+            <h3 class="panel-title">查询条件</h3>
+        </div>
+        <div id="search-collapse" class="collapse">
+            <div class="panel-body">
+                <div class="form-horizontal">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">合约名称：</label>
+                                <div class="col-md-8">
+                                    <select name="search_contract" id="search_contract" class="form-control" style="width: 100%;">
+                                        <option value="" selected>请选择</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">支持投保所在城市：</label>
+                                <div class="col-md-8">
+                                    <select name="search_support_area" id="search_support_area" class="form-control" style="width: 100%;">
+                                        <option value="" selected>请选择</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">投保类型：</label>
+                                <div class="col-md-8">
+                                    <select name="search_insurance_type" id="search_insurance_type"
+                                            class="form-control">
+                                        <option value="" selected>请选择</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">使用性质：</label>
+                                <div class="col-md-8">
+                                    <select name="search_car_type" id="search_car_type" class="form-control">
+                                        <option value="" selected>请选择</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">状态：</label>
+                                <div class="col-md-8">
+                                    <select name="search_rebate_status" id="search_rebate_status" class="form-control">
+                                        <option value="" selected>请选择</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-md-offset-10">
+                            <a class="btn btn-primary" id="submitBtn">查询</a>
+                            <a class="btn btn-default" id="clearBtn">重置</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-tool pull-right">
+            <select id="columnCofnig" multiple>
+            </select>
+            <a class="btn btn-danger" id="noChangeBtn">本周无点位更新</a>
+            <div class="btn-group hidden">
+                <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                   aria-expanded="false">批量操作 <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a>批量导入</a></li>
+                    <li><a>下载批量导入模板</a></li>
+                </ul>
+            </div>
+            <a id="rebateCopy" target="_blank" class="btn btn-default">
+                <span class="glyphicon glyphicon-duplicate"></span> 复制点位
+            </a>
+            <a href="tide/tide_rebate_add.html" target="_blank" class="btn btn-primary">
+                <span class="glyphicon glyphicon-plus"></span> 新建
+            </a>
+        </div>
+        <div class="panel-heading">
+            <h3 class="panel-title">点位信息</h3>
+        </div>
+        <div class="panel-body">
+            <table id="tide_rebate_list_table" class="table">
+
+            </table>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../../libs/bootstrap-3.3.4/js/bootstrap-multiselect.js"></script>
+<script type="text/javascript" src="../../plugins/DataTables-1.10.12/media/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../../libs/bootstrap-3.3.4/js/bootstrap-switch.min.js"></script>
+<script type="text/javascript" src="../../libs/select2/select2.min.js"></script>
+<script type="text/javascript" src="../../libs/select2/zh-CN.js"></script>
+<script type="text/javascript" src="../../libs/jquery-validation-1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="../../libs/jquery-validation-1.14.0/messages_zh.js"></script>
+<script type="text/javascript" src="../../js/common/common.js"></script>
+<script type="text/javascript" src="../../js/common/datatable_util.js"></script>
+<script type="text/javascript" src="../../js/tide/tide_rebate_search.js"></script>
+<script type="text/javascript" src="../../js/tide/tide_rebate_list.js"></script>

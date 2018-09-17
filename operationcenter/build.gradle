@@ -1,0 +1,31 @@
+apply from: "${rootProject.projectDir}/gradle/springboot_web_settings.gradle"
+apply from: "${rootProject.projectDir}/gradle/springboot_classpath_jar_settings.gradle"
+
+dependencies {
+    // Other Projects
+    compile project(':core'),
+            project(':wechat'),
+            project(':manage-common')
+
+    //cheche365
+    testCompile "com.cheche365.test:cheche365-test-core:$cheche365_test_version"
+
+    // Spring Framework
+    compile "org.springframework.boot:spring-boot-starter-web:$spring_boot_starter_version",
+            "org.springframework.session:spring-session:$spring_session_version"
+
+    runtime "org.springframework.boot:spring-boot-starter-security:$spring_boot_starter_version",
+            "org.eclipse.jetty:apache-jsp:$jetty_version"
+
+    testCompile "org.springframework.boot:spring-boot-starter-test:$spring_boot_starter_version"
+
+    // Apache
+    compile "org.apache.velocity:velocity:$velocity_version"
+
+    // Servlet
+    runtime "javax.servlet:jstl:$javax_jstl_version"
+
+    compile "io.prometheus:simpleclient_hotspot:$prometheus_version",
+            "io.prometheus:simpleclient:$prometheus_version",
+            "io.prometheus:simpleclient_servlet:$prometheus_version"
+}

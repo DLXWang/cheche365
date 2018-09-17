@@ -1,0 +1,28 @@
+﻿#安心用户停复驶记录信息同步
+title: "${timePeriod}安心停复驶申请统计报表"
+tos: [liheng@cheche365.com,liuyw@cheche365.com]
+production_tos: [chensisi@answern.com,chensisi@95303.com,wangyixin@95303.com]
+template: /velocity/completedOrder.vm
+excelAttachmentConfig:
+        fileName: "${timePeriod}安心停复驶申请统计报表.xlsx"
+        sheets:
+            - sheetName: 停驶申请
+              columns:
+                  - columnType: stopList
+                    column:
+                        车牌号: licensePlateNo
+                        商业险保单号: commercialPolicyNo
+                        停驶开始日期: stopBeginDate
+                        停驶截至日期: stopEndDate
+                        返还金额: refundAmt
+                        险种详情: insuranceDetail
+                        操作时间: optStopTime
+            - sheetName: 提前复驶申请
+              columns:
+                  - columnType: restartList
+                    column:
+                        车牌号: licensePlateNo
+                        商业险保单号: commercialPolicyNo
+                        复驶日期: reStartDate
+                        复驶支付金额: rePayAmt
+                        操作时间: optReStartTime

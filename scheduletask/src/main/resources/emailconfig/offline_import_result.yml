@@ -1,0 +1,26 @@
+#线下导入数据字段校验错误邮件
+title: "线下导入数据字段校验错误邮件"
+tos: [zhangtc@cheche365.com,liuyw@cheche365.com,guanwy@cheche365.com]
+production_tos: [zhangtc@cheche365.com]
+template: /velocity/weicheQuoteEmail.vm
+excelAttachmentConfig:
+        fileName: "线下导入数据字段校验错误数据.xlsx"
+        sheets:
+            - sheetName: sheet1
+              columns:
+                  - columnType: offlineDataMatchResult
+                    column:
+                        保险单号码/批单号码: policyNo
+                        被保险人: insuredName
+                        实收保费: paidAmount
+                        费用比例%: rebate
+                        已结收付费: rebateAmount
+                        结算时间: balanceTime
+                        车牌号码: licensePlateNo
+                        车型名称: brandModel
+                        发动机号: engineNo
+                        车架号: vinNo
+                        出单日期: issueTime
+                        是否补点: rebateAddTimes
+                        是否退保: isCancle
+                        错误原因: errorMessage

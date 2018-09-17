@@ -1,0 +1,27 @@
+#客服中心-第三方合作订单未完全处理情况
+title: "${currentDate}第三方合作订单未完全处理情况"
+tos: [zhangtc@cheche365.com,liuyw@cheche365.com]
+production_tos: [zhangyq@cheche365.com]
+template: /velocity/insuranceOrderReport.vm
+excelAttachmentConfig:
+        fileName: "${currentDate}第三方合作订单未完全处理情况.xlsx"
+        sheets:
+            - sheetName: 北京出单
+              columns:
+                  - columnType: orderOperationInfo
+                    column:
+                        来源: source
+                        订单号: orderNo
+                        下单时间: orderTime
+                        当前状态: operateStatus
+                        当前指定人: assigner
+            - sheetName: 全国出单
+              columns:
+                  - columnType: orderCooperationInfo
+                    column:
+                        来源: source
+                        订单号: orderNo
+                        下单时间: orderTime
+                        当前状态: operateStatus
+                        当前指定人: assigner
+

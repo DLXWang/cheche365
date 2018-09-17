@@ -1,0 +1,151 @@
+<div id="">
+    <div class="theme_poptit">
+        <a id="auto_detail_close" href="javascript:;" title="关闭" class="close"><i
+            class="glyphicon glyphicon-remove"></i></a>
+        <h4 class="text-center" id="detail_title">订单照片审核</h4>
+    </div>
+    <div class="form-input-top">
+        <div class="row" style="margin-left: -30px;height: 450px;">
+            <div id="img_content" class="col-sm-9">
+                <ul style="list-style:none;">
+                    <li id="item" class="" class="viewer"
+                        style="width:675px;height:425px;overflow:hidden;position:absolute;border:1px solid;">
+                        <div style="text-align: center;line-height: 425px">
+                            <img src="" id="cropper" class="cropper" style="border:5px solid #fff;position:relative;max-width: 675px;max-height: 425px;"/>
+                        </div>
+                    </li>
+                    <!-- <input type="button" id="setPic"  value="设为行驶证照片" style="position:absolute;top:300px;left:200px;float:left; display: none;">-->
+                </ul>
+
+                <div id="Layer1" style="position:absolute;top:10px;left:60px; display:block; float:left; ">
+                    <table cellspacing="2" cellpadding="0" border="0">
+                        <tbody>
+                        <tr>
+                            <td>&nbsp; </td>
+                            <td><a href="javascript:;"><img title="向上" style="cursor: hand" id="up" height="20"
+                                                            src="../../images/up.gif" width="20"></a></td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td><a href="javascript:;"><img title="向左" style="cursor: hand" id="left" height="20"
+                                                            src="../../images/left.gif" width="20"></a></td>
+                            <td><a href="javascript:;"><img title="还原" style="cursor: hand" id="reset" height="20"
+                                                            src="../../images/zoom.gif" width="20"></a></td>
+                            <td><a href="javascript:;"><img title="向右" style="cursor: hand" id="right" height="20"
+                                                            src="../../images/right.gif" width="20"></a></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td><a href="javascript:;"><img title="向下" style="cursor: hand" id="down" height="20"
+                                                            src="../../images/down.gif" width="20"></a>
+                            </td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td><a href="javascript:;"><img title="放大" style="cursor: hand" id="big" height="20"
+                                                            src="../../images/zoom_in.gif" width="20"></a></td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td><a href="javascript:;"><img title="缩小" style="cursor: hand" id="lit" height="20"
+                                                            src="../../images/zoom_out.gif" width="20"></a></td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="rotateTool" style="position:absolute;top:360px;left:370px; float:left;">
+                    <a href="javascript:;" title="左旋转"><img src="../../images/leftRotate.gif" alt="左旋转" id="leftRotate"></a>
+                    <a href="javascript:;" title="右旋转"><img src="../../images/rightRotate.gif" alt="右旋转"
+                                                            id="rightRotate"></a>
+                </div>
+                <div style="position:absolute;top:445px;left:48px; float:left;width: 690px;">
+                    <a href="javascript:;" style="float: left;" id="left_btn"><img src='../../images/left_btn.jpg'></a>
+                    <a href="javascript:;" style="float: right;" id="right_btn"><img
+                        src='../../images/right_btn.jpg'></a>
+                </div>
+                <div style=" margin-top:425px;margin-left: 67px; width:650px;">
+                    <div id="img_bottom" class="img-bottom"
+                         style="width:600px; height: 100px; overflow:hidden; position: absolute;margin-left: 10px;">
+                        <div id="box" style="overflow:hidden;margin-top: 8px;position: absolute;">
+                            <ul style="list-style:none;margin-left:5px;padding:0">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div style=" margin-top:520px;margin-left: 67px; width:650px;">
+                    <p style="font-size:13px; text-align: center;" >待审核 <span id="audit" style="color:red;">0</span>&nbsp;通过审核 <span id="pass">0</span>&nbsp;未通过审核 <span id="nopass">0</span></p>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div style="height: 20px;margin:0px auto;margin-top: 20px">
+                    <div id="expireTimeDiv">
+                        <span>有效截至日期:
+                            <input id="expireTimeInput" type="text" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',minDate:'%y-%M-%d'});" style="width: 100px;height: 27px;">
+                        </span>
+                    </div>
+                </div>
+                <div id="disable_content" class="text-center" style="height: 450px;margin:0px;">
+                    <button type="button" class="btn btn-success btn-lg user-lg-btn enable" style="margin-top: 20px;height:60px;">有效</button>
+                    <br/>
+                    <button type="button" class="btn btn-danger btn-lg user-lg-btn disable" style="margin-top: 20px;height:60px;">无效</button>
+                    <br/>
+                    <button type="button" class="btn btn-primary btn-lg user-lg-btn upload" style="margin-top: 20px;height:60px;">上传照片</button>
+                    <span id="showhint" style="display:none"></span>
+                    <br>
+                    <br>
+                    <div id="reason" style="display:none">
+                        <select name="reasonlist" id="rselect1">
+                            <option value="1">照片拍摄不全</option>
+                            <option value="2">影像模糊不清</option>
+                            <option value="3">证件上传错误</option>
+                            <option value="4">证件已过有效期</option>
+                            <option value="5">其他</option>
+                        </select>
+                        <br>
+                        <br>
+                        <input type="text" name="fname" id ="rselect2" placeholder="其他原因" maxlength="20">
+                        <br>
+                        <br>
+                        <button class="answerr" type="submit"  style="width:50px;height:30px">提交</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="uploadImageFileDiv">
+    <div id="uploadImg" class="none ">
+        <div class="theme_poptit theme_poptit_color upload_div">
+            <a href="javascript:;" title="关闭" class="close"><i class="glyphicon glyphicon-remove"></i></a>
+            <h4 class="text-center title">上传图片</h4>
+        </div>
+        <div class="form-input-top form-horizontal">
+            <div class="form-group form-group-fix">
+                <label class="col-sm-4 text-height-28 text-right">选择文件：</label>
+                <div class="col-sm-8 text-left">
+
+                    <form id="uploadForm" action="/orderCenter/order/image/upload" method="post"  enctype="multipart/form-data">
+                        <input type="file" id="imageFile" name="imageFile" accept=".jpg,.jpeg,.png,.gif">
+                        <input type="hidden" name="imgId" id="imgId"/>
+                        <input type="hidden" name="imgTypeId" id="imgTypeId"/>
+                        <input type="hidden" name="orderId" id="orderId"/>
+                    </form>
+                </div>
+                <div class="form-group form-group-fix">
+                    <div class="col-sm-12 text-center">
+                        <button id="uploadImageFile" name="uploadImageFile" onclick="validateCar.operation.uploadImageFile();" type="button" class="btn btn-danger btn-sm text-width-100 changeOrderStatus">上&nbsp;传</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+

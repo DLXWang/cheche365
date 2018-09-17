@@ -1,0 +1,4 @@
+db.moMarketingDetail.update({"marketingCode":"201806002"},{$set:
+{
+"message.4.desc":"﻿承保建筑安装工程期间一切意外物质损失和对第三人经济赔偿责任"
+}});

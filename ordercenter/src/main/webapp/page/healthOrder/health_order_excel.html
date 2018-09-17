@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>订单导入导出</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        .selected {
+            background-color: #4d7fb8;
+            cursor: default;
+        }
+        .selected span {
+            color: #FFF;
+            font-weight: bold;
+        }
+        .btn-group a {
+            width: 200px;
+            height: 36px;
+        }
+        form{
+            padding-left: 39px;
+        }
+        .form-control {
+            height: 35px;
+            font-size: 16px;
+            width: 250px ;
+        }
+        .text-font{
+            font-size: 16px;
+        }
+        .container .paddingtop{
+            padding-top: 140px;
+        }
+        .checkbox-width{
+            width: 10px;
+        }
+        .input-search{
+            width: 250px;
+            height: 40px;
+        }
+    </style>
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="../../css/style.css" rel="stylesheet">
+    <script type="text/javascript" src="../../js/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../My97DatePicker/WdatePicker.js"></script>
+    <script type="text/javascript" src="../../js/jquery/jquery.form.js"></script>
+</head>
+<body>
+<div class="container" style="padding-top: 50px;">
+    <div class="row tabs">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-9">
+            <div class="btn-group" role="group">
+                <a type="button" href="#excel_upload" class="btn selected"><span class="text-font">上传</span></a>
+                <a type="button" href="#excel_download" class="btn btn-default"><span class="text-font">下载</span></a>
+            </div>
+        </div>
+    </div>
+    <script>
+        function changeValue(){
+            $("#codeFileFake").val($("#codeFile").val());
+        }
+    </script>
+    <div id="excel_upload" style="padding-top: 177px;">
+        <div id="excel_upload_one_first" class="row first">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-9">
+                <form class="form-inline" action="/orderCenter/health/excel/upload" enctype="multipart/form-data" method="post" role="form" id="file_form">
+                    <div class="form-group">
+                        <input id="codeFileFake" name="codeFile" type="text" class="form-control file-input" onclick="document.getElementById('codeFile').click();" style="width: 250px" placeholder="点击选择文件">
+                        <input id="codeFile" name="codeFile" type="file" accept=".xls,.xlsx" class="form-control file-input" onchange="health_order_excel.operation.changeValue();" style="width: 250px;position: absolute; opacity: 0; filter:Alpha(opacity=0);" placeholder="请选择文件">
+                    </div>
+                    <button id="excel_upload_one_next" type="button" onclick="health_order_excel.operation.uploadFile();" class="btn btn-warning">上传</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="excel_download" style="display: none;">
+        <div id="excel_download_more_form" class="first none">
+
+            <form class="form-horizontal" role="form" id="form_four">
+                <div class="form-group" style="margin-left: 200px;margin-top: 40px">
+                    <h3><span class="left titt" style="margin-left: -30px">下载方式：</span></h3>
+                    <div class="radio">
+                        <label style="font-size: 15px">
+                            <input class="inputradio" type="radio" name="downloadType" id="downloadType1" value="1">下载最新
+                        </label>
+                    </div>
+                    <br>
+                    <div class="radio">
+                        <label style="font-size: 15px">
+                            <input class="inputradio" type="radio" name="downloadType" id="downloadType2" value="2" checked="checked">按条件下载
+                        </label>
+                    </div>
+                </div>
+
+                <div id="searchItemsDiv" class="search_items">
+                    <div class="form-group" style="padding-top: 0px;">
+                        <label class="col-sm-4 control-label">订单编号</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control input-search" id="orderNo"  placeholder="订单编号"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">订单状态</label>
+                        <div class="col-sm-5">
+                        <span class="filter">
+                            <select id="orderStatus" class="form-control text_input input-search">
+                                <option value="">订单状态</option>
+                            </select>
+                        </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">购买平台</label>
+                        <div class="col-sm-5">
+                        <span class="filter">
+                            <select id="channel" class="form-control text_input input-search">
+                                <option value="">购买平台</option>
+                            </select>
+                        </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">生效日期</label>
+                        <div class="col-sm-5">
+                            <input type="text" id="effectiveDate" name="effectiveDate" class="Wdate form-control text_input input-search" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true });" style="width: 250px;height: 40px">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">失效日期</label>
+                        <div class="col-sm-5">
+                            <input type="text" id="expireDate" name="expireDate" class="Wdate form-control text_input input-search" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true});"  style="width: 250px;height: 40px">
+                        </div>
+                    </div>
+                    <div class="form-group" style="padding-top: 0px;">
+                        <label class="col-sm-4 control-label">投保人手机号</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control input-search" id="mobile"  placeholder="投保人手机号" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <span class="col-sm-5" style="margin-right: -65px;"></span>
+                    <div class="btn-group">
+                        <!--<button type="button" onclick="health_order_excel.operation.export()" class="btn btn-warning submit" style="width: 100px;">下载</button>-->
+                        <a id="download_button" onclick="health_order_excel.operation.export()" class="btn btn-warning submit" style="width: 100px;">下载</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../../js/common/common.js"></script>
+<script type="text/javascript" src="../../js/common/popup.js"></script>
+<script type="text/javascript" src="../../plugins/DataTables-1.10.12/media/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../../js/common/datatable_util.js"></script>
+<script type="text/javascript" src="../../plugins/jqPaginator-1.2.0/jqPaginator.min.js"></script>
+<script type="text/javascript" src="../../js/healthOrder/health_order_excel.js" ></script>
+</html>

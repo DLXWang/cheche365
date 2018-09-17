@@ -1,0 +1,48 @@
+apply from: "${rootProject.projectDir}/gradle/springboot_web_settings.gradle"
+apply from: "${rootProject.projectDir}/gradle/springboot_classpath_jar_settings.gradle"
+
+dependencies {
+    // Other Projects
+    compile project(':core'),
+            project(':partner'),
+            project(':unionpay'),
+            project(':alipay'),
+            project(':wechat'),
+            project(':manage-common'),
+            project(':soopay'),
+            project(':baoxian'),
+            project(':external-payment')
+
+    //cheche365
+    testCompile "com.cheche365.test:cheche365-test-core:$cheche365_test_version"
+
+    //cheche365
+    compile "com.cheche365.sms:cheche365-sms-client:$cheche365_sms_version",
+            "com.cheche365.common:cheche365-common-email:$cheche365_common_email_version"
+
+    // Spring Framework
+    compile "org.springframework.boot:spring-boot-starter-web:$spring_boot_starter_version",
+            "org.springframework.session:spring-session:$spring_session_version"
+
+
+    runtime "org.springframework.boot:spring-boot-starter-security:$spring_boot_starter_version",
+            "org.springframework.boot:spring-boot-starter-aop:$spring_boot_starter_version",
+            "org.eclipse.jetty:apache-jsp:$jetty_version"
+
+
+    testCompile "org.springframework.boot:spring-boot-starter-test:$spring_boot_starter_version"
+
+    // Apache
+    compile "org.apache.velocity:velocity:$velocity_version",
+            "org.apache.pdfbox:pdfbox:$pdfbox_version"
+
+
+    compile "com.monitorjbl:xlsx-streamer:$monitorjbl_xlsx_version"
+
+    compile "com.corundumstudio.socketio:netty-socketio:$socketio_version"
+
+    compile "io.prometheus:simpleclient_hotspot:$prometheus_version",
+            "io.prometheus:simpleclient:$prometheus_version",
+            "io.prometheus:simpleclient_servlet:$prometheus_version"
+}
+

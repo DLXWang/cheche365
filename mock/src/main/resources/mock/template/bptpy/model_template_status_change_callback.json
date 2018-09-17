@@ -1,0 +1,35 @@
+{
+  "notification_id": "01qzjncj46jmeep6",
+  "type": "StatusChange",
+  "is_done": true,
+  "is_success": true,
+  "create_time": "2018-03-26 15:50:15",
+  "ready_time": "2018-03-26 15:50:15",
+  "data": {
+    "account_id": "wrv2qsje59rj0r7x",
+    "tracking_no": "qvdQ49YPDNqL5RPhv44Ar36MZgr610za",
+    "ic_code": "epicc",
+    "records": [
+      {
+        "proposal_id": "wr6yetjevjrgj0zw",
+        "out_trade_no": "T20180326000201",
+        "status_changed": true,
+        "ic_nos": {
+          "biz_quote": "",
+          "biz_prop": "TDAA201811010000778655",
+          "biz_policy": "",
+          "biz_pay": "",
+          "force_quote": "",
+          "force_prop": "",
+          "force_policy": "",
+          "force_pay": ""
+        },
+        "proposal_status": "UW_SUCC",
+        "old_proposal_status": "UW"
+      }
+    ]
+  },
+  "account_id": "wrv2qsje59rj0r7x",
+  "proposal_id": "",
+  "out_trade_no": ""
+}

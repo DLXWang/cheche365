@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>钱包详情</title>
+    <link type="text/css" href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="../../css/style.css" rel="stylesheet">
+    <link type="text/css" href="../../css/common.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap-multiselect.css">
+    <link type="text/css" href="../../plugins/select2/select2.min.css" rel="stylesheet">
+    <style type="text/css">
+        /* 订单详情 */
+        .wallet-detail .title{
+            text-align: center;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        .wallet-detail .tips{
+            padding-top: 5px;
+            padding-bottom: 15px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .wallet-detail .row{
+            padding-bottom: 10px;
+        }
+        .wallet-detail .tab-top-1{
+            border-bottom: 2px solid #ccc;
+            margin-bottom: 10px;
+        }
+    </style>
+    <script type="text/javascript" src="../../js/common/popup.js"></script>
+    <script type="text/javascript" src="../../My97DatePicker/WdatePicker.js"></script>
+    <script type="text/javascript" src="../../js/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../plugins/jqPaginator-1.2.0/jqPaginator.min.js"></script>
+    <script type="text/javascript" src="../../plugins/jquery-validation-1.14.0/jquery.validate.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap-multiselect.js"></script>
+    <script type="text/javascript" src="../../js/common/cookie.js"></script>
+    <script type="text/javascript" src="../../js/common/common.js" ></script>
+    <script type="application/javascript" src="../../js/jquery/jquery.form.js"></script>
+    <script type="text/javascript" src="../../plugins/DataTables-1.10.12/media/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../../js/common/datatable_util.js"></script>
+    <script type="text/javascript" src="../../plugins/select2/select2.min.js"></script>
+    <link rel="stylesheet" href="../../css/popup.css">
+</head>
+<body>
+    <div class="container wallet-detail">
+        <div class="tab-top-1 title">
+            <h3>钱包详情</h3>
+        </div>
+        <div class="tab-top-1">
+            <div class="row tips">
+                <div class="col-sm-12">用户信息</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">手机号：<span id="userMobile" name="mobile"></span></div>
+                <div class="col-sm-4">余额：<span id="balance" name="balance"></span></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">平台：<span id="platform" name="platform"></span></div>
+                <div class="col-sm-4">提现总额：<span id="outAmount" name="outAmount"></span></div>
+            </div>
+        </div>
+        <div class="tab-top-1" style="padding-bottom: 10px;">
+            <div class="row tips">
+                <div class="col-sm-12">银行卡信息</div>
+            </div>
+            <table class="table table-bordered table-hover" id="bank_card_list_tab">
+            </table>
+        </div>
+        <div class="tab-top-1" style="padding-bottom: 10px;" id="transaction_info">
+            <div class="row tips">
+                <div class="col-sm-12">交易信息</div>
+            </div>
+                <div class="col-sm-12 form-inline form-input">
+                    <div id="condition_type" class="like-button col-sm-2" style="padding-left: 0px;">
+                        <span>类型：</span>
+                        <select id="keyType" class="form-control">
+                            <option value="">请选择</option>
+                            <option value="1">入账</option>
+                            <option value="0">出账</option>
+                        </select>
+                    </div>
+                    <div id="condition_source">
+                        <div class="like-button col-sm-3 text-left like-form-control" >
+                            <span>来源：</span>
+                            <select id="sourceSel" name="sourceIds" class="form-control text-input-150" multiple="multiple">
+                            </select>
+                        </div>
+
+                    </div>
+                    <div id="condition_status">
+                        <div class="like-button col-sm-3 text-left like-form-control">
+                            <span>状态：</span>
+                            <select id="statusSel" name="statusTypes" class="form-control text-input-150" multiple="multiple">
+                            </select>
+                        </div>
+                    </div>
+                    <div id="condition_platform">
+                        <div class="like-button col-sm-4 text-left like-form-control">
+                            <span>操作平台：</span>
+                            <select id="platformSel" name="platformIds" class="form-control text-input-150" multiple="multiple" width ="200px">
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group form-inline col-sm-12 form-input" style="padding-top: 10px;">
+                    日期：
+                    <input type="text" id="startTime" name="startTime" class="text-height-28 form-control text-input-200 Wdate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd'});" style="height: 28px;">
+                    至
+                    <input type="text" id="endTime" name="endTime" class="text-height-28 commercialExpireDate form-control text-input-200 Wdate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd'});" style="height: 28px;">
+                    <button id="searchBtn" class="btn btn-danger" style="margin-left: 100px;" type="button">查询</button>
+                </div>
+            <table class="table table-bordered table-hover" id="transaction_list_tab">
+            </table>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../../js/wallet/wallet_detail.js"></script>
+</html>

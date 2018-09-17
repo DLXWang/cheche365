@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title>承保信息</title>
+	<link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link type="text/css" href="../../css/style.css" rel="stylesheet">
+	<link type="text/css" href="../../css/common.css" rel="stylesheet">
+	<style type="text/css">
+		/* 订单详情 */
+		.freight_detail .info {
+			text-align: left;
+			padding-top: 5px;
+			padding-bottom: 5px;
+		}
+
+		.freight_detail .title {
+			text-align: center;
+			padding-top: 5px;
+			padding-bottom: 5px;
+		}
+
+		.freight_detail .tips {
+			padding-top: 5px;
+			padding-bottom: 15px;
+			font-size: 20px;
+			font-weight: bold;
+		}
+
+		.freight_detail .row {
+			padding-bottom: 10px;
+		}
+
+		.freight_detail .tab-top-1 {
+			border-bottom: 2px solid #ccc;
+			margin-bottom: 10px;
+		}
+
+		.freight_detail .checkText {
+			padding-left: 40px;
+		}
+
+		.freight_detail .bottom {
+			padding-bottom: 25px;;
+		}
+
+		.freight_detail .premium {
+			padding-left: 4px;
+		}
+
+		.freight_detail .float-left {
+			float: left;
+		}
+
+		#note {
+			text-align: center;
+			width: 110px;
+			height: 350px;
+			position: absolute;
+			right: 0;
+			top: 0;
+			z-index: 100;
+			margin-right: 20px;
+		}
+
+		#note img {
+			width: 80px;
+			height: 80px;
+		}
+
+		.tips_right {
+			width: 0px;
+			height: 0px;
+			border-width: 8px;
+			border-style: solid;
+			border-color: transparent transparent #333 transparent;
+			position: absolute;
+			top: 10px;
+		}
+	</style>
+	<script type="text/javascript" src="../../js/jquery/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container freight_detail">
+	<div class="tab-top-1 title">
+		<h3>承保信息</h3>
+	</div>
+	<div class="tab-top-1">
+		<div class="row tips">
+			<div class="col-sm-12">承保信息</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-3">订单号：<span id="orderNo" name="orderNo"></span></div>
+			<div class="col-sm-3">渠道名称：<span id="channelName" name="channelName"></span></div>
+			<div class="col-sm-3">渠道订单号：<span id="thirdPartyOrderNo" name="thirdPartyOrderNo"></span></div>
+			<div class="col-sm-3">保单号：<span id="policyNo" name="policyNo"></span></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-3">保额（元）：<span id="amount" name="amount"></span></div>
+			<div class="col-sm-3">保费（元）：<span id="premium" name="premium"></span></div>
+			<div class="col-sm-3">起保时间：<span id="effectiveTime" name="effectiveTime"></span></div>
+			<div class="col-sm-3">终保时间：<span id="expireTime" name="expireTime"></span></div>
+		</div>
+	</div>
+
+	<div class="tab-top-1">
+		<div class="row tips">
+			<div class="col-sm-12">配送信息</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-3">买家收货地址（省份）：<span id="buyerArea" name="buyerArea"></span></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-3">卖家退货人姓名：<span id="sellerName" name="sellerName"></span></div>
+			<div class="col-sm-3">卖家退货电话：<span id="sellerPhone" name="sellerPhone"></span></div>
+			<div class="col-sm-3">卖家退货地址：<span id="sellerAddress" name="sellerAddress"></span></div>
+		</div>
+	</div>
+
+	<div class="tab-top-1">
+		<div class="row tips">
+			<div class="col-sm-12">商品信息</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-3">订单总价：<span id="sumPrice" name="sumPrice"></span></div>
+			<div class="col-sm-3">投保时间：<span id="insureTime" name="insureTime"></span></div>
+			<div class="col-sm-3">承保保险公司：<span id="insuranceCompany" name="insuranceCompany"></span></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-3">计价商品类别：<span id="effectiveCategoryName" name="effectiveCategoryName"></span></div>
+		</div>
+		<div class="row">
+			<div class="" style="width: 70%;margin-left: 25px">
+				<table class="table table-bordered table-hover productCategoryTable" style="font-size: 14px;">
+					<thead>
+					<tr class="active">
+						<th class="text-center">序号</th>
+						<th class="text-center">商品名称</th>
+						<th class="text-center">商品类别</th>
+						<th class="text-center">商品单价 (元）</th>
+						<th class="text-center">商品数量（个）</th>
+						<th class="text-center">商品总价</th>
+					</tr>
+					</thead>
+					<tbody id="productTBody">
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<div class="tab-top-1 claim_info_div" style="display: none;">
+		<div class="row tips">
+			<div class="col-sm-12">理赔信息</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4">理赔单号：<span id="claimNo" name="claimNo"></span></div>
+			<div class="col-sm-4">理赔金额（元）：<span id="compensation" name="compensation"></span></div>
+			<div class="col-sm-4">理赔时间：<span id="claimTime" name="claimTime"></span></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4">快递单号：<span id="trackingNo" name="trackingNo"></span></div>
+			<div class="col-sm-4">快递公司：<span id="expressCompanyName" name="expressCompanyName"></span></div>
+			<div class="col-sm-4">发起退货时间：<span id="deliveryTime" name="deliveryTime"></span></div>
+		</div>
+	</div>
+
+	<div class="bottom">
+		<div class="row tips">
+			<div class="col-sm-12">
+				<span>预理赔记录 </span>
+				<a onclick="freight_order_detail.initPreClaimTable(this);" style="font-size: 15px">
+					<span>&nbsp;&nbsp;查看详情</span>
+					<span class="glyphicon glyphicon-chevron-right"></span>
+				</a>
+				<input class="inited hidden" value="false">
+			</div>
+		</div>
+		<div class="row">
+			<div class="" style="width: 70%;margin-left: 25px">
+				<table class="table table-bordered table-hover lazy_table preClaimTable hidden"
+				       style="font-size: 14px;">
+					<thead>
+					<tr class="active">
+						<th class="text-center">序号</th>
+						<th class="text-center">快递单号</th>
+						<th class="text-center">快递公司</th>
+						<th class="text-center">发起退货时间</th>
+						<th class="text-center">理赔状态</th>
+						<th class="text-center">撤销时间</th>
+					</tr>
+					</thead>
+					<tbody class="preClaimTbody">
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- 分割线   定义出单中心规范弹出层，以后按此规范，之前的不再使用  在popup.js中定义 -->
+<div id="popupHtml"></div>
+</body>
+<link rel="stylesheet" href="../../css/popup.css">
+
+<script type="text/javascript" src="../../js/common/common.js"></script>
+<script type="text/javascript" src="../../js/common/popup.js"></script>
+<script type="text/javascript" src="../../js/freightInsurance/freight_order_detail.js"></script>
+</html>

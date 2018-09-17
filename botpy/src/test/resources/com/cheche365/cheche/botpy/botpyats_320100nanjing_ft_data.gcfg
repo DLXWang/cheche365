@@ -1,0 +1,118 @@
+package com.cheche365.cheche.botpy
+//this is 南京
+
+testData = [
+
+     [
+        1,
+        '',
+        '苏AZ586F',
+        'LDCC41T24E1898958',
+        '0604473',
+        '张乃佳',
+        '32010319880110202X',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '东风雪铁龙DC7165LXCM轿车',
+                        supplementInfo: [
+                            autoModel: 'XTAAOD0125',
+                            verificationMobile:'13581538623',
+                             commercialStartDate : '2018-07-05',
+                             compulsoryStartDate : '2018-07-05',
+
+                        ]
+                    ],
+                    enrollDate: '2014-06-10'
+                ],
+            ]
+        ]
+     ],
+     [
+         2,
+         '',
+         '苏AU400D',
+         'LBV2A3408HMJ18994',
+         '35029820',
+         '张桂萍',
+         '320123197511300627',
+         null,
+         null,
+         [
+             quoteRecord: [
+                 auto: [
+                     autoType  : [
+                         code          : '宝马BMW7153AB',
+                         supplementInfo: [
+                             autoModel: 'BMAATD0001',
+                             verificationMobile:'13581538623',
+                             commercialStartDate : '2018-07-05',
+                             compulsoryStartDate : '2018-07-05',
+
+                         ]
+                     ],
+                     enrollDate: '2017-06-29'
+                 ],
+             ]
+         ]
+     ],
+     [
+         3,
+         '',
+         '苏A5B05F',
+         'WBAFR7102CDX34124',
+         '09538133N55B30A',
+         '杨景豪',
+         '411303199306296734',
+         null,
+         null,
+         [
+             quoteRecord: [
+                 auto: [
+                     autoType  : [
+                         code          : '宝马BMW 535i轿车',
+                         supplementInfo: [
+                             autoModel: 'BMAAKI0071',
+                             verificationMobile:'13581538623',
+                             commercialStartDate : '2018-07-05',
+                             compulsoryStartDate : '2018-07-05',
+
+                         ]
+                     ],
+                     enrollDate: '2012-08-10'
+                 ],
+             ]
+         ]
+     ],
+     [
+         4,
+         '',
+         '苏AN699N',
+         'LFMGJK747A3010523',
+         'A137883',
+         '王大伦',
+         '110221198905055917',
+         null,
+         null,
+         [
+             quoteRecord: [
+                 auto: [
+                     autoType  : [
+                         code          : '丰田CA6520G2E4',
+                         supplementInfo: [
+                             autoModel: '',
+                             verificationMobile:'13581538623',
+                             commercialStartDate : '2018-07-05',
+                             compulsoryStartDate : '2018-07-05',
+
+                         ]
+                     ],
+                     enrollDate: '2010-08-02'
+                 ],
+             ]
+         ]
+     ],
+]

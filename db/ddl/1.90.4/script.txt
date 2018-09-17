@@ -1,0 +1,4 @@
+10-db-add-marketing-data.sql
+20-db-update-channel-icon.sql
+30-alter_tel_marketing_center_assign_batch.sql
+40-db-add-sys-version-data.sql

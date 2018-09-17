@@ -1,0 +1,9 @@
+package com.cheche365.cheche.picc
+//this is 西安
+
+testDataParams = [
+
+    //{value=4028b28834b0b7010134c62bbbed0ebf, text=科鲁兹2012款 SL 5座 92699元}
+    0 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028b28834b0b7010134c62bbbed0ebf']]]]]],
+
+]

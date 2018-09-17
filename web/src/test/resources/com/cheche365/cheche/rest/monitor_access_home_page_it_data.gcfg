@@ -1,0 +1,51 @@
+package com.cheche365.cheche.monitor;
+
+import groovy.json.JsonSlurper
+
+def jsonSlurper = new JsonSlurper()
+
+defaultTestDatas = [
+    [
+        5,
+        1,
+        5,
+        jsonSlurper.parseText(
+            """
+                {
+                    "id": 1,
+                    "name": "牛车网",
+                    "cooperationMode": {
+                        "id": 2,
+                        "name": "CPS",
+                        "description": "CPS"
+                    },
+                    "rebate": 20,
+                    "budget": 0,
+                    "startTime": 1440000000000,
+                    "endTime": 1471622400000,
+                    "landingPage": "http://192.168.0.81/m/channel/niuche",
+                    "comment": "牛车网",
+                    "createTime": 1440037261000,
+                    "updateTime": null,
+                    "operator": null,
+                    "refreshTime": null,
+                    "refreshFlag": true,
+                    "linkMan": null,
+                    "mobile": null,
+                    "email": null,
+                    "frequency": null,
+                    "enable": false,
+                    "display": false,
+                    "home": false,
+                    "footer": true,
+                    "mine": false,
+                    "btn": false,
+                    "app": true,
+                    "code": "niuche",
+                    "objTable": null,
+                    "objId": null
+                }
+            """
+        )
+    ]
+]

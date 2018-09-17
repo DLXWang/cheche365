@@ -1,0 +1,23 @@
+apply from: "${rootProject.projectDir}/gradle/springboot_web_settings.gradle"
+
+
+dependencies {
+
+    // Other Projects
+    compile project(':pingan-uk')
+
+    //cheche365
+    runtime "com.cheche365.spring:cheche365-spring-resource:$cheche365_spring_version"
+
+    // Spring Boot
+    compile "org.springframework.boot:spring-boot-starter-web:$spring_boot_starter_version"
+
+    // SpringCould
+    compile "org.springframework.cloud:spring-cloud-starter-eureka:$spring_cloud_version",
+            "org.springframework.cloud:spring-cloud-starter-ribbon:$spring_cloud_version",
+            "org.springframework.cloud:spring-cloud-starter-hystrix:$spring_cloud_version"
+
+    // SpringFox
+    compile "io.springfox:springfox-swagger2:$springfox_version"
+
+}

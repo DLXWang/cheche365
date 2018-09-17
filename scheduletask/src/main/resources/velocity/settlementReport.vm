@@ -1,0 +1,175 @@
+总报表
+<table width='1040px;' border='1' cellspacing='0' cellpadding='1'>
+    <tr>
+        <td width="380px">累计保单总金额（含线上、线下，优惠后金额）</td>
+        <td width="320px">累计到账总金额（线上，优惠后金额）</td>
+        <td width="340px">累计保单数量（支付成功，含订单完成）</td>
+    </tr>
+    <tr>
+        <td>$data.sumPaidAmount</td>
+        <td>$data.onLineSumPaidAmount</td>
+        <td>$data.sumPaidOrderCount</td>
+    </tr>
+</table>
+昨日总报表
+<table width='1040px;' border='1' cellspacing='0' cellpadding='1'>
+    <tr>
+        <td width="380px">昨日累计保单总金额（含线上、线下，优惠后金额）</td>
+        <td width="320px">昨日累计到账总金额（线上，优惠后金额）</td>
+        <td width="340px">昨日累计保单数量（支付成功，含订单完成）</td>
+    </tr>
+    <tr>
+        <td>$data.lastSumPaidAmount</td>
+        <td>$data.lastOnLineSumPaidAmount</td>
+        <td>$data.lastSumPaidOrderCount</td>
+    </tr>
+</table>
+<br>
+普通客户报表
+<table width='1040px;' border='1' cellspacing='0' cellpadding='1'>
+    <tr>
+        <td width="380px">累计保单总金额（含线上、线下，优惠后金额）</td>
+        <td width="320px">累计到账总金额（线上，优惠后金额）</td>
+        <td width="340px">累计保单数量（支付成功，含订单完成）</td>
+    </tr>
+    <tr>
+        <td>$data.customerSumPaidAmount</td>
+        <td>$data.customerOnLineSumPaidAmount</td>
+        <td>$data.customerSumPaidOrderCount</td>
+    </tr>
+</table>
+昨日普通客户报表
+<table width='1040px;' border='1' cellspacing='0' cellpadding='1'>
+    <tr>
+        <td width="380px">昨日累计保单总金额（含线上、线下，优惠后金额）</td>
+        <td width="320px">昨日累计到账总金额（线上，优惠后金额）</td>
+        <td width="340px">昨日累计保单数量（支付成功，含订单完成）</td>
+    </tr>
+    <tr>
+        <td>$data.customerLastSumPaidAmount</td>
+        <td>$data.customerLastOnLineSumPaidAmount</td>
+        <td>$data.customerLastSumPaidOrderCount</td>
+    </tr>
+</table>
+<br>
+代理人报表
+<table width='1040px;' border='1' cellspacing='0' cellpadding='1'>
+    <tr>
+        <td width="380px">累计保单总金额（含线上、线下，优惠后金额）</td>
+        <td width="320px">累计到账总金额（线上，优惠后金额）</td>
+        <td width="340px">累计保单数量（支付成功，含订单完成）</td>
+    </tr>
+    <tr>
+        <td>$data.agentSumPaidAmount</td>
+        <td>$data.agentOnLineSumPaidAmount</td>
+        <td>$data.agentSumPaidOrderCount</td>
+    </tr>
+</table>
+昨日代理人报表
+<table width='1040px;' border='1' cellspacing='0' cellpadding='1'>
+    <tr>
+        <td width="380px">昨日累计保单总金额（含线上、线下，优惠后金额）</td>
+        <td width="320px">昨日累计到账总金额（线上，优惠后金额）</td>
+        <td width="340px">昨日累计保单数量（支付成功，含订单完成）</td>
+    </tr>
+    <tr>
+        <td>$data.agentLastSumPaidAmount</td>
+        <td>$data.agentLastOnLineSumPaidAmount</td>
+        <td>$data.agentLastSumPaidOrderCount</td>
+    </tr>
+</table>
+代理人统计
+<table width='315px;' border='1' cellspacing='0' cellpadding='1'>
+    <tr>
+        <td width="90px">代理人数量</td>
+        <td width="75px">平均返点</td>
+        <td width="75px">最高返点</td>
+        <td width="75px">最低返点</td>
+    </tr>
+    <tr>
+        <td>$data.agentCount</td>
+        <td>$data.agentAvgRebate</td>
+        <td>$data.agentMaxRebate</td>
+        <td>$data.agentMinRebate</td>
+    </tr>
+</table>
+<br>
+大客户报表
+<table width='1040px;' border='1' cellspacing='0' cellpadding='1'>
+    <tr>
+        <td width="380px">累计保单总金额（含线上、线下，优惠后金额）</td>
+        <td width="320px">累计到账总金额（线上，优惠后金额）</td>
+        <td width="340px">累计保单数量（支付成功，含订单完成）</td>
+    </tr>
+    <tr>
+        <td>$data.vipSumPaidAmount</td>
+        <td>$data.vipOnLineSumPaidAmount</td>
+        <td>$data.vipSumPaidOrderCount</td>
+    </tr>
+</table>
+昨日大客户报表
+<table width='1040px;' border='1' cellspacing='0' cellpadding='1'>
+    <tr>
+        <td width="380px">昨日累计保单总金额（含线上、线下，优惠后金额）</td>
+        <td width="320px">昨日累计到账总金额（线上，优惠后金额）</td>
+        <td width="340px">昨日累计保单数量（支付成功，含订单完成）</td>
+    </tr>
+    <tr>
+        <td>$data.vipLastSumPaidAmount</td>
+        <td>$data.vipLastOnLineSumPaidAmount</td>
+        <td>$data.vipLastSumPaidOrderCount</td>
+    </tr>
+</table>
+大客户统计
+<table width='180px;' border='1' cellspacing='0' cellpadding='1'>
+    <tr>
+        <td width="80px">合作中数量</td>
+        <td width="80px">已结束数量</td>
+    </tr>
+    <tr>
+        <td>$data.vipEffectiveCount个</td>
+        <td>$data.vipExpireCount个</td>
+    </tr>
+</table>
+<br>
+CPS渠道报表
+<table width='1040px;' border='1' cellspacing='0' cellpadding='1'>
+    <tr>
+        <td width="380px">累计保单总金额（含线上、线下，优惠后金额）</td>
+        <td width="320px">累计到账总金额（线上，优惠后金额）</td>
+        <td width="340px">累计保单数量（支付成功，含订单完成）</td>
+    </tr>
+    <tr>
+        <td>$data.channelSumPaidAmount</td>
+        <td>$data.channelOnLineSumPaidAmount</td>
+        <td>$data.channelSumPaidOrderCount</td>
+    </tr>
+</table>
+昨日CPS渠道报表
+<table width='1040px;' border='1' cellspacing='0' cellpadding='1'>
+    <tr>
+        <td width="380px">昨日累计保单总金额（含线上、线下，优惠后金额）</td>
+        <td width="320px">昨日累计到账总金额（线上，优惠后金额）</td>
+        <td width="340px">昨日累计保单数量（支付成功，含订单完成）</td>
+    </tr>
+    <tr>
+        <td>$data.channelLastSumPaidAmount</td>
+        <td>$data.channelLastOnLineSumPaidAmount</td>
+        <td>$data.channelLastSumPaidOrderCount</td>
+    </tr>
+</table>
+CPS渠道统计
+<table width='320px;' border='1' cellspacing='0' cellpadding='1'>
+    <tr>
+        <td width="75px">渠道数量</td>
+        <td width="75px">平均抽成</td>
+        <td width="75px">最高抽成</td>
+        <td width="75px">最低抽成</td>
+    </tr>
+    <tr>
+        <td>$data.channelCount</td>
+        <td>$data.channelAvgRebate</td>
+        <td>$data.channelMaxRebate</td>
+        <td>$data.channelMinRebate</td>
+    </tr>
+</table>

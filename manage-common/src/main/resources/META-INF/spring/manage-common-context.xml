@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!--
+    1.拦截器按照先后顺序进行拦截。
+    2.拦截全部请求时使用"/**"。
+    3.不能拦截jsp。
+    -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <bean class="com.cheche365.cheche.manage.common.interceptor.ManageCommonLogBackInterceptor"/>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/orderCenter/**"/>
+            <mvc:mapping path="/admin/**"/>
+            <mvc:mapping path="/operationcenter/**"/>
+            <bean class="com.cheche365.cheche.manage.common.interceptor.ValidateInternalUserInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+    <aop:aspectj-autoproxy proxy-target-class="true"  expose-proxy="true"/>
+</beans>

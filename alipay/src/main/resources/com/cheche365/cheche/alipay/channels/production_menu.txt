@@ -1,0 +1,24 @@
+{
+    "button": [
+    {
+        "actionType": "link",
+        "name": "买车险",
+        "actionParam": "https://openauth.alipay.com/oauth2/publicAppAuthorize.htm?app_id=2015101400441453&auth_skip=false&scope=auth_userinfo&redirect_uri=http%3A%2F%2Fwww.cheche365.com%2Fweb%2Falipay%2Fchannels%2Fmenu%2Fdispatch%3Fstate%3Dhome"
+    },
+    {
+        "name": "车车助手",
+        "subButton": [{
+            "actionType": "link",
+            "name": "理赔管家",
+            "actionParam": "https://openauth.alipay.com/oauth2/publicAppAuthorize.htm?app_id=2015101400441453&auth_skip=false&scope=auth_userinfo&redirect_uri=http%3A%2F%2Fwww.cheche365.com%2Fweb%2Falipay%2Fchannels%2Fmenu%2Fdispatch%3Fstate%3Dclaim"
+        }, {
+            "actionType": "link",
+            "name": "手机验证",
+            "actionParam": "https://openauth.alipay.com/oauth2/publicAppAuthorize.htm?app_id=2015101400441453&auth_skip=false&scope=auth_userinfo&redirect_uri=http%3A%2F%2Fwww.cheche365.com%2Fweb%2Falipay%2Fchannels%2Fmenu%2Fdispatch%3Fstate%3Dbind"
+        }, {
+            "actionType": "link",
+            "name": "我的车车",
+            "actionParam": "https://openauth.alipay.com/oauth2/publicAppAuthorize.htm?app_id=2015101400441453&auth_skip=false&scope=auth_userinfo&redirect_uri=http%3A%2F%2Fwww.cheche365.com%2Fweb%2Falipay%2Fchannels%2Fmenu%2Fdispatch%3Fstate%3Dmine"
+        }]
+    }]
+}

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>用户详情</title>
+    <link type="text/css" href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="../../css/style.css" rel="stylesheet">
+    <link type="text/css" href="../../css/common.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/popup.css">
+    <link rel="stylesheet" href="../../css/formInput.css">
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap-multiselect.css">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        .theme_poptit_color {
+            background-color: #CE5F48;
+        }
+        .theme_poptit_color .close, .theme_poptit_color .title {
+            color: white
+        }
+        .form-input .bold-font {
+            font-weight: bold;
+            font-size: 17px;
+            padding: 0 20px;
+        }
+        .form-group {
+            margin-bottom: 5px !important;
+            margin-top: 0;
+        }
+        .container{
+            width: 90%;
+        }
+        .user-management-detail .title{
+            text-align: center;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        .user-management-detail .tips{
+            padding-top: 5px;
+            padding-bottom: 15px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .user-management-detail .row{
+            padding-bottom: 10px;
+        }
+        .user-management-detail .tab-top-1{
+            border-bottom: 2px solid #ccc;
+            margin-bottom: 10px;
+        }
+        #note{text-align: center;width:110px; height:350px; position:absolute; right:0; top:0; z-index:100;margin-right: 20px;}
+        #note img{width:80px;height:80px;}
+    </style>
+</head>
+<body>
+<div class="container user-management-detail">
+    <div class="tab-top-1 title">
+        <h3>用户管理详情</h3>
+    </div>
+    <div class="tab-top-1">
+        <div class="row tips">
+            <div class="col-sm-12">用户详情</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">姓名：<span id="userName" name="userName"></span></div>
+            <div class="col-sm-3">性别：<span id="sex" name="sex"></span></div>
+            <div class="col-sm-3">出生日期：<span id="birthday" name="birthday"></span></div>
+            <div class="col-sm-3">第三方信息：<span id="binding" name="binding"></span></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">手机号：<span id="userMobile" name="userMobile"></span></div>
+            <div class="col-sm-3">昵称：<span id="nickName" name="nickName"></span></div>
+            <div class="col-sm-3">邮箱：<span id="userEmail" name="userEmail"></span></div>
+            <div class="col-sm-3">用户类型：<span id="userType" name="userType"></span></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">注册来源：<span id="registerChannel" name="registerChannel"></span></div>
+            <div class="col-sm-3">用户来源：<span id="userSource" name="userSource"></span></div>
+            <div class="col-sm-3">注册IP：<span id="registerIP" name="registerIP"></span></div>
+            <div class="col-sm-3">audit：<span id="audit" name="audit"></span></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">身份证号：<span id="identity" name="identity"></span></div>
+        </div>
+    </div>
+    <div class="tab-top-1">
+        <div class="row tips">
+            <div class="col-sm-12">车辆信息</div>
+        </div>
+        <div id="auto_div" class="table-responsive" style="margin-bottom: 10px">
+            <div class="col-sm-12" id="autoTb">
+                <table class="table table-bordered" id="auto_tab">
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="tab-top-1">
+        <div class="row tips">
+            <div class="col-sm-12">订单列表</div>
+        </div>
+        <div id="order_div" class="table-responsive" style="margin-bottom: 10px">
+            <div class="col-sm-12" id="orderTb">
+                <table class="table table-bordered" id="order_tab">
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="tab-top-1">
+        <div class="row tips">
+            <div class="col-sm-12">电销信息</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">来源：<span id="source" name="source"></span></div>
+            <div class="col-sm-4">跟进人：<span id="operator" name="operator"></span></div>
+            <div class="col-sm-4">预约时间：<span id="triggerTime" name="triggerTime"></span></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">创建时间：<span id="createTime" name="createTime"></span></div>
+            <div class="col-sm-4">更新时间：<span id="updateTime" name="updateTime"></span></div>
+            <div class="col-sm-4">状态：<span id="status" name="status"></span></div>
+        </div>
+    </div>
+</div>
+
+<div id="detail_content" class="none">
+    <div class="theme_poptit">
+        <a id="auto_detail_close" href="javascript:;" title="关闭" class="close"><i class="glyphicon glyphicon-remove"></i></a>
+        <h4 class="text-center" id="detail_title">车辆信息详情</h4>
+    </div>
+    <div class="form-input-top">
+        <form class="form-horizontal form-input" style="padding: 0 20px;">
+            <div class="form-group">
+                <div class="col-sm-12 text-center">
+                    ————————————<span class="text-center bold-font">车主信息</span>————————————
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-3 text-height-28 text-right">车主姓名：</div>
+                <div class="col-sm-4 text-height-28">
+                    <p class="text-left"><span id="detail_owner"></span></p>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-3 text-height-28 text-right">车主身份证：</div>
+                <div class="col-sm-4 text-height-28">
+                    <p class="text-left" id="detail_identity"></p>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-12 text-center">
+                    ————————————<span class="text-center bold-font">车辆信息</span>————————————
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-3 text-height-28 text-right">车牌号：</div>
+                <div class="col-sm-4 text-height-28">
+                    <p class="text-left"><span id="detail_licensePlateNo"></span></p>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-3 text-height-28 text-right">车架号：</div>
+                <div class="col-sm-4 text-height-28">
+                    <p class="text-left"><span id="detail_vinNo"></span></p>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-3 text-height-28 text-right">发动机号：</div>
+                <div class="col-sm-4 text-height-28">
+                    <p class="text-left"><span id="detail_engineNo"></span></p>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-3 text-height-28 text-right">初登日期：</div>
+                <div class="col-sm-4 text-height-28">
+                    <p class="text-left"><span id="detail_enroll_date"></span></p>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-3 text-height-28 text-right">保险到期日：</div>
+                <div class="col-sm-4 text-height-28">
+                    <p class="text-left"><span id="detail_expire_date"></span></p>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-3 text-height-28 text-right">品牌型号：</div>
+                <div class="col-sm-9 text-height-28">
+                    <p class="text-left"><span id="detail_brand_code"></span></p>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-3 text-height-28 text-right">车型：</div>
+                <div class="col-sm-9 text-height-28">
+                    <p class="text-left"><span id="detail_model"></span></p>
+                </div>
+            </div>
+            <div class="form-group" style="float:right;padding-right: 30px;margin-top: -230px;">
+                <img id="auto_img" src="" style="width: 150px;height: 150px;">
+            </div>
+            <div class="form-group">
+                <div class="col-sm-12 text-center">
+                    ————————————<span class="text-center bold-font">用户信息</span>————————————
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-5 text-height-28 text-center">用户ID</div>
+                <div class="col-sm-5 text-height-28 text-center">电话</div>
+            </div>
+            <div id="auto_user_info" class="form-group" style="height: 12%;overflow-y:auto;">
+            </div>
+        </form>
+    </div>
+</div>
+<div id="popupHtml"></div>
+<div id="quote_pp"></div>
+</body>
+<script type="text/javascript" src="../../js/jquery/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../plugins/jqPaginator-1.2.0/jqPaginator.min.js"></script>
+<script type="text/javascript" src="../../js/common/common.js"></script>
+<script type="text/javascript" src="../../js/common/popup.js"></script>
+<script type="text/javascript" src="../../plugins/DataTables-1.10.12/media/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../../js/common/datatable_util.js"></script>
+<script type="text/javascript" src="../../js/user/user_detail.js"></script>
+<script type="text/javascript" src="../../js/user/user_order_comment.js"></script>
+</html>
+

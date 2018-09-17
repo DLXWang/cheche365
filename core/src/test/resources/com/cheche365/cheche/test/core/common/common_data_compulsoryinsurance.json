@@ -1,0 +1,153 @@
+[
+    {
+        "applicant": {
+            "id": 1722,
+            "name": null,
+            "mobile": "18500000066",
+            "identity": null,
+            "userType": {
+                "id": 1,
+                "name": "消费者",
+                "description": "消费者"
+            },
+            "headImgUrl": null,
+            "nickName": null,
+            "bound": true,
+            "createTime": 1478509058000,
+            "updateTime": 1478509058000,
+            "wechatUser": null,
+            "registerUser": false,
+            "registerIp": null,
+            "registerChannel": {
+                "id": 40,
+                "name": "PARTNER_RRYP",
+                "apiPartner": {
+                    "description": "人人优品",
+                    "id": 14,
+                    "code": "rryp",
+                    "appId": null,
+                    "appSecret": null,
+                    "singleCompany": false,
+                    "isSync": true
+                },
+                "description": "人人优品",
+                "icon": "rryp.png"
+            },
+            "userSource": null,
+            "alipayUser": null,
+            "audit": 1,
+            "unsubscribed": null
+        },
+        "auto": {
+            "id": 8637,
+            "kilometerPerYear": 0,
+            "autoType": null,
+            "licensePlateNo": "京NY8Z21",
+            "engineNo": "S96718",
+            "owner": "张颖",
+            "vinNo": "LFV2A2156C3662267",
+            "enrollDate": 1354204800000,
+            "area": {
+                "id": 110000,
+                "name": "北京市",
+                "type": {
+                    "id": 2,
+                    "name": "直辖市",
+                    "description": "直辖市"
+                },
+                "shortCode": "京",
+                "active": true,
+                "postalCode": "100000",
+                "children": null,
+                "reform": false
+            },
+            "licenseType": null,
+            "licenseColorCode": null,
+            "identity": "110109198408210621",
+            "identityType": {
+                "id": 1,
+                "name": "身份证",
+                "description": "身份证"
+            },
+            "insuredIdNo": null,
+            "disable": true,
+            "billRelated": true,
+            "userAutos": null,
+            "autoTypeExternalCode": null,
+            "mobile": null
+        },
+        "proposalNo": null,
+        "policyNo": null,
+        "insuranceCompany": {
+            "id": 25000,
+            "name": "太平洋保险",
+            "code": "CPIC",
+            "logo": "cpic2.png",
+            "logoUrl": "http://localhost:7310null/insurancecompany/logo/cpic2.png",
+            "slogan": "免费道路救援，全国通赔",
+            "rank": 3,
+            "websiteUrl": "http://www.ecpic.com.cn/",
+            "wapUrl": null,
+            "recommend": false,
+            "recommendReason": null,
+            "inforArrayList": [
+                "免费道路救援",
+                "车险在线支付、即可享受双重好礼"
+            ],
+            "renewSupport": true
+        },
+        "insurancePackage": {
+            "id": 1961,
+            "type": null,
+            "compulsory": true,
+            "autoTax": true,
+            "thirdPartyAmount": 2000000.0,
+            "thirdPartyIop": true,
+            "damage": true,
+            "damageIop": true,
+            "theft": false,
+            "theftIop": false,
+            "engine": false,
+            "engineIop": false,
+            "glass": true,
+            "glassType": {
+                "id": 1,
+                "name": "国产",
+                "description": "国产"
+            },
+            "driverAmount": 100000.0,
+            "driverIop": true,
+            "passengerAmount": 0.0,
+            "passengerIop": false,
+            "spontaneousLoss": false,
+            "scratchAmount": 0.0,
+            "scratchIop": false,
+            "spontaneousLossIop": false,
+            "unableFindThirdParty": false,
+            "iopTotal": false,
+            "glassTypeId": 1,
+            "uniqueString": "11200101000000011110100000"
+        },
+        "effectiveDate": null,
+        "expireDate": null,
+        "originalPolicyNo": null,
+        "compulsoryPremium": "742.69",
+        "autoTax": "350.00",
+        "insuranceImage": null,
+        "createTime": 1478510680000,
+        "updateTime": null,
+        "effectiveHour": null,
+        "expireHour": null,
+        "insuredName": "张颖",
+        "discount": "1.00",
+        "applicantName": "张颖",
+        "applicantIdNo": "110109198408210621",
+        "applicantMobile": null,
+        "applicantEmail": null,
+        "insuredIdNo": "110109198408210621",
+        "insuredMobile": null,
+        "insuredEmail": null,
+        "institution": null,
+        "annotations": null
+    }
+]

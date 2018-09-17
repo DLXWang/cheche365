@@ -1,0 +1,22 @@
+/**
+ +---------+
+ | Plugins |
+ +---------+
+ */
+apply {
+    plugin 'org.springframework.boot'
+}
+
+
+/**
+ * Spring Boot
+ */
+bootRun {
+    def springProfilesActive = System.getProperty 'spring.profiles.active'
+    if (!springProfilesActive) {
+        System.setProperty 'spring.profiles.active', "$spring_profiles_active"
+    }
+
+    systemProperties = System.properties as Map
+}
+

@@ -1,0 +1,61 @@
+package com.cheche365.cheche.picc
+//this is 北京
+
+testData = [
+
+    [
+        225,
+        '',
+        '京NMT200',
+        'WDDBF4DB9GV153375',
+        '27091031012142',
+        '李倩',
+        '411522198805163333',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯-奔驰WDDBF4DB',
+                        supplementInfo : [
+                            autoModel: '',
+                            verificationMobile:'13581538623',
+                            commercialStartDate : '2018-05-17',
+                            compulsoryStartDate : '2018-05-17',
+                        ]
+                    ],
+                    enrollDate:'2016-08-10'
+                ]
+            ]
+        ]
+    ],
+[
+        228,
+        '',
+        '京AD85966',
+        'LNBSCC3H4GF302565',
+        'AD50EG061700027',
+        '郭慧娟',
+        '411522198805163333',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'北京牌BJ7000C5E1-BEV',
+                        supplementInfo : [
+                            autoModel: '',
+                            verificationMobile:'13581538623',
+                            commercialStartDate : '2018-05-17',
+                            compulsoryStartDate : '2018-05-17',
+                        ]
+                    ],
+                    enrollDate:'2015-05-07'
+                ]
+            ]
+        ]
+    ],
+
+]

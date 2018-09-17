@@ -1,0 +1,30 @@
+{
+  "swaggerVersion": "1.2",
+  "basePath": "/internal/developer/userInfoResource",
+  "produces": [
+    "application/json"
+  ],
+  "apis": [
+    {
+      "path": "/userInfoSyncHistory/{mobile}",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "获取用户信息同步历史",
+          "notes": "根据手机号获取用户信息同步历史",
+          "nickname": "orderSyncHistory",
+          "parameters": [
+            {
+              "name": "mobile",
+              "description": "手机号",
+              "required": true,
+              "type": "String",
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "models": {}
+}

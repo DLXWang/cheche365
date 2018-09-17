@@ -1,0 +1,37 @@
+/**
+ +----------------+
+ | Build Settings |
+ +----------------+
+ */
+configurations {
+    springBoot {
+        extendsFrom runtime
+    }
+}
+
+dependencies {
+
+    // Other Projects
+    compile     project(':webcore'),
+                project(':marketing'),
+                project(':internal-integration')
+
+    testCompile "com.cheche365.test:cheche365-test-core:$cheche365_test_version"
+
+    // Spring Frameworks
+    compile     "org.springframework.boot:spring-boot-starter-security:$spring_boot_starter_version"
+
+    // Apache
+    compile     "commons-codec:commons-codec:$commons_codec_version"
+
+    //zxing
+    compile     "com.google.zxing:javase:$zxing_version"
+
+    // Misc.
+    compile     "nl.bitwalker:UserAgentUtils:$useragentutils_version",
+                "com.thoughtworks.xstream:xstream-distribution:$xstream_distribution_version"
+
+    compile     "org.bouncycastle:bcprov-jdk15on:$bc_jdk15on_version"
+
+}
+

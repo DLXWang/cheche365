@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>安心保单回录</title>
+    <link rel="stylesheet" href="../../css/popup.css">
+    <link type="text/css" href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        .form-control {
+            height: 35px;
+            font-size: 16px;
+            width: 250px ;
+        }
+        .control-label{
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        .form-group{
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div id="add_insurance" style="padding-top: 200px;">
+        <div class="col-sm-1"></div>
+        <label class="control-label" style="margin-right: 100px;">1、保单回录：</label>
+        <div class="form-group">
+            <input id="insurance_mobile" type="text" class="form-control" placeholder="请输入手机号">
+        </div>
+        <select id="insuranceChannelSel" class="form-control form-group" style="width: 200px;">
+        </select>
+        <button id="add_insurance_btn" type="button" class="btn btn-warning">新增保单</button>
+    </div>
+    <div id="payment_error">
+        <div class="col-sm-1"></div>
+        <label class="control-label" style="margin-right: 85px;">2、支付有问题：</label>
+        <div class="form-group">
+            <input id="payment_mobile" type="text" class="form-control" placeholder="请输入手机号">
+        </div>
+        <select id="paymentChannelSel" class="form-control form-group" style="width: 200px;">
+        </select>
+        <button id="payment_error_btn" type="button" class="btn btn-warning">新增保单</button>
+    </div>
+    <div id="payment_over">
+        <div class="col-sm-1"></div>
+        <label class="control-label" style="margin-right: 20px;">3、支付完成，承保失败：</label>
+        <div class="form-group">
+            <input id="order_no" type="text" class="form-control" placeholder="请输入订单号">
+        </div>
+        <button id="payment_over_btn" type="button" class="btn btn-success">修改保单</button>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../../js/jquery/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../js/common/common.js"></script>
+<script type="text/javascript" src="../../js/common/popup.js"></script>
+<script type="text/javascript" src="../../js/order/answern_insurance_newly_input.js"></script>
+</html>

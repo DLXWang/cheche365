@@ -1,0 +1,20 @@
+/**
+ +----------------+
+ | Build Settings |
+ +----------------+
+ */
+configurations {
+    springBoot {
+        extendsFrom runtime
+    }
+}
+
+dependencies {
+
+
+    // cheche365
+    compile "com.cheche365.parser:cheche365-parser-core:$cheche365_parser_version"
+
+    testCompile "com.cheche365.parser:cheche365-parser-test:$cheche365_parser_version"
+
+}

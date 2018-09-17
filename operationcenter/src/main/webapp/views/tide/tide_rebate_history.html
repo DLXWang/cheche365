@@ -1,0 +1,131 @@
+<link rel="stylesheet" href="../../plugins/DataTables-1.10.12/media/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="../../plugins/DataTables-1.10.12/media/css/dataTables.bootstrap.min.css">
+<link rel="stylesheet" href="../../libs/select2/select2.min.css">
+<link rel="stylesheet" href="../../libs/select2/select2-bootstrap.min.css">
+<div class="col-md-12">
+    <div class="panel panel-default">
+        <div class="panel-tool pull-right" style="padding-top: 15px;">
+            <a style="color: initial;" data-toggle="collapse" href="#search-collapse" aria-expanded="false"
+               class="collapsed">
+                <span class="glyphicon glyphicon-chevron-up"></span>
+            </a>
+        </div>
+        <div class="panel-heading">
+            <h3 class="panel-title">查询条件</h3>
+        </div>
+        <div id="search-collapse" class="collapse">
+            <div class="panel-body">
+                <div class="form-horizontal">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">合约名称：</label>
+                                <div class="col-md-8">
+                                    <select name="search_contract" id="search_contract" style="width: 100%;">
+                                        <option value="" selected>请选择</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">支持投保所在城市：</label>
+                                <div class="col-md-8">
+                                    <select name="search_support_area" id="search_support_area" style="width: 100%;">
+                                        <option value="" selected>请选择</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">投保类型：</label>
+                                <div class="col-md-8">
+                                    <select name="search_insurance_type" id="search_insurance_type"
+                                            class="form-control">
+                                        <option value="" selected>请选择</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">使用性质：</label>
+                                <div class="col-md-8">
+                                    <select name="search_car_type" id="search_car_type" class="form-control">
+                                        <option value="" selected>请选择</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">日期：</label>
+                                <div class="col-md-8">
+                                    <input name="search_date" id="search_date" class="form-control"
+                                           style="padding-right: 17px;background:#fff url(../../libs/My97DatePicker/skin/datePicker.gif) no-repeat right;"
+                                           onclick="WdatePicker()">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">状态：</label>
+                                <div class="col-md-8">
+                                    <select name="search_rebate_status" id="search_rebate_status" class="form-control">
+                                        <option value="" selected>请选择</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-md-offset-10">
+                            <a class="btn btn-primary" id="submitBtn">查询</a>
+                            <a class="btn btn-default" id="clearBtn">重置</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-tool pull-right">
+            <select id="columnCofnig" multiple>
+            </select>
+            <div class="btn-group">
+                <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                   aria-expanded="false">下载 <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li class="exportCSV"><a>CSV</a></li>
+                    <li class="exportExcel"><a>Excel</a></li>
+                </ul>
+            </div>
+            <div class="btn-export none"></div>
+        </div>
+        <div class="panel-heading">
+            <h3 class="panel-title">点位信息</h3>
+        </div>
+        <div class="panel-body">
+            <table id="tide_rebate_history_table" class="table">
+            </table>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../../libs/bootstrap-3.3.4/js/bootstrap-multiselect.js"></script>
+<script type="text/javascript" src="../../plugins/DataTables-1.10.12/media/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../../plugins/DataTables-1.10.12/media/js/dataTables.buttons.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="../../plugins/DataTables-1.10.12/media/js/buttons.html5.min.js"></script>
+<script type="text/javascript" src="../../plugins/DataTables-1.10.12/media/js/jszip.min.js"></script>
+<script type="text/javascript" src="../../libs/select2/select2.min.js"></script>
+<script type="text/javascript" src="../../libs/select2/zh-CN.js"></script>
+<script type="text/javascript" src="../../js/common/common.js"></script>
+<script type="text/javascript" src="../../js/common/datatable_util.js"></script>
+<script type="text/javascript" src="../../js/tide/tide_rebate_search.js"></script>
+<script type="text/javascript" src="../../js/tide/tide_rebate_history.js"></script>

@@ -1,0 +1,342 @@
+package com.cheche365.cheche.rest
+
+import groovy.json.JsonSlurper
+
+def IGNORED_FIELD_LIST = 'id,quote,applicant,auto,type,area,createTime,updateTime,effectiveDate,expireDate,compulsoryEffectiveDate,compulsoryExpireDate'
+def jsonSlurper = new JsonSlurper()
+
+defaultTestDatas = [
+
+    [ // 此车辆将在5.27之后续保
+      57718L,
+      jsonSlurper.parseText(
+          """
+            {
+              "auto"    : {
+                "licensePlateNo"        : "京NCT589",
+                "engineNo"              : "940407A",
+                "vinNo"                 : "LGBM2DE45AY032341",
+                "enrollDate"            : "",
+                "autoTypeExternalCode"  : "",
+                "owner"                 : "田子凡",
+                "identity"              : "110221196412238310"
+              },
+              "insurancePackage": {
+                "compulsory"        : false,
+                "autoTax"           : false,
+                "thirdPartyAmount"  : 100000,
+                "thirdPartyIop"     : true,
+                "damage"            : true,
+                "damageIop"         : true,
+                "theft"             : true,
+                "theftIop"          : false,
+                "engine"            : false,
+                "engineIop"         : false,
+                "glass"             : true,
+                "glassType"         : {
+                    "id": 1
+                },
+                "driverAmount"      : 10000,
+                "driverIop"         : true,
+                "passengerAmount"   : 40000,
+                "passengerIop"      : true,
+                "spontaneousLoss"   : false,
+                "scratchAmount"     : null,
+                "scratchIop"        : false
+              },
+              "pref"    : {
+                "companyIds"        : [
+                  10000
+                ],
+                "budget"            : 0
+              }
+            }
+            """
+      ),
+
+      [
+          _fields : IGNORED_FIELD_LIST
+      ],
+
+      jsonSlurper.parseText(
+          """
+            {
+              "insuranceCompany"            : {
+                "id"    : 10000,
+                "name"  : "人保财险",
+                "code"  : "PICC"
+              },
+              "insurancePackage"    : {
+                "compulsory"        : false,
+                "autoTax"           : false,
+                "thirdPartyAmount"  : 100000,
+                "thirdPartyIop"     : true,
+                "damage"            : true,
+                "damageIop"         : true,
+                "theft"             : true,
+                "theftIop"          : false,
+                "engine"            : false,
+                "engineIop"         : false,
+                "glass"             : true,
+                "glassType": {
+                    "id"          : 1,
+                    "description" : "国产",
+                    "name"        : "国产"
+                },
+                "driverAmount"      : 10000,
+                "driverIop"         : true,
+                "passengerAmount"   : 40000,
+                "passengerIop"      : true,
+                "spontaneousLoss"   : false,
+                "scratchAmount"     : null,
+                "scratchIop"        : false,
+                "uniqueString"      : "000101101040000111101100"
+              },
+              "premium"                     : 3915.64,
+              "discount"                    : 1,
+              "originalPolicyNo"            : null,
+              "compulsoryOriginalPolicyNo"  : null,
+              "compulsoryPremium"           : 0,
+              "autoTax"                     : 0,
+              "thirdPartyPremium"           : 513.62,
+              "thirdPartyAmount"            : 100000,
+              "damagePremium"               : 1932.57,
+              "damageAmount"                : 230800,
+              "theftPremium"                : 537.49,
+              "theftAmount"                 : 150481.6,
+              "enginePremium"               : 0,
+              "driverPremium"               : 24.03,
+              "driverAmount"                : 10000,
+              "passengerPremium"            : 243.45,
+              "passengerAmount"             : 160000,
+              "passengerCount"              : 4,
+              "spontaneousLossPremium"      : 0,
+              "spontaneousLossAmount"       : 0,
+              "glassPremium"                : 257.43,
+              "scratchAmount"               : 0,
+              "scratchPremium"              : 0,
+              "damageIop"                   : 289.89,
+              "thirdPartyIop"               : 77.04,
+              "theftIop"                    : 0,
+              "engineIop"                   : 0,
+              "driverIop"                   : 3.6,
+              "passengerIop"                : 36.52,
+              "scratchIop"                  : 0,
+              "quoteFieldStatus"            : null,
+              "message"                     : null
+            }
+            """
+      )
+    ],
+
+    [ // 此车辆将在5.27之后续保
+        57718L,
+        jsonSlurper.parseText(
+            """
+            {
+              "auto"    : {
+                "licensePlateNo"        : "京NCT589",
+                "engineNo"              : "940407A",
+                "vinNo"                 : "LGBM2DE45AY032341",
+                "enrollDate"            : "",
+                "autoTypeExternalCode"  : "",
+                "owner"                 : "田子凡",
+                "identity"              : "110221196412238310"
+              },
+              "pref"    : {
+                "companyIds"        : [
+                  10000
+                ],
+                "budget"            : 0
+              }
+            }
+            """
+        ),
+
+        [
+            _fields : IGNORED_FIELD_LIST
+        ],
+
+        jsonSlurper.parseText(
+            """
+            {
+              "insuranceCompany"            : {
+                "id"    : 10000,
+                "name"  : "人保财险",
+                "code"  : "PICC"
+              },
+              "insurancePackage"    : {
+                "compulsory"        : true,
+                "autoTax"           : true,
+                "thirdPartyAmount"  : 100000,
+                "thirdPartyIop"     : false,
+                "damage"            : true,
+                "damageIop"         : false,
+                "theft"             : false,
+                "theftIop"          : false,
+                "engine"            : false,
+                "engineIop"         : false,
+                "glass"             : false,
+                "glassType"         : null,
+                "driverAmount"      : null,
+                "driverIop"         : false,
+                "passengerAmount"   : null,
+                "passengerIop"      : false,
+                "spontaneousLoss"   : false,
+                "scratchAmount"     : null,
+                "scratchIop"        : false,
+                "uniqueString"      : "110101000000000000000000"
+              },
+              "premium"                     : 2446.19,
+              "discount"                    : 1,
+              "originalPolicyNo"            : null,
+              "compulsoryOriginalPolicyNo"  : null,
+              "compulsoryPremium"           : 703.65,
+              "autoTax"                     : 750,
+              "thirdPartyPremium"           : 513.62,
+              "thirdPartyAmount"            : 100000,
+              "damagePremium"               : 1932.57,
+              "damageAmount"                : 230800,
+              "theftPremium"                : 0,
+              "theftAmount"                 : 0,
+              "enginePremium"               : 0,
+              "driverPremium"               : 0,
+              "driverAmount"                : 0,
+              "passengerPremium"            : 0,
+              "passengerAmount"             : 0,
+              "passengerCount"              : 4,
+              "spontaneousLossPremium"      : 0,
+              "spontaneousLossAmount"       : 0,
+              "glassPremium"                : 0,
+              "scratchAmount"               : 0,
+              "scratchPremium"              : 0,
+              "damageIop"                   : 0,
+              "thirdPartyIop"               : 0,
+              "theftIop"                    : 0,
+              "engineIop"                   : 0,
+              "driverIop"                   : 0,
+              "passengerIop"                : 0,
+              "scratchIop"                  : 0,
+              "quoteFieldStatus"            : null,
+              "message"                     : null
+            }
+            """
+        )
+    ],
+
+    [ // 此车辆已经脱保
+        80093L,
+        jsonSlurper.parseText(
+            """
+            {
+                "auto"              : {
+                    "licensePlateNo"        : "京NL3618",
+                    "engineNo"              : "967864Q",
+                    "vinNo"                 : "LGBM2DE41CS046923",
+                    "enrollDate"            : "",
+                    "autoTypeExternalCode"  : "",
+                    "owner"                 : "常洁",
+                    "identity"              : "110102195506032322"
+                },
+                "pref"              : {
+                    "companyIds"    : [
+                        "10000"
+                    ]
+                },
+                "insurancePackage"  : {
+                    "compulsory"        : false,
+                    "autoTax"           : false,
+                    "thirdPartyAmount"  : 100000,
+                    "thirdPartyIop"     : false,
+                    "damage"            : false,
+                    "damageIop"         : false,
+                    "theft"             : false,
+                    "theftIop"          : false,
+                    "engine"            : false,
+                    "engineIop"         : false,
+                    "glass"             : false,
+                    "glassType"         : null,
+                    "driverAmount"      : null,
+                    "driverIop"         : false,
+                    "passengerAmount"   : null,
+                    "passengerIop"      : false,
+                    "spontaneousLoss"   : false,
+                    "scratchAmount"     : null,
+                    "scratchIop"        : false
+                }
+            }
+            """
+        ),
+
+        [
+            _fields : IGNORED_FIELD_LIST
+        ],
+
+        jsonSlurper.parseText(
+            """
+            {
+              "insuranceCompany"            : {
+                "id"    : 10000,
+                "name"  : "人保财险",
+                "code"  : "PICC"
+              },
+              "insurancePackage"    : {
+                "compulsory"        : false,
+                "autoTax"           : false,
+                "thirdPartyAmount"  : 100000,
+                "thirdPartyIop"     : false,
+                "damage"            : false,
+                "damageIop"         : false,
+                "theft"             : false,
+                "theftIop"          : false,
+                "engine"            : false,
+                "engineIop"         : false,
+                "glass"             : false,
+                "glassType"         : null,
+                "driverAmount"      : null,
+                "driverIop"         : false,
+                "passengerAmount"   : null,
+                "passengerIop"      : false,
+                "spontaneousLoss"   : false,
+                "scratchAmount"     : null,
+                "scratchIop"        : false,
+                "uniqueString"      : "000100000000000000000000"
+              },
+              "premium"                     : 469.98,
+              "discount"                    : 1,
+              "originalPolicyNo"            : null,
+              "compulsoryOriginalPolicyNo"  : null,
+              "compulsoryPremium"           : 0,
+              "autoTax"                     : 0,
+              "thirdPartyPremium"           : 469.98,
+              "thirdPartyAmount"            : 100000,
+              "damagePremium"               : 0,
+              "damageAmount"                : 0,
+              "theftPremium"                : 0,
+              "theftAmount"                 : 0,
+              "enginePremium"               : 0,
+              "driverPremium"               : 0,
+              "driverAmount"                : 0,
+              "passengerPremium"            : 0,
+              "passengerAmount"             : 0,
+              "passengerCount"              : 4,
+              "spontaneousLossPremium"      : 0,
+              "spontaneousLossAmount"       : 0,
+              "glassPremium"                : 0,
+              "scratchAmount"               : 0,
+              "scratchPremium"              : 0,
+              "damageIop"                   : 0,
+              "thirdPartyIop"               : 0,
+              "theftIop"                    : 0,
+              "engineIop"                   : 0,
+              "driverIop"                   : 0,
+              "passengerIop"                : 0,
+              "scratchIop"                  : 0,
+              "quoteFieldStatus"            : null,
+              "message"                     : null
+            }
+            """
+        )
+    ]
+
+]

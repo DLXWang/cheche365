@@ -1,0 +1,22 @@
+#途虎订单报表
+title: "出单中心-途虎订单报表-${currentDate}"
+tos: [zhangtc@cheche365.com,guanwy@cheche365.com]
+production_tos: [lixin@cheche365.com]
+template: /velocity/weicheQuoteEmail.vm
+excelAttachmentConfig:
+        fileName: "${currentDate}途虎订单报表.xlsx"
+        sheets:
+            - sheetName: sheet1
+              columns:
+                  - columnType: tuhuOrderReportTask
+                    column:
+                        订单号: orderNo
+                        手机号: mobile
+                        车牌号: licensePlateNo
+                        投保人姓名: applicantName
+                        交强险: compulsoryPremium
+                        商业险: commecialPremium
+                        下单时间: orderCreateTime
+                        城市: cityName
+                        保险公司: insuranceCompanyName
+                        奖品: giftDetail

@@ -1,0 +1,60 @@
+package com.cheche365.cheche.zhongan
+
+testData = [
+
+    [
+        1,
+        '',
+        '鲁B38F2C',
+        'LFV2B25G9H5073555',
+        'M077067645',
+        '王玺凯',
+        '110107195701060910',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '高尔夫FV7164FG',
+                        supplementInfo: [
+                            autoModel: 'bFi1DF4N28jMtTESW1X1qw==',
+                            commercialStartDate : '2018-08-08',
+                            compulsoryStartDate : '2018-08-08',
+                        ]
+                    ],
+                    enrollDate: '2013-10-08'
+                ]
+            ],
+            persistentState: [
+                insureFlowCode: '1010260301'
+            ]
+        ],
+    ],
+    [
+        2,
+        '',
+        '鲁B0V816',
+        'LFV3A31G383045155',
+        'AQM079104',
+        '张信息',
+        '610125198812111375',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '捷达FV7160FG轿车',
+                        supplementInfo: [
+                            autoModel: 'L7b6eDHYBMYkTYz2mr1HJQ==',
+                            commercialStartDate : '2018-08-08',
+                            compulsoryStartDate : '2018-08-08',
+                        ]
+                    ],
+                    enrollDate: '2010-03-21'
+                ]
+            ]
+        ],
+    ]
+]

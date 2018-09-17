@@ -1,0 +1,38 @@
+/**
+ +----------------+
+ | Build Settings |
+ +----------------+
+ */
+configurations {
+    springBoot {
+        extendsFrom runtime
+    }
+}
+
+dependencies {
+
+    // Other Projects
+    compile     project(':webcore')
+
+    // UnionPay SDK
+    compile     ':upacp_sdk:1.0.0'
+
+    // Spring Frameworks
+    compile     "org.springframework:spring-webmvc:$spring_version",
+                "org.springframework.boot:spring-boot-starter-security:$spring_boot_starter_version"
+
+    //cheche365
+    testCompile "com.cheche365.test:cheche365-test-core:$cheche365_test_version"
+
+    // Spring Framework
+    testCompile "org.springframework.boot:spring-boot-starter-test:$spring_boot_starter_version"
+
+    // bcprov-jdk15
+    runtime     "org.bouncycastle:bcprov-jdk15on:$bc_jdk15on_version"
+
+    // Spock Framework
+    testRuntime("org.spockframework:spock-spring:$spockframework_version") {
+        exclude group: 'org.codehaus.groovy', module: 'groovy-all'
+    }
+}
+

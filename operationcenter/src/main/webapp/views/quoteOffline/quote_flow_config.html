@@ -1,0 +1,118 @@
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div id="show_div" c style="margin-top:10px;">
+    <div class="col-sm-12">
+        <div class="row" style="margin-bottom:10px;">
+            <div class="col-sm-12 form-inline" style="float:left;">
+                <select id="insureComp" class="form-control" style="width: 150px;float:left;">
+                    <option value="">保险公司</option>
+                </select>
+                <div id="triggerCityDiv" style="float:left;overflow: hidden;margin-left:5px;">
+                    <input type="text" id="result_detail" name="resultDetail" placeholder="活动支持城市"
+                           class="form-control text-input-400" style="width: 200px;float:left;" AutoComplete="off"
+                           onpaste="return false" oncontextmenu="return false">
+                </div>
+                <input type="hidden" id="trigger_city" name="triggerCity" style="float:left;">
+                <select id="channel" class="form-control" style="width: 150px;margin-left:5px;">
+                    <option value="">渠道</option>
+                </select>
+                <select id="status" class="form-control" style="width: 150px;float:left;margin-left:5px;">
+                    <option value="">状态</option>
+                    <option value="0">已下线</option>
+                    <option value="1">已上线</option>
+                </select>
+
+                <button id="searchBtn" class="btn btn-danger" type="button" style="margin-left: 5px;">筛选
+                </button>
+                <button id="addActivity" class="btn btn-danger" type="button" style="margin-left: 5px;"
+                        onclick="window.open('/views/quoteOffline/quote_flow_config_add.html')">新建报价配置
+                </button>
+
+                <form class="form-inline" action="/operationcenter/quoteFlowConfig/upload" enctype="multipart/form-data" method="post" role="form" id="file_form" style="float:right">
+                    <div class="form-group" >
+                        <input id="codeFile" name="codeFile" type="file" accept=".xls,.xlsx" class="form-control file-input" onchange="quoteFlowConfig.changeValue();" style="width: 1px;opacity: 0; filter:Alpha(opacity=0);" placeholder="请选择文件">
+                        <input id="codeFileFake" name="codeFile" type="text" class="form-control file-input" onclick="document.getElementById('codeFile').click();" style="width: 90px" placeholder="选择文件">
+                    </div>
+
+                    <button id="excel_upload_one_next" type="button" onclick="quoteFlowConfig.uploadFile();" class="btn btn-warning">上传批量报价配置</button>
+                    <a id="url_template" download="url_template"
+                       href="">
+                        <button id="downloadTemplate" type="button" class="btn btn-warning">下载模板</button>
+                    </a>
+                </form>
+            </div>
+        </div>
+        <table class="table table-bordered table-hover" id="list_tab">
+        </table>
+    </div>
+</div>
+
+
+<div id="operation_log" class="container tab_body none">
+    <div class="theme_poptit">
+        <a id="close" href="javascript:;" title="关闭" class="close"><i class="glyphicon glyphicon-remove"
+                                                                      id="close_log"></i></a>
+        <h4 class="text-center" id="log_title">操作日志</h4>
+    </div>
+    <div style="height:490px;overflow:auto;margin: 15px">
+        <span style="font-size:16px" id="insureCompany"></span>
+        <span style="font-size:16px;margin-left: 30px;" id="area"></span>
+        <span style="font-size:16px;margin-left: 30px;" id="config"></span>
+        <table class="table table-bordered table-hover" id="log_list_tab" style="width:1000px;" >
+        </table>
+    </div>
+</div>
+<div id="quote_offline" class="container tab_body none">
+    <div class="theme_poptit">
+        <a id="close1" href="javascript:;" title="关闭" class="close"><i class="glyphicon glyphicon-remove"
+                                                                       id="close_quoteOffline"></i></a>
+        <h4 class="text-center" id="offline">上下线操作</h4>
+    </div>
+    <div style="height:490px;overflow:auto;margin-left:15px;margin-right:15px;">
+        <input type="hidden" id="id"/>
+        <div style="margin: 20px">
+            <label >选择报价方式</label>
+            <input name="quoteWay" type="radio" value="2" id='quote_type2' style="margin-left: 40px;"/><label for="quote_type2">自有</label>
+            <input name="quoteWay" type="radio" value="4" id='quote_type4' style="margin-left: 40px;"/><label for="quote_type4">接口</label>
+            <input name="quoteWay" type="radio" value="6" id='quote_type6' style="margin-left: 40px;"/><label for="quote_type6">泛华</label>
+            <input name="quoteWay" type="radio" value="7" id='quote_type7' style="margin-left: 40px;"/><label for="quote_type7">参考</label>
+            <input name="quoteWay" type="radio" value="9" id='quote_type9' style="margin-left: 60px;"/><label for="quote_type9">鳄鱼报价</label>
+            <input name="quoteWay" type="radio" value="11" id='quote_type11' style="margin-left: 60px;"/><label for="quote_type11">金斗云</label>
+
+            <!--<input name="quoteWay" type="radio" value="9" id='quote_type9' style="margin-left: 40px;"/><label for="quote_type9">泛华模糊</label>-->
+        </div>
+        <div style="margin: 20px">
+            <label>选择上线/下线</label>
+            <input name="enable" type="radio" value="1" id="toOnline" style="margin-left: 76px;"/><label for="toOnline">上线</label>
+            <input name="enable" type="radio" value="0" id="toOffline" style="margin-left: 80px;"/><label for="toOffline">下线</label>
+        </div>
+        <div style="margin: 20px">
+            <label>执行时间</label><!-- <a href="" style="margin-left: 40px;">活动配置查看</a> -->
+        </div>
+        <div style="margin: 20px">
+            <input name="operate_time" type="radio" value="0" id="now"/><label for="now">立即执行</label>
+            <input name="operate_time" type="radio" value="1" id="tomorrow" style="margin-left: 80px;" checked="checked"/><label for="tomorrow">次日零点</label>
+        </div>
+        <div style="margin: 20px">
+            <label id="notice">请输入上线操作简要原因</label>
+            <textarea id="reason" name="description" class="form-control text-input-500" rows="6" style="resize: none;" maxlength="200"></textarea>
+        </div>
+        <div style="margin: 20px" class="text-center">
+            <button id="toSave" class="btn btn-danger" type="button">确定</button>
+            <button id="cancel" class="btn btn-danger" type="button" style="margin-left: 20px;">取消</button>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../../libs/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="../../plugins/DataTables-1.10.12/media/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../../js/common/datatable_util.js"></script>
+<script type="text/javascript" src="../../js/quoteOffline/quoteFlowConfig.js"></script>
+<script type="text/javascript" src="../../js/common/CUI.js"></script>
+<script type="text/javascript" src="../../js/common/CUI.select.js"></script>
+<script type="text/javascript" src="../../js/common/CUI.select.js"></script>
+<script type="text/javascript" src="../../libs/jquery-form/jquery.form.js"></script>

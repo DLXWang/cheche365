@@ -1,0 +1,36 @@
+package com.cheche365.cheche.baoxian
+
+basePackageOptions = [
+    thirdPartyAmount    : 500_000.0,
+    thirdPartyIop       : true,
+    damage              : true,
+    damageIop           : true,
+    theft               : false,
+    theftIop            : false,
+    engine              : false,
+    engineIop           : false,
+    glass               : false,
+    glassType           : 1,    // 国产
+    driverAmount        : 0.0,
+    driverIop           : false,
+    passengerAmount     : 0.0,
+    passengerIop        : false,
+    spontaneousLoss     : false,
+    scratchAmount       : 0.0,
+    scratchIop          : false,
+    compulsory          : true,
+    autoTax             : true
+]
+
+baseAdditionalParams = [
+    quoteRecord: [
+        auto: [
+            autoType  : [
+                code:'揽胜RANGE ROVER 3.0T越野车',
+                supplementInfo : [
+                    autoModel : 'LHBAEI0012'
+                ]
+            ]
+        ]
+    ]
+]

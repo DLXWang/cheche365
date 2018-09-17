@@ -1,0 +1,22 @@
+{
+  "swaggerVersion": "1.2",
+  "basePath": "/internal/developer/inviteCodeResource",
+  "produces": [
+    "application/json"
+  ],
+  "apis": [
+    {
+      "path": "/inviteCode",
+      "operations": [
+        {
+          "method": "POST",
+          "summary": "创建顶级邀请码",
+          "notes": "该工具用于创建销售总监级别（顶级）邀请码，邀请码不可重复使用，注册后即失效。",
+          "nickname": "createInviteCode",
+          "parameters": []
+        }
+      ]
+    }
+  ],
+  "models": {}
+}

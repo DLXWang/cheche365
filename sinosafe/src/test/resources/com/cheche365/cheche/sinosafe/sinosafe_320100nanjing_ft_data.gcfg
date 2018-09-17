@@ -1,0 +1,108 @@
+package com.cheche365.cheche.sinosafe
+//this is
+
+testData = [
+    [
+        500001,
+        '',
+        '渝F67D50',
+        'LSVNV2182E2153138',
+        'D32252',
+        '易旭',
+        '210522197902100518',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'大众汽车SVW7167BMD轿车',
+                        supplementInfo : [
+                            autoModel: 'LYD1063SHD',
+                            commercialStartDate : '2018-08-22',
+                            compulsoryStartDate : '2018-08-22',
+                        ]
+                    ],
+                    enrollDate:'2014-09-22'
+                ]
+            ]
+        ],
+    ],
+    [
+        213440,
+        '',
+        '冀AV865Y',
+        'LDC973447F2453445',
+        '1320275',
+        '卿小杰',
+        '412723198108057322',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'DC7126TSAB',
+                        supplementInfo : [
+                            autoModel : 'BZD1403DFB',
+                        ]
+                    ],
+                    enrollDate:'2015-12-23'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        213450,
+        '',
+        '冀AJ695T',
+        'LS5A3ABE6CB119767',
+        'C4LC06162',
+        '佟云伟',
+        '110226198901273329',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code: '长安SC7162J',
+                        supplementInfo  : [
+                            autoModel: 'YYD1108CAL'
+                        ]
+                    ],
+                    enrollDate: '2013-01-15'
+                ],
+                applicant: [
+                    mobile: '18810500574'
+                ]
+            ]
+        ],
+    ],
+
+[
+            213460,
+            '套餐建议',
+            '冀A42402',
+            'LFV2B21K4A3200208',
+            '018182',
+            '李刚',
+            '130104195808171383',
+            null,
+            null,
+            [
+                quoteRecord: [
+                    auto: [
+                        autoType  : [
+                            code: '高尔夫FV7144TFATG轿车',
+                            supplementInfo  : [
+                                autoModel: ''
+                            ]
+                        ],
+                        enrollDate: '2010-07-06'
+                    ]
+                ]
+            ],
+        ],
+]

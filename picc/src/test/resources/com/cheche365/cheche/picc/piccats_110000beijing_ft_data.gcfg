@@ -1,0 +1,36 @@
+package com.cheche365.cheche.picc
+//this is 北京
+
+testData = [
+
+
+    [
+        1,
+        '',
+        '川A607DA',
+        'LBV5S1105FSK57024',
+        '2167E600',
+        '余学忠',
+        '412822198603124835',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'',
+                        supplementInfo : [
+                            autoModel: '',
+                            verificationMobile:'13581538623',
+                            commercialStartDate : '2018-05-17',
+                            compulsoryStartDate : '2018-05-17',
+                        ]
+                    ],
+                    enrollDate:'2015-05-07'
+                ]
+            ]
+        ]
+    ],
+
+
+]

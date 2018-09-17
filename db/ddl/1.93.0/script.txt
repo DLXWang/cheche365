@@ -1,0 +1,16 @@
+20-db-alter-table-insurance-basic-info.sql
+25-db-alter-table-channel-agent-rebate.sql
+30-db-alter-table-channel-rebate-history.sql
+40-db-add-payment-channel.sql
+60-db-add-purchase-order-image-scene.sql
+70-db-add-purchase-order-image-type.sql
+80-db-add-purchase-order-image-scene-type.sql
+85-db-alter-bank.sql
+90-db-update-insurance-company.sql
+95-db-drop-bank-column.sql
+100-db-update-insurance-company.sql
+120-db-update-payment-channel.sql
+130-db-update-insurance-company-rank-data.sql
+135-db-delete-area-data.sql
+140-db-add-attribute-type-data.sql
+150-db-update-android-chebaoyi-version.sql

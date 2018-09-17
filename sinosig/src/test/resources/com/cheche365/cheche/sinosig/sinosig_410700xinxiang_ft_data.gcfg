@@ -1,0 +1,51 @@
+package com.cheche365.cheche.sinosig
+
+/**
+ * 河南新乡
+ */
+
+testDataParams = [
+
+    //{value=FTABKD0045, text=丰田TV7250S4SPD轿车  2009款 2.5S特别纪念版 5座 215800元}
+    10 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'FTABKD0045']]]]]],
+
+    //{value=JHAAID0093, text=江淮HFC6500A3C7F轻型客车  2008款 双空调版 9座 105800元}
+    20 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'JHAAID0093']]]]]],
+
+    //{value=BTAAJD0032, text=奥德赛HG6481BAA多用途乘用车  2011款 劲秀领秀版 7座 261800元}
+    40 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'BTAAJD0032']]]]],],
+
+    //{value=BMAAEI0053, text=宝马BMW 740Li轿车  2011款 740Li 施坦威全球限量版 4座 1798000元}
+    100: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'BMAAEI0053']]]]]],
+
+    //{value=DZAAKD0087, text=波罗SVW7144CRD轿车  2008款 雅适版 5座 77800元},
+    120: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZAAKD0087']]]]]],
+
+    //{value=BYAABD0102, text=比亚迪QCJ7150A9轿车  2012款 GL-i舒适型 5座 42000元},
+    210: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'BYAABD0102']]]]]],
+
+    //{value=BKAAMD0004, text=别克SGM7252GL轿车  2002款 GL豪华版 5座 227800元}
+    220: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'BKAAMD0004']]]]]],
+
+    //{value=WEAAID0006, text=沃尔沃CAF7240A轿车  2009款 5座 268000元}
+    240: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'WEAAID0006']]]]]],
+
+    //{value=DZABFD0035, text=大众汽车SVW6451RED多用途乘用车  2013款 两驱风尚版 5座 197800元}
+    300: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZABFD0035']]]]]],
+
+    //{value=DZAATD0057, text=捷达FV7160CiFE轿车  2008款 F系 新伙伴 5座 70800元},
+    340: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZAATD0057']]]]]],
+
+    //{value=BKAALD0077, text=别克SGM7165ATB轿车  2011款 LX 5座 80900元}
+    350: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'BKAALD0077']]]]]],
+
+    //{value=FTAASD0017, text=丰田TV6460GL多用途乘用车  2011款 两驱豪华版 5座 199800元}
+    380: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'FTAASD0017']]]]]],
+
+    //{value=DZABCD0040, text=大众汽车SVW7167PSD轿车  2012款 风尚版 5座 95900元}
+    490: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZABCD0040']]]]]],
+
+    //{value=DZABCD0039, text=大众汽车SVW7167QSD轿车  2012款 舒适版 5座 120900元}
+    500: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZABCD0039']]]]]],
+
+]

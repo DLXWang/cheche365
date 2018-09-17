@@ -1,0 +1,80 @@
+#微车渠道的报价日志记录报表
+title: "出单中心-晶算师订单报表-${currentDate}"
+tos: [liuyw@cheche365.com,huyp@cheche365.com,zhangtc@cheche365.com]
+production_tos: [yanyl@cheche365.com]
+template: /velocity/weicheQuoteEmail.vm
+excelAttachmentConfig:
+        fileName: "${currentDate}晶算师订单报表.xlsx"
+        sheets:
+            - sheetName: sheet1
+              columns:
+                  - columnType: datebaoOrderReport
+                    column:
+                        大特保用户ID: parterUserId
+                        订单号: orderNo
+                        下单时间: orderCreateTime
+                        订单状态: orderStatus
+                        城市: cityName
+                        保险公司: insuranceCompanyName
+                        手机号: mobile
+                        微信昵称: nickName
+                        车主手机号: ownerMobile
+                        来源: source
+                        平台: registerChannel
+                        车牌号: licensePlateNo
+                        车架号: vinNo
+                        发动机号: engineNo
+                        车辆初登日期: enrollDate
+                        车座数: seats
+                        品牌型号: brandAndModel
+                        过户日期: transferDate
+                        商业险生效日期: insranceEffectiveDate
+                        商业险失效日期: insranceExpireDate
+                        商业险保单号: insrancePolicyNo
+                        交强险生效日期: compulsoryEffectiveDate
+                        交强险失效日期: compulsoryExpireDate
+                        交强险保单号: compulsoryPolicyNo
+                        应付金额: payableAmount
+                        实付金额: paidAmount
+                        交强险: compulsoryPremium
+                        车船税: autoTax
+                        商业险: commecialPremium
+                        机动车辆损失险保费: damagePremium
+                        机动车辆损失险保额: damageAmount
+                        第三者责任险保费: thirdPartyPremium
+                        第三者责任险保额: thirdPartyAmount
+                        车上人员责任险(司机)保费: driverPremium
+                        车上人员责任险(司机)保额: driverAmount
+                        车上人员责任险(乘客)保费: passengerPremium
+                        车上人员责任险(乘客)保额: passengerAmount
+                        盗抢险保费: theftPremium
+                        盗抢险保额: theftAmount
+                        车身划痕损失险保费: scratchPremium
+                        车身划痕损失险保额: scratchAmount
+                        自燃损失险保费: spontaneousLossPremium
+                        自燃损失险保额: spontaneousLossAmount
+                        发动机特别损失险保费: enginePremium
+                        发动机特别损失险保额: engineAmount
+                        车主姓名: ownerName
+                        车主证件类型: ownerIdentityType
+                        车主身份证: ownerIdentity
+                        投保人姓名: applicantName
+                        投保人证件类型: applicantIdentityType
+                        投保人身份证: applicantIdentity
+                        被保险人姓名: insuredName
+                        被保险人证件类型: insuredIdentityType
+                        被保险人身份证: insuredIdentity
+                        序号 : paymentId
+                        类型: paymentType
+                        金额: amount
+                        状态: status
+                        支付时间: updateTime
+                        交付通道 : paymentChannel
+                        车车流水号: outTradeNo
+                        支付平台流水号: thirdpartyPaymentNo
+                        收件人: receiver
+                        身份证: receiverIdentity
+                        电话: receiverMobile
+                        派送日期: sendTime
+                        派送时段: sendPeriod
+                        快递地址: address

@@ -1,0 +1,26 @@
+#大特保数据同步邮件
+title: ${timePeriod}大特保数据同步
+template: /velocity/completedOrder.vm
+tos: [zhangtc@cheche365.com,liuyw@cheche365.com,baihua@cheche365.com]
+production_tos: [wangdong@datebao.com]
+excelAttachmentConfig:
+        fileName: "${timePeriod}大特保数据同步.xlsx"
+        sheets:
+        - sheetName: 大特保
+          columns:
+              - columnType: datebaoData
+                column:
+                    保险公司: insuranceCompany
+                    客户姓名: insuredName
+                    大特保账号: account
+                    订单号: orderNo
+                    订单状态: orderStatus
+                    车牌: licenseNo
+                    电话: linkPhone
+                    交强保费: compulsoryPremium
+                    商业保费: commecialPremium
+                    创建时间: submitTime
+                    车架号: vinNo
+                    发动机号: engineNo
+                    初登日期: enrollDate
+                    车险到期日: expireTime

@@ -1,0 +1,22 @@
+#需跟进订单定时任务
+title: "${startTime}至${endTime}需跟进订单"
+tos: [wangfei@cheche365.com,liuyw@cheche365.com,zhangtc@cheche365.com]
+production_tos: [com,majing@cheche365.com,aodm@cheche365.com]
+template: /velocity/followUpOrdersEmail.vm
+excelAttachmentConfig:
+        fileName: "${startTime}至${endTime}需跟进订单.xlsx"
+        sheets:
+            - sheetName: "需跟进订单"
+              columns:
+                  - columnType: followUpOrders
+                    column:
+                      订单号: orderNo
+                      订单创建时间: orderTime
+                      订单状态: orderStatus
+                      订单来源渠道: source
+                      车牌号: licenseNo
+                      车主: owner
+                      城市: cityName
+                      保险公司: insuranceCompany
+                      实付金额: paidAmount
+                      手机号: linkPhone

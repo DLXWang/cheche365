@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>重新分配订单</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/select2/select2.min.css" rel="stylesheet">
+    <style type="text/css">
+        .selected {
+             background-color: #4d7fb8;
+             cursor: default;
+        }
+        .selected span {
+            color: #FFF;
+            font-weight: bold;
+        }
+        .btn-group a {
+            width: 200px;
+            height: 36px;
+        }
+        form{
+            padding-left: 39px;
+        }
+        .form-control {
+            height: 35px;
+            font-size: 16px;
+            width: 250px ;
+        }
+        .text-font{
+            font-size: 16px;
+        }
+    </style>
+    <link type="text/css" href="../../css/style.css" rel="stylesheet">
+    <script type="text/javascript" src="../../js/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../plugins/DataTables-1.10.12/media/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../../js/common/datatable_util.js"></script>
+    <script type="text/javascript" src="../../js/common/common.js"></script>
+    <script type="text/javascript" src="../../js/common/popup.js"></script>
+    <script type="text/javascript" src="../../js/order/order_redistribution.js" ></script>
+    <script type="text/javascript" src="../../plugins/select2/select2.min.js"></script>
+</head>
+<body>
+    <div class="container" style="padding-top: 50px;">
+        <div class="row tabs">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-9">
+                <div class="btn-group" role="group">
+                    <a type="button" href="#order_one" class="btn selected"><span class="text-font">按订单号重新分配</span></a>
+                    <a type="button" href="#order_more" class="btn btn-default"><span class="text-font">按指定人重新分配</span></a>
+                </div>
+            </div>
+        </div>
+        <div id="order_one" style="padding-top: 177px;">
+            <div id="order_one_first" class="row first">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-9">
+                    <form class="form-inline" role="form" id="form_one">
+                        <div class="form-group">
+                            <input id="orderNo" type="text" class="form-control" placeholder="请输入订单号">
+                        </div>
+                        <button id="order_one_next" type="button" class="btn btn-warning">下一步</button>
+                    </form>
+                </div>
+            </div>
+            <div id="order_one_form" class="last none">
+                <form class="form-horizontal" role="form" id="form_two">
+                    <div class="form-group">
+                        <span class="col-sm-3" style="margin-right: -65px;"></span>
+                        <span class="col-sm-2 text-font" style="text-align: right;">订单号：</span>
+                        <span class="text-font orderNoText"></span>
+                        <a style="padding-left: 10px;" class="text-font modify" href="javascript:;">修改</a>
+                    </div>
+                    <div class="form-group">
+                        <span class="col-sm-3" style="margin-right: -65px;"></span>
+                        <span class="col-sm-2 text-font" style="text-align: right;">当前指定人：</span>
+                        <span class="text-font operatorText"></span>
+                    </div>
+                    <div class="form-group">
+                        <span class="col-sm-3" style="margin-right: -65px;"></span>
+                        <span class="col-sm-2 text-font" style="text-align: right;height: 35px;line-height: 35px;">新指定人：</span>
+                        <select class="form-control operatorList">
+                            <option value="">请选择</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <span class="col-sm-5" style="margin-right: -65px;"></span>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-warning submit" style="width: 100px;">确定</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="order_more" style="padding-top: 10px;display: none;margin-top:50px;">
+            <div id="order_more_first" class="row first">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-9">
+                    <form class="form-inline" role="form" id="form_three">
+                        <p class="help-block text-font">请选择订单当前指定人</p>
+                        <div class="form-group">
+                            <select class="form-control oldOperatorList" style="width: 221px;">
+                                <option value="">请选择</option>
+                            </select>
+                        </div>
+                        <button id="order_more_next" type="button" class="btn btn-warning">下一步</button>
+                    </form>
+                </div>
+            </div>
+            <div id="order_more_form" class="last none">
+                <form class="form-horizontal" role="form" id="form_four">
+                    <div class="form-group">
+                        <span class="left" style="margin-right: -65px;"></span>
+                        <span class="left text-font">当前指定人：</span>
+                        <span class="text-font operatorText"></span>
+                        <input type="hidden" id="oldOperatorId" name="oldOperatorId">
+                        <a style="padding-left: 10px;" class="text-font modify" href="javascript:;">修改</a>
+                    </div>
+                    <div class="form-group">
+                        <span class="left" style="margin-right: -65px;"></span>
+                        <span class="left text-font">分配方式：</span>
+                        <div class="radio">
+                            <label>
+                                <input class="inputradio" type="radio" name="distributionMethod" id="optionsRadios0" value="0">选择指定数据分配
+                            </label>
+                            <div id="dataTable" style="margin-left: 20px">
+                                <span>&nbsp;</span>
+                                <table class="table table-bordered table-hover" id="redistribution_table">
+                                </table>
+                                <div class="customer-pagination">
+                                    <ul class="pagination"></ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input class="inputradio" type="radio" name="distributionMethod" id="optionsRadios1" value="1">全部分配给新跟进人
+                            </label>
+                        </div>
+                        <!--<div class="radio">-->
+                        <!--<label>-->
+                        <!--<input type="radio" name="distributionMethod" id="optionsRadios2" value="2">全部随机分配(包含之前跟进人)-->
+                        <!--</label>-->
+                        <!--</div>-->
+                        <div class="radio">
+                            <label>
+                                <input class="inputradio" type="radio" name="distributionMethod" id="optionsRadios2" value="2">全部随机分配(包含之前跟进人)
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input class="inputradio" type="radio" name="distributionMethod" id="optionsRadios3" value="3">全部随机分配(不包含之前跟进人)
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group newOperatorRow">
+                        <span class="col-sm-3" style="margin-right: -65px;"></span>
+                        <span class="col-sm-2 text-font" style="text-align: right;height: 35px;line-height: 35px;">新指定人：</span>
+                        <select class="form-control operatorList">
+                            <option value="">请选择</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <span class="col-sm-5" style="margin-right: -65px;"></span>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-warning submit" style="width: 100px;">确定</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

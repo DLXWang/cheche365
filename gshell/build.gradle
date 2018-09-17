@@ -1,0 +1,30 @@
+/**
+ +----------------+
+ | Build Settings |
+ +----------------+
+ */
+configurations {
+    springBoot {
+        extendsFrom runtime
+    }
+}
+
+dependencies {
+
+
+    //cheche365
+    compile "com.cheche365.parser:cheche365-parser-core:$cheche365_parser_version",
+        "com.cheche365.common:cheche365-common-business:$cheche365_common_business_version"
+    testCompile "com.cheche365.test:cheche365-test-core:$cheche365_test_version"
+
+    compile "com.cheche365.common:cheche365-common-decaptcha:$cheche365_common_version"
+
+    compile 'org.apache.httpcomponents:httpmime:4.5.3'
+
+    testCompile "org.springframework.boot:spring-boot-starter-test:$spring_boot_starter_version"
+    // Spock Framework
+    testRuntime("org.spockframework:spock-spring:$spockframework_version") {
+        exclude group: 'org.codehaus.groovy', module: 'groovy-all'
+    }
+
+}

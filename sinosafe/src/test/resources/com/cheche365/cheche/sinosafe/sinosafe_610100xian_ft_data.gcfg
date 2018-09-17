@@ -1,0 +1,112 @@
+package com.cheche365.cheche.sinosafe
+//this is 西安
+
+testData = [
+
+    [
+        500001,
+        '',
+        '渝F67D50',
+        'LSVNV2182E2153138',
+        'D32252',
+        '易旭',
+        '210522197902100518',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'大众汽车SVW7167BMD轿车',
+                        supplementInfo : [
+                            autoModel: 'LYD1063SHD',
+                            commercialStartDate : '2018-08-22',
+                            compulsoryStartDate : '2018-08-22',
+                        ]
+                    ],
+                    enrollDate:'2014-09-22'
+                ]
+            ]
+        ],
+    ],
+    [
+        610101,
+        '',
+        '*-*',
+        'LSVCN6A46DN079148',
+        '448743',
+        '杜少新',
+        '210522197902100518',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'大众汽车SVW71410JR轿',
+                        supplementInfo : [
+                            autoModel: 'PSD1095SHD',
+                            commercialStartDate : '2018-06-22',
+                            compulsoryStartDate : '2018-06-22',
+                        ]
+                    ],
+                    enrollDate:'2013-06-03'
+                ]
+            ]
+        ]
+        ],
+
+    [
+        500002,
+        '',
+        '渝CFP668',
+        'LSGNB83L3HA008513',
+        '161805723',
+        '王勤',
+        '500384198701050026',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'凯迪拉克SGM6480NAX1多用途乘用车',
+                        supplementInfo : [
+                            autoModel: 'KDD3059SHT',
+                            commercialStartDate : '2018-05-22',
+                            compulsoryStartDate : '2018-05-22',
+                        ]
+                    ],
+                    enrollDate:'2016-07-15'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        500003,
+        '',
+        '*-*',
+        'LC0C14DF4J0060807',
+        '918049310',
+        '王勤',
+        '500384198701050026',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'凯迪拉克SGM6480NAX1多用途乘用车',
+                        supplementInfo : [
+                            autoModel: 'KDD3059SHT',
+                            commercialStartDate : '2018-05-05',
+                            compulsoryStartDate : '2018-05-05',
+                        ]
+                    ],
+                    enrollDate:'2016-07-15'
+                ]
+            ]
+        ],
+    ],
+]

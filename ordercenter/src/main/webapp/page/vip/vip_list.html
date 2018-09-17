@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>大客户列表</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../css/formInput.css" rel="stylesheet">
+    <link href="../../../css/style.css" rel="stylesheet">
+    <script src="../../js/jquery/jquery-1.11.2.min.js" type="text/javascript"></script>
+    <script src="../../bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../../js/common/common.js"></script>
+    <script type="text/javascript" src="../../js/common/properties.js"></script>
+    <script type="text/javascript" src="../../js/common/operation.js"></script>
+    <script type="text/javascript" src="../../js/vip/vip.js"></script>
+    <script type="text/javascript" src="../../js/vip/vip_list.js"></script>
+    <script type="text/javascript" src="../../My97DatePicker/WdatePicker.js"></script>
+</head>
+<body>
+<div id="top_div" class="top-search">
+    <div class="row">
+        <div class="col-sm-8"></div>
+        <div class="col-sm-4 text-right">
+            <div class="input-group">
+                <input type="text" class="form-control" id="keyword" placeholder="根据名称和编号进行搜索..."/>
+                <span class="input-group-btn">
+                    <button id="searchBtn" class="btn btn-default" type="button">搜索</button>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="count_div" class="detail-together" style="padding-left: 10%;">
+    <label>总共：</label>
+    <span id="totalCount" class="detail-all"></span>大客户
+</div>
+<div id="show_div" class="table-responsive">
+    <div class="row">
+        <div class="col-sm-12" id="orderTb" style="padding-left: 10%; text-align: center; width: 85%;">
+            <table class="table table-bordered" id="vip_tab">
+                <thead>
+                <tr class="active">
+                    <th class="text-center">名称</th>
+                    <th class="text-center">编号</th>
+                    <th class="text-center">起始日期</th>
+                    <th class="text-center">到期日期</th>
+                    <th class="text-center">创建时间</th>
+                    <th class="text-center">最后操作时间</th>
+                    <th class="text-center">操作人</th>
+                    <th class="text-center">备注</th>
+                    <th class="text-center"></th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <div class="prov-next">
+                <div class="row" style="float: right;padding-right: 50px;">
+                    <div id="page_up_down" class="col-sm-12" style="display: none;"><a id="pageUp" href="javascript:;" style="padding-right: 30px;">上一页</a><a id="pageDown" href="javascript:;">下一页</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="edit_div" class="container tab_body none">
+    <form class="business_form" id="vipInputForm">
+        <fieldset>
+            <legend>&nbsp;</legend>
+            <table class="table table-bordered">
+                <tbody>
+                <tr>
+                    <td  class="tab_td"><label class="control-label">名称：</label></td>
+                    <td>
+                        <div class="controls">
+                            <input type="text" class="text_input" required id="name" name="name">&nbsp;&nbsp;
+                        </div>
+                    </td>
+                    <td  class="tab_td"><label class="control-label">编号：</label></td>
+                    <td>
+                        <div class="controls">
+                            <input type="text" class="text_input" id="code" name="code">&nbsp;&nbsp;
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td  class="tab_td"><label class="control-label">起始日期：</label></td>
+                    <td>
+                        <div class="controls">
+                            <input type="text" style="height: 32px;" validation class="text_input Wdate" id="startDate" name="startDate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true});">
+                        </div>
+                    </td>
+                    <td  class="tab_td"><label class="control-label">到期日期：</label></td>
+                    <td>
+                        <div class="controls">
+                            <input type="text" style="height: 32px;" validation class="text_input Wdate" id="endDate" name="endDate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true});">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td  class="tab_td"><label class="control-label">备注：</label></td>
+                    <td colspan="3">
+                        <div class="controls">
+                            <input type="text" class="text_input" id="comment" name="comment">
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <input type="hidden" id="id" name="id" value="">
+            <div class="row">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4">
+                    <div class="btn-group">
+                        <button id="update_button" type="button" class="btn btn-primary">更新</button>
+                    </div>
+                    <div class="btn-group" style="padding-left: 15px;">
+                        <button id="cancel_button" type="button" class="btn btn-default">取消</button>
+                    </div>
+                    <div class="btn-group" style="padding-left: 15px;">
+                        <button id="delete_button" type="button" class="btn btn-default">删除</button>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+</body>
+</html>

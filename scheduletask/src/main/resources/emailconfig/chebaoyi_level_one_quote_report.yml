@@ -1,0 +1,19 @@
+title: ${currentDate}车保易指定账号报价情况报表
+template: /velocity/commonCheckAttachment.vm
+tos: [zhangtc@cheche365.com,liuzz@cheche365.com,liuyw@cheche365.com]
+production_tos: [hubo@cheche365.com]
+excelAttachmentConfig:
+        fileName: "${currentDate}车保易指定账号报价情况报表.xlsx"
+        sheets:
+        - sheetName: 指定账号报价信息
+          columns:
+              - columnType: dataInputAmount
+                column:
+                  代理人手机号: mobile
+                  代理人姓名: agentName
+                  销售总监姓名: sellDirectorName
+                  车主姓名: ownerName
+                  车牌号: licensePlateNo
+                  保险公司: insuranceCompanyName
+                  报价地区: areaName
+                  报价时间: quoteTime

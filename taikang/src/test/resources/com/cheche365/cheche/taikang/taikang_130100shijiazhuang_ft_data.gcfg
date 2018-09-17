@@ -1,0 +1,86 @@
+package com.cheche365.cheche.taikang
+//this is
+
+
+testData = [
+    [
+        213440,
+        '',
+        '冀AV865Y',
+        'LS5A3ABE6CB119767',
+        '1320275',
+        '卿小杰',
+        '412723198108057322',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'DC7126TSAB',
+                        supplementInfo : [
+                            autoModel : 'BZAARD0059',
+                            commercialStartDate : '2018-07-20',
+                            compulsoryStartDate : '2018-07-20',
+                            verificationMobile : '18652095075'
+                        ]
+                    ],
+                    enrollDate:'2017-12-23'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        213450,
+        '',
+        '冀AJ695T',
+        'LS5A3ABE6CB119767',
+        'C4LC06162',
+        '佟云伟',
+        '110226198901273329',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code: '长安SC7162J',
+                        supplementInfo  : [
+                            autoModel: 'YYD1108CAL'
+                        ]
+                    ],
+                    enrollDate: '2013-01-15'
+                ],
+                applicant: [
+                    mobile: '18810500574'
+                ]
+            ]
+        ],
+    ],
+
+[
+            213460,
+            '套餐建议',
+            '冀A42402',
+            'LFV2B21K4A3200208',
+            '018182',
+            '李刚',
+            '130104195808171383',
+            null,
+            null,
+            [
+                quoteRecord: [
+                    auto: [
+                        autoType  : [
+                            code: '高尔夫FV7144TFATG轿车',
+                            supplementInfo  : [
+                                autoModel: 'BSQDZHUA0114'
+                            ]
+                        ],
+                        enrollDate: '2010-07-06'
+                    ]
+                ]
+            ],
+        ],
+]

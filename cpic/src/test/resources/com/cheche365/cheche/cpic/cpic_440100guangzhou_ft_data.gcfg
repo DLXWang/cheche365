@@ -1,0 +1,53 @@
+package com.cheche365.cheche.cpic
+
+/**
+ * 广州
+ */
+
+testDataParams = [
+
+    //{value=DZAAKD0099, text=大众汽车SVW71411BR 201012 5座 92900元}
+    0 : [
+        additionalParams: [
+            quoteRecord: [
+                auto: [
+                    autoType: [
+                        supplementInfo: [
+                            autoModel: 'DZAAKD0099'
+                        ]
+                    ]
+                ]
+            ]
+        ],
+         selectedVehicleOption : [
+             meta: [
+                 vehicleOptionInfo: [
+                    brand         : '东风雪铁龙',
+                    family        : '世嘉',
+                    gearbox       : '手自一体',
+                    exhaustScale  : '1.6L',
+                    model         : '东风雪铁龙DC7165DTAA轿车',
+                    productionDate: '2011款 冠军版',
+                    seats         : '5',
+                    newPrice      : '104000',
+                 ]
+             ]
+         ],
+    ],
+
+    //{value=DZAAKD0099, text=大众汽车SVW71411BR 201012 5座 92900元}
+    10 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZAAKD0099']]]]]],
+
+    //{value=DZAAKD0099, text=大众汽车SVW71411BR 201012 5座 92900元}
+    20 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZAAKD0099']]]]]],
+
+    //{value=DZAAKD0099, text=大众汽车SVW71411BR 201012 5座 92900元}
+    30 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZAAKD0099']]]]]],
+
+    //{value=DZAAKD0099, text=大众汽车SVW71411BR 201012 5座 92900元}
+    40 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZAAKD0099']]]]]],
+
+    //{value=DZAAKD0099, text=大众汽车SVW71411BR 201012 5座 92900元}
+    50 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZAAKD0099']]]]]],
+
+]

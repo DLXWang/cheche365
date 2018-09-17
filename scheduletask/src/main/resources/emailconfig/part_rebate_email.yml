@@ -1,0 +1,16 @@
+#部分退款——数据报表
+title: ${timePeriod}部分退款报表
+template: /velocity/partRebate.vm
+tos: [zhangpc@cheche365.com,guanwy@cheche365.com,baihua@cheche365.com]
+production_tos: [zhouqh@cheche365.com,weiou@cheche365.com,liyq@cheche365.com]
+excelAttachmentConfig:
+        fileName: "${timePeriod}部分退款报表.xlsx"
+        sheets:
+        - sheetName: 部分退款
+          columns:
+              - columnType: dataInputAmount
+                column:
+                    部分退款ping++订单号: chargeOrderNo
+                    部分退款我方订单号: orderNo
+                    部分退款金额: amount
+                    部分退款状态: orderStatus

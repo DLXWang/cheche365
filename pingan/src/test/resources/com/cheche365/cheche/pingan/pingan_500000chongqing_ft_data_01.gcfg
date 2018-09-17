@@ -1,0 +1,9 @@
+package com.cheche365.cheche.pingan
+//this is 衢州
+
+testDataParams = [
+
+    //{value=402880882e74128c012e7a8e783106ee, text=吉利美日MR7184E4轿车 2012款 豪华型 手动档 5座 76800元}
+    10090 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '402880882e74128c012e7a8e783106ee']]]]]],
+
+]

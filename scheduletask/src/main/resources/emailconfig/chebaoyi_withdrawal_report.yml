@@ -1,0 +1,24 @@
+#车保易提现信息统计报表
+title: 车保易提现信息统计报表
+template: /velocity/detailInFile.vm
+tos: [zhangtc@cheche365.com,guanwy@cheche365.com,liuyw@cheche365.com,huyp@cheche365.com,liuzz@cheche365.com]
+production_tos: [liyq@cheche365.com,weiou@cheche365.com]
+excelAttachmentConfig:
+        fileName: "${currentDate}车保易提现信息统计.xlsx"
+        sheets:
+          - sheetName: 汇总统计
+            columns:
+                - columnType: collectInfo
+                  column:
+                        批次号: batchNo
+                        总笔数: sumCount
+                        总金额(元): sumAmount
+          - sheetName: 详细信息
+            columns:
+                - columnType: detailInfo
+                  column:
+                        商户订单号: merchantSeqNo
+                        收款账号: accountNo
+                        收款户名: accountName
+                        身份证号: identity
+                        打款金额: transferAmount

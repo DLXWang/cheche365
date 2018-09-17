@@ -1,0 +1,30 @@
+apply from: rootProject.file('gradle/springboot_classpath_jar_settings.gradle')
+apply from: "${rootProject.projectDir}/gradle/springboot_web_settings.gradle"
+
+/**
+ +----------------+
+ | Build Settings |
+ +----------------+
+ */
+configurations {
+    springBoot {
+        extendsFrom runtime
+    }
+}
+
+dependencies {
+
+    compile project(':entity-core'),
+            project(':cpic-uk')
+
+    runtime project(':parser-ms')
+
+    compile "org.codehaus.groovy:groovy-all:$groovy_version:indy"
+
+    compile "org.springframework:spring-context:$spring_version"
+
+}
+
+springBoot {
+    mainClass = 'com.cheche365.cheche.parser.ms.app.ParserMicroServiceApplicationLauncher'
+}

@@ -1,0 +1,4 @@
+title: 任务执行失败
+template: /velocity/taskErrorMsg.vm
+tos: [zhangtc@cheche365.com,liuyw@cheche365.com]
+production_tos: [zhangtc@cheche365.com,liuyw@cheche365.com]

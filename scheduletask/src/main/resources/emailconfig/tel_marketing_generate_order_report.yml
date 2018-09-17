@@ -1,0 +1,29 @@
+#电销拨打数据——出单报表
+title: ${timePeriod}出单报表
+template: /velocity/completedOrder.vm
+tos: [liuyw@cheche365.com,zhangtc@cheche365.com,baihua@cheche365.com]
+production_tos: [majing@cheche365.com,aodm@cheche365.com,liuhy@cheche365.com,liuhy@cheche365.com,lism@cheche3665.com]
+excelAttachmentConfig:
+        fileName: "${timePeriod}出单报表.xlsx"
+        sheets:
+        - sheetName: 出单报表
+          columns:
+              - columnType: dataSource
+                column:
+                    出单日期: issueTime
+                    渠道: channel
+                    活动: source
+                    员工姓名: linkMan
+                    手机号: mobile
+                    首次拨打日期: operateTime
+                    下单日期: orderTime
+                    车牌号: licenseNo
+                    订单号: orderNo
+                    保险公司: insuranceCompany
+                    城市: area
+                    应付金额: payableAmount
+                    实付金额: paidAmount
+                    交强: compulsoryPremium
+                    车船税: autoTax
+                    商业险: commecialPremium
+                    优惠金额: paymentDiscountAmount

@@ -1,0 +1,31 @@
+apply from: rootProject.file('gradle/springboot_common_settings.gradle')
+
+apply {
+    plugin 'application'
+}
+
+/**
+ +----------------+
+ | Build Settings |
+ +----------------+
+ */
+configurations {
+    springBoot {
+        extendsFrom runtime
+    }
+}
+
+dependencies {
+    runtime "org.springframework.boot:spring-boot-starter-jetty:$spring_boot_starter_version"
+}
+
+dependencyManagement {
+    dependencies {
+        dependencySet(group: 'org.springframework.boot', version: spring_boot_starter_version) {
+            entry('spring-boot-starter-jdbc') {
+                exclude 'org.apache.tomcat:tomcat-jdbc'
+            }
+        }
+    }
+}
+

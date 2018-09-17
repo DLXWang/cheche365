@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>意向客户</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link type="text/css" href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap-multiselect.css">
+    <link type="text/css" href="../../css/common.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/dataTables.bootstrap.min.css"
+          rel="stylesheet">
+    <link type="text/css" href="../../plugins/select2/select2.min.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/jquery.dataTables.min.css" rel="stylesheet">
+    <script type="text/javascript" src="../../js/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap-multiselect.js"></script>
+    <script type="text/javascript" src="../../plugins/jqPaginator-1.2.0/jqPaginator.min.js"></script>
+    <script type="text/javascript" src="../../plugins/jquery-validation-1.14.0/jquery.validate.js"></script>
+    <script type="text/javascript" src="../../plugins/select2/select2.min.js"></script>
+</head>
+<body>
+<div class="top-search">
+    <div class="row">
+        <div class="col-sm-8 form-inline">
+            <div class="input-group">
+                <input type="text" class="form-control" id="mobilePhone" placeholder="手机号"/>
+                <span class="input-group-btn">
+                    <button id="searchBtn" class="btn btn-danger" type="button">搜索</button>
+                </span>
+                <div class="col-sm-6 text-right">
+                     <span class="btn-group ">
+                         <button id="callBtn" class="btn btn-success glyphicon glyphicon-earphone">呼叫</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="firstPage">
+    <div>
+        <div class="col-sm-12">
+            <p></p>
+        </div>
+        <div class="text-left" style="padding-left:15px">
+            <label><font size="3px">优先处理：</font></label><span>15分钟内需要联系的，按照时间顺序从上到下排序</span>
+        </div>
+    </div>
+    <div id="priority_div" class="table-responsive"><!--优先列表-->
+        <div class="col-sm-12">
+            <table class="table table-bordered table-hover" id="priority_list_tab">
+            </table>
+        </div>
+    </div>
+    <div style="margin-top: 50px"></div>
+    <div>
+        <div class="col-sm-12">
+            <p></p>
+        </div>
+        <div class="text-left" style="padding-left:15px">
+            <label><font size="3px">今天处理：</font></label><span>24小时内需要联系的，按照时间顺序从上到下排序</span>
+        </div>
+    </div>
+    <div id="today_div" class="table-responsive"><!--今天处理列表-->
+        <div class="col-sm-12">
+            <table class="table table-bordered table-hover" id="today_list_tab">
+            </table>
+        </div>
+    </div>
+    <div style="margin-top: 50px"></div>
+    <div class="top-search">
+        <div class="row" style="padding-bottom:15px">
+            <label><font size="3px">&nbsp;&nbsp;正常处理：</font></label>
+
+            <div class="col-sm-12 form-inline">
+                <select id="channelSel" name="channelIds" class="form-control text-input-150" multiple="multiple">
+                    <option value="0">站内</option>
+                </select>
+
+                <select id="searchType" class="form-control" style="width: 180px;font-size: 14px">
+                    <option value="1">按数据详细类型筛选</option>
+                    <option value="2">按数据高低级别筛选</option>
+                </select>
+
+                <div id="type-sel" style="display: inline;">
+                    <select id="typeSel" name="telTypes" class="form-control text-input-150" multiple="multiple">
+                    </select>
+                </div>
+                <div id="level-sel" class="form-inline" style="display: none;">
+                    <select id="levelSel" name="typeIds" class="form-control text-input-150" style="font-size: 14px">
+                        <option value="">-请选择-</option>
+                        <option value="A">A类数据</option>
+                        <option value="B">B类数据</option>
+                        <option value="C">C类数据</option>
+                        <option value="D">D类数据</option>
+                    </select>
+                </div>
+
+                <input type="text" class="form-control text-input-50 none form-inline" id="expireTime"
+                       placeholder="车险到期日止"
+                       style="display:none;width: 175px;background:#fff url(../../My97DatePicker/skin/datePicker.gif) no-repeat right;"
+                       onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true});">
+                <!--<input type="checkbox" id="areaType" name="areaType" value="1"> <label>开通城市</label>&nbsp;&nbsp;-->
+            </div>
+            <div class="col-sm-12 form-inline" style="margin-top: 20px;margin-left: 0px">
+                <div class="btn-group area " style="">
+                    <select id="areaSel" class="form-control text-input-150 none" multiple="multiple">
+                    </select>
+                </div>
+
+                <label>&nbsp;&nbsp;来源创建时间：</label>
+                <input type="text" class="form-control text-input-50" id="startTime" placeholder="起始时间"
+                       style="width: 165px;background:#fff url(../../My97DatePicker/skin/datePicker.gif) no-repeat right;"
+                       onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true});">
+                <span style="margin: 0 10px;">至</span>
+                <input type="text" class="form-control text-input-50" id="endTime" placeholder="截止时间"
+                       style="width: 165px;background:#fff url(../../My97DatePicker/skin/datePicker.gif) no-repeat right;"
+                       onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true});">
+
+                <button id="paramSearch" type="button" class="form-control btn-warning"
+                        style="width: 100px;margin-left: 30px">搜索
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="normal_div" class="table-responsive"><!--普通列表-->
+        <div class="col-sm-12">
+            <table class="table table-bordered table-hover" id="normal_list_tab">
+            </table>
+        </div>
+    </div>
+</div>
+<div id="lastPage" class="none col-sm-12" style="display: none;">
+    <div class="col-sm-12"><p></p></div>
+    <div id="search_count_div" style="padding-left:10px" class="form-group">
+        总共找到<span id="mobileCount" class="detail-all"></span>条<span id="mobileNo" class="detail-all"></span>结果
+    </div>
+    <div class="col-sm-12">
+        <table class="table table-bordered table-hover" id="search_list_tab">
+            <thead>
+            <tr class="active">
+                <th class="text-center">电话</th>
+                <th class="text-center">姓名</th>
+                <th class="text-center">车险到期日</th>
+                <th class="text-center">来源</th>
+                <th class="text-center">处理结果</th>
+                <th class="text-center">指定跟进人</th>
+                <th class="text-center">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <div id="customer_pagination_idv" class="customer-pagination">
+            <ul id="pagination_ul" class="pagination"></ul>
+        </div>
+    </div>
+</div>
+<div id="all_search_list_div"></div>
+</body>
+<script type="text/javascript" src="../../js/common/common.js"></script>
+<script type="text/javascript" src="../../js/common/popup.js"></script>
+<script type="text/javascript" src="../../My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="../../plugins/DataTables-1.10.12/media/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../../js/common/datatable_util.js"></script>
+<script type="text/javascript" src="../../js/telMarketingCenter/purpose_customer_new.js"></script>
+<script type="text/javascript" src="../../js/telMarketingCenter/search_list.js"></script>
+<script type="text/javascript" src="../../js/jquery/jquery.cookie.js"></script>
+<script type="text/javascript" src="../../js/common/cookie.js"></script>
+<script type="text/javascript" src="../../js/common/application_log.js"></script>
+</html>

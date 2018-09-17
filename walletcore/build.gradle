@@ -1,0 +1,23 @@
+/**
+ +----------------+
+ | Build Settings |
+ +----------------+
+ */
+configurations {
+    springBoot {
+        extendsFrom runtime
+    }
+}
+
+
+dependencies {
+
+    compile     project(':core'),
+                project(':soopay')
+
+    compile     "org.jasypt:jasypt:$jasypt_version"
+
+    testRuntime("org.spockframework:spock-spring:$spockframework_version") {
+        exclude group: 'org.codehaus.groovy', module: 'groovy-all'
+    }
+}

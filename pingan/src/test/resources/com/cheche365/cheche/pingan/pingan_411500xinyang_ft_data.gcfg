@@ -1,0 +1,54 @@
+package com.cheche365.cheche.pingan
+
+/**
+ * 河南信阳
+ */
+
+testDataParams = [
+
+    //{value=4028b2883ed0db81013ee8a5ac740ba4, text=大众汽车SVW6451TED多用途乘用车 2013款 四驱豪华型 手自一体 5座 274800元}
+    0  : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028b2883ed0db81013ee8a5ac740ba4']]]]]],
+
+    //{value=4028b288444f4391014466fb3aa40e36, text=长安SC6469AH4多用途乘用车 2014款 领先型 手动档 5座 113800元}
+    20 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028b288444f4391014466fb3aa40e36']]]]]],
+
+    //{value=4028b2883434d124013446039b0218ed, text=开瑞SQR1026普通货车 0.455吨 载货汽车 手动档 5座 36000元}
+    30 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028b2883434d124013446039b0218ed']]]]]],
+
+    //{value=4028808827f100770127f15905ca0124, text=江淮HFC5045XXYK5T厢式运输车 1.560吨 厢式运输车 手动档 0座 58000元}
+    40 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028808827f100770127f15905ca0124']]]]]],
+
+    //{value=4028b2b6477c7b2301478a1ccdc10af7, text=宝骏LZW6462ABF多用途乘用车 2014款 豪华型 手动档 0座 73800元}
+    60 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028b2b6477c7b2301478a1ccdc10af7']]]]]],
+
+    //{value=402880882ce35a1f012d079a12531840, text=长安SC1026S4N4载货汽车 0.490吨 载货汽车 手动档 5座 35000元}
+    80 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '402880882ce35a1f012d079a12531840']]]]]],
+
+    //{value=4028b28839c421fc0139e6b966b524af, text=五菱LZW6407BAF客车 2012款 手动档 0座 40000元}
+    90 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028b28839c421fc0139e6b966b524af']]]]]],
+
+    //{value=40288088222ac3a501222b3a9aeb0105, text=跃进NJ5041XXY-DBFZ1厢式运输车 1.495吨 厢式运输车 手动档 3座 51000元}
+    130: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '40288088222ac3a501222b3a9aeb0105']]]]]],
+
+    //{value=4028b2883d3f5a8b013d5748cbfd0c45, text=大众FV7160BBMGG轿车 2013款 时尚型 手动档 5座 73300元}
+    140: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028b2883d3f5a8b013d5748cbfd0c45']]]]]],
+
+    //{value=4028b28838b1bcb70138d5f3594c29b7, text=五菱LZW6450PF客车 2012款 手动档 0座 46000元},
+    150: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028b28838b1bcb70138d5f3594c29b7']]]]]],
+
+    //{value=4028b2883b166e0f013b2107a2211090, text=吉利美日MR7152K03轿车 2012款 舒适型 手动档 5座 65800元}
+    160: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028b2883b166e0f013b2107a2211090']]]]]],
+
+    //{value=I0000000000000000510000000000168, text=五菱LZW6376C客车 2006款 高配版 手动档 0座 43000元}
+    180: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'I0000000000000000510000000000168']]]]]],
+
+    //{value=4028808829c963ce0129cee5062e08c7, text=丰田TV7164GD轿车 2010款 经典版 自动档 5座 95800元}
+    320: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028808829c963ce0129cee5062e08c7']]]]]],
+
+    //{value=4028b28839c421fc0139e6b966b524af, text=五菱LZW6407BAF客车 2012款 手动档 0座 40000元}
+    330: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028b28839c421fc0139e6b966b524af']]]]]],
+
+    //{value=2fc9e04ec057ffc100000000d1f5f6c5, text=别克SGM7168MTA轿车 2008款 LX 手动档 5座 87800元}
+    340: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '2fc9e04ec057ffc100000000d1f5f6c5']]]]]],
+
+]

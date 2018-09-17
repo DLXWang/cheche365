@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>4s店导入</title>
+    <link type="text/css" href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="../../css/formInput.css" rel="stylesheet">
+    <link type="text/css" href="../../css/style.css" rel="stylesheet">
+    <script type="text/javascript" src="../../js/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery/jquery.form.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/common/common.js"></script>
+    <script type="text/javascript" src="../../js/autoShop/autoShop_upload.js"></script>
+</head>
+<body>
+<div class="container" style="padding-top: 180px;">
+<!--    <div class="row">
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-4" style="padding-bottom: 10px;">
+            <a href="/orderCenter/autoShop/downLoad">下载导入模板</a>
+        </div>
+    </div>-->
+    <form id="uploadForm" class="form-horizontal" enctype="multipart/form-data">
+        <div class="form-group">
+            <label class="col-sm-4 control-label">请选择上传文件</label>
+            <div class="col-sm-5">
+                <input id="inputFile" type="file" name="file" style="display: none;" accept=".xls, .xlsx">
+                <div class="input-append">
+                    <input id="fileText" type="text" class="text_input" readonly>
+                    <a id="chooseFileBtn" class="btn btn-primary">请选择</a>
+                </div>
+            </div>
+        </div>
+        <div class="form-group" style="padding-top: 20px;">
+            <label class="col-sm-4 control-label"></label>
+            <div class="col-sm-4">
+                <div class="btn-group">
+                    <button id="uploadBtn" type="button" class="btn btn-primary">导入数据</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div>
+        <div class="row">
+            <label class="col-sm-2 control-label"></label>
+            <p style="padding-top: 20px;" class="text-danger col-sm-10 text-left none" id="warnMsg">数据导入成功</p>
+        </div>
+    </div>
+    <div style="padding-top: 100px;">
+        <div class="row">
+            <label class="col-sm-2 control-label"></label>
+            <label class="col-sm-4 text-left" style="margin-left: 50px;">备注：</label>
+        </div>
+        <div class="row">
+            <label class="col-sm-2 control-label"></label>
+            <p class="col-sm-4 text-left" style="margin-left: 80px;">1. 上传文件必须为excel类型的文件。</p>
+        </div>
+        <div class="row">
+            <label class="col-sm-2 control-label"></label>
+            <p class="col-sm-4 text-left" style="margin-left: 80px;">2. 请<strong><a target="_parent" href="/orderCenter/autoShop/loadTemplate" style="text-decoration:underline;"> 下载模板 </a></strong>并按照模板的格式添加新的4s店信息。</p>
+        </div>
+        <div class="row">
+            <label class="col-sm-2 control-label"></label>
+            <p class="col-sm-6 text-left" style="margin-left: 80px;">3. 数据导入过程中请不要关闭页面和刷新页面，数据导入完成后会有提示信息。</p>
+        </div>
+        <div class="row">
+            <label class="col-sm-2 control-label"></label>
+            <p class="col-sm-6 text-left" style="margin-left: 80px;">4. 不可更改模板文件中的列数，excel中格式错误的行数将不进行数据的导入。</p>
+        </div>
+        <div class="row">
+            <label class="col-sm-2 control-label"></label>
+            <p class="col-sm-6 text-left" style="margin-left: 80px;">5. 错误的数据导入失败后，再次导入时请只导入失败的数据，否则会造成数据的重复。</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

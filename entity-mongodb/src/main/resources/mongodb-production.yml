@@ -1,0 +1,9 @@
+spring:
+  data:
+    mongodb:
+      host: dds-2zedec2ce27977c41.mongodb.rds.aliyuncs.com
+      port: 3717
+      username: cheche
+      password: O88iwpSjTbq5dMnVVT4KDBoF
+      database: cheche
+

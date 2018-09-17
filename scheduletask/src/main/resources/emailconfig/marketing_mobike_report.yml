@@ -1,0 +1,15 @@
+#摩拜活动报表
+title: "摩拜活动数据-${prevDate}"
+tos: [zhangtc@cheche365.com,wangjl@cheche365.com]
+production_tos: [xietian@cheche365.com]
+template: /velocity/insuranceOrderReport.vm
+excelAttachmentConfig:
+        fileName: "${prevDate}摩拜活动数据.xlsx"
+        sheets:
+            - sheetName: sheet1
+              columns:
+                  - columnType: marketingReport
+                    column:
+                        活动名称: marketingName
+                        车牌号 : licensePlateNo
+                        手机号: mobile

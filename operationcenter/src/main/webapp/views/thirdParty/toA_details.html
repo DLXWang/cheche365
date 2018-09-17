@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>ToA渠道合作详情页</title>
+    <link rel="stylesheet" href="../../libs/bootstrap-3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/popup.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../libs/uploadify-3.2.1/css/uploadify.css">
+    <link rel="stylesheet" href="../../libs/bootstrap-3.3.4/css/bootstrap-multiselect.css">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/dataTables.bootstrap.min.css">
+    <link type="text/css" href="../../libs/bootstrap-3.3.4/css/bootstrap-switch.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../libs/layer/theme/default/layer.css">
+    <style type="text/css">
+        div{
+            background-color:white;
+        }
+        .btn_line{
+            border-bottom: 2px solid #ccc;
+            margin-bottom: 10px;
+        }
+        .btn_blue_line{
+            border-bottom: 20px solid #F0F2F5;
+        }
+        .btn_blue_below{
+            border-bottom: 50px solid #F0F2F5;
+        }
+        .bgcolor_blue{
+            background-color:#F0F2F5;
+        }
+        .row{
+              padding-bottom: 10px;
+        }
+        .container_add{
+            padding-top: 10px;
+        }
+        .sub_title{
+            padding-top: 5px;
+            padding-bottom: 15px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .content_middle{
+            width: 1170px;
+            margin:auto;
+        }
+    </style>
+</head>
+<body bgcolor="#bce8f1">
+<div class="btn_blue_line">
+    <div class="title btn_line container">
+        <h2 class="text-center">第三方渠道合作详情</h2>
+    </div>
+    <div class="container">
+        <div class="row tips">
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <span class="sub_title"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">合作商：<span id="partnerName" name="partner"></span></div>
+                    <div class="col-sm-6">第三方渠道英文简称：<span id="channelCode" name="channelCode"></span></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">创建时间：<span id="createdTime" name="createdTime"></span></div>
+                    <div class="col-sm-6">对接车车：<span id="platform" name="platform"></span></div>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-12 pull-right">
+                        <div class="pull-right">
+                            <a class="btn btn-default" onclick="channelDetail.downloadUrl()" >下载配置参数</a>
+                            <button id="updateChannel" class="btn btn-danger">修改配置</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 pull-right">
+                        <div class="pull-right">
+                            <div class="switch">
+                                <input type="checkbox" id="disabledChannel" name="disabledChannel">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="nav-tabs-row">
+            <ul class="nav nav-tabs" id="myTab">
+                <li class="active"><a href="#config_info">合作配置内容</a></li>
+                <!-- <li><a href="#operate_log">配置变更操作日志</a></li> -->
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+<div class="btn_blue_below bgcolor_blue">
+    <!-- 合作配置内容start -->
+    <div id="config_info" class="content_middle">
+        <div class="container container_add btn_blue_line">
+            <div class="row tips btn_line">
+                <div class="col-sm-12">
+                    <span class="sub_title">通用功能配置</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">拍照报价功能：<span id="supportPhoto" name="supportPhoto"></span></div>
+                <div class="col-sm-6">在线客服功能：<span id="showCustomService" name="showCustomService"></span></div>
+                <div class="col-sm-6">客服电话：<span id="serviceTel" name="serviceTel"></span></div>
+            </div>
+        </div>
+        <div class="container container_add btn_blue_line">
+            <div class="row tips btn_line">
+                <div class="col-sm-12">
+                    <span class="sub_title">落地页&报价方式配置</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">落地页：<span id="home" name="home">首页</span></div>
+                <div class="col-sm-6">报价方式：<span id="singleCompany" name="singleCompany">直投</span></div>
+            </div>
+        </div>
+        <div class="container container_add btn_blue_line">
+            <div class="row tips btn_line">
+                <div class="col-sm-12">
+                    <span class="sub_title">基本功能配置</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">是否支持三级管理：<span id="levelAgent" name="levelAgent">显示</span></div>
+            </div>
+        </div>
+        <div class="container container_add btn_blue_line">
+            <div class="row tips btn_line">
+                <div class="col-sm-12">
+                    <span class="sub_title">个人中心配置</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">我的钱包：<span id="cheWallet" name="cheWallet">显示</span></div>
+                <div class="col-sm-6">电子协议：<span id="showAgentLicense" name="showAgentLicense">显示</span></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">奖励显示：<span id="showAgentReward" name="showAgentReward">显示</span></div>
+            </div>
+        </div>
+        <div class="container container_add btn_blue_line">
+            <div class="row tips btn_line">
+                <div class="col-sm-12">
+                    <span class="sub_title">参数配置</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">Google统计位：<span id="googleTrackId" name="googleTrackId">是</span></div>
+                <div class="col-sm-6">页面底色色值：<span id="themeColor" name="themeColor">是</span></div>
+            </div>
+        </div>
+        <div class="container container_add btn_blue_line">
+            <div class="row tips btn_line">
+                <div class="col-sm-12">
+                    <span class="sub_title">后台配置</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">出单中心是否可下单：<span id="hasOrderCenter" name="hasOrderCenter">是</span></div>
+                <div class="col-sm-6">数据是否进电销：<span id="isTelemarketing" name="isTelemarketing">是</span></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">上传证件：<img id="logoImage" class="image" style="width:100px;height:100px;" alt="logo图片" ></div>
+
+            </div>
+        </div>
+        <div class="container container_add btn_blue_line">
+            <div class="row tips btn_line">
+                <div class="col-sm-12">
+                    <span class="sub_title">订单相关配置</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">是否支持订单同步：<span id="isSync" name="needSyncOrder">是</span></div>
+                <div class="col-sm-6 isSyncHide">第三方提供的同步订单的地址：<span id="syncSite" name="syncOrderUrl">是</span></div>
+            </div>
+        </div>
+        <div class="container container_add btn_blue_line">
+            <div class="row tips btn_line">
+                <div class="col-sm-12">
+                    <span class="sub_title">提供给第三方的配置项</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">签名方法：<span id="sign" name="signature">HMAC-SHA1</span></div>
+            </div>
+        </div>
+    </div>
+    <!-- 合作配置内容end -->
+
+    <!-- 配置变更操作日志start -->
+    <div class="content_middle none" id="operate_log">
+        <div class="container container_add btn_blue_line">
+            <div class="row tips btn_line">
+                <div class="col-sm-12">
+                    <span class="sub_title">操作日志</span>
+                </div>
+            </div>
+            <div class="row">
+                <table class="table table-bordered table-hover" id="log_list"></table>
+            </div>
+        </div>
+    </div>
+    <!-- 配置变更操作日志end -->
+</div>
+
+
+
+<script type="text/javascript" src="../../libs/jquery-1.11.2/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../libs/jquery-form/jquery.form.js"></script>
+<script type="text/javascript" src="../../libs/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../libs/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="../../libs/uploadify-3.2.1/js/jquery.uploadify-3.2.1.js"></script>
+<script type="text/javascript" src="../../libs/jquery-validation-1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="../../libs/bootstrap-3.3.4/js/bootstrap-multiselect.js"></script>
+<script type="text/javascript" src="../../libs/jquery-cookie-1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="../../plugins/DataTables-1.10.12/media/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../../js/common/common.js"></script>
+<script type="text/javascript" src="../../js/common/popup.js"></script>
+<script type="text/javascript" src="../../js/common/datatable_util.js"></script>
+<script type="text/javascript" src="../../js/thirdParty/toA_details.js" ></script>
+<script type="text/javascript" src="../../libs/bootstrap-3.3.4/js/bootstrap-switch.min.js"></script>
+<script type="text/javascript" src="../../libs/layer/layer.js"></script>
+<script>
+    (function ($, undefined) {
+        var id = common.getUrlParam("id")
+
+        $('#disabledChannel').bootstrapSwitch({
+            onText: '已生效',
+            offText: '已失效',
+            size: 'small',
+            onSwitchChange: function (even, status) {
+                var that = this
+                var mess = '确认禁用此第三方渠道合作内容吗？'
+                if (status) mess = '确认启用此第三方渠道合作内容吗？'
+                layer.confirm(mess, {closeBtn: 0}, function (index) {
+                    // TODO 更改失效状态
+                    $.get('/operationcenter/thirdParty/tocCooperate/chgAble', {
+                        id: id,
+                        status: status ? true : false
+                    })
+                    layer.close(index)
+                }, function () {
+                    $(that).bootstrapSwitch('state', !status, true)
+                })
+            }
+        })
+    }(window.jQuery))
+</script>
+</body>
+</html>

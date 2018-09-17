@@ -1,0 +1,11 @@
+package com.cheche365.cheche.gshell
+
+testData = [
+
+    [
+        0,
+        'CR',
+        ['file:/C:/Users/Administrator/Desktop/gshell//20170824182703.jpg', 'file:/C:/Users/Administrator/Desktop/gshell/20170824182710.jpg'],
+        [:]
+    ],
+]

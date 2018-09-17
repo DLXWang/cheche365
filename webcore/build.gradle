@@ -1,0 +1,36 @@
+/**
+ +----------------+
+ | Build Settings |
+ +----------------+
+ */
+configurations {
+    springBoot {
+        extendsFrom runtime
+    }
+}
+
+dependencies {
+    compile     project(':core'),
+                project(':external-api')
+
+    compile   ':za-sdk'
+    compile     "org.springframework:spring-webmvc:$spring_version",
+                "org.springframework.mobile:spring-mobile-device:$spring_mobile_device_version",
+                "org.springframework.integration:spring-integration-redis:$spring_integration_version",
+                "org.springframework.integration:spring-integration-java-dsl:$spring_integration_java_dsl_version"
+
+    //cheche365
+    compile     "com.cheche365.common:cheche365-common-signature:$cheche365_common_version",
+                "com.cheche365.spring:cheche365-spring-runtime:$cheche365_spring_version"
+    runtime     "org.springframework.boot:spring-boot-starter-cache:$spring_boot_starter_version"
+    testCompile "com.cheche365.test:cheche365-test-core:$cheche365_test_version"
+
+    // Spring Framework
+    testCompile "org.springframework.boot:spring-boot-starter-test:$spring_boot_starter_version"
+
+    // Spock Framework
+    testRuntime("org.spockframework:spock-spring:$spockframework_version") {
+        exclude group: 'org.codehaus.groovy', module: 'groovy-all'
+    }
+
+}

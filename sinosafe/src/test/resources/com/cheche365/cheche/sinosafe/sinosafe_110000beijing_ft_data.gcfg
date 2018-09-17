@@ -1,0 +1,57 @@
+package com.cheche365.cheche.sinosafe
+//this is 北京
+
+testData = [
+
+    [
+        213450,
+        '',
+        '京MN5200',
+        'LVGBE40K18G261348',
+        'C506964',
+        '高旭辉',
+        '110101197309272522',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code: '丰田GTM7240GB轿车',
+                        supplementInfo  : [
+                            autoModel: 'KMD1071GZF'
+                        ]
+                    ],
+                    enrollDate: '2008-09-10'
+                ]
+            ]
+        ],
+    ],
+
+
+    [
+        213460,
+        '',
+        '京QJY517',
+        'LFV2B21K0D3510070',
+        'L50317',
+        '常琪',
+        '110221198905055917',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code: '大众FV7144FBDWG轿车',
+                        supplementInfo  : [
+                            autoModel: 'bFi1DF4N28jXJdjfFY3Y4g=='
+                        ]
+                    ],
+                    enrollDate: '2013-03-22'
+                ]
+            ]
+        ],
+    ],
+
+]

@@ -1,0 +1,112 @@
+package com.cheche365.cheche.taikang
+//this is 北京
+
+testData = [
+
+    [
+        213450,
+        '',
+        '京MN5200',
+        'LVGBE40K18G261348',
+        'C506964',
+        '张三',
+        '110101197309272522',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code: '帕萨特SVW7183MJi',
+                        supplementInfo  : [
+                            autoModel: 'BSHCPTUB0004',
+                             commercialStartDate : '2018-09-13',
+                             compulsoryStartDate : '2018-09-13',
+                        ]
+                    ],
+                    enrollDate: '2015-01-01'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        10011,
+        '',
+        '京QJY517',
+        'LFV2B21K0D3510070',
+        'L50317',
+        '常琪',
+        '110221198905055917',
+         null,
+         null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code: '大众FV7144FBDWG轿车',
+                        supplementInfo  : [
+                            autoModel: '',
+                             commercialStartDate : '2018-09-13',
+                         compulsoryStartDate : '2018-09-13',
+                        ]
+                    ],
+                    enrollDate: '2013-03-22'
+                ]
+            ]
+        ],
+    ],
+    [
+        10011,
+        '',
+        '京NNU539',
+        'LFV3A28K4B3058425',
+        '155243',
+        '李楠',
+        '11010819800308574X',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code: 'FV7203TFCVTG',
+                        supplementInfo  : [
+                            autoModel: '',
+                             commercialStartDate : '2018-09-14',
+                             compulsoryStartDate : '2018-09-14',
+                             verificationMobile : '18652095075'
+                        ]
+                    ],
+                    enrollDate: '2011-10-11'
+                ]
+            ]
+        ],
+    ],
+    [
+                   10011,
+                   '1831',
+                   '京AV3W4V',
+                   'VNNHLM33NE3GMAYYH',
+                   'ENGXAXLRFROWXY86X',
+                   '张三',
+                   '362523197410136013',
+                   null,
+                   null,
+                   [
+                       quoteRecord:[
+                           auto   :  [
+                               autoType:[
+                                   code:'五菱LZW6376NF',
+                                   supplementInfo : [
+                                       autoModel : '',
+                                        commercialStartDate: '2018-07-20',
+                                                  compulsoryStartDate: '2018-07-20',
+                                   ]
+                               ],
+                               enrollDate:'2015-06-01'
+                           ]
+                       ]
+                   ],
+               ],
+]

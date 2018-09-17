@@ -1,0 +1,185 @@
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>批量创建页面</title>
+    <link rel="stylesheet" href="/libs/bootstrap-3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/popup.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/libs/uploadify-3.2.1/css/uploadify.css">
+    <link rel="stylesheet" href="/libs/bootstrap-3.3.4/css/bootstrap-multiselect.css">
+
+
+    <link rel="stylesheet" href="/libs/bootstrap-3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/popup.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/libs/uploadify-3.2.1/css/uploadify.css">
+    <link rel="stylesheet" href="/libs/bootstrap-3.3.4/css/bootstrap-multiselect.css">
+</head>
+<style>
+
+    .tagator_tag {
+        display: inline-block;
+        background-color: #39f;
+        border-radius: 2px;
+        color: #fff;
+        padding: 2px 20px 2px 4px;
+        font-size: 13px;
+        margin: 5px;
+        position: relative;
+        vertical-align: top;
+    }
+    .tagator_tag_remove {
+        font-family: simsun;
+        display: inline-block;
+        font-weight: bold;
+        color: #fff;
+        margin: 0 0 0 5px;
+        padding: 6px 2px 4px 2px;
+        cursor: pointer;
+        font-size: 12px;
+        line-height: 10px;
+        vertical-align: top;
+        border-radius: 0 2px 2px 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+    .discount_repeat p{
+        margin-top: 10px;
+        width:550px;
+    }
+
+    li{
+        list-style: none;
+    }
+
+    .width-180{
+        width:180px;
+    }
+
+</style>
+<body>
+<div   style="width:70%;margin:auto;">
+    <div class="theme_poptit">
+        <h4 class="text-center" id="detail_title">批量创建</h4>
+        <input id="editType" type="hidden" value=""/>
+    </div>
+    <form id="add_form" method="post">
+
+        <table class="table table-bordered" style="margin-top:5px; ">
+            <tr>
+                <td  class="tab_td" style="width: 150px;text-align:right;" >
+                    <label class="control-label">
+                        保险公司
+                    </label>
+                </td>
+                <td>
+                    <div id="insuranceCompanyDiv">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td  class="tab_td" style="width: 120px;text-align:right;" ><label class="control-label">
+                    地区
+                </label></td>
+                <td id="areaTbl">
+                    <div id="triggerCityDiv">
+                        <input type="text" id="result_detail" name="resultDetail"  placeholder="城市名称"  class="form-control text-input-400" style="width: 175px;" AutoComplete="off" onpaste="return false" oncontextmenu="return false">
+                    </div>
+                    <input type="hidden" id="trigger_city" name="triggerCity">
+                    <div class="tagator_tags">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td  class="tab_td" style="width: 120px;text-align:right;" rowspan =3><label class="control-label">
+                    渠道
+                </label></td>
+                <td>
+                    <label><input id="toA" value="1" name="clientType" checked="" type="radio"  autocomplete="off">ToA</label>
+                    <label><input id="toC" value="2" name="clientType" type="radio" style="margin-left: 10px;"  autocomplete="off">ToC</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label><input id="self" value="1" name="channelType" checked="" type="radio"  autocomplete="off">自有</label>
+                    <label><input id="partner" value="2" name="channelType" type="radio" style="margin-left: 10px;"  autocomplete="off">第三方</label>
+                </td>
+            </tr>
+            <tr>
+                <td id="channelTbl">
+                    <label><input onchange="quoteFlowConfigAdd.checkSelected();" class="data-checkbox check-box-all" id="check-box-all" type="checkbox"   autocomplete="off">全选</label>
+                    <div id="channelDiv" style="margin-top:20px;">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="tab_td" style="width: 120px;text-align:right;" ><label class="control-label">状态</label></td>
+                <td id="subTitleTbl">
+                    <input name="enable" type="radio" value="1" id="toOnline" checked="checked"/><label for="toOnline" >上线</label>
+                    <input name="enable" type="radio" value="0" id="toOffline" style="margin-left: 80px;"/><label for="toOffline">下线</label>
+                </td>
+            </tr>
+            <tr>
+                <td class="tab_td" style="width: 120px;text-align:right;" ><label class="control-label">报价方式</label></td>
+                <td id="userGuideTbl" >
+                    <input name="quoteWay" type="radio" value="2" id='quote_type2'  checked="checked"/><label for="quote_type2">自有</label>
+                    <input name="quoteWay" type="radio" value="4" id='quote_type4' style="margin-left: 60px;"/><label for="quote_type4">接口</label>
+                    <input name="quoteWay" type="radio" value="6" id='quote_type6' style="margin-left: 60px;"/><label for="quote_type6">泛华</label>
+                    <input name="quoteWay" type="radio" value="7" id='quote_type7' style="margin-left: 60px;"/><label for="quote_type7">参考</label>
+                    <input name="quoteWay" type="radio" value="9" id='quote_type9' style="margin-left: 60px;"/><label for="quote_type9">鳄鱼报价</label>
+                    <input name="quoteWay" type="radio" value="11" id='quote_type11' style="margin-left: 60px;"/><label for="quote_type11">金斗云</label>
+                    <!--<input name="quoteWay" type="radio" value="9" id='quote_type9' style="margin-left: 60px;"/><label for="quote_type7">泛华模糊</label>-->
+                </td>
+            </tr>
+        </table>
+    </form>
+    <div class="detail_content_errorText" style="padding-bottom:10px;">
+        <div>
+            <span class="col-sm-3 text-height-28 text-center"></span>
+            <div class="col-sm-8 text-left">
+                <p class="alert alert-danger text-input-280 alert-user error-msg none" style="display: none;"><i class="glyphicon glyphicon-remove-sign"></i> <span id="errorText"></span></p>
+            </div>
+        </div>
+        <div class="form-group btn-finish">
+            <div class="col-sm-12 text-center" style="padding-top:10px;padding-bottom:10px;">
+                <input id="toSave" type="button" class="btn btn-danger text-input-200" value="提交">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 二级弹层提示框 -->
+<div id="theme_popover_second" class="theme_popover_second" style="display: none;width: 400px; height: 250px;">
+    <div class="theme_poptit">
+        <h3>温馨提示</h3>
+    </div>
+    <div style="padding-top: 40px; padding-bottom: 30px; text-align: center; font-size: 16px;">
+        <label class="tipsContent">确定？</label>
+    </div>
+    <div style="text-align: center;">
+        <div class="btn-group">
+            <button style="font-size: 16px;" type="button" class="btn btn-primary confirm">确定</button>
+        </div>
+    </div>
+</div>
+</body>
+<div id="popupHtml"/>
+<script type="text/javascript" src="../../libs/jquery-1.11.2/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../libs/jquery-form/jquery.form.js"></script>
+<script type="text/javascript" src="../../js/common/popup.js"></script>
+<script type="text/javascript" src="../../libs/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/common/common.js"></script>
+<script type="text/javascript" src="../../js/common/cookie.js"></script>
+<script type="text/javascript" src="../../libs/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="../../libs/uploadify-3.2.1/js/jquery.uploadify-3.2.1.js"></script>
+<script type="text/javascript" src="../../libs/jquery-validation-1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="../../libs/bootstrap-3.3.4/js/bootstrap-multiselect.js"></script>
+<script type="text/javascript" src="../../libs/jqPaginator-1.2.0/jqPaginator.min.js"></script>
+<script type="text/javascript" src="../../libs/jquery-cookie-1.4.1/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="../../js/quoteOffline/quoteFlowConfigAdd.js" ></script>
+<script type="text/javascript" src="../../js/common/CUI.js"></script>
+<script type="text/javascript" src="../../js/common/CUI.select.js"></script>
+</html>

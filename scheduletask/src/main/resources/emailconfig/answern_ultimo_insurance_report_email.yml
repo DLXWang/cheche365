@@ -1,0 +1,32 @@
+#安心上月成单的订单信息邮件
+title: 财务安心月报表
+template: /velocity/completedOrder.vm
+tos: [zhangtc@cheche365.com,liuyw@cheche365.com,guanwy@cheche365.com]
+production_tos: [liangjie@cheche365.com,hubo@cheche365.com,wangmn@cheche365.com,weiou@cheche365.com]
+excelAttachmentConfig:
+        fileName: "财务安心月报表.xlsx"
+        sheets:
+        - sheetName: 财务安心月报表
+          columns:
+              - columnType: answernUltimoData
+                column:
+                    出单时间: issueTime
+                    平台: paymentPlatform
+                    车主: owner
+                    车牌号: licenseNo
+                    是否新车: isNewAuto
+                    订单号: orderNo
+                    保费总额: premiumSum
+                    交强险: compulsoryPremium
+                    车船税: autoTax
+                    商业险: commecialPremium
+                    车损险: damagePremium
+                    交强点位: compulsoryPointLocation
+                    商业点位: commecialPointLocation
+                    活动优惠: activityFavour
+                    加油卡: fuelCard
+                    京东卡: jdCard
+                    付款方式: paymentChannel
+                    实物礼品: giftDetail
+
+

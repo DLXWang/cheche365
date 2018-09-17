@@ -1,0 +1,15 @@
+package com.cheche365.cheche.picc
+//this is 拉萨
+
+testDataParams = [
+
+    //{value=9015f6b3c057ffc800000000144ce0b8, text=嘉年华2009款 时尚型 5座 77900元}
+    0 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '9015f6b3c057ffc800000000144ce0b8']]]]]],
+
+    //{value=90160180c057ffc8000000006e47de05, text=雅绅特2006款 豪华型 5座 84800元}
+    10 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '90160180c057ffc8000000006e47de05']]]]]],
+
+    //{value=4028808827d1db190127d742f2ff05a1, text=途观2010款 两驱都会版 5座 211800元}
+    20 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028808827d1db190127d742f2ff05a1']]]]]],
+
+]

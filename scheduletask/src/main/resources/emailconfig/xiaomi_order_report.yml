@@ -1,0 +1,59 @@
+#定时任务小米报表
+title: "车车数据"
+tos: [zhangtc@cheche365.com,guanwy@cheche365.com,liuyw@cheche365.com]
+production_tos: [zhouleijie@xiaomi.com,guozhenfang@xiaomi.com ,chenxi6@xiaomi.com]
+template: /velocity/xiaomiOrderEmail.vm
+excelAttachmentConfig:
+        fileName: "车车数据${currentDate}.xlsx"
+        sheets:
+            - sheetName: sheet1
+              columns:
+                  - columnType: xiaomiReport
+                    column:
+                        商业险保单号: iPolicyNo
+                        交强险保单号: ciPolicyNo
+                        总保费: allPremium
+                        商业险保费: iPremium
+                        交强险保费: ciPremium
+                        车船税: autoTax
+                        商业险起保日期: iEffectiveDate
+                        商业险截止日期: iExpireDate
+                        交强险起保日期: ciEffectiveDate
+                        交强险截止日期: ciExpireDate
+                        车牌号: licensePlateNo
+                        小米id: xiaomiId
+
+                        投保城市id:  area
+                        被保人手机号: insuredMobile
+                        被保人姓名: insuredName
+                        被保险人身份证: insuredIdNo
+                        投保人姓名: applicantName
+                        投保人手机号: applicantMobile
+                        投保人身份证号: applicantIdNo
+                        支付日期: payTime
+                        小米ID: xiaomiId
+                        出单时间: confirmOrderDate
+                        实付金额: paidAmount
+                        差额: subtraction
+
+                        保险公司: insureComp
+                        车主: owner
+                        车主身份号: ownerIdNo
+                        订单号: orderNo
+                        活动优惠: null1
+                        交强险点位: ciPoint
+                        商业点位: iPoint
+                        点位优惠: null2
+                        付款方式: payChannel
+                        客户电话（客户下单手机号）: userMobile
+                        null1: null3
+                        被保险人身份证号: insuredIdNo2
+
+                        车架号: vinNo
+                        发动机号: engineNo
+                        车辆注册日期: enrollDate
+                        品牌车型: carType
+                        地址: address
+                        收件人: addrName
+                        电话: addrMobile
+                        订单创建时间: createTime

@@ -1,0 +1,17 @@
+/*input{
+    outline: none;
+}*/
+.row{
+    margin: 0px ;
+}
+.tab_body{
+    padding-top: 50px;
+}
+.text_input{
+    width: 200px;
+    height: 32px;
+}
+.tab_td{
+    padding-top: 15px !important;
+}
+

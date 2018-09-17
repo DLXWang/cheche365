@@ -1,0 +1,211 @@
+<link type="text/css" href="../../plugins/select2/select2.min.css" rel="stylesheet">
+<script type="text/javascript" src="../../plugins/select2/select2.min.js"></script>
+<div class="theme_poptit" id="quote_phone_edit_close">
+    <a id="auto_detail_close" href="javascript:;" title="关闭" class="close"><i class="glyphicon glyphicon-remove"></i></a>
+    <h4 class="text-center" id="car_detail_title">车辆信息详情</h4>
+</div>
+<div class="form-input-top">
+    <form id="phone_auto_form" class="form-horizontal form-input" style="padding: 0 0 0 20px;">
+        <input type="hidden" id="id" name="id">
+        <input type="hidden" id="userId" name="userId">
+        <div class="diy-height" style="height: 420px;overflow-y:auto;overflow-x:hidden;">
+            <div class="form-group form-group-fix">
+                <div class="col-sm-12 text-center">
+                    —————————————<span class="text-center bold-font">车主信息</span>—————————————
+                </div>
+            </div>
+            <div class="form-group form-group-fix">
+                <div class="col-sm-4 text-height-28 text-right">车主姓名：</div>
+                <div class="col-sm-8 text-height-28">
+                    <p class="text-left text-show none"><span id="detail_owner"  data-toggle="tooltip"  data-placement="left" title=""></span></p>
+                    <input id="input_owner" name="owner" type="text" onblur="common.tools.doDomTrimOnBlur(this);" class="form-control text-height-28 text-input-200 text-input none">
+                </div>
+            </div>
+            <div class="form-group form-group-fix">
+                <div class="col-sm-4 text-height-28 text-right">证件类型：</div>
+                <div class="col-sm-8 text-height-28">
+                    <select id="input_identityType" name="identityType.id" class="form-control text-input-200">
+                    </select>
+                </div>
+            </div>
+            <div class="form-group form-group-fix">
+                <div class="col-sm-4 text-height-28 text-right"></div>
+                <div class="col-sm-8 text-height-28">
+                    <p class="text-left text-show none" id="detail_identity"></p>
+                    <input id="input_identity" name="identity" type="text" onblur="common.tools.doDomTrimOnBlur(this);" class="form-control text-height-28 text-input-200 text-input none">
+                </div>
+            </div>
+            <div class="form-group form-group-fix">
+                <div class="col-sm-12 text-center">
+                    ————————————<span class="text-center bold-font">被保险人信息</span>————————————
+                </div>
+            </div>
+            <div class="form-group form-group-fix">
+                <div class="col-sm-4 text-height-28 text-right">被保险人：</div>
+                <div class="col-sm-8 text-left">
+                    <label class="radio-inline">
+                        <input type="radio" id="insuredType_1" name="insuredType" value="1"> 车主
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" id="insuredType_2" name="insuredType" value="2" checked> 非车主
+                    </label>
+                </div>
+            </div>
+            <div class="form-group form-group-fix">
+                <div class="col-sm-4 text-height-28 text-right">姓名：</div>
+                <div class="col-sm-8 text-height-28">
+                    <p class="text-left text-show none" id="detail_insuredName"  data-toggle="tooltip"  data-placement="left" title=""></p>
+                    <input id="input_insuredName" name="insuredName" type="text" onblur="common.tools.doDomTrimOnBlur(this);" class="form-control text-height-28 text-input-200 text-input none">
+                </div>
+            </div>
+            <div class="form-group form-group-fix">
+                <div class="col-sm-4 text-height-28 text-right">证件类型：</div>
+                <div class="col-sm-8 text-height-28">
+                    <select id="input_insuredIdType" name="insuredIdType.id" onblur="common.tools.doDomTrimOnBlur(this);"  class="form-control text-input-200 ">
+                    </select>
+                </div>
+            </div>
+            <div class="form-group form-group-fix">
+                <div class="col-sm-4 text-height-28 text-right"></div>
+                <div class="col-sm-8 text-height-28">
+                    <p class="text-left text-show none" id="detail_insuredIdNo"></p>
+                    <input id="input_insuredIdNo" name="insuredIdNo" type="text" onblur="common.tools.doDomTrimOnBlur(this);" class="form-control text-height-28 text-input-200 text-input none">
+                </div>
+            </div>
+            <div class="form-group form-group-fix">
+                <div class="col-sm-4 text-height-28 text-right">是否续保：</div>
+                <div class="col-sm-8 text-height-28 text-left">
+                    <label class="radio-inline">
+                        <input type="radio" id="renewal" name="renewal" value="1"> 是
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" id="notRenewal" name="renewal" value="2" checked> 否
+                    </label>
+                </div>
+            </div>
+            <div class="form-group form-group-fix">
+                <div class="col-sm-12 text-center">
+                    —————————————<span class="text-center bold-font">车辆信息</span>—————————————
+                </div>
+            </div>
+            <div class="form-group form-group-fix">
+                <div class="col-sm-4 text-height-28 text-right">车牌号：</div>
+                <div class="col-sm-8 text-height-28">
+                    <p class="text-left"><span id="detail_licensePlateNo"></span>
+                        <button type="button" class="btn btn-danger toChgQuoteAutoInfo"  id="quoteAutoInfo">获取车辆信息</button>
+                    </p>
+                    <input type="hidden" id="licensePlateNoHid" name="licensePlateNo">
+                </div>
+            </div>
+            <div class="form-group form-group-fix">
+                <div class="col-sm-4 text-height-28 text-right">车架号：</div>
+                <div class="col-sm-8 text-height-28">
+                    <p class="text-left text-show none"><span id="detail_vinNo"></span></p>
+                    <input id="input_vinNo" name="vinNo" type="text" onblur="common.tools.doDomTrimOnBlur(this);" class="form-control text-height-28 text-input-200 text-input none">
+                </div>
+            </div>
+            <div class="form-group form-group-fix">
+                <div class="col-sm-4 text-height-28 text-right">发动机号：</div>
+                <div class="col-sm-8 text-height-28">
+                    <p class="text-left text-show none"><span id="detail_engineNo"></span></p>
+                    <input id="input_engineNo" name="engineNo" type="text" onblur="common.tools.doDomTrimOnBlur(this);" class="form-control text-height-28 text-input-200 text-input none">
+                </div>
+            </div>
+            <div class="form-group form-group-fix">
+                <div class="col-sm-4 text-height-28 text-right">初登日期：</div>
+                <div class="col-sm-8 text-height-28">
+                    <p class="text-left text-show none"><span id="detail_enrollDate"></span></p>
+                    <input type="text" class="form-control Wdate text-height-28 text-input-200 text-input none" id="input_enrollDate" name="enrollDate" style="height: 28px;" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true,maxDate: '%y-%M-%d'});" readonly>
+                </div>
+            </div>
+            <div class="form-group form-group-fix">
+                <div class="col-sm-4 text-height-28 text-right">保险到期日：</div>
+                <div class="col-sm-8 text-height-28">
+                    <p class="text-left text-show none"><span id="detail_expireDate"></span></p>
+                    <input type="text" class="form-control Wdate text-height-28 text-input-200 text-input none" id="input_expireDate" name="expireDate" style="height: 28px;" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true});" readonly>
+                </div>
+            </div>
+            <div class="form-group form-group-fix">
+                <div class="col-sm-4 text-height-28 text-right">品牌型号：</div>
+                <div class="col-sm-8 text-height-28">
+                    <p class="text-left text-show none"><span id="detail_code"></span></p>
+                    <input id="input_code" name="code" type="text" onblur="common.tools.doDomTrimOnBlur(this);" class="form-control text-height-28 text-input-200 text-input none">
+                </div>
+            </div>
+            <div class="form-group form-group-fix">
+                <div class="col-sm-4 text-height-28 text-right">车型：</div>
+                <div class="col-sm-8 text-height-28">
+                    <p class="text-left text-show none"><span id="detail_model"></span></p>
+                    <input id="input_model" name="model" type="text" onblur="common.tools.doDomTrimOnBlur(this);" class="form-control text-height-28 text-input-200 text-input none">
+                </div>
+            </div>
+            <div id="insured_transfer_radio" class="form-group form-group-fix">
+                <div class="col-sm-4 text-height-28 text-right">是否过户车：</div>
+                <div class="col-sm-8 text-left">
+                    <label class="radio-inline">
+                        <input type="radio" id="transfer_1" name="transfer" value="1"> 是
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" id="transfer_2" name="transfer" value="0" checked> 否
+                    </label>
+                </div>
+            </div>
+            <div class="form-group form-group-fix" id="transfer_div">
+                <div class="col-sm-4 text-height-28 text-right">过户日期：</div>
+                <div class="col-sm-8 text-height-28">
+                    <p class="text-left text-show none"><span id="detail_transferDate"></span></p>
+                    <input type="text" class="form-control Wdate text-height-28 text-input-200 text-input none" id="input_transferDate" name="transferDate" style="height: 28px;" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true});" readonly>
+                </div>
+            </div>
+
+            <div id="userInfo">
+                <div class="form-group form-group-fix">
+                    <div class="col-sm-12 text-center">
+                        —————————————<span class="text-center bold-font">用户信息</span>—————————————
+                    </div>
+                </div>
+
+                <div class="form-group form-group-fix none" id="user_id">
+                    <div class="col-sm-4 text-height-28 text-right">用户ID：</div>
+                    <div class="col-sm-8 text-height-28">
+                        <p class="text-left text-show none"><span id="detail_userId"></span></p>
+                        <input id="input_userId" name="userId" type="text" class="form-control text-height-28 text-input-200 text-input none">
+                    </div>
+                </div>
+
+                <div class="form-group form-group-fix" id="user_mobile">
+                    <div class="col-sm-4 text-height-28 text-right">电话：</div>
+                    <div class="col-sm-8 text-height-28">
+                        <p class="text-left text-show none"><span id="detail_mobile"></span></p>
+                        <input id="input_mobile" name="mobile" type="text" class="form-control text-height-28 text-input-200 text-input none">
+                    </div>
+                </div>
+
+                <div class="form-group form-group-fix">
+                    <div class="col-sm-4 text-height-28 text-right">产品平台：</div>
+                    <div class="col-sm-8 text-height-28">
+                        <select id="sourceChannel" name="sourceChannel" class="form-control text-input-200">
+                            <option value="">请选择...</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group auto_content_errorText" style="padding-top:5px;">
+            <span class="col-sm-4"><p>&nbsp;</p></span>
+            <div class="col-sm-8 text-left" style="height:30px;">
+                <p class="alert alert-danger text-input-280 alert-user error-msg none" id="errorT" style="display: none;"><i class="glyphicon glyphicon-remove-sign"></i> <span id="errorText"></span></p>
+            </div>
+        </div>
+        <div class="form-group" id="buttonArea">
+            <div class="col-sm-12 text-center" id="toSave1">
+                <button type="button" class="btn btn-danger toSave">保存</button>
+            </div>
+            <div class="col-sm-12 text-center" id="toEdit">
+                <button type="button" class="btn btn-danger toEdit">编辑</button>
+                <button type="button" class="btn btn-danger toQuote">报价</button>
+                <button type="button" class="btn btn-danger toRenewal">续保</button>
+            </div>
+        </div>
+    </form>
+</div>

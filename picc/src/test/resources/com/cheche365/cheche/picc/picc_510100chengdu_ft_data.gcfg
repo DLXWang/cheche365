@@ -1,0 +1,34 @@
+package com.cheche365.cheche.picc
+//this is 四川
+
+testData= [
+
+   [
+           228,
+           '',
+           '川A9V3K0',
+           'KNAPH8133F5032237',
+           'AD50EG061700027',
+           '何雪',
+           '411522198805163333',
+           null,
+           null,
+           [
+               quoteRecord:[
+                   auto   :  [
+                       autoType:[
+                           code:'索兰托SORENTO 2.4GDI越野',
+                           supplementInfo : [
+                               autoModel: '',
+                               verificationMobile:'13581538623',
+                               commercialStartDate : '2018-05-17',
+                               compulsoryStartDate : '2018-05-17',
+                           ]
+                       ],
+                       enrollDate:'2015-06-11'
+                   ]
+               ]
+           ]
+       ],
+
+]

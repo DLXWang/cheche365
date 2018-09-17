@@ -1,0 +1,14 @@
+db.getCollection('moDisplayMessage').update({"messageType._id":34},{$push:
+    {
+      "message":{
+          "iconUrl" : "banner/banner-top-22.jpg",
+          "url" : null,
+          "title" : "个人资料",
+          "content" : null,
+          "weight" : "96",
+          "version":"v1.9",
+          "displayType": "pop",
+          "popMessage": "请完善您的个人资料，客服人员会协助您完成执业资格认证"
+      }
+    }
+ });

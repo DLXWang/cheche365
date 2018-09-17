@@ -1,0 +1,124 @@
+---
+write_files:
+- path: /etc/systemd/system/docker.service.d/50-registry.conf
+  owner: core:core
+  permissions: 420
+  content: |
+    [Service]
+    # suggest using http://daocloud.io as your docker registry mirror
+    Environment="DOCKER_OPTS=--registry-mirror=http://be72f3e0.m.daocloud.io"
+coreos:
+  etcd:
+    addr: $public_ipv4:4001
+    peer-addr: $public_ipv4:7001
+    discovery: <WILL-BE-REPLACED>
+  fleet:
+    public-ip: $public_ipv4
+  flannel:
+    interface: $public_ipv4
+  units:
+  - name: etcd.service
+    command: start
+  - name: fleet.service
+    command: start
+  - name: docker-tcp.socket
+    command: start
+    enable: true
+    content: |
+      [Unit]
+      Description=Docker Socket for the API
+
+      [Socket]
+      ListenStream=2375
+      Service=docker.service
+      BindIPv6Only=both
+
+      [Install]
+      WantedBy=sockets.target
+  - name: docker-container-redis.service
+    command: start
+    enable: true
+    content: |
+      [Unit]
+      Description=Redis Docker Container
+      After=docker.service
+      Requires=docker.service
+
+      [Service]
+      TimeoutStartSec=0
+      ExecStartPre=-/usr/bin/docker rm redis
+      ExecStartPre=/usr/bin/docker pull redis:2
+      ExecStart=/usr/bin/docker run --name redis -p 6379:6379 redis:2
+      ExecStop=/usr/bin/docker stop redis
+  - name: docker-container-mysql.service
+    command: start
+    enable: true
+    content: |
+      [Unit]
+      Description=MySQL Docker Container
+      After=docker.service
+      Requires=docker.service
+
+      [Service]
+      TimeoutStartSec=0
+      ExecStartPre=-/usr/bin/docker rm mysql
+      ExecStartPre=/usr/bin/docker pull mysql:5
+      ExecStart=/usr/bin/docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root mysql:5
+      ExecStop=/usr/bin/docker stop mysql
+  - name: docker-container-nginx.service
+    command: start
+    enable: true
+    content: |
+      [Unit]
+      Description=Nginx Docker Container
+      After=docker.service
+      Requires=docker.service
+
+      [Service]
+      TimeoutStartSec=0
+      ExecStartPre=/usr/bin/docker pull nginx:1.9.9
+      ExecStart=/usr/bin/docker run --rm=true --name nginx -p 80:80 -v /opt/cheche365/shared/sr:/usr/share/nginx/html:ro nginx:1.9.9
+      ExecStop=/usr/bin/docker stop nginx
+  - name: docker-container-dockerui.service
+    command: start
+    enable: true
+    content: |
+      [Unit]
+      Description=DockerUI Docker Container
+      After=docker.service
+      Requires=docker.service
+
+      [Service]
+      TimeoutStartSec=0
+      ExecStartPre=/usr/bin/docker pull dockerui/dockerui:0.8.1
+      ExecStart=/usr/bin/docker run --rm=true --name dockerui -p 9000:9000 --privileged -v /var/run/docker.sock:/var/run/docker.sock dockerui/dockerui:0.8.1
+      ExecStop=/usr/bin/docker stop dockerui
+  - name: docker-container-elasticsearch.service
+    command: start
+    enable: true
+    content: |
+      [Unit]
+      Description=ElasticSearch Docker Container
+      After=docker.service
+      Before=docker-container-kibana.service
+      Requires=docker.service
+
+      [Service]
+      TimeoutStartSec=0
+      ExecStartPre=/usr/bin/docker pull elasticsearch:2.1.1
+      ExecStop=/usr/bin/docker stop elasticsearch
+      ExecStart=/usr/bin/docker run --rm=true --name elasticsearch -p 9200:9200 -p 9300:9300 elasticsearch:2.1.1
+  - name: docker-container-kibana.service
+    command: start
+    enable: true
+    content: |
+      [Unit]
+      Description=Kibana Docker Container
+      After=docker-container-elasticsearch.service
+      Requires=docker-container-elasticsearch.service
+
+      [Service]
+      TimeoutStartSec=0
+      ExecStartPre=/usr/bin/docker pull kibana:4.3.1
+      ExecStop=/usr/bin/docker stop kibana
+      ExecStart=/usr/bin/docker run --rm=true --name kibana --link elasticsearch:elasticsearch -p 5601:5601 kibana:4.3.1

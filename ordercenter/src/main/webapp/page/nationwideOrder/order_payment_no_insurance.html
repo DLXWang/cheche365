@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>结款完成待出单</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link type="text/css" href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="../../css/common.css" rel="stylesheet">
+    <script type="text/javascript" src="../../js/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../plugins/jqPaginator-1.2.0/jqPaginator.min.js"></script>
+</head>
+<body>
+<div id="top_div" class="top-search">
+    <div class="row">
+        <div class="col-sm-8 form-inline">
+            <select id="keyType" class="form-control text-input-150">
+                <option value="1">订单号</option>
+                <option value="2">车主姓名</option>
+                <option value="3">车牌号</option>
+            </select>
+            <div class="input-group text-input-300">
+                <input type="text" class="form-control" id="keyword" placeholder=""/>
+                <span class="input-group-btn">
+                    <button id="searchBtn" class="btn btn-danger" type="button">搜索</button>
+                </span>
+            </div>
+            <select id="areaId" class="form-control text-input-150">
+                <option value="">全部地区</option>
+            </select>
+            <span class="btn-group">
+                <button id="alipayBtn" class="btn btn-danger" type="button">支付宝</button>
+            </span>
+        </div>
+    </div>
+</div>
+<div id="count_div" class="detail-together">
+    <label>总共：</label>
+    <span id="totalCount" class="detail-all"></span>个
+</div>
+<div id="show_div" class="table-responsive">
+    <div class="col-sm-12">
+        <table class="table table-bordered table-hover" id="list_tab">
+            <thead>
+            <tr class="active">
+                <th class="text-center">订单号</th>
+                <th class="text-center">车主车牌</th>
+                <th class="text-center">地区</th>
+                <th class="text-center">保险公司</th>
+                <th class="text-center">出单机构</th>
+                <th class="text-center">最后操作</th>
+                <th class="text-center">备注</th>
+                <th class="text-center">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <div class="customer-pagination">
+            <ul class="pagination"></ul>
+        </div>
+    </div>
+</div>
+<div id="insuranceInfo_content" class="none">
+    <div class="theme_poptit theme_poptit_color">
+        <a href="javascript:;" title="关闭" class="close"><i class="glyphicon glyphicon-remove"></i></a>
+        <h4 class="text-center title">出单信息</h4>
+    </div>
+    <div style="max-height: 400px;overflow-y: auto;">
+        <table class="table table-bordered" id="detail_order_tab">
+            <thead>
+            <tr class="active">
+                <td class="text-center" style="background-color: rgba(218, 215, 220, 0.63);">订单号</td>
+                <td class="text-center" style="background-color: rgba(218, 215, 220, 0.63);">车主车牌</td>
+                <td class="text-center" style="background-color: rgba(218, 215, 220, 0.63);">地区</td>
+                <td class="text-center" style="background-color: rgba(218, 215, 220, 0.63);">保险公司</td>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <div class="form-horizontal">
+            <div class="form-group form-group-fix">
+                <div class="col-sm-12 text-left">
+                    <span class="text-center bold-font">车车分站信息</span>
+                </div>
+            </div>
+            <div class="form-group form-group-fix">
+                <div class="col-sm-5 text-right">
+                    <span class="text-height-28">姓名：</span>
+                </div>
+                <div class="col-sm-7 text-left">
+                    <span class="text-height-28" id="areaContactName"></span>
+                </div>
+            </div>
+            <div class="form-group form-group-fix">
+                <div class="col-sm-5 text-right">
+                    <span class="text-height-28">电话：</span>
+                </div>
+                <div class="col-sm-7 text-left">
+                    <span class="text-height-28" id="areaContactMobile"></span>
+                </div>
+            </div>
+            <div class="form-group form-group-fix">
+                <div class="col-sm-5 text-right">
+                    <span class="text-height-28">地址：</span>
+                </div>
+                <div class="col-sm-7 text-left">
+                    <span class="text-height-28" id="areaContactAddress"></span>
+                </div>
+            </div>
+
+            <div class="form-group form-group-fix">
+                <div class="col-sm-12 text-left">
+                    <span class="text-center bold-font">补填信息</span>
+                </div>
+            </div>
+            <div class="form-group form-group-fix">
+                <div class="col-sm-5 text-right">
+                    <span class="text-height-28">交强险保单号：</span>
+                </div>
+                <div class="col-sm-7 text-left">
+                    <input id="compulsoryPolicyNo" type="text" class="form-control text-height-28 text-width-200" placeholder="请输入交强险保单号">
+                </div>
+            </div>
+            <div class="form-group form-group-fix">
+                <div class="col-sm-5 text-right">
+                    <span class="text-height-28">商业险保单号：</span>
+                </div>
+                <div class="col-sm-7 text-left">
+                    <input id="commercialPolicyNo" type="text" class="form-control text-height-28 text-width-200" placeholder="请输入商业险保单号">
+                </div>
+            </div>
+            <div class="form-group form-group-fix">
+                <div class="col-sm-5 text-right">
+                    <span class="text-height-28">快递公司：</span>
+                </div>
+                <div class="col-sm-7 text-left">
+                    <input id="expressCompany" type="text" class="form-control text-height-28 text-width-200" placeholder="请输入快递公司">
+                </div>
+            </div>
+            <div class="form-group form-group-fix">
+                <div class="col-sm-5 text-right">
+                    <span class="text-height-28">快递单号：</span>
+                </div>
+                <div class="col-sm-7 text-left">
+                    <input id="trackingNo" type="text" class="form-control text-height-28 text-width-200" placeholder="请输入快递单号">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <span class="col-sm-3"><p>&nbsp;</p></span>
+        <div class="col-sm-7 text-center">
+            <p class="alert alert-danger alert-user error-msg none"><i class="glyphicon glyphicon-remove-sign"></i> <span id="errorText"></span></p>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-12 text-center btn-margin-bottom-10 btn-margin-top-10">
+            <button type="button" class="btn btn-danger text-width-100 toSave">确定</button>
+        </div>
+    </div>
+</div>
+</body>
+<link rel="stylesheet" href="../../css/popup.css">
+<script type="text/javascript" src="../../js/common/cookie.js"></script>
+<script type="text/javascript" src="../../js/common/common.js"></script>
+<script type="text/javascript" src="../../js/common/popup.js"></script>
+<script type="text/javascript" src="../../js/nationwideOrder/order_payment_no_insurance.js"></script>
+<script type="text/javascript" src="../../js/nationwideOrder/order_comment.js"></script>
+<script type="text/javascript" src="../../js/nationwideOrder/order_abnormal_pop.js"></script>
+<script type="text/javascript" src="../../My97DatePicker/WdatePicker.js"></script>
+</html>

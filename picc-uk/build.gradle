@@ -1,0 +1,21 @@
+/**
+ +----------------+
+ | Build Settings |
+ +----------------+
+ */
+configurations {
+    springBoot {
+        extendsFrom runtime
+    }
+}
+
+dependencies {
+
+    compile project(':entity-core')
+    testRuntime project(':entity-redis')
+    //cheche365
+    compile "com.cheche365.parser:cheche365-parser-core:$cheche365_parser_version"
+    runtime "com.cheche365.common:cheche365-common-decaptcha:$cheche365_common_version"
+    testCompile "com.cheche365.parser:cheche365-parser-test:$cheche365_parser_version"
+    compile 'org.apache.httpcomponents:httpmime:4.5.3'
+}

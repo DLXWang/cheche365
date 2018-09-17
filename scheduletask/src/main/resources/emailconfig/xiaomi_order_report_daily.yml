@@ -1,0 +1,17 @@
+#定时任务小米报表-按日
+title: "${timePeriod} 小米车险-车车车险统计数据日报"
+tos: [zhangtc@cheche365.com,liuzz@cheche365.com,liuyw@cheche365.com]
+production_tos: [zhouleijie@xiaomi.com,guozhenfang@xiaomi.com,wangyang16@xiaomi.com,xurz@cheche365.com]
+template: /velocity/xiaomiOrderEmail.vm
+excelAttachmentConfig:
+        fileName: "${timePeriod} 小米车险-车车车险统计数据日报.xlsx"
+        sheets:
+            - sheetName: sheet1
+              columns:
+                  - columnType: xiaomiReport
+                    column:
+                        名单量: marketingNum
+                        拨打量: dialNum
+                        接通数: connectNum
+                        成单数: orderNum
+                        成交金额: paid

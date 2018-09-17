@@ -1,0 +1,19 @@
+#懂车帝意外险活动报表
+title: "懂车帝意外险活动数据导出-${currentDate}"
+tos: [liuyw@cheche365.com,wangjl@cheche365.com,zhangtc@cheche365.com]
+production_tos: [fangchao@bytedance.com,haorui@bytedance.com,huangying.hy@bytedance.com]
+template: /velocity/weicheQuoteEmail.vm
+excelAttachmentConfig:
+        fileName: "${currentDate}懂车帝意外险活动数据导出.xlsx"
+        sheets:
+            - sheetName: sheet1
+              columns:
+                  - columnType: dongchediMarketingReport
+                    column:
+                        UID: parterId
+                        手机号: mobile
+                        车牌号: licensePlateNo
+                        姓名: owner
+                        身份证号码: identity
+                        投保描述: message
+                        投保状态: status

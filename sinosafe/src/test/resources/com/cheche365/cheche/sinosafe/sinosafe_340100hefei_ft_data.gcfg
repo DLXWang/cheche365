@@ -1,0 +1,58 @@
+package com.cheche365.cheche.sinosafe
+//this is 合肥
+
+testData = [
+    [
+        500001,
+        '',
+        '渝F67D50',
+        'LSVNV2182E2153138',
+        'D32252',
+        '易旭',
+        '210522197902100518',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'大众汽车SVW7167BMD轿车',
+                        supplementInfo : [
+                            autoModel: 'LYD1063SHD',
+                            commercialStartDate : '2018-08-22',
+                            compulsoryStartDate : '2018-08-22',
+                        ]
+                    ],
+                    enrollDate:'2014-09-22'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        20220,
+        '',
+        '皖AXP613',
+        'LSVCN6A46DN079148',
+        '448743',
+        '杜少新',
+        '210522197902100518',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'大众汽车SVW71410JR轿',
+                        supplementInfo : [
+                            autoModel: 'PSD1095SHD',
+                            commercialStartDate : '2018-04-20',
+                            compulsoryStartDate : '2018-04-20',
+                        ]
+                    ],
+                    enrollDate:'2013-06-03'
+                ]
+            ]
+        ],
+    ],
+]

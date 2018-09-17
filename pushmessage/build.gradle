@@ -1,0 +1,23 @@
+apply from: "${rootProject.projectDir}/gradle/springboot_common_settings.gradle"
+
+/**
+ +----------------+
+ | Build Settings |
+ +----------------+
+ */
+dependencies {
+
+    // Other Projects
+    compile     project(':core'),
+                project(':spi'),
+                project(':microservice')
+
+    // Apple Push Notification
+    compile     'com.notnoop.apns:apns:1.0.0.Beta6'
+
+    // Jasypt
+    compile     "org.jasypt:jasypt:$jasypt_version"
+
+    testCompile "org.springframework.boot:spring-boot-starter-test:$spring_boot_starter_version"
+
+}

@@ -1,0 +1,82 @@
+package com.cheche365.cheche.cpicuk
+//this is 北京
+
+basePackageOptions = [
+    thirdPartyAmount: 500000.0,
+    thirdPartyIop   : true,
+    damage          : false,
+    damageIop       : false,
+    theft           : false,
+    theftIop        : false,
+    engine          : false,
+    engineIop       : false,
+    glass           : false,
+    glassType       : null,    // 国产
+    driverAmount    : 0.0,
+    driverIop       : false,
+    passengerAmount : 0.0,
+    passengerIop    : false,
+    spontaneousLoss : false,
+    scratchAmount   : 0.0,
+    scratchIop      : false,
+    compulsory      : false,
+    autoTax         : false
+]
+
+testData = [
+
+    //
+    [
+        1000160,
+        '',
+        '京NSA022',
+        'LVSHCADC4DE215736',
+        'DA01440',
+        '杨悦',
+        '110105198901155819',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '福克斯CAF7201B4轿车',
+                        supplementInfo: [
+                            autoModel          : '',
+                            commercialStartDate: '2018-04-18',
+                            compulsoryStartDate: '2018-04-18',
+                            verificationMobile:'17600181704'
+                        ]
+                    ],
+                    enrollDate: '2013-05-03'
+                ]
+            ]
+        ]
+    ],
+    [
+        1000170,
+        '',
+        '京NE96Q9',
+        'JTNGK3DH3G8008885',
+        '2GRK218142',
+        '王伟',
+        '110111197706261619',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '埃尔法ALPHARD 3.5L旅行车',
+                        supplementInfo: [
+                            autoModel          : '',
+                            commercialStartDate: '2018-05-20',
+                            compulsoryStartDate: '2018-05-20'
+                        ]
+                    ],
+                    enrollDate: '2016-05-26'
+                ]
+            ]
+        ]
+    ],
+]

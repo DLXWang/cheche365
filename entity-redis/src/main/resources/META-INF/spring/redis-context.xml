@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!-- Common -->
+
+    <bean
+        id="jedisPoolConfig"
+        class="redis.clients.jedis.JedisPoolConfig"
+        p:maxTotal="${redis_max_total_common}"
+        p:maxIdle="${redis_max_idle_common}"
+        p:minIdle="${redis_min_idle_common}"
+        p:maxWaitMillis="${redis_max_wait_millis_common}"
+        p:testOnBorrow="${redis_test_on_borrow_common}"
+        p:testOnReturn="${redis_test_on_return_common}"
+        p:jmxEnabled="${redis_jmx_enabled_common}"
+        p:blockWhenExhausted="${redis_block_when_exhausted_common}"
+        p:testWhileIdle="${redis_test_while_idle_common}"
+        p:minEvictableIdleTimeMillis="${redis_min_evictable_idle_time_millis_common}"
+        p:timeBetweenEvictionRunsMillis="${redis_time_between_eviction_runs_millis_common}"/>
+
+    <bean
+        id="aJedisConnectionFactory"
+        abstract="true"
+        class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"
+        destroy-method="destroy"
+        c:poolConfig-ref="jedisPoolConfig"
+        p:usePool="true"
+        p:hostName="${redis_host}"
+        p:port="${redis_port}" />
+    <bean id="genericJackson2JsonRedisSerializer"
+          class="org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer" />
+    <bean
+        id="redisTemplate"
+        class="org.springframework.data.redis.core.RedisTemplate"
+        p:connectionFactory-ref="jedisConnectionFactory"/>
+    <bean
+        id="redisTemplateCache"
+        class="org.springframework.data.redis.core.RedisTemplate"
+        p:defaultSerializer-ref="genericJackson2JsonRedisSerializer"
+        p:connectionFactory-ref="jedisConnectionFactory"/>
+
+    <bean
+        id="stringRedisTemplate"
+        class="org.springframework.data.redis.core.StringRedisTemplate"
+        p:connectionFactory-ref="jedisConnectionFactory" />
+
+    <!-- Profile-Based -->
+
+    <beans profile="dev">
+
+        <bean id="jedisConnectionFactory" parent="aJedisConnectionFactory"
+              primary="true" />
+
+    </beans>
+
+    <beans profile="k8s">
+
+        <bean id="jedisConnectionFactory" parent="aJedisConnectionFactory"
+              primary="true"
+              p:hostName="${k8s.redis_host}"
+              p:port="${k8s.redis_port}"
+              p:password="${k8s.redis_password}"/>
+
+    </beans>
+
+    <beans profile="test">
+
+        <bean id="jedisConnectionFactory" parent="aJedisConnectionFactory"
+              primary="true" />
+
+    </beans>
+
+    <beans profile="itg">
+
+        <bean id="jedisConnectionFactory" parent="aJedisConnectionFactory"
+              primary="true"
+              p:hostName="${itg.redis_host}"
+              p:password="${itg.redis_password}" />
+
+    </beans>
+
+    <beans profile="itg_hw">
+
+        <bean id="jedisConnectionFactory" parent="aJedisConnectionFactory"
+              primary="true"
+              p:hostName="${itg_hw.redis_host}"
+              p:password="${itg_hw.redis_password}" />
+
+    </beans>
+
+    <beans profile="st">
+
+        <bean id="jedisConnectionFactory" parent="aJedisConnectionFactory"
+              primary="true"
+              p:hostName="${st.redis_host}" />
+
+    </beans>
+
+
+    <beans profile="qa">
+
+        <bean id="jedisConnectionFactory" parent="aJedisConnectionFactory"
+              primary="true"
+              p:hostName="${qa.redis_host}"
+              p:password="${qa.redis_password}" />
+
+    </beans>
+
+    <beans profile="br1">
+
+        <bean id="jedisConnectionFactory" parent="aJedisConnectionFactory"
+              primary="true"
+              p:hostName="${br1.redis_host}"
+              p:port="${br1.redis_port}"
+              p:password="${br1.redis_password}" />
+
+    </beans>
+
+    <beans profile="production">
+
+        <bean id="jedisConnectionFactory" parent="aJedisConnectionFactory"
+              primary="true"
+              p:hostName="${production.redis_host}"
+              p:port="${production.redis_port}"
+              p:password="${production.redis_password}" />
+
+    </beans>
+
+</beans>

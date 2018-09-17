@@ -1,0 +1,54 @@
+package com.cheche365.cheche.cpic
+
+/**
+ * 河南新乡
+ */
+
+testDataParams = [
+
+    //{value=FTABKD0046, text=丰田TV7250S4SPD 201005 5座 220800元}
+    10 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'FTABKD0046']]]]]],
+
+    //{value=DZAAYD0015, text=桑塔纳SVW7182QQD 200801 5座 74800元}
+    20 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZAAYD0015']]]]]],
+
+    //{value=DZAAYD0015, text=桑塔纳SVW7182QQD 200801 5座 74800元}
+    30 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZAAYD0015']]]]]],
+
+    //{value=BTAAJD0030, text=奥德赛HG6481BAA 201108 7座 208800元}
+    40 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'BTAAJD0030']]]]]],
+
+    //{value=DZAATD0068, text=捷达FV7160FG 201204 5座 73000元}
+    60 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZAATD0068']]]]]],
+
+    //{value=XDAAMD0096, text=北京现代BH7167MX 200910 5座 84800元}
+    80 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'XDAAMD0096']]]]]],
+
+    //{value=CCAAMD0210, text=长城CC6460RM01 201308 5座 105800元}
+    90 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'CCAAMD0210']]]]]],
+
+    //{value=DFMAAD0051, text=风神DFM7150B1A2 201403 5座 50800元}
+    110: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DFMAAD0051']]]]]],
+
+    //{value=DZAAKD0087, text=波罗SVW7144CRD 200711 5座 77800元}
+    120: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZAAKD0087']]]]]],
+
+    //{value=CAADMD0043, text=长安SC7169B5 201502 5座 64900元}
+    130: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'CAADMD0043']]]]]],
+
+    //{value=XTAAFD0051, text=东风雪铁龙DC7163AT 200909 5座 73800元}
+    140: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'XTAAFD0051']]]]]],
+
+    //{value=WEAAID0006, text=沃尔沃CAF7240A 200811 5座 268000元}
+    240: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'WEAAID0006']]]]]],
+
+    //{value=SKAAFD0051, text=明锐SVW7146ARD 201108 5座 133000元}
+    250: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'SKAAFD0051']]]]]],
+
+    //{value=ADAAFD0137, text=奥迪FV7201TFCVTG 201101 5座 359900元}
+    270: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'ADAAFD0137']]]]]],
+
+    //{value=BYAABD0046, text=比亚迪QCJ7150A3 200803 5座 46000元}
+    280: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'BYAABD0046']]]]]],
+
+]

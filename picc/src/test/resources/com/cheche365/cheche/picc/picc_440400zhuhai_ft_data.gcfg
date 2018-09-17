@@ -1,0 +1,8 @@
+package com.cheche365.cheche.picc
+
+testDataParams = [
+
+    //{value=402880882838d32501283cf70cb202ea, text=朗逸2010款 运动版 5座 154800元}
+    0 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '402880882838d32501283cf70cb202ea']]]]]],
+
+]

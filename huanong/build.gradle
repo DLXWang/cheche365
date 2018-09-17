@@ -1,0 +1,26 @@
+/**
+ +----------------+
+ | Build Settings |
+ +----------------+
+ */
+configurations {
+    springBoot {
+        extendsFrom runtime
+    }
+}
+
+dependencies {
+
+    compile project(':entity-core'),
+            project(':entity-redis'),
+            project(':entity-mongodb')
+    compile "com.cheche365.spring:cheche365-spring-component:$cheche365_spring_version",
+            "com.cheche365.parser:cheche365-parser-api:$cheche365_parser_version"
+    runtime "com.cheche365.common:cheche365-common-decaptcha:$cheche365_common_version"
+
+    testRuntime "cglib:cglib-nodep:$cglib_version"
+    testCompile "com.cheche365.parser:cheche365-parser-test:$cheche365_parser_version"
+
+    compile ':javabase64:1.3.1',
+            ':rsa1.0.5'
+}

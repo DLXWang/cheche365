@@ -1,0 +1,9 @@
+package com.cheche365.cheche.picc
+//this is 太原
+
+testDataParams = [
+
+    //
+    0 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '']]]]]],
+
+]

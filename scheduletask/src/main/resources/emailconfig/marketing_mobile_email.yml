@@ -1,0 +1,15 @@
+#营销活动手机数据统计
+title: 领红包手机列表
+tos: [zhangtc@cheche365.com,liuyw@cheche365.com]
+production_tos: [majing@cheche365.com,aodm@cheche365.com]
+template: /velocity/marketingMobileEmail.vm
+excelAttachmentConfig:
+        fileName: "营销活动手机报表.xlsx"
+        sheets:
+            - sheetName: sheet1
+              columns:
+                  - columnType: marketingMobileEmail
+                    column:
+                      手机: mobile
+                      活动名称: marketingName
+                      日期: time

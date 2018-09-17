@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/task
+        http://www.springframework.org/schema/task/spring-task-4.1.xsd">
+    <!-- 配置定时任务 -->
+    <task:scheduled-tasks scheduler="schedulerPool">
+        <!--新年礼包提醒短信：每天12点 0 0 12 * * ?-->
+        <!--<task:scheduled ref="newYearPack99Task" method="process" cron="0 0 12 * * ?"/>-->
+        <!--推荐活动提醒短信 每周六17:00  0 0 17 * * 6-->
+        <!--<task:scheduled ref="recommendActivityMsgTask" method="process" cron="0 0 17 * * 6"/>-->
+        <!--30分钟未支付订单发送用户支付提醒短信 0 0 0/1 * * ?-->
+        <task:scheduled ref="orderPayRemindSendMessageTask" method="process" cron="0 0 0/1 * * ?"/>
+        <!--会员生日祝福短信：每天中午12点 0 0 12 * * ?-->
+        <task:scheduled ref="memberBirthdayWishesTask" method="process" cron="0 0 12 * * ?"/>
+        <!--停复驶通知短信：每天中午12点 0 0 12 * * ?-->
+        <task:scheduled ref="stopAndRestartTwelveHoursSendSMSTask" method="process" cron="0 0 12 * * ?"/>
+        <!--停驶返钱账单短信发送：每天下午8点 0 0 20 * * ?-->
+        <task:scheduled ref="answernSuspentBillSmsTask" method="process" cron="0 0 20 * * ?"/>
+        <!--一件续保短信通知：每天早晨11点发送 0 0 11 * * ?-->
+        <task:scheduled ref="renewalOrderSmsRemindTask" method="process" cron="0 0 11 * * ?"/>
+        <!-- 未支付订单的第二次短信推送 11|15|20：30 -->
+        <task:scheduled ref="orderPaymentSMSTask" method="process" cron="0 0 11,15 * * ?"/>
+        <task:scheduled ref="orderPaymentSMSTask" method="process" cron="0 30 20 * * ?"/>
+        <!--用户最近一次更新超过一周,则短信每天通知该用户-->
+        <task:scheduled ref="tideStatusNoChangeSmsRemindByDayTask" method="process" cron="0 0 11 * * ?"/>
+        <!--如果最近的一次点位更新超过2周,则1小时通知一次-->
+        <task:scheduled ref="tideStatusNoChangeSmsRemindByHourTask" method="process" cron="0 0 9-18 * * ?"/>
+    </task:scheduled-tasks>
+</beans>

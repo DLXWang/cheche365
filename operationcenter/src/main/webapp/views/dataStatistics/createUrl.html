@@ -1,0 +1,66 @@
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<form id="add_form" method="post">
+    <div  class="top-search">
+        <div class="row">
+            <div class="col-sm-12 form-inline">
+                <input type="text" class="form-control text-input-150 checkInput" id ="scope" name ="scope" style="width: 150px;margin-right:15px;" placeholder="岗位"/>
+                <input type="text" class="form-control text-input-150 checkInput" id ="source" name ="source" style="width: 150px;margin-right:15px;" placeholder="渠道"/>
+                <input type="text" class="form-control text-input-150 checkInput" id ="plan" name ="plan" style="width: 150px;margin-right:15px;" placeholder="计划"/>
+                <input type="text" class="form-control text-input-150 checkInput" id ="unit" name ="unit" style="width: 150px;margin-right:15px;" placeholder="单元"/>
+                <input type="text" class="form-control text-input-150 checkInput" id ="keyword" name ="keyword" style="width: 150px;margin-right:15px;" placeholder="关键词"/>
+                <input type="text" class="form-control text-input-150 checkInput" id ="url" name ="url" style="width: 150px" placeholder="推广链接"/>
+                打开报价:<select id="quote" name="quote" class="form-control text-input-50">
+                    <option value="1">是</option>
+                    <option value="0">否</option>
+                </select>
+                <button id="toSave" class="btn btn-danger" type="button" style="margin-left: 20px;">生成链接</button>
+            </div>
+        </div>
+	    <div class="row" style="margin-top: 10px">
+		    <div class="col-sm-12 form-inline">
+			    <a id="url_template" download="url_template" href="">
+				    <button id="downloadTemplate" class="btn btn-danger" type="button" style="margin-left: 20px;">模版下载</button>
+			    </a>
+			    <button id="codeFileFake" name="codeFileFake" class="btn btn-danger" type="button" style="margin-left: 5px;" onclick="document.getElementById('codeFile').click();">模版导入</button>
+			    <input type="file" id="codeFile" name="codeFile" accept=".xls,.xlsx" class="text-input-150" onchange="create_url.changeValue();" style="position: absolute; opacity: 0; filter:Alpha(opacity=0);">
+			    <button id="uploadExl" class="btn btn-danger" type="button" style="margin-left: 5px;" disabled>批量生成</button>
+		    </div>
+	    </div>
+    </div>
+</form>
+<div class="line" style="border-bottom: 2px solid #ccc;margin-top: 10px"></div><!--虚线-->
+<form id="refresh_form" method="post">
+    <div id="top_div" class="top-search">
+        <div class="row">
+            <div class="col-sm-12 form-inline">
+                <input type="text" class="form-control text-input-150" id ="search_scope" style="width: 150px;margin-right:15px;" placeholder="岗位"/>
+                <input type="text" class="form-control text-input-150" id ="search_source" style="width: 150px;margin-right:15px;" placeholder="渠道"/>
+                <input type="text" class="form-control text-input-150" id ="search_plan" style="width: 150px;margin-right:15px;" placeholder="计划"/>
+                <input type="text" class="form-control text-input-150" id ="search_unit" style="width: 150px;margin-right:15px;" placeholder="单元"/>
+                <input type="text" class="form-control text-input-150" id ="search_keyword" style="width: 150px;margin-right:15px;" placeholder="关键词"/>
+                <input type="text" class="form-control text-input-150" id ="search_url" style="width: 150px" placeholder="生成链接"/>
+                <p></p>
+                <span style="margin: 0 10px;">生成时间：</span>
+                <input class="form-control text-input-50" id="startTime" style="width: 165px;background:#fff url(../../libs/My97DatePicker/skin/datePicker.gif)
+                    no-repeat right;" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:00:00',readOnly:true});" readonly="" type="text"/>
+                <span style="margin: 0 10px;">至</span>
+                <input class="form-control text-input-50" id="endTime" style="width: 165px;margin-right:10px;background:#fff url(../../libs/My97DatePicker/skin/datePicker.gif)
+                    no-repeat right;" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:00:00',readOnly:true});" readonly="" type="text"/>
+                    <button id="searchBtn" class="btn btn-danger" type="button">查询</button>
+                    <!-- <button id="addActivity" class="btn btn-danger" type="button" style="margin-left: 20px;">导出列表</button> -->
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12">
+        <table class="table table-bordered table-hover" id="url_list"></table>
+    </div>
+</form>
+<script type="text/javascript" src="../../libs/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="../../plugins/DataTables-1.10.12/media/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../../libs/jquery-form/jquery.form.js"></script>
+<script type="text/javascript" src="../../js/common/datatable_util.js"></script>
+<script type="text/javascript" src="../../js/dataStatistics/createUrl.js"></script>
+

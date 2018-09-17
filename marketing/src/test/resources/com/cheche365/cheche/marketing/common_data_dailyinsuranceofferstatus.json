@@ -1,0 +1,13 @@
+[
+
+    {
+        "id": 1,
+        "name": "已入账",
+        "description": "已入账"
+    },
+    {
+        "id": 2,
+        "name": "支出",
+        "description": "支出"
+    }
+]

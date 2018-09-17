@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title>线下数据导入上传</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link type="text/css" href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link type="text/css" href="../../css/common.css" rel="stylesheet">
+	<link type="text/css" href="../../css/formInput.css" rel="stylesheet">
+	<link type="text/css" href="../../plugins/jquery-ui-1.11.4/jquery-ui.css" rel="stylesheet">
+	<script type="text/javascript" src="../../js/jquery/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../../My97DatePicker/WdatePicker.js"></script>
+	<script type="text/javascript" src="../../js/jquery/jquery.form.js"></script>
+	<script type="text/javascript" src="../../plugins/jquery-ui-1.11.4/jquery-ui.min.js"></script>
+	<style>
+		table tr {
+			height: 50px;
+		}
+	</style>
+</head>
+<body>
+<div class="container tab_body" id="form">
+	<div id="fanhuaFormDiv" style="margin-top: 80px">
+		<form class="form-horizontal" id="insuranceImportFormFanhua" method="post" enctype="multipart/form-data">
+			<table width="1000px;" border="0px;" cellpadding="0" cellspacing="0" align="left">
+				<tr style="height: 40px">
+					<td width="20%" height="50px">
+						<span style="font-size: 20px;">泛华数据上传：</span>
+					</td>
+					<td width="10%" style="text-align: right">
+						<a id="url_templateFanhua" download="url_templateFanhua" href="">
+							<button class="btn btn-primary text-width-100" type="button">模版下载
+							</button>
+						</a>
+					</td>
+					<td width="15%" style="text-align: center">
+						<a id="url_templateFanhuaAdded" download="url_templateFanhuaAdded" href="">
+							<button class="btn btn-primary text-width-180" type="button">补充信息模版下载
+							</button>
+						</a>
+					</td>
+					<td width="15%" style="text-align: center">
+					</td>
+					<td width="30%" style="text-align: center">
+					</td>
+					<td width="15%" style="text-align: center">
+					</td>
+				</tr>
+				<tr>
+					<td width="10%" style="text-align: center">
+						<label class="control-label text-width-100">选择文件:&nbsp;&nbsp;</label>
+					</td>
+					<td width="15%" style="text-align: center">
+						<input id="codeFileFakeFanhua" name="codeFileFake" type="text"
+						       class="form-control file-input form_input"
+						       onclick="document.getElementById('codeFileFanhua').click();"
+						       style="width: 180px;height: 30px;margin-left:-40px;"
+						       placeholder="点击选择文件">
+						<input type="file" id="codeFileFanhua" name="codeFile" accept=".xlsx"
+						       class="text-input-150 hidden form_input"
+						       onchange="insurance_import.form.changeValue('Fanhua');"/>
+					</td>
+					<td width="15%" style="text-align: center">
+						<input id="areaLabel" name="areaLabel" type="text"
+						       class="form-control file-input text-input-100 form_input"
+						       style="width: 140px;height: 30px;"
+						       placeholder="请输入地区">
+						<input id="area" name="area" type="text" placeholder="请输入地区" class="hide form_input">
+					</td>
+					<td width="30%" style="text-align: center">
+						<input name="description" type="text"
+						       class="form-control file-input text-input-100 form_input"
+						       style="width: 280px;height: 30px;"
+						       placeholder="请输入备注">
+					</td>
+					<td width="15%" style="text-align: center">
+						<button id="save_buttonFanhua" sourceType="Fanhua" type="button"
+						        class="btn btn-danger text-width-100 save_button">上传
+						</button>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+
+	<div id="companyFormDiv" style="margin-top: 220px">
+		<form class="form-horizontal" id="insuranceImportFormCompany" method="post" enctype="multipart/form-data">
+			<table width="1000px;" border="0px;" cellpadding="0" cellspacing="0" align="left">
+				<tr style="height: 40px">
+					<td width="20%" height="50px">
+						<span style="font-size: 20px;">保险公司数据上传：</span>
+					</td>
+					<td width="10%" style="text-align: right">
+						<a id="url_templateCompany" download="url_templateCompany" href="">
+							<button class="btn btn-primary text-width-100" type="button">模版下载
+							</button>
+						</a>
+					</td>
+					<td width="15%" style="text-align: center">
+					</td>
+					<td width="15%" style="text-align: center">
+					</td>
+					<td width="30%" style="text-align: center">
+					</td>
+					<td width="15%" style="text-align: center">
+					</td>
+				</tr>
+
+				<tr>
+					<td width="10%" style="text-align: center">
+						<label class="control-label text-width-100">选择文件:&nbsp;&nbsp;</label>
+					</td>
+					<td width="15%" style="text-align: center">
+						<input id="codeFileFakeCompany" name="codeFileFake" type="text"
+						       class="form-control file-input form_input"
+						       onclick="document.getElementById('codeFileCompany').click();"
+						       style="width: 180px;height: 30px;margin-left:-40px;"
+						       placeholder="点击选择文件">
+						<input type="file" id="codeFileCompany" name="codeFile" accept=".xlsx"
+						       class="text-input-150 hidden form_input"
+						       onchange="insurance_import.form.changeValue('Company');"/>
+					</td>
+					<td width="15%" style="text-align: center">
+					</td>
+					<td width="30%" style="text-align: center">
+						<input name="description" type="text"
+						       class="form-control file-input text-input-100 form_input"
+						       style="width: 280px;height: 30px;"
+						       placeholder="请输入备注">
+					</td>
+					<td width="15%" style="text-align: center">
+						<button id="save_buttonCompany" sourceType="Company" type="button"
+						        class="btn btn-danger text-width-100 save_button">上传
+						</button>
+					</td>
+				</tr>
+
+			</table>
+		</form>
+	</div>
+
+	<div id="fanhuaTempDiv" style="margin-top: 360px">
+		<form class="form-horizontal" id="insuranceImportFormFanhuaTemp" method="post" enctype="multipart/form-data">
+			<table width="1000px;" border="0px;" cellpadding="0" cellspacing="0" align="left">
+				<tr style="height: 40px">
+					<td width="20%" height="50px">
+						<span style="font-size: 20px;">泛华台帐数据上传：</span>
+					</td>
+					<td width="10%" style="text-align: right">
+						<a id="url_templateFanhuaTemp" download="url_templateFanhuaTemp" href="">
+							<button class="btn btn-primary text-width-100" type="button">台帐数据模版下载
+							</button>
+						</a>
+					</td>
+					<td width="15%" style="text-align: center;visibility: hidden;">
+						<a id="url_templateFanhuaTemphide" download="url_templateFanhuaTempHide" href="">
+							<button class="btn btn-primary text-width-180" type="button">补充信息模版下载
+							</button>
+						</a>
+					</td>
+					<td width="15%" style="text-align: center">
+					</td>
+					<td width="30%" style="text-align: center">
+					</td>
+					<td width="15%" style="text-align: center">
+					</td>
+				</tr>
+				<tr>
+					<td width="10%" style="text-align: center">
+						<label class="control-label text-width-100">选择文件:&nbsp;&nbsp;</label>
+					</td>
+					<td width="15%" style="text-align: center">
+						<input id="codeFileFakeFanhuaTemp" name="codeFileFake" type="text"
+						       class="form-control file-input form_input"
+						       onclick="document.getElementById('codeFileFanhuaTemp').click();"
+						       style="width: 180px;height: 30px;margin-left:-40px;"
+						       placeholder="点击选择文件">
+						<input type="file" id="codeFileFanhuaTemp" name="codeFile" accept=".xlsx"
+						       class="text-input-150 hidden form_input"
+						       onchange="insurance_import.form.changeValue('FanhuaTemp');"/>
+					</td>
+					<td width="15%" style="text-align: center">
+						<input id="areaLabelFanhuaTemp" name="areaLabelFanhuaTemp" type="text"
+						       class="form-control file-input text-input-100 form_input"
+						       style="width: 140px;height: 30px;"
+						       placeholder="请输入地区">
+						<input id="areaFanhuaTemp" name="area" type="text" placeholder="请输入地区" class="hide form_input">
+					</td>
+					<td width="30%" style="text-align: center">
+						<input name="description" type="text"
+						       class="form-control file-input text-input-100 form_input"
+						       style="width: 280px;height: 30px;"
+						       placeholder="请输入备注">
+					</td>
+					<td width="15%" style="text-align: center">
+						<button id="save_buttonFanhuaTemp" sourceType="FanhuaTemp" type="button"
+						        class="btn btn-danger text-width-100 save_button">上传
+						</button>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</div>
+
+</body>
+<link rel="stylesheet" href="../../css/popup.css">
+<script type="text/javascript" src="../../js/jquery/jquery.cookie.js"></script>
+<script type="text/javascript" src="../../js/common/cookie.js"></script>
+<script type="text/javascript" src="../../js/common/common.js"></script>
+<script type="text/javascript" src="../../js/common/popup.js"></script>
+<script type="text/javascript" src="../../js/insurance/insurance_import.js"></script>
+</html>

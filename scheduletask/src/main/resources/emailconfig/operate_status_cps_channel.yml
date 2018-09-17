@@ -1,0 +1,5 @@
+#合作渠道接收邮件
+title: ${businessActivityName}-${currentDate}的商务活动监控数据列表
+template: /velocity/cpsChannel.vm
+tos: [zhangtc@cheche365.com,liuyw@cheche365.com]
+production_tos: [baihua@cheche365.com]

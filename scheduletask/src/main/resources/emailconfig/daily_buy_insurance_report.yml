@@ -1,0 +1,43 @@
+﻿#查询按天买车险数据
+title: "${timePeriod}按天买车险数据"
+tos: [zhangtc@cheche365.com,liuyw@cheche365.com]
+production_tos: [baihua@cheche365.com,zhangtc@cheche365.com]
+template: /velocity/completedOrder.vm
+excelAttachmentConfig:
+        fileName: "${timePeriod}按天买车险数据.xlsx"
+        sheets:
+            - sheetName: 按状态统计昨天和历史总量
+              columns:
+                  - columnType: orderDataList
+                    column:
+                        订单状态: orderStatus
+                        历史总数: Amount
+                        昨天下单量: fieldName
+            - sheetName: 昨天下单订单号和状态详情
+              columns:
+                  - columnType: orderNoAndStatusList
+                    column:
+                        订单号: orderNo
+                        订单状态: orderStatus
+            - sheetName: 用户停驶行为
+              columns:
+                  - columnType: stopDataList
+                    column:
+                        订单号: orderNo
+                        停驶开始日期: submitTime
+                        停驶结束日期: expireTime
+                        停驶天数: days
+                        停驶险种: fieldName
+                        返还金额: amount
+                        操作时间: operateTime
+            - sheetName: 用户复驶行为
+              columns:
+                  - columnType: restartedDataList
+                    column:
+                        订单号: orderNo
+                        复驶开始日期: submitTime
+                        复驶结束日期: expireTime
+                        复驶天数: days
+                        复驶险种: fieldName
+                        支付金额: amount
+                        操作时间: operateTime

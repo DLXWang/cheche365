@@ -1,0 +1,14 @@
+package com.cheche365.cheche.chinalife
+
+/**
+ * 河南南阳
+ */
+
+testDataParams = [
+
+    //{value=QCBABD0010, text=启辰DFL7167MAK4 豪华版 201304年款 72800元}
+    10000: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'QCBABD0010']]]]]],
+
+]
+
+

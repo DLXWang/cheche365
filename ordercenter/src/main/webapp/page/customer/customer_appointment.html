@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="../../css/common.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/dataTables.bootstrap.min.css"
+          rel="stylesheet">
+    <link type="text/css" href="../../plugins/select2/select2.min.css" rel="stylesheet">
+
+
+    <script type="text/javascript" src="../../js/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../plugins/jqPaginator-1.2.0/jqPaginator.min.js"></script>
+    <script type="text/javascript" src="../../plugins/select2/select2.min.js"></script>
+
+</head>
+<body>
+<div id="top_div" class="top-search">
+    <div class="row">
+        <div class="col-sm-7 text-right">
+            <div class=" input-group">
+                <input type="text" class="form-control" id="keyword" placeholder="根据客户姓名、手机号、车牌号进行搜索..."/>
+                <span class="input-group-btn">
+                    <button id="searchBtn" class="btn btn-danger" type="button">搜索</button>
+                </span>
+
+                <div class="col-sm-6 text-center">
+                    <select id="sourceChannel" class="form-control text-input-150">
+                        <option value="">产品平台</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-sm-8"></div>
+    </div>
+</div>
+
+
+<div class="col-sm-12">
+    <table class="table table-bordered table-hover" id="appointment_tab">
+    </table>
+</div>
+</body>
+<script type="text/javascript" src="../../plugins/DataTables-1.10.12/media/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../../js/common/datatable_util.js"></script>
+
+<script type="text/javascript" src="../../js/common/common.js"></script>
+<script type="text/javascript" src="../../js/common/properties.js"></script>
+<script type="text/javascript" src="../../js/common/popup.js"></script>
+<script type="text/javascript" src="../../js/common/operation.js"></script>
+<script type="text/javascript" src="../../js/customer/customer_appointment.js"></script>
+<script type="text/javascript" src="../../js/common/application_log.js"></script>
+</html>

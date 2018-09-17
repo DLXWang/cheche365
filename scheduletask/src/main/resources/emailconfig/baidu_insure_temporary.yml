@@ -1,0 +1,5 @@
+#百度车险txt文本内容邮件
+title: "百度车险txt文本内容邮件"
+tos: [liuyw@cheche365.com,guanwy@cheche365.com]
+production_tos: [zhangtc@cheche365.com]
+template: /velocity/baiduInsureSend.vm

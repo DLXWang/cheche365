@@ -1,0 +1,14 @@
+#半小时内的车贷活动报表
+title: "车抵贷广告数据-${currentDateTime}"
+tos: [zhangtc@cheche365.com,liuyw@cheche365.com,chenzhang@cheche365.com]
+production_tos: [majing@cheche365.com,panqx@cheche365.com,aodm@cheche365.com,liuhy@cheche365.com]
+template: /velocity/insuranceOrderReport.vm
+excelAttachmentConfig:
+        fileName: "${currentDateTime}车抵贷广告数据.xlsx"
+        sheets:
+            - sheetName: sheet1
+              columns:
+                  - columnType: marketingReport
+                    column:
+                        参与时间: effectDate
+                        手机号: mobile

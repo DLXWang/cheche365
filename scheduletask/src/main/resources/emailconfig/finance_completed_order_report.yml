@@ -1,0 +1,18 @@
+#财务部成单统计报表
+title: ${currentDate}财务部成单统计报表
+tos: [zhangtc@cheche365.com,liuyw@cheche365.com,huyp@cheche365.com]
+production_tos: [liangjie@cheche365.com]
+template: /velocity/completedOrder.vm
+excelAttachmentConfig:
+        fileName: "${currentDate}财务部成单统计报表.xlsx"
+        sheets:
+            - sheetName: sheet1
+              columns:
+                  - columnType: completedOrder
+                    column:
+                      支付日期: paymentDate
+                      渠道: source
+                      车主: owner
+                      车牌: licenseNo
+                      优惠前金额: payableAmount
+                      优惠后金额: paidAmount

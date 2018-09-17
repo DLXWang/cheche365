@@ -1,0 +1,35 @@
+package com.cheche365.cheche.botpy
+//this is 郑州
+
+testData = [
+
+     [
+        1,
+        '',
+        '豫AJ31T7',
+        'LBECFAHC2FZ210827',
+        'FW125165',
+        '曲新武',
+        '412822199110050879',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '北京现代BH7181PAZ',
+                        supplementInfo: [
+                            autoModel: 'x31ookfkm0jj6gqe',
+                             commercialStartDate : '2018-06-03',
+                             compulsoryStartDate : '2018-06-03',
+
+                        ]
+                    ],
+                    enrollDate: '2015-06-03'
+                ],
+            ]
+        ]
+    ],
+
+
+]

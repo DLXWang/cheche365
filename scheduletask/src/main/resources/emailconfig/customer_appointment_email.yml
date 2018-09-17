@@ -1,0 +1,18 @@
+#客户预约列表统计数据
+title: 客户预约列表
+tos: [zhangtc@cheche365.com,liuyw@cheche365.com]
+production_tos: [qinqi@cheche365.com]
+template: /velocity/customerAppointmentEmail.vm
+excelAttachmentConfig:
+        fileName: "客户预约列表.xlsx"
+        sheets:
+            - sheetName: sheet1
+              columns:
+                  - columnType: customerAppointmentEmail
+                    column:
+                      客户姓名: linkMan
+                      手机: mobile
+                      车险到期日: expireTime
+                      车牌号: licenseNo
+                      提交时间: submitTime
+                      预约渠道: channel

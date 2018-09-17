@@ -1,0 +1,24 @@
+package com.cheche365.cheche.cpic
+
+/**
+ * 广州
+ */
+
+testDataParams = [
+
+    //{value=FTABMD0121, text=丰田GTM7200EB 201204 5座 148300元}
+    10000 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'FTABMD0121']]]]]],
+
+    //{value=ADAARD0011, text=奥迪FV6461ATG 201111 5座 406600元}
+    10020 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'ADAARD0011']]]]]],
+
+    //{value=DZAAKD0099, text=大众汽车SVW71411BR 201012 5座 92900元}
+    10030 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZAAKD0099']]]]]],
+
+    //{value=DZAAKD0099, text=大众汽车SVW71411BR 201012 5座 92900元}
+    10040 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZAAKD0099']]]]]],
+
+    //{value=DZAAQD0038, text=高尔夫FV7164FATG 200910 5座 128800元}
+    10050 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZAAQD0038']]]]]],
+
+]

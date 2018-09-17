@@ -1,0 +1,47 @@
+ruleset {
+    description '全局默认CodeNarc规则集'
+
+    ruleset('rulesets/basic.xml')
+    ruleset('rulesets/braces.xml')
+    ruleset('rulesets/concurrency.xml') {
+        'StaticDateFormatField' priority: 3
+        'StaticSimpleDateFormatField' priority: 3
+    }
+    ruleset('rulesets/design.xml') {
+        'AbstractClassWithoutAbstractMethod' priority: 3
+        'SimpleDateFormatMissingLocale' priority: 3
+    }
+    ruleset('rulesets/dry.xml') {
+        'DuplicateMapLiteral' doNotApplyToFilesMatching: '.*(Mappings|BusinessUtils|ComboUtils|Handlers|Constants)\\.groovy'
+        'DuplicateNumberLiteral' doNotApplyToFilesMatching: '.*(Mappings|BusinessUtils|ComboUtils|Handlers|Constants)\\.groovy'
+        'DuplicateStringLiteral' doNotApplyToFilesMatching: '.*(Mappings|BusinessUtils|ComboUtils|Handlers|Constants)\\.groovy'
+    }
+    ruleset('rulesets/exceptions.xml')
+    ruleset('rulesets/formatting.xml') {
+        'ConsecutiveBlankLines' enabled: false
+        'SpaceAroundMapEntryColon' characterBeforeColonRegex: /\s|\w|\)|'|"/, characterAfterColonRegex: /\s/
+    }
+    ruleset('rulesets/imports.xml') {
+        'MisorderedStaticImports' comesBefore: false
+        'UnusedImport' priority: 2
+    }
+    ruleset('rulesets/logging.xml') {
+        'Println' priority: 1
+        'PrintStackTrace' priority: 1
+    }
+    ruleset('rulesets/naming.xml') {
+        'ClassNameSameAsSuperclass' priority: 3
+        'FactoryMethodName' priority: 3
+        'FieldName' staticFinalRegex: '_[A-Z][A-Z0-9_]*', staticRegex: '_[a-z][a-zA-Z0-9]*', finalRegex: '[A-Z][A-Z0-9_]*'
+        'PropertyName' staticFinalRegex: '_[A-Z][A-Z0-9_]*', staticRegex: '_[a-z][a-zA-Z0-9]*', finalRegex: '[A-Z][A-Z0-9_]*'
+        'VariableName' ignoreVariableNames: '_*'
+        'ParameterName' ignoreParameterNames: '_*'
+    }
+    ruleset('rulesets/size.xml')
+    ruleset('rulesets/unnecessary.xml') {
+        'UnnecessaryGString' priority: 2
+    }
+    ruleset('rulesets/unused.xml') {
+        'UnusedVariable' ignoreVariableNames: '_*'
+    }
+}

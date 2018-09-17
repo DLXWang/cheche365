@@ -1,0 +1,27 @@
+#安心上月成单的订单信息邮件
+title: 钱包数据统计报表
+template: /velocity/completedOrder.vm
+tos: [liuyw@cheche365.com,zhangtc@cheche365.com]
+production_tos: [yanyl@cheche365.com]
+excelAttachmentConfig:
+        fileName: "钱包数据统计报表.xlsx"
+        sheets:
+        - sheetName: 钱包数据统计报表
+          columns:
+              - columnType: walletData
+                column:
+                    钱包总余额: walletTotalBalance
+                    提现总金额: outTotalAmount
+                    提现总次数: outTotalNumber
+                    钱包总数: walletCount
+                    提现用户总数: outUserCount
+                    钱包活跃数: activeWalletCount
+                    绑定过银行卡的用户数: bindingBankCardUserCount
+                    绑定银行卡总数: bindingBankCardCount
+                    删除过银行卡的用户数: delBankCardCount
+                    昨日提现金额: yesterdayOutAmount
+                    昨日提现次数: yesterdayOutNumber
+                    昨日提现用户数: yesterdayOutUserCount
+                    昨日提现失败数: yesterdayOutFailCount
+                    昨日提现成功数: yesterdayOutSuccessCount
+                    昨日提现中数: yesterdayOutingCount

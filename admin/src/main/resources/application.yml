@@ -1,0 +1,5 @@
+server:
+  port: 8647
+
+sms:
+  send_enable: true

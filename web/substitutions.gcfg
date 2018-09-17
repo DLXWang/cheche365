@@ -1,0 +1,170 @@
+final GET_BASE_DIR = { context ->
+    "$context.project.buildDir.path/libs/static"
+}
+
+
+final CONTENT_CONVERTER_1_BASE = { targetContentKey, createNewText, context ->
+    def profile = context.env.'spring.profiles.active'
+
+    def m = context.matcher
+    def targetContent = context.params[profile]?.get(targetContentKey) ?: context.params.default.get(targetContentKey) ?: ''
+
+    createNewText context, m, targetContent
+}
+
+final CONTENT_CONVERTER_2 = { context ->
+    def m = context.matcher
+    def tag = context.tag
+
+    def oldContent = m[0][2]
+    def newContent = oldContent.contains('#') ? oldContent.replace('#', "?$tag#") : "$oldContent?$tag"
+    "${m[0][1]}$newContent${m[0][3]}"
+}
+
+final CONTENT_CONVERTER_3 = { context ->
+    def profile = context.env.'spring.profiles.active'
+    def targetContentKey = 'seo'
+
+    def m = context.matcher
+    def targetContent = context.params[profile]?.get(targetContentKey) ?: context.params.default.get(targetContentKey) ?: ''
+    "${m[0]}$targetContent"
+}
+
+/**
+ * 此模式匹配的是诸如“<a href="/abc.html">”、“<link href='/xyz.html'>”的形式
+ * converter可以指定目标内容在params中的key，以及是否应用tag
+ */
+final CREATE_CONTENT_PATTERN_CONVERTER_MAPPINGS_1 = { targetContentKey, tagEnabled, elementTraits ->
+    def contentConverter = CONTENT_CONVERTER_1_BASE.curry targetContentKey, { context, m, targetContent ->
+        "${m[0][1]}$targetContent${m[0][2]}${tagEnabled ? "?$context.tag" : ''}${m[0][3]}"
+    }
+    elementTraits.combinations().collectEntries { elementTrait, quotChar ->
+        [
+            /^(.*<${elementTrait.key}.*${elementTrait.value}=$quotChar)(\/\S*)($quotChar.*)$/
+            : contentConverter
+        ]
+    }
+}
+
+final CREATE_CONTENT_PATTERN_CONVERTER_MAPPINGS_2 = { elementTraits ->
+    elementTraits.collectEntries { elementTrait ->
+        [/^(.*$elementTrait\()(.*?)(\).*)$/ : CONTENT_CONVERTER_2]
+    }
+}
+
+final CREATE_CONTENT_PATTERN_CONVERTER_MAPPINGS_3 = { targetContentKey, elementTraits ->
+    def contentConverter = CONTENT_CONVERTER_1_BASE.curry targetContentKey, { _context, m, targetContent ->
+        "${m[0]}$targetContent"
+    }
+    elementTraits.collectEntries { elementTrait ->
+        [
+            /$elementTrait/
+            : contentConverter
+        ]
+    }
+}
+
+
+final INPUT_1 = { context ->
+    context.file.readLines()
+}
+
+final OUTPUT_1 = { context ->
+//            context.lines.each { line ->
+//                context.logger.error line
+//            }
+    context.file.withWriter { writer ->
+        context.lines.each { line ->
+            writer << line
+            writer << '\n'
+        }
+    }
+}
+
+
+params = [
+    production : [
+        domain      : 'http://www.cheche365.com',
+        cdnDomain   : '//res.cheche365.com',
+        seo         : ' '
+    ],
+    default : [
+        seo         : '\n<meta name="robots" content="nofollow"/>\n'
+    ]
+]
+
+
+rules = [
+
+    // cdn，html
+    [
+        GET_BASE_DIR,
+        ['m/**/*.html', 'web/**/*.html', 'website/**/*.html', 'duoqun/**/*.html', 'marketing/m/**/*.html', 'marketing/web/**/*.html'],
+        INPUT_1,
+        CREATE_CONTENT_PATTERN_CONVERTER_MAPPINGS_1(
+            'cdnDomain',
+            true,
+            [
+                [link: 'href', script: 'src', img: 'src'],
+                ['"', "'"]
+            ]),
+        OUTPUT_1
+    ],
+    // cdn，js
+    [
+        GET_BASE_DIR,
+        ['js/product/**/*.js', 'marketing/m/**/js/*.js', 'duoqun/**/js/*.js'],
+        { context ->
+            context.file.readLines().collectMany { line ->
+                "$line%%%%%%%%".replace('\\n', '\n').tokenize('\n')
+            }
+        },
+        CREATE_CONTENT_PATTERN_CONVERTER_MAPPINGS_1(
+            'cdnDomain',
+            true,
+            [
+                [ img: 'src' ],
+                [ '"', "'" ]
+            ]),
+        { context ->
+//            context.logger.error context.lines.join("\\n").replaceAll(/%%%%%%%%(?:\\n)?/, '\n')
+            context.file.withWriter { writer ->
+                writer << context.lines.join("\\n").replaceAll(/%%%%%%%%(?:\\n)?/, '\n')
+            }
+        }
+    ],
+    // 处理样式中的url
+    [
+        GET_BASE_DIR,
+        ['res/com/*.css', 'res/m/css/*.css', 'res/website/css/*.css', 'duoqun/css/*.css', 'marketing/m/**/css/*.css'],
+        INPUT_1,
+        CREATE_CONTENT_PATTERN_CONVERTER_MAPPINGS_2(['url']),
+        OUTPUT_1
+    ],
+    // 静态页面中的域名
+    [
+        GET_BASE_DIR,
+        ['website/**/*.html'],
+        INPUT_1,
+        CREATE_CONTENT_PATTERN_CONVERTER_MAPPINGS_1(
+            'domain',
+            false,
+            [
+                [ a: 'href' ],
+                [ '"' ]
+            ]),
+        OUTPUT_1
+    ],
+    // 所有非production环境都禁用seo
+    [
+        GET_BASE_DIR,
+        ['m/**/*.html'],
+        INPUT_1,
+        CREATE_CONTENT_PATTERN_CONVERTER_MAPPINGS_3(
+            'seo',
+            ['^\\s*<\\s*title\\s*>.*<\\s*\\/title\\s*>\\s*$']
+        ),
+        OUTPUT_1
+    ]
+
+]

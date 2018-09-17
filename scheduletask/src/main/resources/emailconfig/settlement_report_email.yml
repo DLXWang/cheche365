@@ -1,0 +1,5 @@
+#结算报表任务
+title: ${settlementDate}结算报表通知
+tos: [zhangtc@cheche365.com,liuyw@cheche365.com]
+production_tos: [zhoujx@cheche365.com,liangjie@cheche365.com,zhanglei@cheche365.com]
+template: /velocity/settlementReport.vm

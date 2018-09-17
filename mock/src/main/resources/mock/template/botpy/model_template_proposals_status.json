@@ -1,0 +1,149 @@
+{
+  "proposal_id": "gkezyqslpj1zrmq3",
+  "ic_code": "epicc",
+  "ic_nos": {
+    "biz_quote": "",
+    "biz_prop": "ABEJ920Y1418F065165Q",
+    "biz_policy": "ABEJ920Y1418B016759E",
+    "biz_pay": "",
+    "force_quote": "",
+    "force_prop": "",
+    "force_policy": "",
+    "force_pay": ""
+  },
+  "biz_start_date": "2018-04-12",
+  "biz_end_date": "2019-04-11",
+  "force_start_date": null,
+  "force_end_date": null,
+  "status": "PAID",
+  "quotation_id": "0kpwn9yam1x4j3yze",
+  "applicant": {
+    "name": "李欣",
+    "holder_type": "01",
+    "document_type": "01",
+    "document_no": "110229198601033816",
+    "phone": "18500215970",
+    "email": "baodan@cheche365.com",
+    "address": "",
+    "is_require_check": true,
+    "is_checked": true
+  },
+  "insurant": {
+    "name": "李欣",
+    "holder_type": "01",
+    "document_type": "01",
+    "document_no": "110229198601033816",
+    "phone": "18500215970",
+    "email": "baodan@cheche365.com",
+    "address": "",
+    "is_require_check": true,
+    "is_checked": true
+  },
+  "owner": {
+    "name": "李欣",
+    "holder_type": "01",
+    "document_type": "01",
+    "document_no": "110229198601033816",
+    "phone": "18500215970",
+    "email": "baodan@cheche365.com",
+    "address": "",
+    "is_require_check": false,
+    "is_checked": false
+  },
+  "uws": [
+    {
+      "tracking_no": "1c38597b33d611e8908600163e06ba80",
+      "is_success": true,
+      "is_done": true,
+      "start_time": "2018-03-30 12:52:13",
+      "done_time": "2018-03-30 12:52:36",
+      "is_manually": false
+    }
+  ],
+  "synchronizations": [],
+  "trackings": [
+    {
+      "tracking_no": "4L3Mwq8VZQxzkx6fr4anzw3Oy19PRXQN",
+      "is_success": true,
+      "is_done": true,
+      "start_time": "2018-03-30 12:57:54",
+      "done_time": "2018-03-30 12:57:56",
+      "type": "QRCode"
+    },
+    {
+      "tracking_no": "aeOXRzBMD7nzkXBT2NrQNweKZn2bw79Q",
+      "is_success": true,
+      "is_done": true,
+      "start_time": "2018-03-30 12:55:07",
+      "done_time": "2018-03-30 12:55:08",
+      "type": "IDVerify"
+    },
+    {
+      "tracking_no": "n7qomjbvJemK3VQc74Pr9pg1J5WK9GXO",
+      "is_success": true,
+      "is_done": true,
+      "start_time": "2018-03-30 12:52:37",
+      "done_time": "2018-03-30 12:52:39",
+      "type": "SendIDCode"
+    },
+    {
+      "tracking_no": "1c38597b33d611e8908600163e06ba80",
+      "is_success": true,
+      "is_done": true,
+      "start_time": "2018-03-30 12:52:13",
+      "done_time": "2018-03-30 12:52:36",
+      "type": "Underwriting",
+      "is_manually": false
+    },
+    {
+      "tracking_no": "dbcf5ee533d511e8908600163e06ba80",
+      "is_success": true,
+      "is_done": true,
+      "start_time": "2018-03-30 12:50:25",
+      "done_time": "2018-03-30 12:51:36",
+      "type": "Normal"
+    }
+  ],
+  "quotation": {
+    "biz_info": {
+      "total": "270.87",
+      "discount": "0.44625",
+      "cost": {},
+      "detail": [
+        {
+          "amount": "50000",
+          "code": "third",
+          "insured": true,
+          "valid": true,
+          "premium": "270.87"
+        }
+      ],
+      "start_date": "2018-04-12",
+      "end_date": "2019-04-11",
+      "no": "ABEJ920Y1418F065165Q"
+    },
+    "ic_code": "cpicn",
+    "model": {
+      "exhaust": "1.798",
+      "remark": "两厢 手动档 舒适型 国Ⅳ",
+      "display": "",
+      "purchase_price": "102800.0",
+      "vehicle_data_id": "FTBAUD0042",
+      "seat_count": "5",
+      "vehicle_name": "福克斯CAF7180N48",
+      "market_date": "2011",
+      "full_ic": true
+    },
+    "renewal_fetched": false
+  },
+  "vehicle": {
+    "owner": "李欣",
+    "license_no": "京NNL021",
+    "license_type": "02",
+    "frame_no": "LVSHCAME3CF844866",
+    "engine_no": "CJ08442",
+    "enroll_date": "2012-04-12",
+    "seat_count": "5",
+    "vehicle_nature": "211"
+  }
+}

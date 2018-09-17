@@ -1,0 +1,18 @@
+db.moDisplayMessage.update({"messageType._id":19},{"$push":
+    {
+    "message":{
+            "iconUrl" : "banner/top-banner24.png",
+            "url" : "/marketing/m/201804001/index.html",
+            "title" : "车险又又又降价啦，最低1.96折！",
+            "content" : null,
+            "weight" : "102"
+        }
+    }
+});
+db.moDisplayMessage.update({"messageType._id":19},{"$pull":
+    {
+    "message":{
+             "url":"/marketing/m/201808001/index.html",
+        }
+    }
+});

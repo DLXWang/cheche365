@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>订单列表</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link type="text/css" href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="../../css/common.css" rel="stylesheet">
+    <script type="text/javascript" src="../../js/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../My97DatePicker/WdatePicker.js"></script>
+    <script type="text/javascript" src="../../plugins/jqPaginator-1.2.0/jqPaginator.min.js"></script>
+    <style type="text/css">
+        .filter {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="top_div" class="top-search">
+    <div class="row">
+        <div class="col-sm-12 form-inline">
+            <select id="keyType" class="form-control">
+                <!--<option value="1">车主姓名</option>
+                <option value="2">车牌号</option>
+                <option value="3">手机号</option>-->
+                <option value="4">订单号</option>
+                <!--<option value="5">下单日期</option>-->
+            </select>
+            <div class="input-group">
+                <input type="text" class="form-control" id="keyword" placeholder=""/>
+                <span id="dateSelect" class="none" style="margin-right: 5px;">
+                    <input type="text" id="orderStartDate" name="orderStartDate" class="Wdate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',readOnly:true});" style="width: 175px;height: 34px;">
+                    <span style="margin: 0 10px;">至</span>
+                    <input type="text" id="orderEndDate" name="orderEndDate" class="Wdate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',readOnly:true});" style="width: 175px;height: 34px;">
+                </span>
+                <span class="input-group-btn">
+                    <button id="searchBtn" class="btn btn-danger" type="button">搜索</button>
+                </span>
+            </div>
+            <!--<span class="filter">
+                <select id="sort" class="form-control" style="width: 200px;">
+                    <option value="updateTime">最后操作时间倒序排列</option>
+                    <option value="createTime">订单创建时间倒序排列</option>
+                </select>
+            </span>-->
+            <span class="filter">
+                <select id="orderStatus" class="form-control" style="width: 150px;">
+                    <option value="">全部订单状态</option>
+                </select>
+            </span>
+
+            <!--<div class="col-sm-1 text-label text-right">-->
+                <!--<label class='search-type'>保险公司：</label>-->
+            <!--</div>-->
+            <!--<div class="col-sm-1 text-label text-right">-->
+                <!--<label class='search-type'>产品平台：</label>-->
+            <!--</div>-->
+            <span class="filter">
+                <select id="insuranceSel" class="form-control" style="width: 150px;">
+                    <option value="">全部保险公司</option>
+                </select>
+            </span>
+            <span class="filter">
+                <select id="channelSel" class="form-control" style="width: 150px;">
+                    <option value="">全部产品平台</option>
+                </select>
+            </span>
+            <!--<span class="filter">
+                <select id="paymentChannel" class="form-control" style="width: 150px;">
+                    <option value="">全部支付方式</option>
+                </select>
+            </span>
+            <span class="filter">
+                <select id="area" class="form-control" style="width: 150px;">
+                    <option value="">全部地区</option>
+                </select>
+            </span>-->
+        </div>
+    </div>
+</div>
+<div id="count_div" class="detail-together">
+    <!--<label>总共：</label>-->
+    <!--<span id="totalCount" class="detail-all"></span>个-->
+</div>
+<div id="show_div" class="table-responsive">
+    <div class="col-sm-12">
+        <table class="table table-bordered table-hover" id="list_tab">
+            <thead>
+            <tr id="tab_title_tr" class="active">
+                <th class="text-center">序号</th>
+                <th class="text-center">当前状态</th>
+                <th class="text-center">操作</th>
+                <th class="text-center">指定人</th>
+                <th class="text-center">支付状态</th>
+                <th class="text-center">保险公司</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <div class="customer-pagination">
+            <ul class="pagination"></ul>
+        </div>
+    </div>
+</div>
+</body>
+<link rel="stylesheet" href="../../css/popup.css">
+<script type="text/javascript" src="../../js/jquery/jquery.cookie.js"></script>
+<script type="text/javascript" src="../../js/common/common.js"></script>
+<script type="text/javascript" src="../../js/common/cookie.js"></script>
+<script type="text/javascript" src="../../js/common/popup.js"></script>
+<script type="text/javascript" src="../../js/order/order_list_temp.js"></script>
+<script type="text/javascript" src="../../js/order/order_status.js"></script>
+<script type="text/javascript" src="../../js/nationwideOrder/order_comment.js"></script>
+</html>

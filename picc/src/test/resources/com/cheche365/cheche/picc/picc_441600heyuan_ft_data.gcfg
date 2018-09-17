@@ -1,0 +1,8 @@
+package com.cheche365.cheche.picc
+
+testDataParams = [
+
+    //{value=4028b2883619a79f01365d7608a82e24, text=一汽奥迪A62012款 标准型 5座 346200元}
+    0 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028b2883619a79f01365d7608a82e24']]]]]],
+
+]

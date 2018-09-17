@@ -1,0 +1,11 @@
+db.moDisplayMessage.update({"messageType._id":34},{"$push":
+    {
+    "message":{
+            "iconUrl" : "banner/banner-top-21.jpg",
+            "url" : "/a/index.html#insur/category",
+            "title" : "",
+            "content" : null,
+            "weight" : "99"
+        }
+    }
+});

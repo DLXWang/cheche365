@@ -1,0 +1,96 @@
+apply from: rootProject.file('gradle/build_tasks.gradle')
+apply from: rootProject.file('gradle/springboot_classpath_jar_settings.gradle')
+apply from: rootProject.file('gradle/springboot_web_settings.gradle')
+
+/**
+ +---------+
+ | Plugins |
+ +---------+
+ */
+apply {
+    // 3rd-party plugins
+    plugin 'propdeps'
+    plugin 'propdeps-idea'
+}
+
+/**
+ +----------------+
+ | Build Settings |
+ +----------------+
+ */
+dependencies {
+
+    // Other Projects
+    compile     project(':marketing'),
+                // parsers
+                project(':baoxian'),
+                project(':bihu'),
+                project(':chinalife'),
+                project(':cpic'),
+                project(':picc-c'),
+                project(':pingan'),
+                project(':pingan-uk'),
+                project(':sinosig'),
+                project(':zhongan'),
+                project(':cpicuk-c'),
+                project(':sinosafe'),
+                project(':botpy-c'),
+                project(':taikang'),
+                project(':huanong'),
+                project(':aibao'),
+                project(':piccuk-c'),
+    // web sub-projects
+                project(':webarchive'),
+                // payment-ways & social networks
+                project(':alipay'),
+                project(':unionpay'),
+                project(':soopay'),
+                project(':wechat'),
+                project(':wallet'),
+                project(':ccint'),
+                project(':external-payment'),
+                //内部系统集成
+                project(':internal-integration'),
+                // 3rd-parties
+                project(':parser'),
+                project(':partner'),
+                // test helper
+                project(':manage-common')
+
+    if(['dev', 'itg', 'qa'].contains(System.getProperty('spring.profiles.active'))){
+        compile project(':mock')
+    }
+
+    //cheche365
+    compile     "com.cheche365.sms:cheche365-sms-client:$cheche365_sms_version",
+                "com.cheche365.pushmessage:cheche365-pushmessage-api:$cheche365_pushmessage_version",
+                "com.cheche365.answern:cheche365-answern:$cheche365_answern_version",
+                "com.cheche365.spring:cheche365-spring-resource:$cheche365_spring_version"
+
+    testCompile "com.cheche365.parser:cheche365-parser-test:$cheche365_parser_version"
+
+    // Spring Framework
+    compile     "org.springframework.boot:spring-boot-starter-web:$spring_boot_starter_version",
+                "org.springframework.session:spring-session:$spring_session_version",
+                "org.springframework.boot:spring-boot-starter-data-jpa:$spring_boot_starter_version"
+
+
+    runtime     "org.springframework.boot:spring-boot-starter-security:$spring_boot_starter_version"
+    testCompile "org.springframework.boot:spring-boot-starter-test:$spring_boot_starter_version"
+    optional    "org.springframework.boot:spring-boot-configuration-processor:$spring_boot_starter_version"
+
+    // Atmosphere Framework
+    compile     "org.atmosphere:atmosphere-runtime:$atmosphere_runtime_version",
+                "org.atmosphere:atmosphere-redis:$atmosphere_redis_version"
+
+
+    // Spock Framework
+    testCompile("org.spockframework:spock-spring:$spockframework_version") {
+        exclude group: 'org.codehaus.groovy', module: 'groovy-all'
+    }
+
+    // Misc.
+    compile     "nl.bitwalker:UserAgentUtils:$useragentutils_version",
+                "io.prometheus:simpleclient_spring_boot:$prometheus_version",
+                "io.prometheus:simpleclient_hotspot:$prometheus_version"
+}

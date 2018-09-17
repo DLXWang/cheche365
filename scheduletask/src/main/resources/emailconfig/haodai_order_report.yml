@@ -1,0 +1,27 @@
+#好贷渠道订单同步报表
+title: "出单中心-好贷渠道订单同步报表"
+tos: [zhangtc@cheche365.com,liuyw@cheche365.com]
+production_tos: [yangyulei@haodai.net ,yangyong@haodai.net,limeng.vip@haodai.net,zhaiqiang@haodai.net]
+template: /velocity/weicheQuoteEmail.vm
+excelAttachmentConfig:
+        fileName: "好贷渠道订单同步报表.xlsx"
+        sheets:
+            - sheetName: sheet1
+              columns:
+                  - columnType: haodaiOrderReport
+                    column:
+                        uid: uid
+                        日期: updateDate
+                        城市: city
+                        订单号: orderNo
+                        订单状态: orderStatus
+                        客户手机号: mobile
+                        车牌号: plateNo
+                        客户姓名: applicantName
+                        保险公司: insuranceCompany
+                        交强: compulsory
+                        商业: commercial
+                        车船税: autoTax
+                        交强险保单号: compulsoryNo
+                        商业险保单号: commercialNo
+                        收件人电话: recipientMobile

@@ -1,0 +1,72 @@
+package com.cheche365.cheche.picc
+
+/**
+ * 河南信阳
+ */
+
+testDataParams = [
+
+    //{value=4028b2883f2218f0013f411a8fc30e62, text=途观2013款 四驱豪华型 5座 274800元}
+    0  : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028b2883f2218f0013f411a8fc30e62']]]]]],
+
+    //{value=4028b2b651b4996e01523f6b9bf959b5, text=长安CS752014款 领先型 5座 113800元},
+    20 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028b2b651b4996e01523f6b9bf959b5']]]]]],
+
+    //{value=4028b2b654fcd4c3015547747b086f3b, text=宝骏7302016款 超值版 8座 60800元},
+    60 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028b2b654fcd4c3015547747b086f3b']]]]]],
+
+    //{value=4028b2883a0b0a8b013a49af66eb236e, text=荣光2012款 豪华型 8座 54000元},
+    90 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028b2883a0b0a8b013a49af66eb236e']]]]]],
+
+    //{value=4028808824ddca360124e21d13ea01c6, text=伊兰特2010款 舒适型 5座 90000元}
+    100: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028808824ddca360124e21d13ea01c6']]]]]],
+
+    //{value=90167028c057ffc800000000e57fc3fe, text=骊威2008款 GX标准型 5座 93800元}
+    110: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '90167028c057ffc800000000e57fc3fe']]]]]],
+
+    //{value=4028b2883d3f5a8b013d587358070fda, text=捷达2013款 时尚型 5座 73300元},
+    140: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028b2883d3f5a8b013d587358070fda']]]]]],
+
+    //{value=4028b28838b1bcb70138e692c13652f8, text=荣光2012款 9座 46000元}
+    150: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028b28838b1bcb70138e692c13652f8']]]]]],
+
+    //{value=4028b288341d2c9901342fdcc638046c, text=帝豪EC2012款 舒适型 5座 65800元}
+    160: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028b288341d2c9901342fdcc638046c']]]]]],
+
+    //{value=402880882838d3250128393c54010162, text=五菱之光/五菱扬光2006款 5座 37000元}
+    180: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '402880882838d3250128393c54010162']]]]]],
+
+    //{value=4028b2b64d09d68e014d1da95f91030a, text=宏光2014款 标准型 7座 48800元},
+    190: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028b2b64d09d68e014d1da95f91030a']]]]]],
+
+    //value=4028b2883aabece6013ab5aae3f3084b, text=伊兰特2011款 顶级型 5座 101300元}
+    200: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028b2883aabece6013ab5aae3f3084b']]]]]],
+
+    //{value=4028808832a004df01330fc731b43a21, text=长安之星2010款 标准型 8座 32000元}
+    210: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028808832a004df01330fc731b43a21']]]]]],
+
+    //{value=90162729c057ffc800000000d4e6bd36, text=鸿途2007款 豪华型 8座 58000元}
+    220: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '90162729c057ffc800000000d4e6bd36']]]]]],
+
+    //{value=4028b2883a548bdb013a6dae47281c69, text=东风悦达起亚K32012款 DLX 5座 122100元}
+    240: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028b2883a548bdb013a6dae47281c69']]]]]],
+
+    //{value=4028b28836dc9298013710b5793a2ede, text=骑士HMC7200B4T0 5座 105000元},
+    250: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028b28836dc9298013710b5793a2ede']]]]]],
+
+    //{value=901659a3c057ffc800000000fc751b2d, text=思迪/锋范2009款 精英版 5座 103800元},
+    260: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '901659a3c057ffc800000000fc751b2d']]]]]],
+
+    //{value=4028808832a004df01330fc731b43a21, text=长安之星2010款 标准型 8座 32000元},
+    270: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028808832a004df01330fc731b43a21']]]]]],
+
+    //{value=4028b2883a548bdb013a6dae47281c69, text=东风悦达起亚K32012款 DLX 5座 122100元}
+    280: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028b2883a548bdb013a6dae47281c69']]]]]],
+
+    //{value=40288088282a52f50128388f792704cd, text=长安之星2009款 舒适型 5座 45000元}
+    290: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '40288088282a52f50128388f792704cd']]]]]],
+
+    //{value=402880882f8b1512012f9aefb2bc1494, text=宏光2010款 标准型 7座 56000元}
+    300: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '402880882f8b1512012f9aefb2bc1494']]]]]],
+
+]

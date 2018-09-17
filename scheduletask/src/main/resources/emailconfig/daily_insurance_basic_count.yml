@@ -1,0 +1,22 @@
+#报表，安心车险数据汇总，按天统计总量，仅统计状态为“出单成功”的订单
+title: "出单中心-安心车险数据汇总报表"
+tos: [zhangtc@cheche365.com,liuyw@cheche365.com]
+production_tos: [lism@cheche365.com,lixin@cheche365.com]
+template: /velocity/commonCheckAttachment.vm
+excelAttachmentConfig:
+        fileName: "${currentDate}安心车险数据汇总.xlsx"
+        sheets:
+            - sheetName: sheet1
+              columns:
+                  - columnType: weicheQuoteReport
+                    column:
+                        保单总量: orderNum
+                        原始保费总额（商业+交强+车船税）: allPaidAmount
+                        原始保费总额（仅商业险）: licensePaidAmount
+                        停驶的车辆数: stoppedNum
+                        未停驶的车辆数: unstoppedNum
+                        昨天停驶中的车辆: stoppingNum
+                        停驶总天数: allStopDays
+                        复驶总天数: allRestartDays
+                        停驶总次数: allStopTimes
+                        停驶总返还车险保费: allReturnMoney

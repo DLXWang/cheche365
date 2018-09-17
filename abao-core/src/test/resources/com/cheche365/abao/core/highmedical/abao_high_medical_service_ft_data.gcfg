@@ -1,0 +1,37 @@
+package com.cheche365.abao.core.highmedical
+
+
+testData = [
+    [
+        0,
+        'CR#6501',
+        '1963-12-23', // 生日
+        true,         // 有无社保
+        [
+            accidentalMedical: 100_000,
+        ]
+    ],
+    [
+        1,
+        'CR#6501',
+        '1995-12-23', // 生日
+        true,         // 有无社保
+        [
+            accidentalMedical: 200_000,
+        ]
+    ],
+    [
+        2,
+        'CR#6501',
+        '1973-12-23', // 生日
+        false,         // 有无社保
+        [
+            generalMedical   : 1_000_000,
+            specialMedical   : 1_000_000,
+            accidentalMedical: 300_000,
+        ]
+    ]
+
+]
+
+

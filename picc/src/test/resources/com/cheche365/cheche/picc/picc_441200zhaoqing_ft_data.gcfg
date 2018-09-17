@@ -1,0 +1,8 @@
+package com.cheche365.cheche.picc
+
+testDataParams = [
+
+    //{value=6206998ac057ffc800000000fa251a0d, text=奔驰MB系列MB140D 12座 320000元}
+    10 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '6206998ac057ffc800000000fa251a0d']]]]]],
+
+]

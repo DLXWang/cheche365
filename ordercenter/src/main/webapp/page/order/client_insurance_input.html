@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>保单录入</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link type="text/css" href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="../../css/style.css" rel="stylesheet">
+    <script type="text/javascript" src="../../js/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../plugins/jqPaginator-1.2.0/jqPaginator.min.js"></script>
+    <script type="text/javascript" src="../../plugins/jquery-validation-1.14.0/jquery.validate.js"></script>
+    <script type="text/javascript" src="../../js/jquery/jquery.form.js"></script>
+
+    <style type="text/css">
+        .alert {
+            margin-bottom: 0;
+        }
+        .form-input .absolute-height {
+            height: 650px;
+            padding-top: 15px;
+        }
+        .form-input .bold-font {
+            font-weight: bold;
+        }
+        .col-sm-2{
+            width:17.667%;
+        }
+        .unvisable-hidden{
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+
+
+<div id="edit_div" style="padding: 20px 160px;">
+    <form class="form-horizontal form-input" id="insuranceForm" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <div class="row alert alert-info">
+                <p class="text-center bold-font">车辆信息</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-2 text-height-28 label-sm-2">车主证件类型</div>
+            <div class="col-sm-2 text-sm-2">
+                <select id="identityType" name="identityType" type="text" class="text-height-28 form-control text-input-200 select-28">
+                    <option value="">请选择...</option>
+                </select>
+            </div>
+            <div class="col-sm-2 text-height-28 label-sm-2">车主证件号</div>
+            <div class="col-sm-2 text-sm-2">
+                <input id="identity" name="identity" type="text" class="text-height-28 form-control text-input-200" maxlength="18">
+            </div>
+            <div class="col-sm-2 text-height-28 label-sm-2">车牌号</div>
+            <div class="col-sm-2 text-sm-2">
+                <input id="licensePlateNo" name="licensePlateNo" type="text" class="text-height-28 form-control text-input-200">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-2 text-height-28 label-sm-2">保险公司</div>
+            <div class="col-sm-2 text-sm-2">
+                <select id="insuranceCompany" name="insuranceCompany" class="text-height-28 form-control text-input-200 select-28"></select>
+            </div>
+            <div class="col-sm-2 text-height-28 label-sm-2">出单机构</div>
+            <div class="col-sm-2 text-sm-2">
+                <select id="institution" name="institution" class="text-height-28 form-control text-input-200 select-28"></select>
+            </div>
+        </div>
+        <div id="applicant">
+            <div class="form-group ">
+                <div class="row alert alert-info">
+                    <p class="text-center bold-font">投保人信息</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-2 text-height-28 label-sm-2">投保人证件类型</div>
+                <div class="col-sm-2 text-sm-2">
+                    <select id="applicantIdType" name="applicantIdType.id" type="text" class="text-height-28 form-control text-input-200 select-28">
+                        <option value="">请选择...</option>
+                    </select>
+                </div>
+                <div class="col-sm-2 text-height-28 label-sm-2">投保人证件号</div>
+                <div class="col-sm-2 text-sm-2">
+                    <input id="applicantIdNo" name="applicantIdNo" type="text" class="text-height-28 form-control text-input-200">
+                </div>
+                <div class="col-sm-2 text-height-28 label-sm-2">投保人姓名</div>
+                <div class="col-sm-2 text-sm-2">
+                    <input id="applicantName" name="applicantName" type="text" class="text-height-28 form-control text-input-200" maxlength="18">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row alert alert-info">
+                <p class="text-center bold-font">投保险种信息</p>
+            </div>
+        </div>
+        <div class="row nav-tabs-row">
+            <ul class="nav nav-tabs" id="myTab">
+                <li class="active"><a href="#commercial">商业险</a></li>
+                <li><a href="#compulsory">交强险</a></li>
+            </ul>
+        </div>
+        <!-- 商业险start -->
+        <div id="commercial" class="absolute-height">
+            <div class="form-group">
+                <div class="text-height-28 col-sm-2 label-sm-2">保单号</div>
+                <div class="col-sm-2 text-sm-2">
+                    <input type="text" id="commercialPolicyNo" name="commercialPolicyNo" class="text-height-28 form-control text-input-200">
+                </div>
+                <div class="col-sm-2 text-height-28 label-sm-2">商业保总险费</div>
+                <div class="col-sm-2 text-height-28 form-inline text-sm-2">
+                    <input type="text" id="commercialPremium" name="commercialPremium" value="0.00" class="text-height-28 form-control text-input-200"><span class="span-text">元</span>
+                </div>
+                <div class="col-sm-2 text-height-28 label-sm-2">不计免赔总额</div>
+                <div class="col-sm-2 text-height-28 form-inline text-sm-2">
+                    <input type="text" id="iop" name="iop" value="0.00" class="text-height-28 form-control text-input-200">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-2 label-sm-2">保险生效日期</div>
+                <div class="col-sm-2 text-sm-2 form-inline">
+                    <input type="text" id="commercialEffectiveDate" name="commercialEffectiveDate" class="text-height-28 form-control text-input-100 Wdate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd'});" style="height: 28px;" readonly>
+                    <select id="commercialEffectiveHour" name="commercialEffectiveHour" class="text-height-28 form-control text-input-70"></select>
+                </div>
+                <div class="col-sm-2 label-sm-2">保险失效日期</div>
+                <div class="col-sm-2 text-sm-2 form-inline">
+                    <input type="text" id="commercialExpireDate" name="commercialExpireDate" class="text-height-28 form-control text-input-100 Wdate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd'});" style="height: 28px;" readonly>
+                    <select id="commercialExpireHour" name="commercialExpireHour" class="text-height-28 form-control text-input-70"></select>
+                </div>
+                <div class="col-sm-2 text-height-28 label-sm-2">商业险浮动系数</div>
+                <div class="col-sm-2 text-height-28 form-inline text-sm-2">
+                    <input type="text" id="discount" name="discount" value="0.00" class="text-height-28 form-control text-input-200">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-4 label-sm-4">商业险险种详情</div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-3 text-height-28 label-sm-4">机动车辆损失险</div>
+                <div class="col-sm-3 text-height-28 form-inline text-sm-4">保额：
+                    <input type="text" id="damageAmount" name="damageAmount" value="0.00" class="text-height-28 premium form-control text-input-100"><span class="span-text">元</span>
+                </div>
+                <div class="col-sm-3 text-height-28 form-inline text-sm-4">保费：
+                    <input type="text" id="damagePremium" name="damagePremium" value="0.00" class="text-height-28 premium form-control text-input-100"><span class="span-text">元</span>
+                </div>
+                <div class="col-sm-3 text-height-28 form-inline text-sm-4">不计免赔：
+                    <input type="text" id="damageIop" name="damageIop" value="0.00" class="text-height-28 form-control premium text-input-100"><span class="span-text">元</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-3 text-height-28 label-sm-4">第三者责任险</div>
+                <div class="col-sm-3 text-height-28 form-inline text-sm-4">保额：
+                    <select id="thirdPartyAmount" name="thirdPartyAmount" class="text-height-28 form-control text-input-100 select-28">
+                        <option value="0" selected>不投保</option>
+                        <option value="50000">5万</option>
+                        <option value="100000">10万</option>
+                        <option value="200000">20万</option>
+                        <option value="300000">30万</option>
+                        <option value="500000">50万</option>
+                        <option value="1000000">100万</option>
+                        <option value="1500000">150万</option>
+                        <option value="2000000">200万</option>
+                        <option value="2500000">250万</option>
+                        <option value="3000000">300万</option>
+                    </select><span class="span-text">元</span>
+                </div>
+                <div class="col-sm-3 text-height-28 form-inline text-sm-4">保费：
+                    <input type="text" id="thirdPartyPremium" name="thirdPartyPremium" value="0.00" class="text-height-28 premium form-control text-input-100"><span class="span-text">元</span>
+                </div>
+                <div class="col-sm-3 text-height-28 form-inline text-sm-4">不计免赔：
+                    <input type="text" id="thirdPartyIop" name="thirdPartyIop" value="0.00" class="text-height-28 premium form-control text-input-100"><span class="span-text">元</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-3 text-height-28 label-sm-4">车上人员责任险(司机)</div>
+                <div class="col-sm-3 text-height-28 form-inline text-sm-4">保额：
+                    <select id="driverAmountSel" name="driverAmount" class="text-height-28 form-control text-input-100 select-28">
+                        <option value="0" selected>不投保</option>
+                        <option value="10000">1万</option>
+                        <option value="20000">2万</option>
+                        <option value="50000">5万</option>
+                        <option value="100000">10万</option>
+                        <option value="200000">20万</option>
+                    </select><span class="span-text">元</span>
+                </div>
+                <div class="col-sm-3 text-height-28 form-inline text-sm-4">保费：
+                    <input type="text" id="driverPremium" name="driverPremium" value="0.00" class="text-height-28 premium form-control text-input-100"><span class="span-text">元</span>
+                </div>
+                <div class="col-sm-3 text-height-28 form-inline text-sm-4">不计免赔：
+                    <input type="text" id="driverIop" name="driverIop" value="0.00" class="text-height-28 premium form-control text-input-100"><span class="span-text">元</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-3 text-height-28 label-sm-4">车上人员责任险(乘客)</div>
+                <div class="col-sm-3 text-height-28 form-inline text-sm-4">保额：
+                    <select id="passengerAmountSel" name="passengerAmount" class="text-height-28 form-control text-input-100 select-28">
+                        <option value="0" selected>不投保</option>
+                        <option value="10000">1万</option>
+                        <option value="20000">2万</option>
+                        <option value="50000">5万</option>
+                        <option value="100000">10万</option>
+                        <option value="200000">20万</option>
+                    </select><span class="span-text">元</span>
+                </div>
+                <div class="col-sm-3 text-height-28 form-inline text-sm-4">保费：
+                    <input type="text" id="passengerPremium" name="passengerPremium" value="0.00" class="text-height-28 premium form-control text-input-100"><span class="span-text">元</span>
+                </div>
+                <div class="col-sm-3 text-height-28 form-inline text-sm-4">不计免赔：
+                    <input type="text" id="passengerIop" name="passengerIop" value="0.00" class="text-height-28 form-control premium text-input-100"><span class="span-text">元</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-3 text-height-28 label-sm-4">车上人员(乘客)</div>
+                <div class="col-sm-3 text-height-28 form-inline text-sm-4">人数：
+                    <input type="text" id="passengerCount" name="passengerCount" value="0" class="text-height-28 form-control text-input-100"><span class="span-text">人</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-3 text-height-28 label-sm-4">盗抢险</div>
+                <div class="col-sm-3 text-height-28 form-inline text-sm-4">保额：
+                    <input type="text" id="theftAmount" name="theftAmount" value="0.00" class="text-height-28 premium form-control text-input-100"><span class="span-text">元</span>
+                </div>
+                <div class="col-sm-3 text-height-28 form-inline text-sm-4">保费：
+                    <input type="text" id="theftPremium" name="theftPremium" value="0.00" class="text-height-28 premium form-control text-input-100"><span class="span-text">元</span>
+                </div>
+                <div class="col-sm-3 text-height-28 form-inline text-sm-4">不计免赔：
+                    <input type="text" id="theftIop" name="theftIop" value="0.00" class="text-height-28 premium form-control text-input-100"><span class="span-text">元</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-3 text-height-28 label-sm-4">车身划痕损失险</div>
+                <div class="col-sm-3 text-height-28 form-inline text-sm-4">保额：
+                    <select id="scratchAmountSel" name="scratchAmount" class="text-height-28 form-control text-input-100 select-28">
+                        <option value="0" selected>不投保</option>
+                        <option value="2000">2000</option>
+                        <option value="5000">5000</option>
+                        <option value="10000">1万</option>
+                        <option value="20000">2万</option>
+                    </select><span class="span-text">元</span>
+                </div>
+                <div class="col-sm-3 text-height-28 form-inline text-sm-4">保费：
+                    <input type="text" id="scratchPremium" name="scratchPremium" value="0.00" class="text-height-28 premium form-control text-input-100"><span class="span-text">元</span>
+                </div>
+                <div class="col-sm-3 text-height-28 form-inline text-sm-4">不计免赔：
+                    <input type="text" id="scratchIop" name="scratchIop" value="0.00" class="text-height-28 premium form-control text-input-100"><span class="span-text">元</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-4 text-height-28 label-sm-4">自燃损失险</div>
+                <div class="col-sm-4 text-height-28 form-inline text-sm-4">保额：
+                    <input type="text" id="spontaneousLossAmount" name="spontaneousLossAmount" value="0.00" class="text-height-28 premium form-control text-input-100"><span class="span-text">元</span>
+                </div>
+                <div class="col-sm-4 text-height-28 form-inline text-sm-4">保费：
+                    <input type="text" id="spontaneousLossPremium" name="spontaneousLossPremium" value="0.00" class="text-height-28 premium form-control text-input-100"><span class="span-text">元</span>
+                </div>
+                <div class="col-sm-3 text-height-28 form-inline text-sm-4">不计免赔：
+                    <input type="text" id="spontaneousLossIop" name="spontaneousLossIop" value="0.00" class="text-height-28 premium form-control text-input-100"><span class="span-text">元</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-4 text-height-28 label-sm-4">玻璃单独破碎险</div>
+                <div class="col-sm-4 text-height-28 form-inline text-sm-4">类型：
+                    <select id="glassTypeSel" name="glassType" class="text-height-28 form-control text-input-100 select-28">
+                        <option value="0" selected>不投保</option>
+                        <option value="1">国产</option>
+                        <option value="2">进口</option>
+                    </select>
+                </div>
+                <div class="col-sm-4 text-height-28 form-inline text-sm-4">保费：
+                    <input type="text" id="glassPremium" name="glassPremium" value="0.00" class="text-height-28 premium form-control text-input-100"><span class="span-text">元</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-3 text-height-28 label-sm-4">发动机特别损失险</div>
+                <div class="col-sm-3 text-height-28 form-inline text-sm-4">保额：
+                    <input type="text" id="engineAmount" name="engineAmount" value="0.00" class="text-height-28 premium form-control text-input-100"><span class="span-text">元</span>
+                </div>
+                <div class="col-sm-3 text-height-28 form-inline text-sm-4">保费：
+                    <input type="text" id="enginePremium" name="enginePremium" value="0.00" class="text-height-28 premium form-control text-input-100"><span class="span-text">元</span>
+                </div>
+                <div class="col-sm-3 text-height-28 form-inline text-sm-4">不计免赔：
+                    <input type="text" id="engineIop" name="engineIop" value="0.00" class="text-height-28 premium form-control text-input-100"><span class="span-text">元</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-3 text-height-28 label-sm-4">无法找到第三方特约险</div>
+                <div class="col-sm-3 text-height-28 form-inline text-sm-4"></div>
+                <div class="col-sm-3 text-height-28 form-inline text-sm-4">保费：
+                    <input type="text" id="unableFindThirdPartyPremium" name="unableFindThirdPartyPremium" value="0.00" class="text-height-28 premium form-control text-input-100"><span class="span-text">元</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-3 text-height-28 label-sm-4">指定专修厂险</div>
+                <div class="col-sm-3 text-height-28 form-inline text-sm-4"></div>
+                <div class="col-sm-3 text-height-28 form-inline text-sm-4">保费：
+                    <input type="text" id="designatedRepairShopPremium" name="designatedRepairShopPremium" value="0.00" class="text-height-28 premium form-control text-input-100" ><span class="span-text">元</span>
+                </div>
+            </div>
+        </div>
+        <!-- 商业险end -->
+        <!-- 交强险start -->
+        <div id="compulsory" class="none absolute-height">
+            <div class="form-group">
+                <div class="col-sm-2 text-height-28 label-sm-2">保单号</div>
+                <div class="col-sm-2 text-sm-2">
+                    <input type="text" id="compulsoryPolicyNo" name="compulsoryPolicyNo" class="text-height-28 compulsoryPolicyNo form-control text-input-200">
+                </div>
+                <div class="col-sm-2 text-height-28 label-sm-2">交强险保费</div>
+                <div class="col-sm-2 text-sm-2">
+                    <input type="text" id="compulsoryPremium" name="compulsoryPremium" class="text-height-28 compulsoryPolicyNo form-control text-input-200">
+                </div>
+                <div class="col-sm-2 text-height-28 label-sm-2">车船使用税</div>
+                <div class="col-sm-2 text-sm-2">
+                    <input type="text" id="autoTax" name="autoTax" class="text-height-28 compulsoryPolicyNo form-control text-input-200">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-2 text-height-28 label-sm-2">保险生效日期</div>
+                <div class="col-sm-2 text-sm-2 form-inline">
+                    <input type="text" id="compulsoryEffectiveDate" name="compulsoryEffectiveDate" class="text-height-28 form-control text-input-200 Wdate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd'});" style="height: 28px;" readonly>
+                    <select id="compulsoryEffectiveHour" name="compulsoryEffectiveHour" class="text-height-28 form-control text-input-70"></select>
+                </div>
+                <div class="col-sm-2 label-sm-2">保险失效日期</div>
+                <div class="col-sm-2 text-sm-2 form-inline">
+                    <input type="text" id="compulsoryExpireDate" name="compulsoryExpireDate" class="text-height-28 form-control text-input-200 Wdate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd'});" style="height: 28px;" readonly>
+                    <select id="compulsoryExpireHour" name="compulsoryExpireHour" class="text-height-28 form-control text-input-70"></select>
+                </div>
+                <div class="col-sm-2 text-height-28 label-sm-2">交强险浮动系数</div>
+                <div class="col-sm-2 text-sm-2">
+                    <input type="text" id="discountCI" name="discountCI" value="0.00" class="text-height-28 compulsoryPolicyNo form-control text-input-200">
+                </div>
+            </div>
+        </div>
+        <!-- 交强险end -->
+        <div class="form-group">
+            <div class="row alert alert-info">
+                <p class="text-center bold-font">快递信息</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-2 text-height-28 label-sm-2">快递公司</div>
+            <div class="col-sm-2 text-sm-2">
+                <input id="expressCompany" name="expressCompany" type="text" class="text-height-28 form-control text-input-200 express">
+            </div>
+            <div class="col-sm-2 text-height-28 label-sm-2">快递单号</div>
+            <div class="col-sm-2 text-sm-2">
+                <input id="trackingNo" name="trackingNo" type="text" class="text-height-28 form-control text-input-200 express">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row alert alert-info">
+                <p class="text-center bold-font">保单文件上传</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="text-height-28 col-sm-1 label-sm-3" style="text-align: right">上传商业险保单</div>
+            <div class="text-height-28 col-sm-1 text-sm-2 form-inline" style="float: left;">
+                <input type="file" id="insuranceFile" name="commercialFile" title="支持上传图片和pdf格式" accept=".jpg,.jpeg,.png,.gif,.pdf"style="width: 230px;float:left;">
+                <button id="insuranceFileBtn"   type="button" class="btn btn-warning" style="width: 90px;height: 30px; float:left;">上传</button>
+            </div>
+            <div class="text-height-28 col-sm-1 label-sm-3" style="margin-left: 20px;text-align: right">上传交强险保单</div>
+            <div class="text-height-28 col-sm-1 text-sm-2 form-inline" style="float: left;">
+                <input type="file" id="compulsoryInsuranceFile" name="compulsoryFile" title="支持上传图片和pdf格式" accept=".jpg,.jpeg,.png,.gif,.pdf"style="width: 230px;float:left;">
+                <button id="compulsoryInsuranceFileBtn"  type="button" class="btn btn-warning" style="width: 90px;height: 30px; float:left;">上传</button>
+            </div>
+            <div class="text-height-28 col-sm-1 label-sm-3" style="margin-left: 20px;text-align: right">上传交强险标识</div>
+            <div class="text-height-28 col-sm-1 text-sm-2 form-inline" style="float: left;">
+                <input type="file" id="compulsoryInsuranceStampFile" name="compulsoryStampFile" title="支持上传图片和pdf格式" accept=".jpg,.jpeg,.png,.gif,.pdf"style="width: 230px;float:left;">
+                <button id="compulsoryInsuranceStampFileBtn"  type="button" class="btn btn-warning" style="width: 90px;height: 30px; float:left;">上传</button>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="form-group">
+            <div id="commercialDiv" class="unvisable-hidden">
+                <div class="text-height-28 col-sm-1 label-sm-3" style="text-align: right">商业险保单预览</div>
+                <div class="text-height-28 col-sm-1 text-sm-2 form-inline">
+                    <img id="insuranceImage" class="image" style="width:100px;height:100px;float: left" title="点击预览" alt="商业险保单"  >
+                    <input type="hidden" name="insuranceImage" id="inputInsuranceImage" class="hidden_input">
+                    <a download="" href="" id="downloadCommercial">
+                        <button type="button" class="btn btn-primary" style="width: 90px;height: 30px; float:left;margin-left: 130px">下载</button>
+                    </a>
+                </div>
+            </div>
+
+            <div id="compulsoryDiv" class="unvisable-hidden">
+                <div class="text-height-28 col-sm-1 label-sm-3" style="margin-left: 20px;text-align: right">交强险保单预览</div>
+                <div class="text-height-28 col-sm-1 text-sm-2 form-inline">
+                    <img id="compulsoryInsuranceImage" class="image" style="width:100px;height:100px;float: left" title="点击预览" alt="交强险保单"  >
+                    <input type="hidden" name="compulsoryInsuranceImage" id="inputCompulsoryInsuranceImage" class="hidden_input">
+                    <a download="" href="" id="downloadCompulsory">
+                        <button type="button" class="btn btn-primary" style="width: 90px;height: 30px; float:left;margin-left: 130px">下载</button>
+                    </a>
+                </div>
+            </div>
+
+            <div id="compulsoryStampDiv" class="unvisable-hidden">
+                <div class="text-height-28 col-sm-1 label-sm-3" style="margin-left: 20px;text-align: right">交强险标识预览</div>
+                <div class="text-height-28 col-sm-1 text-sm-2 form-inline">
+                    <img id="compulsoryInsuranceStamp" class="image" style="width:100px;height:100px;float: left" title="点击预览" alt="交强险标识"  >
+                    <input type="hidden" name="compulsoryStampFile" id="inputCompulsoryInsuranceStamp" class="hidden_input">
+                    <a download="" href="" id="downloadCompulsoryStamp">
+                        <button type="button" class="btn btn-primary" style="width: 90px;height: 30px; float:left;margin-left: 130px">下载</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <input type="hidden" name="purchaseOrderId" id="purchaseOrderId">
+        <input type="hidden" name="insurancePurchaseOrderRebateViewModel.downCommercialRebate" id="commercialRebate">
+        <input type="hidden" name="insurancePurchaseOrderRebateViewModel.downCompulsoryRebate" id="compulsoryRebate">
+        <input type="hidden" name="confirmOrderDate" id="confirmOrderDate">
+        <div class="form-group" style="padding-top: 150px;">
+            <div class="col-sm-12 text-center">
+                <input id="saveButton" type="submit" class="btn btn-warning text-input-100" value="保存">
+            </div>
+        </div>
+    </form>
+</div>
+<!-- 分割线   定义出单中心规范弹出层，以后按此规范，之前的不再使用  在popup.js中定义 -->
+<div id="popupHtml"></div>
+</body>
+<link rel="stylesheet" href="../../css/popup.css">
+<script type="text/javascript" src="../../js/common/common.js"></script>
+<script type="text/javascript" src="../../js/common/popup.js"></script>
+<script type="text/javascript" src="../../js/order/client_insurance_input.js" ></script>
+<script type="text/javascript" src="../../My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="../../js/order/insurance_image.js"></script>
+</html>

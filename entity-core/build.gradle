@@ -1,0 +1,54 @@
+/**
+ +----------------+
+ | Build Settings |
+ +----------------+
+ */
+
+version = project_version
+
+apply from: "${rootProject.projectDir}/gradle/maven_publishing_settings.gradle"
+
+configurations {
+    springBoot {
+        extendsFrom runtime
+    }
+}
+
+dependencies {
+
+    //compile project(':resource')
+
+    // cheche365
+    compile "com.cheche365.common:cheche365-common-business:$cheche365_common_business_version"
+
+    // Groovy
+    compile "org.codehaus.groovy:groovy-all:$groovy_version:indy"
+
+    // Jackson
+    compile "com.fasterxml.jackson.core:jackson-databind:$jackson_version"
+
+    // JPA, Hibernate
+    compile 'org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final',
+            "org.hibernate:hibernate-core:$hibernate_version"
+    runtime "org.hibernate:hibernate-validator:$hibernate_validator_version"
+
+    // Spring Frameworks
+    compile "org.springframework.data:spring-data-commons:$spring_data_commons_version",
+            "org.springframework:spring-tx:$spring_version",
+            "org.springframework.boot:spring-boot:$spring_boot_starter_version"
+
+    // Jersey
+    compile "com.sun.jersey:jersey-client:$jersey_version"
+
+    // Reflections
+    compile "org.reflections:reflections:$reflections_version"
+
+    // cheche365
+    testCompile "com.cheche365.test:cheche365-test-core:$cheche365_test_version"
+
+    // Spock Framework
+    testRuntime("org.spockframework:spock-spring:$spockframework_version") {
+        exclude group: 'org.codehaus.groovy', module: 'groovy-all'
+    }
+}
+

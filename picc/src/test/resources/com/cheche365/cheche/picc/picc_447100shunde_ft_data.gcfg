@@ -1,0 +1,8 @@
+package com.cheche365.cheche.picc
+
+testDataParams = [
+
+    //{value=9015fba4c057ffc80000000088346ed8, text=福克斯2009款 运动型 5座 137900元}
+    0 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '9015fba4c057ffc80000000088346ed8']]]]]],
+
+]

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--<link type="text/css" href="../../css/order/order_common.css" rel="stylesheet">-->
+    <link type="text/css" href="../../css/style.css" rel="stylesheet">
+    <script type="text/javascript" src="../../js/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/common/common.js" ></script>
+    <script type="text/javascript" src="../../js/order/order.js" ></script>
+    <script type="text/javascript" src="../../js/order/order_status_change.js" ></script>
+</head>
+<body>
+<div class="top-search">
+    <div class="row">
+        <div class="col-sm-8"></div>
+        <div class="col-sm-4 text-right">
+            <div class="input-group">
+                <input type="text" class="form-control" id="keyword" placeholder="根据车主、手机号、订单号进行搜索..."/>
+                <span class="input-group-btn">
+                    <button id="searchBtn" class="btn btn-default" type="button">搜索</button>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="detail-together">
+    <label>总共：</label>
+    <span id="totalCount" class="detail-all"></span>单
+    <span >
+     <button id="oneKeyProcess" class="btn" type="button">一键处理</button> </span>
+</div>
+
+<div class="table-responsive">
+    <div class="col-sm-12">
+        <table class="table table-bordered table-hover" id="offline_tab">
+            <thead>
+                <tr class="active">
+                    <th class="text-center"><input id="currentPageAllOrders" type="checkbox">全选/取消</th>
+                    <th class="text-center">订单编号</th>
+                    <th class="text-center">车主</th>
+                    <th class="text-center">车牌号</th>
+                    <th class="text-center">保险公司</th>
+                    <th class="text-center">实付金额</th>
+                    <th class="text-center">下单时间</th>
+                    <th class="text-center">指定人</th>
+                    <th class="text-center">最后操作人</th>
+                    <th class="text-center">最后操作时间</th>
+                    <th class="text-center">支付状态</th>
+                    <th class="text-center">当前状态</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <div class="prov-next">
+            <div class="row page-class">
+                <div id="page_up_down" class="col-sm-12 none"><a id="pageUp" class="page-class-left" href="javascript:;">上一页</a><a id="pageDown" href="javascript:;">下一页</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+package com.cheche365.cheche.sinosig
+
+/**
+ * 深圳
+ */
+
+testDataParams = [
+
+    //{value=RCABSD0018, text=轩逸DFL7200AA轿车  2007款 XL豪华版 5座 147800元}
+    0: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'RCABSD0018']]]]]],
+
+    //{value=DFCDGD0122, text=东风LZ6460AQFE多用途乘用车  2011款 乘用版舒适型 7座 69800元}
+    10: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DFCDGD0122']]]]]],
+
+    //{value=DZAAKD0099, text=大众汽车SVW71411BR轿车  2011款 致尚版 5座 92900元}
+    20: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZAAKD0099']]]]]],
+
+    //{value=FTABMD0068, text=丰田GTM7200EB轿车  2011款 200E精英天窗版 5座 160800元}
+    30: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'FTABMD0068']]]]]],
+
+    //{value=DZABCD0032, text=朗逸SVW7167MSD轿车  2011款 品悠版 5座 104800元}
+    40: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZABCD0032']]]]]],
+
+    //{value=BTAALD0011, text=雅阁HG7240轿车  2005款 加热型 5座 229800元}
+    50: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'BTAALD0011']]]]]],
+
+    //{value=DZAAKD0099, text=大众汽车SVW71411BR轿车  2011款 致尚版 5座 92900元}
+    60: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZAAKD0099']]]]]],
+
+    //{value=DZAAKD0099, text=大众汽车SVW71411BR轿车  2011款 致尚版 5座 92900元}
+    70: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZAAKD0099']]]]]],
+
+    //{value=DZAAKD0099, text=大众汽车SVW71411BR轿车  2011款 致尚版 5座 92900元}
+    80: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZAAKD0099']]]]]],
+
+    //{value=DZAAKD0099, text=大众汽车SVW71411BR轿车  2011款 致尚版 5座 92900元}
+    90: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZAAKD0099']]]]]],
+
+    //{value=DZAAKD0099, text=大众汽车SVW71411BR轿车  2011款 致尚版 5座 92900元}
+    100: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZAAKD0099']]]]]],
+
+]

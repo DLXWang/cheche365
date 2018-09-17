@@ -1,0 +1,40 @@
+discovery:
+  port: 8761
+  hostname: localhost
+  username: cheche
+  password: cheche
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://${discovery.username}:${discovery.password}@${discovery.hostname}:${discovery.port}/eureka/
+      registerWithEureka: true
+      fetchRegistry: true
+
+ribbon:
+  eureka:
+    enabled: true
+  ReadTimeout: 600000
+  ConnectTimeout: 250
+  OkToRetryOnAllOperations: true
+  MaxAutoRetriesNextServer: 1
+  MaxAutoRetries: 0
+
+feign:
+  hystrix:
+    enabled: true
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 600000
+
+management:
+  context-path: /app-manage
+  security:
+    enabled: false

@@ -1,0 +1,81 @@
+<div style="height: auto">
+    <div class="theme_poptit">
+        <a id="auto_detail_close" href="javascript:;" title="关闭" class="close">
+            <i class="glyphicon glyphicon-remove"></i>
+        </a>
+        <h4 class="text-center" id="detail_title">新增照片类型</h4>
+    </div>
+    <div>
+        <div id="imageTypeKindDiv" class="ddddddd">
+            <!--照片类型循环-->
+            <div style="margin-left: 20px ; clear:both;">
+                <div >
+                    <img src="../../images/kuang.jpg" style="height: 15px; width: 15px;">
+                    <input id="1"  value="" type="checkbox" checked ="checked" name="ooooo">
+                    <label for="1">
+                        <div id="u47" class="text">
+                            <p><span>行驶证类</span></p>
+                        </div>
+                    </label>
+                </div>
+
+                <div style="margin-left: 20px" id="imageTypeItemDiv">
+                    <!--照片子类型循环-->
+                    <div style="float: left;  margin-left: 20px">
+                        <img src="../../images/kuang.jpg" style="height: 15px; width: 15px;;">
+                        <input  value="" type="checkbox" checked ="checked" name="ooooo">
+                        <label >
+                            <div class="text">
+                                <p><span>行驶证正本</span></p>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div  style="float: left; margin-left: 20px">
+                        <img src="../../images/kuang.jpg" style="height: 15px; width: 15px;;">
+                        <input  value="" type="checkbox" checked ="checked" name="ooooo">
+                        <label >
+                            <div class="text">
+                                <p><span>行驶证副本</span></p>
+                            </div>
+                        </label>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <div>
+            <div id="u68" style="margin-left: 30px; clear: both;">
+                <div id="u69" class="text">
+                    <p><span>其他</span><span>自定义</span></p>
+                </div>
+            </div>
+            <div style="margin-left: 30px; clear: both;">
+                <form>
+                    <div id="customTypeInputDiv">
+                        <div  style="float: left; margin-left: 50px ; margin-top: 20px">
+                            <input name="customType" value="（限10个汉字)" type="text" style="width: 300px;" onfocus="if (value =='（限10个汉字)'){value =''}" onblur="if (value ==''){value='（限10个汉字)'}">
+                        </div>
+                    </div>
+                </form>
+                <div id="u74" style="float: left; margin-left: 15px ; margin-top: 20px">
+                    <p onclick="imageTypeAdd.appendImageTypeItem();"><img src="../../images/zoom_in.gif"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div style=" clear:both;margin-bottom: 30px ">
+        <div style=" text-align: center;">
+            <input type="button" value="提交" style="width: 80px;height: 30px;margin-top: 30px;margin-left: 30px" onclick="imageTypeAdd.saveImageTypeItem();">
+            <input id="myClose" type="button" value="取消" style="width: 80px;height: 30px;margin-top: 30px;margin-left: 30px">
+        </div>
+
+    </div>
+
+
+</div>

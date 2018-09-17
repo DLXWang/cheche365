@@ -1,0 +1,20 @@
+package com.cheche365.cheche.ccint
+
+testData = [
+
+    [
+        0,
+        'CR',
+        'file:/F:/ccint/img/20170315161322.jpg',
+        [
+            licensePlateNo: '鄂A1KM89',
+            engineNo      : '3366817',
+            owner         : '孔存杰',
+            vinNo         : 'LVSFDFAB5CN265265',
+//            enrollDate    : '2012-09-26',
+            brandCode     : '马自达牌CAF7161A1'
+        ],
+        null
+    ],
+
+]

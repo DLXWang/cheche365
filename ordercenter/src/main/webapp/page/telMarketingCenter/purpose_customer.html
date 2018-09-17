@@ -1,0 +1,142 @@
+<html>
+<head lang="en">
+    <title>意向客户</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link type="text/css" href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap-multiselect.css">
+    <link type="text/css" href="../../css/common.css" rel="stylesheet">
+    <script type="text/javascript" src="../../js/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap-multiselect.js"></script>
+    <script type="text/javascript" src="../../plugins/jqPaginator-1.2.0/jqPaginator.min.js"></script>
+    <script type="text/javascript" src="../../plugins/jquery-validation-1.14.0/jquery.validate.js"></script>
+</head>
+<body>
+<div class="top-search">
+    <div class="row">
+        <div class="col-sm-8 form-inline">
+            <div class="input-group text-input-300">
+                <input type="text" class="form-control" id="mobilePhone" placeholder="手机号"/>
+                <span class="input-group-btn">
+                    <button id="searchBtn" class="btn btn-danger" type="button">搜索</button>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="firstPage">
+    <div>
+        <div class="col-sm-12">
+            <p></p>
+        </div>
+        <div class="text-left" style="padding-left:15px">
+            <label><font size="3px">优先处理：</font></label><span>15分钟内需要联系的，按照时间顺序从上到下排序</span>
+        </div>
+    </div>
+    <div id="precedence_div" class="table-responsive">
+        <div class="col-sm-12">
+            <table class="table table-bordered table-hover" id="precedence_list_tab">
+                <thead>
+                <tr class="active">
+                    <th class="text-center">预约时间</th>
+                    <th class="text-center">电话</th>
+                    <th class="text-center">姓名</th>
+                    <th class="text-center">车险到期日</th>
+                    <th class="text-center">来源</th>
+                    <th class="text-center">处理结果</th>
+                    <th class="text-center" style="width:260px;">备注</th>
+                    <th class="text-center">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="top-search">
+        <div class="row"  style="padding-bottom:15px">
+            <div class="col-sm-12 form-inline">
+                <label><font size="3px">正常处理：</font></label>
+                <select id="channelSel" name="channelIds" class="form-control text-input-150" multiple="multiple">
+                    <option value="0">站内</option>
+                </select>
+                <select id="typeSel" name="telTypes" class="form-control text-input-150" multiple="multiple" >
+                </select>
+                <input type="text" class="form-control text-input-50 none" id="expireTime" placeholder="车险到期日止"
+                       style="display:none;width: 175px;background:#fff url(../../My97DatePicker/skin/datePicker.gif) no-repeat right;"
+                       onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true});">
+                <input type="checkbox" id="areaType" name="areaType" value="1" >  <label>开通城市</label>&nbsp;&nbsp;
+                <div class="btn-group area " style="display: none">
+                    <select id="areaSel"  class="form-control text-input-150 none" multiple="multiple">
+                    </select>
+                </div>
+                <label>来源创建时间：</label>
+                <input type="text" class="form-control text-input-50" id="startTime" placeholder="起始时间"
+                       style="width: 165px;background:#fff url(../../My97DatePicker/skin/datePicker.gif) no-repeat right;"
+                       onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true});">
+                <span style="margin: 0 10px;">至</span>
+                <input type="text" class="form-control text-input-50" id="endTime" placeholder="截止时间"
+                       style="width: 165px;background:#fff url(../../My97DatePicker/skin/datePicker.gif) no-repeat right;"
+                       onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true});">
+            </div>
+        </div>
+    </div>
+
+    <div id="normal_div" class="table-responsive">
+        <div class="col-sm-12">
+            <table class="table table-bordered table-hover" id="normal_list_tab">
+                <thead>
+                <tr class="active">
+                    <th class="text-center">电话</th>
+                    <th class="text-center">姓名</th>
+                    <th class="text-center">车险到期日</th>
+                    <th class="text-center">来源</th>
+                    <th class="text-center">处理结果</th>
+                    <th class="text-center">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="updateDiv" class="form-group col-sm-12 text-center"><button id="newBatch" class="btn btn-success" type="button">已处理完，换一批</button></div>
+</div>
+<div  id="lastPage" class="none col-sm-12" style="display: none;">
+    <div class="col-sm-12"><p></p></div>
+    <div id="search_count_div" style="padding-left:10px" class="form-group" >
+        总共找到<span id="mobileCount" class="detail-all"></span>条<span id="mobileNo" class="detail-all"></span>结果
+    </div>
+    <div class="col-sm-12">
+        <table class="table table-bordered table-hover" id="search_list_tab">
+            <thead>
+            <tr class="active">
+                <th class="text-center">电话</th>
+                <th class="text-center">姓名</th>
+                <th class="text-center">车险到期日</th>
+                <th class="text-center">来源</th>
+                <th class="text-center">处理结果</th>
+                <th class="text-center">指定跟进人</th>
+                <th class="text-center">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <div id="customer_pagination_idv" class="customer-pagination">
+            <ul id="pagination_ul" class="pagination"></ul>
+        </div>
+    </div>
+</div>
+<div id="all_search_list_div"></div>
+</body>
+<script type="text/javascript" src="../../js/common/common.js"></script>
+<script type="text/javascript" src="../../js/common/popup.js"></script>
+<script type="text/javascript" src="../../My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="../../js/telMarketingCenter/purpose_customer.js"></script>
+<script type="text/javascript" src="../../js/telMarketingCenter/search_list.js"></script>
+<script type="text/javascript" src="../../js/jquery/jquery.cookie.js"></script>
+<script type="text/javascript" src="../../js/common/cookie.js"></script>
+<script type="text/javascript" src="../../js/common/application_log.js"></script>
+</html>

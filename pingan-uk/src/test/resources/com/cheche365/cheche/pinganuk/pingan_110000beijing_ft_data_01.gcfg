@@ -1,0 +1,9 @@
+package com.cheche365.cheche.pinganuk
+//this is 北京
+
+testDataParams = [
+
+    //
+    10000 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'HTI1023DGD']]]]]],
+
+]

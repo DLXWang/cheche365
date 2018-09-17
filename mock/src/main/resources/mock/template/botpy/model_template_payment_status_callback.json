@@ -1,0 +1,18 @@
+{
+  "notification_id": "98jk98200002js00",
+  "type": "PaymentStatus",
+  "is_done": "true",
+  "is_success": "true",
+  "create_time": "2018-03-13 13:18:52",
+  "ready_time": "2018-03-13 13:18:59",
+  "data": {
+    "tracking_no": "ab0a3598237411e8814000163e0c304e",
+    "ic_code": "epicc",
+    "channel":"alipay",
+    "paid":true
+  },
+  "account_id": "wrv2qsje59rj0r7x",
+  "proposal_id": "l99jnue96jo2eoml",
+  "out_trade_no": "9a735a9b-7b5a-4cc6-bb89-36e57986eadd"
+}
+

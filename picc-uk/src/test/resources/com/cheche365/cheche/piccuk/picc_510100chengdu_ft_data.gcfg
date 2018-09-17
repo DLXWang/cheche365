@@ -1,0 +1,144 @@
+package com.cheche365.cheche.piccuk
+//this is 郑州
+
+basePackageOptions = [
+    thirdPartyAmount: 0.0,
+    thirdPartyIop   : false,
+    damage          : false,
+    damageIop       : false,
+    theft           : false,
+    theftIop        : false,
+    engine          : false,
+    engineIop       : false,
+    glass           : false,
+    glassType       : null,    // 国产
+    driverAmount    : 0.0,
+    driverIop       : false,
+    passengerAmount : 0.0,
+    passengerIop    : false,
+    spontaneousLoss : false,
+    scratchAmount   : 0.0,
+    scratchIop      : false,
+    compulsory      : true,
+    autoTax         : false,
+    unableFindThirdParty : false
+]
+
+
+testData = [
+     [
+            10003304,
+            'BUG3340',
+            '川AU8V66',
+            'SALVA2BG9DH735925',
+            '010612094920204PT',
+            '刘春连',
+            '512928197712287038',
+            null,
+            null,
+            [
+                quoteRecord:[
+                    auto   :  [
+                        autoType:[
+                            code:'揽胜极光RANGE ROVER EVOQUE',
+                            supplementInfo : [
+                                autoModel: 'LHBAGI0008',
+                                commercialStartDate: '2018-09-19',
+                                compulsoryStartDate: '2018-09-19',
+                                verificationMobile : '17600181704',
+                            ]
+                        ],
+                        enrollDate:'2013-01-30'
+                    ]
+                ]
+            ],
+        ],
+
+ [
+            10003301,
+            '',
+            '川A460UE',
+            'LHGCM462562030793',
+            '1636462',
+            '敬琳',
+            '510103197309191922',
+            null,
+            null,
+            [
+                quoteRecord:[
+                    auto   :  [
+                        autoType:[
+                            code:'雅阁HG7201A(ACCORD2.0i-VTEC)',
+                            supplementInfo : [
+                                autoModel: 'BTAALD0019',
+                                commercialStartDate: '2018-09-19',
+                                compulsoryStartDate: '2018-09-19',
+                                verificationMobile : '17600181704',
+                            ]
+                        ],
+                        enrollDate:'2013-01-30'
+                    ]
+                ]
+            ],
+        ],
+
+
+          [
+                    1000330333,
+                    'BUG3340',
+                    '川A1DP10',
+                    'LVRHDFML1FN406349',
+                    '3180726',
+                    '段鹏',
+                    '513822199209157750',
+                    null,
+                    null,
+                    [
+                        quoteRecord:[
+                            auto   :  [
+                                autoType:[
+                                    code:'马自达CAM7150M5',
+                                    supplementInfo : [
+                                        autoModel: 'MZAASD0086',
+                                        commercialStartDate: '2018-09-19',
+                                        compulsoryStartDate: '2018-09-19',
+                                        verificationMobile : '17600181704',
+                                    ]
+                                ],
+                                enrollDate:'2015-10-12'
+                            ]
+                        ]
+                    ],
+                ],
+
+
+            [
+                    1000330,
+                    '',
+                    '川AASGDA',
+                    'LFV3A28E873010009',
+                    '23461236',
+                    '测试',
+                    '510183198308057154',
+                    null,
+                    null,
+                    [
+                        quoteRecord:[
+                            auto   :  [
+                                autoType:[
+                                    code:'马自达CAM7150M5',
+                                    supplementInfo : [
+                                        autoModel: 'MZAASD0121',
+                                        commercialStartDate: '2018-09-19',
+                                        compulsoryStartDate: '2018-09-19',
+                                        verificationMobile : '17600181704',
+                                    ]
+                                ],
+                                enrollDate:'2013-09-12'
+                            ]
+                        ]
+                    ],
+                ],
+
+
+]

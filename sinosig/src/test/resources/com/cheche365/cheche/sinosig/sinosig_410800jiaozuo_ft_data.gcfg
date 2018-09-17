@@ -1,0 +1,47 @@
+package com.cheche365.cheche.sinosig
+
+/**
+ * 河南焦作
+ */
+
+testDataParams = [
+
+    //{value=XTAAFD0099, text=东风雪铁龙DC7162LYBM轿车  2014款 时尚型 5座 62300元},
+    10 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'XTAAFD0099']]]]]],
+
+    //{value=TYBAYD0038, text=五菱LZW6431MF客车  2010款 豪华型 7座 57800元}
+    70 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'TYBAYD0038']]]]]],
+
+    //{value=BYAAFD0026, text=比亚迪QCJ7152A5轿车  2012款 豪华型 5座 55900元}
+    80 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'BYAAFD0026']]]]]],
+
+    //{value=DZAATD0033, text=捷达FV7190GDF轿车  2004款 豪华型 柴油 5座 122000元}
+    110: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZAATD0033']]]]]],
+
+    //{value=CAACXD0057, text=大众FV7160BBMGG轿车  2013款 时尚型 5座 73300元}
+    190: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'CAACXD0057']]]]]],
+
+    //{value=DZAATD0078, text=大众FV7160BBMGG轿车  2013款 时尚型 5座 73300元}
+    210: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZAATD0078']]]]]],
+
+    //{value=DZAATD0033, text=捷达FV7190GDF轿车  2004款 豪华型 柴油 5座 122000元}
+    250: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZAATD0033']]]]]],
+
+    //{value=DZAASI0020, text=甲壳虫BEETLE 1.4TSI轿车  2012款 舒适型 4座 233800元},
+    260: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZAASI0020']]]]]],
+
+    280: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DFCPED0003']]]]]],
+
+    //{value=FTABMD0070, text=丰田GTM7200GB轿车  2011款 200G豪华周年纪念版 5座 173800元}
+    300: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'FTABMD0070']]]]]],
+
+    //{value=XFAAQD0029, text=雪佛兰SGM7187MTA轿车  2011款 SL致真版 5座 88800元},
+    540: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'XFAAQD0029']]]]]],
+
+    //{value=CAACTD0019, text=长安SC6449C客车  2012款 8座 51000元},
+    670: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'CAACTD0019']]]]]],
+
+    //{value=XFABDD0001, text=雪佛兰SGM7146MTA轿车  2011款 SL 5座 70800元}
+    730: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'XFABDD0001']]]]]],
+
+]

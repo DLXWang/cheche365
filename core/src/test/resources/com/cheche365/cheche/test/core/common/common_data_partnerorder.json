@@ -1,0 +1,569 @@
+[
+    {
+        "id": 1345,
+        "partnerOrderNo": null,
+        "partnerUser": {
+            "id": 659,
+            "createTime": 1478509058000,
+            "updateTime": 1478509058000,
+            "description": null,
+            "partner": {
+                "description": "人人优品",
+                "id": 14,
+                "code": "rryp",
+                "appId": null,
+                "appSecret": null,
+                "singleCompany": false,
+                "isSync": true
+            },
+            "user": {
+                "id": 1722,
+                "name": null,
+                "mobile": "18500000066",
+                "identity": null,
+                "userType": {
+                    "id": 1,
+                    "name": "消费者",
+                    "description": "消费者"
+                },
+                "headImgUrl": null,
+                "nickName": null,
+                "bound": true,
+                "createTime": 1478509058000,
+                "updateTime": 1478509058000,
+                "wechatUser": null,
+                "registerUser": false,
+                "registerIp": null,
+                "registerChannel": {
+                    "id": 40,
+                    "name": "PARTNER_RRYP",
+                    "apiPartner": {
+                        "description": "人人优品",
+                        "id": 14,
+                        "code": "rryp",
+                        "appId": null,
+                        "appSecret": null,
+                        "singleCompany": false,
+                        "isSync": true
+                    },
+                    "description": "人人优品",
+                    "icon": "rryp.png"
+                },
+                "userSource": null,
+                "alipayUser": null,
+                "audit": 1,
+                "unsubscribed": null
+            },
+            "partnerId": "liuzz1107001",
+            "partnerMobile": null
+        },
+        "purchaseOrder": {
+            "id": 11261,
+            "createTime": 1478510135000,
+            "updateTime": 1478517010000,
+            "description": "2016-11-07 17:15:46 支付宝4677.17元;2016-11-07 18:51:51 增补4684.48-4677.170=7.310;2016-11-07 18:52:08 银联4677.17元,使用代金券支付部分订单金额2000.0元,银联7.31元;2016-11-07 18:52:08 增补6084.48-4677.170=1407.310;2016-11-07 18:55:54 银联4677.17元,使用代金券支付部分订单金额2000.0元,银联7.31元,使用代金券支付部分订单金额600.0元,银联1407.31元;2016-11-07 18:55:54 增补金额为0，订单状态不做修改，目前状态为出单中;2016-11-07 18:58:05 银联4677.17元,使用代金券支付部分订单金额2000.0元,银联7.31元,使用代金券支付部分订单金额600.0元,银联1407.31元,使用代金券支付部分订单金额2007.31元;2016-11-07 18:58:05 增补6677.17-4677.170=2000.000;2016-11-07 18:58:47 银联4677.17元,使用代金券支付部分订单金额2000.0元,银联7.31元,使用代金券支付部分订单金额600.0元,银联1407.31元,使用代金券支付部分订单金额2007.31元,使用代金券支付部分订单金额2007.31元,银联2000.0元;2016-11-07 18:58:47 增补4679.14-4677.170=1.970;2016-11-07 19:01:03 银联4677.17元,使用代金券支付部分订单金额2000.0元,银联7.31元,使用代金券支付部分订单金额600.0元,银联1407.31元,使用代金券支付部分订单金额2007.31元,使用代金券支付部分订单金额2007.31元,银联2000.0元,使用代金券支付部分订单金额2005.34元,银联1.97元;2016-11-07 19:06:04 生成退款记录,退款金额为:118.480;2016-11-07 19:09:32 银联4677.17元,使用代金券支付部分订单金额2000.0元,银联7.31元,使用代金券支付部分订单金额600.0元,银联1407.31元,使用代金券支付部分订单金额2007.31元,使用代金券支付部分订单金额2007.31元,银联2000.0元,使用代金券支付部分订单金额2005.34元,银联1.97元,银联118.48元,使用代金券支付部分订单金额800.0元;2016-11-07 19:09:42 银联4677.17元,使用代金券支付部分订单金额2000.0元,银联7.31元,使用代金券支付部分订单金额600.0元,银联1407.31元,使用代金券支付部分订单金额2007.31元,使用代金券支付部分订单金额2007.31元,银联2000.0元,使用代金券支付部分订单金额2005.34元,银联1.97元,银联118.48元,使用代金券支付部分订单金额800.0元,使用代金券支付部分订单金额900.0元;2016-11-07 19:09:42 增补5458.69-4558.690=900.000",
+            "applicant": {
+                "id": 1722,
+                "name": null,
+                "mobile": "18500000066",
+                "identity": null,
+                "userType": {
+                    "id": 1,
+                    "name": "消费者",
+                    "description": "消费者"
+                },
+                "headImgUrl": null,
+                "nickName": null,
+                "bound": true,
+                "createTime": 1478509058000,
+                "updateTime": 1478509058000,
+                "wechatUser": null,
+                "registerUser": false,
+                "registerIp": null,
+                "registerChannel": {
+                    "id": 40,
+                    "name": "PARTNER_RRYP",
+                    "apiPartner": {
+                        "description": "人人优品",
+                        "id": 14,
+                        "code": "rryp",
+                        "appId": null,
+                        "appSecret": null,
+                        "singleCompany": false,
+                        "isSync": true
+                    },
+                    "description": "人人优品",
+                    "icon": "rryp.png"
+                },
+                "userSource": null,
+                "alipayUser": null,
+                "audit": 1,
+                "unsubscribed": null
+            },
+            "auto": {
+                "id": 8637,
+                "kilometerPerYear": 0,
+                "autoType": null,
+                "licensePlateNo": "京NY8Z21",
+                "engineNo": "S96718",
+                "owner": "张颖",
+                "vinNo": "LFV2A2156C3662267",
+                "enrollDate": 1354204800000,
+                "area": {
+                    "id": 110000,
+                    "name": "北京市",
+                    "type": {
+                        "id": 2,
+                        "name": "直辖市",
+                        "description": "直辖市"
+                    },
+                    "shortCode": "京",
+                    "active": true,
+                    "postalCode": "100000",
+                    "children": null,
+                    "reform": false
+                },
+                "licenseType": null,
+                "licenseColorCode": null,
+                "identity": "110109198408210621",
+                "identityType": {
+                    "id": 1,
+                    "name": "身份证",
+                    "description": "身份证"
+                },
+                "insuredIdNo": null,
+                "disable": true,
+                "billRelated": true,
+                "userAutos": null,
+                "autoTypeExternalCode": null,
+                "mobile": null
+            },
+            "type": {
+                "id": 1,
+                "name": "车险",
+                "description": "车险"
+            },
+            "objId": 17500,
+            "status": {
+                "id": 1,
+                "status": "等待付款",
+                "description": "等待付款"
+            },
+            "payableAmount": "6870.26",
+            "paidAmount": "6870.26",
+            "channel": {
+                "id": 3,
+                "channel": "银联",
+                "description": "银联",
+                "customerPay": true,
+                "externalUrl": null
+            },
+            "sourceChannel": {
+                "id": 40,
+                "name": "PARTNER_RRYP",
+                "apiPartner": {
+                    "description": "人人优品",
+                    "id": 14,
+                    "code": "rryp",
+                    "appId": null,
+                    "appSecret": null,
+                    "singleCompany": false,
+                    "isSync": true
+                },
+                "description": "人人优品",
+                "icon": "rryp.png"
+            },
+            "deliveryAddress": {
+                "id": 2235,
+                "description": null,
+                "applicant": {
+                    "id": 1722,
+                    "name": null,
+                    "mobile": "18500000066",
+                    "identity": null,
+                    "userType": {
+                        "id": 1,
+                        "name": "消费者",
+                        "description": "消费者"
+                    },
+                    "headImgUrl": null,
+                    "nickName": null,
+                    "bound": true,
+                    "createTime": 1478509058000,
+                    "updateTime": 1478509058000,
+                    "wechatUser": null,
+                    "registerUser": false,
+                    "registerIp": null,
+                    "registerChannel": {
+                        "id": 40,
+                        "name": "PARTNER_RRYP",
+                        "apiPartner": {
+                            "description": "人人优品",
+                            "id": 14,
+                            "code": "rryp",
+                            "appId": null,
+                            "appSecret": null,
+                            "singleCompany": false,
+                            "isSync": true
+                        },
+                        "description": "人人优品",
+                        "icon": "rryp.png"
+                    },
+                    "userSource": null,
+                    "alipayUser": null,
+                    "audit": 1,
+                    "unsubscribed": null
+                },
+                "area": null,
+                "street": "测试地址",
+                "district": "110102",
+                "districtName": "西城区",
+                "city": "110000",
+                "cityName": "北京市",
+                "province": null,
+                "provinceName": null,
+                "name": "测试",
+                "telephone": null,
+                "mobile": "18500000066",
+                "postalcode": null,
+                "disable": false,
+                "defaultAddress": false
+            },
+            "operator": null,
+            "invoiceHeader": null,
+            "sendDate": null,
+            "timePeriod": null,
+            "orderNo": "T2016110701085",
+            "wechatPaymentCalledTimes": 0,
+            "wechatPaymentSuccessOrderNo": null,
+            "version": 0,
+            "vipCompanyActivity": null,
+            "area": {
+                "id": 110000,
+                "name": "北京市",
+                "type": {
+                    "id": 2,
+                    "name": "直辖市",
+                    "description": "直辖市"
+                },
+                "shortCode": "京",
+                "active": true,
+                "postalCode": "100000",
+                "children": null,
+                "reform": false
+            },
+            "trackingNo": null,
+            "giftId": null,
+            "realGifts": null,
+            "insuredName": null,
+            "insuredIdNo": null,
+            "applicantName": null,
+            "applicantIdNo": null,
+            "skipInsure": null,
+            "ownerMobile": null,
+            "additionalParameters": null,
+            "orderSourceType": null,
+            "orderSourceId": null,
+            "deliveryInfo": null,
+            "comment": null,
+            "flow": null
+        },
+        "channel": null,
+        "createTime": 1478510146000,
+        "updateTime": 1478510146000,
+        "notifyInfo": null,
+        "apiPartner": {
+            "description": "人人优品",
+            "id": 14,
+            "code": "rryp",
+            "appId": null,
+            "appSecret": null,
+            "singleCompany": false,
+            "isSync": true
+        }
+    },
+
+    {
+        "id": 1345,
+        "partnerOrderNo": null,
+        "partnerUser": {
+            "id": 659,
+            "createTime": 1478509058000,
+            "updateTime": 1478509058000,
+            "description": null,
+            "partner": {
+                "description": "人人优品",
+                "id": 14,
+                "code": "rryp",
+                "appId": null,
+                "appSecret": null,
+                "singleCompany": false,
+                "isSync": true
+            },
+            "user": {
+                "id": 1722,
+                "name": null,
+                "mobile": "18500000066",
+                "identity": null,
+                "userType": {
+                    "id": 1,
+                    "name": "消费者",
+                    "description": "消费者"
+                },
+                "headImgUrl": null,
+                "nickName": null,
+                "bound": true,
+                "createTime": 1478509058000,
+                "updateTime": 1478509058000,
+                "wechatUser": null,
+                "registerUser": false,
+                "registerIp": null,
+                "registerChannel": {
+                    "id": 40,
+                    "name": "PARTNER_RRYP",
+                    "apiPartner": {
+                        "description": "人人优品",
+                        "id": 14,
+                        "code": "rryp",
+                        "appId": null,
+                        "appSecret": null,
+                        "singleCompany": false,
+                        "isSync": true
+                    },
+                    "description": "人人优品",
+                    "icon": "rryp.png"
+                },
+                "userSource": null,
+                "alipayUser": null,
+                "audit": 1,
+                "unsubscribed": null
+            },
+            "partnerId": "liuzz1107001",
+            "partnerMobile": null
+        },
+        "purchaseOrder": {
+            "id": 11261,
+            "createTime": 1478510135000,
+            "updateTime": 1478517010000,
+            "description": "2016-11-07 17:15:46 支付宝4677.17元;2016-11-07 18:51:51 增补4684.48-4677.170=7.310;2016-11-07 18:52:08 银联4677.17元,使用代金券支付部分订单金额2000.0元,银联7.31元;2016-11-07 18:52:08 增补6084.48-4677.170=1407.310;2016-11-07 18:55:54 银联4677.17元,使用代金券支付部分订单金额2000.0元,银联7.31元,使用代金券支付部分订单金额600.0元,银联1407.31元;2016-11-07 18:55:54 增补金额为0，订单状态不做修改，目前状态为出单中;2016-11-07 18:58:05 银联4677.17元,使用代金券支付部分订单金额2000.0元,银联7.31元,使用代金券支付部分订单金额600.0元,银联1407.31元,使用代金券支付部分订单金额2007.31元;2016-11-07 18:58:05 增补6677.17-4677.170=2000.000;2016-11-07 18:58:47 银联4677.17元,使用代金券支付部分订单金额2000.0元,银联7.31元,使用代金券支付部分订单金额600.0元,银联1407.31元,使用代金券支付部分订单金额2007.31元,使用代金券支付部分订单金额2007.31元,银联2000.0元;2016-11-07 18:58:47 增补4679.14-4677.170=1.970;2016-11-07 19:01:03 银联4677.17元,使用代金券支付部分订单金额2000.0元,银联7.31元,使用代金券支付部分订单金额600.0元,银联1407.31元,使用代金券支付部分订单金额2007.31元,使用代金券支付部分订单金额2007.31元,银联2000.0元,使用代金券支付部分订单金额2005.34元,银联1.97元;2016-11-07 19:06:04 生成退款记录,退款金额为:118.480;2016-11-07 19:09:32 银联4677.17元,使用代金券支付部分订单金额2000.0元,银联7.31元,使用代金券支付部分订单金额600.0元,银联1407.31元,使用代金券支付部分订单金额2007.31元,使用代金券支付部分订单金额2007.31元,银联2000.0元,使用代金券支付部分订单金额2005.34元,银联1.97元,银联118.48元,使用代金券支付部分订单金额800.0元;2016-11-07 19:09:42 银联4677.17元,使用代金券支付部分订单金额2000.0元,银联7.31元,使用代金券支付部分订单金额600.0元,银联1407.31元,使用代金券支付部分订单金额2007.31元,使用代金券支付部分订单金额2007.31元,银联2000.0元,使用代金券支付部分订单金额2005.34元,银联1.97元,银联118.48元,使用代金券支付部分订单金额800.0元,使用代金券支付部分订单金额900.0元;2016-11-07 19:09:42 增补5458.69-4558.690=900.000",
+            "applicant": {
+                "id": 1722,
+                "name": null,
+                "mobile": "18500000066",
+                "identity": null,
+                "userType": {
+                    "id": 1,
+                    "name": "消费者",
+                    "description": "消费者"
+                },
+                "headImgUrl": null,
+                "nickName": null,
+                "bound": true,
+                "createTime": 1478509058000,
+                "updateTime": 1478509058000,
+                "wechatUser": null,
+                "registerUser": false,
+                "registerIp": null,
+                "registerChannel": {
+                    "id": 40,
+                    "name": "PARTNER_RRYP",
+                    "apiPartner": {
+                        "description": "人人优品",
+                        "id": 14,
+                        "code": "rryp",
+                        "appId": null,
+                        "appSecret": null,
+                        "singleCompany": false,
+                        "isSync": true
+                    },
+                    "description": "人人优品",
+                    "icon": "rryp.png"
+                },
+                "userSource": null,
+                "alipayUser": null,
+                "audit": 1,
+                "unsubscribed": null
+            },
+            "auto": {
+                "id": 8637,
+                "kilometerPerYear": 0,
+                "autoType": null,
+                "licensePlateNo": "京NY8Z21",
+                "engineNo": "S96718",
+                "owner": "张颖",
+                "vinNo": "LFV2A2156C3662267",
+                "enrollDate": 1354204800000,
+                "area": {
+                    "id": 110000,
+                    "name": "北京市",
+                    "type": {
+                        "id": 2,
+                        "name": "直辖市",
+                        "description": "直辖市"
+                    },
+                    "shortCode": "京",
+                    "active": true,
+                    "postalCode": "100000",
+                    "children": null,
+                    "reform": false
+                },
+                "licenseType": null,
+                "licenseColorCode": null,
+                "identity": "110109198408210621",
+                "identityType": {
+                    "id": 1,
+                    "name": "身份证",
+                    "description": "身份证"
+                },
+                "insuredIdNo": null,
+                "disable": true,
+                "billRelated": true,
+                "userAutos": null,
+                "autoTypeExternalCode": null,
+                "mobile": null
+            },
+            "type": {
+                "id": 1,
+                "name": "车险",
+                "description": "车险"
+            },
+            "objId": 17500,
+            "status": {
+                "id": 1,
+                "status": "等待付款",
+                "description": "等待付款"
+            },
+            "payableAmount": "6870.26",
+            "paidAmount": "6751.78",
+            "channel": {
+                "id": 3,
+                "channel": "银联",
+                "description": "银联",
+                "customerPay": true,
+                "externalUrl": null
+            },
+            "sourceChannel": {
+                "id": 40,
+                "name": "PARTNER_RRYP",
+                "apiPartner": {
+                    "description": "人人优品",
+                    "id": 14,
+                    "code": "rryp",
+                    "appId": null,
+                    "appSecret": null,
+                    "singleCompany": false,
+                    "isSync": true
+                },
+                "description": "人人优品",
+                "icon": "rryp.png"
+            },
+            "deliveryAddress": {
+                "id": 2235,
+                "description": null,
+                "applicant": {
+                    "id": 1722,
+                    "name": null,
+                    "mobile": "18500000066",
+                    "identity": null,
+                    "userType": {
+                        "id": 1,
+                        "name": "消费者",
+                        "description": "消费者"
+                    },
+                    "headImgUrl": null,
+                    "nickName": null,
+                    "bound": true,
+                    "createTime": 1478509058000,
+                    "updateTime": 1478509058000,
+                    "wechatUser": null,
+                    "registerUser": false,
+                    "registerIp": null,
+                    "registerChannel": {
+                        "id": 40,
+                        "name": "PARTNER_RRYP",
+                        "apiPartner": {
+                            "description": "人人优品",
+                            "id": 14,
+                            "code": "rryp",
+                            "appId": null,
+                            "appSecret": null,
+                            "singleCompany": false,
+                            "isSync": true
+                        },
+                        "description": "人人优品",
+                        "icon": "rryp.png"
+                    },
+                    "userSource": null,
+                    "alipayUser": null,
+                    "audit": 1,
+                    "unsubscribed": null
+                },
+                "area": null,
+                "street": "测试地址",
+                "district": "110102",
+                "districtName": "西城区",
+                "city": "110000",
+                "cityName": "北京市",
+                "province": null,
+                "provinceName": null,
+                "name": "测试",
+                "telephone": null,
+                "mobile": "18500000066",
+                "postalcode": null,
+                "disable": false,
+                "defaultAddress": false
+            },
+            "operator": null,
+            "invoiceHeader": null,
+            "sendDate": null,
+            "timePeriod": null,
+            "orderNo": "T2016110701085",
+            "wechatPaymentCalledTimes": 0,
+            "wechatPaymentSuccessOrderNo": null,
+            "version": 0,
+            "vipCompanyActivity": null,
+            "area": {
+                "id": 110000,
+                "name": "北京市",
+                "type": {
+                    "id": 2,
+                    "name": "直辖市",
+                    "description": "直辖市"
+                },
+                "shortCode": "京",
+                "active": true,
+                "postalCode": "100000",
+                "children": null,
+                "reform": false
+            },
+            "trackingNo": null,
+            "giftId": null,
+            "realGifts": null,
+            "insuredName": null,
+            "insuredIdNo": null,
+            "applicantName": null,
+            "applicantIdNo": null,
+            "skipInsure": null,
+            "ownerMobile": null,
+            "additionalParameters": null,
+            "orderSourceType": null,
+            "orderSourceId": null,
+            "deliveryInfo": null,
+            "comment": null,
+            "flow": null
+        },
+        "channel": null,
+        "createTime": 1478510146000,
+        "updateTime": 1478510146000,
+        "notifyInfo": null,
+        "apiPartner": {
+            "description": "人人优品",
+            "id": 14,
+            "code": "rryp",
+            "appId": null,
+            "appSecret": null,
+            "singleCompany": false,
+            "isSync": true
+        }
+    }
+]

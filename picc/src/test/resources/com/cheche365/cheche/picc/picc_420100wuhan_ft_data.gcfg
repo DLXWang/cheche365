@@ -1,0 +1,9 @@
+package com.cheche365.cheche.picc
+//this is 武汉
+
+testDataParams = [
+
+    // {value=4028b2b649ccc817014add97d1be3206, text=品牌:上汽大众; 车系:凌渡; 档位:双离合变速器; 排量:1.8T; 型号:大众汽车SVW71816FU轿车; 年款:2015款 豪华版; 座位:5; 价格:193900, meta={vehicleOptionInfo={brand=上汽大众, family=凌渡, gearbox=双离合变速器, exhaustScale=1.8T, model=大众汽车SVW71816FU轿车, productionDate=2015款 豪华版, seats=5, newPrice=193900}}}
+    10070: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028b2b649ccc817014add97d1be3206']]]]]],
+
+]

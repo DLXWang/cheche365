@@ -1,0 +1,9 @@
+package com.cheche365.cheche.picc
+//this is 贵阳
+
+testDataParams = [
+
+    //{value=4028808825c023de0125c3bcb28001a3, text=丘比特2010款 舒适型 5座 55900元}
+    100 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028808825c023de0125c3bcb28001a3']]]]]],
+
+]

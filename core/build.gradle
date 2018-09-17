@@ -1,0 +1,54 @@
+/**
+ +----------------+
+ | Build Settings |
+ +----------------+
+ */
+configurations {
+    springBoot {
+        extendsFrom runtime
+    }
+}
+
+dependencies {
+
+    compile project(':entity-jpa'),
+            project(':entity-redis'),
+            project(':entity-mongodb')
+
+    //cheche365
+    compile "com.cheche365.common:cheche365-common-business:$cheche365_common_business_version",
+            "com.cheche365.sms:cheche365-sms-api:$cheche365_sms_version"
+
+    testCompile "com.cheche365.test:cheche365-test-core:$cheche365_test_version"
+
+
+    // Jackson
+    compile "com.fasterxml.jackson.core:jackson-databind:$jackson_version"
+
+    // JPA, Hibernate
+    compile 'org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final'
+    runtime "org.hibernate:hibernate-validator:$hibernate_validator_version"
+
+    // EL
+    runtime "org.mortbay.jasper:apache-el:$apache_el_version"
+
+    // Spring Frameworks
+    compile     "org.springframework.boot:spring-boot-starter-data-redis:$spring_boot_starter_version",
+                "org.springframework.boot:spring-boot-starter-data-jpa:$spring_boot_starter_version",
+                 "org.springframework.boot:spring-boot-starter-data-mongodb:$spring_boot_starter_version"
+    testCompile "org.springframework.boot:spring-boot-starter-test:$spring_boot_starter_version",
+                "cglib:cglib-nodep:$cglib_version",
+                "com.google.code.gson:gson:$gson_version"
+    // Spock Framework
+    testRuntime("org.spockframework:spock-spring:$spockframework_version") {
+        exclude group: 'org.codehaus.groovy', module: 'groovy-all'
+    }
+
+    // Redis
+    runtime "redis.clients:jedis:$jedis_version"
+
+    compile "org.jasypt:jasypt:$jasypt_version"
+
+    compile "com.sun.jersey:jersey-client:$jersey_version"
+    compile "com.sun.jersey.contribs:jersey-apache-client4:$jersey_version"
+}

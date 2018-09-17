@@ -1,0 +1,144 @@
+/* 页面整体布局 */
+body{
+    min-height: 100%;
+    background-color: #fff;
+    font-family: arial,"Hiragino Sans GB","Microsoft Yahei",sans-serif;
+    font-size: 13px;
+}
+table td, table thead tr th {
+    vertical-align: middle !important;
+}
+.top-search {
+    width: 98%;
+    padding-left: 16px;
+    padding-top: 15px;
+}
+.none {display: none;}
+.detail-all {
+    width: 70px;
+    border: none;
+    outline: none;
+    padding-right: 5px;
+}
+.detail-together {
+    height: 40px;
+    width: 97%;
+    margin-left: 0;
+    line-height: 40px;
+    padding-left: 24px;;
+}
+
+/* 元素布局 */
+.text-height-28 {
+    height: 28px;
+    line-height: 28px;
+}
+.select-28 {
+    padding-top: 2px;
+}
+.text-width-400 {
+    width: 400px;
+}
+.text-width-300 {
+    width: 300px;
+}
+.text-width-280 {
+    width: 280px;
+}
+.text-width-200 {
+    width: 200px;
+}
+.text-width-100 {
+    width: 100px;
+}
+.text-width-150 {
+    width: 150px;
+}
+.text-width-70 {
+    width: 70px;
+}
+.bold-font {
+    font-weight: bold;
+}
+.btn-margin-bottom-15 {
+    margin-bottom: 15px;
+}
+.btn-margin-bottom-10 {
+    margin-bottom: 10px;
+}
+.btn-margin-top-10 {
+    margin-top: 10px;
+}
+.font-18 {
+    font-size: 18px;
+}
+.order-select {
+    padding-top: 20px;
+}
+.order-select .text-label {
+    height: 27px;
+    line-height: 27px;
+}
+.order-select .text-label .search-type {
+    font-weight: normal;
+}
+.order-select .text-input {
+    width: 175px;
+    height: 27px;
+    line-height: 27px;
+}
+.order-select .row {
+    padding-bottom: 10px;
+}
+.order-select > a {
+    cursor: pointer;
+}
+.order-select .search-btn {
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+.order-select .search-btn > button {
+    width: 150px;
+}
+.detail-together .export {
+    margin-left: 30px;
+    font-weight: bolder;
+    color: #842E5C;
+}
+
+/* 分页相关 */
+.customer-pagination .pagination >li >a {
+    margin-right: 5px;
+    border-radius: 2px;
+    background: #fff;
+    color: #333;
+    border-color: #ccc;
+    padding: 6px 15px;
+}
+.customer-pagination .pagination>li>a:hover,.customer-pagination .pagination>li>a:focus {
+    color:#fff;
+    background:#fb9400;
+    border-color:#fb9400
+}
+.customer-pagination .pagination>.active>a,.customer-pagination .pagination>.active>a:hover,.customer-pagination .pagination>.active>a:focus {
+    color:#fff;
+    background:#fb9400;
+    border-color:#fb9400
+}
+.customer-pagination .pagination .glyphicon-menu-left {
+    margin-right: 3px;
+    margin-top: 1px;
+}
+.customer-pagination .pagination a:hover .glyphicon-menu-left {
+    border-right-color:#fff
+}
+.customer-pagination .pagination .glyphicon-menu-right {
+    margin-left: 3px;
+    margin-top: 1px;
+}
+.customer-pagination .pagination a:hover .glyphicon-menu-right {
+    border-left-color:#fff
+}
+/*.table {*/
+    /*white-space: nowrap!important;*/
+/*}*/

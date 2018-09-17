@@ -1,0 +1,48 @@
+package com.cheche365.cheche.bihu
+
+import static com.cheche365.cheche.test.parser.Constants._INSURING_POST_PROCESS_DEFAULT
+import static com.cheche365.cheche.test.parser.Constants._QUOTING_POST_PROCESS_DEFAULT
+
+basePackageOptions = [
+    compulsory          : false,
+    autoTax             : false,
+    thirdPartyAmount    : 2000000,
+    thirdPartyIop       : true,
+    damage              : true,
+    damageIop           : true,
+    theft               : true,
+    theftIop            : true,
+    engine              : true,
+    engineIop           : true,
+    glass               : true,
+    glassType           : 2, // 0, 1, 2 // 1 国产; 2 进口
+    driverAmount        : 200000,
+    driverIop           : true,
+    passengerAmount     : 200000,
+    passengerIop        : true,
+    spontaneousLoss     : true,
+    scratchAmount       : 0,
+    scratchIop          : false,
+    spontaneousLossIop  : true,
+    unableFindThirdParty: true
+]
+
+
+baseAdditionalParams = [
+    quoteRecord        : [
+        auto: [
+            autoType  : [
+
+                code          : '东风标致DC7164TLCA轿车',
+                supplementInfo: [
+                    insuranceCompanies: ['PICC', 'CPIC', 'PINGAN'],
+                    autoModel         : ''
+                ],
+                seats         : 5
+            ],
+            enrollDate: '2013-06-13'
+        ]
+    ],
+    quotingPostProcess : _QUOTING_POST_PROCESS_DEFAULT,
+    insuringPostProcess: _INSURING_POST_PROCESS_DEFAULT
+]

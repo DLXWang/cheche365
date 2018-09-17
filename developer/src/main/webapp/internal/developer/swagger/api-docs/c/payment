@@ -1,0 +1,30 @@
+{
+    "swaggerVersion": "1.2",
+    "basePath": "/internal/developer/payment",
+    "produces": [
+        "application/json"
+    ],
+    "apis": [
+        {
+            "path": "/payment/amount",
+            "operations": [
+                 {
+                     "method": "POST",
+                     "summary": "修改支付金额为0.01元",
+                     "notes": "输入一个订单号发送请求,可以将该订单的支付金额改为0.01元",
+                     "nickname": "modifyPayAmount",
+                     "parameters": [
+                         {
+                             "name": "orderNo",
+                             "description": "订单号",
+                             "required": true,
+                             "type": "String",
+                             "paramType": "query"
+                         }
+                     ]
+                 }
+            ]
+        }
+    ],
+    "models": { }
+}

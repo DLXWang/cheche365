@@ -1,0 +1,4 @@
+db.getCollection('moDisplayMessage').update({"messageType._id":34},{$set:{
+        "message.2.displayType":"hidden"
+        }
+});

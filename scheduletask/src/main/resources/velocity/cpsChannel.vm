@@ -1,0 +1,92 @@
+请查看附件。
+<table width="2500px" border="1" style="border: hidden;" cellspacing='0' cellpadding='1'>
+    <tr style="text-align: center;" >
+        <td width='40px;' style="border-right: none;border-bottom: none">ID</td>
+        <td width='100px;' style="border-right: none;border-bottom: none">商务活动名字</td>
+        <td width='160px;' style="border-right: none;border-bottom: none">合作商</td>
+        <td width='80px;' style="border-right: none;border-bottom: none">合作方式</td>
+        <td width='60px;' style="border-right: none;border-bottom: none">佣金</td>
+        <td width='500px;' style="border-right: none;border-bottom: none">城市</td>
+        <td width='160px;' style="border-right: none;border-bottom: none">预算</td>
+        <td width='160px;' style="border-right: none;border-bottom: none">活动开始</td>
+        <td width='160px;' style="border-right: none;border-bottom: none">活动结束</td>
+        <td width='360px;' style="border-right: none;border-bottom: none">落地页</td>
+        <td width='120px;' style="border-right: none;border-bottom: none">备注</td>
+        <td width='120px;' style="border-bottom: none">数据更新时间</td>
+    </tr>
+
+    <tr style="text-align: center">
+        <td style="border-right: none;border-bottom: none">$data.businessActivity.id</td>
+        <td style="border-right: none;border-bottom: none">$data.businessActivity.name</td>
+        <td style="border-right: none;border-bottom: none">$data.businessActivity.partnerName</td>
+        <td style="border-right: none;border-bottom: none">$data.businessActivity.cooperationModeName</td>
+        <td style="border-right: none;border-bottom: none">$data.businessActivity.rebate</td>
+        <td style="border-right: none;border-bottom: none">$data.businessActivity.city</td>
+        <td style="border-right: none;border-bottom: none">$data.businessActivity.budget</td>
+        <td style="border-right: none;border-bottom: none">$data.businessActivity.startTime</td>
+        <td style="border-right: none;border-bottom: none">$data.businessActivity.endTime</td>
+        <td style="border-right: none;border-bottom: none">$data.businessActivity.landingPage</td>
+        <td style="border-right: none;border-bottom: none">$data.businessActivity.comment</td>
+        <td >$data.businessActivity.refreshTime</td>
+
+    </tr>
+    <tr style="text-align: center">
+        <td width='40px;'  style="border-right: none;border-bottom: none">日期</td>
+        <td width='100px;' style="border-right: none;border-bottom: none">PV</td>
+        <td width='160px;' style="border-right: none;border-bottom: none">UV</td>
+        <td width='80px;'  style="border-right: none;border-bottom: none">注册</td>
+        <td width='60px;'  style="border-right: none;border-bottom: none">试算</td>
+        <td width='500px;' style="border-right: none;border-bottom: none">提交订单数</td>
+        <td width='160px;' style="border-right: none;border-bottom: none">提交订单总额</td>
+        <td width='160px;' style="border-right: none;border-bottom: none">支付订单数</td>
+        <td width='160px;' style="border-right: none;border-bottom: none">支付订单总额</td>
+        <td width='360px;' style="border-right: none;border-bottom: none">不包含车船税总额</td>
+        <td width='120px;' style="border-bottom: none">特殊监控</td>
+
+        #if($data.businessActivity.customerFieldList)
+            #set($i=0)
+            #foreach($customer in $data.businessActivity.customerFieldList)
+                #set($i=$i+1)
+                #if($i==1)
+                    <td width='100px;' style="border-top: none;border-left: none;border-bottom: none">$customer.name</td>
+                #else
+                    <td width='100px;' style="border-left: none;border-bottom: none">$customer.name</td>
+                #end
+
+            #end
+        #end
+    </tr>
+
+    #if($data.businessActivity.sumMonitorData)
+    <tr style="text-align: center">
+        <td style="border-right: none;"></td>
+        <td style="border-right: none;">$data.businessActivity.sumMonitorData.pv</td>
+        <td style="border-right: none;">$data.businessActivity.sumMonitorData.uv</td>
+        <td style="border-right: none;">$data.businessActivity.sumMonitorData.register</td>
+        <td style="border-right: none;">$data.businessActivity.sumMonitorData.quote</td>
+        <td style="border-right: none;">$data.businessActivity.sumMonitorData.submitCount</td>
+        <td style="border-right: none;">$data.businessActivity.sumMonitorData.submitAmount</td>
+        <td style="border-right: none;">$data.businessActivity.sumMonitorData.paymentCount</td>
+        <td style="border-right: none;">$data.businessActivity.sumMonitorData.paymentAmount</td>
+        <td style="border-right: none;">$data.businessActivity.sumMonitorData.noAutoTaxAmount</td>
+        <td >$data.businessActivity.sumMonitorData.specialMonitor</td>
+        #if($data.businessActivity.customerFieldList)
+            #set($i=0)
+            #foreach($customer in $data.businessActivity.customerFieldList)
+                #set($i=$i+1)
+                #if($i==1)
+                    <td style="border-left: none;">$data.businessActivity.sumMonitorData.customerField1</td>
+                #elseif($i==2)
+                    <td style="border-left: none;">$data.businessActivity.sumMonitorData.customerField2</td>
+                #elseif($i==3)
+                    <td style="border-left: none;">$data.businessActivity.sumMonitorData.customerField3</td>
+                #elseif($i==4)
+                    <td style="border-left: none;">$data.businessActivity.sumMonitorData.customerField4</td>
+                #else
+                    <td style="border-left: none;">$data.businessActivity.sumMonitorData.customerField5</td>
+                #end
+            #end
+        #end
+    </tr>
+    #end
+</table>

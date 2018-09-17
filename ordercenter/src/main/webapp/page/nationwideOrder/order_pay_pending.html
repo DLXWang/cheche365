@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>审核通过待结款</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link type="text/css" href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="../../css/style.css" rel="stylesheet">
+    <style type="text/css">
+        .top-search {
+            width: 98%;
+            padding-left: 16px;
+            padding-top: 15px;
+        }
+        a{
+            text-decoration: underline;
+        }
+    </style>
+    <script type="text/javascript" src="../../js/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../plugins/jqPaginator-1.2.0/jqPaginator.min.js"></script>
+    <script type="text/javascript" src="../../plugins/jquery-validation-1.14.0/jquery.validate.js"></script>
+</head>
+<body>
+<div id="top_div" class="top-search">
+    <div class="row">
+        <div class="col-sm-8 form-inline">
+            <select  id="keyType" class="form-control text-input-150">
+                <option value="1">定单号</option>
+                <option value="2">车主</option>
+                <option value="3">车牌</option>
+                <option value="4">出单机构</option>
+            </select>
+            <div class="input-group text-input-300">
+                <input type="text" class="form-control" id="keyword" placeholder=""/>
+                <span class="input-group-btn">
+                    <button id="searchBtn" class="btn btn-danger" type="button">搜索</button>
+                </span>
+            </div>
+            <select  id="all_area" class="form-control text-input-150">
+                <option value="">全部地区</option>
+                <option value="0">北京</option>
+                <option value="1">上海</option>
+                <option value="2">广州</option>
+                <option value="3">深圳</option>
+                <option value="4">重庆</option>
+                <option value="5">成都</option>
+                <option value="6">武汉</option>
+                <option value="7">天津</option>
+                <option value="8">杭州</option>
+                <option value="9">长沙</option>
+            </select>
+        </div>
+
+
+    </div>
+
+</div>
+<div id="count_div" class="detail-together">
+    <label>总共：</label>
+    <span id="totalCount" class="detail-all"></span>个
+</div>
+<div id="show_div" class="table-responsive">
+    <div class="col-sm-12">
+        <table class="table table-bordered table-hover" id="list_tab">
+            <thead>
+            <tr class="active">
+                <th class="text-center">定单号</th>
+                <th class="text-center">车主</br>车牌</th>
+                <th class="text-center">地区</th>
+                <th class="text-center">保险公司</th>
+                <th class="text-center">应付金额</th>
+                <th class="text-center">实付金额</th>
+                <th class="text-center">出单机构</th>
+                <th class="text-center">出单机构报价</th>
+                <th class="text-center">预警</th>
+                <th class="text-center">最后操作</th>
+                <th class="text-center">备注</th>
+                <th class="text-center">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="text-center">
+                <td><a href="order_detail.html?id=xxx">I20151029000060</a></td>
+                <td>张三<br>沪A1231</td>
+                <td>北京</td>
+                <td>中国人民保险</td>
+                <td>99999.99元</td>
+                <td>99999.99元</td>
+                <td>XXXX公司</td>
+                <td>99999.99元</td>
+                <td><span style="color: red">收益：异常</span><br><span style="color: #00a000">险种保额：匹配</span><br><a href="#">查看详情</a></td>
+                <td>董玉文<br>2015-12-12 13：13：13</td>
+                <td>备注悬停显示<br><a href="#">备注</a></td>
+                <td><a href="#">已结款</a></td>
+            </tr>
+            <tr class="text-center">
+                <td><a href="order_detail.html?id=xxx">I20151029000061</a></td>
+                <td>王刚<br>沪B1232</td>
+                <td>上海</td>
+                <td>中国平安</td>
+                <td>99999.99元</td>
+                <td>99999.99元</td>
+                <td>XXXX公司</td>
+                <td>99999.99元</td>
+                <td><span style="color: red">收益：异常</span><br><span style="color: red">险种保额：不匹配</span><br><a href="#">查看详情</a></td>
+                <td>董玉文<br>2015-12-12 13：13：13</td>
+                <td>备注悬停显示<br><a href="#">备注</a></td>
+                <td><a href="#">已结款</a></td>
+            </tr>
+            <tr class="text-center">
+                <td><a href="order_detail.html?id=xxx">I20151029000062</a></td>
+                <td>李方<br>沪C1233</td>
+                <td>广州</td>
+                <td>太平洋保险</td>
+                <td>99999.99元</td>
+                <td>99999.99元</td>
+                <td>XXXX公司</td>
+                <td>99999.99元</td>
+                <td><span style="color: #00a000">收益：正常</span><br><span style="color: red">险种保额：不匹配</span><br><a href="#">查看详情</a></td>
+                <td>董玉文<br>2015-12-12 13：13：13</td>
+                <td>备注悬停显示<br><a href="#">备注</a></td>
+                <td><a href="#">已结款</a></td>
+            </tr>
+            <tr class="text-center">
+                <td><a href="order_detail.html?id=xxx">I20151029000063</a></td>
+                <td>徐聪<br>沪D1234</td>
+                <td>深圳</td>
+                <td>阳光保险</td>
+                <td>99999.99元</td>
+                <td>99999.99元</td>
+                <td>XXXX公司</td>
+                <td>99999.99元</td>
+                <td><span style="color: #00a000">收益：正常</span><br><span style="color: #00a000">险种保额：匹配</span><br><a href="#">查看详情</a></td>
+                <td>董玉文<br>2015-12-12 13：13：13</td>
+                <td>备注悬停显示<br><a href="#">备注</a></td>
+                <td><a href="#">已结款</a></td>
+            </tr>
+            </tbody>
+        </table>
+        <!--分页代码-->
+        <div class="customer-pagination">
+            <ul class="pagination"></ul>
+        </div>
+    </div>
+</div>
+
+</body>
+<script type="text/javascript" src="../../js/common/common.js"></script>
+<script type="text/javascript" src="../../js/common/popup.js"></script>
+<script type="text/javascript" src="../../My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="../../js/nationwideOrder/order_pay_pending.js"></script>
+</html>

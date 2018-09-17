@@ -1,0 +1,2214 @@
+package com.cheche365.cheche.baoxian
+
+testData = [
+    [
+        20000,
+        '',
+        '青AN9788',
+        '5GAKV7ED3BJ139102',
+        'LLT4BJ139102',
+        '白伟茹',
+        '230103197305175127',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '昂科雷ENCLAVE3.6L越野车',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2011-01-17'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20010,
+        '',
+        '青AK2692',
+        'LSGGA53X4AH065894',
+        '093020370',
+        '付秀兰',
+        '63010319671002164X',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '别克SGM7241ATA轿车',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2010-01-01'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20020,
+        '',
+        '青AGD636',
+        'LVSHCADBXCE131720',
+        '219582',
+        '刘海红',
+        '630102197401015842',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '福克斯CAF7163B4轿车',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2013-01-13'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20030,
+        '',
+        '青AGT577',
+        'LVHCU2646A5016515',
+        '1016519',
+        '韩云飞',
+        '630104197510072515',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '思铂睿DHW7244CUASB',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2010-04-29'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20040,
+        '',
+        '青AZH369',
+        'WAUACJ8V4E1019148',
+        'CJS048248',
+        '王育',
+        '610422198204243427',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '奥迪AUDIA31.8TSPORTBACK',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2014-03-24'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20050,
+        '',
+        '青ALA566',
+        'LSVUL25N0D2049179',
+        'N00972',
+        '郭元平',
+        '630121197010162713',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '大众汽车SVW6451LED',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2013-04-04'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20060,
+        '',
+        '青AKD667',
+        'LFV2A21K5D4043287',
+        'Y19635',
+        '董西锋',
+        '610526198510221331',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '大众FV7146FBDGG',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2013-03-21'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20070,
+        '',
+        '青AQ0077',
+        'LFV4A24F9A3112457',
+        '298459',
+        '许贤勇',
+        '321088197308276311',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '奥迪FV7241FCVTG轿车',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2011-01-01'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20080,
+        '',
+        '青OA2112',
+        'LVSHCAAE3BF640023',
+        'AA91623',
+        '姜虹',
+        '630103197103091229',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '福克斯CAF7180B48',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2011-01-01'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20090,
+        '',
+        '青G81998',
+        'JTEBL29J855028433',
+        '2TR0222500',
+        '任朝生',
+        '410923197406054837',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '普拉多PRADO2700',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2006-01-04'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20100,
+        '',
+        '青AWL959',
+        'LSVCB6A43EN029009',
+        '579588',
+        '刘涛',
+        '632127198906010012',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '大众汽车SVW71410BR',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2014-03-14'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20110,
+        '',
+        '青AZH369',
+        'WAUACJ8V4E1019148',
+        'CJS048248',
+        '王育',
+        '610422198204243427',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '奥迪AUDIA31.8TSPORTBACK',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2014-03-24'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20120,
+        '',
+        '青AJ9028',
+        'LSGJA52U29H146546',
+        '9B190974',
+        '吴海燕',
+        '630121198510282724',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '别克SGM7168ATA轿车',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2009-12-29'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20130,
+        '',
+        '青AKD667',
+        'LFV2A21K5D4043287',
+        'Y19635',
+        '董西锋',
+        '610526198510221331',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '大众FV7146FBDGG',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2013-03-21'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20140,
+        '',
+        '青A65253',
+        'LS5A33BE6EB310586',
+        'E4NS13483',
+        '周倩',
+        '632525198907103025',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '长安SC7162XD',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2014-04-11'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20150,
+        '',
+        '鄂AV6Y96',
+        'WP1AG2926ELA19950',
+        'CJT178354',
+        '伊志伟',
+        '411023197705303532',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '凯宴CAYENNE3.0T越野车',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2014-01-21'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20160,
+        '',
+        '青AZY326',
+        'LGBM4DE44ES004405',
+        '053146D',
+        '杨涛',
+        '630102197711300411',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '东风日产DFL6461VEK2',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2014-05-29'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20170,
+        '',
+        '青A62197',
+        'LSVCH6A45CN140012',
+        '978551',
+        '戚光',
+        '630105195912062026',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '大众汽车SVW71810HJ',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2013-04-02'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20180,
+        '',
+        '青A30168',
+        'LVGDC46A3DG511762',
+        'H311185',
+        '刘奇强',
+        '412724196902064471',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '丰田GTM6481ALS',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2014-01-03'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20190,
+        '',
+        '青A68319',
+        'LGWED2A31EE021150',
+        '1401025503',
+        '任明亮',
+        '630102195810211618',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '长城CC7151SMA05',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2014-03-26'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20200,
+        '',
+        '川RDL675',
+        'LCN64ED57D0020527',
+        '130300607',
+        '王顺刚',
+        '512926197707101179',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '力帆LF6430',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2014-02-14'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20210,
+        '',
+        '青AGL712',
+        'LFV2A21K5C4185699',
+        'X96063',
+        '刘润武',
+        '630103197007130013',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '大众FV7146FBDGG',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2013-01-21'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20220,
+        '',
+        '青AVD599',
+        'LSGSA52M4EY028058',
+        '131710525',
+        '刘永亮',
+        '141124199105030193',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '雪佛兰SGM7140MTB轿车',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2014-01-03'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20230,
+        '',
+        '青A9V697',
+        'LFMAP86C1E0057778',
+        'F571475',
+        '贺宗萍',
+        '632126198502052922',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '丰田TV7167GL5轿车',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2015-01-03'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20240,
+        '',
+        '青ASZ960',
+        'LGJE3EE29DM199405',
+        'D0009546',
+        '章伟齐',
+        '630105196508081019',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '风神DFM7150B3A2轿车',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2014-01-03'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20250,
+        '',
+        '青A5897K',
+        'LBVNU79049SB83104',
+        '01917174',
+        '张勇芳',
+        '630104196302281545',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '宝马BMW7251GL(BMW525Li)',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2010-04-01'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20260,
+        '',
+        '青A01627',
+        'LFV3A23C9D3143358',
+        'A15545',
+        '刘海亮',
+        '632221197307092119',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '大众FV7207FCDWG',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2014-05-28'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20270,
+        '',
+        '青A68106',
+        'LGWEF4A56EF033912',
+        '1405519245',
+        '吴敬财',
+        '632321197903040011',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '长城CC6460RM01',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2014-03-17'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20280,
+        '',
+        '青A65266',
+        'LSVUH25N4C2036080',
+        '757018',
+        '都成魁',
+        '630102197207252916',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '大众汽车SVW6451HED',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2012-03-01'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20290,
+        '',
+        '715059',
+        'LB37824S0EX051629',
+        'EBX715059',
+        '廖家春',
+        '630102196411240010',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '吉利JL7152L06',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2015-01-20'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20300,
+        '',
+        '青AFQ869',
+        'LFPH4ABCX91A51486',
+        '80093862',
+        '秦桂平',
+        '142326196901110312',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '红旗CA7204AT',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2009-07-03'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20310,
+        '',
+        '青AH0703',
+        'LFPH4ACC081A99379',
+        '80031589',
+        '吴永芳',
+        '630105197107111349',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '红旗CA7204MT2轿车',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2009-03-01'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20320,
+        '',
+        '青AN9788',
+        '5GAKV7ED3BJ139102',
+        'LLT4BJ139102',
+        '白伟茹',
+        '230103197305175127',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '昂科雷ENCLAVE3.6L越野车',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2011-01-17'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20330,
+        '',
+        '青AVD599',
+        'LSGSA52M4EY028058',
+        '131710525',
+        '刘永亮',
+        '141124199105030193',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '雪佛兰SGM7140MTB轿车',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2014-01-03'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20340,
+        '',
+        '青A65266',
+        'LSVUH25N4C2036080',
+        '757018',
+        '都成魁',
+        '630102197207252916',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '大众汽车SVW6451HED',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2012-03-01'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20350,
+        '',
+        '青AWF533',
+        'LS5A33FE8EB303262',
+        'E4NT03457',
+        '冯晓兰',
+        '632821197010150026',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '长安SC7162XT',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2014-02-25'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20360,
+        '',
+        '青A3V389',
+        'LVSHJCAC8EE685453',
+        'EA30100',
+        '张琦',
+        '142326199602240612',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '翼虎CAF6450A43',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2014-12-26'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20370,
+        '',
+        '青AQ1988',
+        'LSVUD65N0A2987912',
+        '067063',
+        '张丽娜',
+        '130628197903296624',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '大众汽车SVW6451DFD',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2011-01-24'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20380,
+        '',
+        '青AEL600',
+        'LFV2A21K9C4179274',
+        '884707',
+        '姜文强',
+        '630102198701241619',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '大众FV7166FAAGG',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2013-01-04'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20390,
+        '',
+        '青OA7788',
+        'LSVUH25N9B2753198',
+        '713907',
+        '周温明',
+        '620105195602241019',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '大众汽车SVW6451HED',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2012-01-18'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20400,
+        '',
+        '青AHV566',
+        'LC0C14CF4E1071646',
+        '914043273',
+        '汪世海',
+        '630102198505130815',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '比亚迪BYD6480ST1',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2015-01-04'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20410,
+        '',
+        '青A01627',
+        'LFV3A23C9D3143358',
+        'A15545',
+        '刘海亮',
+        '632221197307092119',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '大众FV7207FCDWG',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2014-05-28'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20420,
+        '',
+        '青ANE516',
+        'LSVAA4BR3EN024353',
+        '066565',
+        '张寿林',
+        '632124197307193618',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '大众汽车SVW71412AR',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2014-02-23'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20430,
+        '',
+        '青A53239',
+        'LFFH5ABC549009764',
+        'L3419452',
+        '陈新华',
+        '630105196303171336',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '红旗CA7230AT',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2004-04-01'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20440,
+        '',
+        '青AUC959',
+        'LGB1AAE36DZ144429',
+        'S9LE9A4352',
+        '陈宁芳',
+        '630121197902101545',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '东风LZ6472AQ3S',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2014-01-14'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20450,
+        '',
+        '青AY7977',
+        'LGBL2AE07CS083076',
+        '549717T',
+        '朱孝琪',
+        '632802196008021811',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '东风日产DFL6430VBC2多用途乘用车',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2012-03-27'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20460,
+        '',
+        '青AJ9775',
+        'LJDEAA29990086022',
+        '92390591',
+        '秦桂平',
+        '142326196901110312',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '起亚YQZ7140',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2010-01-01'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20470,
+        '',
+        '青A92820',
+        'LBEMCADA87X045722',
+        '7B104206',
+        '马玉萍',
+        '630102197506101624',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '北京现代BH7140AW',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2007-02-06'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20480,
+        '',
+        '青APJ665',
+        'LSVD249F9A2675634',
+        '483719',
+        '井文军',
+        '632124197704270058',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '帕萨特SVW7183MJD轿车',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2010-12-01'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20490,
+        '',
+        '青AXX929',
+        'LFV2B25G0E5003746',
+        'G05113',
+        '盖翔',
+        '632801197809290024',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '大众FV7164LAAWG',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2013-03-10'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20500,
+        '',
+        '青A9V996',
+        'LSGGG54Y4DS270788',
+        '140060970',
+        '刘浩明',
+        '632222198603150011',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '雪佛兰SGM7209ATA',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2014-03-21'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20510,
+        '',
+        '青AFQ869',
+        'LFPH4ABCX91A51486',
+        '80093862',
+        '秦桂平',
+        '142326196901110312',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '红旗CA7204AT',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2009-07-03'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20520,
+        '',
+        '青AUC959',
+        'LGB1AAE36DZ144429',
+        'S9LE9A4352',
+        '陈宁芳',
+        '630121197902101545',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '东风LZ6472AQ3S',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2014-01-14'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20530,
+        '',
+        '青AKC333',
+        'LSVUL25N4D2024222',
+        'M80927',
+        '张延平',
+        '142326196501010611',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '大众汽车SVW6451LED',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2013-03-05'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20540,
+        '',
+        '青AQ0066',
+        '5GALVCED1AJ206694',
+        'LLT4AJ206694',
+        '左淑美',
+        '370225196112070046',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '昂科雷ENCLAVE3.6L',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2011-01-07'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20550,
+        '',
+        '青AQ0066',
+        '5GALVCED1AJ206694',
+        'LLT4AJ206694',
+        '左淑美',
+        '370225196112070046',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '昂科雷ENCLAVE3.6L',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2011-01-07'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20560,
+        '',
+        '川RDL675',
+        'LCN64ED57D0020527',
+        '130300607',
+        '王顺刚',
+        '512926197707101179',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '力帆LF6430',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2014-02-14'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20570,
+        '',
+        '青AQG899',
+        'LUXG91S09DB057891',
+        'CB0027512',
+        '孙津云',
+        '630105196703291644',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '纳智捷DYM6481AAB',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2014-01-27'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20580,
+        '',
+        '青AHH825',
+        'LFV2A1152D3231761',
+        '230451',
+        '王海兰',
+        '63010519591016132X',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '大众FV7162FAMGG',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2014-01-13'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20590,
+        '',
+        '青AJ9028',
+        'LSGJA52U29H146546',
+        '9B190974',
+        '吴海燕',
+        '630121198510282724',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '别克SGM7168ATA轿车',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2009-12-29'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20600,
+        '',
+        '青A92820',
+        'LBEMCADA87X045722',
+        '7B104206',
+        '马玉萍',
+        '630102197506101624',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '北京现代BH7140AW',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2007-02-06'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20610,
+        '',
+        '青A63425',
+        'LSVDN49F672314278',
+        '230831',
+        '方元成',
+        '630105195510010610',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '帕萨特SVW7203EPi',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2007-10-17'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20620,
+        '',
+        '青AWW001',
+        'LSVFX618XE2026031',
+        '067697',
+        '钱耀定',
+        '63010219690929151x',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '大众汽车SVW7147FLD',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2014-03-11'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20630,
+        '',
+        '青OA9100',
+        'JTMHU09J3B4044671',
+        '1GRA352090',
+        '王博智',
+        '630103197211162012',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '兰德酷路泽LANDCRUISER2004.0L越野车',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2012-03-08'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20640,
+        '',
+        '青AF6664',
+        'LVSFBFMC06F093736',
+        'AA00054',
+        '刘成云',
+        '632124197410061234',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '蒙迪欧CAF7200A1轿车',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2006-09-30'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20650,
+        '',
+        '146577',
+        'LBEJMBJB0EX423984',
+        'EB146577',
+        '刘汉梅',
+        '630103196711211226',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '北京现代BH6430MY',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2015-04-21'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20660,
+        '',
+        '青AR1184',
+        'LFV2B21K9B3214994',
+        '518261',
+        '邵明俊',
+        '630103196401311213',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '高尔夫FV7164FATG',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2011-05-04'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20670,
+        '',
+        '青AP5222',
+        '5GAKV7ED8BJ184505',
+        'LLT48J184505',
+        '孙建民',
+        '410526196909229777',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '昂科雷ENCLAVE3.6L',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2011-03-15'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20680,
+        '',
+        '青A9V996',
+        'LSGGG54Y4DS270788',
+        '140060970',
+        '刘浩明',
+        '632222198603150011',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '雪佛兰SGM7209ATA',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2014-03-21'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20690,
+        '',
+        '青OA2112',
+        'LVSHCAAE3BF640023',
+        'AA91623',
+        '姜虹',
+        '630103197103091229',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '福克斯CAF7180B48',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2011-01-01'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20700,
+        '',
+        '青AM3412',
+        'LSVGK4557D2044542',
+        'D01114',
+        '蒋宏图',
+        '630104197211299015',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '斯柯达SVW7148PRD',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2014-03-07'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20710,
+        '',
+        '青AK8989',
+        'LSVAN41Z6A2704197',
+        '127392',
+        '刘建强',
+        '630102196911131638',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '明锐SVW7166BSD',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2010-03-01'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20720,
+        '',
+        '青A63425',
+        'LSVDN49F672314278',
+        '230831',
+        '方元成',
+        '630105195510010610',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '帕萨特SVW7203EPi',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2007-10-17'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20730,
+        '',
+        '青AV8777',
+        'WDCGG8BB4BF714389',
+        '27294831917900',
+        '付秀兰',
+        '63010319671002164X',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '奔驰BENZR300旅行车',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2011-11-15'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20740,
+        '',
+        '青AHC335',
+        'LFV3A23C8D3000367',
+        '260209',
+        '李靖',
+        '411522198801211836',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '大众FV7187TFATG',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2013-01-30'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20750,
+        '',
+        '青ANE516',
+        'LSVAA4BR3EN024353',
+        '066565',
+        '张寿林',
+        '632124197307193618',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '大众汽车SVW71412AR',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2014-02-23'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20760,
+        '',
+        '青OA7788',
+        'LSVUH25N9B2753198',
+        '713907',
+        '周温明',
+        '620105195602241019',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '大众汽车SVW6451HED',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2012-01-18'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20770,
+        '',
+        '青A62197',
+        'LSVCH6A45CN140012',
+        '978551',
+        '戚光',
+        '630105195912062026',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '大众汽车SVW71810HJ',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2013-04-02'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20780,
+        '',
+        '青AM3412',
+        'LSVGK4557D2044542',
+        'D01114',
+        '蒋宏图',
+        '630104197211299015',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '斯柯达SVW7148PRD',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2014-03-07'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20790,
+        '',
+        '青AK8989',
+        'LSVAN41Z6A2704197',
+        '127392',
+        '刘建强',
+        '630102196911131638',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '明锐SVW7166BSD',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2010-03-01'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20800,
+        '',
+        '028078',
+        'LGWEF4A58FF048090',
+        '1505028078',
+        '吕建武',
+        '142326196910093956',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '哈弗CC6461RM01多用途乘用车',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2015-04-01'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20810,
+        '',
+        '青AFZ526',
+        'LVSHFFML1CN243495',
+        '3366403',
+        '张有海',
+        '630105198801131010',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '福特CAF7152M1',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2013-02-03'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20820,
+        '',
+        '青AHH825',
+        'LFV2A1152D3231761',
+        '230451',
+        '王海兰',
+        '63010519591016132X',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '大众FV7162FAMGG',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2014-01-13'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20830,
+        '',
+        '青ASZ960',
+        'LGJE3EE29DM199405',
+        'D0009546',
+        '章伟齐',
+        '630105196508081019',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '风神DFM7150B3A2轿车',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2014-01-03'
+                ]
+            ]
+        ]
+    ]
+    , [
+        20840,
+        '',
+        '青AK2692',
+        'LSGGA53X4AH065894',
+        '093020370',
+        '付秀兰',
+        '63010319671002164X',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '别克SGM7241ATA轿车',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-02-02',
+                            compulsoryStartDate : '2018-02-02',
+                        ]
+                    ],
+                    enrollDate: '2010-01-01'
+                ]
+            ]
+        ]
+    ]
+]

@@ -1,0 +1,143 @@
+<style>
+	.td_width_left {
+		width: 15%;
+		text-align: right;
+		vertical-align: text-top !important;
+	}
+
+	.td_width_right {
+		width: 82%;
+	}
+
+	.td_width_center {
+		width: 3%;
+	}
+
+	.tr_height {
+		height: 40px;
+	}
+
+	.margin_top_35 {
+		margin-top: 30px;
+	}
+
+	.td_vertical-align {
+		vertical-align: text-top !important;
+	}
+
+	.auto_overflow {
+		max-height: 140px;
+		overflow: auto;
+	}
+</style>
+<div id="batch_add_div" style="margin-top: 20px;">
+	<div style="">
+		<div style="margin-top: 20px;overflow: auto;">
+			<table width="100%" border="0px" style="word-break:break-all; word-wrap: break-word">
+				<tr class="tr_height">
+					<td class="td_width_left td_vertical-align">请选择客户类型:</td>
+					<td class="td_width_center td_vertical-align">&nbsp;</td>
+					<td class="td_width_right td_vertical-align">
+						<label class="channel_select">
+							<input type="radio" name="client_type" class="client_type_radio" value="1">ToA
+						</label>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						<label class="channel_select">
+							<input type="radio" name="client_type" class="client_type_radio" checked value="2">ToC
+						</label>
+					</td>
+				</tr>
+				<tr class="tr_height">
+					<td class="td_width_left td_vertical-align">请选择渠道类型:</td>
+					<td class="td_width_center td_vertical-align">&nbsp;</td>
+					<td class="td_width_right td_vertical-align">
+						<label class="channel_select">
+							<input type="radio" name="channel_type" class="channel_type_radio" value="1" checked>自有渠道
+						</label>
+						&nbsp;&nbsp;
+						<label class="channel_select">
+							<input type="radio" name="channel_type" class="channel_type_radio" value="2">第三方渠道
+						</label>
+					</td>
+				</tr>
+				<tr class="tr_height">
+					<td class="td_width_left td_vertical-align">请选择渠道名称:</td>
+					<td class="td_width_center td_vertical-align">&nbsp;</td>
+					<td class="td_width_right td_vertical-align">
+						<div class="channel_checkbox_div auto_overflow">
+							<label>&nbsp;<input type="checkbox" name="channel" class="">自有渠道</label>&nbsp;&nbsp;
+						</div>
+					</td>
+				</tr>
+				<tr style="height: 10px;">&nbsp;</tr>
+				<tr class="tr_height">
+					<td class="td_width_left td_vertical-align">请选择省份:</td>
+					<td class="td_width_center td_vertical-align">&nbsp;</td>
+					<td class="td_width_right td_vertical-align">
+						<select class="form-control text-input-200 batch_add_province_sel">请选择省份</select>
+					</td>
+				</tr>
+				<tr class="tr_height">
+					<td class="td_width_left td_vertical-align">请选择城市:</td>
+					<td class="td_width_center td_vertical-align">&nbsp;</td>
+					<td class="td_width_right td_vertical-align">
+						<div class="city_checkbox_div auto_overflow">
+						</div>
+					</td>
+				</tr>
+				<tr style="height: 10px;">&nbsp;</tr>
+				<tr class="tr_height">
+					<td class="td_width_left td_vertical-align">请选择保险公司:</td>
+					<td class="td_width_center td_vertical-align">&nbsp;</td>
+					<td class="td_width_right td_vertical-align">
+						<div class="insurance_company_div auto_overflow">&nbsp;</div>
+					</td>
+				</tr>
+				<tr style="height: 10px;">&nbsp;</tr>
+				<tr class="tr_height">
+					<td class="td_width_left td_vertical-align">请输入单商业险点位:</td>
+					<td class="td_width_center td_vertical-align">&nbsp;</td>
+					<td class="td_width_right td_vertical-align">
+						<input type="text" class="form-control text-input-200 only_commercial_input" placeholder="单商业险费率">
+					</td>
+				</tr>
+				<tr class="tr_height">
+					<td class="td_width_left td_vertical-align">请输入单交强险点位:</td>
+					<td class="td_width_center td_vertical-align">&nbsp;</td>
+					<td class="td_width_right td_vertical-align">
+						<input type="text" class="form-control text-input-200 only_compulsory_input" placeholder="单交强险费率">
+					</td>
+				</tr>
+				<tr class="tr_height">
+					<td class="td_width_left td_vertical-align">请输入组合商业险点位:</td>
+					<td class="td_width_center td_vertical-align">&nbsp;</td>
+					<td class="td_width_right td_vertical-align">
+						<input type="text" class="form-control text-input-200 commercial_input" placeholder="组合商业险费率">
+					</td>
+				</tr>
+				<tr class="tr_height">
+					<td class="td_width_left td_vertical-align">请输入组合交强险点位:</td>
+					<td class="td_width_center td_vertical-align">&nbsp;</td>
+					<td class="td_width_right td_vertical-align">
+						<input type="text" class="form-control text-input-200 compulsory_input" placeholder="组合交强险费率">
+					</td>
+				</tr>
+				<tr class="tr_height">
+					<td class="td_width_left td_vertical-align">请输入生效时间:</td>
+					<td class="td_width_center td_vertical-align">&nbsp;</td>
+					<td class="td_width_right td_vertical-align">
+						<input type="text" class="form-control text-input-50 form-inline batch_add_readyEffectiveDate"
+						       placeholder="生效时间"
+						       style="width: 200px;background:#fff url(../../libs/My97DatePicker/skin/datePicker.gif) no-repeat right;"
+						       onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true,minDate:'%y-%M-{%d}',startDate:'%y-%M-{%d}'});">
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div align="center" class="" style="margin-top: 20px;margin-bottom: 20px">
+			<button class="btn btn-danger text-input-100 form-control submit_button"
+			        onclick="channel_rebate_batch_add.operation.batchAddSave(this);">保存
+			</button>
+		</div>
+	</div>
+</div>

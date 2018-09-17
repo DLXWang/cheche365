@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>电话报价</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link type="text/css" href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="../../css/style.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/dataTables.bootstrap.min.css"
+          rel="stylesheet">
+    <link type="text/css" href="../../plugins/select2/select2.min.css" rel="stylesheet">
+
+    <script type="text/javascript" src="../../js/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../plugins/jqPaginator-1.2.0/jqPaginator.min.js"></script>
+    <script type="text/javascript" src="../../plugins/jquery-validation-1.14.0/jquery.validate.js"></script>
+    <script type="text/javascript" src="../../plugins/select2/select2.min.js"></script>
+    <style type="text/css">
+        .top-search {
+            width: 98%;
+            padding-left: 16px;
+            padding-top: 15px;
+        }
+
+        .error-msg {
+            margin: 0 !important;
+            padding: 2px !important;
+        }
+
+        #detail_owner ,#detail_insuredName{
+            width:300px;
+            overflow:hidden;
+            text-overflow:ellipsis;
+            white-space:nowrap;
+            display: block;
+            z-index:100;
+        }
+    </style>
+</head>
+
+<!-- <jsp:include page="quote_photo_pop.jsp"></jsp:include> -->
+<div id="top_div" class="top-search">
+    <div class="row">
+        <div class="col-sm-8 form-inline">
+            <select id="keyType" class="form-control text-input-150">
+                <option value="1">手机号</option>
+                <option value="2">车牌号</option>
+            </select>
+
+            <div class="input-group text-input-300">
+                <input type="text" class="form-control" id="keyword" placeholder=""/>
+                <span class="input-group-btn">
+                    <button id="searchBtn" class="btn btn-danger" type="button">搜索</button>
+                </span>
+            </div>
+            <select id="visited" class="form-control text-input-150">
+                <option value="">全部回访状态</option>
+                <option value="0">需回访</option>
+                <option value="1">已回访</option>
+            </select>
+            <select id="channel" class="form-control text-input-150">
+            </select>
+            <button id="toNew" class="btn btn-danger">新建电话信息</button>
+        </div>
+    </div>
+</div>
+
+<div id="show_div" >
+    <div id="test"></div>
+    <div class="col-sm-12">
+        <table class="table table-bordered table-hover" id="list_tab">
+        </table>
+        <div class="customer-pagination">
+            <ul class="pagination"></ul>
+        </div>
+    </div>
+</div>
+<div id="new_content" class="none">
+    <div class="theme_poptit">
+        <a href="javascript:;" title="关闭" class="close"><i class="glyphicon glyphicon-remove"></i></a>
+        <h4 class="text-center title">新建电话信息</h4>
+    </div>
+    <div class="form-input-top new" style="margin-bottom:50px;">
+        <form id="new_form" class="form-input form-horizontal">
+            <div class="form-group form-group-fix" style="margin-bottom: 7px; height:50px;">
+                <label class="col-sm-3 text-height-28 text-right">车牌号：</label>
+
+                <div class="col-sm-5 text-left">
+                    <input id="licensePlateNo" name="licensePlateNo" type="text"
+                           class="form-control text-input-200 text-height-28" placeholder="请输入车牌号" maxlength="10">
+
+                    <p style="color:red;" class="none" id="createError"><i class="glyphicon glyphicon-remove-sign"></i>
+                        <span></span></p>
+                </div>
+                <div class="col-sm-3 text-center">
+                    <button type="button" class="btn btn-danger btn-sm text-input-100 toSearch">确定</button>
+                </div>
+            </div>
+            <div class="diy-height none" style="margin-top:8px;">
+                <div class="form-group form-group-fix none none-content" style="margin-bottom: 0;">
+                    <div class="col-sm-12">
+                        <p class="alert alert-danger text-center alert-user">拍照信息录入列表</p>
+                    </div>
+                </div>
+                <div class="form-group form-group-fix none none-content">
+                    <div class="col-sm-12" style="height: 158px;overflow-y: auto;">
+                        <table class="table table-bordered table-hover" id="photo_tab">
+                            <thead>
+                            <tr class="active">
+                                <th class="text-center">序号</th>
+                                <th class="text-center">用户ID</th>
+                                <th class="text-center">手机号</th>
+                                <th class="text-center">车牌号</th>
+                                <th class="text-center">图片数</th>
+                                <th class="text-center">提交时间</th>
+                                <th class="text-center">有效状态</th>
+                                <th class="text-center">回访状态</th>
+                                <th class="text-center">备注</th>
+                                <th class="text-center">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="form-group form-group-fix none none-content" style="margin-bottom: 0;">
+                    <div class="col-sm-12">
+                        <p class="alert alert-danger text-center alert-user">电话信息录入列表</p>
+                    </div>
+                </div>
+                <div class="form-group form-group-fix none none-content">
+                    <div class="col-sm-12" style="height: 158px;overflow-y: auto;">
+                        <table class="table table-bordered table-hover" id="phone_tab">
+                            <thead>
+                            <tr class="active">
+                                <th class="text-center">序号</th>
+                                <th class="text-center">用户ID</th>
+                                <th class="text-center">用户手机号</th>
+                                <th class="text-center">车牌号</th>
+                                <th class="text-center">提交时间</th>
+                                <th class="text-center">回访状态</th>
+                                <th class="text-center">备注</th>
+                                <th class="text-center">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="form-group form-group-fix none none-not-find" style="margin-bottom: 0;margin-top: 190px;">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-6 text-center">
+                        <label>未查询到相应车辆的电话或拍照信息！</label>
+                    </div>
+                    <div class="col-sm-3"></div>
+                </div>
+            </div>
+            <div class="form-group form-group-fix btn-finish none">
+                <div class="col-sm-12 text-center">
+                    <button type="button" class="btn btn-danger text-input-100 toCreate">新建</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div id="auto_content" class="none">
+</div>
+
+
+<script type="text/javascript" src="../../plugins/DataTables-1.10.12/media/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../../js/quote/quote_help.js"></script>
+<script type="text/javascript" src="../../js/common/datatable_util.js"></script>
+<script type="text/javascript" src="../../js/common/common.js"></script>
+<script type="text/javascript" src="../../js/common/popup.js"></script>
+<script type="text/javascript" src="../../My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="../../js/quote/quote_phone.js"></script>
+<script type="text/javascript" src="../../js/quote/quote_photo_pop.js"></script>
+<script type="text/javascript" src="../../js/common/application_log.js"></script>
+

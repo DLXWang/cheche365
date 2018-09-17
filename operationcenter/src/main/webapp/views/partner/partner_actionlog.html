@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>操作日志</title>
+    <!-- 引入css和js文件 -->
+    <link type="text/css" href="../../libs/bootstrap-3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="../../libs/jquery-1.11.2/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../../plugins/DataTables-1.10.12/media/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../../js/common/datatable_util.js"></script>
+    <script type="text/javascript" src="../../js/common/common.js"></script>
+    <script type="text/javascript" src="../../js/common/popup.js"></script>
+    <script type="text/javascript" src="../../libs/bootstrap-3.3.4/js/bootstrap.js"></script>
+    <script type="text/javascript" src="../../libs/My97DatePicker/WdatePicker.js"></script>
+    <script type="text/javascript" src="../../libs/jqPaginator-1.2.0/jqPaginator.min.js"></script>
+    <script type="text/javascript" src="../../js/partner/partner_actionlog.js"></script>
+
+    <script type="text/javascript">
+
+        // window.onload = function() {
+        //     var tips =document.getElementById("tips");
+        //     var partnerName = document.getElementById("partnerName");
+        //     $.ajax({
+        //         type: "POST",
+        //         url: "/operationcenter/partners/getcomment",
+        //         data: {partner:common.getUrlParam("id")},
+        //         dataType: "json",
+        //         success: function(data){
+        //             if(!data.comment){tips.innerText ="请输入注释";}
+        //             else {tips.innerText=data.comment;}
+        //             partnerName.innerText=data.partnerName;
+        //             popup.mould.popTipsMould(false, "成功！", popup.mould.second, popup.mould.success, "", "57%", null);
+        //         },
+        //         error: function () {
+        //             popup.mould.popTipsMould(false, "失败！", popup.mould.second, popup.mould.error, "", "57%", null);
+        //         }
+        //     });
+        //
+        //     $("#ok").hide();
+        //     $("#cancel").hide();
+        // }
+        subgoa = function() {
+            window.location.href="coop_situation.html?id="+common.getUrlParam("id");
+        };
+    </script>
+    <style>
+
+        #warp {
+            width:80%;
+            margin:auto;
+
+            background-color:#FFFFFF;
+        }
+        #xy {
+            float: right;
+            width: 20%;
+        }
+        #title{
+            color:#00BFFF;
+            margin-left: 20px;
+        }
+        #titlename{
+            margin-top: 40px;
+        }
+        #tipname{
+            margin-top: 10px;
+        }
+        .titie1{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<div id="warp">
+    <h5 class="title1">合作商管理/合作商详情</h5>
+    <h3 class="title1" style="display:inline;">合作商：</h3>
+    <h3 id="partnerName" style="display:inline;"></h3>
+    <div id="tipname">
+    <h5 style="display:inline;">备注:</h5>
+    <p id="tips" style="display:inline; word-break: break-word;">请于两个工作日前确认</p>
+    <button id="changetips" class="btn btn-danger" style="display:inline;">修改</button>
+    <button id="ok" class="btn btn-danger" style="display:inline;">确认</button>
+    <button id="cancel" class="btn btn-danger" style="display:inline;">取消</button>
+    </div>
+    <div id="titlename" class="tab-top-1 title" align="left" id ="title">
+        <a id="coop" style="display:inline;" href="javascript:void(0)" onclick = "subgoa()">合作情况</a>
+        <h5 style="display:inline;">操作日志</h5>
+    </div>
+    <div class="line" style="border-bottom: 2px solid #ccc;margin-top: 10px"></div><!--虚线-->
+    <div id="container" >
+        <div class="input-group text-input-300" id ="xy">
+            <input type="text" class="form-control" id="keyword" placeholder="请输入操作员"/>
+            <span class="input-group-btn">
+                    <button id="searchBtn" class="btn btn-danger" type="button" >搜索</button>
+                </span>
+        </div>
+
+        <table class="table display" id="log_list">
+        </table>
+    </div>
+</div>
+
+</html>

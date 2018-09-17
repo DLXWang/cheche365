@@ -1,0 +1,11 @@
+你好，主动发送短信失败，详情见如下内容，请尽快处理。
+<br>
+#if($data.type == '1')
+手机号：$data.mobile
+#else
+过滤用户：$data.filterUserName
+#end
+<br>
+短信内容：$data.content
+<br>
+发送结果：$data.result

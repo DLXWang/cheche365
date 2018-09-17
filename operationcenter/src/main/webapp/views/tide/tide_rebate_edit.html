@@ -1,0 +1,106 @@
+<style>
+    .yuan:after {
+        position: absolute;
+        top: 7px;
+        content: '元';
+        right: -2px;
+    }
+</style>
+<div class="panel">
+    <div class="panel-body">
+        <form id="rebateEditForm" class="form-horizontal">
+            <div class="row">
+                <input type="hidden" id="id">
+                <input type="hidden" id="version">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">点位编号:</label>
+                        <div class="col-sm-6"><input id="contractRebateCode" name="contractRebateCode" type="text" class="form-control-static" readonly></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">生效日期:</label>
+                        <div class="col-sm-6">
+                            <input id="effectiveDate" name="effectiveDate" type="text" class="form-control required date gtToday ltDay" lt-target="#expireDate" style="padding-right: 17px;background:#fff url(../../libs/My97DatePicker/skin/datePicker.gif) no-repeat right;" onclick="WdatePicker({minDate:'%y-%M-{%d+1}',maxDate:'#F{$dp.$D(\'expireDate\')}'})">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">失效日期:</label>
+                        <div class="col-sm-6">
+                            <input id="expireDate" name="expireDate" type="text" class="form-control required date gtDay" gt-target="#effectiveDate" style="padding-right: 17px;background:#fff url(../../libs/My97DatePicker/skin/datePicker.gif) no-repeat right;" onclick="WdatePicker({minDate:'#F{$dp.$D(\'effectiveDate\')||\'%y-%M-{%d+1}\'}'})">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">商业险原始点位:</label>
+                        <div class="col-sm-6">
+                            <input id="originalCommecialRate" name="originalCommecialRate" type="number" min="0" step="0.0001" max="1" class="form-control required isFloat">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">交强险原始点位:</label>
+                        <div class="col-sm-6">
+                            <input id="originalCompulsoryRate" name="originalCompulsoryRate" type="number" min="0" step="0.0001" max="1" class="form-control required isFloat">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">车船税退税情况:</label>
+                        <div class="col-sm-6">
+                            <select id="autoTaxReturnType" name="autoTaxReturnType" class="form-control autotaxreturntype" style="width: 40%;float: left;"></select>
+                            <input id="autoTaxReturnValue" name="autoTaxReturnValue" type="number" min="0" step="1" class="form-control required" style="width: 60%;float: left;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">商业险市场投放点位:</label>
+                        <div class="col-sm-6">
+                            <input id="marketCommercialRate" name="marketCommercialRate" type="number" min="0" step="0.0001" max="1" class="form-control required isFloat">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">交强险市场投放点位:</label>
+                        <div class="col-sm-6">
+                            <input id="marketCompulsoryRate" name="marketCompulsoryRate" type="number" min="0" step="0.0001" max="1" class="form-control required isFloat">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">车船税退税情况:</label>
+                        <div class="col-sm-6">
+                            <select id="marketAutoTaxReturnType" name="marketAutoTaxReturnType" class="form-control autotaxreturntype" style="width: 40%;float: left;"></select>
+                            <input id="marketAutoTaxReturnValue" name="marketAutoTaxReturnValue" type="number" min="0" step="1" class="form-control required" style="width: 60%;float: left;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

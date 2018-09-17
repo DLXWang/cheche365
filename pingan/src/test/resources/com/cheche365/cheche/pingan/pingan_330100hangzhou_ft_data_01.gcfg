@@ -1,0 +1,9 @@
+package com.cheche365.cheche.pingan
+//this is 衢州
+
+testDataParams = [
+
+    // {value=I0000000000000000240000000000088, text=奔驰BENZ 190D轿车 1988款 190D 柴油 自动档 5座 720000元}
+    10040 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'I0000000000000000240000000000088']]]]]],
+
+]

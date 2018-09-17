@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>财务数据查询</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link type="text/css" href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="../../css/common.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/dataTables.bootstrap.min.css"
+          rel="stylesheet">
+    <link type="text/css" href="../../plugins/jquery-ui-1.11.4/jquery-ui.css" rel="stylesheet">
+
+    <script type="text/javascript" src="../../js/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../plugins/jqPaginator-1.2.0/jqPaginator.min.js"></script>
+    <style type="text/css">
+        .filter {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="show_div" class="table-responsive" style="margin-top:10px;">
+
+    <div class="col-sm-12">
+        <div class="row" style="margin-bottom:10px;">
+            <div class="col-sm-12 form-inline btn-margin-bottom-10">
+                <div id="triggerCityDiv" style="float:left;overflow: hidden;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;省市
+                    <input type="text" id="area_input" name="area_input" placeholder="请输入省市"
+                           class="form-control text-input-400 able_clean" style="margin-left:5px;margin-right:15px;width: 180px"AutoComplete="off" onpast="return false" oncontextmenu="return false">
+                </div>
+                <input type="hidden" id="area" name="area_no" class="able_clean">
+                <div id="institutionDiv" style="float:left;overflow: hidden;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;出单机构
+                    <input type="text" id="institution_input" name="institution_input" placeholder="请输入出单机构"
+                           class="form-control text-input-400 able_clean" style="margin-left:5px;margin-right:15px;width: 180px"AutoComplete="off"    onpast="return false" oncontextmenu="return false">
+                </div>
+                <input type="hidden" id="institution" class="able_clean" name="institution">
+                <div id="companyDiv" style="float:left;overflow: hidden;">
+                    保险公司
+                    <input type="text" id="company_input" name="company_input" placeholder="请输入保险公司"
+                           class="form-control text-input-400 able_clean" style="margin-left:5px;margin-right:15px;width: 180px"AutoComplete="off"  onpast="return false" oncontextmenu="return false">
+                </div>
+                <input type="hidden" id="insuranceComp" class="able_clean" name="insuranceComp">
+                <!-- <input type="text" class="form-control" id="institution" style="margin-left:5px;margin-right:15px;width: 180px"  placeholder="请输入出单机构" /> -->
+                <!--保险公司-->
+                <!--<select id="insuranceComp" class="form-control text-input-150 able_clean"-->
+                <!--style="margin-left:5px;margin-right:15px;width: 180px">-->
+                <!--<option value="">请选择保险公司</option>-->
+                <!--</select>-->
+
+                <label>到账时间</label>
+                <input type="text" class="form-control text-input-50 able_clean" id="balanceStartTime" placeholder="起始时间"
+                       style="width: 165px;background:#fff url(../../My97DatePicker/skin/datePicker.gif) no-repeat right;"
+                       onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true});">
+                <span style="margin: 0 10px;">至</span>
+                <input type="text" class="form-control text-input-50 able_clean" id="balanceEndTime" placeholder="截止时间"
+                       style="width: 165px;background:#fff url(../../My97DatePicker/skin/datePicker.gif) no-repeat right;"
+                       onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true});">
+            </div>
+            <div class="col-sm-12 form-inline btn-margin-bottom-10">
+                &nbsp;&nbsp;&nbsp;保单号
+                <input type="text" class="form-control able_clean" id="policyNo" style="margin-left:5px;margin-right:15px;width: 180px"  placeholder="请输入保单号" />
+                &nbsp;&nbsp;&nbsp;订单号
+                <input type="text" class="form-control able_clean" id="orderNo" style="margin-left:5px;margin-right:15px;width: 180px"  placeholder="请输入订单号" />
+                &nbsp;&nbsp;&nbsp;车牌号
+                <input type="text" class="form-control able_clean" id="licensePlateNo" style="margin-left:5px;margin-right:15px;width: 180px"  placeholder="请输入车牌号" />
+                <label>出单时间</label>
+                <input type="text" class="form-control text-input-50 " id="issueStartTime" placeholder="起始时间"
+                       style="width: 165px;background:#fff url(../../My97DatePicker/skin/datePicker.gif) no-repeat right;"
+                       onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true});">
+                <span style="margin: 0 10px;">至</span>
+                <input type="text" class="form-control text-input-50 "  id="issueEndTime" placeholder="截止时间"
+                       style="width: 165px;background:#fff url(../../My97DatePicker/skin/datePicker.gif) no-repeat right;"
+                       onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true});">
+            </div>
+            <div class="col-sm-12 form-inline">
+                结算状态<select id="status" class="form-control text-input-150 able_clean"
+                            style="margin-left:5px;margin-right:15px;width: 180px">
+                <option value="">请选择结算状态</option>
+                <option value="1">已结清</option>
+                <option value="2">未结清</option>
+            </select>
+
+                <button id="searchBtn" type="button" class="form-control btn-danger"
+                        style="width: 100px;margin-left: 30px">搜索
+                </button>
+                <button id="refreshBtn" type="button" class="form-control btn-danger"
+                        style="width: 100px;margin-left: 30px">重置
+                </button>
+                <button id="calculateBtn" type="button" class="form-control btn-danger"
+                        style="width: 100px;margin-left: 30px">统计总数
+                </button>
+            </div>
+        </div>
+        <div id="calculate_info" class="none">总条数<span id="count_num">0</span>个 ； 总应收金额<span id="all_payale">0</span>元 ； 总实收金额<span id="all_paid">0</span>元  ；总差额<span id="all_diff">0</span>元</div>
+        <table class="table table-bordered table-hover" id="list_tab">
+        </table>
+    </div>
+</div>
+<div id="sub_content" class="container tab_body none">
+    <div class="theme_poptit">
+        <a id="close" href="javascript:;" title="关闭" class="close"><i class="glyphicon glyphicon-remove"
+                                                                      id="close_subList"></i></a>
+        <h4 class="text-center" id="sub_list_title">结算记录</h4>
+    </div>
+    <div style="height:490px;overflow:auto;margin-left:15px;margin-right:15px;">
+        <span>结算</span><span id="sub_times">0</span><span>次，结算总额<span id="sub_paid">0</span>元</span>
+        <table class="table table-bordered table-hover" id="subList" class="table">
+            <thead>
+            <tr class="active">
+                <th class="text-center">结款次数</th>
+                <th class="text-center">导入时间</th>
+                <th class="text-center">到账时间</th>
+                <th class="text-center">交强险点位</th>
+                <th class="text-center">商业险点位</th>
+                <th class="text-center">已结款</th>
+                <th class="text-center">账龄（天）</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+<link rel="stylesheet" href="../../css/popup.css">
+<script type="text/javascript" src="../../plugins/DataTables-1.10.12/media/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../../js/jquery/jquery.cookie.js"></script>
+<script type="text/javascript" src="../../js/common/common.js"></script>
+<script type="text/javascript" src="../../js/common/CUI.js"></script>
+<script type="text/javascript" src="../../js/common/CUI.select.js"></script>
+<script type="text/javascript" src="../../js/common/CUI.grid.js"></script>
+<script type="text/javascript" src="../../js/common/datatable_util.js"></script>
+<script type="text/javascript" src="../../My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="../../js/common/cookie.js"></script>
+<script type="text/javascript" src="../../js/common/popup.js"></script>
+<script type="text/javascript" src="../../js/insurance/offline_insurance_list.js"></script>
+<script type="text/javascript" src="../../js/order/order_status.js"></script>
+<script type="text/javascript" src="../../js/nationwideOrder/order_comment.js"></script>
+<script type="text/javascript" src="../../plugins/jquery-ui-1.11.4/jquery-ui.min.js"></script>
+</html>

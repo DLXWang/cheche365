@@ -1,0 +1,115 @@
+package com.cheche365.cheche.sinosafe
+//this is 桂林
+
+testData = [
+    [
+        510110,
+        '',
+        '川A0XV80',
+        'LSVAR4NG8GN031109',
+        '790214',
+        '孟建刚',
+        '511121197211201858',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'斯柯达SVW71613RS轿车',
+                        supplementInfo : [
+                            autoModel: 'RAD1044SHD',
+                            //verificationMobile:'13581538623',
+                            commercialStartDate : '2018-08-08',
+                            compulsoryStartDate : '2018-08-08',
+                        ]
+                    ],
+                    enrollDate:'2012-06-29'
+                ]
+            ]
+        ]
+    ],
+
+    [
+        2131213,
+        '',
+        '粤A3539H',
+        'LJ16AK231C4405593',
+        'DLC067769',
+        '李建昌',
+        '452421197704130614',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'江淮HFC6460M轻型客车',
+                        supplementInfo : [
+//                            autoModel: 'HYD1053JHQ',
+                            autoModel: 'HYD1001JHQ',
+//                            verificationMobile:'13581538623',
+                            commercialCaptchaImage:'kyR9',
+                            commercialStartDate : '2018-08-14',
+                            compulsoryStartDate : '2018-08-14',
+                        ]
+                    ],
+                    enrollDate:'2012-03-28'
+                ]
+            ]
+        ]
+    ],
+
+         [
+            160030,
+            '',
+            '粤L34P93',
+            'LJ8F7D5H5GB003791',
+            'SQX4442',
+            '李刚',
+            '371324198408200718',
+            null,
+            null,
+            [
+              quoteRecord: [
+                      auto: [
+                      autoType  : [
+                         code: '翼虎CAF6450A43多用途乘用车',
+                         supplementInfo: [
+                                 autoModel   : 'YHD1010CAF'
+                         ]
+                      ],
+                      enrollDate: '2015-01-09'
+                 ]
+            ]
+
+    ],
+
+],
+ [
+            160040,
+            '',
+            '粤S2705F',
+            'LSVAN4182C2139389',
+            '328874',
+            '方建辉',
+            '362525198607050616',
+            null,
+            null,
+            [
+              quoteRecord: [
+                      auto: [
+                      autoType  : [
+                         code: '朗逸SVW7167NSD轿车',
+                         supplementInfo: [
+                                 autoModel   : 'LYD1033SHD'
+                         ]
+                      ],
+                      enrollDate: '2012-09-29'
+                 ]
+            ]
+
+    ],
+
+],
+]

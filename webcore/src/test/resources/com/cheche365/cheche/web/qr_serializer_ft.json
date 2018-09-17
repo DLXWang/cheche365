@@ -1,0 +1,41 @@
+[
+
+    {
+        "desc" : "全险测试用例",
+        "input" : {
+            "clazz" : "com.cheche365.cheche.core.model.QuoteRecord",
+            "file" :"qr_serializer_ft_all_fields_input.json"
+        },
+
+        "output" : {
+            "file" : "qr_serializer_ft_all_fields_output.json"
+        }
+
+    },
+
+    {
+        "desc" : "只商业无交强测试用例",
+        "input" : {
+            "clazz" : "com.cheche365.cheche.core.model.QuoteRecord",
+            "file" :"qr_serializer_ft_only_commercial_input.json"
+        },
+
+        "output" : {
+            "file" : "qr_serializer_ft_only_commercial_output.json"
+        }
+
+    },
+
+    {
+        "desc" : "只交强无商业测试用例",
+        "input" : {
+            "clazz" : "com.cheche365.cheche.core.model.QuoteRecord",
+            "file" :"qr_serializer_ft_only_compulsory_input.json"
+        },
+
+        "output" : {
+            "file" : "qr_serializer_ft_only_compulsory_output.json"
+        }
+    }
+
+]

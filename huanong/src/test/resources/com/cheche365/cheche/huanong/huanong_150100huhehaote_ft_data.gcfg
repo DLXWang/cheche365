@@ -1,0 +1,38 @@
+package com.cheche365.cheche.huanong
+
+import static com.cheche365.cheche.parser.Constants.get_DATE_FORMAT3
+import static com.cheche365.cheche.parser.Constants.get_DATE_FORMAT3
+
+
+//this is  天津
+
+testData = [
+  [
+        20001,
+        '',
+        '蒙A06YF9',
+        'VNNHR1D9K07XCF3H9',
+        'ENG4HPEE5FB5EDQEZ',
+        '孟建刚',
+        '110105197702254115',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'五菱LZW6376NF',
+                        supplementInfo : [
+                            autoModel: 'TYBAED0039',
+                            //verificationMobile:'13581538623',
+                            commercialStartDate : '2018-08-08',
+                            compulsoryStartDate : '2018-08-08',
+                        ]
+                    ],
+                    enrollDate:'2015-06-29'
+                ]
+            ]
+        ]
+    ],
+
+]

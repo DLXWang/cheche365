@@ -1,0 +1,4 @@
+10-db-alter-gift-code-exchange-way.sql
+20-db-add-gift-code-data.sql
+30-db-add-android-sys-version-data.sql
+40-db-add-gift-code-test-data.sql

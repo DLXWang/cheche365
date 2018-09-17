@@ -1,0 +1,26 @@
+/**
+ +----------------+
+ | Build Settings |
+ +----------------+
+ */
+configurations {
+    springBoot {
+        extendsFrom runtime
+    }
+}
+
+dependencies {
+
+    compile project(':parser-shared')
+    runtime project(':entity-jpa'),
+            project(':entity-redis')
+    compile "com.cheche365.common:cheche365-common-core:$cheche365_common_core_version"
+
+    // Spring Boot
+    compile "org.springframework.boot:spring-boot-starter-web:$spring_boot_starter_version"
+
+    // Spring FrameworksQuoteRequestObject
+    compile "org.springframework.cloud:spring-cloud-starter-eureka:$spring_cloud_version",
+            "org.springframework.cloud:spring-cloud-starter-zuul:$spring_cloud_version"
+
+}

@@ -1,0 +1,287 @@
+[
+    {
+        "id": 1,
+        "createTime": 1488335037000,
+        "updateTime": null,
+        "amount": 50.0,
+        "rewardDays": 30,
+        "status": {
+            "id": 2,
+            "name": "支出",
+            "description": "支出"
+        },
+        "dailyInsurance": null,
+        "type": {
+            "id": 2,
+            "name": "领取红包30天",
+            "description": "领取红包30天"
+        },
+        "auto": {
+            "id": 56,
+            "kilometerPerYear": 0,
+            "autoType": {
+                "seats": 5,
+                "code": "BKAAMD0002",
+                "supplementInfo": null
+            },
+            "licensePlateNo": "京HB6688",
+            "engineNo": "40422079",
+            "owner": "杨均田",
+            "vinNo": "LSGWG52Z34S241726",
+            "enrollDate": 1436112000000,
+            "area": null,
+            "licenseType": null,
+            "licenseColorCode": "01",
+            "identity": "110108195101052331",
+            "identityType": {
+                "id": 1,
+                "name": "身份证",
+                "description": "身份证"
+            },
+            "insuredIdNo": null,
+            "disable": true,
+            "billRelated": true,
+            "userAutos": null,
+            "autoTypeExternalCode": null,
+            "mobile": null
+        },
+        "cashTime": 1488421437000
+    },
+
+    {
+        "id": 2,
+        "createTime": 1488421437000,
+        "updateTime": null,
+        "amount": 20.0,
+        "rewardDays": 2,
+        "status": {
+            "id": 2,
+            "name": "支出",
+            "description": "支出"
+        },
+        "dailyInsurance": null,
+        "type": {
+            "id": 3,
+            "name": "支付成功分享",
+            "description": "支付成功分享"
+        },
+        "auto": {
+            "id": 56,
+            "kilometerPerYear": 0,
+            "autoType": {
+                "seats": 5,
+                "code": "BKAAMD0002",
+                "supplementInfo": null
+            },
+            "licensePlateNo": "京HB6688",
+            "engineNo": "40422079",
+            "owner": "杨均田",
+            "vinNo": "LSGWG52Z34S241726",
+            "enrollDate": 1436112000000,
+            "area": null,
+            "licenseType": null,
+            "licenseColorCode": "01",
+            "identity": "110108195101052331",
+            "identityType": {
+                "id": 1,
+                "name": "身份证",
+                "description": "身份证"
+            },
+            "insuredIdNo": null,
+            "disable": true,
+            "billRelated": true,
+            "userAutos": null,
+            "autoTypeExternalCode": null,
+            "mobile": null
+        },
+        "cashTime": 1488507837000
+    },
+
+    {
+        "id": 3,
+        "createTime": 1488421437000,
+        "updateTime": null,
+        "amount": 30.0,
+        "rewardDays": 3,
+        "status": {
+            "id": 2,
+            "name": "支出",
+            "description": "支出"
+        },
+        "dailyInsurance": null,
+        "type": {
+            "id": 4,
+            "name": "停驶成功分享",
+            "description": "停驶成功分享"
+        },
+        "auto": {
+            "id": 56,
+            "kilometerPerYear": 0,
+            "autoType": {
+                "seats": 5,
+                "code": "BKAAMD0002",
+                "supplementInfo": null
+            },
+            "licensePlateNo": "京HB6688",
+            "engineNo": "40422079",
+            "owner": "杨均田",
+            "vinNo": "LSGWG52Z34S241726",
+            "enrollDate": 1436112000000,
+            "area": null,
+            "licenseType": null,
+            "licenseColorCode": "01",
+            "identity": "110108195101052331",
+            "identityType": {
+                "id": 1,
+                "name": "身份证",
+                "description": "身份证"
+            },
+            "insuredIdNo": null,
+            "disable": true,
+            "billRelated": true,
+            "userAutos": null,
+            "autoTypeExternalCode": null,
+            "mobile": null
+        },
+        "cashTime": 1488507837000
+    },
+
+    {
+        "id": 4,
+        "createTime": 1488507837000,
+        "updateTime": null,
+        "amount": null,
+        "rewardDays": 2,
+        "status": {
+            "id": 1,
+            "name": "已入账",
+            "description": "已入账"
+        },
+        "dailyInsurance": null,
+        "type": {
+            "id": 5,
+            "name": "累计停复驶分享",
+            "description": "累计停复驶分享"
+        },
+        "auto": null,
+        "cashTime": null
+    },
+
+    {
+        "id": 5,
+        "createTime": 1488421437000,
+        "updateTime": null,
+        "amount": 50.0,
+        "rewardDays": 30,
+        "status": {
+            "id": 2,
+            "name": "支出",
+            "description": "支出"
+        },
+        "dailyInsurance": null,
+        "type": {
+            "id": 2,
+            "name": "领取红包30天",
+            "description": "领取红包30天"
+        },
+        "auto": {
+            "id": 55,
+            "kilometerPerYear": 0,
+            "autoType": {
+                "seats": 5,
+                "code": "BKAAMD0002",
+                "supplementInfo": null
+            },
+            "licensePlateNo": "京HB6688",
+            "engineNo": "40422079",
+            "owner": "杨均田",
+            "vinNo": "LSGWG52Z34S241726",
+            "enrollDate": 1436112000000,
+            "area": null,
+            "licenseType": null,
+            "licenseColorCode": "01",
+            "identity": "110108195101052331",
+            "identityType": {
+                "id": 1,
+                "name": "身份证",
+                "description": "身份证"
+            },
+            "insuredIdNo": null,
+            "disable": true,
+            "billRelated": true,
+            "userAutos": null,
+            "autoTypeExternalCode": null,
+            "mobile": null
+        },
+        "cashTime": 1488507837000
+    },
+
+    {
+        "id": 6,
+        "createTime": 1488421437000,
+        "updateTime": null,
+        "amount": 20.0,
+        "rewardDays": 2,
+        "status": {
+            "id": 2,
+            "name": "支出",
+            "description": "支出"
+        },
+        "dailyInsurance": null,
+        "type": {
+            "id": 3,
+            "name": "支付成功分享",
+            "description": "支付成功分享"
+        },
+        "auto": {
+            "id": 55,
+            "kilometerPerYear": 0,
+            "autoType": {
+                "seats": 5,
+                "code": "BKAAMD0002",
+                "supplementInfo": null
+            },
+            "licensePlateNo": "京HB6688",
+            "engineNo": "40422079",
+            "owner": "杨均田",
+            "vinNo": "LSGWG52Z34S241726",
+            "enrollDate": 1436112000000,
+            "area": null,
+            "licenseType": null,
+            "licenseColorCode": "01",
+            "identity": "110108195101052331",
+            "identityType": {
+                "id": 1,
+                "name": "身份证",
+                "description": "身份证"
+            },
+            "insuredIdNo": null,
+            "disable": true,
+            "billRelated": true,
+            "userAutos": null,
+            "autoTypeExternalCode": null,
+            "mobile": null
+        },
+        "cashTime": 1488507837000
+    },
+
+    {
+        "id": 7,
+        "createTime": 1488421437000,
+        "updateTime": null,
+        "amount": 30.0,
+        "rewardDays": 3,
+        "status": {
+            "id": 1,
+            "name": "已入账",
+            "description": "已入账"
+        },
+        "dailyInsurance": null,
+        "type": {
+            "id": 4,
+            "name": "停驶成功分享",
+            "description": "停驶成功分享"
+        },
+        "cashTime": null
+    }
+]

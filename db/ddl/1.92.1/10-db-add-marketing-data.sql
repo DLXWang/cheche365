@@ -1,0 +1,2 @@
+INSERT INTO `marketing` (`id`, `name`, `code`, `tag`, `begin_date`, `end_date`, `gift_expire_date`, `channel`, `amount`, `full_limit`, `gift_class`, `marketing_type`, `quote_support`, `short_name`, `marketing_service`, `description`, `activity_type`, `create_time`, `update_time`)
+VALUES ('136', '当你发现车险报价出现“8”怎么办？领红包啊！', '201808001', '4', '2018-08-01 00:00:00', '2018-09-15 23:59:59', '2018-09-15 23:59:59', NULL, NULL, NULL, NULL, 'm', '0', '8月APP活动', NULL, NULL, '1', NULL, NULL);

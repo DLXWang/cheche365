@@ -1,0 +1,8 @@
+spring:
+  data:
+    mongodb:
+      host: 192.168.0.101
+      port: 8635
+      username: cheche_dev1
+      password: P15FGu5xcUzq#
+      database: cheche_dev1

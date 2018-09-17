@@ -1,0 +1,45 @@
+template header
+plan
+socialSecurity
+age
+premium
+
+package com.cheche365.abao.core.highmedicine
+import com.cheche365.abao.core.highmedical.model.QuoteObject
+import com.cheche365.cheche.core.model.abao.InsuranceQuote
+
+function boolean isAgeInRange(int age, String ageRange) {
+    String[] r = ageRange.split("-");
+    int s = Integer.valueOf(r[0]);
+    int e = Integer.valueOf(r[1]);
+
+    return age >= s && age <= e;
+}
+
+template "high-medical"
+plan
+socialSecurity
+age
+premium
+
+rule "high-medicine_@{row.rowNumber}"
+    dialect "mvel"
+    no-loop true
+when
+    $quoteObject : QuoteObject(
+            $quoteObject.getPackageType() == "@{plan}",
+            $quoteObject.insurancePerson.socialSecurity == Boolean.valueOf("@{socialSecurity}"),
+            isAgeInRange($quoteObject.insurancePersonAge, "@{age}")
+          )
+
+    $quote : InsuranceQuote()
+then
+    $quote.setPremium(@{premium});
+    retract($quote);
+    retract($quoteObject);
+
+end
+
+end template
+
+

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" href="../../libs/bootstrap-3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../libs/layer/theme/default/layer.css">
+    <link rel="stylesheet" href="/css/popup.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/libs/uploadify-3.2.1/css/uploadify.css">
+    <link rel="stylesheet" href="/libs/bootstrap-3.3.4/css/bootstrap-multiselect.css">
+    <style>
+        .button-div {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        table th {
+            text-align: center;
+        }
+
+        .tagator_tag {
+            display: inline-block;
+            background-color: #39f;
+            border-radius: 2px;
+            color: #fff;
+            padding: 2px 34px 2px 4px;
+            font-size: 13px;
+            margin: 5px;
+            position: relative;
+            vertical-align: top;
+        }
+
+        .tagator_tag_remove {
+            font-family: simsun;
+            display: inline-block;
+            font-weight: bold;
+            color: #fff;
+            margin: 0 0 0 5px;
+            padding: 6px 2px 4px 2px;
+            cursor: pointer;
+            font-size: 12px;
+            line-height: 10px;
+            vertical-align: top;
+            border-radius: 0 2px 2px 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .width-180 {
+            width: 180px;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+<form id="refresh_form" method="post">
+    <div id="top_div" class="top-search form-horizontal">
+        <div class="col-sm-12">
+
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label class="col-sm-5 control-label">姓名:</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control search_item" id="userName"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label class="col-sm-5 control-label">团队角色:</label>
+                    <div class="col-sm-7">
+                        <select id="agentLevel" class="form-control search_item">
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label class="col-sm-5 control-label">所属渠道:</label>
+                    <div class="col-sm-7">
+                        <select id="channel" class="form-control search_item">
+                            <option value="">请选择渠道</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label class="col-sm-5 control-label">公司/门店名称:</label>
+                    <div class="col-sm-7">
+                        <input type="text" id="shop" class="form-control shopDesc search_item"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label class="col-sm-5 control-label">身份证号:</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control search_item" id="identity"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label class="col-sm-5 control-label">电话:</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control search_item mobile" id="mobile"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label class="col-sm-5 control-label">邀请人:</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control search_item" id="inviter"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label class="col-sm-5 control-label">顶级邀请码申请人:</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control search_item" id="topLevelInviter"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label class="col-sm-5 control-label">邀请码:</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control search_item" id="inviteCode"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3" style="z-index: 2;">
+                <div class="form-group">
+                    <label class="col-sm-5 control-label">注册时间:</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control registerTimeStart search_item" id="registerTimeStart"
+                               style="background:#fff url(../../libs/My97DatePicker/skin/datePicker.gif) no-repeat right;"
+                               onfocus="WdatePicker({onpicked:function(dq){},dateFmt:'yyyy-MM-dd'});">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3" style="margin-left: -9%;">
+                <div class="form-group">
+                    <label class="col-sm-5 control-label">至</label>
+                    <div class="col-sm-7" style="margin-left: -5%">
+                        <input type="text" class="form-control registerTimeEnd search_item" id="registerTimeEnd"
+                               style="background:#fff url(../../libs/My97DatePicker/skin/datePicker.gif) no-repeat right;"
+                               onfocus="WdatePicker({onpicked:function(dq){},minDate:'#F{$dp.$D(registerTimeStart,{d:1})}',dateFmt:'yyyy-MM-dd'});">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label class="col-sm-5 control-label">认证状态:</label>
+                    <div class="col-sm-7">
+                        <select id="approveStatus" class="form-control search_item">
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <span id="approveStatusReminder"class="col-sm-2" style="color: #D90000;margin-left: 1219px;width: 220px; margin-top: 2px;">此状态导出数据会导致认证状态变更</span>
+
+        </div>
+    </div>
+
+    <div class="col-sm-12 text-center button-div">
+        <a id="searchBtn" class="btn btn-default text-input-100" type="button">搜索</a>
+        <a id="cancelBtn" class="btn btn-default text-input-100" type="button">取消</a>
+    </div>
+
+    <div class="col-sm-6 form-inline">
+        <a id="createInvitationCode" class="btn btn-primary" type="button">生成邀请码</a>
+    </div>
+    <div class="col-sm-12">
+        <table class="text-center" id="user_list">
+        </table>
+    </div>
+
+</form>
+
+<div id="show_area_content" class="container tab_body none">
+    <div class="theme_poptit">
+        <a id="close" href="javascript:;" title="关闭" class="close"><i class="glyphicon glyphicon-remove"
+                                                                      id="close_history"></i></a>
+        <h4 class="text-center">查看全部支持城市</h4>
+    </div>
+    <div style="height:194px;overflow:auto;margin-left:15px;margin-right:15px;">
+        <span class="span-text" id="areaNameList"></span>
+    </div>
+    <button class="btn btn-danger" style="margin-left:275px;" type="button" id="yes">确定</button>
+</div>
+
+<form id="edit_area" method="post">
+    <input type="hidden" id="channelAgentId" name="id">
+    <div id="edit_area_content" class="container tab_body none">
+        <div class="theme_poptit">
+            <a id="editclose" href="javascript:;" title="关闭" class="close"><i class="glyphicon glyphicon-remove"
+                                                                              id="close_select"></i></a>
+            <h4 class="text-center" id="agent_rebate_history_title">修改渠道业务地区</h4>
+        </div>
+        <div class="row" style="height:194px;overflow:auto;margin-left:15px;margin-right:15px;">
+            <div class="form-group">
+                <p></p>
+                <label class="col-sm-4 control-label" style="margin-top: 8px;">支持城市:</label>
+                <div class="col-sm-6 text-left">
+                    <select id="areaSel" class="form-control" AutoComplete="off" onpaste="return false"
+                            oncontextmenu="return false">
+                    </select>
+                </div>
+                <input type="hidden" id="trigger_city" name="triggerCity">
+                <div class="tagator_tags">
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-danger" style="margin-left:275px;" type="button" id="saveArea">确定</button>
+    </div>
+</form>
+</body>
+</html>
+<script type="text/javascript" src="../../libs/jquery-1.11.2/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../libs/jquery-form/jquery.form.js"></script>
+<script type="text/javascript" src="../../js/common/popup.js"></script>
+<script type="text/javascript" src="../../libs/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/common/common.js"></script>
+<script type="text/javascript" src="../../js/common/cookie.js"></script>
+<script type="text/javascript" src="../../libs/uploadify-3.2.1/js/jquery.uploadify-3.2.1.js"></script>
+<script type="text/javascript" src="../../libs/jquery-validation-1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="../../libs/bootstrap-3.3.4/js/bootstrap-multiselect.js"></script>
+<script type="text/javascript" src="../../libs/jqPaginator-1.2.0/jqPaginator.min.js"></script>
+<script type="text/javascript" src="../../libs/jquery-cookie-1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="../../plugins/DataTables-1.10.12/media/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../../plugins/DataTables-1.10.12/media/js/dataTables.buttons.min.js"
+        charset="utf-8"></script>
+<script type="text/javascript" src="../../plugins/DataTables-1.10.12/media/js/buttons.html5.min.js"></script>
+<script type="text/javascript" src="../../plugins/DataTables-1.10.12/media/js/jszip.min.js"></script>
+<script type="text/javascript" src="../../libs/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="../../js/common/datatable_util.js"></script>
+<script type="text/javascript" src="../../js/userManager/user_info_manager_list.js"></script>
+<script type="text/javascript" src="../../js/common/CUI.js"></script>
+<script type="text/javascript" src="../../js/common/CUI.select.js"></script>
+

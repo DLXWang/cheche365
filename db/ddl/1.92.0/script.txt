@@ -1,0 +1,9 @@
+10-db-alter-table-gift.sql
+20-db-modify-channel-agent-purchase-order-rebate-key-name.sql
+30-db-add-tel-marketing-center-source-data.sql
+40-db-update-tel-marketing-center-source-data.sql
+50-add-api-partner-properties-data.sql
+51-update-api-partner-properties-data.sql
+60-db-update-tel-marketing-center-source-data.sql
+70-db-alter-table-channel-rebate.sql
+80-db-add-sys-version-data.sql

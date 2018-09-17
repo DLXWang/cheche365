@@ -1,0 +1,114 @@
+package com.cheche365.cheche.botpy.client
+//this is 北京
+testData = [
+
+
+    [
+        1,
+        '',
+        '川A607DA',
+        'LBV5S1105FSK57024',
+        '2167E600',
+        '余学忠',
+        '412822198603124835',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'东风标致DC7204LLCA',
+                        supplementInfo : [
+                            autoModel: 'BZAATD0019',
+                            verificationMobile:'13581538623',
+                            commercialStartDate : '2018-05-17',
+                            compulsoryStartDate : '2018-05-17',
+                        ]
+                    ],
+                    enrollDate:'2015-05-07'
+                ]
+            ]
+        ]
+    ],
+    [
+        2,
+        '',
+        '京AD85966',
+        'LNBSCC3H4GF302565',
+        'AD50EG061700027',
+        '郭慧娟',
+        '412822198603124835',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'北京BJ7000C5E1-BEV',
+                        supplementInfo : [
+                            autoModel: 'BJADJD0035',
+                            verificationMobile:'13581538623',
+                            commercialStartDate : '2018-08-17',
+                            compulsoryStartDate : '2018-08-17',
+                        ]
+                    ],
+                    enrollDate:'2016-12-27'
+                ]
+            ]
+        ]
+    ],
+    [
+        3,
+        '',
+        '京QJ21J7',
+        'LNBSCB3F3FD125686',
+        'AD33DF11203251',
+        '张昊英',
+        '412822198603124835',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'',
+                        supplementInfo : [
+                            autoModel: 'BJACXD0049',
+                            verificationMobile:'13581538623',
+                            commercialStartDate : '2018-08-17',
+                            compulsoryStartDate : '2018-08-17',
+                        ]
+                    ],
+                    enrollDate:'2016-01-22'
+                ]
+            ]
+        ]
+    ],
+    [
+        999,
+        '',
+        '苏AA71G5',
+        'LBERCACB1FX876820',
+        'FB376975',
+        '高维良',
+        '371321199103065039',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '北京现代BH7141MY',
+                        supplementInfo: [
+                            autoModel: 'XDABFD0044',
+                            verificationMobile:'13581538623',
+                            commercialStartDate : '2018-07-19',
+                            compulsoryStartDate : '2018-07-19',
+                        ]
+                    ],
+                    enrollDate: '2015-07-22'
+                ],
+            ]
+        ]
+    ],
+]

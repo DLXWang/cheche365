@@ -1,0 +1,18 @@
+package com.cheche365.cheche.picc
+
+basePackageOptions = [
+    thirdPartyAmount: 100_000.0,
+    passengerAmount : 10_000.0
+]
+
+baseAdditionalParams = [
+    quoteRecord: [
+        auto: [
+            autoType  : [
+                supplementInfo  : [
+                    autoModel: '402880882d0e343e012d110891a70145'
+                ]
+            ]
+        ]
+    ]
+]

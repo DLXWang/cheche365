@@ -1,0 +1,14 @@
+package com.cheche365.cheche.sinosig
+
+baseAdditionalParams = [
+    quoteRecord: [
+        auto: [
+            autoType  : [
+                code            : 'BJ7181VEF',
+                supplementInfo  : [
+//                    autoModel: '402880882d0e343e012d110891a70145'
+                ]
+            ]
+        ]
+    ]
+]

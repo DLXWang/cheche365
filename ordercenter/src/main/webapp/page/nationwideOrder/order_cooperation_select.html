@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="../../css/common.css" rel="stylesheet">
+    <script type="text/javascript" src="../../js/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../plugins/jqPaginator-1.2.0/jqPaginator.min.js"></script>
+    <script type="text/javascript" src="../../My97DatePicker/WdatePicker.js"></script>
+</head>
+<body>
+<div class="container-fluid order-select">
+    <div class="row">
+        <div class="col-sm-1">
+        </div>
+        <div class="col-sm-2 text-label text-right">
+            <label>平台类查找：</label>
+        </div>
+        <div class="col-sm-1 text-label text-right">
+            <label class='search-type'>保险公司：</label>
+        </div>
+        <div class="col-sm-2 text-left">
+            <select id="insuranceCompanySel" class="text-input">
+                <option value=""></option>
+                <option value="0">全部</option>
+            </select>
+        </div>
+        <div class="col-sm-1 text-label text-right">
+            <label class='search-type'>产品平台：</label>
+        </div>
+        <div class="col-sm-2 text-left">
+            <select id="channelSel" class="text-input">
+                <option value=""></option>
+                <option value="0">全部</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-1">
+        </div>
+        <div class="col-sm-2 text-label text-right">
+            <label>按城市查找：</label>
+        </div>
+        <div class="col-sm-1 text-label text-right">
+            <label class='search-type'>城市：</label>
+        </div>
+        <div class="col-sm-2 text-left">
+            <select id="quoteAreaSel" class="text-input">
+                <option value=""></option>
+                <option value="0">全部</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-1">
+        </div>
+        <div class="col-sm-2 text-label text-right">
+            <label>按指定人查找：</label>
+        </div>
+        <div class="col-sm-1 text-label text-right">
+            <label class='search-type'>指定人：</label>
+        </div>
+        <div class="col-sm-2 text-left">
+            <select id="assignerSel" class="text-input">
+                <option value=""></option>
+                <option value="0">全部</option>
+            </select>
+        </div>
+        <div class="col-sm-1 text-label text-right">
+            <label class='search-type'>推荐人：</label>
+        </div>
+        <div class="col-sm-2 text-left">
+            <input type="text" id="agent" name="agent" class="text-input" AutoComplete="off" onpaste="return false" oncontextmenu="return false">
+        </div>
+        <input type="hidden" id="agentSel"  name="agentSel">
+    </div>
+    <div class="row">
+        <div class="col-sm-1">
+        </div>
+        <div class="col-sm-2 text-label text-right">
+            <label>按渠道查找：</label>
+        </div>
+        <div class="col-sm-1 text-label text-right">
+            <label class='search-type'>渠道：</label>
+        </div>
+        <div class="col-sm-2 text-left">
+            <select id="allChannelSel" class="text-input">
+                <option value=""></option>
+                <option value="1">CPS</option>
+                <option value="2">大客户</option>
+                <option value="3">好车主</option>
+            </select>
+        </div>
+        <div id="cpsChannelDiv" class="none channel">
+            <div class="col-sm-1 text-label text-right">
+                <label class='search-type'>CPS渠道：</label>
+            </div>
+            <div class="col-sm-2 text-left">
+                <select id="cpsChannelSel" class="text-input">
+                    <option value=""></option>
+                    <option value="0">全部</option>
+                </select>
+            </div>
+        </div>
+        <div id="vipChannelDiv" class="none channel">
+            <div class="col-sm-1 text-label text-right">
+                <label class='search-type'>大客户：</label>
+            </div>
+            <div class="col-sm-2 text-left">
+                <select id="vipCompanySel" class="text-input">
+                    <option value=""></option>
+                    <option value="0">全部</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-1">
+        </div>
+        <div class="col-sm-2 text-label text-right">
+            <label>精准查找：</label>
+        </div>
+        <div class="col-sm-1 text-label text-right">
+            <label class='search-type'>订单号：</label>
+        </div>
+        <div class="col-sm-2 text-left">
+            <input type="text" id="orderNo" name="orderNo" class="text-input">
+        </div>
+        <div class="col-sm-1 text-label text-right">
+            <label class='search-type'>手机号码：</label>
+        </div>
+        <div class="col-sm-2 text-left">
+            <input type="text" id="mobile" name="mobile" class="text-input">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-1">
+        </div>
+        <div class="col-sm-2 text-label text-right">
+        </div>
+        <div class="col-sm-1 text-label text-right">
+            <label class='search-type'>车主姓名：</label>
+        </div>
+        <div class="col-sm-2 text-left">
+            <input type="text" id="carOwner" name="carOwner" class="text-input">
+        </div>
+        <div class="col-sm-1 text-label text-right">
+            <label class='search-type'>车牌号：</label>
+        </div>
+        <div class="col-sm-2 text-left">
+            <input type="text" id="licenseNo" name="licenseNo" class="text-input">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-1">
+        </div>
+        <div class="col-sm-2 text-label text-right">
+            <label>按日期查找：</label>
+        </div>
+        <div class="col-sm-1 text-label text-right">
+            <label class='search-type'>下单日期：</label>
+        </div>
+        <div class="col-sm-4 text-left">
+            <input type="text" id="orderStartDate" name="orderStartDate" class="Wdate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true});" style="width: 175px;height: 27px;">
+            <span style="margin: 0 10px;">至</span>
+            <input type="text" id="orderEndDate" name="orderEndDate" class="Wdate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true});" style="width: 175px;height: 27px;">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-1">
+        </div>
+        <div class="col-sm-2 text-label text-right">
+            <label>按状态查找：</label>
+        </div>
+        <div class="col-sm-1 text-label text-right">
+            <label class='search-type'>出单状态：</label>
+        </div>
+        <div class="col-sm-2 text-left">
+            <select id="statusSel" class="text-input">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="col-sm-1 text-label text-right">
+            <label class='search-type'>订单状态：</label>
+        </div>
+        <div class="col-sm-2 text-left">
+            <select id="orderStatusSel" class="text-input">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-1">
+        </div>
+        <div class="col-sm-2 text-label text-right">
+            <label>按支付方式查找：</label>
+        </div>
+        <div class="col-sm-1 text-label text-right">
+            <label class='search-type'>支付方式：</label>
+        </div>
+        <div class="col-sm-2 text-left">
+            <select id="paymentChannelSel" name="paymentChannel" class="text-input">
+                <option value=""></option>
+                <option value="0">全部</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-1">
+        </div>
+        <div class="col-sm-2 text-label text-right">
+            <label>按出单机构查询：</label>
+        </div>
+        <div class="col-sm-1 text-label text-right">
+            <label class='search-type'>出单机构：</label>
+        </div>
+        <div class="col-sm-2 text-left">
+            <select id="institutionSel" name="institution" class="text-input">
+                <option value=""></option>
+                <option value="0">全部</option>
+            </select>
+        </div>
+    </div>
+</div>
+    <div class="row">
+        <div class="col-sm-5"></div>
+        <div class="col-sm-5 search-btn">
+            <button id="selectBtn" type="button" class="btn btn-danger">查询</button>
+        </div>
+    </div>
+</div>
+<div class="detail-together none">
+    <label>总共：</label>
+    <span id="totalCount" class="detail-all"></span>单
+    <!--<a class="export" id="exportLink" href="javascript:;"><i class="glyphicon glyphicon-download-alt"></i>&nbsp;导出查询结果</a>-->
+</div>
+<div id="tab_content" class="table-responsive none">
+    <div class="col-sm-12">
+        <table class="table table-bordered table-hover" id="result_tab">
+            <thead>
+            <tr class="active">
+                <th class="text-center">订单编号</th>
+                <th class="text-center">车主</th>
+                <th class="text-center">车牌号</th>
+                <th class="text-center">城市</th>
+                <th class="text-center">保险公司</th>
+                <th class="text-center">出单机构</th>
+                <th class="text-center">实付金额</th>
+                <th class="text-center">下单时间</th>
+                <th class="text-center">指定人</th>
+                <th class="text-center">最后操作人</th>
+                <th class="text-center">最后操作时间</th>
+                <th class="text-center">来源</th>
+                <th class="text-center">支付状态</th>
+                <th class="text-center">当前状态</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <div class="customer-pagination">
+            <ul class="pagination"></ul>
+        </div>
+    </div>
+</div>
+</body>
+<link rel="stylesheet" href="../../css/popup.css">
+<script type="text/javascript" src="../../js/common/cookie.js"></script>
+<script type="text/javascript" src="../../js/common/common.js" ></script>
+<script type="text/javascript" src="../../js/common/popup.js"></script>
+<script type="text/javascript" src="../../js/common/CUI.js"></script>
+<script type="text/javascript" src="../../js/common/CUI.select.js"></script>
+<script type="text/javascript" src="../../js/nationwideOrder/order_cooperation_select.js" ></script>
+</html>

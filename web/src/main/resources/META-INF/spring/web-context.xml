@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+
+    <mvc:default-servlet-handler />
+
+    <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+        <constructor-arg value="UTF-8" index="0">
+        </constructor-arg>
+        <property name="supportedMediaTypes">
+            <list>
+                <value>text/plain;charset=UTF-8</value>
+            </list>
+        </property>
+    </bean>
+    <!-- 1.拦截器按照先后顺序进行拦截，2.拦截全部请求时使用"/**"， 3.不能拦截jsp -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**" />
+            <bean id="LogbackInterceptor" class="com.cheche365.cheche.web.interceptor.LogbackInterceptor"/>
+        </mvc:interceptor>
+
+        <mvc:interceptor>
+            <mvc:mapping path="/cps/**"/>
+            <mvc:mapping path="/m/channel/**"/>
+            <mvc:mapping path="/web/channel/**"/>
+            <mvc:mapping path="/marketing/**/*_*.action"/>
+            <bean class="com.cheche365.cheche.rest.interceptor.CPSChannelInterceptor"/>
+        </mvc:interceptor>
+
+        <mvc:interceptor>
+            <mvc:mapping path="/api/public/**"/>
+            <mvc:exclude-mapping path="/api/public/error"/>
+            <bean class="com.cheche365.cheche.rest.interceptor.APISignVerifyInterceptor"/>
+        </mvc:interceptor>
+
+        <mvc:interceptor>
+            <mvc:mapping path="/marketing/suspendBill/index.html"/>
+            <bean class="com.cheche365.cheche.rest.interceptor.MarketingSuspendBillInterceptor"/>
+        </mvc:interceptor>
+
+        <mvc:interceptor>
+            <mvc:mapping path="/marketing/m/**"/>
+            <bean class="com.cheche365.cheche.rest.interceptor.MarketingInterceptor"/>
+        </mvc:interceptor>
+
+        <mvc:interceptor>
+            <mvc:mapping path="/api/callback/pingpp/**"/>
+            <bean class="com.cheche365.cheche.rest.interceptor.PingppInterceptor"/>
+        </mvc:interceptor>
+
+        <mvc:interceptor>
+            <mvc:mapping path="/a/index*"/>
+            <bean class="com.cheche365.cheche.rest.interceptor.ToAIndexInterceptor"/>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/m/index*"/>
+            <bean class="com.cheche365.cheche.rest.interceptor.ToMIndexInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+    <aop:aspectj-autoproxy proxy-target-class="true"  expose-proxy="true"/>
+
+</beans>

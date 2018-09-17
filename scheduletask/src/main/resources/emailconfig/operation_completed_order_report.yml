@@ -1,0 +1,35 @@
+#运营部成单统计报表
+title: ${timePeriod}运营部成单统计报表
+template: /velocity/completedOrder.vm
+tos: [zhangtc@cheche365.com,liuyw@cheche365.com,huyp@cheche365.com]
+production_tos: [lism@cheche365.com]
+excelAttachmentConfig:
+        fileName: "${timePeriod}运营部成单统计报表.xlsx"
+        sheets:
+        - sheetName: 使用优惠券的订单
+          columns:
+              - columnType: usedGift
+                column:
+                    订单号: orderNo
+                    车牌号: licenseNo
+                    领券渠道: giftSource
+                    领券日期: time
+                    用户来源: source
+                    用户注册平台: registerChannel
+                    付款平台: paymentPlatform
+                    支付方式: paymentChannel
+                    用券所属活动: marketingName
+                    报价金额: payableAmount
+                    付款金额: paidAmount
+        - sheetName: 未使用优惠券的订单
+          columns:
+              - columnType: unusedGift
+                column:
+                    订单号: orderNo
+                    车牌号: licenseNo
+                    下单平台: channel
+                    支付方式: paymentChannel
+                    用户注册平台: registerChannel
+                    用户来源: source
+                    报价金额: payableAmount
+                    付款金额: paidAmount

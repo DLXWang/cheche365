@@ -1,0 +1,18 @@
+apply from: "${rootProject.projectDir}/gradle/springboot_web_settings.gradle"
+
+dependencies {
+
+    // Other Projects
+    compile project(':cpic'),
+            project(':picc'),
+            project(':picc-uk'),
+            project(':pingan-uk'),
+            project(':core')
+
+    // Spring Boot
+    compile "org.springframework.boot:spring-boot-starter:$spring_boot_starter_version"
+
+    // Apache
+    runtime     "commons-cli:commons-cli:$commons_cli_version"
+
+}

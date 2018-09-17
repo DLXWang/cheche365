@@ -1,0 +1,12 @@
+db.getCollection('moDisplayMessage').update({"messageType._id":34},{$push:
+    {
+      "message":{
+          "iconUrl" : "banner/banner-top-20-new.jpg",
+          "url" : null,
+          "title" : "首页背景图",
+          "content" : null,
+          "weight" : "100",
+          "channel":"partner_toa"
+      }
+    }
+ });

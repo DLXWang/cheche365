@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>合作情况</title>
+    <!-- 引入css和js文件 -->
+    <link type="text/css" href="../../libs/bootstrap-3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="../../css/popup.css" rel="stylesheet">
+    <script type="text/javascript" src="../../libs/jquery-1.11.2/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../../plugins/DataTables-1.10.12/media/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../../js/common/datatable_util.js"></script>
+    <script type="text/javascript" src="../../js/common/common.js"></script>
+    <script type="text/javascript" src="../../js/common/popup.js"></script>
+    <script type="text/javascript" src="../../libs/bootstrap-3.3.4/js/bootstrap.js"></script>
+    <script type="text/javascript" src="../../libs/My97DatePicker/WdatePicker.js"></script>
+    <script type="text/javascript" src="../../libs/jqPaginator-1.2.0/jqPaginator.min.js"></script>
+
+
+    <script type="text/javascript">
+
+        // window.onload = function() {
+        //     var tips =document.getElementById("tips");
+        //     var partnerName = document.getElementById("partnerName");
+        //     $.ajax({
+        //         type: "POST",
+        //         url: "/operationcenter/partners/getcomment",
+        //         data: {partner:common.getUrlParam("id")},
+        //         dataType: "json",
+        //         success: function(data){
+        //             if(!data.comment){tips.innerText ="请输入注释";}
+        //             else {tips.innerText=data.comment;}
+        //             partnerName.innerText=data.partnerName;
+        //             popup.mould.popTipsMould(false, "成功！", popup.mould.second, popup.mould.success, "", "57%", null);
+        //         },
+        //         error: function () {
+        //             popup.mould.popTipsMould(false, "失败！", popup.mould.second, popup.mould.error, "", "57%", null);
+        //         }
+        //     });
+        //
+        //     $.ajax({
+        //         type: "GET",
+        //         url: "/thirdParty/toaCooperate/partnerList",
+        //         data: {pageSize:5,currentPage:1,draw:1,partner:common.getUrlParam("id")},
+        //         dataType: "json",
+        //         success: function(data){
+        //             if(data.iTotalRecords != 0){$("#notable2").hide();}
+        //             else {$("#table2").hide();}
+        //             popup.mould.popTipsMould(false, "成功！", popup.mould.second, popup.mould.success, "", "57%", null);
+        //         },
+        //         error: function () {
+        //             popup.mould.popTipsMould(false, "失败！", popup.mould.second, popup.mould.error, "", "57%", null);
+        //         }
+        //     });
+        //
+        //     $.ajax({
+        //         type: "GET",
+        //         url: "/thirdParty/tocCooperate/partnerList",
+        //         data: {pageSize:5,currentPage:1,draw:1,partner:common.getUrlParam("id")},
+        //         dataType: "json",
+        //         success: function(data){
+        //             if(data.iTotalRecords != 0){$("#notable1").hide();}
+        //             else {$("#table1").hide();}
+        //             popup.mould.popTipsMould(false, "成功！", popup.mould.second, popup.mould.success, "", "57%", null);
+        //         },
+        //         error: function () {
+        //             popup.mould.popTipsMould(false, "失败！", popup.mould.second, popup.mould.error, "", "57%", null);
+        //         }
+        //     });
+        //
+        //     $("#ok").hide();
+        //     $("#cancel").hide();
+        // }
+        subgob = function() {
+            window.location.href="partner_actionlog.html?id="+common.getUrlParam("id");
+        };
+        subgohide = function() {
+            $("#ok").hide();
+            $("#cancel").hide();
+            $("#changetips").show();
+        };
+        subgotoc = function() {
+            window.location.href="../thirdParty/toC_manager_add.html";
+            };
+        subgotoa = function() {
+            window.location.href="../thirdParty/toA_manager_add.html";
+        };
+    </script>
+    <style>
+        #warp {
+            width:80%;
+            margin:auto;
+            background-color:#FFFFFF;
+        }
+        #title{
+            color:#00BFFF;
+            margin-left: 20px;
+        }
+        #notable1{
+            margin-top: 10px;
+        }
+        #notable2{
+            margin-top: 100px;
+        }
+        #table2{
+            margin-top: 100px;
+        }
+        #titlename{
+            margin-top: 40px;
+        }
+        #tipname{
+            margin-top: 10px;
+        }
+        .titie1{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<div id="warp">
+    <h5 class="title1">合作商管理/合作商详情</h5>
+    <h3 class="title1" style="display:inline;">合作商：</h3>
+    <h3 id="partnerName" style="display:inline;"></h3>
+    <div id="tipname">
+        <h5 style="display:inline;">备注:</h5>
+        <p id="tips" style="display:inline; word-break: break-word; ">请于两个工作日前确认</p>
+        <button id="changetips" class="btn btn-danger" style="display:inline;">修改</button>
+        <button id="ok" class="btn btn-danger" style="display:inline;">确认</button>
+        <button id="cancel" class="btn btn-danger" style="display:inline;" onmousedown="subgohide()">取消</button>
+    </div>
+    <div id="titlename" class="tab-top-1 title" align="left" id ="title">
+        <h5  style="display:inline;" >合作情况</h5>
+    </div>
+    <div class="line" style="border-bottom: 2px solid #ccc;margin-top: 10px"></div><!--虚线-->
+
+    <div id="table1" class="title1" style="display: none">
+    <h4>ToC合作内容</h4>
+    <table class="table table-bordered table-hover" id="toc_tab">
+    </table>
+    </div>
+
+    <div id="notable1">
+        <div class="tab-top-1 title" align="left" id="title3">
+            <h5>toc合作内容</h5>
+        </div>
+        <div class="line" style="border-bottom: 2px solid #ccc;margin-top: 10px"></div>
+        <p align="center">暂无数据</p>
+        <p align="center">可点击“立即新增”按钮，新增ToC合作。</p>
+        <div><button class="btn btn-danger" onclick="subgotoc()" style="position:absolute;margin-top: 10px;left:47%;">立即新增</button></div>
+    </div>
+
+    <div id="table2" style="display: none">
+    <h4>ToA合作内容</h4>
+    <table class="table table-bordered table-hover" id="toa_tab">
+    </table>
+    </div>
+
+
+
+    <div id="notable2">
+        <div class="tab-top-1 title" align="left" id="title4">
+            <h5>toa合作内容</h5>
+        </div>
+        <div class="line" style="border-bottom: 2px solid #ccc;margin-top: 10px"></div>
+        <p align="center">暂无数据</p>
+        <p align="center">可点击“立即新增”按钮，新增ToA合作。</p>
+        <div><button class="btn btn-danger" onclick="subgotoa()" style="position:absolute;margin-top: 10px;left:47%;">立即新增</button></div>
+    </div>
+
+</div>
+<div id="popupHtml"></div>
+<script type="text/javascript" src="../../js/partner/coop_toa.js"></script>
+<script type="text/javascript" src="../../js/partner/coop_toc.js"></script>
+<script>
+    popup.insertHtml($("#popupHtml"));
+    var partner_list = {
+        chgStatus: function(id,status, table){
+            var str = status?"确认启用此第三方渠道合作内容吗？":"确认禁用此第三方渠道吗？禁用后此第三方渠道的生产环境链接将失效，你还要继续吗？";
+            popup.mould.popConfirmMould(str, popup.mould.first, "", "",
+                function () {
+                    common.getByAjax(true, "get", "json", "/thirdParty/tocCooperate/chgAble", {'id':id,'status':status},
+                        function (data) {
+                            popup.mask.hideFirstMask(false);
+                            if (data.pass) {
+                                window[table].ajax.reload();
+                            } else {
+                                popup.mould.popTipsMould("禁用出现异常！", popup.mould.second, popup.mould.error, "", "57%", null);
+                            }
+                        },
+                        function () {
+                            popup.mould.popTipsMould("禁用出现异常！", popup.mould.second, popup.mould.error, "", "57%", null);
+                        }
+                    );
+                },
+                function () {
+                    popup.mask.hideFirstMask(false);
+                }
+            );
+        },
+    }
+</script>
+</html>

@@ -1,0 +1,309 @@
+package com.cheche365.cheche.piccuk
+//this is 郑州
+
+basePackageOptions = [
+    thirdPartyAmount: 0.0,
+    thirdPartyIop   : false,
+    damage          : true,
+    damageIop       : false,
+    theft           : false,
+    theftIop        : false,
+    engine          : false,
+    engineIop       : false,
+    glass           : false,
+    glassType       : null,    // 国产
+    driverAmount    : 0.0,
+    driverIop       : false,
+    passengerAmount : 0.0,
+    passengerIop    : false,
+    spontaneousLoss : false,
+    scratchAmount   : 0.0,
+    scratchIop      : false,
+    compulsory      : true,
+    autoTax         : true,
+    unableFindThirdParty : false
+]
+
+
+testData = [
+    [
+        41010001,
+        '',
+        '豫AD21B0',
+        'LVGBH42K99G316182',
+        'C662447',
+        '党东风',
+        '41270219930215601X',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'丰田GTM7200EB轿车',
+                        supplementInfo : [
+                            autoModel: 'FTABMD0053',
+                            verificationMobile:'15311439371',
+                            commercialStartDate : '2018-08-26',
+                            compulsoryStartDate : '2018-08-26',
+                        ]
+                    ],
+                    enrollDate:'2009-05-24'
+                ]
+            ]
+        ]
+    ],
+    [
+            410102,
+            '',
+            '豫AP6X780',
+            'LVSHFFML4HS164203',
+            'HJ510029',
+            '何星成',
+            '412701197507164018',
+            null,
+            null,
+            [
+                quoteRecord:[
+                    auto   :  [
+                        autoType:[
+                            code:'CAF7154M5',
+                            supplementInfo : [
+                                autoModel: 'FTABMD0053',
+                                commercialStartDate : '2018-08-26',
+                                compulsoryStartDate : '2018-08-26',
+                            ]
+                        ],
+                        enrollDate:'2017-08-16'
+                    ]
+                ]
+            ]
+        ],
+
+
+    [
+            41010002,
+            '',
+            '豫A0H979',
+            'LDCC13L2990043351',
+            '8007388',
+            '梅刚',
+            '413026198102012117',
+            null,
+            null,
+            [
+                quoteRecord:[
+                    auto   :  [
+                        autoType:[
+                            code:'东风雪铁龙DC7165DTA轿车',
+                            supplementInfo : [
+                                autoModel: 'XTAAOD0021',
+                                verificationMobile:'15311439371',
+                                commercialStartDate : '2018-08-26',
+                                compulsoryStartDate : '2018-08-26',
+                            ]
+                        ],
+                        enrollDate:'2009-10-01'
+                    ]
+                ]
+            ]
+        ],
+    [
+            41010003,
+            '',
+            '豫AC0J36',
+            'LVSHFFAC5FF303992',
+            'FA31587',
+            '李涛',
+            '92320114MA1P4EAH4T',
+            null,
+            null,
+            [
+                quoteRecord:[
+                    auto   :  [
+                        autoType:[
+                            code:'福特CAF7200A41轿车',
+                            supplementInfo : [
+                                autoModel: 'CAF7200A41',
+                                verificationMobile:'15311439371',
+                                commercialStartDate : '2018-07-11',
+                                compulsoryStartDate : '2018-07-11',
+                            ]
+                        ],
+                        enrollDate:'2016-04-06'
+                    ]
+                ]
+            ]
+        ],
+
+        [
+                    41010004,
+                    '',
+                    '豫AB26V8',
+                    'LBV5S1103FSK71021',
+                    '2282E704',
+                    '王远',
+                    '410223198803223039',
+                    null,
+                    null,
+                    [
+                        quoteRecord:[
+                            auto   :  [
+                                autoType:[
+                                    code:'福特CAF7200A41轿车',
+                                    supplementInfo : [
+                                        autoModel: 'BMAAKD0124',
+                                        verificationMobile:'15311439371',
+                                        commercialStartDate : '2018-08-24',
+                                        compulsoryStartDate : '2018-08-24',
+                                    ]
+                                ],
+                                enrollDate:'2015-08-13'
+                            ]
+                        ]
+                    ]
+                ],
+
+
+        [
+            41010005,
+            '',
+            '豫AR2H01',
+            'LC0C14DF4H0003324',
+            '217004478',
+            '涂志波',
+            '362202199102164611',
+            null,
+            null,
+            [
+                quoteRecord:[
+                    auto   :  [
+                        autoType:[
+                            code:'比亚迪BYD6420S5M多用途乘用车',
+                            supplementInfo : [
+                                autoModel: 'BYABAD0024',
+                                verificationMobile:'15311439371',
+                                commercialStartDate : '2018-08-25',
+                                compulsoryStartDate : '2018-08-25',
+                            ]
+                        ],
+                        enrollDate:'2017-08-01'
+                    ]
+                ]
+            ]
+        ],
+
+        [
+                    41010006,
+                    '',
+                    '豫AXN926',
+                    'LZWADAGA3JF001278',
+                    '8J11020114',
+                    '杜晓磊',
+                    '410223198803223039',
+                    null,
+                    null,
+                    [
+                        quoteRecord:[
+                            auto   :  [
+                                autoType:[
+                                    code:'五菱牌LZ6441JY',
+                                    supplementInfo : [
+                                        autoModel: 'TYBBED0057',
+                                        verificationMobile:'15311439371',
+                                        commercialStartDate : '2018-08-27',
+                                        compulsoryStartDate : '2018-08-27',
+                                   ]
+                                ],
+                                enrollDate:'2018-05-03'
+                            ]
+                        ]
+                    ]
+                ],
+
+         [
+                     41010007,
+                     '',
+                     '豫AU97R3',
+                     'LJ12EKR27F4812810',
+                     'F3512924',
+                     '乔雪连',
+                     '412702199102106560',
+                     null,
+                     null,
+                     [
+                         quoteRecord:[
+                             auto   :  [
+                                 autoType:[
+                                     code:'江淮HFC7151M1V轿车',
+                                     supplementInfo : [
+                                         autoModel: 'JHAGND0020',
+                                         verificationMobile:'15311439371',
+                                         commercialStartDate : '2018-08-27',
+                                         compulsoryStartDate : '2018-08-27',
+                                    ]
+                                 ],
+                                 enrollDate:'2015-08-26'
+                             ]
+                         ]
+                     ]
+                 ],
+
+
+                  [
+                                      410100079,
+                                      '',
+                                      '豫A0AD88',
+                                      'LJXDJ3CB0GTU31784',
+                                      'G9G017482',
+                                      '周运亮',
+                                      '410221197508187656',
+                                      null,
+                                      null,
+                                      [
+                                          quoteRecord:[
+                                              auto   :  [
+                                                  autoType:[
+                                                      code:'福特JX6490PA5多用途乘用车',
+                                                      supplementInfo : [
+                                                          autoModel: 'FTBBJD0003',
+                                                          verificationMobile:'15311439371',
+                                                          commercialStartDate : '2018-10-24',
+                                                          compulsoryStartDate : '2018-10-24',
+                                                     ]
+                                                  ],
+                                                  enrollDate:'2017-01-01'
+                                              ]
+                                          ]
+                                      ]
+                                  ],
+
+
+                                  [
+                                                                        410100078,
+                                                                        '',
+                                                                        '豫AW456R',
+                                                                        'JE3AZ5936DZ000617',
+                                                                        'KX98614J12',
+                                                                        '王占龙',
+                                                                        '230822197207247315',
+                                                                        null,
+                                                                        null,
+                                                                        [
+                                                                            quoteRecord:[
+                                                                                auto   :  [
+                                                                                    autoType:[
+                                                                                        code:'欧蓝德OUTLANDER EX 2.4L越野车',
+                                                                                        supplementInfo : [
+                                                                                            autoModel: 'SLAAGI0029',
+                                                                                            verificationMobile:'15311439371',
+                                                                                            commercialStartDate : '2018-08-30',
+                                                                                            compulsoryStartDate : '2018-08-30',
+                                                                                       ]
+                                                                                    ],
+                                                                                    enrollDate:'2012-11-01'
+                                                                                ]
+                                                                            ]
+                                                                        ]
+                                                                    ],
+]

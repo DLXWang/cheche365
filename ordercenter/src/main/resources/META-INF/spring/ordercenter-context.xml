@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <context:component-scan base-package="com.cheche365.cheche.ordercenter" />
+
+    <!-- spring access static file-->
+    <mvc:resources mapping="/page/**" location="/page/"/>
+    <mvc:default-servlet-handler />
+
+    <!-- JSP HTML File Position-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="urlMap">
+            <map>
+                <entry key="/page/**" value="orderCenterResourceHandler" />
+            </map>
+        </property>
+        <property name="order" value="100000" />
+    </bean>
+
+    <bean id="orderCenterResourceHandler" class="org.springframework.web.servlet.resource.ResourceHttpRequestHandler">
+        <property name="locations" value="/page/" />
+        <property name="supportedMethods">
+            <list>
+                <value>GET</value>
+                <value>HEAD</value>
+                <value>POST</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- 加载订单状态配置 -->
+    <bean id="orderStatusProperty" class="com.cheche365.cheche.ordercenter.OrderStatusProperty" init-method="initFile"/>
+
+    <bean id="orderStateTransitionService" class="com.cheche365.cheche.ordercenter.service.order.OrderStateTransitionService"/>
+
+    <!-- SpringMVC上传文件时，需要配置MultipartResolver处理器 -->
+    <!--<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">-->
+    <!--<property name="defaultEncoding" value="utf-8" />-->
+    <!--<property name="maxUploadSize" value="10485760000" />-->
+    <!--<property name="maxInMemorySize" value="40960" />-->
+    <!--</bean>-->
+
+    <!--
+   1.拦截器按照先后顺序进行拦截。
+   2.拦截全部请求时使用"/**"。
+   3.不能拦截jsp。
+   -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**" />
+            <bean id="LogbackInterceptor" class="com.cheche365.cheche.web.interceptor.LogbackInterceptor"/>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/orderCenter/**"/>
+            <bean class="com.cheche365.cheche.ordercenter.interceptor.VisitorPermissionInterceptor">
+                <property name="orderCenterInternalUserManageService" ref="orderCenterInternalUserManageService"/>
+            </bean>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/orderCenter/**"/>
+            <bean class="com.cheche365.cheche.ordercenter.interceptor.PlatformAccessLogInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+    <aop:aspectj-autoproxy proxy-target-class="true"  expose-proxy="true"/>
+</beans>

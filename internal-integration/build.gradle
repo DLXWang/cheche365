@@ -1,0 +1,22 @@
+/**
+ +----------------+
+ | Build Settings |
+ +----------------+
+ */
+configurations {
+    springBoot {
+        extendsFrom runtime
+    }
+}
+
+dependencies {
+
+    compile     project(':webcore')
+
+    compile     "com.sun.jersey:jersey-client:$jersey_version",
+                "com.sun.jersey.contribs:jersey-apache-client4:$jersey_version"
+
+    //cheche365
+    testCompile "com.cheche365.test:cheche365-test-core:$cheche365_test_version",
+        "cglib:cglib-nodep:$cglib_version"
+}

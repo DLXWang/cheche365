@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>配置新用户</title>
+    <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/formInput.css" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap-multiselect.css">
+    <script type="text/javascript" src="../../js/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap-multiselect.js"></script>
+    <script type="text/javascript" src="../../js/common/common.js"></script>
+    <script type="text/javascript" src="../../js/common/popup.js"></script>
+    <script type="text/javascript" src="../../js/common/operation.js"></script>
+    <script type="text/javascript" src="../../js/user/user.js"></script>
+    <script type="text/javascript" src="../../js/user/user_add.js"></script>
+</head>
+<body>
+<div class="container tab_body">
+    <form class="form-horizontal" id="userForm">
+        <fieldset>
+            <div class="form-group" style="padding-top: 40px;">
+                <label class="col-sm-4 control-label">邮箱</label>
+                <div class="col-sm-3">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="邮箱用于登录系统和接收系统邮件">
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group has-warning none errorMsg">
+                        <label class="control-label"></label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">姓名</label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" id="name" name="name">
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group has-warning none errorMsg">
+                        <label class="control-label"></label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">手机号</label>
+                <div class="col-sm-3">
+                    <input type="email" class="form-control" id="mobile" name="mobile" placeholder="手机号用于接收系统短信" maxlength="11">
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group has-warning none errorMsg">
+                        <label class="control-label"></label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">性别</label>
+                <div class="col-sm-3">
+                    <label class="radio-inline">
+                        <input type="radio" name="gender" id="gender1" value="1" checked> 男
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="gender" id="gender2" value="2"> 女
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">密码</label>
+                <div class="col-sm-3">
+                    <div class="input-append input-group">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="由6到12位字母数字下划线组成">
+                        <span id='show-hide-pwd' tabindex='100' title='显示/隐藏密码' class='add-on input-group-addon' style='cursor: pointer;'>
+                            <i class='glyphicon icon-eye-open glyphicon-eye-open'></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group has-warning  errorMsg">
+                        <label class="control-label"></label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">确认密码</label>
+                <div class="col-sm-3">
+                    <div class="input-append input-group">
+                        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="由6到12位字母数字下划线组成">
+                        <span id='confirm-show-hide-pwd' tabindex='100' title='显示/隐藏密码' class='add-on input-group-addon' style='cursor: pointer;'>
+                            <i class='glyphicon icon-eye-open glyphicon-eye-open'></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group has-warning none errorMsg">
+                        <label class="control-label"></label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">系统角色</label>
+                <div class="col-sm-6">
+                    <select id="roleId" name="roleIds" class="form-control text-input-150" multiple="multiple">
+                    </select>
+                </div>
+            </div>
+            <div class="form-group" style="padding-top: 20px;">
+                <label class="col-sm-4 control-label"></label>
+                <div class="col-sm-5">
+                    <div class="btn-group">
+                        <button id="register_button" type="button" class="btn btn-primary">注册</button>
+                    </div>
+                    <div class="btn-group" style="padding-left: 15px;">
+                        <button id="clear_button" type="button" class="btn btn-default">清空</button>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+</body>
+</html>

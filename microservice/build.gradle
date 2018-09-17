@@ -1,0 +1,29 @@
+/**
+ +----------------+
+ | Build Settings |
+ +----------------+
+ */
+configurations {
+    springBoot {
+        extendsFrom runtime
+    }
+}
+
+dependencies {
+
+
+    // Other Projects
+    compile     project(':core')
+
+    // Vert.X
+    compile     "io.vertx:vertx-core:$vertx_version",
+                "io.vertx:vertx-rx:$vertx_version",
+                "io.vertx:vertx-hazelcast:$vertx_version"
+
+    // Misc.
+    compile     "as.leap:vertx-rpc:$vertx_rpc_version"
+    runtime     "io.reactivex:rxjava:$rxjava_version",
+                "co.paralleluniverse:quasar-core:$quasar_version",
+                "io.protostuff:protostuff-json:$protostuff_json_version"
+
+}

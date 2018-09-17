@@ -1,0 +1,48 @@
+package com.cheche365.cheche.picc
+//this is 西宁
+
+testDataParams = [
+
+    //{value=40288088282a52f5012838a9e3f80532, text=花冠/卡罗拉2007款 GLX-i 5座 146800元}
+    0 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '40288088282a52f5012838a9e3f80532']]]]]],
+
+    //{value=6206936fc057ffc8000000001af3256a, text=金刚2008款 标准型 5座 51800元}
+    10 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '6206936fc057ffc8000000001af3256a']]]]]],
+
+    //{value=4028b28844b618a00144bf7b59800bd3, text=途胜2008款 两驱舒适天窗型 5座 158800元}
+    20 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028b28844b618a00144bf7b59800bd3']]]]]],
+
+    //{value=40288088282a52f5012838a9e3f80532, text=花冠/卡罗拉2007款 GLX-i 5座 146800元}
+    30 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '40288088282a52f5012838a9e3f80532']]]]]],
+
+    //{value=4028b2883c8aeb28013d14287e693648, text=奥拓2013款 实用型 5座 34900元}
+    80 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028b2883c8aeb28013d14287e693648']]]]]],
+
+    //{value=4028b2883dfdae0d013e0cadd3cf0558, text=骊威2013款 XV劲锐豪华版 5座 99200元}
+    90 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028b2883dfdae0d013e0cadd3cf0558']]]]]],
+
+    //{value=4028b2883e2f1c60013e30b4b7bf0543, text=长城C502013款 时尚型 5座 74900元}
+    100 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028b2883e2f1c60013e30b4b7bf0543']]]]]],
+
+    //{value=90166098c057ffc8000000000766e4b6, text=狮跑/智跑2008款 四驱版 5座 166800元}
+    110 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '90166098c057ffc8000000000766e4b6']]]]]],
+
+    //{value=4028b2b6491cf6280149319dc3931be4, text=众泰T6002014款 旗舰型 5座 101800元}
+    140 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028b2b6491cf6280149319dc3931be4']]]]]],
+
+    //{value=4028b28833bb335e0133f78097c72649, text=天津一汽丰田RAV42011款 四驱至臻版 5座 219800元}
+    220 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028b28833bb335e0133f78097c72649']]]]]],
+
+    //{value=402880882687f536012698082ead104a, text=东风风神H302010款 尊贵型 5座 73800元}
+    260 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '402880882687f536012698082ead104a']]]]]],
+
+    //{value=4028b28839aa3b5e0139aee6a3670612, text=启辰R502012款 尊贵版 5座 80800元}
+    300 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028b28839aa3b5e0139aee6a3670612']]]]]],
+
+    //{value=4028b2883dfdae0d013e0cadd3cf0558, text=骊威2013款 XV劲锐豪华版 5座 99200元}
+    310 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028b2883dfdae0d013e0cadd3cf0558']]]]]],
+
+    //{value=4028b288414ee80801415d6c37d10fcb, text=狮跑/智跑2014款 GL两驱版 5座 155100元}
+    350 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028b288414ee80801415d6c37d10fcb']]]]]],
+
+]

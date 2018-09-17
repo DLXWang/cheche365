@@ -1,0 +1,39 @@
+spring:
+  profiles: default
+ms:
+  gateway:
+    port: 10001
+    hostname: localhost
+
+---
+spring:
+  profiles: itg
+ms:
+  gateway:
+    port: 10001
+    hostname: localhost
+
+---
+spring:
+  profiles: qa
+ms:
+  gateway:
+    port: 10001
+    hostname: localhost
+
+---
+spring:
+  profiles: production
+ms:
+  gateway:
+    port: 10001
+    hostname: localhost
+
+
+---
+ms:
+  gateway:
+    url: http\://${ms.gateway.hostname}:${ms.gateway.port}
+
+
+

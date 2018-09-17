@@ -1,0 +1,748 @@
+package com.cheche365.cheche.rest
+
+import groovy.json.JsonSlurper
+
+def jsonSlurper = new JsonSlurper()
+
+defaultTestDatas = [
+    [
+        // 普通用户，无任何优惠券
+        50871L,"valid",4000,
+        jsonSlurper.parseText(
+            """
+            []
+            """
+        )
+    ],
+    [
+        // 普通用户，含微信红包、代金券、礼品卡
+        339583L,"valid",3500,
+         jsonSlurper.parseText(
+             """
+             [
+               {
+                   "id": 7,
+                   "applicant": {
+                     "id": 339583,
+                     "name": null,
+                     "userId": null,
+                     "mobile": null,
+                     "deviceUniqueID": null,
+                     "email": null,
+                     "gender": null,
+                     "genderStr": null,
+                     "yearOfBirth": null,
+                     "memberPoints": null,
+                     "isMember": null,
+                     "identity": null,
+                     "identityType": null,
+                     "password": null,
+                     "userType": {
+                       "id": 1,
+                       "name": "消费者",
+                       "description": "消费者"
+                     },
+                     "headImgUrl": null,
+                     "nickName": null,
+                     "sex": null,
+                     "bound": null,
+                     "userRoles": [],
+                     "createTime": null,
+                     "updateTime": null,
+                     "birthday": null,
+                     "vipCompany": null
+                   },
+                   "reason": "买车险赠送",
+                   "sourceType": {
+                     "id": 3,
+                     "name": "营销活动抽奖",
+                     "description": "营销活动抽奖"
+                   },
+                   "source": 2,
+                   "giftType": {
+                     "id": 3,
+                     "name": "代金券",
+                     "description": "代金券"
+                   },
+                   "giftCode": null,
+                   "giftAmount": 518,
+                   "effectiveDate": "2015-06-01",
+                   "expireDate": "2016-06-01",
+                   "createTime": "2015-04-18",
+                   "status": {
+                     "id": 1,
+                     "status": "已创建",
+                     "description": "已创建"
+                   },
+                   "quantity": null,
+                   "unit": null,
+                   "expired": false
+                 },
+                 {
+                   "id": 8,
+                   "applicant": {
+                     "id": 339583,
+                     "name": null,
+                     "userId": null,
+                     "mobile": null,
+                     "deviceUniqueID": null,
+                     "email": null,
+                     "gender": null,
+                     "genderStr": null,
+                     "yearOfBirth": null,
+                     "memberPoints": null,
+                     "isMember": null,
+                     "identity": null,
+                     "identityType": null,
+                     "password": null,
+                     "userType": {
+                       "id": 1,
+                       "name": "消费者",
+                       "description": "消费者"
+                     },
+                     "headImgUrl": null,
+                     "nickName": null,
+                     "sex": null,
+                     "bound": null,
+                     "userRoles": [],
+                     "createTime": null,
+                     "updateTime": null,
+                     "birthday": null,
+                     "vipCompany": null
+                   },
+                   "reason": "买车险赠送",
+                   "sourceType": {
+                     "id": 3,
+                     "name": "营销活动抽奖",
+                     "description": "营销活动抽奖"
+                   },
+                   "source": 2,
+                   "giftType": {
+                     "id": 3,
+                     "name": "代金券",
+                     "description": "代金券"
+                   },
+                   "giftCode": null,
+                   "giftAmount": 418,
+                   "effectiveDate": "2015-06-01",
+                   "expireDate": "2016-06-01",
+                   "createTime": "2015-04-18",
+                   "status": {
+                     "id": 1,
+                     "status": "已创建",
+                     "description": "已创建"
+                   },
+                   "quantity": null,
+                   "unit": null,
+                   "expired": false
+                 },
+                 {
+                   "id": 9,
+                   "applicant": {
+                     "id": 339583,
+                     "name": null,
+                     "userId": null,
+                     "mobile": null,
+                     "deviceUniqueID": null,
+                     "email": null,
+                     "gender": null,
+                     "genderStr": null,
+                     "yearOfBirth": null,
+                     "memberPoints": null,
+                     "isMember": null,
+                     "identity": null,
+                     "identityType": null,
+                     "password": null,
+                     "userType": {
+                       "id": 1,
+                       "name": "消费者",
+                       "description": "消费者"
+                     },
+                     "headImgUrl": null,
+                     "nickName": null,
+                     "sex": null,
+                     "bound": null,
+                     "userRoles": [],
+                     "createTime": null,
+                     "updateTime": null,
+                     "birthday": null,
+                     "vipCompany": null
+                   },
+                   "reason": "买车险赠送",
+                   "sourceType": {
+                     "id": 1,
+                     "name": "订单",
+                     "description": "订单"
+                   },
+                   "source": 17,
+                   "giftType": {
+                     "id": 3,
+                     "name": "代金券",
+                     "description": "代金券"
+                   },
+                   "giftCode": null,
+                   "giftAmount": 400,
+                   "effectiveDate": "2015-06-01",
+                   "expireDate": "2016-06-01",
+                   "createTime": "2015-04-18",
+                   "status": {
+                     "id": 1,
+                     "status": "已创建",
+                     "description": "已创建"
+                   },
+                   "quantity": null,
+                   "unit": null,
+                   "expired": false
+                 },
+                 {
+                   "id": 332,
+                   "applicant": {
+                     "id": 339583,
+                     "name": null,
+                     "userId": null,
+                     "mobile": null,
+                     "deviceUniqueID": null,
+                     "email": null,
+                     "gender": null,
+                     "genderStr": null,
+                     "yearOfBirth": null,
+                     "memberPoints": null,
+                     "isMember": null,
+                     "identity": null,
+                     "identityType": null,
+                     "password": null,
+                     "userType": {
+                       "id": 1,
+                       "name": "消费者",
+                       "description": "消费者"
+                     },
+                     "headImgUrl": null,
+                     "nickName": null,
+                     "sex": null,
+                     "bound": null,
+                     "userRoles": [],
+                     "createTime": null,
+                     "updateTime": null,
+                     "birthday": null,
+                     "vipCompany": null
+                   },
+                   "reason": "买车险赠送",
+                   "sourceType": {
+                     "id": 1,
+                     "name": "订单",
+                     "description": "订单"
+                   },
+                   "source": 510,
+                   "giftType": {
+                     "id": 3,
+                     "name": "代金券",
+                     "description": "代金券"
+                   },
+                   "giftCode": null,
+                   "giftAmount": 400,
+                   "effectiveDate": "2015-06-01",
+                   "expireDate": "2016-06-01",
+                   "createTime": "2015-04-30",
+                   "status": {
+                     "id": 1,
+                     "status": "已创建",
+                     "description": "已创建"
+                   },
+                   "quantity": null,
+                   "unit": null,
+                   "expired": false
+                 }
+             ]
+             """
+         )
+    ],
+    [
+        // 普通用户，含微信红包、代金券、礼品卡，618活动优惠券
+        339583L,"valid",4200,
+         jsonSlurper.parseText(
+             """
+             [
+               {
+                   "id": 7,
+                   "applicant": {
+                     "id": 339583,
+                     "name": null,
+                     "userId": null,
+                     "mobile": null,
+                     "deviceUniqueID": null,
+                     "email": null,
+                     "gender": null,
+                     "genderStr": null,
+                     "yearOfBirth": null,
+                     "memberPoints": null,
+                     "isMember": null,
+                     "identity": null,
+                     "identityType": null,
+                     "password": null,
+                     "userType": {
+                       "id": 1,
+                       "name": "消费者",
+                       "description": "消费者"
+                     },
+                     "headImgUrl": null,
+                     "nickName": null,
+                     "sex": null,
+                     "bound": null,
+                     "userRoles": [],
+                     "createTime": null,
+                     "updateTime": null,
+                     "birthday": null,
+                     "vipCompany": null
+                   },
+                   "reason": "买车险赠送",
+                   "sourceType": {
+                     "id": 3,
+                     "name": "营销活动抽奖",
+                     "description": "营销活动抽奖"
+                   },
+                   "source": 2,
+                   "giftType": {
+                     "id": 3,
+                     "name": "代金券",
+                     "description": "代金券"
+                   },
+                   "giftCode": null,
+                   "giftAmount": 518,
+                   "effectiveDate": "2015-06-01",
+                   "expireDate": "2016-06-01",
+                   "createTime": "2015-04-18",
+                   "status": {
+                     "id": 1,
+                     "status": "已创建",
+                     "description": "已创建"
+                   },
+                   "quantity": null,
+                   "unit": null,
+                   "expired": false
+                 },
+                 {
+                   "id": 8,
+                   "applicant": {
+                     "id": 339583,
+                     "name": null,
+                     "userId": null,
+                     "mobile": null,
+                     "deviceUniqueID": null,
+                     "email": null,
+                     "gender": null,
+                     "genderStr": null,
+                     "yearOfBirth": null,
+                     "memberPoints": null,
+                     "isMember": null,
+                     "identity": null,
+                     "identityType": null,
+                     "password": null,
+                     "userType": {
+                       "id": 1,
+                       "name": "消费者",
+                       "description": "消费者"
+                     },
+                     "headImgUrl": null,
+                     "nickName": null,
+                     "sex": null,
+                     "bound": null,
+                     "userRoles": [],
+                     "createTime": null,
+                     "updateTime": null,
+                     "birthday": null,
+                     "vipCompany": null
+                   },
+                   "reason": "买车险赠送",
+                   "sourceType": {
+                     "id": 3,
+                     "name": "营销活动抽奖",
+                     "description": "营销活动抽奖"
+                   },
+                   "source": 2,
+                   "giftType": {
+                     "id": 3,
+                     "name": "代金券",
+                     "description": "代金券"
+                   },
+                   "giftCode": null,
+                   "giftAmount": 418,
+                   "effectiveDate": "2015-06-01",
+                   "expireDate": "2016-06-01",
+                   "createTime": "2015-04-18",
+                   "status": {
+                     "id": 1,
+                     "status": "已创建",
+                     "description": "已创建"
+                   },
+                   "quantity": null,
+                   "unit": null,
+                   "expired": false
+                 },
+                 {
+                   "id": 9,
+                   "applicant": {
+                     "id": 339583,
+                     "name": null,
+                     "userId": null,
+                     "mobile": null,
+                     "deviceUniqueID": null,
+                     "email": null,
+                     "gender": null,
+                     "genderStr": null,
+                     "yearOfBirth": null,
+                     "memberPoints": null,
+                     "isMember": null,
+                     "identity": null,
+                     "identityType": null,
+                     "password": null,
+                     "userType": {
+                       "id": 1,
+                       "name": "消费者",
+                       "description": "消费者"
+                     },
+                     "headImgUrl": null,
+                     "nickName": null,
+                     "sex": null,
+                     "bound": null,
+                     "userRoles": [],
+                     "createTime": null,
+                     "updateTime": null,
+                     "birthday": null,
+                     "vipCompany": null
+                   },
+                   "reason": "买车险赠送",
+                   "sourceType": {
+                     "id": 1,
+                     "name": "订单",
+                     "description": "订单"
+                   },
+                   "source": 17,
+                   "giftType": {
+                     "id": 3,
+                     "name": "代金券",
+                     "description": "代金券"
+                   },
+                   "giftCode": null,
+                   "giftAmount": 400,
+                   "effectiveDate": "2015-06-01",
+                   "expireDate": "2016-06-01",
+                   "createTime": "2015-04-18",
+                   "status": {
+                     "id": 1,
+                     "status": "已创建",
+                     "description": "已创建"
+                   },
+                   "quantity": null,
+                   "unit": null,
+                   "expired": false
+                 },
+                 {
+                   "id": 332,
+                   "applicant": {
+                     "id": 339583,
+                     "name": null,
+                     "userId": null,
+                     "mobile": null,
+                     "deviceUniqueID": null,
+                     "email": null,
+                     "gender": null,
+                     "genderStr": null,
+                     "yearOfBirth": null,
+                     "memberPoints": null,
+                     "isMember": null,
+                     "identity": null,
+                     "identityType": null,
+                     "password": null,
+                     "userType": {
+                       "id": 1,
+                       "name": "消费者",
+                       "description": "消费者"
+                     },
+                     "headImgUrl": null,
+                     "nickName": null,
+                     "sex": null,
+                     "bound": null,
+                     "userRoles": [],
+                     "createTime": null,
+                     "updateTime": null,
+                     "birthday": null,
+                     "vipCompany": null
+                   },
+                   "reason": "买车险赠送",
+                   "sourceType": {
+                     "id": 1,
+                     "name": "订单",
+                     "description": "订单"
+                   },
+                   "source": 510,
+                   "giftType": {
+                     "id": 3,
+                     "name": "代金券",
+                     "description": "代金券"
+                   },
+                   "giftCode": null,
+                   "giftAmount": 400,
+                   "effectiveDate": "2015-06-01",
+                   "expireDate": "2016-06-01",
+                   "createTime": "2015-04-30",
+                   "status": {
+                     "id": 1,
+                     "status": "已创建",
+                     "description": "已创建"
+                   },
+                   "quantity": null,
+                   "unit": null,
+                   "expired": false
+                 }
+             ]
+             """
+         )
+    ],
+    [
+        // 代理人
+        999999L,"valid",2000,null
+    ],
+    [
+        // 大客户活动
+        339583L,"valid",3000,
+         jsonSlurper.parseText(
+             """
+             [
+               {
+                   "id": 7,
+                   "applicant": {
+                     "id": 339583,
+                     "name": null,
+                     "userId": null,
+                     "mobile": null,
+                     "deviceUniqueID": null,
+                     "email": null,
+                     "gender": null,
+                     "genderStr": null,
+                     "yearOfBirth": null,
+                     "memberPoints": null,
+                     "isMember": null,
+                     "identity": null,
+                     "identityType": null,
+                     "password": null,
+                     "userType": {
+                       "id": 1,
+                       "name": "消费者",
+                       "description": "消费者"
+                     },
+                     "headImgUrl": null,
+                     "nickName": null,
+                     "sex": null,
+                     "bound": null,
+                     "userRoles": [],
+                     "createTime": null,
+                     "updateTime": null,
+                     "birthday": null,
+                     "vipCompany": null
+                   },
+                   "reason": "买车险赠送",
+                   "sourceType": {
+                     "id": 3,
+                     "name": "营销活动抽奖",
+                     "description": "营销活动抽奖"
+                   },
+                   "source": 2,
+                   "giftType": {
+                     "id": 3,
+                     "name": "代金券",
+                     "description": "代金券"
+                   },
+                   "giftCode": null,
+                   "giftAmount": 518,
+                   "effectiveDate": "2015-06-01",
+                   "expireDate": "2016-06-01",
+                   "createTime": "2015-04-18",
+                   "status": {
+                     "id": 1,
+                     "status": "已创建",
+                     "description": "已创建"
+                   },
+                   "quantity": null,
+                   "unit": null,
+                   "expired": false
+                 },
+                 {
+                   "id": 8,
+                   "applicant": {
+                     "id": 339583,
+                     "name": null,
+                     "userId": null,
+                     "mobile": null,
+                     "deviceUniqueID": null,
+                     "email": null,
+                     "gender": null,
+                     "genderStr": null,
+                     "yearOfBirth": null,
+                     "memberPoints": null,
+                     "isMember": null,
+                     "identity": null,
+                     "identityType": null,
+                     "password": null,
+                     "userType": {
+                       "id": 1,
+                       "name": "消费者",
+                       "description": "消费者"
+                     },
+                     "headImgUrl": null,
+                     "nickName": null,
+                     "sex": null,
+                     "bound": null,
+                     "userRoles": [],
+                     "createTime": null,
+                     "updateTime": null,
+                     "birthday": null,
+                     "vipCompany": null
+                   },
+                   "reason": "买车险赠送",
+                   "sourceType": {
+                     "id": 3,
+                     "name": "营销活动抽奖",
+                     "description": "营销活动抽奖"
+                   },
+                   "source": 2,
+                   "giftType": {
+                     "id": 3,
+                     "name": "代金券",
+                     "description": "代金券"
+                   },
+                   "giftCode": null,
+                   "giftAmount": 418,
+                   "effectiveDate": "2015-06-01",
+                   "expireDate": "2016-06-01",
+                   "createTime": "2015-04-18",
+                   "status": {
+                     "id": 1,
+                     "status": "已创建",
+                     "description": "已创建"
+                   },
+                   "quantity": null,
+                   "unit": null,
+                   "expired": false
+                 },
+                 {
+                   "id": 9,
+                   "applicant": {
+                     "id": 339583,
+                     "name": null,
+                     "userId": null,
+                     "mobile": null,
+                     "deviceUniqueID": null,
+                     "email": null,
+                     "gender": null,
+                     "genderStr": null,
+                     "yearOfBirth": null,
+                     "memberPoints": null,
+                     "isMember": null,
+                     "identity": null,
+                     "identityType": null,
+                     "password": null,
+                     "userType": {
+                       "id": 1,
+                       "name": "消费者",
+                       "description": "消费者"
+                     },
+                     "headImgUrl": null,
+                     "nickName": null,
+                     "sex": null,
+                     "bound": null,
+                     "userRoles": [],
+                     "createTime": null,
+                     "updateTime": null,
+                     "birthday": null,
+                     "vipCompany": null
+                   },
+                   "reason": "买车险赠送",
+                   "sourceType": {
+                     "id": 1,
+                     "name": "订单",
+                     "description": "订单"
+                   },
+                   "source": 17,
+                   "giftType": {
+                     "id": 3,
+                     "name": "代金券",
+                     "description": "代金券"
+                   },
+                   "giftCode": null,
+                   "giftAmount": 400,
+                   "effectiveDate": "2015-06-01",
+                   "expireDate": "2016-06-01",
+                   "createTime": "2015-04-18",
+                   "status": {
+                     "id": 1,
+                     "status": "已创建",
+                     "description": "已创建"
+                   },
+                   "quantity": null,
+                   "unit": null,
+                   "expired": false
+                 },
+                 {
+                   "id": 332,
+                   "applicant": {
+                     "id": 339583,
+                     "name": null,
+                     "userId": null,
+                     "mobile": null,
+                     "deviceUniqueID": null,
+                     "email": null,
+                     "gender": null,
+                     "genderStr": null,
+                     "yearOfBirth": null,
+                     "memberPoints": null,
+                     "isMember": null,
+                     "identity": null,
+                     "identityType": null,
+                     "password": null,
+                     "userType": {
+                       "id": 1,
+                       "name": "消费者",
+                       "description": "消费者"
+                     },
+                     "headImgUrl": null,
+                     "nickName": null,
+                     "sex": null,
+                     "bound": null,
+                     "userRoles": [],
+                     "createTime": null,
+                     "updateTime": null,
+                     "birthday": null,
+                     "vipCompany": null
+                   },
+                   "reason": "买车险赠送",
+                   "sourceType": {
+                     "id": 1,
+                     "name": "订单",
+                     "description": "订单"
+                   },
+                   "source": 510,
+                   "giftType": {
+                     "id": 3,
+                     "name": "代金券",
+                     "description": "代金券"
+                   },
+                   "giftCode": null,
+                   "giftAmount": 400,
+                   "effectiveDate": "2015-06-01",
+                   "expireDate": "2016-06-01",
+                   "createTime": "2015-04-30",
+                   "status": {
+                     "id": 1,
+                     "status": "已创建",
+                     "description": "已创建"
+                   },
+                   "quantity": null,
+                   "unit": null,
+                   "expired": false
+                 }
+             ]
+             """
+         )
+    ]
+
+]

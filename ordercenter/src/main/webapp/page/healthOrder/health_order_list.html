@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>订单列表</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link type="text/css" href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="../../css/common.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/dataTables.bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../css/popup.css">
+    <script type="text/javascript" src="../../js/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../../plugins/DataTables-1.10.12/media/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../../js/common/datatable_util.js"></script>
+    <script type="text/javascript" src="../../js/healthOrder/health_order_list.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../plugins/jqPaginator-1.2.0/jqPaginator.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../js/common/common.js"></script>
+    <script type="text/javascript" src="../../js/common/cookie.js"></script>
+    <script type="text/javascript" src="../../js/common/popup.js"></script>
+    <script type="text/javascript" src="../../My97DatePicker/WdatePicker.js"></script>
+    <style type="text/css">
+        .filter {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="show_div" class="table-responsive" style="margin-top:10px;">
+
+    <div class="col-sm-12">
+        <div class="row" style="margin-bottom:10px;">
+            <div class="col-sm-12 form-inline">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="orderNo"  placeholder="订单编号" />
+                </div>
+            <span class="filter">
+                    下单日期：
+                    <input type="text" class="form-control text-input-50" id="startTime"
+                           style="width: 165px;background:#fff url(../../My97DatePicker/skin/datePicker.gif) no-repeat right;"
+                           onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true});">
+                    至
+                    <input type="text" class="form-control text-input-50" id="endTime"
+                           style="width: 165px;background:#fff url(../../My97DatePicker/skin/datePicker.gif) no-repeat right;"
+                           onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true});">
+            </span>
+            <span class="filter">
+                <input type="text" class="form-control" id="mobile"  placeholder="投保人手机号" />
+            </span>
+                <span>
+                <select id="orderStatus" class="form-control" style="width: 150px;">
+                    <option value="">订单状态</option>
+                </select></span>
+            <span class="filter">
+                <select id="channel" class="form-control" style="width: 150px;">
+                    <option value="">购买平台</option>
+                </select>
+                <button id="searchBtn" class="btn btn-danger" type="button">搜索</button>
+            </span>
+            </div>
+        </div>
+        <table class="table table-bordered table-hover" id="list_tab">
+        </table>
+    </div>
+</div>
+</body>
+</html>

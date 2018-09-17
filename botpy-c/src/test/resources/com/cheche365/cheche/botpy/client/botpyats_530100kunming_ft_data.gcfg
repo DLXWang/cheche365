@@ -1,0 +1,62 @@
+package com.cheche365.cheche.botpy.client
+//this is 昆明
+
+testData = [
+
+     [
+        1,
+        '',
+        '云AM8851',
+        'LSVCJ23TXD2023787',
+        '585937',
+        '喻庆辉',
+        '530102195912180310',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '昊锐SVW7189JJD轿车',
+                        supplementInfo: [
+                            autoModel: 'SKAAHD0028',
+                            verificationMobile:'13581538623',
+                             commercialStartDate : '2018-08-05',
+                             compulsoryStartDate : '2018-08-05',
+
+                        ]
+                    ],
+                    enrollDate: '2013-07-22'
+                ],
+            ]
+        ]
+    ],
+     [
+         2,
+         '',
+         '云AQ5T62',
+         'LFV3B28R6E3107056',
+         '029173',
+         '李兰',
+         '511011198810029283',
+         null,
+         null,
+         [
+             quoteRecord: [
+                 auto: [
+                     autoType  : [
+                         code          : '奥迪FV6461HCQBG多用途乘用车',
+                         supplementInfo: [
+                             autoModel: 'ADAARD0028',
+                             verificationMobile:'13581538623',
+                             commercialStartDate : '2018-08-30',
+                             compulsoryStartDate : '2018-08-05',
+
+                         ]
+                     ],
+                     enrollDate: '2015-02-16'
+                 ],
+             ]
+         ]
+     ],
+]

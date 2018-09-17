@@ -1,0 +1,90 @@
+{
+    "taskId": "1861466",
+    "prvId": "20194419",
+    "prvName": "阳光财险",
+    "code": "0",
+    "msg": "请提供车主的有效证件",
+    "channelId": "nqd_cheche2017",
+    "channelUserId": "nqd_cheche2017",
+    "taskState": "5",
+    "taskStateDescription": "补齐影像",
+    "msgType": "01",
+    "carInfo": {
+        "vehicleName": "哈弗CC6460RM0F多用途乘用车",
+        "carLicenseNo": "粤S295LZ",
+        "carProperty": "1"
+    },
+    "carOwner": {
+        "name": "伍琳"
+    },
+    "insureInfo": {
+        "efcInsureInfo": {
+            "startDate": "2017-04-11",
+            "endDate": "2018-04-10",
+            "amount": "0.00",
+            "premium": "0.00",
+            "discountRate": "1.0000"
+        },
+        "taxInsureInfo": {
+            "lateFee": "0.00",
+            "taxFee": "0.00"
+        },
+        "bizInsureInfo": {
+            "startDate": "2017-04-11",
+            "endDate": "2018-04-10",
+            "premium": "0.01",
+            "discountRate": "1.0000",
+            "nfcPremium": "0.00",
+            "riskKinds": [
+                {
+                    "riskCode": "VehicleDemageIns",
+                    "riskName": "机动车损失保险",
+                    "amount": "87800.00",
+                    "notDeductible": "Y",
+                    "premium": "0.01",
+                    "ncfPremium": "0.0000"
+                },
+                {
+                    "riskCode": "ThirdPartyIns",
+                    "riskName": "机动车第三者责任保险",
+                    "amount": "500000.00",
+                    "notDeductible": "Y",
+                    "premium": "0.00",
+                    "ncfPremium": "0.0000"
+                },
+                {
+                    "riskCode": "DriverIns",
+                    "riskName": "司机责任险",
+                    "amount": "50000.00",
+                    "notDeductible": "Y",
+                    "premium": "0.00",
+                    "ncfPremium": "0.0000"
+                },
+                {
+                    "riskCode": "PassengerIns",
+                    "riskName": "乘客责任险",
+                    "amount": "50000.00",
+                    "notDeductible": "Y",
+                    "premium": "0.00",
+                    "ncfPremium": "0.0000"
+                }
+            ]
+        },
+        "totalPremium": "0.01"
+    },
+    "imageInfos": [
+        {
+            "imageType": "48",
+            "imageName": "居住证"
+        },
+        {
+            "imageType": "25",
+            "imageName": "车主身份证正面照"
+        },
+        {
+            "imageType": "21",
+            "imageName": "驾驶证正页照"
+        }
+    ],
+    "payValidTime": "2017-04-10 23:55:00"
+}

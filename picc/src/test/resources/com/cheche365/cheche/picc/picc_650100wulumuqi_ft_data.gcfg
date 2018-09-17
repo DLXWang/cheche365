@@ -1,0 +1,9 @@
+package com.cheche365.cheche.picc
+//this is 乌鲁木齐
+
+testDataParams = [
+
+    //{value=4028b28838471a7801387a3cfdb43aee, text=奇瑞E52012款 优悦型/节能补贴 5座 53800元}
+    10 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028b28838471a7801387a3cfdb43aee']]]]]],
+
+]

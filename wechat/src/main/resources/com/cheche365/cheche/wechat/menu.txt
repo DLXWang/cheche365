@@ -1,0 +1,17 @@
+{
+     "button":[
+     {
+          "type":"view",
+          "name":"买车险",
+          "url":"https://www.cheche365.cn/web/proposal"
+      },
+      {
+           "name":"我的",
+           "sub_button":[
+           {
+               "type":"view",
+               "name":"订单",
+               "url":"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx05444814b830d0c5&redirect_uri=http://www.cheche365.cn/web/order&response_type=code&scope=snsapi_userinfo&state=1#wechat_redirect"
+            }]
+       }]
+ }

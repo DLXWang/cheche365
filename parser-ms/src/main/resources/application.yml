@@ -1,0 +1,30 @@
+discovery:
+  port: 8761
+  hostname: localhost
+  username: cheche
+  password: cheche
+
+eureka:
+  instance:
+    preferIpAddress: true
+    leaseRenewalIntervalInSeconds: 5
+    leaseExpirationDurationInSeconds: 10
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+#    healthcheck:
+#       enabled: true
+    serviceUrl:
+      defaultZone: http://${discovery.username}:${discovery.password}@${discovery.hostname}:${discovery.port}/eureka/
+
+management:
+  context-path: /app-manage
+  security:
+    enabled: false
+
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+

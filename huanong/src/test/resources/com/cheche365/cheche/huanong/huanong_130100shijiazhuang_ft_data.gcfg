@@ -1,0 +1,60 @@
+package com.cheche365.cheche.huanong
+//this is 北京
+
+testData = [
+
+    [
+        213450,
+        '',
+        '冀CES001',
+        'LJ16AK231C4405593',
+        'NVCDJN4E83923',
+        '张三',
+        '110101197309272522',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code: '江淮HFC6460M轻型客车',
+                        supplementInfo  : [
+                            autoModel: 'JHAFQD0001',
+                             commercialStartDate : '2018-08-21',
+                             compulsoryStartDate : '2018-08-21',
+                        ]
+                    ],
+                    enrollDate: '2015-01-01'
+                ]
+            ]
+        ],
+    ],
+    [
+            2131213,
+            '',
+            '粤A3539H',
+            'LJ16AK231C4405593',
+            'DLC067769',
+            '李建昌',
+            '452421197704130614',
+            null,
+            null,
+            [
+                quoteRecord:[
+                    auto   :  [
+                        autoType:[
+                            code:'江淮HFC6460M轻型客车',
+                            supplementInfo : [
+                                autoModel: 'JHAFQD0001',
+    //                            verificationMobile:'13581538623',
+                                commercialCaptchaImage:'kyR9',
+                                commercialStartDate : '2018-08-14',
+                                compulsoryStartDate : '2018-08-14',
+                            ]
+                        ],
+                        enrollDate:'2012-03-28'
+                    ]
+                ]
+            ]
+        ],
+]

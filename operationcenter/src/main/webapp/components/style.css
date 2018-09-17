@@ -1,0 +1,37 @@
+.react-body {
+    position: fixed;
+    top: 57px;
+    left: 200px;
+}
+
+.navigation {
+  	list-style: none;
+  	margin: 0;
+  	padding:0px;
+  /*background: deepskyblue;*/
+  	display: flex;
+  	justify-content: flex-start;
+  	align-items: center;
+}
+
+.navigation li {	
+  	text-decoration: none;
+  	display: block;
+  /*padding-right: 1em;*/
+  /*color: white;*/
+}
+.label-name {
+	min-width: 120px;
+}
+#message_menu .mui-body-table, .mui-header-table {
+	overflow: auto;
+	width: 1200px;
+}
+
+.float-left{
+  float:left;
+}
+/*.navigation a:hover {
+  background: #0095c7;
+}
+*/

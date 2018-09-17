@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+
+    <!-- Common -->
+
+    <bean
+        id="aDataSource"
+        abstract="true"
+        class="com.alibaba.druid.pool.DruidDataSource"
+        init-method="init"
+        p:username="${ds_username_common}"
+        p:password="${ds_password_common}"
+        p:initialSize="${ds_initial_size_common}"
+        p:minIdle="${ds_min_idle_common}"
+        p:maxActive="${ds_max_active_common}"
+        p:maxWait="${ds_max_wait_common}"
+        p:timeBetweenEvictionRunsMillis="${ds_time_between_eviction_runs_millis_common}"
+        p:minEvictableIdleTimeMillis="${ds_min_evictable_idle_time_millis_common}"
+        p:validationQuery="${ds_validation_query_mysql_common}"
+        p:testWhileIdle="${ds_test_while_idle_common}"
+        p:testOnBorrow="${ds_test_on_borrow_common}"
+        p:testOnReturn="${ds_test_on_return_common}"
+        p:filters="${ds_filters_common}"
+        p:connectionInitSqls="${ds_connection_sql_init_common}"
+    />
+
+    <bean
+        id="vendorAdapter"
+        class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
+
+    <bean
+        id="entityManagerFactory"
+        class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
+        p:packagesToScan="com.cheche365.cheche.**.model"
+        p:jpaVendorAdapter-ref="vendorAdapter"
+        p:dataSource-ref="dataSource"
+        p:jpaProperties-ref="jpaProperties" />
+
+    <bean
+        id="transactionManager"
+        class="org.springframework.orm.jpa.JpaTransactionManager"
+        p:entityManagerFactory-ref="entityManagerFactory" />
+
+    <tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="false"/>
+
+
+
+
+
+    <!-- Profile-Based -->
+
+    <beans profile="dev">
+
+        <!-- local data source -->
+
+        <bean
+            id="dataSource"
+            parent="aDataSource"
+            p:url="${dev.ds_url}" />
+
+    </beans>
+
+    <beans profile="k8s">
+
+        <!-- local data source -->
+
+        <bean
+            id="dataSource"
+            parent="aDataSource"
+            p:url="${k8s.ds_url}"
+            p:username="${k8s.ds_username}"
+            p:password="${k8s.ds_password}"
+            p:connectionProperties="config.decrypt=false"/>
+
+    </beans>
+
+    <beans profile="test">
+
+        <!-- local data source -->
+
+        <bean
+            id="dataSource"
+            parent="aDataSource"
+            p:url="${test.ds_url}" />
+
+    </beans>
+
+    <beans profile="itg">
+
+        <!-- itg data source -->
+
+        <bean
+            id="dataSource"
+            parent="aDataSource"
+            p:url="${itg.ds_url}"
+            p:username="${itg.ds_username}"
+            p:password="${itg.ds_password}"
+            p:connectionProperties="config.decrypt=true" />
+
+    </beans>
+
+    <beans profile="itg_hw">
+
+        <!-- itg data source -->
+
+        <bean
+            id="dataSource"
+            parent="aDataSource"
+            p:url="${itg_hw.ds_url}"
+            p:username="${itg_hw.ds_username}"
+            p:password="${itg_hw.ds_password}"
+            p:connectionProperties="config.decrypt=true" />
+
+    </beans>
+
+    <beans profile="st">
+
+        <!-- st data source -->
+
+        <bean
+            id="dataSource"
+            parent="aDataSource"
+            p:url="${st.ds_url}" />
+
+    </beans>
+
+    <beans profile="qa">
+
+        <!-- qa data source -->
+
+        <bean
+            id="dataSource"
+            parent="aDataSource"
+            p:url="${qa.ds_url}"
+            p:username="${qa.ds_username}"
+            p:password="${qa.ds_password}"
+            p:connectionProperties="config.decrypt=true" />
+
+    </beans>
+
+    <beans profile="br1">
+
+        <!-- br1 data source -->
+
+        <bean
+            id="dataSource"
+            parent="aDataSource"
+            p:url="${br1.ds_url}"
+            p:username="${br1.ds_username}"
+            p:password="${br1.ds_password}"
+            p:connectionProperties="config.decrypt=true" />
+
+    </beans>
+
+    <beans profile="production">
+
+        <!-- production data source -->
+        <bean
+            id="dataSource"
+            parent="aDataSource"
+            p:initialSize="${production.ds_initial_size_common}"
+            p:minIdle="${production.ds_min_idle_common}"
+            p:maxActive="${production.ds_max_active_common}"
+            p:url="${production.ds_url}"
+            p:username="${production.ds_username}"
+            p:password="${production.ds_password}"
+            p:connectionProperties="config.decrypt=true" />
+
+    </beans>
+
+
+</beans>

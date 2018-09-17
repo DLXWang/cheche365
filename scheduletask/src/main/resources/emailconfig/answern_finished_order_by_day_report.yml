@@ -1,0 +1,37 @@
+title: 财务安心日报表
+template: /velocity/completedOrder.vm
+tos: [zhangtc@cheche365.com,liuyw@cheche365.com]
+production_tos: [chenjj@cheche365.com]
+excelAttachmentConfig:
+        fileName: "财务安心日报表.xlsx"
+        sheets:
+        - sheetName: 财务安心日报表
+          columns:
+              - columnType: answernUltimoData
+                column:
+                    渠道来源: channel
+                    订单号: orderNo
+                    起保日期: enrollDate
+                    车牌号: licenseNo
+                    手机号: mobile
+                    车主: owner
+                    被保险人: insuredName
+                    投保人: applicantName
+                    商业险: commecialPremium
+                    交强险: compulsoryPremium
+                    车船税: autoTax
+                    总保费: premiumSum
+                    活动: marketingName
+                    优惠额: activityFavour
+                    银行卡号: bankNo
+                    开户行: bank
+                    持卡人: bank
+                    支付宝账号: bank
+                    支付宝姓名: bank
+                    是否含车损: DamagePremium
+                    实物礼品: giftDetail
+                    收件地址: deliveryAddress
+                    收件人: linkMan
+                    电话: deliveryMobile
+
+

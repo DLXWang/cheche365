@@ -1,0 +1,37 @@
+﻿#财务台帐订单统计
+title: "财务台帐报表-${currentDate}"
+tos: [zhangtc@cheche365.com,liuyw@cheche365.com,huyp@cheche365.com]
+production_tos: [liangjie@cheche365.com,weiou@cheche365.com]
+template: /velocity/financialAccountingReport.vm
+excelAttachmentConfig:
+        fileName: "${currentDate}财务台帐.xlsx"
+        sheets:
+            - sheetName: sheet1
+              columns:
+                  - columnType: financialAccountingReport
+                    column:
+                        出单时间: orderTime
+                        平台: channel
+                        订单号: orderNo
+                        车主: owner
+                        车牌号: licenseNo
+                        支付状态: paymentStatus
+                        支付方式: paymentChannel
+                        地区: area
+                        保险公司: insuranceCompany
+                        减免优惠类型: paymentDiscountType
+                        减免优惠类型（金额）: paymentDiscountAmount
+                        线下优惠类型: giftDiscountType
+                        线下优惠类型（金额）: giftDiscountAmount
+                        支付金额: paidAmount
+                        保费总额: payableAmount
+                        商业险: commecialPremium
+                        交强险: compulsoryPremium
+                        车船税: autoTax
+                        出单机构: downRebateChannel
+                        出单机构费率: downRebateChannelRebate
+                        服务费: downRebateAmount
+                        代理（含渠道）: upRebateChannel
+                        代理人返点: agentRebate
+                        返佣: upRebateAmount
+

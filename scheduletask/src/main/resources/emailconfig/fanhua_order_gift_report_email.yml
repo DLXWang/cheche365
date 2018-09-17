@@ -1,0 +1,26 @@
+#泛华成单礼品报表
+title: ${timePeriod}泛华成单礼品报表
+template: /velocity/completedOrder.vm
+tos: [liuyw@cheche365.com,zhangtc@cheche365.com]
+production_tos: [xujy@cheche365.com]
+excelAttachmentConfig:
+        fileName: "${timePeriod}泛华成单礼品报表.xlsx"
+        sheets:
+        - sheetName: 泛华成单礼品报表
+          columns:
+              - columnType: giftData
+                column:
+                    渠道: channel
+                    投保城市: area
+                    订单号: orderNo
+                    用户下单手机号: mobile
+                    车牌号: licenseNo
+                    被保险人姓名: insuredName
+                    保险公司: insuranceCompany
+                    交强险金额: compulsoryPremium
+                    商业险金额: commecialPremium
+                    参与活动的主标题: comment
+                    礼品: giftDetail
+                    收获地址: deliveryAddress
+                    收货人: linkMan
+                    收货人电话: linkPhone

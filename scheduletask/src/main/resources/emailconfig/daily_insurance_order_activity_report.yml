@@ -1,0 +1,31 @@
+﻿#安心用户下单和用户活动信息查询
+title: "${timePeriod}安心订单统计报表"
+tos: [zhangtc@cheche365.com,liuyw@cheche365.com]
+production_tos: [baihua@cheche365.com]
+template: /velocity/completedOrder.vm
+excelAttachmentConfig:
+        fileName: "${timePeriod}安心订单统计报表.xlsx"
+        sheets:
+            - sheetName: 安心报价用户数量
+              columns:
+                  - columnType: offerInfoList
+                    column:
+                        报价用户数: amount
+            - sheetName: 按状态统计安心订单
+              columns:
+                  - columnType: orderInfoList
+                    column:
+                        订单状态: orderStatus
+                        数量: amount
+            - sheetName: 安心分享，领红包情况统计
+              columns:
+                  - columnType: activityInfoList
+                    column:
+                        名称: fieldName
+                        数量: amount
+            - sheetName: 安心下单用户领红包情况统计
+              columns:
+                  - columnType: redPacketInfoList
+                    column:
+                        订单状态: orderStatus
+                        领过红包的订单数: amount

@@ -1,0 +1,24 @@
+title: ${timePeriod}全额退款订单报表
+template: /velocity/refundOrder.vm
+tos: [zhangtc@cheche365.com,liuyw@cheche365.com,wangjl@cheche365.com,huyp@cheche365.com]
+production_tos: [liangjie@cheche365.com,weiou@cheche365.com,zhoufz@cheche365.com,zhouqh@checeh365.com,oude@cheche365.com,liyq@cheche365.com,zhouqh@cheche365.com]
+excelAttachmentConfig:
+        fileName: "${timePeriod}全额退款订单报表.xlsx"
+        sheets:
+        - sheetName: 退款额总计
+          columns:
+              - columnType: refundOrderStatistics
+                column:
+                    支付渠道: paymentChannel
+                    商户号: mchId
+                    退款额: amount
+
+        - sheetName: 退款订单详情
+          columns:
+              - columnType: refundOrders
+                column:
+                    订单号: orderNo
+                    申请退款时间: operateTime
+                    支付渠道: paymentChannel
+                    商户号: mchId
+                    退款额: amount

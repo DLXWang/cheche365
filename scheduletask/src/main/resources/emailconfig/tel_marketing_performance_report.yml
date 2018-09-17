@@ -1,0 +1,28 @@
+#非电销业绩/电销业绩订单汇总
+title: ${timePeriod}非电销业绩/电销业绩安心起保订单汇总
+template: /velocity/completedOrder.vm
+tos: [liuyw@cheche365.com,baihua@cheche365.com,zhangtc@cheche365.com]
+production_tos: [lism@cheche365.com,hubo@cheche365.com]
+excelAttachmentConfig:
+        fileName: "${timePeriod}非电销业绩和电销业绩安心起保订单汇总.xlsx"
+        sheets:
+        - sheetName: 电销业绩订单
+          columns:
+              - columnType: telMarketingcenter
+                column:
+                    订单号: orderNo
+                    车牌号: licenseNo
+                    手机号: linkPhone
+                    持卡人: linkMan
+                    开户银行: bank
+                    银行卡: bankNo
+        - sheetName: 非电销业绩订单
+          columns:
+              - columnType: unTelMarketingcenter
+                column:
+                    订单号: orderNo
+                    车牌号: licenseNo
+                    手机号: linkPhone
+                    持卡人: linkMan
+                    开户银行: bank
+                    银行卡: bankNo

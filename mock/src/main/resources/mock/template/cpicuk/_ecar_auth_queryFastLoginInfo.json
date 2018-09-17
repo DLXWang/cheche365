@@ -1,0 +1,45 @@
+{
+  "message": {
+    "code": "success",
+    "message": "",
+    "status": ""
+  },
+  "meta": {},
+  "result": {
+    "fastLogin": false,
+    "userAuthVos": [{
+      "accessToken": "25aQxeZXQ366GGHB1UACug",
+      "agencyVo": {
+        "agencyCode": "J6M",
+        "agencyName": "北京安康保险经纪有限公司",
+        "branchCode": "1010100",
+        "id": 99009,
+        "serialNo": 183799
+      },
+      "agentAuthVos": [{
+        "agentCode": "01912",
+        "agentId": 123596,
+        "agentName": "胡洋",
+        "assessAgentVos": [{
+          "agentId": 123596,
+          "assessRatio": 100,
+          "name": "胡洋",
+          "partnerId": 98499,
+          "staffcode": "01912",
+          "status": "1"
+        }],
+        "partnerId": 98499
+      }],
+      "branchCode": "1010100",
+      "macAddressRequired": false,
+      "partnerCode": "4S328507",
+      "partnerId": 98499,
+      "partnerName": "北京安康保险经纪有限公司",
+      "transactionSource": "31",
+      "userCode": "w_C0210F",
+      "userName": "王美娜"
+    }],
+    "userCode": "w_C0210F",
+    "userName": "王美娜"
+  }
+}

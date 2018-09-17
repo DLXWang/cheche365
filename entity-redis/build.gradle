@@ -1,0 +1,25 @@
+/**
+ +----------------+
+ | Build Settings |
+ +----------------+
+ */
+
+version = project_version
+
+apply from: "${rootProject.projectDir}/gradle/maven_publishing_settings.gradle"
+
+configurations {
+    springBoot {
+        extendsFrom runtime
+    }
+}
+
+dependencies {
+
+    compile project(':entity-core')
+
+    runtime "org.springframework.boot:spring-boot-starter-data-redis:$spring_boot_starter_version"
+
+
+}
+

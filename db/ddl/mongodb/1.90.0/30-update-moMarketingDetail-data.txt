@@ -1,0 +1,4 @@
+db.moMarketingDetail.update({"marketingCode":"201806002"},{$set:
+{
+"message.1.products.1.name":"财产一切险条款（2009版）"
+}});

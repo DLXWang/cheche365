@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>代理人列表</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/formInput.css" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/dataTables.bootstrap.min.css"
+          rel="stylesheet">
+
+    <script type="text/javascript" src="../../js/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../plugins/jqPaginator-1.2.0/jqPaginator.min.js"></script>
+</head>
+<body>
+<div id="top_div" class="top-search">
+    <div class="row">
+        <div class="col-sm-4 text-right">
+            <div class="input-group">
+                <input type="text" class="form-control" id="keyword" placeholder="根据姓名、手机号进行搜索..."/>
+                <span class="input-group-btn">
+                    <button id="searchBtn" class="btn btn-danger" type="button">搜索</button>
+                </span>
+
+                <div class="col-sm-6 text-right">
+                     <span class="btn-group ">
+                         <button id="newAgent" class="btn btn-danger">新增代理人</button>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-sm-8"></div>
+    </div>
+</div>
+
+
+<div class="col-sm-12" id="orderTb">
+    <table class="table table-bordered table-hover" id="agent_tab">
+    </table>
+</div>
+
+<div id="detail_content" class="container tab_body none">
+    <div class="theme_poptit" id="quote_phone_edit_close">
+        <a id="agent_detail_close" href="javascript:;" title="关闭" class="close"><i
+            class="glyphicon glyphicon-remove"></i></a>
+        <h4 class="text-center" id="detail_title">代理人信息</h4>
+    </div>
+    <form class="business_form" id="agentInputForm" style="padding: 20px;">
+        <fieldset>
+            <table class="table table-bordered">
+                <tbody>
+                <tr>
+                    <td class="tab_td"><label class="control-label">姓名：</label></td>
+                    <td>
+                        <div class="controls">
+                            <input type="text" class="text_input" required id="agentName" name="agentName">&nbsp;&nbsp;
+                        </div>
+                    </td>
+                    <td class="tab_td"><label class="control-label">手机：</label></td>
+                    <td>
+                        <div class="controls">
+                            <input type="text" class="text_input" required id="agentMobile" name="agentMobile">&nbsp;&nbsp;
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tab_td"><label class="control-label">证件类型：</label></td>
+                    <td>
+                        <div class="controls">
+                            <select id="identityTypeSel" name="identityType" class="text_input">
+                                <option value="身份证" checked="checked">身份证</option>
+                                <option value="护照">护照</option>
+                                <option value="军官证">军官证</option>
+                            </select>
+                        </div>
+                    </td>
+                    <td class="tab_td"><label class="control-label">证件号码：</label></td>
+                    <td>
+                        <div class="controls">
+                            <input type="text" class="text_input" required id="identityNumber" name="identityNumber">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tab_td"><label class="control-label">银行账号：</label></td>
+                    <td>
+                        <div class="controls">
+                            <input type="text" class="text_input" id="cardNumber" name="cardNumber">&nbsp;&nbsp;
+                        </div>
+                    </td>
+                    <td class="tab_td"><label class="control-label">开户行：</label></td>
+                    <td>
+                        <div class="controls">
+                            <input type="datetime" class="text_input" id="openingBank" name="openingBank">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tab_td"><label class="control-label">开户支行：</label></td>
+                    <td>
+                        <div class="controls">
+                            <input type="text" class="text_input" id="bankBranch" name="bankBranch">
+                        </div>
+                    </td>
+                    <td class="tab_td"><label class="control-label">账户名：</label></td>
+                    <td>
+                        <div class="controls">
+                            <input type="text" class="text_input" id="bankAccount" name="bankAccount">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tab_td"><label class="control-label">返点：</label></td>
+                    <td>
+                        <div class="controls">
+                            <input type="text" class="text_input" id="rebate" name="rebate"
+                                   value="0.00"><strong>%</strong>
+                        </div>
+                    </td>
+                    <td class="tab_td" ><label class="control-label">备注：</label></td>
+                    <td >
+                        <div class="controls">
+                            <input type="text" class="text_input" id="comment" name="comment">
+                        </div>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="tab_td"><label class="control-label">注册时间：</label></td>
+                    <td>
+                        <div class="controls">
+                            <span id="createTime"></span>
+                        </div>
+                    </td>
+                    <td class="tab_td"><label class="control-label">通用协议签订否：</label></td>
+                    <td>
+                        <div class="controls">
+                            <span >是</span>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+             <span class="input-group-btn">
+                    <button id="agent_create_btn" class="btn btn-primary" type="button">新增返点信息</button>
+             </span>
+
+            <div style="height:130px;overflow:auto; ">
+                <table id="tabRebate" class="table" style="margin-top: 10px;">
+                    <thead>
+                    <tr class="active">
+                        <th class="text-center">城市</th>
+                        <th class="text-center">保险公司</th>
+                        <th class="text-center">交强险返点</th>
+                        <th class="text-center">商业险返点</th>
+                        <th class="text-center">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <input type="hidden" id="id" name="id" value="">
+
+            <div class="form-group">
+                <span class="col-sm-4"><p>&nbsp;</p></span>
+
+                <div class="col-sm-8 text-left">
+                    <p class="alert alert-danger text-input-200 alert-user error-msg none"><i
+                        class="glyphicon glyphicon-remove-sign"></i> <span id="errorText"></span></p>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-12 text-center" id="toSave">
+                    <button id="update_button" type="button" class="btn btn-danger">保存</button>
+                    <button id="cancel_button" type="button" class="btn btn-danger">取消</button>
+                    <!--<button id="delete_button" type="button" class="btn btn-danger">删除</button>-->
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+</div>
+<div id="agent_rebate_history_content" class="container tab_body none">
+    <div class="theme_poptit">
+        <a id="agent_rebate_history_close" href="javascript:;" title="关闭" class="close"><i
+            class="glyphicon glyphicon-remove"></i></a>
+        <h4 class="text-center" id="agent_rebate_history_title">回录代理人历史费率</h4>
+    </div>
+    <form class="business_form" id="agentRebateHistoryForm" style="padding: 20px;">
+        <fieldset>
+            <table class="table table-bordered">
+                <tbody>
+                <tr>
+                    <td class="tab_td"><label class="control-label">城市：</label></td>
+                    <td>
+                        <div class="controls">
+                            <select id="areaSel" name="area" class="text-input">
+                            </select>
+                        </div>
+                    </td>
+                    <td class="tab_td"><label class="control-label">保险公司：</label></td>
+                    <td>
+                        <div class="controls">
+                            <select id="insuranceCompanySel" name="insuranceCompany" class="text-input">
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tab_td"><label class="control-label">商业险返点：</label></td>
+                    <td>
+                        <div class="controls">
+                            <input type="text" class="text_input" id="commercialRebate" name="commercialRebate"><strong>%</strong>
+                        </div>
+                    </td>
+                    <td class="tab_td"><label class="control-label">交强险返点：</label></td>
+                    <td>
+                        <div class="controls">
+                            <input type="text" class="text_input" id="compulsoryRebate" name="compulsoryRebate"><strong>%</strong>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tab_td"><label class="control-label">开始时间：</label></td>
+                    <td colspan="3">
+                        <div class="controls">
+                            <input type="text" id="startTime" name="startTime" class="Wdate"
+                                   onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',readOnly:true});"
+                                   style="width: 175px;height: 27px;">
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <input type="hidden" id="agent_id" name="agent" value="">
+
+            <div class="form-group">
+                <span class="col-sm-4"><p>&nbsp;</p></span>
+
+                <div class="col-sm-8 text-left">
+                    <p class="alert alert-danger text-input-280 alert-user error-msg none"><i
+                        class="glyphicon glyphicon-remove-sign"></i> <span id="errorText"></span></p>
+
+                    <p class="alert alert-success text-input-280 alert-user success-msg none"><i
+                        class="glyphicon glyphicon-ok"></i> <span id="successText"></span></p>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-12 text-center" id="toSaveRebate">
+                    <button id="rebate_save_button" type="button" class="btn btn-danger">保存</button>
+                    <button id="rebate_cancel_button" type="button" class="btn btn-danger">取消</button>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+    <div style="height:220px;overflow:auto;margin-left:15px;margin-right:15px;">
+        <table id="tabHistory" class="table">
+            <thead>
+            <tr class="active">
+                <th class="text-center">城市</th>
+                <th class="text-center">保险公司</th>
+                <th class="text-center">交强险费率</th>
+                <th class="text-center">商业险费率</th>
+                <th class="text-center">开始时间</th>
+                <th class="text-center">结束时间</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../../plugins/DataTables-1.10.12/media/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../../js/common/datatable_util.js"></script>
+<script type="text/javascript" src="../../js/common/common.js"></script>
+<script type="text/javascript" src="../../js/common/popup.js"></script>
+<script type="text/javascript" src="../../js/common/properties.js"></script>
+<script type="text/javascript" src="../../js/common/operation.js"></script>
+<script type="text/javascript" src="../../js/agent/agent.js"></script>
+<script type="text/javascript" src="../../My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="../../js/common/CUI.js"></script>
+<script type="text/javascript" src="../../js/common/CUI.grid.js"></script>
+<script type="text/javascript" src="../../js/jquery/jquery.cookie.js"></script>
+<script type="text/javascript" src="../../js/common/cookie.js"></script>
+</html>

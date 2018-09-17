@@ -1,0 +1,4 @@
+title: 线下数据导入结果邮件
+template: /velocity/insuranceImportResult.vm
+tos: [zhangtc@cheche365.com,guanwy@cheche365.com,liuyw@cheche365.com]
+production_tos: [zhangtc@cheche365.com,wangmn@cheche365.com,qijiang@cheche365.com]

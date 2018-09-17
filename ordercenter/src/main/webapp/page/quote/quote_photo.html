@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<head lang="en">
+    <title>电话报价</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link type="text/css" href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="../../css/style.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/dataTables.bootstrap.min.css"
+          rel="stylesheet">
+    <link type="text/css" href="../../plugins/select2/select2.min.css" rel="stylesheet">
+
+    <script type="text/javascript" src="../../js/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../plugins/jqPaginator-1.2.0/jqPaginator.min.js"></script>
+    <script type="text/javascript" src="../../plugins/select2/select2.min.js"></script>
+    <style type="text/css">
+        .top-search {
+            width: 98%;
+            padding-left: 16px;
+            padding-top: 15px;
+        }
+    </style>
+</head>
+
+<div id="top_div" class="top-search">
+    <div class="row">
+        <div class="col-sm-9 form-inline">
+            <select id="keyType" class="form-control text-input-150">
+                <option value="1">手机号</option>
+                <option value="2">车牌号</option>
+            </select>
+
+            <div class="input-group text-input-300">
+                <input type="text" class="form-control" id="keyword" placeholder=""/>
+                <span class="input-group-btn">
+                    <button id="searchBtn" class="btn btn-danger" type="button">搜索</button>
+                </span>
+            </div>
+            <select id="disable" class="form-control text-input-150">
+                <option value="">全部有效状态</option>
+                <option value="0">空</option>
+                <option value="1">有效</option>
+                <option value="2">有效+空</option>
+                <option value="3">无效</option>
+            </select>
+            <select id="visited" class="form-control text-input-150">
+                <option value="">全部回访状态</option>
+                <option value="0">需回访</option>
+                <option value="1">已回访</option>
+            </select>
+            <select id="sourceChannel" class="form-control text-input-150">
+                <option value="">产品平台</option>
+            </select>
+            <select id="quoteEntrance" class="form-control text-input-150">
+                <option value="">全部来源</option>
+                <option value="1">报价</option>
+                <option value="2">预约</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<div id="show_div">
+    <div class="col-sm-12">
+        <table class="table table-bordered table-hover" id="list_tab">
+        </table>
+        <div class="customer-pagination">
+            <ul class="pagination"></ul>
+        </div>
+    </div>
+</div>
+<div id="quote_detail_content" class="none"></div>
+<script type="text/javascript" src="../../plugins/DataTables-1.10.12/media/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../../js/common/datatable_util.js"></script>
+
+<script type="text/javascript" src="../../plugins/jquery-validation-1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="../../js/common/common.js"></script>
+<script type="text/javascript" src="../../js/common/popup.js"></script>
+<script type="text/javascript" src="../../My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="../../js/quote/quote_help.js"></script>
+<script type="text/javascript" src="../../js/quote/quote_photo.js"></script>
+<script type="text/javascript" src="../../js/common/application_log.js"></script>
+<script type="text/javascript" src="../../js/quote/quote_photo_pop.js"></script>

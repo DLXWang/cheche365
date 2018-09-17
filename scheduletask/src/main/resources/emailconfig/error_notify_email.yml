@@ -1,0 +1,4 @@
+title: 运行过程非预期异常
+template: /velocity/errorNotifyEmail.vm
+tos: [zhengwei@cheche365.com,mahong@cheche365.com,shanxf@cheche365.com,liuyw@cheche365.com,huyp@cheche365.com,wangjl@cheche365.com,liheng@cheche365.com,zhangtc@cheche365.com]
+production_tos: [liqiang@cheche365.com,zhengwei@cheche365.com,mahong@cheche365.com,shanxf@cheche365.com,liuyw@cheche365.com,huyp@cheche365.com,wangjl@cheche365.com,liheng@cheche365.com,zhangtc@cheche365.com]

@@ -1,0 +1,26 @@
+package com.cheche365.cheche.parser
+
+testData = [
+    [
+        10,
+        '',
+        [
+            thirdPartyAmount: 100000,
+            damage          : true,
+            theft           : true,
+            driverAmount    : 10000,
+            passengerAmount : 20000,
+            spontaneousLoss : true,
+            scratchAmount   : 2000,
+        ],
+        [
+            thirdPartyAmount     : 100000,
+            damageAmount         : 150000,
+            theftAmount          : 150000,
+            driverAmount         : 10000,
+            passengerAmount      : 20000,
+            spontaneousLossAmount: 150000,
+            scratchAmount        : 2000
+        ]
+    ]
+]

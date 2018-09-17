@@ -1,0 +1,83 @@
+package com.cheche365.cheche.chinalife
+
+/**
+ * 河南洛阳
+ */
+
+testDataParams = [
+
+    //
+    0 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DFCOVD0074']]]]]],
+
+    //{value=XFAAVI0005, text=科帕奇CAPTIVA 2.4L MT 舒适型 201006年款 214800元},
+    10: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'XFAAVI0005']]]]]],
+
+    //{value=FTABED0109, text=丰田TV7163GLM GL 201009年款 100800元}
+    30: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'FTABED0109']]]]]],
+
+    //{value=JAAAVD0007, text=吉奥GA6441SE4 7座舒适型 201404年款 52800元}
+    40: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'JAAAVD0007']]]]]],
+
+    //{value=XDAAMD0047, text=北京现代BH7162MY 舒适型 200712年款 77800元}
+    50: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'XDAAMD0047']]]]]],
+
+    //{value=BTAAJD0027, text=奥德赛HG6481BAA 舒适版 200909年款 211800元}
+    60: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'BTAAJD0027']]]]]],
+
+    //{value=BMAAHD0085, text=宝马BMW7200HL(BMW320Li) 时尚型 201401年款 301000元}
+    80: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'BMAAHD0085']]]]]],
+
+    //{value=DZAAAD0097, text=大众FV7187TRATG 尊贵型 201205年款 231800元}
+    90: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZAAAD0097']]]]]],
+
+    //{value=XDAAMD0039, text=北京现代BH7162MW 标准型 200703年款 77800元}
+    100: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'XDAAMD0039']]]]]],
+
+    //{value=XFAAYD0031, text=雪佛兰SGM7184ATB 舒适版 2012年款 116900元}
+    110: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'XFAAYD0031']]]]]],
+
+    //{value=TYBAED0013, text=五菱LZW6376DV  40000元}
+    130: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'TYBAED0013']]]]]],
+
+    //{value=XFAAYD0002, text=雪佛兰SGM7169MTA 标准版 200904年款 96900元}
+    140: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'XFAAYD0002']]]]]],
+
+    //{value=FTABMD0004, text=丰田GTM7240G-NAVI 豪华导航版 200606年款 214000元}
+    150: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'FTABMD0004']]]]]],
+
+    //{value=XFAASD0042, text=雪佛兰SGM7145MTA 豪华型 200905年款 62900元}
+    170: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'XFAASD0042']]]]]],
+
+    //{value=XFAAYD0011, text=雪佛兰SGM7188ATA 舒适版 201011年款 124900元}
+    180: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'XFAAYD0011']]]]]],
+
+    //{value=BYAACD0022, text=比亚迪QCJ7200E3 标准型 200909年款 64800元}
+    190: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'BYAACD0022']]]]]],
+
+    //{value=TYBAYD0037, text=五菱LZW6432KF  40800元}
+    200: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'TYBAYD0037']]]]]],
+
+    //{value=BKAAGD0048, text=别克SGM6529ATA 舒适版 201204年款 189000元}
+    210: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'BKAAGD0048']]]]]],
+
+    //{value=DZABCD0023, text=朗逸SVW7147FRD 品雅版 201008年款 138800元}
+    230: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZABCD0023']]]]]],
+
+    //{value=XDAAJD0019, text=北京现代BH6430MY 舒适型 200810年款 125800元}
+    270: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'XDAAJD0019']]]]]],
+
+    //{value=DZAAKD0001, text=波罗SVW7144ALi 舒适型  85500元}
+    280: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZAAKD0001']]]]]],
+
+    //{value=JHAFQD0108, text=江淮HFC7150MV 舒适型 201304年款 59800元}
+    290: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'JHAFQD0108']]]]]],
+
+    //{value=DZAAVD0077, text=大众FV7146FBDGG 时尚型 201203年款 137800元}
+    300: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZAAVD0077']]]]]],
+
+    //{value=BTABBD0005, text=杰德DHW7182FRASD 舒适版 201309年款 125800元}
+    1000: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'BTABBD0005']]]]]],
+
+]
+
+

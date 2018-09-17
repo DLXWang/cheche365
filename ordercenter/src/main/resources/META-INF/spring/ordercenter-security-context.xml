@@ -1,0 +1,99 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/security
+	http://www.springframework.org/schema/security/spring-security.xsd">
+
+    <!-- 启用在方法上面的权限注解-->
+    <global-method-security secured-annotations="enabled" pre-post-annotations="enabled" proxy-target-class="true"/>
+
+    <http pattern="/bootstrap/**"             security="none" />
+    <http pattern="/css/**"                   security="none" />
+    <http pattern="/images/**"                security="none" />
+    <http pattern="/js/**"                    security="none" />
+    <http pattern="/My97DatePicker/**"        security="none" />
+    <http pattern="/page/**"                  security="none" />
+    <http pattern="/**.jsp"                   security="none" />
+    <http pattern="/**.php"                   security="none" />
+
+    <http auto-config="true" authentication-manager-ref="authenticationManager">
+
+        <http-basic/>
+
+        <csrf disabled="true"/>
+
+        <intercept-url pattern="/orderCenter/login"              access="isAnonymous()" />
+        <intercept-url pattern="/orderCenter/logout"             access="isAnonymous()" />
+        <intercept-url pattern="/orderCenter/login/error"        access="isAnonymous()" />
+
+        <form-login username-parameter="email"
+                    password-parameter="password"
+                    login-page="/home.jsp"
+                    login-processing-url="/orderCenter/login"
+                    default-target-url="/orderCenter/success"
+                    authentication-failure-handler-ref="accessAuthenticationFailureHandler"/>
+
+        <logout logout-url="/orderCenter/logout"
+                invalidate-session="true"
+                delete-cookies="JSESSIONID"
+                success-handler-ref="logoutSuccessHandler"/>
+
+        <session-management invalid-session-url="/home.jsp" session-fixation-protection="migrateSession">
+            <concurrency-control expired-url="/home.jsp" session-registry-ref="sessionRegistry"/>
+        </session-management>
+
+        <custom-filter ref="sessionTimeoutFilter" before="SECURITY_CONTEXT_FILTER"/>
+    </http>
+
+    <!-- 认证成功之后跳转到哪个页面   登陆成功之后记录登陆日志和决定跳到哪个页面 -->
+    <beans:bean id="accessAuthenticationFailureHandler" class="com.cheche365.cheche.ordercenter.security.AccessAuthenticationFailureHandler">
+        <beans:constructor-arg name="defaultFailureUrl" value="/home.jsp" />
+    </beans:bean>
+
+    <!-- 认证管理器，实现用户认证的入口，主要实现UserDetailsService接口即可 -->
+    <authentication-manager alias="authenticationManager" >
+        <authentication-provider ref="daoAuthenticationProvider"/>
+    </authentication-manager>
+
+    <!-- DAO认证 -->
+    <beans:bean id="daoAuthenticationProvider" class="com.cheche365.cheche.ordercenter.security.OrderCenterDaoAuthenticationProvider">
+        <beans:property name="userDetailsService" ref="userDetailsService"/>
+        <!-- 没有这个将不能准确地报告异常 -->
+        <beans:property name="hideUserNotFoundExceptions" value="false"/>
+        <beans:property name="passwordEncoder" ref="passwordEncode"/>
+        <beans:property name="stringRedisTemplate" ref="stringRedisTemplate"/>
+    </beans:bean>
+
+    <beans:bean id="userDetailsService" class="com.cheche365.cheche.ordercenter.security.OrderCenterUserDetailsService" />
+
+    <beans:bean id="passwordEncode" class="com.cheche365.cheche.ordercenter.security.OrderCenterPasswordEncode"/>
+
+    <beans:bean id="accessDeniedHandlerImpl" class="com.cheche365.cheche.ordercenter.security.OrderCenterAccessDeniedHandler"/>
+
+    <beans:bean id="logoutSuccessHandler" class="com.cheche365.cheche.ordercenter.security.OrderCenterLogoutSuccessHandler">
+        <beans:property name="sessionRegistry" ref="sessionRegistry"/>
+        <beans:property name="defaultTargetUrl" value="/home.jsp"/>
+    </beans:bean>
+
+    <beans:bean id="sessionTimeoutFilter" class="com.cheche365.cheche.ordercenter.security.SessionTimeoutFilter"/>
+
+    <beans:bean id="roleVoter" class="org.springframework.security.access.vote.RoleVoter">
+        <beans:property name="rolePrefix" value="ROLE_"/>
+    </beans:bean>
+
+    <beans:bean id="sessionRegistry" class="org.springframework.security.core.session.SessionRegistryImpl"/>
+
+    <!-- 指定中文资源 。默认命名空间是security,所以要加前缀beans: -->
+    <beans:bean id="messageSource"
+                class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <beans:property name="basename" value="classpath:META-INF/spring/messages_zh_CN"/>
+    </beans:bean>
+
+    <beans:bean class="org.springframework.session.web.http.DefaultCookieSerializer">
+        <beans:property name="cookieName" value="ORC_JSESSIONID"></beans:property>
+        <beans:property name="cookiePath" value="/"></beans:property>
+        <beans:property name="domainNamePattern" value="^.+?\.(\w+\.[a-z]+)$"></beans:property>
+    </beans:bean>
+</beans:beans>

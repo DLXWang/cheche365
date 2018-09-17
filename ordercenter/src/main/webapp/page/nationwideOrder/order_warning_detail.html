@@ -1,0 +1,47 @@
+<div class="theme_poptit theme_poptit_color">
+    <a href="javascript:;" title="关闭" class="close"><i class="glyphicon glyphicon-remove"></i></a>
+    <h4 class="text-center title">预警详情</h4>
+</div>
+<div style="max-height: 480px;overflow-y: auto;">
+    <table class="table table-bordered" id="detail_order_tab" style="margin-bottom: 0;">
+        <thead>
+        <tr class="active">
+            <td class="text-center" style="background-color: rgba(218, 215, 220, 0.63);">订单号</td>
+            <td class="text-center" style="background-color: rgba(218, 215, 220, 0.63);">车主车牌</td>
+            <td class="text-center" style="background-color: rgba(218, 215, 220, 0.63);">地区</td>
+            <td class="text-center" style="background-color: rgba(218, 215, 220, 0.63);">保险公司</td>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <table class="table table-bordered" id="detail_compare_tab">
+        <tbody>
+        <tr class="active">
+            <td class="text-center" style="vertical-align: middle;background-color: rgba(218, 215, 220, 0.63);">收益</td>
+            <td class="text-center" style="background-color: rgba(218, 215, 220, 0.63);">用户应付车车<br/>（应付金额=实付金额+优惠券）</td>
+            <td class="text-center" style="background-color: rgba(218, 215, 220, 0.63);">车车实付出单机构<br/>（总额-佣金）</td>
+        </tr>
+        <tr>
+            <td id="detail_income_td" class="text-center"></td>
+            <td id="detail_payableAmount_td" class="text-center"></td>
+            <td id="detail_paidAmount_td" class="text-center"></td>
+        </tr>
+        <tr class="active">
+            <td class="text-center" style="background-color: rgba(218, 215, 220, 0.63);">险种保额确认</td>
+            <td class="text-center" style="background-color: rgba(218, 215, 220, 0.63);">车车</td>
+            <td class="text-center" style="background-color: rgba(218, 215, 220, 0.63);">出单机构</td>
+        </tr>
+        <tr>
+            <td id="detail_match_td" class="text-center"></td>
+            <td id="detail_cheche_td" class="text-center"></td>
+            <td id="detail_institution_td" class="text-center"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="form-group btn-group-check">
+    <div class="col-sm-12 text-center btn-margin-bottom-15">
+        <button type="button" class="btn btn-success btn-lg toPass">审核通过</button>
+        <button type="button" class="btn btn-danger btn-lg toDisPass" style="margin-left: 100px;">审核不通过</button>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+package com.cheche365.cheche.picc
+
+testDataParams = [
+
+    //{value=402880882d0e343e012d110758f8013f, text=大众汽车SVW71411BR轿车 2011款 致尚版 5座 1.4L 92900元}
+    0 : [
+        additionalParams:
+             [
+                 quoteRecord: [
+                     auto: [
+                         autoType: [
+                             supplementInfo: [
+                                 autoModel: '东风雪铁龙牌DC7165DTAA'
+                             ]
+                         ]
+                     ]
+                 ],
+                 selectedVehicleOption:[
+                     meta: [
+                         vehicleOptionInfo: [
+                            brand         : '东风雪铁龙',
+                            family        : '世嘉',
+                            gearbox       : '手自一体',
+                            exhaustScale  : '1.6L',
+                            model         : 'DC7165DTAA',
+                            productionDate: '2011款 冠军版',
+                            seats         : '5',
+                            newPrice      : '104000',
+                         ]
+                     ]
+                 ],
+             ],
+
+    ]
+
+]
+

@@ -1,0 +1,57 @@
+package com.cheche365.cheche.pingan
+
+/**
+ * 河南焦作
+ */
+
+testDataParams = [
+
+    //{value=4028b288453ef2bf0145822209c052fe, text=东风雪铁龙DC7162LYBM轿车 2014款 舒适型 手动档 5座 71300元}
+    10 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028b288453ef2bf0145822209c052fe']]]]]],
+
+    //{value=af9715143fa8002d0000000094ac1869, text=江铃JX5040XXYDLA2厢式运输车 1.820吨 厢式运输车 手动档 2座 80000元}
+    60 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'af9715143fa8002d0000000094ac1869']]]]]],
+
+    //{value=402880882c42debc012c4d9f804c0244, text=五菱LZW6431MF客车 2010款 豪华型 手动档 0座 57800元}
+    70 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '402880882c42debc012c4d9f804c0244']]]]]],
+
+    //{value=402880883324fe95013334f1b806075f, text=比亚迪QCJ7152A5轿车 2012款 标准型 手动档 5座 51900元}
+    80 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '402880883324fe95013334f1b806075f']]]]]],
+
+    //{value=4028b28834b0b701013531ed0c623903, text=大众FV7146FBDGG轿车 2012款 时尚型 双离合变速器 5座 137800元}
+    100: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028b28834b0b701013531ed0c623903']]]]]],
+
+    //{value=4028809914ce1e900114ce695fa10002, text=捷达FV7190GDF轿车 2004款 柴油出租版 手动档 5座 90000元}
+    110: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028809914ce1e900114ce695fa10002']]]]]],
+
+    //{value=402880882ce35a1f012d07ead5211968, text=依维柯NJ5045XXYNS厢式运输车 1.125吨 厢式运输车 手动档 3座 160000元}
+    170: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '402880882ce35a1f012d07ead5211968']]]]]],
+
+    //{value=af9715143fa8002d0000000094ac1869, text=江铃JX5040XXYDLA2厢式运输车 1.820吨 厢式运输车 手动档 2座 80000元}
+    180: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'af9715143fa8002d0000000094ac1869']]]]]],
+
+    //{value=4028b2883d3f5a8b013d5748cbfd0c45, text=大众FV7160BBMGG轿车 2013款 时尚型 手动档 5座 73300元}
+    210: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028b2883d3f5a8b013d5748cbfd0c45']]]]]],
+
+    //{value=4028b2883910004401392d6ce26a1ece, text=甲壳虫BEETLE 1.4TSI轿车 2013款 时尚型 双离合变速器 4座 183800元}
+    260: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028b2883910004401392d6ce26a1ece']]]]]],
+
+    //{value=4028808816a48d1e0116c27e546000c5, text=丰田GTM7200GB轿车 2008款 200G豪华版 自动档 5座 185800元}
+    300: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028808816a48d1e0116c27e546000c5']]]]]],
+
+    //{value=4028b28834b0b701013537e00adb3bf7, text=神行者FREELANDER 2 2.0T Si4越野车 2012款 Si4 SE汽油款 手自一体 5座 468000元}
+    350: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028b28834b0b701013537e00adb3bf7']]]]]],
+
+    //{value=402880882ce35a1f012d06a32deb155d, text=凯迪拉克SGM7208TATA轿车 2011款 精英型 手自一体 5座 298800元}
+    430: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '402880882ce35a1f012d06a32deb155d']]]]]],
+
+    //{value=4028808824b25e060124b2bd970300a1, text=北京现代BH7167AY轿车 2010款 舒适型 自动档 5座 98800元}
+    450: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028808824b25e060124b2bd970300a1']]]]]],
+
+    //{value=4028808816a48d1e0116c27e546000c5, text=丰田GTM7200GB轿车 2008款 200G豪华版 自动档 5座 185800元}
+    470: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028808816a48d1e0116c27e546000c5']]]]]],
+
+    //{value=40288088206a3cae01208359f3d7049d, text=福田BJ1027V2MA5-S轻型载货汽车 0.490吨 多用途载货汽车 手动档 5座 64000元}
+    560: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '40288088206a3cae01208359f3d7049d']]]]]],
+
+]

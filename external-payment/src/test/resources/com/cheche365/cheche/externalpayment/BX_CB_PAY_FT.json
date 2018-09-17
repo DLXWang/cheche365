@@ -1,0 +1,81 @@
+{
+    "taskId": "1861257",
+    "prvId": "20074419",
+    "prvName": "平安财险",
+    "code": "0",
+    "channelId": "nqd_cheche2017",
+    "channelUserId": "nqd_cheche2017",
+    "taskState": "4",
+    "taskStateDescription": "支付成功",
+    "carInfo": {
+        "carLicenseNo": "粤S295LZ"
+    },
+    "carOwner": {
+        "name": "伍琳"
+    },
+    "insureInfo": {
+        "efcInsureInfo": {
+            "startDate": "2017-04-11",
+            "endDate": "2018-04-10",
+            "amount": "0.00",
+            "premium": "0.00",
+            "discountRate": "1.0000"
+        },
+        "taxInsureInfo": {
+            "lateFee": "0.00",
+            "taxFee": "0.00"
+        },
+        "bizInsureInfo": {
+            "startDate": "2017-04-11",
+            "endDate": "2018-04-10",
+            "premium": "0.01",
+            "discountRate": "1.0000",
+            "nfcPremium": "0.00",
+            "riskKinds": [
+                {
+                    "riskCode": "VehicleDemageIns",
+                    "riskName": "机动车损失保险",
+                    "amount": "87800.00",
+                    "notDeductible": "Y",
+                    "premium": "0.01",
+                    "ncfPremium": "0.0000"
+                },
+                {
+                    "riskCode": "ThirdPartyIns",
+                    "riskName": "机动车第三者责任保险",
+                    "amount": "500000.00",
+                    "notDeductible": "Y",
+                    "premium": "0.00",
+                    "ncfPremium": "0.0000"
+                },
+                {
+                    "riskCode": "DriverIns",
+                    "riskName": "司机责任险",
+                    "amount": "50000.00",
+                    "notDeductible": "Y",
+                    "premium": "0.00",
+                    "ncfPremium": "0.0000"
+                },
+                {
+                    "riskCode": "PassengerIns",
+                    "riskName": "乘客责任险",
+                    "amount": "50000.00",
+                    "notDeductible": "Y",
+                    "premium": "0.00",
+                    "ncfPremium": "0.0000"
+                }
+            ]
+        },
+        "totalPremium": "0.01",
+        "payPremium": "0.01"
+    },
+    "delivery": {
+        "name": "配送地址",
+        "address": "水荫路52号大院",
+        "phone": "138000138000",
+        "province": "650000",
+        "city": "653000",
+        "area": "653001",
+        "deliveryType": "1"
+    }
+}

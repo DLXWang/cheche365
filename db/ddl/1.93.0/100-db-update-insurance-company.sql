@@ -1,0 +1,1 @@
+update insurance_company set tag= 196871 where id = 150000

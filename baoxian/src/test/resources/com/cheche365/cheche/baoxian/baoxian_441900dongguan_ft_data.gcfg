@@ -1,0 +1,1256 @@
+package com.cheche365.cheche.baoxian
+
+testData = [
+
+    [
+        0,
+        '',
+        '粤S128FM',
+        'LGBH12E09BY197610',
+        '540077E',
+        '李仲庆',
+        '441322198010285577',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2011-07-12'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        10,
+        '',
+        '粤S136K7',
+        'LFMAP22C9C0403334',
+        'G110441',
+        '陈云桃',
+        '430281198704249134',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2012-06-27'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        20,
+        '',
+        '粤S157N3',
+        'LFMBEC4D1E0228487',
+        '0795460',
+        '樊树森',
+        '44190019910919763X',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2014-08-28'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        30,
+        '',
+        '粤S1L121',
+        'LHGGD854X72000461',
+        'L15A13100461',
+        '张子超',
+        '442527196608062778',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2006-04-26'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        40,
+        '',
+        '粤S1M203',
+        'LHGGD867372005655',
+        'L15A13105664',
+        '吴带彩',
+        '442527196505120429',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2006-06-07'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        50,
+        '',
+        '粤S22M26',
+        'LVGBH40K59G302296',
+        'C605042',
+        '钟翠雯',
+        '441900198701147805',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2009-03-05'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        60,
+        '',
+        '粤S295LZ',
+        'LGWEF4A56FF040926',
+        '1505554470',
+        '伍琳',
+        '431024198002105112',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2015-04-01'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        70,
+        '',
+        '粤S3444A',
+        'LH17CKKF69H106406',
+        '897183',
+        '孔成凤',
+        '442525197002240623',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2009-06-24'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        80,
+        '',
+        '粤S356CM',
+        'LGBH12E09AY128267',
+        '5068796D',
+        '钟小英',
+        '440981198212062525',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2010-06-13'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        90,
+        '',
+        '粤S358E3',
+        'LZWADAGA5C4155117',
+        'UC22920681',
+        '丁晓华',
+        '362132197909092616',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2012-04-18'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        100,
+        '',
+        '粤S3799Q',
+        'LH17CKJF75H092608',
+        'ZM770867',
+        '张庆秋',
+        '441900198406182018',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2005-11-28'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        110,
+        '',
+        '粤S4007K',
+        'LFMAPE2C8E0551298',
+        'F417181',
+        '钟顺冬',
+        '441283198301155024',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2014-05-13'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        120,
+        '',
+        '粤S40S90',
+        'LBEMDAFC8EZ322219',
+        'EB645546',
+        '严来豪',
+        '440223199108184517',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2014-06-20'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        130,
+        '',
+        '粤S4559U',
+        'LSVXN65N9E2013877',
+        'N02021',
+        '邓汉波',
+        '442522197011064431',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2014-03-06'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        140,
+        '',
+        '粤S5C295',
+        'LHGGD652X52010780',
+        'L13A32110690',
+        '喻春森',
+        '42098319700119723X',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2004-09-01'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        150,
+        '',
+        '粤S5K788',
+        'LTVBR22E950683326',
+        '1ZZA82674',
+        '黄柱祥',
+        '442527195312096595',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2005-08-01'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        160,
+        '',
+        '粤S6100H',
+        'LBEHDAFB3BY682153',
+        'BB024614',
+        '甘俊林',
+        '513031197209276374',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2011-09-02'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        170,
+        '',
+        '粤S685Q1',
+        'LSGJA52H2DS115540',
+        '131673221',
+        '覃左成',
+        '460028197810223219',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2013-08-01'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        180,
+        '',
+        '粤S7356Y',
+        'LVSHCAAE69F412320',
+        '9A42469',
+        '黄德勇',
+        '452523197305060872',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2009-09-03'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        190,
+        '',
+        '粤S75F22',
+        'LVHRE183XB5061576',
+        '5093855',
+        '邓带琼',
+        '441900197112280048',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2012-02-23'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        200,
+        '',
+        '粤S814A6',
+        'LFV3A24G8E3054092',
+        '504165',
+        '刘俊杰',
+        '441900199009030031',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2014-06-23'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        210,
+        '',
+        '粤S92B63',
+        'LG11200E143011200',
+        '388755',
+        '张耀光',
+        '442527196208250411',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2005-03-11'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        220,
+        '',
+        '粤S960F5',
+        'WVGEK35N4DW038111',
+        'CAW160183',
+        '郑金涛',
+        '230103197303222831',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2013-01-17'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        230,
+        '',
+        '粤S968L3',
+        'LGBK22E519Y511114',
+        '643686B',
+        '张雪梅',
+        '442527197003100043',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2009-03-10'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        240,
+        '',
+        '粤SAX022',
+        'LHGGD864172058800',
+        'L15A13158795',
+        '尹婉明',
+        '441900197707174121',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2007-08-15'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        250,
+        '',
+        '粤SC493K',
+        'LDC703L2980776387',
+        '7134189',
+        '任红禧',
+        '412725198011063833',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2008-05-21'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        260,
+        '',
+        '粤SC4U70',
+        'LFMAN42A370032466',
+        '3SZT061853',
+        '洪士桂',
+        '360732199006284414',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2007-10-29'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        270,
+        '',
+        '粤SC7888',
+        'WDDMH4CB1DN059085',
+        '27091030175162',
+        '卢锦嫦',
+        '441900196402061746',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2013-12-02'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        280,
+        '',
+        '粤SE819R',
+        'LHGGM2632D2013574',
+        '5030110',
+        '单嘉琪',
+        '441900199108071349',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2013-05-17'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        290,
+        '',
+        '粤SEJ590',
+        'LVSHFSAF38F005771',
+        '8J00372',
+        '徐德文',
+        '441900198006151378',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2008-02-25'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        300,
+        '',
+        '粤SET582',
+        'LJDDAA12280002959',
+        'G4ED85179369',
+        '黄仁浩',
+        '441624197711280538',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2008-03-19'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        310,
+        '',
+        '粤SG3A32',
+        'LJ11RBBC9D8011580',
+        'D4622506',
+        '丘勇平',
+        '441481198205215478',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2013-07-03'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        320,
+        '',
+        '粤SGN612',
+        'LVGBE40K28G240346',
+        'C460341',
+        '李可生',
+        '442525196906263313',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2008-07-16'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        330,
+        '',
+        '粤SH286K',
+        'LGBF1DE04CR107262',
+        '201478M',
+        '曾令贤',
+        '362121197907256817',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2013-09-24'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        340,
+        '',
+        '粤SH771E',
+        'LFMKV36F9D0206928',
+        'G242160',
+        '刘志平',
+        '431028198007110012',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2013-09-13'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        350,
+        '',
+        '粤SK7178',
+        'JTDBE30K700203701',
+        '2AZ1065286',
+        '李建昌',
+        '441900197905060731',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2003-08-22'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        360,
+        '',
+        '粤SM130V',
+        'LJNTGU2G7EN100286',
+        '815863X',
+        '温小波',
+        '441900197811230058',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2014-03-06'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        370,
+        '',
+        '粤SMM789',
+        'LSFDC82C62S138796',
+        'LW911220063',
+        '石光华',
+        '441322198007010011',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2002-03-25'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        380,
+        '',
+        '粤SP6248',
+        'WVGSH35N6BW089513',
+        'CAW114086',
+        '黎燕洪',
+        '441900197810310021',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2011-05-10'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        390,
+        '',
+        '粤SPW871',
+        'LSGGF53X1AH299153',
+        '102720060',
+        '李建林',
+        '431021198205287519',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2010-11-18'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        400,
+        '',
+        '粤SQ264R',
+        'LSVFX6185E2143063',
+        '112663',
+        '陈俊平',
+        '362132197304183814',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2014-06-24'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        410,
+        '',
+        '粤SRW410',
+        'LS4BDB3D6AF106606',
+        'A5HE005877',
+        '刘安定',
+        '441622198410086979',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2011-04-12'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        420,
+        '',
+        '粤ST167B',
+        'LBEHDAEB6AY533959',
+        'AB727018',
+        '阮秀勤',
+        '441322197806023826',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2010-12-29'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        430,
+        '',
+        '粤SU239S',
+        'JF1BR96DXEG176488',
+        'FB251205340',
+        '刘傍基',
+        '442527194807140717',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2014-05-12'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        440,
+        '',
+        '粤SW813K',
+        'LGBC1AE013R015768',
+        'EQ4863Z0462',
+        '岑春',
+        '440823197208214115',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2004-01-14'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        450,
+        '',
+        '粤SXN800',
+        'LFP43BJC7B6S36903',
+        '2691854',
+        '冯卓云',
+        '441721198603074017',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2012-04-22'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        460,
+        '',
+        '粤SYA153',
+        'LVSHCFMB2CE009317',
+        '3103759',
+        '赵东方',
+        '421083198403073850',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2012-05-01'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        470,
+        '',
+        '粤SZ3213',
+        'LHGGD384862019572',
+        'L15A12519670',
+        '李何生',
+        '441900197909040914',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2006-03-23'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        481,
+        '',
+        '粤SZ7217',
+        'LGBG22E066Y028109',
+        'HR16403987A',
+        '叶满轩',
+        '441900197204145636',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '理念HG7130FAA轿车',
+                        supplementInfo: [
+                            autoModel: '402880882f2a43c3012f66b979132065'
+                        ]
+                    ],
+                    enrollDate: '2006-04-11'
+                ]
+            ]
+        ],
+    ],
+
+
+    [
+            500,
+            '',
+            '粤SQJY517',
+            'ASDFGHE066Y02FDSA',
+            'AS164039FDS',
+            '牛牛',
+            '110221198905055917',
+            null,
+            null,
+            [
+                quoteRecord: [
+                    auto: [
+                        autoType  : [
+                            code          : '帕萨特SVW7183i',
+                            supplementInfo: [
+                                autoModel: ''
+                            ]
+                        ],
+                        enrollDate: '2015-05-05'
+                    ]
+                ]
+            ],
+        ],
+
+]

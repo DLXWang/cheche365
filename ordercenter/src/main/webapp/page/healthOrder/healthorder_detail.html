@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>订单详情</title>
+    <link type="text/css" href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="../../css/style.css" rel="stylesheet">
+    <link type="text/css" href="../../css/common.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        /* 订单详情 */
+        .order-detail .title{
+            text-align: center;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        .order-detail .tips{
+            padding-top: 5px;
+            padding-bottom: 15px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .order-detail .row{
+            padding-bottom: 10px;
+        }
+        .order-detail .tab-top-1{
+            border-bottom: 2px solid #ccc;
+            margin-bottom: 10px;
+        }
+        .order-detail .checkText{
+            padding-left: 40px;
+        }
+        .order-detail .bottom{
+            padding-bottom: 25px;;
+        }
+        .order-detail .premium{
+            padding-left: 4px;
+        }
+        .rebate-input {
+            width: 38px;
+            height: 20px;
+            padding-bottom: 0;
+        }
+        .amend{
+            padding-left: 30px;
+            line-height: 30px;
+        }
+        .onlyHeight {
+            line-height: 30px;
+        }
+        #note{text-align: center;width:110px; height:350px; position:absolute; right:0; top:0; z-index:100;margin-right: 20px;}
+        #note img{width:80px;height:80px;}
+    </style>
+    <script type="text/javascript" src="../../js/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/common/cookie.js"></script>
+    <script type="text/javascript" src="../../js/common/common.js" ></script>
+    <script type="application/javascript" src="../../js/jquery/jquery.form.js"></script>
+    <script type="text/javascript" src="../../plugins/DataTables-1.10.12/media/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../../js/common/datatable_util.js"></script>
+    <script type="text/javascript" src="../../js/healthOrder/healthorder_detail.js"></script>
+    <script type="text/javascript" src="../../js/common/popup.js"></script>
+    <script type="text/javascript" src="../../My97DatePicker/WdatePicker.js"></script>
+    <link rel="stylesheet" href="../../css/popup.css">
+</head>
+<body>
+<div class="container order-detail">
+    <div class="tab-top-1 title">
+        <h3>订单详情</h3>
+    </div>
+    <div class="tab-top-1">
+        <div class="row tips">
+            <div class="col-sm-12"><span id="insuranceProductName" name="userMobile">车车-安联臻爱医疗险</span></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">订单编号：<span id="orderNo" name="orderNo"></span></div>
+            <div class="col-sm-4">保单状态：<span id="insureStatus" name="insureStatus"></span></div>
+            <div class="col-sm-4">保费金额：<span id="premium" name="premium"></span></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">保险公司：<span id="insuranceCompName" name="insuranceCompName"></span></div>
+            <div class="col-sm-4">保单编号：<span id="policyNo" name="policyNo"></span></div>
+            <div class="col-sm-4">生效日期：<span id="effectiveDate" name="effectiveDate"></span></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">失效日期：<span id="expireDate" name="expireDate"></span></div>
+            <div class="col-sm-4">保障额度：<span id="amount" name="amount"></span></div>
+            <div class="col-sm-4">等待期：<span id="waitingDays" name="waitingDays"></span></div>
+        </div>
+        <div class="row agent none">
+            <div class="col-sm-4">代理人：<span id="agentName" ></span></div>
+            <!--<div class="col-sm-4">费率：<span id="rebate" ></span></div>-->
+        </div>
+    </div>
+    <div class="tab-top-1">
+        <div class="row tips">
+            <div class="col-sm-12">被保险人信息</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">被保险人姓名：<span id="insuredName" name="insuredName"></span></div>
+            <div class="col-sm-3">身份证号：<span id="insuredIdentity" name="insuredIdentity"></span></div>
+            <div class="col-sm-3">被保险人职业：<span id="insuredIdentityType" name="insuredIdentityType"></span></div>
+            <div class="col-sm-3">有无社保：<span id="socialSecurity" name="socialSecurity"></span></div>
+        </div>
+    </div>
+    <div class="tab-top-1">
+        <div class="row tips">
+            <div class="col-sm-12">投保人信息</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">投保姓名：<span id="applicantName" name="applicantName"></span></div>
+            <div class="col-sm-3">身份证号：<span id="aapplicantdentityType" name="aapplicantdentityType"></span></div>
+            <div class="col-sm-3">与被保险人关系：<span id="relation" name="relation"></span></div>
+            <div class="col-sm-3">投保人手机号：<span id="applicantMobile" name="applicantMobile"></span></div>
+        </div>
+    </div>
+    <div class="tab-top-1" id="paymentInfo">
+        <div class="row tips">
+            <div class="col-sm-12">支付信息</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12" id="paymentTabDiv">
+                <table class="table table-bordered" id="paymentTab">
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="popupHtml"></div>
+
+
+
+
+</body>
+</html>

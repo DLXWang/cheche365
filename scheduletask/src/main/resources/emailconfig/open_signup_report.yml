@@ -1,0 +1,19 @@
+#凌云用户合作申请
+title: "凌云用户合作申请-${currentDateTime}"
+tos: [zhangtc@cheche365.com,liuyw@cheche365.com,chenzhang@cheche365.com]
+production_tos: [BD@cheche365.com]
+template: /velocity/weicheQuoteEmail.vm
+excelAttachmentConfig:
+        fileName: "凌云用户合作申请.xlsx"
+        sheets:
+            - sheetName: sheet1
+              columns:
+                  - columnType: opensignupReport
+                    column:
+                        对接类型: developerType
+                        所属行业: developerBusinessType
+                        公司名称: company
+                        手机号: mobile
+                        联系人姓名: contactName
+                        邮箱: email
+                        联系地址: address

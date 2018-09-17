@@ -1,0 +1,61 @@
+package com.cheche365.cheche.botpy
+//this is 广州
+
+testData = [
+
+     [
+        1,
+        '',
+        '粤A7RD05',
+        'LBEMDAFB0FZ666989',
+        'FB760370',
+        '黄天明',
+        '441282197910244056',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '北京现代BH7161HAZ',
+                        supplementInfo: [
+                            autoModel: 'BJEACD0016',
+                            verificationMobile:'13581538623',
+                             commercialStartDate : '2018-08-05',
+                             compulsoryStartDate : '2018-08-05',
+
+                        ]
+                    ],
+                    enrollDate: '2015-03-27'
+                ],
+            ]
+        ]
+    ],
+     [
+         2,
+         '',
+         '粤AZ898N',
+         'LVSHCFAE68F325996',
+         '8A5404220081226',
+         '曾大治',
+         '44142519730726227X',
+         null,
+         null,
+         [
+             quoteRecord: [
+                 auto: [
+                     autoType  : [
+                         code          : '福克斯牌CAF7180A38',
+                         supplementInfo: [
+                             autoModel: '',
+                             verificationMobile:'13581538623',
+                             commercialStartDate : '2018-07-02',
+                             compulsoryStartDate : '2018-07-02',
+                         ]
+                     ],
+                     enrollDate: '2015-03-27'
+                 ],
+             ]
+         ]
+     ],
+]

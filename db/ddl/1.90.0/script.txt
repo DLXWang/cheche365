@@ -1,0 +1,10 @@
+10-alter-channel-agent-add-column.sql
+15-db-table-attribute-type.sql
+20-db-table-purchase-order-attribute.sql
+30-db-add-attribute-type-data.sql
+35-db-reorder-po-attribute-column.sql
+40-update-taikang-insurance-company.sql
+50-db-channel-agent-add-column.sql
+55-db-channel-agent-add-column.sql
+60-db-delete-institution-rebate-history-data.sql
+70-db-add-sys-version-data.sql

@@ -1,0 +1,1 @@
+update  tel_marketing_center_source  set type = 5 where id in (206,209);

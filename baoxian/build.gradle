@@ -1,0 +1,23 @@
+/**
+ +----------------+
+ | Build Settings |
+ +----------------+
+ */
+configurations {
+    springBoot {
+        extendsFrom runtime
+    }
+}
+
+dependencies {
+
+    compile project(':core')
+
+    compile "com.cheche365.spring:cheche365-spring-component:$cheche365_spring_version",
+            "com.cheche365.parser:cheche365-parser-api:$cheche365_parser_version",
+            "com.cheche365.parser:cheche365-parser-core:$cheche365_parser_version"
+
+    testCompile "cglib:cglib-nodep:$cglib_version",
+                "com.cheche365.parser:cheche365-parser-test:$cheche365_parser_version"
+
+}

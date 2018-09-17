@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>礼物管理</title>
+    <link type="text/css" href="../../css/style.css" rel="stylesheet">
+    <link type="text/css" href="../../libs/bootstrap-3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/dataTables.bootstrap.min.css"
+          rel="stylesheet">
+    <link type="text/css" href="../../libs/jquery-ui-1.11.4/jquery-ui.css" rel="stylesheet">
+    <script type="text/javascript" src="../../js/common/common.js"></script>
+    <script type="text/javascript" src="../../js/common/popup.js"></script>
+    <!--<script type="text/javascript" src="../../My97DatePicker/WdatePicker.js"></script>-->
+    <script type="text/javascript" src="../../libs/jquery-1.11.2/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../../libs/jquery-cookie-1.4.1/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../plugins/DataTables-1.10.12/media/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../../js/common/datatable_util.js"></script>
+    <script type="text/javascript" src="../../libs/jquery-ui-1.11.4/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../js/marketingRule/gift_manager.js"></script>
+    <style>
+        .margin-top {
+            margin-top: 10px;
+        }
+
+        .float-left {
+            float: left;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+<div style="margin-left: 20px;margin-top: 20px">
+    <div class="search">
+        <div class="row form-inline">
+            <div class="float-left">
+                <input id="giftName" type="text" class="form-control text-input-200" placeholder="礼物名称">
+            </div>
+            <div class="float-left">
+                <select id="giftType" class="text-input-200 form-control category-sel change-search ">
+                    <option value="">请选择礼物类型</option>
+                </select>
+            </div>
+            <div class="float-left">
+                <select id="giftStatus" class="text-input-200 form-control change-search">
+                    <option value="">请选择礼物状态</option>
+                    <option value="0">可用</option>
+                    <option value="1">禁用</option>
+                </select>
+            </div>
+            <div class="float-left">
+                <button class="btn-danger form-control text-input-100" onclick="gift.operation.paramSearch();"
+                        style="width: 100px;">
+                    搜索
+                </button>
+            </div>
+            <div class="float-left">
+                <button class="btn-danger form-control text-input-100" onclick="gift.operation.toAdd();"
+                        style="width: 100px;">
+                    新增礼品
+                </button>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 20px">
+        </div>
+    </div>
+    <div class="line" style="border-bottom: 2px solid #ccc;margin-top: 10px"></div><!--虚线-->
+    <div class="data-table list">
+        <table id="gift-data-table" class="table table-bordered table-hover"></table>
+    </div>
+</div>
+<!--<div id="popupHtml"></div>-->
+<div id="add-gift-div" style="margin-left: 20px;margin-top: 20px;display: none;">
+    <div style="margin-right: 20px">
+        <a href="javascript:;" title="关闭" class="close" onclick="popup.mask.hideFirstMask(true);">
+            <i class="glyphicon glyphicon-remove"></i>
+        </a>
+        <h4 class="text-center title">&nbsp;</h4>
+    </div>
+    <div class="form form-inline">
+        <div class="row margin-top">
+            <div class="col-sm-3 text-right">礼品名称:</div>
+            <div class="col-sm-3">
+                <input id="name" name="name" type="text" placeholder="请输入礼品名称"
+                       class="text-input-150 form-control" maxlength="10"
+                       style="width: 200px;">
+            </div>
+        </div>
+        <div class="row margin-top">
+            <div class="col-sm-3 text-right">描述:</div>
+            <div class="col-sm-3">
+                <input id="description" name="description" type="text" placeholder="请输入描述"
+                       class="text-input-150 form-control"
+                       style="width: 200px;">
+            </div>
+        </div>
+        <div class="row margin-top">
+            <div class="col-sm-3 text-right">礼品类型:</div>
+            <div class="col-sm-3" style="width: 200px;">
+                <!--<input type="radio" name="type" class="form-control" value="实物礼品">实物礼品 &nbsp;&nbsp;&nbsp;&nbsp;-->
+                <!--<input type="radio" name="type" class="form-control" value="虚拟礼品">虚拟礼品-->
+                <select id="category-sel" name="category" class="form-control category-sel" style="width: 200px;">
+                    <option value="">请选择礼品类型</option>
+                </select>
+            </div>
+        </div>
+        <div class="row margin-top hidden">
+            <div class="col-sm-3 text-right">使用类型:</div>
+            <div class="col-sm-3">
+                <select id="useTypeSel" name="useType" class="form-control use-type-sel" style="width: 200px;">
+                    <option value="3">下单后赠送</option>
+                </select>
+            </div>
+        </div>
+        <div class="row margin-top">
+            <div class="col-sm-3 text-right">是否配送:</div>
+            <div class="col-sm-3" style="width: 200px;border-right: 1px;">&nbsp;
+                <input type="radio" name="deliveryFlag" class="form-control" value="1" checked="checked">是 &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" name="deliveryFlag" class="form-control" value="0">否
+            </div>
+        </div>
+        <!--<div class="row margin-top">
+            <div class="col-sm-3 text-right">成本价:</div>
+            <div class="col-sm-3">
+                <input id="2" name="price" type="text" placeholder="请输入成本价"
+                       class="form-control" style="width: 200px;">
+            </div>
+        </div>-->
+        <!--<div class="row margin-top">
+            <div class="col-sm-3 text-right">生效日期:</div>
+            <div class="col-sm-3">
+                <input type="text" class="form-control text-input-200" id="efftiveTime" name="efftiveTime"
+                       placeholder="生效日期"
+                       style="width: 200px;background:#fff url(../../libs/My97DatePicker/skin/datePicker.gif) no-repeat right;"
+                       onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true});">
+            </div>
+        </div>-->
+    </div>
+    <div class="text-center" style="margin-top: 60px">
+        <button id="submit-button" class="btn-warning text-input-100 form-control-static text-center"
+                onclick="gift.operation.saveForm()">创建
+        </button>
+    </div>
+</div>
+</body>
+</html>

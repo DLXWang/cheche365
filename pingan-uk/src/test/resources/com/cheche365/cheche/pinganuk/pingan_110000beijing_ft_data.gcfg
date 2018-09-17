@@ -1,0 +1,9 @@
+package com.cheche365.cheche.pinganuk
+//this is 北京
+
+testDataParams = [
+
+    //
+    20 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'BZD1140DFB']]]]]],
+
+]

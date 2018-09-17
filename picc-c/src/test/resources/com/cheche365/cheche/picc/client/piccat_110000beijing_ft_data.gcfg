@@ -1,0 +1,255 @@
+package com.cheche365.cheche.picc.client
+
+/**
+ * 北京
+ */
+
+basePackageOptions = [
+    thirdPartyAmount    : 200000.0,
+    thirdPartyIop       : true,
+    damage              : true,
+    damageIop           : true,
+    theft               : false,
+    theftIop            : false,
+    engine              : false,
+    engineIop           : false,
+    glass               : false,
+    glassType           : null,    // 国产
+    driverAmount        : 10000.0,
+    driverIop           : true,
+    passengerAmount     : 10000.0,
+    passengerIop        : true,
+    spontaneousLoss     : false,
+    spontaneousLossIop  : false,
+    scratchAmount       : 0.0,
+    scratchIop          : false,
+    unableFindThirdParty: false,
+    compulsory          : true,
+    autoTax             : true
+]
+
+testData = [
+
+    [
+        1000000,
+        '',
+        '京J77256',
+        'LBEHDAEB4EY223106',
+        'EB369856',
+        '秦海波',
+        '110108197810100059',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '北京现代BH7160BMZ',
+                        supplementInfo: [
+                            autoModel: '4028b28841cafa3d01422b11f11d57db'
+                        ]
+                    ],
+                    enrollDate: '2014-10-17'
+                ]
+            ]
+        ]
+    ],
+    [
+        1000010,
+        '',
+        '京NM0V58',
+        'LSGPC52U2BF105646',
+        '113091032',
+        '冯俊敏',
+        '152601198212042510',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '雪佛兰SGM7166ATB轿车',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2011-12-15'
+                ]
+            ]
+        ]
+    ],
+
+    [
+        1000020,
+        '',
+        '京Q2F585',
+        'LVSHCAMB7DE341449',
+        '3371740',
+        '陈冰',
+        '110223198905113120',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '福克斯CAF7163N4轿车',
+                        supplementInfo: [
+                            autoModel: '4028808824ddca360124e22969340202'
+                        ]
+                    ],
+                    enrollDate: '2013-09-22'
+                ]
+            ]
+        ]
+    ],
+
+    [
+        1000030,
+        '',
+        '京PHC289',
+        'LBEHDAEB59Y240759',
+        '9B668097',
+        '王永增',
+        '110108196008247331',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : 'BH7164MY',
+                        supplementInfo: [
+                            autoModel: 'XDAAMD0082'
+                        ]
+                    ],
+                    enrollDate: '2009-09-23'
+                ]
+            ]
+        ]
+    ],
+
+    [
+        1000040,
+        '*********',
+        '京PA9Z58',
+        'LSVCH2A40EN022820',
+        'X10987',
+        '王宇飞',
+        '140702198807051414',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '大众汽车SVW71810HJ',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2014-10-30'
+                ]
+            ]
+        ]
+    ],
+
+    [
+        1000050,
+        '查车的问题，与人保官网一致，第二次查车失败',
+        '京QT8807',
+        'LJDMAA220C0006029',
+        'C5413903',
+        '沈艳斌',
+        '110102198110213358',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : 'YQZ7169M',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2012-12-04'
+                ]
+            ]
+        ]
+    ],
+
+    [
+        1000060,
+        '可报价，核保',
+        '京GB4565',
+        'LDC333E24Y0000056',
+        '0153383',
+        '付丽生',
+        '110109551030093',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : 'DC7161EXC',
+                        supplementInfo: [
+                            autoModel: 'DZABCD0079'
+                        ]
+                    ],
+                    enrollDate: '2000-04-24'
+                ]
+            ]
+        ]
+    ],
+    [
+        1000070,
+        '可报价，核保',
+        '京NKD718',
+        'L6T7844SX9N017044',
+        '007283D',
+        '寇达',
+        '110108198608091114',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '吉利美日MR7181轿车',
+                        supplementInfo: [
+                            autoModel: 'JLAATD0006'
+                        ]
+                    ],
+                    enrollDate: '2010-01-26'
+                ]
+            ]
+        ]
+    ],
+
+    [
+        1000080,
+        '',
+        '京HT4471',
+        'LFV3A23C9C3007164',
+        '100380',
+        '杨明伟',
+        '120104196410196831',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '迈腾FV7187TFATG',
+                        supplementInfo: [
+                            autoModel: 'DZAAWD0053'
+                        ]
+                    ],
+                    enrollDate: '2012-03-01'
+                ]
+            ]
+        ]
+    ],
+]

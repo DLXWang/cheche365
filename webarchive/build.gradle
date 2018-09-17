@@ -1,0 +1,19 @@
+/**
+ +----------------+
+ | Build Settings |
+ +----------------+
+ */
+configurations {
+    springBoot {
+        extendsFrom runtime
+    }
+}
+
+dependencies {
+
+    compile project(':webcore')
+
+    //cheche365
+    compile "com.cheche365.sms:cheche365-sms-client:$cheche365_sms_version"
+
+}

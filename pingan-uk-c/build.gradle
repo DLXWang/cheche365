@@ -1,0 +1,21 @@
+/**
+ +----------------+
+ | Build Settings |
+ +----------------+
+ */
+configurations {
+    springBoot {
+        extendsFrom runtime
+    }
+}
+
+dependencies {
+
+    // Other Projects
+    compile project(':core')
+
+    // Spring Boot
+    compile "org.springframework:spring-web:$spring_version"
+
+}
+

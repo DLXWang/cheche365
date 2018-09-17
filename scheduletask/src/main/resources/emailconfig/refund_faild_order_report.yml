@@ -1,0 +1,16 @@
+#微车渠道的报价日志记录报表
+title: "出单中心-退款失败订单报表-${currentDate}"
+tos: [zhangtc@cheche365.com,liuyw@cheche365.com,wangjl@cheche365.com]
+production_tos: [hubo@cheche365.com,yulan@cheche365.com]
+template: /velocity/refundFaildOrderEmail.vm
+excelAttachmentConfig:
+        fileName: "退款失败订单报表.xlsx"
+        sheets:
+            - sheetName: sheet1
+              columns:
+                  - columnType: refundFaildOrderReport
+                    column:
+                        编号: mchId
+                        订单号: orderNo
+                        退款失败时间: time
+                        跟进人: assigner

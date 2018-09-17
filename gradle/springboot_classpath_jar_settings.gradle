@@ -1,0 +1,32 @@
+/**
+ +---------+
+ | Plugins |
+ +---------+
+ */
+apply {
+    plugin 'org.springframework.boot'
+}
+
+task classpathJar(type: Jar) {
+    dependsOn configurations.runtime
+    appendix = 'classpath'
+    outputs.upToDateWhen { false }
+
+    doFirst {
+        manifest {
+            attributes "Class-Path": configurations.runtime.files.collect {
+                it.toURI().toURL().toString()
+            }.join(' ')
+        }
+    }
+}
+
+/**
+ * Spring Boot
+ */
+bootRun {
+    dependsOn classpathJar
+    doFirst {
+        classpath = files(sourceSets.main.output.classesDirs, sourceSets.main.output.resourcesDir, classpathJar.archivePath)
+    }
+}

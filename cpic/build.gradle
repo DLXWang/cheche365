@@ -1,0 +1,35 @@
+/**
+ +----------------+
+ | Build Settings |
+ +----------------+
+ */
+configurations {
+    springBoot {
+        extendsFrom runtime
+    }
+}
+
+dependencies {
+
+    compile project(':entity-core')
+
+
+    //cheche365
+    compile "com.cheche365.parser:cheche365-parser-core:$cheche365_parser_version"
+    runtime "com.cheche365.common:cheche365-common-decaptcha:$cheche365_common_version"
+
+    testCompile "com.cheche365.parser:cheche365-parser-test:$cheche365_parser_version"
+
+}
+
+
+
+/**
+ * Built-in Tasks Settings
+ */
+test {
+    forkEvery = 1
+    maxParallelForks = 1
+}
+
+

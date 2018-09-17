@@ -1,0 +1,2 @@
+你好，$data.orderNo 由$data.originalStatus 被打回 $data.currentStatus。
+打回原因：$data.reason。

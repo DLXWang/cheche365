@@ -1,0 +1,77 @@
+package com.cheche365.cheche.pingan.flow
+
+import static com.cheche365.cheche.parser.Constants._SUPPLEMENT_INFO_BRAND_CODE_TEMPLATE_QUOTING
+import static com.cheche365.cheche.parser.Constants._SUPPLEMENT_INFO_CAR_MODEL_LIST_TEMPLATE_QUOTING
+
+
+
+/**
+ * PINGAN流程步骤所需的常量
+ */
+class Constants {
+
+    // TODO：清除掉这些多余的status code
+    static final int _STATUS_CODE_PINGAN_FATAL_ERROR                    = 20001
+    //新保
+    static final int _STATUS_CODE_PINGAN_RENEWAL_DOCHECK_ERROR          = _STATUS_CODE_PINGAN_FATAL_ERROR + 1
+    static final int _STATUS_CODE_PINGAN_VERIFYCAPTCHA_ERROR            = _STATUS_CODE_PINGAN_RENEWAL_DOCHECK_ERROR + 1
+    static final int _STATUS_CODE_PINGAN_GET_FLOWID_ERROR               = _STATUS_CODE_PINGAN_VERIFYCAPTCHA_ERROR + 1
+    static final int _STATUS_CODE_PINGAN_TOPRAPARATION_ERROR            = _STATUS_CODE_PINGAN_GET_FLOWID_ERROR + 1
+    static final int _STATUS_CODE_PINGAN_CARCONFIRMINFO_ERROR           = _STATUS_CODE_PINGAN_TOPRAPARATION_ERROR + 1
+    static final int _STATUS_CODE_PINGAN_QUERYAUTOMODELBYVINCODE_ERROR  = _STATUS_CODE_PINGAN_CARCONFIRMINFO_ERROR + 1
+    static final int _STATUS_CODE_PINGAN_SAVEOTHERINFO_ERROR            = _STATUS_CODE_PINGAN_QUERYAUTOMODELBYVINCODE_ERROR + 1
+    static final int _STATUS_CODE_PINGAN_TOCARQUOTE_ERROR               = _STATUS_CODE_PINGAN_SAVEOTHERINFO_ERROR + 1
+    static final int _STATUS_CODE_PINGAN_LISTPACKAGE_ERROR              = _STATUS_CODE_PINGAN_TOCARQUOTE_ERROR + 1
+    static final int _STATUS_CODE_PINGAN_FORCEQUOTE_ERROR               = _STATUS_CODE_PINGAN_LISTPACKAGE_ERROR + 1
+    static final int _STATUS_CODE_PINGAN_BIZCALCULATE_ERROR             = _STATUS_CODE_PINGAN_FORCEQUOTE_ERROR + 1
+    static final int _STATUS_CODE_PINGAN_CHECK_PMFLOWDATA_ERROR         = _STATUS_CODE_PINGAN_BIZCALCULATE_ERROR + 1
+    static final int _STATUS_CODE_PINGAN_CHECK_CIRC_MSG_ERROR           = _STATUS_CODE_PINGAN_CHECK_PMFLOWDATA_ERROR + 1
+
+    //续保
+    static final int _STATUS_CODE_PINGAN_RENEWAL_GET_FLOWID_ERROR       = _STATUS_CODE_PINGAN_CHECK_PMFLOWDATA_ERROR + 1
+    static final int _STATUS_CODE_PINGAN_RENEWAL_DO_LOGIN_ERROR         = _STATUS_CODE_PINGAN_RENEWAL_GET_FLOWID_ERROR + 1
+    static final int _STATUS_CODE_PINGAN_RENEWAL_INDEX_ERROR            = _STATUS_CODE_PINGAN_RENEWAL_DO_LOGIN_ERROR + 1
+    static final int _STATUS_CODE_PINGAN_RENEWAL_TOSUPERVISOR_ERROR     = _STATUS_CODE_PINGAN_RENEWAL_INDEX_ERROR + 1
+    static final int _STATUS_CODE_PINGAN_RENEWAL_GET_BIZCONFIG_ERROR    = _STATUS_CODE_PINGAN_RENEWAL_TOSUPERVISOR_ERROR + 1
+    static final int _STATUS_CODE_PINGAN_RENEWAL_FORCEQUOTE_ERROR       = _STATUS_CODE_PINGAN_RENEWAL_GET_BIZCONFIG_ERROR + 1
+    static final int _STATUS_CODE_PINGAN_RENEWAL_BIZQUOTE_ERROR         = _STATUS_CODE_PINGAN_RENEWAL_FORCEQUOTE_ERROR + 1
+
+    //获取车型信息
+    static final int _STATUS_CODE_PINGAN_GETVEHICLEMODEL_ERROR = _STATUS_CODE_PINGAN_RENEWAL_BIZQUOTE_ERROR + 1
+
+    //平安M站错误类型
+    static final int _STATUS_CODE_PINGAN_M_BIZQUOTE_ERROR = _STATUS_CODE_PINGAN_GETVEHICLEMODEL_ERROR + 1
+    static final int _STATUS_CODE_PINGAN_M_FORCEQUOTE_ERROR = _STATUS_CODE_PINGAN_M_BIZQUOTE_ERROR + 1
+    static final int _STATUS_CODE_PINGAN_M_SAVEQUOTEINFO_ERROR = _STATUS_CODE_PINGAN_M_FORCEQUOTE_ERROR + 1
+    static final int _STATUS_CODE_PINGAN_M_QUOTE_RESULT_INSPECTION_ERROR = _STATUS_CODE_PINGAN_M_SAVEQUOTEINFO_ERROR + 1
+
+    //反馈消息常量
+    static final _QUOTE_FAIL_MESSAGE = '报价失败，请联系客服电话：4000-150-999'
+
+    static final _SUPPLEMENT_INFO_MAPPINGS = [
+        default : []
+    ]
+
+    static final get_VEHICLE_MODEL_SUPPLEMENT_INFO_MAPPINGS() {
+        [
+            default: [
+                _SUPPLEMENT_INFO_BRAND_CODE_TEMPLATE_QUOTING,
+                _SUPPLEMENT_INFO_CAR_MODEL_LIST_TEMPLATE_QUOTING
+            ]
+        ]
+    }
+
+    static final _AUTOTYPE_EXTRACTOR = { context ->
+        context.carInfo.collect { key, value ->
+            key == 'brand_name' ? value : null
+        } - null
+    }
+
+    static final _EXTRACT_AUTO_INFO = { context ->
+        [
+            autoType : [
+                seats : (context.necessaryInfo?.seats ?: context.carInfo?.seat) as int
+            ]
+        ]
+    }
+}

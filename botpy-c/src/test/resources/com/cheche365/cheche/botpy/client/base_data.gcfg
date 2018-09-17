@@ -1,0 +1,38 @@
+package com.cheche365.cheche.botpy.client
+
+basePackageOptions = [
+    thirdPartyAmount    : null,
+    thirdPartyIop       : false,
+    damage              : false,
+    damageIop           : false,
+    theft               : false,
+    theftIop            : false,
+    engine              : false,
+    engineIop           : false,
+    glass               : false,
+    glassType           : 1,    // 国产
+    //driverAmount        : 10_000.0,
+    driverAmount        : false,
+    driverIop           : false,
+    //passengerAmount     : 100_000.0,
+    passengerAmount     : false,
+    passengerIop        : false,
+    spontaneousLoss     : false,
+    //scratchAmount       : 2000.0,
+    scratchAmount       : false,
+    scratchIop          : false,
+    compulsory          : true,
+    autoTax             : false
+]
+
+baseAdditionalParams = [
+    quoteRecord: [
+        auto: [
+            autoType  : [
+                supplementInfo  : [
+                    autoModel: ''
+                ]
+            ]
+        ]
+    ]
+]

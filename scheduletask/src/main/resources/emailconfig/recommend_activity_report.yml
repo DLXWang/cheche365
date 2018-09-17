@@ -1,0 +1,17 @@
+#推荐活动统计报表
+title: ${currentDate}运营部推荐活动统计报表
+template: /velocity/recommendActivityEmail.vm
+tos: [wangfei@cheche365.com,liuyw@cheche365.com]
+production_tos: [lism@cheche365.com,lixin@cheche365.com]
+excelAttachmentConfig:
+        fileName: "${currentDate}推荐活动统计报表.xlsx"
+        sheets:
+        - sheetName: 推荐活动统计报表
+          columns:
+              - columnType: activityData
+                column:
+                    推荐人手机号: recommendMobile
+                    推荐人累计获得的油卡: amount
+                    被推荐人手机号: recommendedMobile
+                    被推荐人的订单号: orderNo
+                    被推荐人车牌号: licensePlateNo

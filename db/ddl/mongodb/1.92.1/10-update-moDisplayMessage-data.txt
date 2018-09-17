@@ -1,0 +1,18 @@
+db.moDisplayMessage.update({"messageType._id":19},{"$push":
+    {
+    "message":{
+            "iconUrl" : "banner/top-banner23.png",
+            "url" : "/marketing/m/201808001/index.html",
+            "title" : "当你发现车险报价出现“8”怎么办？领红包啊！",
+            "content" : null,
+            "weight" : "102"
+        }
+    }
+});
+db.moDisplayMessage.update({"messageType._id":19},{"$pull":
+    {
+    "message":{
+             "url":"/marketing/m/201807001/index.html",
+        }
+    }
+});

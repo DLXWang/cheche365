@@ -1,0 +1,95 @@
+package com.cheche365.cheche.taikang
+
+import static com.cheche365.cheche.parser.Constants.get_DATE_FORMAT3
+import static com.cheche365.cheche.parser.Constants.get_DATE_FORMAT3
+
+
+
+//this is  天津
+
+testData = [
+
+       [
+           20000,
+           '1831',
+           '津NQL508',
+           'LBEMDAECXDZ165891',
+           'DB698546',
+           '祁磊',
+           '341226198910046156',
+           null,
+           null,
+           [
+               quoteRecord:[
+                   auto   :  [
+                       autoType:[
+                           code:'北京现代BH7161HMY轿车',
+                           supplementInfo : [
+                               autoModel : 'BJEACD0017',
+                             commercialStartDate : '2018-07-16',
+                             compulsoryStartDate : '2018-07-16',
+                               verificationMobile : '18652095075'
+
+                           ]
+                       ],
+                       enrollDate:'2013-06-17'
+                   ]
+               ]
+           ],
+       ],
+       [
+           20010,
+           '1831',
+           '新车',
+           'LVSHCAMB2HR055460',
+           '4179254',
+           '天津市顺鑫信达汽车运输服务有限公司',
+           '9112011132853943X6',
+           null,
+           null,
+           [
+               quoteRecord:[
+                   auto   :  [
+                       autoType:[
+                           code:'福克斯CAF7163N5',
+                           supplementInfo : [
+                               autoModel : 'FTBAUD0095',
+                               commercialStartDate: '2018-05-20',
+                               compulsoryStartDate: '2018-05-20',
+                               newCarFlag:true,
+                           ]
+                       ],
+                       enrollDate:'2018-04-17'
+                   ]
+               ]
+           ],
+       ],
+
+       [
+               10010,
+               '1831',
+               '津NHE303',
+               'LFV3A28K3D3084839',
+               '405765',
+               '何佳桂',
+               '370602199204052620',
+               null,
+               null,
+               [
+                   quoteRecord:[
+                       auto   :  [
+                           autoType:[
+                               code:'车型途锐TOUAREG3.0TDI',
+                               supplementInfo : [
+                                   autoModel : '',
+                               ]
+                           ],
+                           enrollDate:'2011-6-1'
+                       ]
+                   ]
+               ],
+           ],
+
+
+
+]

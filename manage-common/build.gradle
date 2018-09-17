@@ -1,0 +1,35 @@
+version '1.6.0'
+
+dependencies {
+    compile project(':walletcore'),
+            project(':webcore'),
+            project(':bihu')
+    runtime project(':parser')
+
+    //cheche365
+    compile "com.cheche365.sms:cheche365-sms-client:$cheche365_sms_version",
+            "com.cheche365.common:cheche365-common-email:$cheche365_common_email_version"
+    runtime "com.cheche365.spring:cheche365-spring-resource:$cheche365_spring_version"
+
+    compile "org.springframework.boot:spring-boot-starter-security:$spring_boot_starter_version",
+            "org.springframework:spring-webmvc:$spring_version",
+            "org.springframework.boot:spring-boot-starter-aop:$spring_boot_starter_version"
+
+
+    compile "org.quartz-scheduler:quartz:$quartz_version"
+    // Apache
+    compile "org.apache.velocity:velocity:$velocity_version"
+
+    compile "org.apache.camel:camel-ftp:$camel_ftp_version"
+
+    // 百度
+    compile ':baidu-insur'
+    //cheche365
+    testCompile "com.cheche365.test:cheche365-test-core:$cheche365_test_version"
+
+    // Spock Framework
+    testRuntime("org.spockframework:spock-spring:$spockframework_version") {
+        exclude group: 'org.codehaus.groovy', module: 'groovy-all'
+    }
+
+}

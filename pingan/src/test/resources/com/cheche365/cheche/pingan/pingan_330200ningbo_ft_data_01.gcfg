@@ -1,0 +1,9 @@
+package com.cheche365.cheche.pingan
+//this is 宁波
+
+testDataParams = [
+
+    //{value=402880882ab3573a012ae60a02533a9d, text=金杯SY6513U1S1BH轻型客车 2010款 手动档 0座 54800元}
+    10000 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '402880882ab3573a012ae60a02533a9d']]]]]],
+
+]

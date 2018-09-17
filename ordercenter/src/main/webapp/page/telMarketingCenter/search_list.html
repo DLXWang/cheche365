@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>查看详情并处理</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/popup.css">
+    <link rel="stylesheet" href="../../css/search_list.css">
+
+    <style type="text/css">
+        #detail_owner ,#detail_insuredName{
+            width:260px;
+            overflow:hidden;
+            text-overflow:ellipsis;
+            white-space:nowrap;
+            display: block;
+            z-index:100;
+        }
+
+    </style>
+</head>
+<body>
+<div id="detail_content" class=" " style="width:70%;margin:auto;">
+    <div class="theme_poptit">
+        <h4 class="text-center" id="detail_title">查看详情并处理</h4>
+        <input id="editType" type="hidden" value=""/>
+    </div>
+    <div class="row" style="height:80%;">
+        <div id="customer_msg_div">
+            <div class="form-group col-sm-12">
+                <div class="col-sm-12 tab-top-1">
+                    <span class="text-center bold-font">来源信息</span>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <table class="table table-bordered table-hover" id="repeat_list_tab">
+                    <thead>
+                    <tr class="active">
+                        <th class="text-center">来源时间</th>
+                        <th class="text-center">来源</th>
+                        <th class="text-center">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <div class="customer-pagination" id="source_page_div">
+                    <ul class="pagination" id="source_page_ul"></ul>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm- text-center">
+                    <!--<input id="toQuoteDIV" type="button" class="btn btn-danger btn-show" value="我要报价">-->
+                    <!--<input id="sendSMSDIV" type="button" class="btn btn-danger btn-show" value="我要下发短信">-->
+                </div>
+            </div>
+        </div>
+
+        <div id="auto_info_div">
+            <div class="form-group col-sm-12"></div>
+            <div class="form-group col-sm-12">
+                <div class="col-sm-12 text-center tab-top-1">
+                    <span class="text-center bold-font">车辆信息</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <span class="col-sm-3 text-height-28 text-center">车牌号：</span>
+                <div class="col-sm-3 text-height-28 text-left">
+                    <select id="licenseNoSel"></select>
+                </div>
+                <div class="col-sm-6 text-height-28 text-left">
+
+                </div>
+            </div>
+            <div class="form-group">
+                <span class="col-sm-3 text-height-28 text-center">初登日期：</span>
+                <div class="col-sm-3 text-height-28 text-left">
+                    <span id="enroll_date" name="enroll_date" ></span>
+                </div>
+                <span class="col-sm-3 text-height-28 text-center">车主姓名：</span>
+                <div class="col-sm-3 text-height-28 text-left">
+                    <span id="owner" name="owner" ></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <span class="col-sm-3 text-height-28 text-center">身份证：</span>
+                <div class="col-sm-3 text-height-28 text-left">
+                    <span id="identity_card" name="identity_card"></span>
+                </div>
+                <span class="col-sm-3 text-height-28 text-center">发动机号：</span>
+                <div class="col-sm-3 text-height-28 text-left">
+                    <span id="engine_no" name="engine_no"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <span class="col-sm-3 text-height-28 text-center">车辆识别代码：</span>
+                <div class="col-sm-3 text-height-28 text-left">
+                    <span id="vin_no" name="vin_no"></span>
+                </div>
+                <span class="col-sm-3 text-height-28 text-center">品牌型号：</span>
+                <div class="col-sm-3 text-height-28 text-left">
+                    <span id="auto_type_code" name="auto_type_code"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <span class="col-sm-3 text-height-28 text-center">座位数：</span>
+                <div class="col-sm-3 text-height-28 text-left">
+                    <span id="mongoSeats" name="mongoSeats"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <span class="col-sm-3 text-height-28 text-center">交强险到期时间：</span>
+                <div class="col-sm-3 text-height-28 text-left">
+                    <span id="mongoCompulsoryEndDate" name="mongoCompulsoryEndDate"></span>
+                </div>
+                <span class="col-sm-3 text-height-28 text-center">商业险到期时间：</span>
+                <div class="col-sm-3 text-height-28 text-left">
+                    <span id="mongoCommercialEndDate" name="mongoCommercialEndDate"></span>
+                </div>
+            </div>
+        </div>
+
+        <div id="contact_status_div" >
+            <div class="form-group col-sm-12"></div>
+            <div class="form-group col-sm-12">
+                <div class="col-sm-12 text-center tab-top-1">
+                    <span class="text-center bold-font">联系状况</span>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <table class="table table-bordered table-hover" id="contact_status_tab">
+                    <thead>
+                    <tr class="active">
+                        <th class="text-center">操作人备注</th>
+                        <th class="text-center">处理状态</th>
+                        <th class="text-center">处理时间</th>
+                        <th class="text-center">处理结果</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="action_result_div">
+            <form id="new_form" class="form-input form-horizontal">
+                <input type="hidden" id="tmc_id" name="id">
+                <div class="form-group col-sm-12">
+                    <div class="col-sm-12 text-center tab-top-1">
+                        <span class="text-center bold-font">基本信息</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <span class="col-sm-3 text-height-28 text-right" style="letter-spacing:10px;">电话：</span>
+                    <div class="col-sm-3 text-height-28 text-left">
+                        <span id="span_mobile" name="mobile"></span>
+                        <button id="infoCallBtn" class="btn btn-danger" type="button">拨打</button>
+                    </div>
+                    <span class="col-sm-1"></span>
+                    <span class="col-sm-2 text-height-28 text-right" style="letter-spacing:4px;">车险到期日：</span>
+                    <div class="col-sm-3 text-height-28 text-left">
+                        <input type="text" id="expire_time" name="expireTime" class="Wdate" style="height: 28px;" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true,minDate:'%y-%M-%d'});" style="width: 175px;height: 27px;" readonly="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <span class="col-sm-3 text-height-28 text-right" style="letter-spacing:10px;">姓名：</span>
+                    <div class="col-sm-3 text-height-28 text-left">
+                        <span id="span_name" name="name"></span>
+                    </div>
+                    <span class="col-sm-1"></span>
+                    <span class="col-sm-2 text-height-28 text-right" style="letter-spacing:4px;">已处理次数：</span>
+                    <div class="col-sm-3 text-height-28 text-left">
+                        <span id="span_deal_times" name="do_times"></span>
+                    </div>
+                </div>
+                <div class="form-group col-sm-12">
+                    <div class="col-sm-12 text-center tab-top-1">
+                        <span class="text-center bold-font">处理结果</span>
+                    </div>
+                </div>
+                <div class="form-group col-sm-12">
+                    <span class="col-sm-3 text-height-28 text-center">标记为：</span>
+                    <div class="col-sm-4 text-left">
+                        <select  id="handleResultSel" name="StatusId" class="form-control text_input" style="width:200px">
+                        </select>
+                    </div>
+                    <div id="triggerTimeDiv" style="display:none;">
+                        <input type="text" id="trigger_time" name="triggerTime" class="Wdate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',readOnly:true,minDate:'%y-%M-%d'});" style="width: 175px;height: 27px;" readonly="">
+                    </div>
+                    <div id="triggerCityDiv" style="display:none;">
+                        <input type="text" id="result_detail" name="resultDetail"  placeholder="城市名称"  class="form-control text-input-400" style="width: 175px;" AutoComplete="off" onpaste="return false" oncontextmenu="return false">
+                    </div>
+                    <input type="hidden" id="trigger_city" name="triggerCity">
+                    <div id="triggerOrdernoDiv" style="display:none;">
+                        <input type="text" id="order_no" name="orderNo"  placeholder="订单号"  class="form-control text-input-400" style="width: 175px;" />
+                    </div>
+                </div>
+                <div class="form-group col-sm-12">
+                    <span class="col-sm-3 text-height-28 text-center">备注：</span>
+                    <div class="col-sm-3 text-height-28 text-left">
+                        <textarea id="comment" name="comment" class="form-control text-input-400" rows="5" style="resize: none;" maxlength="200" ></textarea>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <div class="detail_content_errorText" style="padding-top:90px;padding-bottom:10px;">
+        <div>
+            <span class="col-sm-3 text-height-28 text-center"></span>
+            <div class="col-sm-8 text-left">
+                <p class="alert alert-danger text-input-280 alert-user error-msg none" style="display: none;"><i class="glyphicon glyphicon-remove-sign"></i> <span id="errorText"></span></p>
+            </div>
+        </div>
+        <div class="form-group btn-finish">
+            <div class="col-sm-12 text-center" style="padding-top:10px;padding-bottom:10px;">
+                <input id="toSave" type="button" class="btn btn-danger text-input-200" value="保存">
+            </div>
+        </div>
+    </div>
+</div>
+<div id="new_content" class="none " style="display: none;">
+    <div class="theme_poptit">
+        <a href="javascript:;" title="关闭" class="close"><i class="glyphicon glyphicon-remove"></i></a>
+        <h4 class="text-center title">新建电话信息</h4>
+    </div>
+    <div class="form-input-top new" style="margin-bottom:50px;">
+        <form id="new_form1" class="form-input form-horizontal">
+            <div class="form-group form-group-fix" style="margin-bottom: 7px; height:50px;">
+                <label class="col-sm-3 text-height-28 text-right">车牌号：</label>
+                <div class="col-sm-5 text-left">
+                    <input id="licensePlateNo" name="licensePlateNo" type="text" class="form-control text-input-200 text-height-28" placeholder="请输入车牌号" maxlength="10">
+                    <p  style="color:red;display: none;" class="none" id="createError"><i class="glyphicon glyphicon-remove-sign"></i> <span></span></p>
+                </div>
+                <div class="col-sm-3 text-center">
+                    <button type="button" class="btn btn-danger btn-sm text-input-100 toSearch">确定</button>
+                </div>
+            </div>
+            <div class="diy-height none" style="margin-top:8px;">
+                <div class="form-group form-group-fix none none-content" style="margin-bottom: 0;">
+                    <div class="col-sm-12">
+                        <p class="alert alert-danger text-center alert-user">电话信息录入列表</p>
+                    </div>
+                </div>
+                <div class="form-group form-group-fix none none-content">
+                    <div class="col-sm-12" >
+                        <table class="table table-bordered table-hover" id="phone_tab">
+                            <thead>
+                            <tr class="active">
+                                <th class="text-center">序号</th>
+                                <th class="text-center">用户ID</th>
+                                <th class="text-center">手机号</th>
+                                <th class="text-center">车牌号</th>
+                                <th class="text-center">提交时间</th>
+                                <th class="text-center">回访状态</th>
+                                <th class="text-center">备注</th>
+                                <th class="text-center">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="form-group form-group-fix none none-not-find" style="margin-bottom: 0;margin-top: 190px;">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-6 text-center">
+                        <label>未查询到相应车辆的电话或拍照信息！</label>
+                    </div>
+                    <div class="col-sm-3"></div>
+                </div>
+            </div>
+            <div class="form-group form-group-fix btn-finish none" style="padding-top:5px;">
+                <div class="col-sm-12 text-center">
+                    <button type="button" class="btn btn-danger text-input-100 toCreate">新建</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- 二级弹层提示框 -->
+<!-- 二级弹层提示框 -->
+<div id="theme_popover_second" class="theme_popover_second" style="display: none;width: 400px; height: 250px;">
+    <div class="theme_poptit">
+        <h3>温馨提示</h3>
+    </div>
+    <div style="padding-top: 40px; padding-bottom: 30px; text-align: center; font-size: 16px;">
+        <label class="tipsContent">确定？</label>
+    </div>
+    <div style="text-align: center;">
+        <div class="btn-group">
+            <button style="font-size: 16px;" type="button" class="btn btn-primary confirm">确定</button>
+        </div>
+    </div>
+</div>
+<div id="popupHtml"></div>
+<div id="quote_pp"></div>
+</body>
+<script type="text/javascript" src="../../js/jquery/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/common/common.js"></script>
+<script type="text/javascript" src="../../js/common/popup.js"></script>
+<script type="text/javascript" src="../../My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="../../js/quote/quote_help.js"></script>
+<script type="text/javascript" src="../../js/jquery/jquery.cookie.js"></script>
+<script type="text/javascript" src="../../js/common/cookie.js"></script>
+<script type="text/javascript" src="../../js/common/application_log.js"></script>
+<script type="text/javascript" src="../../js/quote/quote_photo_pop.js"></script>
+<script type="text/javascript" src="../../js/quote/quote_help.js"></script>
+<script type="text/javascript" src="../../js/common/CUI.js"></script>
+<script type="text/javascript" src="../../js/common/CUI.select.js"></script>
+<script type="text/javascript" src="../../js/telMarketingCenter/search_list.js"></script>
+<script type="text/javascript" src="../../plugins/jqPaginator-1.2.0/jqPaginator.min.js"></script>
+<!--<script type="text/javascript" >-->
+    <!--$(function(){-->
+        <!--$("#quote_pp").load("../../page/quote/quote_photo_pop.html");-->
+    <!--});-->
+<!--</script>-->
+</html>
+

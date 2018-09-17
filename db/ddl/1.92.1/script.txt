@@ -1,0 +1,4 @@
+10-db-add-marketing-data.sql
+20-db-add-marketing-data.sql
+30-db-add-tel-marketing-center-source-data.sql
+40-db-update-marketing-data.sql

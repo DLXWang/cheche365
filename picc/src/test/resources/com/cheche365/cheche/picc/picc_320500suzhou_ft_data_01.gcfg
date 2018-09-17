@@ -1,0 +1,8 @@
+package com.cheche365.cheche.picc
+
+testDataParams = [
+
+    // {value=901633eac057ffc800000000e9eab51e, text=明锐2008款 导航版 5座 191800.0元}
+    10100 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '901633eac057ffc800000000e9eab51e']]]]]],
+
+]

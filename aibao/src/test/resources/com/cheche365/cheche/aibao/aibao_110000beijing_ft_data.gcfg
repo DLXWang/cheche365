@@ -1,0 +1,114 @@
+package com.cheche365.cheche.aibao
+//this is 北京
+
+testData = [
+
+    [
+        100111,
+        '',
+        '京MN5200',
+        'LVGBE40K18G261348',
+        'C506964',
+        '张三',
+        '110101197309272522',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code: '大众FV7144FBDWG轿车',
+                        supplementInfo  : [
+                            autoModel: '',
+                             commercialStartDate : '2018-09-18',
+                             compulsoryStartDate : '2018-09-18',
+                        ]
+                    ],
+                    enrollDate: '2015-01-01'
+                ]
+            ]
+        ],
+    ],
+
+
+    [
+        100111,
+        '',
+        '京QJY517',
+        'LFV2B21K0D3510070',
+        'L50317',
+        '常琪',
+        '110221198905055917',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code: '大众FV7144FBDWG轿车',
+                        supplementInfo  : [
+                            autoModel: '',
+                            commercialStartDate : '2018-09-18',
+                             compulsoryStartDate : '2018-09-18',
+                        ]
+                    ],
+                    enrollDate: '2013-03-22'
+                ]
+            ]
+        ],
+    ],
+    [
+        10011,
+        '',
+        '京NNU539',
+        'LFV3A28K4B3058425',
+        '155243',
+        '李楠',
+        '11010819800308574X',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code: 'FV7203TFCVTG',
+                        supplementInfo  : [
+                            autoModel: '',
+                             commercialStartDate : '2018-10-19',
+                             compulsoryStartDate : '2018-10-19',
+                             verificationMobile : '17600201224'
+                        ]
+                    ],
+                    enrollDate: '2012-10-11'
+                ]
+            ]
+        ],
+    ],
+    [
+                   100111,
+                   '1831',
+                   '京APNP6H',
+                   'VNNHDDWUYDKCEGTF0',
+                   'ENGZJY9Y75PKH73OZ',
+                   '张三',
+                   '110105197702254115',
+                   null,
+                   null,
+                   [
+                       quoteRecord:[
+                           auto   :  [
+                               autoType:[
+                                   code:'帕萨特SVW7183MJI',
+                                   supplementInfo : [
+                                       autoModel : 'I0000000000000000240000000000736',
+                                        commercialStartDate: '2018-07-20',
+                                                  compulsoryStartDate: '2018-08-20',
+                                                  verificationMobile: '18652095075'
+                                   ]
+                               ],
+                               enrollDate:'2015-01-01'
+                           ]
+                       ]
+                   ],
+               ],
+]

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link type="text/css" href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/popup.css">
+    <link rel="stylesheet" href="../../css/search_list.css">
+    <script type="text/javascript" src="../../js/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../My97DatePicker/WdatePicker.js"></script>
+    <script type="text/javascript" src="../../js/common/common.js"></script>
+    <script type="text/javascript" src="../../js/common/popup.js"></script>
+    <script type="text/javascript" src="/js/telMarketingCenter/quote_record_history_detail.js"></script>
+    <style type="text/css">
+        /* 订单详情 */
+
+        .quote_detail .row {
+            padding-bottom: 10px;
+        }
+
+        .quote_detail .checkText {
+            padding-left: 40px;
+        }
+
+        .quote_detail .premium {
+            padding-left: 4px;
+        }
+
+        .amend {
+            padding-left: 30px;
+            line-height: 30px;
+        }
+
+        .onlyHeight {
+            line-height: 30px;
+        }
+    </style>
+</head>
+<body>
+<!--报价列表-->
+<div id="quote_record_history_detail_content" class="none">
+    <div class="theme_poptit"><h3 class="text-center">报价记录列表</h3></div>
+    <div id="detail_content" class="none " style="width:80%;margin:auto;">
+
+        <!--报价记录<车辆>循环单元-->
+               <!--<div class="row" style="margin-top: 40px">
+                   <div class="tab-top-1">
+                       <span class="text-left bold-font">车牌号:${data.carNo}</span>
+                   </div>
+
+                   &lt;!&ndash;<保险公司>循环单元&ndash;&gt;
+                   <div class="col-sm-12">
+                       <table class="table table-bordered table-hover" width="100%">
+                           <tr>
+                               <td colspan="10">
+                                   <div class="text-left table-hover">
+                                       <span class="bold-font" style="color: darkslategrey;">保险公司:${data.company}</span>
+                                       <span class="bold-font" style="color: darkslategrey;">报价次数:${data.quoteNum}</span>
+                                   </div>
+                               </td>
+                           </tr>
+                           <tr class="active text-center">
+                               <th class="text-center" width="6%">交强险</th>
+                               <th class="text-center" width="6%">车船税</th>
+                               <th class="text-center" width="6%">商业险</th>
+                               <th class="text-center" width="6%">总计</th>
+                               <th class="text-center" width="6%">险种数量</th>
+                               <th class="text-center" width="30%">商业险险种及保额</th>
+                               <th class="text-center" width="6%">报价平台</th>
+                               <th class="text-center" width="14%">报价方式</th>
+                               <th class="text-center" width="14%">报价时间</th>
+                               <th class="text-center" width="14%">操作</th>
+                           </tr>
+
+                           &lt;!&ndash;<报价>数据循环单元&ndash;&gt;
+                           <tr class="active">
+                               <td>1</td>
+                               <td>1</td>
+                               <td>1</td>
+                               <td>1</td>
+                               <td>1</td>
+                               <td style="word-wrap:break-word;word-break:break-all;">1</td>
+                               <td>1</td>
+                               <td>2016-11-02 16:35:36</td>
+                               <td>
+                                   <a onclick="qrhd.operation.showQuoteItemDetail(infoId);">险种详情</a>
+                                   <a onclick="qrhd.operation.toQuotePage(1);">我要报价</a>
+                               </td>
+                           </tr>
+                           &lt;!&ndash;<报价>数据循环单元&ndash;&gt;
+
+                       </table>
+                   </div>
+                   &lt;!&ndash;<保险公司>循环单元&ndash;&gt;
+
+               </div>-->
+        <!--报价记录<车辆>循环单元-->
+
+    </div>
+</div>
+
+<!--弹框,报价详情-->
+<div id="quoteRecordPopDiv" class="quote_detail">
+    <div class="theme_poptit">
+        <a href="javascript:;" title="关闭" class="close"><i class="glyphicon glyphicon-remove"></i></a>
+        <h4 class="text-center title">报价记录详情</h4>
+    </div>
+    <div class="amend">
+        <div class="row onlyHeight">
+            <div class="col-sm-6">保险公司：<span id="amend_insuranceCompany" name="insuranceCompany"></span></div>
+        </div>
+        <div class="row onlyHeight">
+            <div class="col-sm-6">共计金额：<span id="totalAmout" name="totalAmout"></span></div>
+        </div>
+        <br>
+        <div class="row onlyHeight">
+            <div class="col-sm-6">险种详情：</div>
+        </div>
+        <div class="row onlyHeight">
+            <div class="col-sm-6">
+                <input type="checkbox" id="amend_compulsoryChk" disabled="true">
+                &nbsp;交强险：<span id="amend_compulsoryPremium" name="compulsoryPremium"></span>
+                <span class="premium">元</span>
+            </div>
+        </div>
+        <div class="row onlyHeight">
+            <div class="col-sm-6"><input type="checkbox" id="amend_autoTaxChk" disabled="true">&nbsp;车船税：<span
+                id="amend_autoTax" name="autoTax"></span><span class="premium">元</span></div>
+        </div>
+        <div class="row onlyHeight">
+            <div class="col-sm-6"><input type="checkbox" id="amend_commercialChk" disabled="true">&nbsp;商业险：<span
+                id="amend_commercialPremium" name="commercialPremium"></span><span class="premium">元</span></div>
+        </div>
+        <div class="row amend checkText">
+            <div class="col-sm-4"><input type="checkbox" id="amend_damageChk" disabled="true">&nbsp;机动车辆损失险</div>
+            <div class="col-sm-4">保费：<span id="amend_damagePremium" name="damagePremium"></span><span
+                class="premium">元</span></div>
+            <div class="col-sm-4">保额：<span id="amend_damageAmount" name="damageAmount"></span><span
+                class="premium">元</span></div>
+        </div>
+        <div class="row amend checkText">
+            <div class="col-sm-4"><input type="checkbox" id="amend_thirdPartyChk" disabled="true">&nbsp;第三者责任险</div>
+            <div class="col-sm-4">保费：<span id="amend_thirdPartyPremium" name="thirdPartyPremium"></span><span
+                class="premium">元</span></div>
+            <div class="col-sm-4">保额：<span id="amend_thirdPartyAmount" name="thirdPartyAmount"></span><span
+                class="premium">元</span></div>
+        </div>
+        <div class="row amend checkText">
+            <div class="col-sm-4"><input type="checkbox" id="amend_driverChk" disabled="true">&nbsp;车上人员责任险(司机)</div>
+            <div class="col-sm-4">保费：<span id="amend_driverPremium" name="driverPremium"></span><span
+                class="premium">元</span></div>
+            <div class="col-sm-4">保额：<span id="amend_driverAmount" name="driverAmount"></span><span
+                class="premium">元</span></div>
+        </div>
+        <div class="row amend checkText">
+            <div class="col-sm-4"><input type="checkbox" id="amend_passengerChk" disabled="true">&nbsp;车上人员责任险(乘客)</div>
+            <div class="col-sm-4">保费：<span id="amend_passengerPremium" name="passengerPremium"></span><span
+                class="premium">元</span></div>
+            <div class="col-sm-4">保额：<span id="amend_passengerAmount" name="passengerAmount"></span><span
+                class="premium">元</span></div>
+        </div>
+        <div class="row amend checkText">
+            <div class="col-sm-4"><input type="checkbox" id="amend_theftChk" disabled="true">&nbsp;盗抢险</div>
+            <div class="col-sm-4">保费：<span id="amend_theftPremium" name="theftPremium"></span><span
+                class="premium">元</span></div>
+            <div class="col-sm-4">保额：<span id="amend_theftAmount" name="theftAmount"></span><span
+                class="premium">元</span></div>
+        </div>
+        <div class="row amend checkText">
+            <div class="col-sm-4"><input type="checkbox" id="amend_scratchChk" disabled="true">&nbsp;车身划痕损失险</div>
+            <div class="col-sm-4">保费：<span id="amend_scratchPremium" name="scratchPremium"></span><span class="premium">元</span>
+            </div>
+            <div class="col-sm-4">保额：<span id="amend_scratchAmount" name="scratchAmount"></span><span
+                class="premium">元</span></div>
+        </div>
+        <div class="row amend checkText">
+            <div class="col-sm-4"><input type="checkbox" id="amend_spontaneousLossChk" disabled="true">&nbsp;自燃损失险</div>
+            <div class="col-sm-4">保费：<span id="amend_spontaneousLossPremium" name="spontaneousLossPremium"></span><span
+                class="premium">元</span></div>
+            <div class="col-sm-4">保额：<span id="amend_spontaneousLossAmount" name="spontaneousLossAmount"></span><span
+                class="premium">元</span></div>
+        </div>
+        <div class="row amend checkText">
+            <div class="col-sm-4"><input type="checkbox" id="amend_engineChk" disabled="true">&nbsp;发动机特别损失险</div>
+            <div class="col-sm-4">保费：<span id="amend_enginePremium" name="enginePremium"></span><span
+                class="premium">元</span></div>
+        </div>
+        <div class="row amend checkText">
+            <div class="col-sm-4"><input type="checkbox" id="amend_glassChk" disabled="true">&nbsp;玻璃单独破碎险</div>
+            <div class="col-sm-4">保费：<span id="amend_glassPremium" name="glassPremium"></span><span
+                class="premium">元</span></div>
+            <div class="col-sm-4">玻璃类型：<span id="amend_glassType" name="glassType"></span></div>
+        </div>
+        <div class="row amend checkText">
+            <div class="col-sm-4"><input type="checkbox" id="amend_iopChk" disabled="true">&nbsp;不计免赔率特约条款</div>
+            <div class="col-sm-4">保费：<span id="amend_iop" name="iop"></span><span class="premium">元</span></div>
+        </div>
+    </div>
+</div>
+
+<div id="popupHtml"></div>
+</body>
+</html>

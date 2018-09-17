@@ -1,0 +1,102 @@
+[
+    {
+        "time": 1488507837000,
+        "amount": null,
+        "rewardDays": 2,
+        "status": {
+            "id": 1,
+            "name": "已入账",
+            "description": "已入账"
+        },
+        "licensePlateNo": null
+    },
+    {
+        "amount": 120,
+        "rewardDays": null,
+        "status": {
+            "id": 2,
+            "name": "支出",
+            "description": "支出"
+        },
+        "licensePlateNo": null,
+        "time": 1488507837000
+    },
+    {
+        "amount": 50,
+        "rewardDays": 30,
+        "status": {
+            "id": 2,
+            "name": "支出",
+            "description": "支出"
+        },
+        "licensePlateNo": "京HB6688",
+        "time": 1488421437000
+    },
+    {
+        "time": 1488421437000,
+        "amount": 20,
+        "rewardDays": 2,
+        "status": {
+            "id": 1,
+            "name": null,
+            "description": null
+        },
+        "licensePlateNo": "京HB6688"
+    },
+    {
+        "time": 1488421437000,
+        "amount": 30,
+        "rewardDays": 3,
+        "status": {
+            "id": 1,
+            "name": null,
+            "description": null
+        },
+        "licensePlateNo": "京HB6688"
+    },
+    {
+        "time": 1488421437000,
+        "amount": 50,
+        "rewardDays": 30,
+        "status": {
+            "id": 1,
+            "name": null,
+            "description": null
+        },
+        "licensePlateNo": "京HB6688"
+    },
+    {
+        "time": 1488421437000,
+        "amount": 20,
+        "rewardDays": 2,
+        "licensePlateNo": "京HB6688",
+        "status": {
+            "id": 1,
+            "name": null,
+            "description": null
+        }
+    },
+    {
+        "time": 1488421437000,
+        "amount": 30,
+        "rewardDays": 3,
+        "status": {
+            "id": 1,
+            "name": "已入账",
+            "description": "已入账"
+        },
+        "licensePlateNo": null
+    },
+    {
+        "time": 1488335037000,
+        "amount": 50,
+        "rewardDays": 30,
+        "status": {
+            "id": 1,
+            "name": null,
+            "description": null
+        },
+        "licensePlateNo": "京HB6688"
+
+    }
+]

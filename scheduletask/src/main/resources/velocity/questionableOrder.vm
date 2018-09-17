@@ -1,0 +1,19 @@
+统计时间：$data.startDate 至 $data.endDate<br>
+统计对象：状态同步异常订单
+<table width='950px;' border='1' cellspacing='0' cellpadding='1'>
+    <tr>
+        <td width='90px;'>订单id</td>
+        <td width='90px;'>订单号</td>
+        <td width='160px;'>订单状态</td>
+        <td width='85px;'>出单状态</td>
+    </tr>
+    #foreach( $info in $data.infoList )
+        <tr>
+            <td style='font-weight:bold;'>$info.orderId</td>
+            <td style='font-weight:bold;'>$info.orderNo</td>
+            <td style='font-weight:bold;'>$info.orderStatus</td>
+            <td style='font-weight:bold;'>$info.orderTransmissionStatus</td>
+        </tr>
+    #end
+</table>
+<br>

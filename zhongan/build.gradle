@@ -1,0 +1,30 @@
+/**
+ +----------------+
+ | Build Settings |
+ +----------------+
+ */
+configurations {
+    springBoot {
+        extendsFrom runtime
+    }
+}
+
+dependencies {
+
+    // Other Projects
+    compile  project(':core')
+
+    // cheche365
+    runtime     "com.cheche365.common:cheche365-common-decaptcha:$cheche365_common_version"
+
+    compile "com.cheche365.parser:cheche365-parser-api:$cheche365_parser_version"
+
+    // zhongan libs
+    compile ':za-sdk'
+
+    compile "com.alibaba:fastjson:$ali_fastjson_version"
+
+    testCompile "com.cheche365.parser:cheche365-parser-test:$cheche365_parser_version"
+
+
+}

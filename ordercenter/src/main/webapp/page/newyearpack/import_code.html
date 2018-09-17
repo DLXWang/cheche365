@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>兑换码导入</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link type="text/css" href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="../../css/common.css" rel="stylesheet">
+    <link type="text/css" href="../../css/formInput.css" rel="stylesheet">
+    <script type="text/javascript" src="../../js/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../My97DatePicker/WdatePicker.js"></script>
+    <script type="text/javascript" src="../../js/jquery/jquery.form.js"></script>
+</head>
+<body>
+<div class="container tab_body" id="form">
+    <form class="form-horizontal" id="includeCodeForm"  method="post" enctype="multipart/form-data">
+        <div class="form-group" style="padding-top: 40px;">
+            <label class="col-sm-4 control-label">兑换码名称</label>
+            <div class="col-sm-5">
+                <input type="text" id="name" name="name" class="form-control text_input">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-4 control-label">兑换码类型</label>
+            <div class="col-sm-5">
+            <select id="codeGroup" name="codeGroup" class="form-control text_input">
+                <option value="">请选择</option>
+            </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">兑换码使用限制</label>
+            <div class="col-sm-5">
+            <select id="codeType" name="codeType" class="form-control text_input">
+                <option value="">请选择</option>
+            </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">有效期开始日期</label>
+            <div class="col-sm-5">
+                <input type="text" id="effectiveDate" name="effectiveDate" class="Wdate form-control text_input" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true});" style="width: 200px;height: 27px;">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">有效期结束日期</label>
+            <div class="col-sm-5">
+                <input type="text" id="expireDate" name="expireDate" class="Wdate form-control text_input" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true});" style="width: 200px;height: 27px;">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">选择兑换码文件</label>
+            <div class="col-sm-5">
+                <input id="codeFileFake" name="codeFile" type="text" class="form-control file-input" onclick="document.getElementById('codeFile').click();" style="width: 200px;height: 30px;" placeholder="点击选择文件">
+                <input type="file" id="codeFile" name="codeFile" accept=".xls,.xlsx" class="text-input-150" onchange="include_code.form.changeValue();" style="position: absolute; opacity: 0; filter:Alpha(opacity=0);">
+            </div>
+        </div>
+        <div class="form-group">
+            <span class="col-sm-4"><p>&nbsp;</p></span>
+            <div class="col-sm-3 text-left">
+                <p class="alert alert-danger text-input-20 alert-user error-msg none" id="errorT"><i class="glyphicon glyphicon-remove-sign"></i> <span id="errorText"></span></p>
+            </div>
+        </div>
+        <div class="form-group" style="">
+            <label class="col-sm-4 control-label"></label>
+            <div class="col-sm-5">
+                <div class="btn-group">
+                    <button id="save_button" type="button" class="btn btn-danger" style="width: 200px;">上传</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<div id="result" style="display: none;">
+    <div id="tip" class="detail-together">
+        <strong>本次将导入兑换码总共：<span id="count" style="color: red;"></span>个，请仔细核对后导入</strong>
+    </div>
+    <div id="cardCount" class="detail-together">
+        <button id="repeat_button" type="button" class="btn btn-primary" style="width: 100px;">重新上传</button>
+        <button id="include_button" type="button" class="btn btn-danger" style="width: 100px;">确认导入</button>
+    </div>
+    <div id="show_div" class="table-responsive">
+        <div class="col-sm-12">
+            <table class="table table-bordered table-hover" id="code_table">
+                <thead>
+                <tr class="active">
+                    <th class="text-center">序号</th>
+                    <th class="text-center">兑换码名称</th>
+                    <th class="text-center">兑换码</th>
+                    <th class="text-center">兑换码类型</th>
+                    <th class="text-center">使用限制</th>
+                    <th class="text-center">有效期开始日期</th>
+                    <th class="text-center">有效期结束日期</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <div class="customer-pagination">
+                <ul class="pagination"></ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<link rel="stylesheet" href="../../css/popup.css">
+<script type="text/javascript" src="../../js/jquery/jquery.cookie.js"></script>
+<script type="text/javascript" src="../../js/common/cookie.js"></script>
+<script type="text/javascript" src="../../js/common/common.js"></script>
+<script type="text/javascript" src="../../js/common/popup.js"></script>
+<script type="text/javascript" src="../../js/newyearpack/import_code.js"></script>
+<script type="text/javascript" src="../../js/common/CUI.js"></script>
+<script type="text/javascript" src="../../js/common/CUI.grid.js"></script>
+</html>

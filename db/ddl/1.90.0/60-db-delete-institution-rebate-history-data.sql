@@ -1,0 +1,1 @@
+delete from institution_rebate_history where start_time > end_time;

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>订单列表</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link type="text/css" href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="../../css/common.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/dataTables.bootstrap.min.css" rel="stylesheet">
+
+    <script type="text/javascript" src="../../js/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../plugins/jqPaginator-1.2.0/jqPaginator.min.js"></script>
+    <style type="text/css">
+        .filter {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="count_div" class="detail-together">
+    <label>总共：</label>
+    <span id="totalCount" class="detail-all"></span>个
+</div>
+<div id="show_div" class="table-responsive">
+    <div class="col-sm-12">
+        <table class="table table-bordered table-hover" id="list_tab">
+            <thead>
+            <tr id="tab_title_tr" class="active">
+                <th class="text-center">订单号</th>
+                <th class="text-center">当前状态</th>
+                <th class="text-center">备注</th>
+                <th class="text-center" style="width:120px;">操作</th>
+                <th class="text-center">指定人</th>
+                <th class="text-center">车主<br/>车牌</th>
+                <th class="text-center"><!-- 支付状态<br/> -->支付方式</th>
+                <th class="text-center">地区<br/>保险公司</th>
+                <th class="text-center">实付金额<br/>原始金额</th>
+                <th class="text-center">支付号</th>
+                <th class="text-center">礼品</th>
+                <th class="text-center">最后操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <div class="customer-pagination">
+            <ul class="pagination"></ul>
+        </div>
+    </div>
+</div>
+</body>
+<link rel="stylesheet" href="../../css/popup.css">
+<script type="text/javascript" src="../../js/jquery/jquery.cookie.js"></script>
+<script type="text/javascript" src="../../js/common/common.js"></script>
+<script type="text/javascript" src="../../js/common/cookie.js"></script>
+<script type="text/javascript" src="../../js/common/popup.js"></script>
+<script type="text/javascript" src="datatable.js"></script>
+<script type="text/javascript" src="../../js/order/order_status.js"></script>
+<script type="text/javascript" src="../../plugins/DataTables-1.10.12/media/js/jquery.dataTables.min.js"></script>
+</html>

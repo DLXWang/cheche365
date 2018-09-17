@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>数据分配历史列表</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link type="text/css" href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="../../css/common.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="../../js/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap-multiselect.js"></script>
+    <script type="text/javascript" src="../../plugins/jqPaginator-1.2.0/jqPaginator.min.js"></script>
+    <script type="text/javascript" src="../../My97DatePicker/WdatePicker.js"></script>
+    <style type="text/css">
+        .filter {
+            margin-left: 20px;
+        }
+        .textShow{
+            width:200px;
+            list-style:none;
+            white-space:nowrap;
+            text-overflow:ellipsis;
+            -o-text-overflow:ellipsis;
+            overflow: hidden;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<div id="show_div"   style="margin-top:30px;">
+    <div class="col-sm-12" style="width:1500px;margin:0px auto;float: none;">
+        <div class="row" style="margin-bottom:30px;">
+            <div class="col-sm-12 form-inline">
+                <span>
+                    <label class='search-type'style="font-size: 16px;">数据分配时间：</label>
+                </span>
+               <div class="input-group">
+                    <span class="filter">
+                        <input type="text" id="assignStartTime" name="orderStartDate" class="Wdate"
+                               onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true});" style="width: 180px;height: 32px;">
+                        <span style="margin: 0 10px;">至</span>
+                        <input type="text" id="assignEndTime" name="orderEndDate" class="Wdate"
+                               onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true});" style="width: 180px;height: 32px;">
+                   </span>
+                    <span>
+                        <button id="searchBtn" class="btn btn-danger" type="button"style="margin-top: -3px;margin-left: 10px;">筛选</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <table class="table table-bordered table-hover" id="result_tab">
+        </table>
+    </div>
+</div>
+
+
+<div id="popupHtml"></div>
+<div id="detail_content" class=" tab_body none">
+    <div class="theme_poptit">
+        <a id="close" href="javascript:;" title="关闭" class="close"><i class="glyphicon glyphicon-remove" id="close_detail"></i></a>
+        <h4 class="text-center" id="detail_title">分配详情</h4>
+    </div>
+    <div style="height:550px;overflow:auto;margin-left:15px;margin-right:15px;">
+        <table class="table table-bordered table-hover" id="detail_tab" style="width: 750px;">
+        </table>
+    </div>
+</div>
+
+<!-- 公用的弹层提示 注意多个弹出层时不能用 遮罩层重复 -->
+<div id="theme_popover_tips" class="theme_popover" style="display: none; width: 400px; height: 250px;">
+    <div class="theme_poptit">
+        <h3>温馨提示</h3>
+    </div>
+    <div style="padding-top: 40px; padding-bottom: 30px; text-align: center; font-size: 16px;">
+        <label class="tipsContent">确定？</label>
+    </div>
+    <div style="text-align: center;">
+        <div class="btn-group">
+            <button style="font-size: 16px;" type="button" class="btn btn-danger confirm">确定</button>
+        </div>
+    </div>
+</div>
+</body>
+<link rel="stylesheet" href="../../css/popup.css">
+<script type="text/javascript" src="../../plugins/DataTables-1.10.12/media/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../../js/jquery/jquery.cookie.js"></script>
+<script type="text/javascript" src="../../js/common/common.js"></script>
+<script type="text/javascript" src="../../js/common/datatable_util.js"></script>
+<script type="text/javascript" src="../../js/telMarketingCenter/data_assign_history.js"></script>
+<script type="text/javascript" src="../../js/common/cookie.js"></script>
+<script type="text/javascript" src="../../js/common/popup.js"></script>
+</html>

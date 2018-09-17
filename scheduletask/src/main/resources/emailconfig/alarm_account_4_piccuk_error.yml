@@ -1,0 +1,4 @@
+title:  piccuk接口报警
+template: /velocity/errorNotifyEmail.vm
+tos: []
+production_tos: [liuyue@cheche365.com,liuxw@cheche365.com,liuyw@cheche365.com]

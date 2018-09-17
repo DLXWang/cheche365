@@ -1,0 +1,1229 @@
+package com.cheche365.cheche.pingan
+
+testData = [
+    [
+        0,
+        '',
+        '粤X00H10',
+        'LJNNDV1E3ENO37822',
+        '236716',
+        '赵文峰',
+        '430424198807107212',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2014-05-06'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        10,
+        '',
+        '粤X11870',
+        'LTVBA423850097623',
+        '5A-D298639',
+        '许能忠',
+        '44010219671010323X',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2005-08-23'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        20,
+        '',
+        '粤X1W265',
+        'L6T7524S0BN063338',
+        'BCN296268',
+        '黄永柳',
+        '360424196012065197',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2012-01-06'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        30,
+        '',
+        '粤X35078',
+        'LETYECG236HN33756',
+        '61294236',
+        '陈沛祥',
+        '440982199001105119',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2007-01-17'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        40,
+        '',
+        '粤X38F75',
+        'LS4ADE2R2DF077345',
+        'D34J009119',
+        '关带兴',
+        '442000197408194263',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2014-01-14'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        50,
+        '',
+        '粤X39602',
+        'LGBG22E087Y067981',
+        '502442A',
+        '黄颖仪',
+        '440623197406195444',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2007-04-05'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        60,
+        '',
+        '粤X45A51',
+        'LEFAEAA234N009717',
+        'JX493Q1-40420381',
+        '谭旺华',
+        '441202197707234037',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2004-04-23'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        70,
+        '',
+        '粤X53J60',
+        'LEFAECG25EHN45894',
+        'E6090001',
+        '廖弟意',
+        '44068119791012426X',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2014-08-01'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        80,
+        '',
+        '粤X55778',
+        'LFMBE85B570054078',
+        'C193743',
+        '陈景华',
+        '440623197406104215',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2007-08-17'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        90,
+        '',
+        '粤X60G03',
+        'LVVDB12A99D095421',
+        'FD9C03168',
+        '张广锐',
+        '440601196406203413',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2009-04-13'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        100,
+        '',
+        '粤X6X615',
+        'LGWED2A42CE006517',
+        '1201048317',
+        '刘康生',
+        '362427198511012516',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2012-05-15'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        110,
+        '',
+        '粤X78D11',
+        'LDDC8A503D0013939',
+        '02009060',
+        '李国花',
+        '41042219760802283X',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2013-10-21'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        120,
+        '',
+        '粤X81338',
+        '2HHYD286X8H201470',
+        'J37A14001502',
+        '梁剑国',
+        '440623197408295430',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2008-08-07'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        130,
+        '',
+        '粤X88795',
+        'LWLNHRJF97L038133',
+        '20056124',
+        '冯佰平',
+        '440623195702254235',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2008-06-13'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        140,
+        '',
+        '粤X92413',
+        'LGBK22E528Y031646',
+        '485704B',
+        '林红彬',
+        '440224197201050019',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2008-07-18'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        150,
+        '',
+        '粤X99F07',
+        'LBEMDAFB8EZ300342',
+        'EB612577',
+        '肖志坚',
+        '441881198209046933',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2014-03-04'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        160,
+        '',
+        '粤XAE418',
+        'LDNB43AZ1C0421034',
+        'J009411',
+        '罗顺燕',
+        '440681197904095423',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2012-03-26'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        170,
+        '',
+        '粤XAN923',
+        'LVHFB2676C5021861',
+        '1021826',
+        '吴肖欢',
+        '440623196903193621',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2012-01-31'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        180,
+        '',
+        '粤XBD234',
+        'LVHFA1611B5027123',
+        '6027110',
+        '欧阳长明',
+        '440623198609305310',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2011-04-25'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        190,
+        '',
+        '粤XDB778',
+        'JTJBK11A8A2429695',
+        '2GRJ273078',
+        '张健成',
+        '440623195005184219',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2010-06-21'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        200,
+        '',
+        '粤XEQ733',
+        'JTJZA11A0C2013225',
+        '1AR0716700',
+        '梁仲平',
+        '440126197107152710',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2012-10-31'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        210,
+        '',
+        '粤XFC511',
+        'LE4HG4HB4AL001061',
+        '80018017',
+        '牛志刚',
+        '410522198112246813',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2010-08-25'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        220,
+        '',
+        '粤XFP899',
+        'LEFYECG28AHN22392',
+        'A4052281',
+        '杨胜强',
+        '441425197807201676',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2010-05-14'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        230,
+        '',
+        '粤XH0809',
+        'JNKDJ05EXEM473700',
+        '864404AVQ25',
+        '欧阳顺坤',
+        '440681197610195437',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2014-06-25'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        240,
+        '',
+        '粤XHB093',
+        'LVGBF53K3DG087825',
+        'H250440',
+        '李燕琼',
+        '44062319651210592X',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2013-08-15'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        250,
+        '',
+        '粤XJL086',
+        'SAJAA22H9BFV21042',
+        '595814334FG',
+        '黄醒超',
+        '440623196206261238',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2011-07-01'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        260,
+        '',
+        '粤XJT850',
+        'LGBG22E03CY544679',
+        '139076W',
+        '杨小荣',
+        '510921197705287826',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2012-08-10'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        270,
+        '',
+        '粤XJW177',
+        'LVSHJCAB7EE609276',
+        'EA19619',
+        '廖小玲',
+        '441425197509110880',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2014-04-30'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        280,
+        '',
+        '粤XKP313',
+        'LFMAP22C1B0243366',
+        'E781909',
+        '梁银杏',
+        '440623197301053140',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2011-03-11'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        290,
+        '',
+        '粤XLK361',
+        'LVBV3JBB6EE167235',
+        'Q140305649Z',
+        '欧阳庆联',
+        '440681199108205459',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2014-05-12'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        300,
+        '',
+        '粤XLY557',
+        'LFP53ACC945D17912',
+        '5A-D251304',
+        '吴秀卿',
+        '440681197903065943',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2005-08-09'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        310,
+        '',
+        '粤XM4459',
+        'LZWABCJ1351003688',
+        'LJ465Q-1AE6-501201084',
+        '黄德光',
+        '452123196510116138',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2005-01-15'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        320,
+        '',
+        '粤XMK328',
+        'LVGCV90328G017668',
+        '0338073',
+        '梁冠楠',
+        '440681198410120451',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2009-05-08'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        330,
+        '',
+        '粤XMS466',
+        'L6T7844Z8CN173183',
+        'CBNG01122',
+        '贺申平',
+        '422801198110251254',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2013-01-09'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        340,
+        '',
+        '粤XNW978',
+        'LZWDAAGA782018799',
+        '801018428',
+        '刘盛军',
+        '511025198204246438',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2008-03-18'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        350,
+        '',
+        '粤XP3233',
+        'JTHBN36F465047940',
+        '3UZ0427827',
+        '李庆佳',
+        '440623195204084253',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2006-06-13'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        360,
+        '',
+        '粤XQM216',
+        'LVGBL87E5EG002659',
+        'F473152',
+        '欧阳婉雯',
+        '440681199102165425',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2014-09-03'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        370,
+        '',
+        '粤XRN286',
+        'LVGBE42K57G058586',
+        'C179064',
+        '赖细文',
+        '440623196309084238',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2007-01-29'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        380,
+        '',
+        '粤XS9837',
+        'LFMARE0C590240303',
+        'E530455',
+        '罗展波',
+        '440623197504242312',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2010-02-26'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        390,
+        '',
+        '粤XSE386',
+        'LHGGE8873C2014943',
+        '4514919',
+        '郭健荣',
+        '440681199004018018',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2012-06-04'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        400,
+        '',
+        '粤XT3235',
+        'UU6MF48411D014565',
+        'F8CV742394',
+        '陈淑芬',
+        '440623197507312363',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2002-07-25'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        410,
+        '',
+        '粤XT8839',
+        'LJ11KBBC1A6006983',
+        'A4602783',
+        '罗天乙',
+        '44092119761231353X',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2010-04-28'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        420,
+        '',
+        '粤XTU522',
+        'LFMAP22C8D0493478',
+        'G183286',
+        '温汉坚',
+        '440623197405065410',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2013-03-25'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        430,
+        '',
+        '粤XUF566',
+        'LSYBCAAA3CK041874',
+        '191142',
+        '黎磊',
+        '440923198806157333',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2013-02-05'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        440,
+        '',
+        '粤XW2345',
+        'LVGCU9230AG057866',
+        'E716196',
+        '老洁珠',
+        '440622196302072529',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2011-02-12'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        450,
+        '',
+        '粤XWS123',
+        'LVHRE487295016615',
+        '3016619',
+        '雷伟声',
+        '440681198605155937',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2009-05-12'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        460,
+        '',
+        '粤XXT780',
+        'LVXCAJBAXES016379',
+        'SNT4380',
+        '陈碧芬',
+        '440623197212274849',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2014-08-04'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        470,
+        '',
+        '粤XY3165',
+        'LEFAFCG25BHN15836',
+        'B3031365',
+        '卢润潮',
+        '440623196211042638',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2011-08-18'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        480,
+        '',
+        '粤XY4438',
+        'LEFAECG28BHN44914',
+        'B8113796',
+        '刘国光',
+        '440623197108233158',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'梅赛德斯',
+                        supplementInfo : [
+                            autoModel : ''
+                        ]
+                    ],
+                    enrollDate:'2011-09-19'
+                ]
+            ]
+        ],
+    ],
+
+]

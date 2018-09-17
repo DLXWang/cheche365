@@ -1,0 +1,5 @@
+#营销活动统计
+title: 营销活动统计
+template: /velocity/marketingEmail.vm
+tos: [zhangtc@cheche365.com,liuyw@cheche365.com]
+production_tos: [lism@cheche365.com,lixin@cheche365.com,yanyl@cheche365.com]

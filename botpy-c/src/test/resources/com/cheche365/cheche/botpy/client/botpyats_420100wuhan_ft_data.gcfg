@@ -1,0 +1,112 @@
+package com.cheche365.cheche.botpy.client
+//this is 武汉
+
+basePackageOptions = [
+    compulsory          : false,
+    autoTax             : false,
+    thirdPartyAmount    : 500000,
+    thirdPartyIop       : true,
+    damage              : false,
+    damageIop           : false,
+    theft               : false,
+    theftIop            : false,
+    engine              : false,
+    engineIop           : false,
+    glass               : false,
+    glassType           : 2, // 0, 1, 2 // 1 国产; 2 进口
+    driverAmount        : 50000,
+    driverIop           : true,
+    passengerAmount     : 50000,
+    passengerIop        : true,
+    spontaneousLoss     : false,
+    scratchAmount       : 0,
+    scratchIop          : false,
+    spontaneousLossIop  : false,
+    unableFindThirdParty: false
+]
+
+testData = [
+
+     [
+        420010,
+        '',
+        '鄂AZK278',
+        'LDCA13X49C2057135',
+        '5012898',
+        '郑世魁',
+        '412724197110201938',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '东风雪铁龙DC7207LYAA轿车',
+                        supplementInfo: [
+                            autoModel: '',
+                             commercialStartDate : '2018-05-29',
+                             compulsoryStartDate : '2018-06-13',
+
+                        ]
+                    ],
+                    enrollDate: '2012-12-31'
+                ],
+            ]
+        ]
+    ],
+
+    [
+        420020,
+        '',
+       '鄂AL1A85',
+       'LDC973445F2458515',
+       '1322841',
+       '周继恒',
+       '410425198905314015',
+       null,
+       null,
+       [
+           quoteRecord:[
+               auto:[
+                   autoType:[
+                       code:'东风标致DC7126TSAB轿车',
+                       supplementInfo: [
+                           autoModel: 'BZD1403DFB',//'BZD1430DFB',
+                           commercialStartDate : '2018-06-13',
+                            compulsoryStartDate : '2018-06-13',
+                       ]
+                   ],
+                   enrollDate:'2015-12-19'
+               ]
+           ]
+       ],
+   ],
+     [
+         1,
+         '',
+         '鄂A70R0F',
+         'WVWS13132BV014665',
+         'CAV233064',
+         '武汉化学工业区悦启美容美发用品经营部',
+         'MA4JF8G07',
+         null,
+         null,
+         [
+             quoteRecord:[
+                 auto:[
+                     autoType:[
+                         code:'尚酷SCIROCCO',
+                         supplementInfo: [
+                             autoModel: 'DZABDI0011',
+                             verificationMobile:'13581538623',
+                             commercialStartDate : '2018-08-06',
+                             compulsoryStartDate : '2018-08-06',
+                         ]
+                     ],
+                     enrollDate:'2010-12-24',
+                     identityType:11
+                 ]
+             ]
+         ],
+     ],
+]

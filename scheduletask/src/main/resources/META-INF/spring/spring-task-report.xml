@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/task
+        http://www.springframework.org/schema/task/spring-task-4.1.xsd">
+
+    <!-- 配置定时任务 -->
+    <task:scheduled-tasks scheduler="schedulerPool">
+        <!--客服中心 出单中心出单报表 0 30 15,17 * * ? -->
+        <task:scheduled ref="insuranceOrderReportTask" method="process" cron="0 30 15,17 * * ?"/>
+        <!--营销活动领券报表 每天0点和16点各执行一次 0 0 0,16 * * ?-->
+        <task:scheduled ref="marketingCountTask" method="process" cron="0 0 0,16 * * ?"/>
+        <!--营销活动手机报表 0 0 9-17 * * ?-->
+        <task:scheduled ref="marketingMobileTask" method="process" cron="0 0 9-17 * * ?"/>
+        <!--财务部门成交订单统计表：每周五晚上6点发送 0 0 18 ? * FRI-->
+        <task:scheduled ref="completedOrderFinanceReportTask" method="process" cron="0 0 18 ? * FRI"/>
+        <!--运营部门每天0点和16点导出成单统计 0 0 0,16 * * ?-->
+        <task:scheduled ref="completedOrderOperationReportTask" method="process" cron="0 0 0,16 * * ?"/>
+        <!--结算报表任务：每天0点 0 0 0 * * ?-->
+        <task:scheduled ref="settlementReportTask" method="process" cron="0 0 0 * * ?"/>
+        <!--商务活动监控数据：每天8点 0 0 8 * * ? -->
+        <task:scheduled ref="cPSChannelTask" method="process" cron="0 0 8 * * ?"/>
+        <!--第三方合作-百度地图 已报价未下单用户车辆信息同步：每天1点 0 0 1 * * ?-->
+        <task:scheduled ref="baiduAutoSyncTask" method="process" cron="0 0 1 * * ?"/>
+        <!-- 第三方合作未完全处理订单统计 0 50 8 * * ? || 0 0 17 * * ? -->
+        <task:scheduled ref="cooperationOrderReportTask" method="process" cron="0 50 8 * * ?"/>
+        <task:scheduled ref="cooperationOrderReportTask" method="process" cron="0 0 17 * * ?"/>
+        <!--需跟进订单：每天早上9：00  0 0 9 * * ? -->
+        <!--<task:scheduled ref="followUpOrdersTask" method="process" cron="0 0 9 * * ?"/>-->
+        <!--财务台帐：每天早上7：00  0 0 7 * * ? -->
+        <task:scheduled ref="financialAccountingTask" method="process" cron="0 0 7 * * ?"/>
+        <!--推荐活动统计报表 每天8:00  0 0 8 * * ?-->
+        <!--<task:scheduled ref="recommendActivityReportTask" method="process" cron="0 0 8 * * ?"/>-->
+        <!--电销拨打数据——数据源报表 每天18:10  0 10 18 * * ?-->
+        <task:scheduled ref="telMarketingCenterCallRecordReportTask" method="process" cron="0 10 18 * * ?"/>
+        <!--电销拨打数据——出单报表 每天18:10  0 10 18 * * ?-->
+        <task:scheduled ref="telMarketingCenterGenerateOrderReportTask" method="process" cron="0 10 18 * * ?"/>
+        <!--异常订单报表-->
+        <task:scheduled ref="questionableOrderReportTask" method="process" cron="0 0 10 * * ?"/>
+        <!--电销进库量和拨打量统计-->
+        <task:scheduled ref="telMarketingCenterInputCallBySortReportTask" method="process" cron="0 0 12,17 * * ?"/>
+        <!--百度数据同步邮件，每天08:00执行 0 0 8 * * ?-->
+        <task:scheduled ref="baiduDataSyncEmailTask" method="process" cron="0 0 8 * * ?"/>
+        <!--按天买车险用户数据情况统计，每天10:00执行 0 0 10 * * ?-->
+        <task:scheduled ref="dailyBuyInsuranceReportTask" method="process" cron="0 0 10 * * ?"/>
+        <!--微车报价数据统计报表,每天10:00执行,统计前一天数据-->
+        <!--<task:scheduled ref="weicheQuoteReportTask" method="process" cron="0 30 9 * * ?"/>-->
+        <!--退款失败订单统计报表,每天08:00执行,统计前一天数据-->
+        <task:scheduled ref="refundFaildOrderReportTask" method="process" cron="0 0 8 * * ?"/>
+        <!--电销业绩/非电销业绩安心订单汇总报表：每天上午8点 0 0 8 * * ?-->
+        <task:scheduled ref="telMarketingCenterPerformanceReportTask" method="process" cron="0 0 8 * * ?"/>
+        <!--安心用户下单和用户活动统计-->
+        <task:scheduled ref="dailyInsuranceOrderActivityReportTask" method="process" cron="0 50 23 * * ?"/>
+        <!--安心上月成单 每月3号10点执行一次-->
+        <task:scheduled ref="answernUltimoInsuranceReportTask" method="process" cron="0 0 10 3 * ?"/>
+        <!--安心日成单-->
+        <task:scheduled ref="answernOrderReportByDayTask" method="process" cron="0 0 9 * * ?"/>
+        <!--安心车险数据汇总，每天9:30执行,统计前一天数据-->
+        <task:scheduled ref="dailyInsuranceBasicReportTask" method="process" cron="0 30 9 * * ?"/>
+        <!--车车停复驶数据汇总，每天0:05执行,统计前一天数据-->
+        <task:scheduled ref="dailyInsuranceStopReportTask" method="process" cron="0 5 0 * * ?"/>
+        <!--大特保数据同步邮件，每天08:00执行 0 0 8 * * ?-->
+        <!--<task:scheduled ref="datebaoDataSyncReportTask" method="process" cron="0 0 8 * * ?"/>-->
+        <!--大特保订单统计报表 每天早晨8:00执行-->
+        <task:scheduled ref="datebaoOrderReportTask" method="process" cron="0 0 8 * * ?"/>
+        <!--泛华成单对账报表 每天早晨8:00执行-->
+        <!--<task:scheduled ref="fanhuaOrderBillReportTask" method="process" cron="0 0 8 * * ?"/>-->
+        <!--泛华成单礼品报表 每天早晨8:00执行-->
+        <task:scheduled ref="fanhuaOrderGiftReportTask" method="process" cron="0 0 8 * * ?"/>
+        <!--电销拨打数据——出单报表每月一发的月报表 每月1号上午8点执行-->
+        <task:scheduled ref="telMarketingCenterMonthGenerateOrderReportTask" method="process" cron="0 0 8 1 * ?"/>
+        <!--好贷·信贷圈，好贷·信贷圈-出单中心 2个渠道的订单报表,每天8:00执行,统计前一天数据-->
+        <task:scheduled ref="haodaiOrderReportTask" method="process" cron="0 0 8 * * ?"/>
+        <!--钱包数据统计报表 每天早上九点执行 0 0 9 * * ?-->
+        <task:scheduled ref="walletDataStatisticsReportTask" method="process" cron="0 0 9 * * ?"/>
+        <!--车抵贷广告数据报表-->
+        <task:scheduled ref="marketing201708003ReportTask" method="process" cron="0 0/10 * * * ?"/>
+        <!--18年1月抽奖活动数据报表-->
+        <task:scheduled ref="marketing201801001ReportTask" method="process" cron="0 0 7 * * ?"/>
+        <!--18年2月抽奖活动中奖数据-->
+        <!--<task:scheduled ref="marketing201802001ReportTask" method="process" cron="0 0 7 * * ?"/>-->
+        <!--途虎出单日报-->
+        <task:scheduled ref="tuhuOrderReportTask" method="process" cron="0 0 9 * * ?"/>
+        <!--懂车帝活动日报-->
+        <task:scheduled ref="dongchediMarketingReportTask" method="process" cron="1 0 0 * * ?"/>
+        <!--凌云用户合作申请-->
+        <task:scheduled ref="openSignupReportTask" method="process" cron="0 0 0/1 * * ?"/>
+        <!-- 摩拜活动数据-->
+        <!--<task:scheduled ref="marketingMoBikeReportTask" method="process" cron="0 0 8 * * ?"/>-->
+        <!--车保易提现信息财务报表-->
+        <task:scheduled ref="chebaoyiWithdrawalReportTask" method="process" cron="0 0 16 * * ?"/>
+        <!--部分退款财务报表 每天9:30-->
+        <task:scheduled ref="partRebateTask" method="process" cron="0 30 9 * * ?"/>
+        <!--汽车金融活动定时任务报表-->
+        <task:scheduled ref="autoFinancingMarketingTask" method="process" cron="0 0/30 0,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23 * * ?"/>
+        <!--保骉报表 每月3号10点执行一次-->
+        <task:scheduled ref="baobiaoFinancialAccountsTask" method="process" cron="0 0 10 3 * ?"/>
+        <!--小米每月1 15 30 8:00 -->
+        <task:scheduled ref="xiaomiReportTask" method="process" cron="0 0 8 1,15,30 * ? "/>
+        <!--车保易订单导出 -->
+        <task:scheduled ref="chebaoyiOrderExportTask" method="process" cron="0 0 9 * * ?"/>
+        <!-- 车保易台账  0 0/30 * * * ?-->
+        <task:scheduled ref="chebaoyiLedgerTask" method="process" cron="0 0 16 * * ?"/>
+        <!--车保易指定账号报价情况导出 -->
+        <task:scheduled ref="chebaoyiLevelOneQuoteDataReportTask" method="process" cron="0 0 8 * * ?"/>
+    </task:scheduled-tasks>
+</beans>

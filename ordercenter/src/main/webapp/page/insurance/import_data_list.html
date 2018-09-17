@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>导入数据查询</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link type="text/css" href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="../../css/common.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/dataTables.bootstrap.min.css"
+          rel="stylesheet">
+
+    <script type="text/javascript" src="../../js/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../plugins/jqPaginator-1.2.0/jqPaginator.min.js"></script>
+    <style type="text/css">
+        .filter {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="show_div" class="table-responsive" style="margin-top:10px;">
+
+    <div class="col-sm-12">
+        <div class="row" style="margin-bottom:10px;">
+            <div class="col-sm-12 form-inline">
+
+               <div id="triggerCityDiv" style="float:left;overflow: hidden;">
+                    <input type="text" id="area_input" name="area_input" placeholder="省市"
+                           class="form-control text-input-400" style="width: 200px;" AutoComplete="off"
+                           onpaste="return false" oncontextmenu="return false">
+                </div>
+                <input type="hidden" id="area" name="area_no">
+
+                <select id="dataTypeId" class="form-control text-input-150"
+                        style="margin-left:15px;margin-right:15px;width: 200px">
+                    <option value="">请选择数据类型</option>
+                    <option value="1">泛华数据</option>
+                    <option value="2">保险公司数据</option>
+                </select>
+
+                <label>&nbsp;&nbsp;导入时间</label>
+                <input type="text" class="form-control text-input-50" id="importDateStart" placeholder="起始时间"
+                       style="width: 165px;background:#fff url(../../My97DatePicker/skin/datePicker.gif) no-repeat right;"
+                       onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true});">
+                <span style="margin: 0 10px;">至</span>
+                <input type="text" class="form-control text-input-50" id="importDateEnd" placeholder="截止时间"
+                       style="width: 165px;background:#fff url(../../My97DatePicker/skin/datePicker.gif) no-repeat right;"
+                       onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true});">
+                <button id="search" type="button" class="form-control btn-warning"
+                        style="width: 100px;margin-left: 30px">搜索
+                </button>
+            </div>
+        </div>
+        <table class="table table-bordered table-hover v" id="list_tab">
+        </table>
+    </div>
+</div>
+</body>
+<link rel="stylesheet" href="../../css/popup.css">
+<script type="text/javascript" src="../../plugins/DataTables-1.10.12/media/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../../js/jquery/jquery.cookie.js"></script>
+<script type="text/javascript" src="../../js/common/common.js"></script>
+<script type="text/javascript" src="../../js/common/CUI.js"></script>
+<script type="text/javascript" src="../../js/common/CUI.select.js"></script>
+<script type="text/javascript" src="../../js/common/CUI.grid.js"></script>
+<script type="text/javascript" src="../../js/common/datatable_util.js"></script>
+<script type="text/javascript" src="../../My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="../../js/common/cookie.js"></script>
+<script type="text/javascript" src="../../js/common/popup.js"></script>
+<script type="text/javascript" src="../../js/insurance/import_data_list.js"></script>
+<script type="text/javascript" src="../../js/order/order_status.js"></script>
+<script type="text/javascript" src="../../js/nationwideOrder/order_comment.js"></script>
+</html>

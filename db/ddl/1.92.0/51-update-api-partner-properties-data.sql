@@ -1,0 +1,1 @@
+UPDATE `api_partner_properties` SET `value`='https://ins.autozi.com/insautozi/api/user/cheche/in' WHERE `partner`=(SELECT id FROM `api_partner` WHERE `code` = 'zhongchi') AND `key`='production.sync.agent.url';

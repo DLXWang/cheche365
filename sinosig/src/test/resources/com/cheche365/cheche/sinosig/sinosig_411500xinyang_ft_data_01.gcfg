@@ -1,0 +1,12 @@
+package com.cheche365.cheche.sinosig
+
+/**
+ * 河南新乡
+ */
+
+testDataParams = [
+
+    //{value=FTABED0124, text=丰田TV7163GLM轿车  2011款 GL纪念版 5座 109800元}
+    10000: [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'FTABED0124']]]]]]
+
+]

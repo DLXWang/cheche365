@@ -1,0 +1,6 @@
+10-db-add-sms-template-data.sql
+20-db-update-tel_marketing_center_channel_filter-data.sql
+30-db-add-message_variable-data.sql
+40-db-update-tel_marketing_center_channel_filter-data.sql
+50-db-update-sms-template-data.sql
+60-db-add-android-sys-version-data.sql

@@ -1,0 +1,126 @@
+package com.cheche365.cheche.sinosafe
+//this is 深圳
+
+basePackageOptions = [
+    thirdPartyAmount    : 500_000.0,
+    thirdPartyIop       : true,
+    damage              : false,
+    damageIop           : false,
+    theft               : false,
+    theftIop            : false,
+    engine              : false,
+    engineIop           : false,
+    glass               : false,
+    glassType           : 1,    // 国产
+    driverAmount        : 0,
+    driverIop           : false,
+    passengerAmount     : 0,
+    passengerIop        : false,
+    spontaneousLoss     : false,
+    scratchAmount       : 0,
+    scratchIop          : false,
+    compulsory          : true,
+    autoTax             : false
+]
+
+testData = [
+    [
+            810010,
+            'BUG3849',
+            '粤B5233U',
+            'LHGCR2659E8015497',
+            '1215699',
+            '金庆如',
+            '230100195702160924',
+            null,
+            null,
+            [
+                quoteRecord: [
+                    auto: [
+                        autoType  : [
+                            code          : '雅阁HG7242AAC4',
+                            supplementInfo: [
+                                autoModel: 'XYD1022DFQ'
+                            ]
+                        ],
+                        enrollDate: '2014-01-13'
+                    ]
+                ]
+            ],
+     ],
+
+             [
+                    160020,
+                    '安心交强起保日期修正失败',
+                    '粤BGDDFG',
+                    'ASDFDSASDFGHJHGHJ',
+                    'SFDHGJGDFD',
+                    '车车',
+                    '110221198905055917',
+                    null,
+                    null,
+                    [
+                            quoteRecord: [
+                                    auto: [
+                                            autoType  : [
+                                                    code: '',
+                                                    supplementInfo: [
+                                                            autoModel   : ''
+                                                    ]
+                                            ],
+                                            enrollDate: ''
+                                    ]
+                            ]
+                    ]
+            ],
+
+
+  [
+      231450,
+      '',
+      '粤BRD691',
+      'LGBH1AE056Y007348',
+      'MR20197864A',
+      '薛国强',
+      '440301196905276418',
+      null,
+      null,
+      [
+          quoteRecord: [
+              auto: [
+                  autoType  : [
+                      code          : '轩逸DFL7200AA',
+                      supplementInfo: [
+                          autoModel: 'XYD1022DFQ'
+                      ]
+                  ],
+                  enrollDate: '2012-11-29'
+              ]
+          ]
+      ],
+  ],
+  [
+         231460,
+         '',
+         '粤BY815T',
+         'LSGJA52UX9H117330',
+         '97090540',
+         '姚兵兵',
+         '340123198201304110',
+         null,
+         null,
+         [
+             quoteRecord: [
+                 auto: [
+                     autoType: [
+                         code          : '大众汽车SVW71411BR',
+                         supplementInfo: [
+                             autoModel           : '',
+                         ]
+                     ],
+                     enrollDate: '2012-11-29'
+                 ]
+             ]
+         ]
+     ],
+]

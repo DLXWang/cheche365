@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title>线下数据导入上传</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link type="text/css" href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link type="text/css" href="../../css/common.css" rel="stylesheet">
+	<link type="text/css" href="../../css/formInput.css" rel="stylesheet">
+	<script type="text/javascript" src="../../js/jquery/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../../My97DatePicker/WdatePicker.js"></script>
+	<script type="text/javascript" src="../../js/jquery/jquery.form.js"></script>
+</head>
+<body>
+<div class="container tab_body" id="form">
+	<form class="form-horizontal" id="insuranceImportForm" method="post" enctype="multipart/form-data"
+	      style="margin-top: 150px;margin-left: 130px;">
+
+		<div class="form-group">
+			<label class="col-sm-4 control-label">
+			</label>
+
+			<div class="col-sm-5">
+				<a id="url_template" download="url_template"
+				   href="">
+					<button id="downloadTemplate" class="btn btn-primary text-width-200" type="button">模版下载</button>
+				</a>
+			</div>
+		</div>
+		<div class="form-group" style="margin-top: 50px;">
+			<label class="col-sm-4 control-label">选择文件</label>
+
+			<div class="col-sm-5">
+				<input id="codeFileFake" name="codeFileFake" type="text" class="form-control file-input"
+				       onclick="document.getElementById('codeFile').click();" style="width: 200px;height: 30px;"
+				       placeholder="点击选择文件">
+				<input type="file" id="codeFile" name="codeFile" accept=".xlsx" class="text-input-150"
+				       onchange="insurance_import.form.changeValue();"
+				       style="position: absolute; opacity: 0; filter:Alpha(opacity=0);">
+			</div>
+		</div>
+		<div class="form-group" style="">
+			<label class="col-sm-4 control-label"></label>
+
+			<div class="col-sm-5">
+				<div class="btn-group">
+					<button id="save_button" type="button" class="btn btn-danger" style="width: 200px;">上传</button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+
+</body>
+<link rel="stylesheet" href="../../css/popup.css">
+<script type="text/javascript" src="../../js/jquery/jquery.cookie.js"></script>
+<script type="text/javascript" src="../../js/common/cookie.js"></script>
+<script type="text/javascript" src="../../js/common/common.js"></script>
+<script type="text/javascript" src="../../js/common/popup.js"></script>
+<script type="text/javascript" src="../../js/insurance/insurance_import_old.js"></script>
+</html>

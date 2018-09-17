@@ -1,0 +1,40 @@
+package com.cheche365.cheche.aibao
+
+import static com.cheche365.cheche.parser.Constants.get_DATE_FORMAT3
+import static com.cheche365.cheche.parser.Constants.get_DATE_FORMAT3
+
+
+
+//this is  天津
+
+testData = [
+
+       [
+           20000,
+           '1831',
+           '湘AZEKAJ',
+           'VNN9S5HHKANUXY9DL',
+           'ENG9OZDT2I0QGZKI5',
+           '祁磊',
+           '341226198910046156',
+           null,
+           null,
+           [
+               quoteRecord:[
+                   auto   :  [
+                       autoType:[
+                           code:'五菱LZW6376NF',
+                           supplementInfo : [
+                               autoModel : 'TYBAED0044',
+                             commercialStartDate : '2018-07-16',
+                             compulsoryStartDate : '2018-07-16',
+                               verificationMobile : '18652095075',
+
+                           ]
+                       ],
+                       enrollDate:'2013-06-17'
+                   ]
+               ]
+           ],
+       ],
+]

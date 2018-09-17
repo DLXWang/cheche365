@@ -1,0 +1,6 @@
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${discovery.username}:${discovery.password}@eureka1.default.svc.cluster.local:30010/eureka/,http://${discovery.username}:${discovery.password}@eureka2.default.svc.cluster.local:30011/eureka/

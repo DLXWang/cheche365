@@ -1,0 +1,8 @@
+package com.cheche365.cheche.picc
+
+testDataParams = [
+
+    //{value=4028b28838471a7801388ee68797588c, text=景逸2008款 5座 60000元}
+    0 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: '4028b28838471a7801388ee68797588c']]]]]],
+
+]

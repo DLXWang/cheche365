@@ -1,0 +1,2 @@
+alter table channel_agent_purchase_order_rebate drop foreign key CHANNEL_AGENT_PURCHASE_ORDER_REBATE_PURCHASE_ORDER,add constraint channel_agent_purchase_order_rebate_ibfk_1 foreign key (purchase_order) references purchase_order(id);
+alter table channel_agent_purchase_order_rebate drop foreign key CHANNEL_AGENT_PURCHASE_ORDER_REBATE_CHANNEL_AGENT,add constraint channel_agent_purchase_order_rebate_ibfk_2 foreign key (channel_agent) references channel_agent(id);

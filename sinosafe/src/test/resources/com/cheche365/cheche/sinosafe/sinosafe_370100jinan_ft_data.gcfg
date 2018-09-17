@@ -1,0 +1,1914 @@
+package com.cheche365.cheche.sinosafe
+//this is 济南
+
+testData = [
+    [
+        500001,
+        '',
+        '渝F67D50',
+        'LSVNV2182E2153138',
+        'D32252',
+        '易旭',
+        '210522197902100518',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'大众汽车SVW7167BMD轿车',
+                        supplementInfo : [
+                            autoModel: 'LYD1063SHD',
+                            commercialStartDate : '2018-08-22',
+                            compulsoryStartDate : '2018-08-22',
+                        ]
+                    ],
+                    enrollDate:'2014-09-22'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        20121,
+        '',
+        '鲁A86638',
+        'L5D4FEF15D4F8ED21',
+        'A31220565',
+        '马塔尔',
+        '37021219920101059X',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'比亚迪QCJ7100L轿车',
+                        supplementInfo : [
+                            autoModel: 'BYD1061BYD',
+                            commercialStartDate : '2018-04-13',
+                            compulsoryStartDate : '2018-04-13',
+                            newCarFlag          :true
+                        ]
+                    ],
+                    enrollDate:'2013-01-30'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        20122,
+        '',
+        '鲁AE70X7',
+        'LSGSA52M2ED162932',
+        '140920097',
+        '徐礼学',
+        '612401198611153752',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '雪佛兰牌SGM7140AMTB',
+                        supplementInfo: [
+                            autoModel: 'SOD1033SHT',
+                            commercialStartDate : '2018-06-16',
+                            compulsoryStartDate : '2018-06-16',
+                        ]
+                    ],
+                    enrollDate: '2014-04-25'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        20123,
+        '',
+        '鲁AE70X7',
+        'LSGSA52M2ED162932',
+        '140920097',
+        '徐礼学',
+        '612401198611153752',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '雪佛兰牌SGM7140AMTB',
+                        supplementInfo: [
+                            autoModel: '',
+                            commercialStartDate : '2018-04-17',
+                            compulsoryStartDate : '2018-04-17',
+                        ]
+                    ],
+                    enrollDate: '2014-04-25'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        30,
+        '',
+        '鲁A9125S',
+        'LS5A31643ABD3BB81',
+        'B4HC47190',
+        '生加国',
+        '230227197809071512',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '长安SC7103',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2011-10-25'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        40,
+        '',
+        '鲁AU2L58',
+        'LSGW6S201L52D0560',
+        'LB869250071',
+        '李夫存',
+        '371325197911014017',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '别克SGM7251G',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2006-10-1'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        50,
+        '',
+        '鲁AF057C',
+        'LBELMBKCXDY387844',
+        'DW283108',
+        '刘勇',
+        '37030319691004283X',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '北京现代BH6440LAY',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2013-10-18'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        60,
+        '',
+        '鲁AC766G',
+        'LFV2A11J883026626',
+        '199950',
+        '崔云亮',
+        '371426198305152010',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '宝来FV7162FE',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2008-10-17'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        70,
+        '',
+        '鲁AHA620',
+        'LDC953L31C1224629',
+        '7823893',
+        '魏传桦',
+        '370304198406091013',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '东风标致DC7165LSAA',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2012-10-15'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        80,
+        '',
+        '鲁A2591S',
+        'LS5A3ABD3BB164381',
+        'B4HC47190',
+        '生加国',
+        '230227197809071512',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '长安SC7103',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2011-10-25'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        90,
+        '',
+        '鲁AUL528',
+        'LSGWL52D06S201560',
+        'LB869250071',
+        '李夫存',
+        '371325197911014017',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '别克SGM7251G',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2006-10-1'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        100,
+        '',
+        '鲁AX608J',
+        'LGBG12E09AY635455',
+        '628295D',
+        '刘翠兰',
+        '370181197208116547',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '颐达DFL7160BB',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2010-10-1'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        110,
+        '',
+        '鲁AGU792',
+        'LJDGAA227C0344668',
+        'C5363603',
+        '冯振芬',
+        '370122196704292414',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '起亚YQZ7165EJ',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2012-10-20'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        120,
+        '',
+        '鲁A186T5',
+        'JF1SH57F7AG165597',
+        'EJ20E198505',
+        '谢汝刚',
+        '370122196909026814',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '森林人FORESTER 2.0XS',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2010-11-3'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        130,
+        '',
+        '鲁A56E52',
+        'LJDDAA22580259225',
+        '85243935',
+        '任涛',
+        '410928198104249619',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '起亚YQZ7162E3',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2008-10-1'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        140,
+        '',
+        '鲁A0989R',
+        'LFV3B28R2B3034120',
+        '083547',
+        '孙长青',
+        '372330196208175131',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '奥迪FV6461ATG',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2011-9-28'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        150,
+        '',
+        '鲁AL721C',
+        'LVSHCAAE7AF594078',
+        'AA66104',
+        '梁伟',
+        '130102197202052132',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '福克斯CAF7180B48',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2010-10-1'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        160,
+        '',
+        '鲁AHQ092',
+        'LBELMBKC4CY239896',
+        'CW134347',
+        '魏钦征',
+        '372925197005041738',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '北京现代BH6440LAY',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2012-10-23'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        170,
+        '',
+        '鲁AF610M',
+        'LS5A3ADD0DB119608',
+        'D4KB41219',
+        '韩增玉',
+        '370181198706044456',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '长安SC7103G',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2013-10-12'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        180,
+        '',
+        '鲁AVV177',
+        'WVWCG1169DM668802',
+        'CBCD17554',
+        '刘颖',
+        '370705198710272028',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '甲壳虫BEETLE 1.2TSI',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2013-11-1'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        190,
+        '',
+        '鲁AU167Z',
+        'LSVNE41Z7A2723892',
+        '010207',
+        '郑江涛',
+        '370283198004170413',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '明锐SVW7206EPD',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2010-10-1'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        200,
+        '',
+        '鲁AK612U',
+        'LSVGP455XD2036582',
+        '640415',
+        '郭正萌',
+        '370102198607122521',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '斯柯达SVW7168VSD',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2013-10-15'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        210,
+        '',
+        '鲁AVQ770',
+        'LSVNU4187D2241292',
+        'B14483',
+        '刘香菊',
+        '130322198108120064',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '大众汽车SVW7167AMD',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2013-10-28'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        220,
+        '',
+        '鲁AX7616',
+        'LFMAP22C070006309',
+        'E009121',
+        '王子明',
+        '370125196806080016',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '丰田TV7160GM',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2007-10-11'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        230,
+        '',
+        '鲁AH286E',
+        'LVSHJCAB8DE362381',
+        'DA33971',
+        '张亚萍',
+        '370481198605271867',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '翼虎CAF6450A41',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2013-10-29'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        240,
+        '',
+        '鲁A75Y05',
+        'LSVRF21T792300773',
+        '025604',
+        '张立恒',
+        '370102196111202932',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '途安SVW6440PBD',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2009-11-6'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        250,
+        '',
+        '鲁AJ3887',
+        'LSVHH133132150986',
+        'AYJ0205045',
+        '孙宜武',
+        '370102196805074517',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '桑塔纳SVW7182HFi',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2003-11-1'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        260,
+        '',
+        '鲁PQT730',
+        'WVWCG1167DM694363',
+        'CBZD90887',
+        '陈婉茹',
+        '371502199102251122',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '甲壳虫BEETLE 1.2TSI',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2013-10-17'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        270,
+        '',
+        '鲁AD299U',
+        'LSVNS41Z1A2722603',
+        '041729',
+        '祝文强',
+        '370102197004292930',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '明锐SVW7186CJD',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2010-11-2'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        280,
+        '',
+        '鲁ATZ181',
+        'LSVCB2A41BN203468',
+        '139251',
+        '骆美清',
+        '372430196604260026',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '大众汽车SVW71410BR',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2011-7-27'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        290,
+        '',
+        '鲁ASS825',
+        'LVHFR1813E6011672',
+        '2011675',
+        '毛宁',
+        '370112198204097416',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '杰德DHW7182FRASD',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2013-11-6'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        300,
+        '',
+        '鲁AB220Z',
+        '1C4NJCCAXED527682',
+        'ED527682',
+        '盛寅',
+        '370102198605062916',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '指南者COMPASS 2.0L',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2013-10-28'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        310,
+        '',
+        '鲁A29167',
+        'LSYYBADC47K085883',
+        'DCD78B3799',
+        '赵志刚',
+        '370103196912130517',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '中华SY7182HS',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2007-10-1'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        320,
+        '',
+        '鲁AHE721',
+        'LBVCU1108DSG41154',
+        'B1020304',
+        '朱正',
+        '370102198006194511',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '宝马BMW7201GL(BMW520Li)',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2012-10-28'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        330,
+        '',
+        '鲁AK936L',
+        'LVGBH42K3DG760165',
+        'G296357',
+        '吕长春',
+        '370125197509050018',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '丰田GTM7200ES',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2013-11-1'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        340,
+        '',
+        '鲁AQD251',
+        'LBEXDAEB8AX973426',
+        'AB320344',
+        '夏鹏',
+        '370283198012110015',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '北京现代BH7162MX',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2010-11-9'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        350,
+        '',
+        '鲁AVN859',
+        'LB37422S5CL036739',
+        'C6N567879',
+        '王茂才',
+        '372425194904161572',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '吉利JL7150E4',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2013-10-29'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        360,
+        '',
+        '鲁AGR903',
+        'LJDGAA222C0350295',
+        'C5379493',
+        '王义',
+        '370112198909260551',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '起亚YQZ7165EJ',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2012-10-9'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        370,
+        '',
+        '鲁AWE259',
+        'LFV3A23C1D3151938',
+        '216107',
+        '赵海滨',
+        '410523198604141037',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '大众FV7207FCDWG',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2013-11-8'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        380,
+        '',
+        '鲁AL315J',
+        'LBEHDAFB6BY710110',
+        'BB031145',
+        '何立军',
+        '370103197311012018',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '北京现代BH7167AY',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2011-10-10'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        390,
+        '',
+        '鲁AHP378',
+        'LSGJA52U1CS277056',
+        'C9280750',
+        '刘伟',
+        '372823197906298014',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '别克SGM7165MTB',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2012-10-29'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        400,
+        '',
+        '鲁AUM629',
+        'LVSHCFDB2DE372346',
+        '3394110',
+        '肖萌',
+        '370121197702123922',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '福克斯CAF7163A4',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2013-10-11'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        410,
+        '',
+        '鲁AVV738',
+        'LSGJA52H9DS181857',
+        '132553937',
+        '张丽',
+        '372926198605151122',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '别克SGM7150ATA',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2013-10-28'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        420,
+        '',
+        '鲁AVC553',
+        'LSGPB54U1DD383677',
+        '132991516',
+        '张会芬',
+        '370722195503290525',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '别克SGM7165MTC',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2013-11-4'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        430,
+        '',
+        '鲁AWE170',
+        'LBVVZ1107EMA62060',
+        'A565J538',
+        '孙磊',
+        '370105198706052951',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '宝马BMW7202ES(BMWX1)',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2013-11-8'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        440,
+        '',
+        '鲁ARQ703',
+        'LFV3A23C0D3147184',
+        'A57636',
+        '梁腾飞',
+        '371082198707075336',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '大众FV7187FBDWG',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2013-11-8'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        450,
+        '',
+        '鲁A25Z65',
+        'LSGJA52U79S113769',
+        '99100115',
+        '任永明',
+        '371424198210220014',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '别克SGM7168MTA',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2009-10-1'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        460,
+        '',
+        '鲁A6E678',
+        'LFV3A23CXC3828774',
+        '213500',
+        '王海霞',
+        '370103197111235065',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '大众FV7187TRATG',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2012-11-7'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        470,
+        '',
+        '鲁AVR161',
+        'LVSHCADB3DE393662',
+        '3410319',
+        '王晓丹',
+        '37010319840618102X',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '福克斯CAF7163B4',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2013-10-30'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        480,
+        '',
+        '鲁AQ889D',
+        'LSGGF59B9AG045671',
+        '092220288',
+        '王勇',
+        '370111196802071034',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '别克SGM7308ATA',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2009-10-1'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        490,
+        '',
+        '鲁A86X76',
+        'LJDEAA29990078065',
+        '92365650',
+        '李方玉',
+        '372430197402065630',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '起亚YQZ7140',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2009-10-1'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        500,
+        '',
+        '鲁AQ1000',
+        'LBVV25105CMA08812',
+        'A5330155',
+        '王勇',
+        '370111196802071034',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '宝马BMW7202AX(BMWX1)',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2012-7-17'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        510,
+        '',
+        '鲁A7158V',
+        'LGBL2AE02BS050467',
+        '463382T',
+        '陈衍明',
+        '370911197403014014',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '东风日产DFL6430VBC1',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2011-10-10'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        520,
+        '',
+        '鲁A0657S',
+        'LSVCE6A47BN240202',
+        '809272',
+        '赵立本',
+        '370222196907216716',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '大众汽车SVW72010EJ',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2011-10-13'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        530,
+        '',
+        '鲁AB505E',
+        'LVSHCAAEXAF573726',
+        'AA54977',
+        '张磊',
+        '370982198302280014',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '福克斯CAF7180B48',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2010-10-1'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        540,
+        '',
+        '鲁AHV807',
+        'LFMAPE2C4C0436467',
+        'F125193',
+        '耿菊',
+        '370983198904191824',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '丰田TV7163GLM',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2012-10-29'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        550,
+        '',
+        '鲁A389R2',
+        'LBEXDAEB2AX971445',
+        'AB316125',
+        '赵卫东',
+        '370104196802031610',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '北京现代BH7162MX',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2010-10-8'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        560,
+        '',
+        '鲁AQ997T',
+        'LVSHFAML3AN114240',
+        '3231110',
+        '华夏',
+        '370102198404193725',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '福特CAF7152N1',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2010-10-23'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        570,
+        '',
+        '鲁A126PB',
+        'JF1GP25C6DG072283',
+        'FB20R797783',
+        '张娜',
+        '370103197701084025',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '斯巴鲁SUBARU XV',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2013-10-11'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        580,
+        '',
+        '鲁AG579H',
+        'LFV3A23C3A3055790',
+        '042105',
+        '崔光华',
+        '370825195507095318',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '迈腾FV7207TDQG',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2010-10-1'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        590,
+        '',
+        '鲁A7921J',
+        'LBEFDBFB7BY039673',
+        'BB017963',
+        '高荣山',
+        '370125197808105613',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '北京现代BH7160CAY',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2011-10-10'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        600,
+        '',
+        '鲁AG000F',
+        'LSVDL29F572318607',
+        '357104',
+        '高柒龙',
+        '130984198402050919',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '帕萨特SVW7183LJi',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2007-9-24'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        610,
+        '',
+        '鲁A2919S',
+        'LFV2A11G9B4001479',
+        '694210',
+        '王先强',
+        '370827197303080079',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '捷达FV7160FG',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2011-10-20'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        620,
+        '',
+        '鲁AP023H',
+        'LFV3A28K2D3094553',
+        '418292',
+        '刘洪凯',
+        '371323199105268115',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '奥迪FV7203BBCWG',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2013-10-26'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        630,
+        '',
+        '鲁AA1001',
+        'LHGCG566912019305',
+        'F23A37419334',
+        '陈蓬华',
+        '370103195409140545',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '雅阁HG7230',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2002-3-1'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        640,
+        '',
+        '鲁AA296P',
+        'LDCC13L3290050442',
+        '7506468',
+        '王文霞',
+        '371326197901138821',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '东风雪铁龙DC7165DTA',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2009-10-1'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        650,
+        '',
+        '鲁AW080R',
+        'LVRHFADL4DN526897',
+        '3156560',
+        '刘朋燕',
+        '370687198507245461',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '福特CAF7152B5',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2013-10-24'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        660,
+        '',
+        '鲁G9282V',
+        'LSGPC54UXAF135716',
+        '102550608',
+        '郑金蕾',
+        '370782197601010561',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '雪佛兰SGM7169MTA',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2010-10-1'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        670,
+        '',
+        '鲁AL702U',
+        'LL66H2F08DB022808',
+        'SGP1905',
+        '张琛',
+        '371425198308020017',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '三菱GMC6430A',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2013-10-17'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        680,
+        '',
+        '鲁AUX385',
+        'LVVDB11B8DD007235',
+        'BBDC02264',
+        '常洪涛',
+        '370102197806111919',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '奇瑞SQR7151J150',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2013-10-14'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        690,
+        '',
+        '鲁AVA031',
+        '1C4NJRAB7ED578474',
+        'ED578474',
+        '张啸风',
+        '370102198102020036',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '自由客PATRIOT 2.4L',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2013-10-23'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        700,
+        '',
+        '鲁AD821N',
+        'LSVAB2NG2DN029361',
+        '083162',
+        '刘晓娟',
+        '372330198401090024',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '斯柯达SVW71613BS',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2013-10-11'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        710,
+        '',
+        '鲁J95A77',
+        'LBV3M2102EMC23376',
+        '0482D214',
+        '董峰',
+        '370983198501161823',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '宝马BMW7200DL(BMW320Li)',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2013-10-10'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        720,
+        '',
+        '鲁A8A236',
+        'LSGWL52D05S225209',
+        'LB857110678',
+        '杨志军',
+        '370102195707261736',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '别克SGM7252GL',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2005-10-1'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        730,
+        '',
+        '鲁AS185W',
+        'LSVCH6A43DN178095',
+        'U88699',
+        '陈未',
+        '370781198802070278',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '大众汽车SVW71810HJ',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2013-11-6'
+                ]
+            ]
+        ],
+    ],
+
+    [
+        740,
+        '',
+        '鲁AF225D',
+        'LBEMDAFBXDZ245052',
+        'DB807751',
+        '王彩凤',
+        '14042119870331602X',
+        null,
+        null,
+        [
+            quoteRecord: [
+                auto: [
+                    autoType  : [
+                        code          : '北京现代BH7161HAY',
+                        supplementInfo: [
+                            autoModel: ''
+                        ]
+                    ],
+                    enrollDate: '2013-10-29'
+                ]
+            ]
+        ],
+    ],
+
+]

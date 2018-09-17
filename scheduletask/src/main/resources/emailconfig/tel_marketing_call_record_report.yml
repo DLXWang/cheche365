@@ -1,0 +1,27 @@
+#电销拨打数据——数据源报表
+title: ${timePeriod}数据源报表
+template: /velocity/completedOrder.vm
+tos: [liuyw@cheche365.com,zhangtc@cheche365.com,baihua@cheche365.com]
+production_tos: [majing@cheche365.com,aodm@cheche365.com,liuhy@cheche365.com,liuhy@cheche365.com,lism@cheche365.com]
+excelAttachmentConfig:
+        fileName: "${timePeriod}数据源报表.xlsx"
+        sheets:
+        - sheetName: 数据进库量
+          columns:
+              - columnType: dataInputAmount
+                column:
+                    渠道来源: source
+                    数量: amount
+        - sheetName: 数据源报表
+          columns:
+              - columnType: dataSource
+                column:
+                    渠道: channel
+                    活动: source
+                    手机号: mobile
+                    首次拨打日期: operateTime
+                    联系人: linkMan
+                    车险到期日: expireTime
+                    数据来源时间: submitTime
+                    联系结果: result
+                    备注: comment

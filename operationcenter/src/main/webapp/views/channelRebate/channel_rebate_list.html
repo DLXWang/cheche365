@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>渠道费率配置</title>
+
+	<style>
+		.tagator_tag {
+			display: inline-block;
+			background-color: #39f;
+			border-radius: 2px;
+			color: #fff;
+			padding: 2px 20px 2px 4px;
+			font-size: 13px;
+			margin: 5px;
+			position: relative;
+			vertical-align: top;
+		}
+
+		.tagator_tag_remove {
+			font-family: simsun;
+			display: inline-block;
+			font-weight: bold;
+			color: #fff;
+			margin: 0 0 0 5px;
+			padding: 6px 2px 4px 2px;
+			cursor: pointer;
+			font-size: 12px;
+			line-height: 10px;
+			vertical-align: top;
+			border-radius: 0 2px 2px 0;
+			position: absolute;
+			right: 0;
+			top: 0;
+			bottom: 0;
+		}
+
+		.margin_left_10 {
+			margin-left: 10px;
+		}
+
+		.float_left {
+			float: left;
+		}
+
+		.button_width_100 {
+			width: 100px !important;
+		}
+
+		.button_width_150 {
+			width: 150px !important;
+		}
+
+		.margin_top_30 {
+			margin-top: 3px;
+		}
+
+		.input_flag {
+			/*width: 80px !important;*/
+		}
+
+		.width_50 {
+			width: 30px !important;
+		}
+
+		.useless {
+			pointer-events: none;
+			color: grey !important;
+			cursor: default
+		}
+
+		.datePicker {
+			width: 80px;
+			background: #fff url(../../libs/My97DatePicker/skin/datePicker.gif) no-repeat right;
+		}
+	</style>
+</head>
+<body>
+<div style="margin-left: 20px;margin-top: 10px;min-width: 2100px">
+	<div id="search_div" class="search">
+		<div class="row form-inline ">
+			<div class="margin_left_10 float_left margin_top_30">
+				<select class="clientTypeSel form-control channel_select_param_search">
+					<option value="">请选择客户类型</option>
+					<option value="1">ToA</option>
+					<option value="2">ToC</option>
+				</select>
+			</div>
+
+			<div class="margin_left_10 float_left margin_top_30">
+				<select class="channelTypeSel form-control channel_select_param_search">
+					<option value="">请选择渠道类型</option>
+					<option value="1">自有渠道</option>
+					<option value="2">第三方渠道</option>
+				</select>
+			</div>
+
+			<div class="margin_left_10 float_left margin_top_30">
+				<select class="ownChannelSel form-control" multiple="multiple">
+					<!--<option value="">请选择渠道类型</option>-->
+				</select>
+			</div>
+
+			<div class="margin_left_10 float_left margin_top_30 hidden">
+				<select class="partnerChannelSel form-control">
+					<option value="">请选择第三方渠道类型</option>
+				</select>
+			</div>
+
+			<div class="margin_left_10 float_left margin_top_30">
+				<select class="insuranceCompanySel form-control" multiple="multiple">
+					<!--<option value="">请选择保险公司</option>-->
+				</select>
+			</div>
+
+			<div class="margin_left_10 float_left margin_top_30">
+				<select class="provinceSel form-control">
+				</select>
+			</div>
+			<div class="city_sel_div margin_left_10 float_left margin_top_30 hidden">
+				<select class="citySel form-control" multiple='multiple'>
+				</select>
+			</div>
+
+			<!--<div class="margin_left_10 float_left margin_top_30">
+				<div id="triggerCityDiv">
+					<input type="text" id="city_name_search" name="resultDetail" placeholder="城市名称"
+					       class="form-control" style="width: 175px;" AutoComplete="off"
+					       onpaste="return false" oncontextmenu="return false">
+				</div>
+				<input type="hidden" id="trigger_city_search" name="triggerCity">
+
+				<div class="tagator_tags">
+				</div>
+			</div>-->
+			<div class="margin_left_10 float_left margin_top_30">
+				<select class="statusSel form-control">
+					<option value="">请选择状态</option>
+				</select>
+			</div>
+		</div>
+		<div class="row form-inline margin_top_30">
+			<div class="margin_left_10 float_left ">
+				<button class="btn btn-danger form-control button_width_100 param_search_button">
+					搜索
+				</button>
+			</div>
+			<div class="margin_left_10 float_left ">
+				<button id="add_channel_rebate" class="btn btn-danger form-control button_width_150" onclick="channel_rebate.operation.addRow();">
+					新建渠道返点
+				</button>
+			</div>
+			<div class="margin_left_10 float_left ">
+				<button id="batch_add_channel_rebate" class="btn btn-danger form-control button_width_150" onclick="channel_rebate.operation.toBatchAdd();">
+					批量导入渠道返点
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="line" style="border-bottom: 2px solid #ccc;margin-top: 10px"></div><!--虚线-->
+
+	<div class="dataTables">
+		<div class="row form-horizontal" style="margin-top: 10px;">
+			<div class="col-sm-3 text-left">
+				<div class="form-group">
+					<label class="col-md-4 control-label text-left">选择预生效时间:</label>
+					<div class="col-md-4">
+						<input type="text" class="form-control text-input-50 form-inline batch_readyEffectiveDate"
+						       placeholder="预生效时间" disabled=disabled style="background:#fff url(../../libs/My97DatePicker/skin/datePicker.gif) no-repeat right;"
+						       onfocus="WdatePicker({onpicked:function(dq){channel_rebate.operation.batchEditDate();},dateFmt:'yyyy-MM-dd',readOnly:true,minDate:'%y-%M-{%d+1}',startDate:'%y-%M-{%d+1}'});">
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-2"></div>
+			<div class="col-sm-1">
+				<form class="form-inline" action="/operationcenter/channelRebate/upload" enctype="multipart/form-data" method="post" role="form" id="file_form">
+					<input id="codeFile" name="codeFile" type="file" accept=".xls,.xlsx" class="form-control file-input useless" onchange="channel_rebate.changeValue();" style="opacity: 0; filter:Alpha(opacity=0);" placeholder="请选择文件">
+				</form>
+			</div>
+			<div class="col-sm-2">
+				<input id="codeFileFake" name="codeFile" type="text" class="form-control file-input" onclick="document.getElementById('codeFile').click();" placeholder="点击选择文件">
+			</div>
+			<div class="col-sm-3">
+				<button id="excel_upload_one_next" type="button" onclick="channel_rebate.uploadFile();" class="btn btn-warning">
+					上传
+				</button>
+				<a id="url_template" download="url_template" href="">
+					<button id="downloadTemplate" type="button" class="btn btn-warning">下载模板</button>
+				</a>
+			</div>
+		</div>
+		<div>
+			<table id="channel_rebate_list_table" class="table table-striped"></table>
+			<div id="hidden_channel_div">
+			</div>
+
+		</div>
+		<div class="text-center">
+			<button class="btn btn-danger form-control button_width_100 margin_top_30 batch_save_button disabled" onclick="channel_rebate.operation.batchSave();">
+				批量保存
+			</button>
+		</div>
+	</div>
+</div>
+
+</body>
+<script type="text/javascript" src="../../js/channelRebate/channelRebate.js"></script>
+<script type="text/javascript" src="../../js/channelRebate/channelRebateValidation.js"></script>
+
+</html>

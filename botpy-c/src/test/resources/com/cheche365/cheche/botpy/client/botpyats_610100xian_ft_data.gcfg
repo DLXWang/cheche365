@@ -1,0 +1,35 @@
+package com.cheche365.cheche.botpy.client
+//this is 西安
+
+testData = [
+
+
+    [
+        1,
+        '',
+        '陕A9NV65',
+        'LSVAG6BR8EN078158',
+        '190420',
+        '刘刚强',
+        '610123196710185515',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'大众汽车SVW71612GS',
+                        supplementInfo : [
+                            autoModel: 'YLD1068SHT',
+                            verificationMobile:'13581538623',
+                            commercialStartDate : '2018-06-06',
+                            compulsoryStartDate : '2018-06-06',
+                        ]
+                    ],
+                    enrollDate:'2014-05-05'
+                ]
+            ]
+        ]
+    ],
+
+]

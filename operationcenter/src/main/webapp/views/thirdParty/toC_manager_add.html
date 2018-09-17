@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>新增ToC合作</title>
+    <link rel="stylesheet" href="../../libs/bootstrap-3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/popup.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../libs/uploadify-3.2.1/css/uploadify.css">
+    <link rel="stylesheet" href="../../libs/bootstrap-3.3.4/css/bootstrap-multiselect.css">
+    <link rel="stylesheet" href="../../css/process.css">
+    <link href="../../css/common.css" type="text/css" rel="stylesheet">
+    <link href="../../css/index.css" type="text/css" rel="stylesheet">
+</head>
+<style type="text/css">
+    span {
+        font-size: 15px;
+    }
+
+    .btn_line {
+        border-bottom: 2px solid #ccc;
+        margin-bottom: 10px;
+    }
+
+    .sub_title {
+        padding-top: 5px;
+        padding-bottom: 15px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .below {
+        margin-bottom: 25px;
+    }
+
+    .success_img {
+        width: 130px;
+        height: 130px;
+        background: url(../../images/success.png) no-repeat left bottom;
+    }
+</style>
+<body bgcolor="#bce8f1">
+<div>
+    <div class="title btn_line container">
+        <h2 class="text-center">新建ToC第三方合作详情</h2>
+    </div>
+    <div class="container">
+        <form id="msform" style="padding-bottom: 20px;">
+            <ul class="progressbar">
+                <li class="active process_li" id="process1"><span>选择合作渠道</span></li>
+                <li class="process_li" id="process2"><span>合作页面配置</span></li>
+                <li class="process_li" id="process3"><span>渠道参数配置</span></li>
+                <li class="process_li" id="process4"><span>完成</span></li>
+            </ul>
+        </form>
+        <div id="add_1" class="container add_list">
+            <div class="form-group form-group-fix" style="margin-bottom: 60px;">
+                <div class="col-sm-2 text-height-28 text-right"><span>合作商：</span></div>
+                <div class="col-sm-8 text-height-28">
+                    <select id="partnerSel" class="form-control text-input-150">
+                        <option value="">请选择</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group form-group-fix" style="margin-bottom:110px;">
+                <div class="col-sm-2 text-height-28 text-right"><span>第三方渠道名称：</span></div>
+                <div class="col-sm-8 text-height-28">
+                    <input class="form-control text-input-150" id="channelName" name="channelName" style="width: 600px"
+                           type="text" placeholder="请为此第三方渠道命名" maxlength="200"></div>
+            </div>
+            <div class="form-group form-group-fix " style="margin-bottom:170px;">
+                <div class="col-sm-2 text-height-28 text-right"><span>第三方渠道英文简称：</span></div>
+                <div class="col-sm-8 text-height-28">
+                    <input class="form-control text-input-150" id="channelEngName" name="channelEngName"
+                           style="width: 600px" type="text" placeholder="用于第三方渠道链接命名，请勿随意填写，建议使用对方主域名">
+                </div>
+                <span id="channelCode" class="col-sm-2"style="color: red;display: none;margin-left: 190px;width: 220px;margin-top: 8px;">渠道英文简称最长为30字符</span>
+            </div>
+
+            <div class="form-group form-group-fix">
+                <div class="col-sm-2 text-height-28 text-right"><span>对接车车：</span></div>
+                <div class="col-sm-8 text-height-28">
+                    <span>C端</span></div>
+            </div>
+            <div class="col-sm-12 text-center" style="padding-top:100px;padding-bottom:10px;">
+                <input id="selectChannel" onclick='chanelAdd.selectChannel()' class="btn btn-danger text-input-100"
+                       value="下一步" type="button">
+            </div>
+        </div>
+        <div id="add_2" class="container none add_list">
+            <div class="row tips">
+                <div class="col-sm-11 btn_line">
+                    <span class="sub_title">通用功能配置</span>
+                </div>
+            </div>
+            <div class="row below">
+                <div class="col-sm-5">预约功能：
+                    <label class="radio-inline">
+                        <input id="reserve_1" name="reserve" value="1" checked type="radio" autocomplete="off"> 支持
+                    </label>
+                    <label class="radio-inline">
+                        <input id="reserve_2" name="reserve" value="0" type="radio" autocomplete="off"> 不支持
+                    </label></div>
+                <div class="col-sm-5">图片上传功能：
+                    <label class="radio-inline">
+                        <input id="supportPhoto_1" name="supportPhoto" value="1" checked type="radio"
+                               autocomplete="off"> 支持
+                    </label>
+                    <label class="radio-inline">
+                        <input id="supportPhoto_2" name="supportPhoto" value="0" type="radio" autocomplete="off"> 不支持
+                    </label></div>
+            </div>
+            <div class="row below">
+                <div class="col-sm-5">在线客服功能：
+                    <label class="radio-inline">
+                        <input id="showCustomService_1" name="showCustomService" value="1" checked
+                               type="radio" autocomplete="off"> 支持
+                    </label>
+                    <label class="radio-inline">
+                        <input id="showCustomService_2" name="showCustomService" value="0" type="radio"
+                               autocomplete="off"> 不支持
+                    </label></div>
+                <div class="row">
+                    <div class="col-sm-5">客服电话：
+                        <label class="radio-inline">
+                            <input id="serviceTel" name="serviceTel" type="text" class="form-control text-input-150"
+                                   value="4000-150-999" autocomplete="off"
+                                   placeholder="请输入">
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="row tips">
+                <div class="col-sm-11 btn_line">
+                    <span class="sub_title">落地页&报价方式配置</span>
+                </div>
+            </div>
+            <div class="row below">
+                <div class="col-sm-1 text-height-28 text-left"><span>落地页：</span></div>
+                <div class="col-sm-8 text-height-28">
+                    <select id="home" class="form-control text-input-150" data-change show-value="1"
+                            show-target=".home_config" autocomplete="off">
+                        <option value="1">首页</option>
+                        <option value="0">基本信息页</option>
+                    </select>
+                </div>
+            </div>
+            <div class="home_config">
+                <div class="row tips">
+                    <div class="col-sm-11 btn_line">
+                        <span class="sub_title">首页配置</span>
+                    </div>
+                </div>
+                <div class="row below">
+                    <div class="col-sm-5">吸底按钮：
+                        <label class="radio-inline">
+                            <input id="homeFixBottom_1" name="homeFixBottom" value="1" checked type="radio"
+                                   autocomplete="off">
+                            显示
+                        </label>
+                        <label class="radio-inline">
+                            <input id="homeFixBottom_2" name="homeFixBottom" value="0" type="radio" autocomplete="off">
+                            不显示
+                        </label></div>
+                    <div class="col-sm-5">合作伙伴：
+                        <label class="radio-inline">
+                            <input id="showPartner_1" name="showPartner" value="1" checked type="radio"
+                                   autocomplete="off"> 显示
+                        </label>
+                        <label class="radio-inline">
+                            <input id="showPartner_2" name="showPartner" value="0" type="radio" autocomplete="off"> 不显示
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row tips">
+                <div class="col-sm-11 btn_line">
+                    <span class="sub_title">基本信息页配置</span>
+                </div>
+            </div>
+            <div class="row below">
+                <div class="col-sm-5">手机号输入框：
+                    <label class="radio-inline">
+                        <input id="baseLogin_1" name="baseLogin" value="1" checked type="radio" autocomplete="off"> 显示
+                    </label>
+                    <label class="radio-inline">
+                        <input id="baseLogin_2" name="baseLogin" value="0" type="radio" autocomplete="off"> 不显示
+                    </label></div>
+            </div>
+            <div class="row below">
+                <div class="col-sm-5">拍照报价/人工客服报价：
+                    <label class="radio-inline">
+                        <input id="baseCustomAndPhoto_1" name="baseCustomAndPhoto" value="1" checked autocomplete="off"
+                               type="radio"> 显示
+                    </label>
+                    <label class="radio-inline">
+                        <input id="baseCustomAndPhoto_2" name="baseCustomAndPhoto" value="0" type="radio"
+                               autocomplete="off">
+                        不显示
+                    </label></div>
+            </div>
+            <div class="row below">
+                <div class="col-sm-5">顶部banner：
+                    <label class="radio-inline">
+                        <input id="baseBanner_1" name="baseBanner" value="1" checked type="radio" autocomplete="off"> 显示
+                    </label>
+                    <label class="radio-inline">
+                        <input id="baseBanner_2" name="baseBanner" value="0" type="radio" autocomplete="off"> 不显示
+                    </label>
+                </div>
+            </div>
+            <div class="row below">
+                <div class="col-sm-5">订单中心/个人中心：
+                    <label class="radio-inline">
+                        <input id="base_1" name="base" value="1" checked type="radio" data-change show-value="1"
+                               show-target=".order_center_show" autocomplete="off"> 显示
+                    </label>
+                    <label class="radio-inline">
+                        <input id="base_2" name="base" value="0" type="radio" data-change show-value="1"
+                               show-target=".order_center_show" autocomplete="off"> 不显示
+                    </label>
+                </div>
+            </div>
+
+            <div class="order_center_show">
+                <div class="row below">
+                    <div class="col-sm-8 text-height-28">
+                        <select id="base_select" class="form-control text-input-150" autocomplete="off">
+                            <option value="1">订单中心</option>
+                            <option value="2">个人中心</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row below order_center_child2 order_center_child1">
+                    <div class="col-sm-5 ">个人中心是否展示钱包：
+                        <label class="radio-inline">
+                            <input id="hasWallet_1" name="hasWallet" value="1" type="radio" data-change show-value="1"
+                                   show-target=".cheWallet" autocomplete="off">是
+                        </label>
+                        <label class="radio-inline">
+                            <input id="hasWallet_2" name="hasWallet" value="0" checked type="radio" data-change
+                                   show-value="1" show-target=".cheWallet" autocomplete="off"> 否
+                        </label>
+                    </div>
+                </div>
+                <div class="row below cheWallet none">
+                    <div class="col-sm-5 ">钱包提现时验证方式：
+                        <select id="cheWallet" class="form-control text-input-150" autocomplete="off">
+                            <option value="1">密码</option>
+                            <option value="0">验证码</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row tips">
+                <div class="col-sm-11 btn_line">
+                    <span class="sub_title">提交订单页配置</span>
+                </div>
+            </div>
+            <div class="row below">
+                <div class="col-sm-5">优惠券模块：
+                    <label class="radio-inline">
+                        <input id="orderGift_1" name="orderGift" value="1" type="radio" autocomplete="off"> 显示
+                    </label>
+                    <label class="radio-inline">
+                        <input id="orderGift_2" name="orderGift" value="0" type="radio" checked autocomplete="off"> 不显示
+                    </label>
+                </div>
+                <div class="row">
+                    <div class="col-sm-5">投保车辆信息展示附加页：
+                        <label class="radio-inline">
+                            <input id="orderInsuredCar_1" name="orderInsuredCar" value="1" type="radio"
+                                   autocomplete="off">
+                            显示
+                        </label>
+                        <label class="radio-inline">
+                            <input id="orderInsuredCar_2" name="orderInsuredCar" value="0" type="radio" checked
+                                   autocomplete="off"> 不显示
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="row tips">
+                <div class="col-sm-11 btn_line">
+                    <span class="sub_title">支付完成页配置</span>
+                </div>
+            </div>
+            <div class="row below">
+                <div class="col-sm-5">“查看订单”按钮：
+                    <label class="radio-inline">
+                        <input id="successOrder_1" name="successOrder" value="1" checked type="radio"
+                               autocomplete="off"> 显示
+                    </label>
+                    <label class="radio-inline">
+                        <input id="successOrder_2" name="successOrder" value="0" type="radio" autocomplete="off"> 不显示
+                    </label>
+                </div>
+            </div>
+            <div class="row below">
+                <div class="col-sm-5">“返回首页”按钮对应的是否为车车首页：
+                    <label class="radio-inline">
+                        <input id="isOrderPage_1" name="isOrderPage" value="1" type="radio" data-change show-value="0"
+                               show-target=".url-config" autocomplete="off"> 是
+                    </label>
+                    <label class="radio-inline">
+                        <input id="isOrderPage_2" name="isOrderPage" value="0" checked type="radio" data-change
+                               show-value="0" show-target=".url-config" autocomplete="off"> 否
+                    </label>
+                </div>
+            </div>
+            <div class="row below url-config">
+                <div class="col-sm-5">
+                    <div class="col-sm-4 text-height-28 text-left"><span>首页链接地址：</span></div>
+                    <div class="col-sm-8 text-height-28">
+                        <input id="homeUrl" type="input" class="form-control text-input-150"/>
+                    </div>
+                </div>
+            </div>
+            <div class="row tips">
+                <div class="col-sm-11 btn_line">
+                    <span class="sub_title">参数配置</span>
+                </div>
+            </div>
+            <div class="row below">
+                <div class="col-sm-5">
+                    <div class="row">
+                        <div class="col-sm-4 text-height-28 text-left"><span>Google统计位：</span></div>
+                        <div class="col-sm-8 text-height-28">
+                            <input id="googleTrackId" class="form-control text-input-150" autocomplete="off"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row below">
+                <div class="col-sm-5">
+                    <div class="row">
+                        <div class="col-sm-4 text-height-28 text-left"><span>页面底色色值：</span></div>
+                        <div class="col-sm-8 text-height-28">
+                            <input id="themeColor" class="form-control text-input-150" autocomplete="off"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 text-center" style="padding-top:50px;padding-bottom:10px;">
+                <!--  <input id="544" class="btn btn-danger text-input-200" value="重置（这个我没写）" type="button"> -->
+                <input onclick='chanelAdd.back(1)' class="btn btn-danger text-input-100" value="上一步" type="button">
+                <input onclick='chanelAdd.pageConfig()' class="btn btn-danger text-input-100" value="下一步" type="button">
+            </div>
+        </div>
+        <div id="add_3" class="container none add_list">
+            <div class="row tips">
+                <div class="col-sm-11 btn_line">
+                    <span class="sub_title">后台配置</span>
+                </div>
+            </div>
+            <div class="row below">
+
+                <div class="col-sm-5">出单中心是否可下单：
+                    <label class="radio-inline">
+                        <input id="is_order_1" name="is_order" value="1" checked type="radio" autocomplete="off"> 是
+                    </label>
+                    <label class="radio-inline">
+                        <input id="is_order_2" name="is_order" value="0" type="radio" autocomplete="off"> 否
+                    </label></div>
+            </div>
+            <div class="row below">
+                <div class="col-sm-5">数据是否进电销：
+                    <label class="radio-inline">
+                        <input id="is_ordercenter_1" name="is_ordercenter" value="1" checked type="radio"
+                               autocomplete="off"> 是
+                    </label>
+                    <label class="radio-inline">
+                        <input id="is_ordercenter_2" name="is_ordercenter" value="0" type="radio" autocomplete="off"> 否
+                    </label>
+                </div>
+            </div>
+            <div class="row below">
+                <div class="col-sm-5">是否支持增补：
+                    <label class="radio-inline">
+                        <input id="is_supplement_1" name="is_supplement" value="1" checked type="radio"
+                               autocomplete="off"> 是
+                    </label>
+                    <label class="radio-inline">
+                        <input id="is_supplement_2" name="is_supplement" value="0" type="radio" autocomplete="off"> 否
+                    </label>
+                </div>
+            </div>
+            <div class="row below" >
+                <div class="col-sm-5 logo" style="display: inline-block;vertical-align: middle;">上传该渠道用于出单中心使用的logo：
+                    <div class="img-box full">
+                        <section class=" img-section">
+                            <div class="z_photo upimg-div clear">
+                                <section class="z_file fl">
+                                    <img src="/images/a11.png" class="add-img">
+                                    <input type="file" name="uploadImageFile" id="file" class="file" value=""
+                                           accept="/images/jpg" multiple/>
+                                </section>
+                            </div>
+                        </section>
+                    </div>
+                    <aside class="mask works-mask">
+                        <div class="mask-content">
+                            <p class="del-p ">您确定要删除logo图片吗？</p>
+                            <p class="check-p"><span class="del-com wsdel-ok">确定</span><span
+                                class="wsdel-no">取消</span></p>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+
+            <div class="row tips">
+                <div class="col-sm-11 btn_line">
+                    <span class="sub_title">订单相关配置</span>
+                </div>
+            </div>
+            <div class="row below">
+                <div class="col-sm-5">是否支持订单同步：
+                    <label class="radio-inline">
+                        <input id="synchro_1" name="synchro" value="1" checked type="radio" data-change show-value="1"
+                               show-target=".address" autocomplete="off"> 是
+                    </label>
+                    <label class="radio-inline">
+                        <input id="synchro_2" name="synchro" value="0" type="radio" data-change show-value="1"
+                               show-target=".address" autocomplete="off"> 否
+                    </label>
+                </div>
+            </div>
+            <div class="row below address">
+                <div class="col-sm-5">第三方提供的同步订单的地址：
+                    <input class="form-control text-input-150" id="address" name="address" style="width: 600px"
+                           type="text" placeholder="用于第三方渠道链接命名，请勿随意填写，建议使用对方主域名"></div>
+            </div>
+            <div class="row tips">
+                <div class="col-sm-11 btn_line">
+                    <span class="sub_title">提供给第三方的配置项</span>
+                </div>
+            </div>
+            <div class="row below">
+                <div class="form-group form-group-fix">
+                    <div class="col-sm-3 text-height-28 text-right"><span>签名方法：</span></div>
+                    <div class="col-sm-8 text-height-28"><span>HMAC-SHA1</span></div>
+                </div>
+            </div>
+            <div class="col-sm-12 text-center" style="padding-top:50px;padding-bottom:10px;">
+                <!-- <input id="gfdfg" class="btn btn-danger text-input-200" value="重置（这个我没写）" type="button"> -->
+                <input onclick='chanelAdd.back(2)' class="btn btn-danger text-input-100" value="上一步" type="button">
+                <input onclick='chanelAdd.channelParam()' class="btn btn-danger text-input-100" value="提交配置"
+                       type="button">
+            </div>
+        </div>
+        <div id="add_4" class="container none add_list">
+            <div class="center-block success_img">
+            </div>
+            <div class="title" style="margin-bottom: 40px;">
+                <h2 class="text-center">操作成功</h2>
+            </div>
+            <div class="title">
+                <span style="display: block" class="text-center">点击下载提供给第三方的配置参数<a
+                    onclick="chanelAdd.downloadUrl()">下载</a></span>
+            </div>
+            <div class="col-sm-12 text-center" style="padding-top:100px;padding-bottom:10px;">
+                <input id="toSav64e" onclick="chanelAdd.junmInfo()" class="btn btn-danger text-input-110" value="查看合作详情"
+                       type="button">
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+<script type="text/javascript" src="../../libs/jquery-1.11.2/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../libs/jquery-form/jquery.form.js"></script>
+<script type="text/javascript" src="../../libs/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="../../libs/uploadify-3.2.1/js/jquery.uploadify-3.2.1.js"></script>
+<script type="text/javascript" src="../../libs/jquery-cookie-1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="../../libs/jquery-validation-1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="../../libs/bootstrap-3.3.4/js/bootstrap-multiselect.js"></script>
+<script type="text/javascript" src="../../libs/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+
+
+<script type="text/javascript" src="../../js/common/common.js"></script>
+<script type="text/javascript" src="../../js/common/popup.js"></script>
+<script type="text/javascript" src="../../js/thirdParty/toC_manager_add.js"></script>
+<script type="text/javascript" src="../../js/thirdParty/manager_add_image.js"></script>
+</html>

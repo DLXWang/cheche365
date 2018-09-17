@@ -1,0 +1,32 @@
+#众安保险-保骉 上月成单的订单信息邮件
+title: 财务保骉月报表
+template: /velocity/baobiaoFinancialAccounts.vm
+tos: [liuyw@cheche365.com]
+production_tos: [weiou@cheche365.com,qijiang@cheche365.com,liyq@cheche365.com]
+excelAttachmentConfig:
+        fileName: "财务保骉月报表.xlsx"
+        sheets:
+        - sheetName: 财务保骉月报表
+          columns:
+              - columnType: baobiaoData
+                column:
+                    出单时间: issueTime
+                    平台: paymentPlatform
+                    车主: owner
+                    车牌号: licenseNo
+                    是否新车: isNewAuto
+                    订单号: orderNo
+                    保费总额: premiumSum
+                    交强险: compulsoryPremium
+                    车船税: autoTax
+                    商业险: commecialPremium
+                    车损险: damagePremium
+                    交强点位: compulsoryPointLocation
+                    商业点位: commecialPointLocation
+                    活动优惠: activityFavour
+                    加油卡: fuelCard
+                    京东卡: jdCard
+                    付款方式: paymentChannel
+                    实物礼品: giftDetail
+
+

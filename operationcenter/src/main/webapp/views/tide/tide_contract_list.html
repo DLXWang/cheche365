@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>合约管理</title>
+
+	<link type="text/css" href="../../css/style.css" rel="stylesheet">
+	<link type="text/css" href="../../libs/bootstrap-3.3.4/css/bootstrap.min.css" rel="stylesheet">
+	<link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/jquery.dataTables.min.css" rel="stylesheet">
+	<link type="text/css" href="../../plugins/DataTables-1.10.12/media/css/dataTables.bootstrap.min.css" rel="stylesheet">
+	<link type="text/css" href="../../libs/jquery-ui-1.11.4/jquery-ui.css" rel="stylesheet">
+	<link rel="stylesheet" href="../../libs/bootstrap-3.3.4/css/bootstrap-multiselect.css">
+	<link rel="stylesheet" href="../../libs/layer/theme/default/layer.css">
+	<link type="text/css" href="../../libs/bootstrap-3.3.4/css/bootstrap-switch.min.css" rel="stylesheet">
+
+	<style>
+		.margin_left_10 {
+			margin-left: 10px;
+		}
+
+		.float_left {
+			float: left;
+		}
+
+		.button_width_100 {
+			width: 100px !important;
+		}
+
+		.button_width_250 {
+			width: 150px !important;
+		}
+
+		.margin_top_30 {
+			margin-top: 10px;
+		}
+
+		.input_flag {
+			width: 80px !important;
+		}
+
+		.useless {
+			pointer-events: none;
+			color: grey !important;
+			cursor: default
+		}
+
+		.insuranceCompanySelDiv ul {
+			width: 100%;
+		}
+
+		.multiselect-wrapper {
+			display: inline-block;
+			position: relative;
+			vertical-align: middle;
+			text-align: left;
+			width: 100%;
+		}
+
+		/*控制隔行换色*/
+		.multiselect-container li.odd {
+			background: #eeeeee;
+		}
+
+		.multiselect-wrapper button {
+			text-align: left;
+			width: 100%;
+		}
+
+		.multiselect-wrapper span {
+			margin-left: 3px;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: block;
+		}
+
+		.multiselect-wrapper .dropdown-menu {
+			width: 100%;
+		}
+
+		.multiselect-wrapper .caret {
+			position: absolute;
+			top: 13px;
+			right: 10px;
+			width: 0;
+			height: 0;
+		}
+
+		.multiselect-wrapper label.checkbox, .multiselect-wrapper label.radio {
+			padding: 3px 20px 3px 30px !important;
+			width: 100%;
+		}
+
+	</style>
+</head>
+<body>
+<div style="margin-left: 20px;margin-top: 30px;">
+	<div id="search_div" class="search form-horizontal">
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="form-group">
+					<label class="col-md-4 control-label">平台机构:</label>
+					<div class="col-md-8">
+						<select class="platformSelSearch form-control">
+							<option value="">平台机构</option>
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-4">
+				<div class="form-group">
+					<label class="col-md-4 control-label">营业部(牌照):</label>
+					<div class="col-md-8">
+						<select class="branchSelSearch form-control param_search_item">
+							<option value="">营业部(牌照)</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="form-group">
+					<label class="col-md-4 control-label">保险公司(分支公司级):</label>
+					<div class="col-md-8">
+						<select class="institutionSelSearch form-control param_search_item">
+							<option value="">保险公司</option>
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-4">
+				<div class="form-group">
+					<label class="col-md-4 control-label">合约名称:</label>
+					<div class="col-md-8">
+						<input class="contractName contractNameSearch form-control param_search_item"
+						       placeholder="请输入合约名称">
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-4">
+				<div class="col-sm-4">
+					<button disabled class="btn btn-primary form-control button_width_100 param_search_button">搜索
+					</button>
+				</div>
+				<div class="col-sm-4">
+					<button disabled class="btn btn-primary form-control button_width_100 param_reset_button">重置
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="line" style="border-bottom: 2px solid #ccc;margin-top: 10px"></div><!--虚线-->
+
+	<div class="dataTables">
+		<div class="row form-inline margin_top_30 margin_left_10 ">
+			<div class="float_left margin_left_10">
+				<button disabled class="btn btn-primary form-control button_width_100"
+				        onclick="tide_contract.operation.toAdd();">
+					新建
+				</button>
+			</div>
+		</div>
+		<div>
+			<table id="tide_contract_list_table"></table>
+		</div>
+	</div>
+</div>
+
+</body>
+
+<script type="text/javascript" src="../../js/common/common.js"></script>
+<script type="text/javascript" src="../../js/common/popup.js"></script>
+<script type="text/javascript" src="../../libs/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="../../libs/jquery-1.11.2/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../libs/jquery-cookie-1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="../../plugins/DataTables-1.10.12/media/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../../libs/jquery-ui-1.11.4/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../../libs/bootstrap-3.3.4/js/bootstrap-multiselect.js"></script>
+<script type="text/javascript" src="../../libs/moment/moment.min.js"></script>
+<script type="text/javascript" src="../../libs/jquery-form/jquery.form.js"></script>
+<script type="text/javascript" src="../../libs/layer/layer.js"></script>
+<script type="text/javascript" src="../../js/common/CUI.js"></script>
+<script type="text/javascript" src="../../js/common/CUI.select.js"></script>
+<script type="text/javascript" src="../../js/common/datatable_util.js"></script>
+<script type="text/javascript" src="../../libs/bootstrap-3.3.4/js/bootstrap-switch.min.js"></script>
+<script type="text/javascript" src="../../libs/jquery-validation-1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="../../libs/jquery-validation-1.14.0/messages_zh.js"></script>
+<script type="text/javascript" src="../../js/tide/tide_contract_common.js"></script>
+<script type="text/javascript" src="../../js/tide/tide_contract_list.js"></script>
+</html>

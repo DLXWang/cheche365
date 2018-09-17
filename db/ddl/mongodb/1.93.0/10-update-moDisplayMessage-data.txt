@@ -1,0 +1,30 @@
+db.getCollection('moDisplayMessage').update({"messageType._id":34},{$set:{
+        "message.0.version":"v1.8",
+        "message.1.version":"v1.8"
+        }
+    });
+  db.getCollection('moDisplayMessage').update({"messageType._id":34},{$push:{
+        "message":{
+            "iconUrl" : "banner/banner-top-20-new.jpg",
+            "url" : null,
+            "title" : "首页背景图",
+            "content" : null,
+            "weight" : "98",
+            "version":"v1.9"
+        }
+        }
+    });
+
+    db.getCollection('moDisplayMessage').update({"messageType._id":34},{$push:{
+        "message":{
+            "iconUrl" : "banner/banner-top-21-new.jpg",
+            "url" : "/a/index.html#insur/category",
+            "title" : "",
+            "content" : null,
+            "weight" : "97",
+            "channel" : "67",
+            "version":"v1.9"
+        }
+        }
+    });
+

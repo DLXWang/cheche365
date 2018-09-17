@@ -1,0 +1,83 @@
+package com.cheche365.cheche.botpy
+//this is 杭州
+
+basePackageOptions = [
+    compulsory          : false,
+    autoTax             : false,
+    thirdPartyAmount    : 500000,
+    thirdPartyIop       : true,
+    damage              : false,
+    damageIop           : false,
+    theft               : false,
+    theftIop            : false,
+    engine              : false,
+    engineIop           : false,
+    glass               : false,
+    glassType           : 2, // 0, 1, 2 // 1 国产; 2 进口
+    driverAmount        : 50000,
+    driverIop           : true,
+    passengerAmount     : 50000,
+    passengerIop        : true,
+    spontaneousLoss     : false,
+    scratchAmount       : 0,
+    scratchIop          : false,
+    spontaneousLossIop  : false,
+    unableFindThirdParty: false
+]
+
+testData = [
+    [
+       330010,
+       '',
+       '浙AAR698',
+       'LS5A2ADE1AA508688',
+       'A4SA010934',
+       '刘贤伦',
+       '330322196911010815',
+       null,
+       null,
+       [
+           quoteRecord: [
+               auto: [
+                   autoType  : [
+                       code            : '长安SC7151B4轿车',
+                       supplementInfo  : [
+                           autoModel: 'YXD1011CQC', // CAACXD0011
+                             commercialStartDate : '2018-06-13',
+                             compulsoryStartDate : '2018-06-13',
+                       ]
+                   ],
+                   enrollDate: '2016-12-22'
+               ]
+           ]
+       ]
+   ],
+
+   [
+       330020,
+       '',
+       '浙A858FT',
+       'WAUAGD4L5CD002672',
+       'CJT030356',
+       '王国旺',
+       '330328197410044614',
+       null,
+       null,
+       [
+           quoteRecord:[
+               auto   :  [
+                   autoType:[
+                       code:'奥迪AUDI Q7 3.0 TFSI QUATTRO越野车',
+                       supplementInfo : [
+                           autoModel : '',
+                             commercialStartDate : '2018-05-29',
+                             compulsoryStartDate : '2018-06-13',
+                       ]
+                   ],
+                   enrollDate:'2008-10-1'
+               ]
+           ]
+       ],
+   ],
+
+]

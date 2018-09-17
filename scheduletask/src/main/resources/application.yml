@@ -1,0 +1,6 @@
+server:
+  port: 8783
+spring:
+  velocity:
+    enabled: false
+    check-template-location: false

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prop>
+    <orderStatus>
+        <offline>
+            <!-- 未确认 -->
+            <未确认><![CDATA[<option value="0">请选择</option><option value="2">等待再次确认</option><option value="3">出单</option><option value="12">用户取消</option>]]></未确认>
+            <!-- 等待再次确认 -->
+            <等待再次确认><![CDATA[<option value="0">请选择</option><option value="2">等待再次确认</option><option value="3">出单</option><option value="12">用户取消</option>]]></等待再次确认>
+            <!-- 去出单 -->
+            <出单><![CDATA[<option value="0">请选择</option><option value="return1">返回未确认</option><option value="4">核保完成</option>]]></出单>
+            <!-- 核保完成 -->
+            <核保完成><![CDATA[<option value="0">请选择</option><option value="return3">返回去出单</option><option value="5">去收款</option><option value="12">用户取消</option>]]></核保完成>
+            <!-- 去收款 -->
+            <收款><![CDATA[<option value="0">请选择</option><option value="return3">返回去出单</option><option value="6">再次收款</option><option value="7">出单完成</option><option value="12">用户取消</option>]]></收款>
+            <!-- 再次收款 -->
+            <再次收款><![CDATA[<option value="0">请选择</option><option value="return3">返回去出单</option><option value="6">再次收款</option><option value="7">出单完成</option><option value="12">用户取消</option>]]></再次收款>
+            <!-- 出单完成 -->
+            <出单完成><![CDATA[<option value="0">请选择</option><option value="return5">返回去收款</option><option value="8">派送</option>]]></出单完成>
+            <!-- 派送 -->
+            <派送><![CDATA[<option value="0">请选择</option><option value="return7">返回出单完成</option><option value="9">再次派送</option><option value="10">录入保单</option>]]></派送>
+            <!-- 再次派送 -->
+            <再次派送><![CDATA[<option value="0">请选择</option><option value="return7">返回出单完成</option><option value="9">再次派送</option><option value="10">录入保单</option>]]></再次派送>
+            <!-- 录入保单 -->
+            <录入保单><![CDATA[<option value="0">请选择</option><option value="return8">返回去派送</option><option value="11">订单完成</option>]]></录入保单>
+            <!-- 订单完成 -->
+            <订单完成><![CDATA[<option value="0">请选择</option><option value="return10">返回录入保单</option>]]></订单完成>
+            <!-- 用户取消 -->
+            <用户取消><![CDATA[]]></用户取消>
+        </offline>
+        <online>
+            <!-- 未确认 -->
+            <未确认><![CDATA[<option value="0">请选择</option><option value="2">等待再次确认</option><option value="3">出单</option>]]></未确认><!--<option value="12">用户取消</option>-->
+            <!-- 等待再次确认 -->
+            <等待再次确认><![CDATA[<option value="0">请选择</option><option value="2">等待再次确认</option><option value="3">出单</option>]]></等待再次确认><!--<option value="12">用户取消</option>-->
+            <!-- 去出单 -->
+            <出单><![CDATA[<option value="0">请选择</option><option value="return1">返回未确认</option><option value="4">核保完成</option>]]></出单>
+            <!-- 核保完成 -->
+            <核保完成><![CDATA[<option value="0">请选择</option><option value="return3">返回去出单</option><option value="5">去收款</option>]]></核保完成><!--<option value="12">用户取消</option>-->
+            <!-- 去收款 -->
+            <收款><![CDATA[<option value="0">请选择</option><option value="return3">返回去出单</option><option value="6">再次收款</option><option value="7">出单完成</option>]]></收款><!--<option value="12">用户取消</option>-->
+            <!-- 再次收款 -->
+            <再次收款><![CDATA[<option value="0">请选择</option><option value="return3">返回去出单</option><option value="6">再次收款</option><option value="7">出单完成</option>]]></再次收款><!--<option value="12">用户取消</option>-->
+            <!-- 出单完成 -->
+            <出单完成><![CDATA[<option value="0">请选择</option><option value="return5">返回去收款</option><option value="8">派送</option>]]></出单完成>
+            <!-- 派送 -->
+            <派送><![CDATA[<option value="0">请选择</option><option value="return7">返回出单完成</option><option value="9">再次派送</option><option value="10">录入保单</option>]]></派送>
+            <!-- 再次派送 -->
+            <再次派送><![CDATA[<option value="0">请选择</option><option value="return7">返回出单完成</option><option value="9">再次派送</option><option value="10">录入保单</option>]]></再次派送>
+            <!-- 录入保单 -->
+            <录入保单><![CDATA[<option value="0">请选择</option><option value="return8">返回去派送</option><option value="11">订单完成</option>]]></录入保单>
+            <!-- 订单完成 -->
+            <订单完成><![CDATA[<option value="0">请选择</option><option value="return10">返回录入保单</option>]]></订单完成>
+            <!-- 用户取消 -->
+            <用户取消><![CDATA[]]></用户取消>
+        </online>
+    </orderStatus>
+</prop>

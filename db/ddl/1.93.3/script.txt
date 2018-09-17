@@ -1,0 +1,15 @@
+10-alter-table-feedback-add-column.sql
+20-db-add-sms-template-data.sql
+30-alter-table-feedback-add-column.sql
+40-add-wallet-trade-source-data.sql
+45-update-wallet-trade-source-data.sql
+50-db-add-purchase-order-image-scene.sql
+60-db-add-purchase-order-image-scene-type.sql
+70-db-update-insurance_company-data.sql
+80-db-alter-table-insurance-basic-info-add-column-company.sql
+90-update-purchase-order-image-type.sql
+100-update-marketing-data.sql
+110-db-alter-table-purchase-order-image.sql
+120-db-create-image-auditing-log.sql
+130-db-update-purchase-order-image-type.sql
+140-db-add-android-sys-version-data.sql

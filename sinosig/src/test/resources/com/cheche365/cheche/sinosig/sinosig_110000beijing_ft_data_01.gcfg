@@ -1,0 +1,42 @@
+package com.cheche365.cheche.sinosig
+
+/**
+ * 北京
+ */
+
+testDataParams = [
+
+    //{value=XTAAOD0064, text=东风雪铁龙DC7165DTAA轿车  2011款 冠军版 5座 104000元}
+    10000 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'XTAAOD0064']]]]]],
+
+    //{value=BTAAJD0012, text=奥德赛HG6480BB多用途乘用车  2007款 舒适版 7座 229800元}
+    10010 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'BTAAJD0012']]]]]],
+
+    //{value=RCABXD0030, text=东风日产DFL6430VBD4多用途乘用车  2012款 XV两驱雷系 5座 150800元}
+    10020 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'RCABXD0030']]]]],],
+
+    //{value=XTAAFD0024, text=东风雪铁龙DC7163D 16V轿车  2007款 豪华型 5座 89800元}
+    10060 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'XTAAFD0024']]]]],],
+
+    //{value=XTAAFD0024, text=东风雪铁龙DC7163D 16V轿车  2007款 豪华型 5座 89800元}
+    10070 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'XTAAFD0024']]]]],],
+
+    //{value=XTAAFD0024, text=东风雪铁龙DC7163D 16V轿车  2007款 豪华型 5座 89800元}
+    10080 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'XTAAFD0024']]]]],],
+
+    //{value=XTAAFD0024, text=东风雪铁龙DC7163D 16V轿车  2007款 豪华型 5座 89800元}
+    10090 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'XTAAFD0024']]]]],],
+
+    //{value=WEAAID0011, text=沃尔沃CAF7204A轿车  2010款 智尊版 5座 278000元}
+    10100 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'WEAAID0011']]]]],],
+
+    //{value=MZAALD0023, text=马自达CA7231AT3轿车  2007款 豪华型 5座 184800元}
+    10110 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'MZAALD0023']]]]],],
+
+    //{value=DZAASI0016, text=甲壳虫BEETLE 1.2TSI轿车  2012款 时尚型 4座 163800元}
+    10120 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'DZAASI0016']]]]],],
+
+    //{value=CAACTD0019, text=长安SC6449C客车  2012款 8座 51000元}
+    10140 : [additionalParams: [quoteRecord: [auto: [autoType: [supplementInfo: [autoModel: 'CAACTD0019']]]]],],
+
+]

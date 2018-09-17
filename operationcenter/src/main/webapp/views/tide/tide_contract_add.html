@@ -1,0 +1,243 @@
+<link rel="stylesheet" href="../../libs/layer/theme/default/layer.css">
+<style>
+	/*a  upload */
+	.a-upload {
+		padding: 4px 10px;
+		position: relative;
+		cursor: pointer;
+		color: #888;
+		background: #fafafa;
+		border: 1px solid #ddd;
+		border-radius: 4px;
+		overflow: hidden;
+		display: inline-block;
+		*display: inline;
+		*zoom: 1
+	}
+
+	.a-upload input {
+		position: absolute;
+		font-size: 100px;
+		right: 0;
+		top: 0;
+		opacity: 0;
+		filter: alpha(opacity=0);
+		cursor: pointer
+	}
+
+	.a-upload:hover {
+		color: #444;
+		background: #eee;
+		border-color: #ccc;
+		text-decoration: none
+	}
+</style>
+<div class="panel-body">
+	<form id="contractForm" class="form-horizontal">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="form-group">
+					<label class="col-sm-4 control-label">平台机构:</label>
+					<div class="col-sm-6">
+						<select class="platformSelAdd form-control required" name="platformId">
+							<option value="">请选择平台机构</option>
+						</select>
+					</div>
+					<div class="col-sm-2"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="form-group">
+					<label class="col-sm-4 control-label">营业部(牌照):</label>
+					<div class="col-sm-6">
+						<select class="branchSelAdd form-control required" name="branchId">
+							<option value="">请选择营业部(牌照)</option>
+						</select>
+					</div>
+					<div class="col-sm-2"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="form-group">
+					<label class="col-sm-4 control-label">保险公司:</label>
+					<div class="col-sm-6">
+						<select class="insuranceCompanySelAdd form-control required" name="insuranceCompanyId">
+							<option value="">请选择保险公司</option>
+						</select>
+					</div>
+					<div class="col-sm-2"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="form-group">
+					<label class="col-sm-4 control-label ">保险公司(分支公司级):</label>
+					<div class="col-sm-6 text-left ">
+						<select class="institutionSelAdd form-control required" name="institutionId">
+							<option value="">请选择</option>
+						</select>
+					</div>
+					<div class="col-sm-2">
+						<a class="control-label"
+						   onclick="tide_contract_add.operation.toAddTideInstitution();">添加保险公司(分支公司级)</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="form-group">
+					<label class="col-sm-4 control-label">合约编号:</label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control contractCodeAdd required" placeholder="请输入"
+						       name="contractCode">
+					</div>
+					<div class="col-sm-2"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="form-group">
+					<label class="col-sm-4 control-label">合约名称:</label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control contractNameAdd required" placeholder="请输入"
+						       name="contractName">
+					</div>
+					<div class="col-sm-2"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="form-group">
+					<label class="col-sm-4 control-label ">支持投保城市:</label>
+					<div class="col-sm-6 text-left">
+						<div class="4" style="width: 25%; float: left;">
+							<select class="supportAreaProvinceSelAdd form-control">
+								<option value="">请选择省</option>
+							</select>
+						</div>
+						<div class="" style="width: 3%; float: left;height: 1px"></div>
+						<div class="" style="width: 72%; float: left;">
+							<select class="supportAreaCitySelAdd form-control required hidden" multiple
+							        name="supportAreaIds">
+								<option value="">请选择市</option>
+							</select>
+						</div>
+					</div>
+					<div class="col-sm-2">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="form-group">
+					<label class="col-sm-4 control-label">登录地址(保险公司承保系统登录使用):</label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control loginUrlAdd required" name="loginUrl" placeholder="请输入">
+					</div>
+					<div class="col-sm-2"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="form-group">
+					<label class="col-sm-4 control-label">用户名(保险公司承保系统登录使用):</label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control partnerUserNameAdd required" name="partnerUserName"
+						       placeholder="请输入">
+					</div>
+					<div class="col-sm-2"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="form-group">
+					<label class="col-sm-4 control-label">密码(保险公司承保系统登录使用):</label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control partnerPasswordAdd required" name="partnerPassword"
+						       placeholder="请输入">
+					</div>
+					<div class="col-sm-2"></div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="form-group">
+					<label class="col-sm-4 control-label">渠道号(出单代码):</label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control orderCodeAdd required" name="orderCode"
+						       placeholder="请输入">
+					</div>
+					<div class="col-sm-2"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="form-group">
+					<label class="col-sm-4 control-label">备注（可选）:</label>
+					<div class="col-sm-6">
+						<textarea type="text" class="form-control descriptionAdd"  placeholder="请输入"> </textarea>
+					</div>
+					<div class="col-sm-2"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="form-group">
+					<label class="col-sm-4 control-label">上传合约文件(用印版):</label>
+					<div class="col-sm-6">
+						<a href="javascript:;" class="a-upload">
+							<input type="file" onchange="tide_contract_add.operation.uploadFile();" accept=".pdf"
+							       class="form-control contractFileAdd" placeholder="请输入">点击这里上传文件
+						</a>
+					</div>
+					<div class="col-sm-2"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="form-group">
+					<label class="col-sm-4 control-label"> </label>
+					<div class="col-sm-8">
+						<div class="row display-file">
+							<!--<div class="fileDisplayRow col-sm-12">-->
+							<!--<a class=""><i fileId="1" class="glyphicon glyphicon-remove fileDelete"> </i></a>-->
+							<!--<span class="files" fileId="1">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.pdf</span>-->
+							<!--</div>-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+<script type="text/javascript" src="../../js/tide/tide_contract_add.js"></script>

@@ -1,0 +1,245 @@
+package com.cheche365.cheche.piccuk
+//this is 郑州
+
+basePackageOptions = [
+    thirdPartyAmount: 500000.0,
+    thirdPartyIop   : true,
+    damage          : true,
+    damageIop       : true,
+    theft           : false,
+    theftIop        : false,
+    engine          : false,
+    engineIop       : false,
+    glass           : false,
+    glassType       : null,    // 国产
+    driverAmount    : 0.0,
+    driverIop       : false,
+    passengerAmount : 0.0,
+    passengerIop    : false,
+    spontaneousLoss : false,
+    scratchAmount   : 0.0,
+    scratchIop      : false,
+    compulsory      : true,
+    autoTax         : true,
+    unableFindThirdParty : false
+]
+
+
+testData = [
+[
+//仅该车可过
+    1000330,
+    '',
+    '京N665K1',
+    'LFV2B21K2B3280528',
+    'K56465',
+    '张沛然',
+    '110108198503294935',
+    null,
+    null,
+    [
+        quoteRecord: [
+            auto: [
+                autoType  : [
+                    code          : '高尔夫FV7144TFATG轿车',
+                    supplementInfo: [
+                        autoModel          : 'DZAAQD0035',
+                        commercialStartDate: '2018-11-19',
+                        compulsoryStartDate: '2018-11-19',
+                        verificationMobile : '17600181704',
+                    ]
+                ],
+                enrollDate: '2011-11-08'
+            ]
+        ]
+    ]
+],
+    [
+        41010001,
+        '',
+        '京QH7D16',
+        'LFV3A28K9E3053368',
+        '518551',
+        '庞志海',
+        '13280119770701483X',
+        null,
+        null,
+        [
+            quoteRecord:[
+                auto   :  [
+                    autoType:[
+                        code:'奥迪FV7203BBCWG轿车',
+                        supplementInfo : [
+                            autoModel: '',
+                            verificationMobile:'15311439371',
+                            commercialStartDate : '2018-08-24',
+                            compulsoryStartDate : '2018-08-24',
+                        ]
+                    ],
+                    enrollDate:'2014-08-04'
+                ]
+            ]
+        ]
+    ],
+   [
+           1000160,
+           '',
+           '京NSA022',
+           'LVSHCADC4DE215736',
+           'DA01440',
+           '杨悦',
+           '110105198901155819',
+           null,
+           null,
+           [
+               quoteRecord: [
+                   auto: [
+                       autoType  : [
+                           code          : '福克斯CAF7201B4轿车',
+                           supplementInfo: [
+                               autoModel          : '',
+                               commercialStartDate: '2018-09-18',
+                               compulsoryStartDate: '2018-09-18',
+                               verificationMobile:'17600181704'
+                           ]
+                       ],
+                       enrollDate: '2013-05-03'
+                   ]
+               ]
+           ]
+       ],
+       [
+           1000170,
+           '',
+           '京NE96Q9',
+           'JTNGK3DH3G8008885',
+           '2GRK218142',
+           '王伟',
+           '110111197706261619',
+           null,
+           null,
+           [
+               quoteRecord: [
+                   auto: [
+                       autoType  : [
+                           code          : '埃尔法ALPHARD 3.5L旅行车',
+                           supplementInfo: [
+                               autoModel          : 'FTABXI0005',
+                               commercialStartDate: '2018-09-20',
+                               compulsoryStartDate: '2018-09-20'
+                           ]
+                       ],
+                       enrollDate: '2016-05-26'
+                   ]
+               ]
+           ]
+       ],
+        [
+               76100,
+               '',
+               '京Q2TD90',
+               'LDCC13L30B1611267',
+               '7635948',
+               '闫永顺',
+               '110107195701060910',
+               null,
+               null,
+               [
+                   quoteRecord: [
+                       auto: [
+                           autoType  : [
+                               code          : '东风雪铁龙牌DC7165DTAA',
+                               supplementInfo: [
+                                   autoModel: 'XTAAOD0054',
+                                   commercialStartDate: '2018-09-20',
+                                                                  compulsoryStartDate: '2018-09-20'
+
+                               ]
+                           ],
+                           enrollDate: '2011-06-22'
+                       ]
+                   ]
+               ]
+           ],
+
+           [
+               76200,
+               '',
+               '京P6TB08',
+               'LGXC14AA4C1082695',
+               '112019020',
+               '张堃',
+               '110228198201200615',
+               null,
+               null,
+               [
+                   quoteRecord: [
+                       auto: [
+                           autoType  : [
+                               code          : '比亚迪牌QCJ7100L',
+                               supplementInfo: [
+                                   autoModel: 'BYAADD0015',
+                                                                                   commercialStartDate: '2018-09-20',
+                                                                                                                  compulsoryStartDate: '2018-09-20'
+                               ]
+                           ],
+                           enrollDate: '2012-07-20'
+                       ]
+                   ]
+               ]
+           ],
+
+           [
+               76300,
+               '',
+               '京FJ9864',
+               'LFV5A24G9E3035379',
+               '138053',
+               '刘盼',
+               '11010119621226461X',
+               null,
+               null,
+               [
+                   quoteRecord: [
+                       auto: [
+                           autoType  : [
+                               code          : '奥迪牌FV7251BBCWG',
+                               supplementInfo: [
+                                   autoModel: 'ADAAFD0161',
+                                                                                   commercialStartDate: '2018-09-20',
+                                                                                                                  compulsoryStartDate: '2018-09-20'
+                               ]
+                           ],
+                           enrollDate: '2014-06-24'
+                       ]
+                   ]
+               ]
+           ],
+
+           [
+               76401,
+               '',
+               '京KW8586',
+               'WVWLR57N7EV043195',
+               'CCZ442691',
+               '王少博',
+               '110104198308052038',
+               null,
+               null,
+               [
+                   quoteRecord: [
+                       auto: [
+                           autoType  : [
+                               code          : '夏朗WVWLR57N',
+                               supplementInfo: [
+                                   autoModel: '',
+                                                                                                                      commercialStartDate: '2018-09-20',
+                                                                                                                                                     compulsoryStartDate: '2018-09-20'
+                               ]
+                           ],
+                           enrollDate: '2014-08-13'
+                       ]
+                   ]
+               ]
+           ],
+]

@@ -1,0 +1,19 @@
+configurations {
+    springBoot {
+        extendsFrom runtime
+    }
+}
+
+dependencies {
+
+    // Other Projects
+    compile project(':core'),
+            project(':botpy'),
+            "com.sun.jersey.contribs:jersey-apache-client4:$jersey_version",
+            "com.sun.jersey:jersey-json:$jersey_version"
+
+    // Soopay SDK
+    compile     ':umpay_sign:V40'
+    // huanong SDK
+    compile     ':rsa1.0.5'
+}

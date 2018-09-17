@@ -1,0 +1,373 @@
+version = project_version
+
+
+
+/**
+ +---------+
+ | Plugins |
+ +---------+
+ */
+buildscript {
+    repositories {
+        flatDir dirs: "$rootProject.projectDir/gradle/plugins"
+//        mavenLocal()
+//        maven { url intranet_maven_central_repo_proxy }
+//        maven { url oschina_maven_central_repo_proxy }
+        maven { url intranet_maven_central_repo_mirror_aliyun }
+        mavenCentral()
+        jcenter()
+        maven { url spring_plugin_repo_release }
+        maven { url gradle_plugin_repo }
+//        maven { url intranet_maven_central_repo_mirror_ibiblio }
+    }
+
+    dependencies {
+        classpath   "org.springframework.boot:spring-boot-gradle-plugin:$spring_boot_starter_version",
+                    'com.ofg:uptodate-gradle-plugin:1.6.3',
+                    'org.springframework.build.gradle:propdeps-plugin:0.0.7',
+//                    'net.nemerosa:versioning:2.0.0',
+                    ':gradle-cucumber-plugin'
+    }
+}
+
+allprojects {
+    apply {
+        // built-in plugins
+        plugin      'build-dashboard'
+//        plugin      'net.nemerosa.versioning'
+    }
+
+    task 'testAll'
+}
+
+/**
+ +----------------+
+ | Build Settings |
+ +----------------+
+ */
+subprojects {
+    version = rootProject.version
+//    version = versioning.info.full
+
+    apply {
+        // built-in plugins
+        plugin      'groovy'
+        plugin      'checkstyle'
+        plugin      'codenarc'
+        plugin      'jacoco'
+        plugin      'project-report'
+
+        // 3rd-party plugins
+        plugin      'com.ofg.uptodate'
+    }
+
+    repositories {
+        flatDir  dirs: "$rootProject.projectDir/libs"
+//        mavenLocal()
+//        maven { url intranet_maven_central_repo_proxy }
+//        maven { url intranet_maven_central_repo_releases }
+//        maven { url intranet_maven_central_repo_snapshots }
+//        maven { url oschina_maven_central_repo_proxy }
+        maven { url intranet_maven_central_repo_mirror_aliyun }
+        mavenCentral()
+        jcenter()
+        maven { url cheche365_repo_releases }
+        maven { url cheche365_repo_snapshots }
+//        maven { url intranet_maven_central_repo_mirror_ibiblio }
+    }
+
+    configurations {
+//        all*.transitive = false
+        all*.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-tomcat'
+        all*.exclude group: 'log4j',                    module: 'log4j'
+        all*.exclude group: 'commons-logging',          module: 'commons-logging'
+        all*.exclude group: 'org.slf4j',                module: 'slf4j-log4j12'
+        all*.exclude group: 'org.slf4j',                module: 'slf4j-jcl'
+        all*.exclude group: 'stax',                     module: 'stax-api'
+        all*.exclude group: 'org.apache.tomcat',        module: 'tomcat-jdbc'
+        all*.exclude group: 'c3p0',                     module: 'c3p0'
+        all*.exclude group: 'com.cheche365.entity'
+        all {
+            resolutionStrategy {
+                eachDependency {
+                    switch (it.requested.group) {
+                        case 'org.codehaus.groovy':
+                            it.useVersion groovy_version
+                            break
+                        case 'org.aspectj':
+                            switch (it.requested.name) {
+                                case 'aspectjweaver':
+                                    it.useVersion aspectj_version
+                                    break
+                            }
+                            break
+                        case 'org.antlr':
+                            switch (it.requested.name) {
+                                case 'antlr-runtime':
+                                    it.useVersion antlr3_version
+                                    break
+                            }
+                            break
+                        case 'org.bouncycastle':
+                            switch (it.requested.name) {
+                                case 'bcprov-jdk15on':
+                                    it.useVersion bc_jdk15on_version
+                                    break
+                                case 'bcpkix-jdk15on':
+                                    it.useVersion bc_jdk15on_version
+                                    break
+                            }
+                            break
+                        case 'com.fasterxml.jackson.core':
+                            it.useVersion jackson_version
+                            break
+                        case 'org.hibernate':
+                            if ('hibernate-validator' != it.requested.name) {
+                                it.useVersion hibernate_version
+                            }
+                            break
+                        case 'org.javassist':
+                            it.useVersion javassist_version
+                            break
+                        case 'org.jboss.logging':
+                            it.useVersion jboss_logging_version
+                            break
+                        case 'org.jdom':
+                            switch (it.requested.name) {
+                                case 'jdom2':
+                                    it.useVersion jdom2_version
+                                    break
+                            }
+                            break
+                        case 'org.springframework':
+                            it.useVersion spring_version
+                            break
+                        case 'commons-beanutils':
+                            it.useVersion commons_beanutils_version
+                            break
+                        case 'commons-codec':
+                            it.useVersion commons_codec_version
+                            break
+                        case 'commons-lang':
+                            it.useVersion commons_lang_version
+                            break
+                        case 'org.jasypt':
+                            switch (it.requested.name) {
+                                case 'jasypt':
+                                    it.useVersion jasypt_version
+                                    break
+                            }
+                            break
+                        case 'joda-time':
+                            it.useVersion joda_time_version
+                            break
+                        case 'net.sourceforge.nekohtml':
+                            it.useVersion nekohtml_version
+                            break
+                        case 'com.fasterxml.jackson.core':
+                            it.useVersion jackson_version
+                            break
+                        case 'com.fasterxml':
+                            switch (it.requested.name) {
+                                case 'classmate':
+                                    it.useVersion jackson_classmate_version
+                                    break
+                            }
+                            break
+                        case 'com.google.code.gson':
+                            it.useVersion gson_version
+                            break
+                        case 'com.google.guava':
+                            it.useVersion guava_version
+                            break
+                        case 'com.google.code.findbugs':
+                            switch (it.requested.name) {
+                                case 'jsr305':
+                                    it.useVersion findbugs_jsr305_version
+                                    break
+                            }
+                            break
+                        case 'com.google.code.zxing':
+                            it.useVersion zxing_version
+                            break
+                        case 'com.thoughtworks.xstream':
+                            it.useVersion xstream_distribution_version
+                            break
+                        case 'com.sun.jersey.contribs':
+                            switch (it.requested.name) {
+                                case 'jersey-apache-client4':
+                                    it.useVersion jersey_version
+                                    break
+                            }
+                            break
+                        case 'javax.servlet':
+                            switch (it.requested.name) {
+                                case 'javax.servlet-api':
+                                    it.useVersion javax_servlet_version
+                                    break
+                            }
+                            break
+                        case 'org.apache.commons':
+                            switch (it.requested.name) {
+                                case 'commons-pool2':
+                                    it.useVersion commons_pool2_version
+                                    break
+                            }
+                            break
+                        case 'org.apache.httpcomponents':
+                            switch (it.requested.name) {
+                                case 'httpmime':
+                                case 'httpclient':
+                                    it.useVersion httpclient_version
+                                    break
+                                default:
+                                    it.useVersion httpcomponents_version
+                            }
+                            break
+                        case 'ch.qos.logback':
+                            it.useVersion logback_version
+                            break
+                    }
+                }
+                // cache dynamic versions for 10 minutes
+                cacheDynamicVersionsFor 0, 'seconds'
+                // don't cache changing modules at all
+                cacheChangingModulesFor 0, 'seconds'
+            }
+        }
+    }
+
+    dependencies {
+        runtime     "org.slf4j:slf4j-api:$slf4j_version",
+                    "org.slf4j:jul-to-slf4j:$slf4j_version",
+                    "org.slf4j:jcl-over-slf4j:$slf4j_version",
+                    "org.slf4j:log4j-over-slf4j:$slf4j_version"
+
+//        testCompile 'org.powermock:powermock-api-easymock:1.5.4'
+//        testCompile 'org.powermock:powermock-module-junit4:1.5.4'
+//        testCompile 'org.easymock:easymockclassextension:3.2'
+    }
+
+    checkstyle {
+        configFile = "${rootDir.absolutePath}/conf/engineering-process/checkstyle/checkstyle.xml" as File
+        ignoreFailures = true
+    }
+
+    codenarc {
+        configFile = "${rootDir.absolutePath}/conf/engineering-process/codenarc.gcfg" as File
+        ignoreFailures = true
+    }
+
+    /**
+     * Built-in Task Settings
+     */
+    jar {
+        baseName = "$rootProject.name-$project.name"
+        manifest {
+            attributes 'Implementation-Version' : version
+        }
+    }
+
+    /**
+     * Java Plugin Task Settings
+     */
+    tasks.withType(AbstractCompile) {
+        sourceCompatibility = 1.8
+        options.encoding = 'UTF-8'
+        options.incremental = Boolean.valueOf(System.getProperty('gradle.compilation.incremental', gradle_compilation_incremental))
+    }
+
+    /**
+     * Integration Test Task
+     */
+    test {
+//        useTestNG()
+
+        def testClasses = System.getProperty 'test.classes'
+        if (!testClasses) {
+            include '**/*Test.*'
+            include '**/*FT.*'
+            include '**/*UT.*'
+        } else {
+            testClasses.tokenize(',').each { testClass ->
+                include testClass
+            }
+        }
+
+        exclude '**/*IT.*'
+
+        forkEvery = 5 // 每跑5个测试类后重启fork进程
+        maxParallelForks = Runtime.runtime.availableProcessors() + 2 // 最多启动（可用处理器数+2）个进程
+
+        def springProfilesActive = System.getProperty 'spring.profiles.active'
+        if (!springProfilesActive) {
+            System.setProperty 'spring.profiles.active', spring_profiles_active
+        }
+        systemProperties = System.properties as Map
+
+        def ignoreVerification = Boolean.valueOf(System.getProperty('test.ignoreVerification', Boolean.FALSE.toString()))
+        ignoreFailures = ignoreVerification
+
+        onOutput { descriptor, event ->
+            logger.lifecycle event.message
+        }
+    }
+
+    /**
+     * Groovy Plugin Task Settings
+     */
+    def groovyIndyEnabled = Boolean.valueOf(System.getProperty('groovy.indy.enabled', groovy_indy_enabled))
+    if (groovyIndyEnabled) {
+        tasks.withType(GroovyCompile) {
+            groovyOptions.optimizationOptions.indy = true
+        }
+    }
+
+    /**
+     * Jacoco Settings
+     */
+//    jacoco {
+//        toolVersion = '+'
+//    }
+
+    /**
+     * Spring Boot Settings
+     */
+    ext.'aspectj.version'       = aspectj_version
+    ext.'classmate.version'     = jackson_classmate_version
+    ext.'commons-pool2.version' = commons_pool2_version
+    ext.'groovy.version'        = groovy_version
+    ext.'gson.version'          = gson_version
+    ext.'hibernate.version'     = hibernate_version
+    ext.'hibernate-validator.version' = hibernate_validator_version
+    ext.'httpclient.version'    = httpclient_version
+    ext.'jackson.version'       = jackson_version
+    ext.'javassist.version'     = javassist_version
+    ext.'javax-validation.version' = javax_validation_version
+    ext.'jboss-logging.version' = jboss_logging_version
+    ext.'jetty.version'         = jetty_version
+    ext.'jetty-el.version'      = apache_el_version
+    ext.'logback.version'       = logback_version
+    ext.'mysql.version'         = mysql_jdbc_driver_version
+    ext.'nekohtml.version'      = nekohtml_version
+    ext.'reactor.version'       = reactor_version
+    ext.'selenium.version'      = selenium_version
+    ext.'servlet-api.version'   = javax_servlet_version
+    ext.'spock.version'         = spockframework_version
+    ext.'spring.version'        = spring_version
+    ext.'spring-integration.version'    = spring_integration_version
+    ext.'javax-validation.version'      = javax_validation_version
+//    ext.'xml-apis.version'      = javax_xml_apis_version // 2.x和1.x不兼容，所以先不升级
+
+
+    /**
+     * Uptodate Task Settings
+     */
+    uptodate {
+        connectionTimeout 60000
+    }
+
+//    test.doFirst {
+//        jvmArgs '-Xdebug', '-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8765'
+//    }
+}
